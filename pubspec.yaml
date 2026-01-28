@@ -1,0 +1,22 @@
+name: projet_app_annecdote
+description: Une application Flutter
+
+publish_to: 'none' # Pour ne pas publier ce projet sur pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.3.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.2
+  intl: ^0.18.1  # ← Ajout de la dépendance pour gérer les dates
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
