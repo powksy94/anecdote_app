@@ -1,0 +1,9 @@
+{
+  "@@locale": "en",
+  "appTitle": "Anecdote of the day",
+  "showAnecdote": "Show anecdote",
+  "translate": "Translate to French",
+  "tapToHide": "Tap again to hide details",
+  "error": "Error",
+  "translationError": "Translation error"
+}

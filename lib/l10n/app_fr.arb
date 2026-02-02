@@ -1,0 +1,9 @@
+{
+  "@@locale": "fr",
+  "appTitle": "Anecdote du jour",
+  "showAnecdote": "Afficher l'anecdote",
+  "translate": "Traduire en français",
+  "tapToHide": "Appuyez à nouveau pour cacher les détails",
+  "error": "Erreur",
+  "translationError": "Erreur de traduction"
+}
