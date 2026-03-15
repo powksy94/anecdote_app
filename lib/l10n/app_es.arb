@@ -1,0 +1,28 @@
+{
+  "@@locale": "es",
+  "appTitle": "Hechos del día",
+  "chooseCategory": "Elige tu categoría",
+  "showDetails": "Ver detalles",
+  "hideDetails": "Ocultar detalles",
+  "unableToLoad": "No se puede cargar el contenido",
+  "retry": "Reintentar",
+  "newContentIn": "Nuevo contenido en {time}",
+  "@newContentIn": {
+    "placeholders": {
+      "time": {"type": "String"}
+    }
+  },
+  "categoryAnecdote": "Anécdota",
+  "categoryChuckNorris": "Chuck Norris",
+  "categoryAdvice": "Consejo",
+  "categoryHistory": "Historia",
+  "categoryAnimals": "Animales",
+  "showAnecdote": "Mostrar anécdota",
+  "translate": "Traducir al español",
+  "tapToHide": "Toca de nuevo para ocultar los detalles",
+  "error": "Error",
+  "translationError": "Error de traducción",
+  "english": "Inglés",
+  "french": "Francés",
+  "spanish": "Español"
+}

@@ -1,9 +1,28 @@
 {
   "@@locale": "fr",
-  "appTitle": "Anecdote du jour",
+  "appTitle": "Faits du jour",
+  "chooseCategory": "Choisissez votre catégorie",
+  "showDetails": "Voir les détails",
+  "hideDetails": "Masquer les détails",
+  "unableToLoad": "Impossible de charger le contenu",
+  "retry": "Réessayer",
+  "newContentIn": "Nouveau contenu dans {time}",
+  "@newContentIn": {
+    "placeholders": {
+      "time": {"type": "String"}
+    }
+  },
+  "categoryAnecdote": "Anecdote",
+  "categoryChuckNorris": "Chuck Norris",
+  "categoryAdvice": "Conseil",
+  "categoryHistory": "Histoire",
+  "categoryAnimals": "Animaux",
   "showAnecdote": "Afficher l'anecdote",
   "translate": "Traduire en français",
   "tapToHide": "Appuyez à nouveau pour cacher les détails",
   "error": "Erreur",
-  "translationError": "Erreur de traduction"
+  "translationError": "Erreur de traduction",
+  "english": "Anglais",
+  "french": "Français",
+  "spanish": "Espagnol"
 }

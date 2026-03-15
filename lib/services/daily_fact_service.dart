@@ -9,17 +9,22 @@ class DailyFactCache {
     final raw = prefs.getString(_key);
     if (raw == null) return null;
 
-    final data = jsonDecode(raw);
-    final savedDate = DateTime.parse(data['date']);
-    final today = DateTime.now();
+    try {
+      final data = jsonDecode(raw);
+      final savedDate = DateTime.parse(data['date']);
+      final today = DateTime.now();
 
-    if (savedDate.year == today.year &&
-        savedDate.month == today.month &&
-        savedDate.day == today.day) {
-      return data;
+      if (savedDate.year == today.year &&
+          savedDate.month == today.month &&
+          savedDate.day == today.day) {
+        return data;
+      }
+      return null;
+    } catch (e) {
+      // Si le cache est corrompu, le supprimer et renvoyer null
+      await clearCache();
+      return null;
     }
-
-    return null;
   }
 
   Future<void> saveTodayFact({
@@ -32,7 +37,6 @@ class DailyFactCache {
       'original': original,
       'translated': translated,
     };
-
     await prefs.setString(_key, jsonEncode(data));
   }
 

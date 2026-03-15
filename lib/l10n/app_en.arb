@@ -1,9 +1,28 @@
 {
   "@@locale": "en",
-  "appTitle": "Anecdote of the day",
+  "appTitle": "Daily Facts",
+  "chooseCategory": "Choose your category",
+  "showDetails": "Show details",
+  "hideDetails": "Hide details",
+  "unableToLoad": "Unable to load content",
+  "retry": "Retry",
+  "newContentIn": "New content in {time}",
+  "@newContentIn": {
+    "placeholders": {
+      "time": {"type": "String"}
+    }
+  },
+  "categoryAnecdote": "Anecdote",
+  "categoryChuckNorris": "Chuck Norris",
+  "categoryAdvice": "Advice",
+  "categoryHistory": "History",
+  "categoryAnimals": "Animals",
   "showAnecdote": "Show anecdote",
   "translate": "Translate to French",
   "tapToHide": "Tap again to hide details",
   "error": "Error",
-  "translationError": "Translation error"
+  "translationError": "Translation error",
+  "english": "English",
+  "french": "French",
+  "spanish": "Spanish"
 }

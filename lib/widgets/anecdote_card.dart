@@ -23,7 +23,7 @@ class AnecdoteCard extends StatelessWidget {
       child: InkWell(
         onTap: onTap,
         borderRadius: BorderRadius.circular(20),
-        splashColor: theme.colorScheme.primary.withOpacity(0.2),
+        splashColor: theme.colorScheme.primary.withValues(alpha:0.2),
         child: AnimatedSize(
           duration: const Duration(milliseconds: 300),
           curve: Curves.easeInOut,
@@ -32,11 +32,11 @@ class AnecdoteCard extends StatelessWidget {
             width: 400,
             constraints: const BoxConstraints(maxHeight: 400),
             decoration: BoxDecoration(
-              color: theme.colorScheme.surfaceVariant,
+              color: theme.colorScheme.surfaceContainerHighest,
               borderRadius: BorderRadius.circular(20),
               boxShadow: [
                 BoxShadow(
-                  color: theme.colorScheme.primary.withOpacity(0.2),
+                  color: theme.colorScheme.primary.withValues(alpha:0.2),
                   blurRadius: 10,
                 ),
               ],
@@ -61,7 +61,7 @@ class AnecdoteCard extends StatelessWidget {
                         loc.tapToHide,
                         textAlign: TextAlign.center,
                         style: theme.textTheme.bodySmall?.copyWith(
-                          color: theme.colorScheme.primary.withOpacity(0.6),
+                          color: theme.colorScheme.primary.withValues(alpha:0.6),
                           fontStyle: FontStyle.italic,
                         ),
                       ),
