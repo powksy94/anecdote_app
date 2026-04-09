@@ -7,6 +7,8 @@ enum ContentType {
   advice,
   history,
   animals,
+  country,
+  exoplanet,
 }
 
 extension ContentTypeExtension on ContentType {
@@ -22,6 +24,10 @@ extension ContentTypeExtension on ContentType {
         return 'History';
       case ContentType.animals:
         return 'Animals';
+      case ContentType.country:
+        return 'Countries';
+      case ContentType.exoplanet:
+        return 'Exoplanet';
     }
   }
 
@@ -37,6 +43,10 @@ extension ContentTypeExtension on ContentType {
         return loc.categoryHistory;
       case ContentType.animals:
         return loc.categoryAnimals;
+      case ContentType.country:
+        return loc.categoryCountry;
+      case ContentType.exoplanet:
+        return loc.categoryExoplanet;
     }
   }
 
@@ -52,6 +62,10 @@ extension ContentTypeExtension on ContentType {
         return Icons.auto_stories_rounded;
       case ContentType.animals:
         return Icons.pets_rounded;
+      case ContentType.country:
+        return Icons.public_rounded;
+      case ContentType.exoplanet:
+        return Icons.rocket_launch_rounded;
     }
   }
 
@@ -67,6 +81,21 @@ extension ContentTypeExtension on ContentType {
         return Colors.amber.shade700;
       case ContentType.animals:
         return Colors.green;
+      case ContentType.country:
+        return Colors.blue;
+      case ContentType.exoplanet:
+        return Colors.deepPurple;
+    }
+  }
+
+  /// Couleur d'accent utilisée dans la ContentPage (boutons, icônes, timer).
+  /// Distincte de gradient[0] pour les catégories à gradient très sombre.
+  Color get accentColor {
+    switch (this) {
+      case ContentType.exoplanet:
+        return const Color(0xFF9B6DFF);
+      default:
+        return gradient[0];
     }
   }
 
@@ -82,6 +111,10 @@ extension ContentTypeExtension on ContentType {
         return [const Color(0xFFf2994a), const Color(0xFFf2c94c)];
       case ContentType.animals:
         return [const Color(0xFF56ab2f), const Color(0xFFa8e063)];
+      case ContentType.country:
+        return [const Color(0xFF1a78c2), const Color(0xFF00b4db)];
+      case ContentType.exoplanet:
+        return [const Color(0xFF0F0C29), const Color(0xFF302B63)];
     }
   }
 
@@ -97,6 +130,10 @@ extension ContentTypeExtension on ContentType {
         return 'https://api.api-ninjas.com/v1/historicalevents';
       case ContentType.animals:
         return 'https://api.api-ninjas.com/v1/animals?name=lion';
+      case ContentType.country:
+        return 'https://api.api-ninjas.com/v1/country';
+      case ContentType.exoplanet:
+        return '';
     }
   }
 }

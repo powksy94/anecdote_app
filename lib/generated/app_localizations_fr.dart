@@ -47,6 +47,12 @@ class AppLocalizationsFr extends AppLocalizations {
   String get categoryAnimals => 'Animaux';
 
   @override
+  String get categoryCountry => 'Pays';
+
+  @override
+  String get categoryExoplanet => 'Exoplanète';
+
+  @override
   String get showAnecdote => 'Afficher l\'anecdote';
 
   @override

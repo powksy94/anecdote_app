@@ -25,6 +25,7 @@ class DailyCacheService {
           preview: data['preview'] ?? '',
           details: data['details'] ?? '',
           hasDetails: data['hasDetails'] ?? false,
+          flagSvg: data['flagSvg'] as String?,
         );
       }
       return null;
@@ -42,6 +43,7 @@ class DailyCacheService {
       'preview': content.preview,
       'details': content.details,
       'hasDetails': content.hasDetails,
+      if (content.flagSvg != null) 'flagSvg': content.flagSvg,
     };
     await prefs.setString(_keyFor(type, locale: locale), jsonEncode(data));
   }

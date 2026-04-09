@@ -1,9 +1,12 @@
 import 'dart:convert';
 import 'dart:async';
+import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
 import '../models/content_type.dart';
 import '../models/content_data.dart';
 import '../data/verified_animals.dart';
+import '../data/countries.dart';
+import 'exoplanet_service.dart';
 
 class ApiService {
   final String apiKey;
@@ -26,11 +29,24 @@ class ApiService {
         final animalKeys = verifiedAnimals.keys.toList();
         final selectedAnimal = animalKeys[dayOfYear % animalKeys.length];
         return 'https://api.api-ninjas.com/v1/animals?name=${Uri.encodeComponent(selectedAnimal)}';
+      case ContentType.country:
+        final day = DateTime.now().difference(DateTime(DateTime.now().year, 1, 1)).inDays;
+        final selectedCountry = worldCountries[day % worldCountries.length];
+        return 'https://api.api-ninjas.com/v1/country?name=${Uri.encodeComponent(selectedCountry)}';
+      case ContentType.exoplanet:
+        return '';
     }
   }
 
-  Future<ContentData> fetchContent(ContentType type) async {
+Future<ContentData> fetchContent(ContentType type) async {
     try {
+      if (type == ContentType.exoplanet) {
+        return await ExoplanetService().getDailyContent();
+      }
+      if (type == ContentType.country) {
+        return await _fetchCountryContent();
+      }
+
       final response = await http.get(
         Uri.parse(_getEndpoint(type)),
         headers: {'X-Api-Key': apiKey},
@@ -42,15 +58,58 @@ class ApiService {
 
       final decoded = jsonDecode(response.body);
       return _parseResponse(type, decoded);
-    } catch (e) {
-      if (e is http.ClientException) {
-        throw Exception('Network error');
-      } else if (e is TimeoutException) {
-        throw Exception('Request timed out');
-      } else {
-        throw Exception('$e');
-      }
+    } on http.ClientException {
+      throw Exception('Network error');
+    } on TimeoutException {
+      throw Exception('Request timed out');
     }
+  }
+
+  Future<ContentData> _fetchCountryContent() async {
+    final headers = {'X-Api-Key': apiKey};
+    final day = DateTime.now().difference(DateTime(DateTime.now().year, 1, 1)).inDays;
+
+    // Try today's country, then the next ones as fallback
+    for (int offset = 0; offset < 5; offset++) {
+      final candidate = worldCountries[(day + offset) % worldCountries.length];
+
+      final countryRes = await http.get(
+        Uri.parse('https://api.api-ninjas.com/v1/country?name=${Uri.encodeComponent(candidate)}'),
+        headers: headers,
+      ).timeout(const Duration(seconds: 10));
+
+      if (countryRes.statusCode != 200) {
+        debugPrint('Country "$candidate" returned ${countryRes.statusCode}, trying next...');
+        continue;
+      }
+
+      final decoded = jsonDecode(countryRes.body);
+      if (decoded is! List || decoded.isEmpty) {
+        debugPrint('Country "$candidate" returned empty list, trying next...');
+        continue;
+      }
+
+      final contentData = _parseResponse(ContentType.country, decoded);
+
+      // Use exact name from API response for the flag request
+      final exactName = decoded[0]['name'] as String? ?? candidate;
+
+      final flagRes = await http.get(
+        Uri.parse('https://api.api-ninjas.com/v1/countryflag?country=${Uri.encodeComponent(exactName)}'),
+        headers: headers,
+      ).timeout(const Duration(seconds: 10));
+
+      final flagSvg = flagRes.statusCode == 200 ? flagRes.body : null;
+
+      return ContentData(
+        preview: contentData.preview,
+        details: contentData.details,
+        hasDetails: contentData.hasDetails,
+        flagSvg: flagSvg,
+      );
+    }
+
+    throw Exception('No country data available');
   }
 
   ContentData _parseResponse(ContentType type, dynamic decoded) {
@@ -96,6 +155,66 @@ class ApiService {
           final dateStr = '$day$suffix ${monthNames[now.month]}';
           return ContentData(
             preview: '$dateStr $year\n\n$eventText',
+          );
+        }
+        break;
+
+      case ContentType.country:
+        if (decoded is List && decoded.isNotEmpty) {
+          final c = decoded[0] as Map<String, dynamic>;
+          final name = c['name'] ?? 'Unknown';
+          final iso2 = (c['iso2'] as String? ?? '').toUpperCase();
+          final flag = iso2.length == 2
+              ? iso2.split('').map((ch) => String.fromCharCode(ch.codeUnitAt(0) - 0x41 + 0x1F1E6)).join()
+              : '🌍';
+          final capital = c['capital'] ?? '';
+          final region = c['region'] ?? '';
+          final population = c['population'];
+          final area = c['surface_area'] ?? c['area'];
+          final gdp = c['gdp'];
+          final currency = c['currency'] as Map<String, dynamic>?;
+          final languages = c['languages'] as Map<String, dynamic>?;
+          final lifeExpectancy = c['life_expectancy'];
+          final unemployment = c['unemployment'];
+
+          final details = StringBuffer();
+          if (capital.isNotEmpty) details.writeln('🏛️ Capital: $capital');
+          if (region.isNotEmpty) details.writeln('🌐 Region: $region');
+          if (population != null) {
+            final pop = (population as num).toInt();
+            final formatted = pop >= 1000000
+                ? '${(pop / 1000000).toStringAsFixed(1)}M'
+                : pop >= 1000 ? '${(pop / 1000).toStringAsFixed(0)}K' : '$pop';
+            details.writeln('👥 Population: $formatted');
+          }
+          if (area != null) {
+            final km2 = (area as num).toInt();
+            details.writeln('📐 Area: ${km2.toString().replaceAllMapped(RegExp(r'(\d{1,3})(?=(\d{3})+(?!\d))'), (m) => '${m[1]},')} km²');
+          }
+          if (gdp != null) {
+            final gdpM = (gdp as num).toInt();
+            details.writeln('💰 GDP: \$${(gdpM / 1000).toStringAsFixed(0)}B');
+          }
+          if (currency != null) {
+            final cName = currency['name'] ?? '';
+            final cCode = currency['code'] ?? '';
+            final cSymbol = currency['symbol'] ?? '';
+            details.writeln('💱 Currency: $cName ($cCode $cSymbol)'.trim());
+          }
+          if (languages != null && languages.isNotEmpty) {
+            details.writeln('🗣️ Languages: ${languages.values.join(', ')}');
+          }
+          if (lifeExpectancy != null) {
+            details.writeln('❤️ Life expectancy: ${lifeExpectancy.toStringAsFixed(1)} yrs');
+          }
+          if (unemployment != null) {
+            details.writeln('📊 Unemployment: ${unemployment.toStringAsFixed(1)}%');
+          }
+
+          return ContentData(
+            preview: '$flag $name',
+            details: details.toString().trim(),
+            hasDetails: true,
           );
         }
         break;
@@ -154,6 +273,9 @@ class ApiService {
           );
         }
         break;
+
+      case ContentType.exoplanet:
+        break; // jamais atteint, géré en amont dans fetchContent
     }
     return ContentData(preview: 'Content not available');
   }

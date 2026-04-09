@@ -172,6 +172,18 @@ abstract class AppLocalizations {
   /// **'Animals'**
   String get categoryAnimals;
 
+  /// No description provided for @categoryCountry.
+  ///
+  /// In en, this message translates to:
+  /// **'Countries'**
+  String get categoryCountry;
+
+  /// No description provided for @categoryExoplanet.
+  ///
+  /// In en, this message translates to:
+  /// **'Exoplanet'**
+  String get categoryExoplanet;
+
   /// No description provided for @showAnecdote.
   ///
   /// In en, this message translates to:

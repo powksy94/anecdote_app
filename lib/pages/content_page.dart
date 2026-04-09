@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import '../config/env.dart';
 import '../generated/app_localizations.dart';
 import '../models/content_type.dart';
@@ -62,9 +63,13 @@ class _ContentPageState extends State<ContentPage> {
         widget.contentType,
         locale: _locale,
       );
-      if (cached != null &&
+      // Pour exoplanet, ignorer le cache s'il ne contient pas les emojis de détail (version antérieure)
+      final cacheValid = cached != null &&
           cached.preview.isNotEmpty &&
-          cached.preview != 'Content not available') {
+          cached.preview != 'Content not available' &&
+          (widget.contentType != ContentType.exoplanet ||
+              cached.details.contains('🛸'));
+      if (cacheValid) {
         setState(() {
           contentData = cached;
           isLoading = false;
@@ -78,9 +83,13 @@ class _ContentPageState extends State<ContentPage> {
         widget.contentType,
         locale: 'en',
       );
-      if (englishContent == null ||
-          englishContent.preview.isEmpty ||
-          englishContent.preview == 'Content not available') {
+      // Même vérification d'intégrité que pour la locale courante
+      final englishCacheValid = englishContent != null &&
+          englishContent.preview.isNotEmpty &&
+          englishContent.preview != 'Content not available' &&
+          (widget.contentType != ContentType.exoplanet ||
+              englishContent.details.contains('🛸'));
+      if (!englishCacheValid) {
         englishContent = await apiService.fetchContent(widget.contentType);
         await cacheService.saveTodayContent(
           widget.contentType,
@@ -89,7 +98,7 @@ class _ContentPageState extends State<ContentPage> {
         );
       }
 
-      // 3. Traduire si nécessaire
+      // 3. Traduire si nécessaire (emojis préservés via placeholders dans TranslationService)
       ContentData finalContent = englishContent;
       if (_locale != 'en') {
         finalContent = await translationService.translateContent(
@@ -132,6 +141,7 @@ class _ContentPageState extends State<ContentPage> {
     final theme = Theme.of(context);
     final loc = AppLocalizations.of(context)!;
     final gradient = widget.contentType.gradient;
+    final accentColor = widget.contentType.accentColor;
 
     return Scaffold(
       extendBodyBehindAppBar: true,
@@ -193,14 +203,145 @@ class _ContentPageState extends State<ContentPage> {
                   child: CircularProgressIndicator(color: Colors.white),
                 )
               : hasError
-                  ? _buildErrorWidget(theme, gradient)
-                  : _buildContentWidget(theme, gradient),
+                  ? _buildErrorWidget(theme, gradient, accentColor)
+                  : _buildContentWidget(theme, gradient, accentColor),
         ),
       ),
     );
   }
 
-  Widget _buildErrorWidget(ThemeData theme, List<Color> gradient) {
+  Widget _buildCountryContent(ThemeData theme, List<Color> gradient, Color accentColor) {
+    final loc = AppLocalizations.of(context)!;
+    final preview = contentData?.preview ?? '';
+    final emojiFlag = RegExp(r'[\u{1F1E0}-\u{1F1FF}]{2}', unicode: true).firstMatch(preview)?.group(0) ?? '🌍';
+    final countryName = preview.replaceAll(RegExp(r'[\u{1F1E0}-\u{1F1FF}]{2}\s*', unicode: true), '').trim();
+    final detailLines = (contentData?.details ?? '')
+        .split('\n')
+        .where((l) => l.trim().isNotEmpty)
+        .toList();
+
+    return SingleChildScrollView(
+      padding: const EdgeInsets.all(24),
+      child: Column(
+        children: [
+          Container(
+            width: double.infinity,
+            constraints: const BoxConstraints(maxWidth: 400),
+            decoration: BoxDecoration(
+              color: theme.colorScheme.surface,
+              borderRadius: BorderRadius.circular(24),
+              boxShadow: [
+                BoxShadow(
+                  color: accentColor.withValues(alpha:0.3),
+                  blurRadius: 30,
+                  spreadRadius: 5,
+                  offset: const Offset(0, 10),
+                ),
+              ],
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                // Flag SVG — full width, top of card
+                ClipRRect(
+                  borderRadius: const BorderRadius.vertical(top: Radius.circular(24)),
+                  child: contentData?.flagSvg != null
+                      ? SvgPicture.string(
+                          contentData!.flagSvg!,
+                          width: double.infinity,
+                          fit: BoxFit.fitWidth,
+                        )
+                      : Container(
+                          height: 160,
+                          decoration: BoxDecoration(
+                            gradient: LinearGradient(colors: gradient),
+                          ),
+                          child: Center(
+                            child: Text(emojiFlag, style: const TextStyle(fontSize: 100)),
+                          ),
+                        ),
+                ),
+                // Country name
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(24, 20, 24, 4),
+                  child: Text(
+                    countryName,
+                    textAlign: TextAlign.center,
+                    style: theme.textTheme.headlineSmall?.copyWith(
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 24),
+                  child: Divider(color: accentColor.withValues(alpha:0.3)),
+                ),
+                // Detail rows — always visible
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(24, 8, 24, 20),
+                  child: Column(
+                    children: detailLines.map((line) {
+                      final parts = line.split(':');
+                      final label = parts[0].trim();
+                      final value = parts.length > 1 ? parts.sublist(1).join(':').trim() : '';
+                      return Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 6),
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(label, style: theme.textTheme.bodyMedium?.copyWith(fontWeight: FontWeight.w600)),
+                            if (value.isNotEmpty) ...[
+                              const SizedBox(width: 4),
+                              const Text(':'),
+                              const SizedBox(width: 6),
+                              Expanded(
+                                child: Text(
+                                  value,
+                                  style: theme.textTheme.bodyMedium?.copyWith(
+                                    color: theme.colorScheme.onSurface.withValues(alpha: 0.75),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ],
+                        ),
+                      );
+                    }).toList(),
+                  ),
+                ),
+                // Timer badge
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 20),
+                  child: Center(
+                    child: Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                      decoration: BoxDecoration(
+                        color: theme.colorScheme.surfaceContainerHighest.withValues(alpha: 0.5),
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Icon(Icons.schedule_rounded, size: 16, color: accentColor),
+                          const SizedBox(width: 8),
+                          Text(
+                            loc.newContentIn(_getTimeUntilMidnight()),
+                            style: TextStyle(fontSize: 13, color: accentColor, fontWeight: FontWeight.w500),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildErrorWidget(ThemeData theme, List<Color> gradient, Color accentColor) {
     final loc = AppLocalizations.of(context)!;
     return Center(
       child: Padding(
@@ -256,7 +397,7 @@ class _ContentPageState extends State<ContentPage> {
                 icon: const Icon(Icons.refresh_rounded),
                 label: Text(loc.retry),
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: gradient[0],
+                  backgroundColor: accentColor,
                   foregroundColor: Colors.white,
                   padding: const EdgeInsets.symmetric(
                     horizontal: 32,
@@ -274,7 +415,10 @@ class _ContentPageState extends State<ContentPage> {
     );
   }
 
-  Widget _buildContentWidget(ThemeData theme, List<Color> gradient) {
+  Widget _buildContentWidget(ThemeData theme, List<Color> gradient, Color accentColor) {
+    if (widget.contentType == ContentType.country) {
+      return _buildCountryContent(theme, gradient, accentColor);
+    }
     final loc = AppLocalizations.of(context)!;
     return SingleChildScrollView(
       padding: const EdgeInsets.all(24),
@@ -289,7 +433,7 @@ class _ContentPageState extends State<ContentPage> {
               borderRadius: BorderRadius.circular(24),
               boxShadow: [
                 BoxShadow(
-                  color: gradient[0].withValues(alpha:0.3),
+                  color: accentColor.withValues(alpha:0.3),
                   blurRadius: 30,
                   spreadRadius: 5,
                   offset: const Offset(0, 10),
@@ -332,8 +476,8 @@ class _ContentPageState extends State<ContentPage> {
                       decoration: BoxDecoration(
                         gradient: LinearGradient(
                           colors: [
-                            gradient[0].withValues(alpha:0.15),
-                            gradient[1].withValues(alpha:0.15),
+                            accentColor.withValues(alpha:0.15),
+                            accentColor.withValues(alpha:0.08),
                           ],
                         ),
                         borderRadius: BorderRadius.circular(16),
@@ -346,14 +490,14 @@ class _ContentPageState extends State<ContentPage> {
                                 ? Icons.visibility_off_rounded
                                 : Icons.visibility_rounded,
                             size: 20,
-                            color: gradient[0],
+                            color: accentColor,
                           ),
                           const SizedBox(width: 8),
                           Text(
                             showDetails ? loc.hideDetails : loc.showDetails,
                             style: TextStyle(
                               fontSize: 14,
-                              color: gradient[0],
+                              color: accentColor,
                               fontWeight: FontWeight.w600,
                             ),
                           ),
@@ -364,7 +508,7 @@ class _ContentPageState extends State<ContentPage> {
                             child: Icon(
                               Icons.keyboard_arrow_down_rounded,
                               size: 20,
-                              color: gradient[0],
+                              color: accentColor,
                             ),
                           ),
                         ],
@@ -381,7 +525,7 @@ class _ContentPageState extends State<ContentPage> {
                         color: theme.colorScheme.surfaceContainerHighest.withValues(alpha:0.5),
                         borderRadius: BorderRadius.circular(16),
                         border: Border.all(
-                          color: gradient[0].withValues(alpha:0.2),
+                          color: accentColor.withValues(alpha:0.2),
                           width: 1,
                         ),
                       ),
@@ -414,14 +558,14 @@ class _ContentPageState extends State<ContentPage> {
                       Icon(
                         Icons.schedule_rounded,
                         size: 16,
-                        color: gradient[0],
+                        color: accentColor,
                       ),
                       const SizedBox(width: 8),
                       Text(
                         loc.newContentIn(_getTimeUntilMidnight()),
                         style: TextStyle(
                           fontSize: 13,
-                          color: gradient[0],
+                          color: accentColor,
                           fontWeight: FontWeight.w500,
                         ),
                       ),
