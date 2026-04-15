@@ -231,6 +231,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Spanish'**
   String get spanish;
+
+  /// No description provided for @popMillion.
+  ///
+  /// In en, this message translates to:
+  /// **'M'**
+  String get popMillion;
+
+  /// No description provided for @popBillion.
+  ///
+  /// In en, this message translates to:
+  /// **'B'**
+  String get popBillion;
 }
 
 class _AppLocalizationsDelegate

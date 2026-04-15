@@ -72,8 +72,9 @@ Future<List<Exoplanet>> loadExoplanets() async {
 /// Retourne l'exoplanète du jour à partir d'une liste déjà chargée.
 /// Avance d'une planète par jour depuis le 1er janvier 2026.
 Exoplanet dailyExoplanet(List<Exoplanet> planets) {
-  final origin = DateTime(2026, 1, 1);
-  final today  = DateTime.now();
-  final dayIndex = today.difference(origin).inDays.abs();
+  final now       = DateTime.now();
+  final todayUtc  = DateTime.utc(now.year, now.month, now.day);
+  final originUtc = DateTime.utc(2026, 1, 1);
+  final dayIndex  = todayUtc.difference(originUtc).inDays.abs();
   return planets[dayIndex % planets.length];
 }

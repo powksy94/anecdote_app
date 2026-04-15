@@ -75,4 +75,10 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get spanish => 'Espagnol';
+
+  @override
+  String get popMillion => 'M';
+
+  @override
+  String get popBillion => 'Md';
 }

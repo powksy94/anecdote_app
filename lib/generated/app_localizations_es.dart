@@ -75,4 +75,10 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get spanish => 'Español';
+
+  @override
+  String get popMillion => 'M';
+
+  @override
+  String get popBillion => 'MM';
 }

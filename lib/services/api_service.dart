@@ -8,6 +8,15 @@ import '../data/verified_animals.dart';
 import '../data/countries.dart';
 import 'exoplanet_service.dart';
 
+/// Nombre de jours écoulés depuis le 1er janvier de l'année courante.
+/// Utilise UTC pour l'arithmétique afin d'éviter le décalage DST (heure d'été).
+int _dayOfYear() {
+  final now = DateTime.now();
+  final todayUtc = DateTime.utc(now.year, now.month, now.day);
+  final startOfYearUtc = DateTime.utc(now.year, 1, 1);
+  return todayUtc.difference(startOfYearUtc).inDays;
+}
+
 class ApiService {
   final String apiKey;
 
@@ -25,12 +34,12 @@ class ApiService {
         final now = DateTime.now();
         return 'https://api.api-ninjas.com/v1/historicalevents?month=${now.month}&day=${now.day}';
       case ContentType.animals:
-        final dayOfYear = DateTime.now().difference(DateTime(DateTime.now().year, 1, 1)).inDays;
+        final dayOfYear = _dayOfYear();
         final animalKeys = verifiedAnimals.keys.toList();
         final selectedAnimal = animalKeys[dayOfYear % animalKeys.length];
         return 'https://api.api-ninjas.com/v1/animals?name=${Uri.encodeComponent(selectedAnimal)}';
       case ContentType.country:
-        final day = DateTime.now().difference(DateTime(DateTime.now().year, 1, 1)).inDays;
+        final day = _dayOfYear();
         final selectedCountry = worldCountries[day % worldCountries.length];
         return 'https://api.api-ninjas.com/v1/country?name=${Uri.encodeComponent(selectedCountry)}';
       case ContentType.exoplanet:
@@ -67,11 +76,13 @@ Future<ContentData> fetchContent(ContentType type) async {
 
   Future<ContentData> _fetchCountryContent() async {
     final headers = {'X-Api-Key': apiKey};
-    final day = DateTime.now().difference(DateTime(DateTime.now().year, 1, 1)).inDays;
+    final day = _dayOfYear();
+    // Le pas de fallback est ~1/5 de la liste pour ne jamais coïncider avec un jour adjacent
+    final step = worldCountries.length ~/ 5;
 
-    // Try today's country, then the next ones as fallback
+    // Try today's country, then fallbacks at large intervals (never day+1, day+2…)
     for (int offset = 0; offset < 5; offset++) {
-      final candidate = worldCountries[(day + offset) % worldCountries.length];
+      final candidate = worldCountries[(day + offset * step) % worldCountries.length];
 
       final countryRes = await http.get(
         Uri.parse('https://api.api-ninjas.com/v1/country?name=${Uri.encodeComponent(candidate)}'),
@@ -181,10 +192,18 @@ Future<ContentData> fetchContent(ContentType type) async {
           if (capital.isNotEmpty) details.writeln('🏛️ Capital: $capital');
           if (region.isNotEmpty) details.writeln('🌐 Region: $region');
           if (population != null) {
-            final pop = (population as num).toInt();
-            final formatted = pop >= 1000000
-                ? '${(pop / 1000000).toStringAsFixed(1)}M'
-                : pop >= 1000 ? '${(pop / 1000).toStringAsFixed(0)}K' : '$pop';
+            // L'API retourne la population en milliers → multiplier par 1000
+            final pop = ((population as num) * 1000).toInt();
+            final String formatted;
+            if (pop >= 1000000000) {
+              formatted = '${(pop / 1000000000).toStringAsFixed(1)}B';
+            } else if (pop >= 1000000) {
+              formatted = '${(pop / 1000000).toStringAsFixed(1)}M';
+            } else if (pop >= 1000) {
+              formatted = '${(pop / 1000).toStringAsFixed(0)}K';
+            } else {
+              formatted = '$pop';
+            }
             details.writeln('👥 Population: $formatted');
           }
           if (area != null) {
@@ -227,7 +246,7 @@ Future<ContentData> fetchContent(ContentType type) async {
           final characteristics = animal['characteristics'] as Map<String, dynamic>? ?? {};
           final locations = animal['locations'] as List? ?? [];
 
-          final dayOfYear = DateTime.now().difference(DateTime(DateTime.now().year, 1, 1)).inDays;
+          final dayOfYear = _dayOfYear();
           final animalKeys = verifiedAnimals.keys.toList();
           final searchKey = animalKeys[dayOfYear % animalKeys.length];
           final emoji = animalEmojis[searchKey] ?? '🐾';

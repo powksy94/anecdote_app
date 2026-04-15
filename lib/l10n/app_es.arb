@@ -26,5 +26,7 @@
   "translationError": "Error de traducción",
   "english": "Inglés",
   "french": "Francés",
-  "spanish": "Español"
+  "spanish": "Español",
+  "popMillion": "M",
+  "popBillion": "MM"
 }
