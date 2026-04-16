@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:async';
 import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
+import 'package:shared_preferences/shared_preferences.dart';
 import '../models/content_type.dart';
 import '../models/content_data.dart';
 import '../data/verified_animals.dart';
@@ -55,6 +56,9 @@ Future<ContentData> fetchContent(ContentType type) async {
       if (type == ContentType.country) {
         return await _fetchCountryContent();
       }
+      if (type == ContentType.chuckNorris) {
+        return await _fetchChuckNorrisContent();
+      }
 
       final response = await http.get(
         Uri.parse(_getEndpoint(type)),
@@ -72,6 +76,42 @@ Future<ContentData> fetchContent(ContentType type) async {
     } on TimeoutException {
       throw Exception('Request timed out');
     }
+  }
+
+  static const String _chuckHistoryKey = 'chuck_norris_history';
+  static const int _chuckHistorySize = 30;
+
+  Future<ContentData> _fetchChuckNorrisContent() async {
+    final prefs = await SharedPreferences.getInstance();
+    final history = prefs.getStringList(_chuckHistoryKey) ?? [];
+
+    String lastJoke = 'No joke';
+
+    for (int attempt = 0; attempt < 5; attempt++) {
+      final response = await http.get(
+        Uri.parse('https://api.api-ninjas.com/v1/chucknorris'),
+        headers: {'X-Api-Key': apiKey},
+      ).timeout(const Duration(seconds: 10));
+
+      if (response.statusCode != 200) continue;
+
+      final decoded = jsonDecode(response.body);
+      if (decoded is! Map) continue;
+
+      final joke = decoded['joke'] as String? ?? '';
+      if (joke.isEmpty) continue;
+
+      lastJoke = joke;
+
+      if (!history.contains(joke)) break;
+      debugPrint('Chuck Norris duplicate (attempt $attempt), retrying...');
+    }
+
+    history.add(lastJoke);
+    if (history.length > _chuckHistorySize) history.removeAt(0);
+    await prefs.setStringList(_chuckHistoryKey, history);
+
+    return ContentData(preview: lastJoke);
   }
 
   Future<ContentData> _fetchCountryContent() async {
