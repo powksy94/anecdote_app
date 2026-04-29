@@ -38,7 +38,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get categoryChuckNorris => 'Chuck Norris';
 
   @override
-  String get categoryAdvice => 'Conseil';
+  String get categoryAdvice => 'Phrase de Célébrité';
 
   @override
   String get categoryHistory => 'Histoire';

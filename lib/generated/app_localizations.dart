@@ -157,7 +157,7 @@ abstract class AppLocalizations {
   /// No description provided for @categoryAdvice.
   ///
   /// In en, this message translates to:
-  /// **'Advice'**
+  /// **'Celebrity Quote'**
   String get categoryAdvice;
 
   /// No description provided for @categoryHistory.

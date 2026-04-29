@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'dart:async';
+import 'dart:math' as math;
 import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
@@ -9,13 +10,37 @@ import '../data/verified_animals.dart';
 import '../data/countries.dart';
 import 'exoplanet_service.dart';
 
-/// Nombre de jours écoulés depuis le 1er janvier de l'année courante.
-/// Utilise UTC pour l'arithmétique afin d'éviter le décalage DST (heure d'été).
 int _dayOfYear() {
   final now = DateTime.now();
   final todayUtc = DateTime.utc(now.year, now.month, now.day);
   final startOfYearUtc = DateTime.utc(now.year, 1, 1);
   return todayUtc.difference(startOfYearUtc).inDays;
+}
+
+/// Jours écoulés depuis le 1er janvier 2026 (origine de l'app).
+/// Chaque jour = index unique → un pays différent sans répéter avant d'avoir
+/// tout parcouru.
+int _daysSinceOrigin() {
+  final now = DateTime.now();
+  final todayUtc = DateTime.utc(now.year, now.month, now.day);
+  final originUtc = DateTime.utc(2026, 1, 1);
+  return todayUtc.difference(originUtc).inDays.abs();
+}
+
+/// Liste de pays dans un ordre aléatoire déterministe (seed fixe).
+/// Brise le regroupement géographique de worldCountries.
+List<String>? _shuffledCountriesCache;
+List<String> get _shuffledCountries {
+  if (_shuffledCountriesCache != null) return _shuffledCountriesCache!;
+  final list = List<String>.from(worldCountries);
+  final rng = math.Random(20260101);
+  for (int i = list.length - 1; i > 0; i--) {
+    final j = rng.nextInt(i + 1);
+    final tmp = list[i];
+    list[i] = list[j];
+    list[j] = tmp;
+  }
+  return _shuffledCountriesCache = list;
 }
 
 class ApiService {
@@ -40,8 +65,7 @@ class ApiService {
         final selectedAnimal = animalKeys[dayOfYear % animalKeys.length];
         return 'https://api.api-ninjas.com/v1/animals?name=${Uri.encodeComponent(selectedAnimal)}';
       case ContentType.country:
-        final day = _dayOfYear();
-        final selectedCountry = worldCountries[day % worldCountries.length];
+        final selectedCountry = _shuffledCountries[_daysSinceOrigin() % _shuffledCountries.length];
         return 'https://api.api-ninjas.com/v1/country?name=${Uri.encodeComponent(selectedCountry)}';
       case ContentType.exoplanet:
         return '';
@@ -116,13 +140,12 @@ Future<ContentData> fetchContent(ContentType type) async {
 
   Future<ContentData> _fetchCountryContent() async {
     final headers = {'X-Api-Key': apiKey};
-    final day = _dayOfYear();
-    // Le pas de fallback est ~1/5 de la liste pour ne jamais coïncider avec un jour adjacent
-    final step = worldCountries.length ~/ 5;
+    final countries = _shuffledCountries;
+    final day = _daysSinceOrigin();
+    final step = countries.length ~/ 5;
 
-    // Try today's country, then fallbacks at large intervals (never day+1, day+2…)
     for (int offset = 0; offset < 5; offset++) {
-      final candidate = worldCountries[(day + offset * step) % worldCountries.length];
+      final candidate = countries[(day + offset * step) % countries.length];
 
       final countryRes = await http.get(
         Uri.parse('https://api.api-ninjas.com/v1/country?name=${Uri.encodeComponent(candidate)}'),
@@ -197,15 +220,20 @@ Future<ContentData> fetchContent(ContentType type) async {
       case ContentType.history:
         if (decoded is List && decoded.isNotEmpty) {
           final event = decoded[0];
-          final year = event['year'] ?? '';
-          final eventText = event['event'] ?? '';
+          final rawYear = event['year'] as String? ?? '';
+          final yearInt = int.tryParse(rawYear) ?? 0;
+          final displayYear = yearInt < 0 ? '${yearInt.abs()} BC' : rawYear;
+          final eventText = (event['event'] as String? ?? '')
+              .replaceAll(RegExp(r'\[citation needed\]', caseSensitive: false), '')
+              .replaceAll(RegExp(r'\[réf\. nécessaire\]', caseSensitive: false), '')
+              .replaceAll(RegExp(r'\[[^\]]*\]'), '')
+              .trim();
           final now = DateTime.now();
           final monthNames = ['', 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
           final day = now.day;
           final suffix = day == 1 ? 'st' : day == 2 ? 'nd' : day == 3 ? 'rd' : 'th';
-          final dateStr = '$day$suffix ${monthNames[now.month]}';
           return ContentData(
-            preview: '$dateStr $year\n\n$eventText',
+            preview: '$day$suffix ${monthNames[now.month]} $displayYear\n\n$eventText',
           );
         }
         break;
