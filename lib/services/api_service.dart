@@ -1,13 +1,12 @@
 import 'dart:convert';
 import 'dart:async';
-import 'dart:math' as math;
 import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 import '../models/content_type.dart';
 import '../models/content_data.dart';
 import '../data/verified_animals.dart';
-import '../data/countries.dart';
+import 'country_service.dart';
 import 'exoplanet_service.dart';
 
 int _dayOfYear() {
@@ -15,32 +14,6 @@ int _dayOfYear() {
   final todayUtc = DateTime.utc(now.year, now.month, now.day);
   final startOfYearUtc = DateTime.utc(now.year, 1, 1);
   return todayUtc.difference(startOfYearUtc).inDays;
-}
-
-/// Jours écoulés depuis le 1er janvier 2026 (origine de l'app).
-/// Chaque jour = index unique → un pays différent sans répéter avant d'avoir
-/// tout parcouru.
-int _daysSinceOrigin() {
-  final now = DateTime.now();
-  final todayUtc = DateTime.utc(now.year, now.month, now.day);
-  final originUtc = DateTime.utc(2026, 1, 1);
-  return todayUtc.difference(originUtc).inDays.abs();
-}
-
-/// Liste de pays dans un ordre aléatoire déterministe (seed fixe).
-/// Brise le regroupement géographique de worldCountries.
-List<String>? _shuffledCountriesCache;
-List<String> get _shuffledCountries {
-  if (_shuffledCountriesCache != null) return _shuffledCountriesCache!;
-  final list = List<String>.from(worldCountries);
-  final rng = math.Random(20260101);
-  for (int i = list.length - 1; i > 0; i--) {
-    final j = rng.nextInt(i + 1);
-    final tmp = list[i];
-    list[i] = list[j];
-    list[j] = tmp;
-  }
-  return _shuffledCountriesCache = list;
 }
 
 class ApiService {
@@ -54,7 +27,7 @@ class ApiService {
         return 'https://api.api-ninjas.com/v1/facts';
       case ContentType.chuckNorris:
         return 'https://api.api-ninjas.com/v1/chucknorris';
-      case ContentType.advice:
+      case ContentType.celebrityQuote:
         return 'https://api.api-ninjas.com/v1/quotes';
       case ContentType.history:
         final now = DateTime.now();
@@ -65,20 +38,21 @@ class ApiService {
         final selectedAnimal = animalKeys[dayOfYear % animalKeys.length];
         return 'https://api.api-ninjas.com/v1/animals?name=${Uri.encodeComponent(selectedAnimal)}';
       case ContentType.country:
-        final selectedCountry = _shuffledCountries[_daysSinceOrigin() % _shuffledCountries.length];
-        return 'https://api.api-ninjas.com/v1/country?name=${Uri.encodeComponent(selectedCountry)}';
+      case ContentType.frenchDepartment:
+      case ContentType.pacificIsland:
+      case ContentType.world:
       case ContentType.exoplanet:
         return '';
     }
   }
 
-Future<ContentData> fetchContent(ContentType type) async {
+  Future<ContentData> fetchContent(ContentType type) async {
     try {
       if (type == ContentType.exoplanet) {
         return await ExoplanetService().getDailyContent();
       }
       if (type == ContentType.country) {
-        return await _fetchCountryContent();
+        return await CountryService().getDailyContent();
       }
       if (type == ContentType.chuckNorris) {
         return await _fetchChuckNorrisContent();
@@ -138,80 +112,27 @@ Future<ContentData> fetchContent(ContentType type) async {
     return ContentData(preview: lastJoke);
   }
 
-  Future<ContentData> _fetchCountryContent() async {
-    final headers = {'X-Api-Key': apiKey};
-    final countries = _shuffledCountries;
-    final day = _daysSinceOrigin();
-    final step = countries.length ~/ 5;
-
-    for (int offset = 0; offset < 5; offset++) {
-      final candidate = countries[(day + offset * step) % countries.length];
-
-      final countryRes = await http.get(
-        Uri.parse('https://api.api-ninjas.com/v1/country?name=${Uri.encodeComponent(candidate)}'),
-        headers: headers,
-      ).timeout(const Duration(seconds: 10));
-
-      if (countryRes.statusCode != 200) {
-        debugPrint('Country "$candidate" returned ${countryRes.statusCode}, trying next...');
-        continue;
-      }
-
-      final decoded = jsonDecode(countryRes.body);
-      if (decoded is! List || decoded.isEmpty) {
-        debugPrint('Country "$candidate" returned empty list, trying next...');
-        continue;
-      }
-
-      final contentData = _parseResponse(ContentType.country, decoded);
-
-      // Use exact name from API response for the flag request
-      final exactName = decoded[0]['name'] as String? ?? candidate;
-
-      final flagRes = await http.get(
-        Uri.parse('https://api.api-ninjas.com/v1/countryflag?country=${Uri.encodeComponent(exactName)}'),
-        headers: headers,
-      ).timeout(const Duration(seconds: 10));
-
-      final flagSvg = flagRes.statusCode == 200 ? flagRes.body : null;
-
-      return ContentData(
-        preview: contentData.preview,
-        details: contentData.details,
-        hasDetails: contentData.hasDetails,
-        flagSvg: flagSvg,
-      );
-    }
-
-    throw Exception('No country data available');
-  }
-
   ContentData _parseResponse(ContentType type, dynamic decoded) {
     switch (type) {
       case ContentType.anecdote:
         if (decoded is List && decoded.isNotEmpty) {
-          return ContentData(
-            preview: decoded[0]['fact'] ?? 'No content',
-          );
+          return ContentData(preview: decoded[0]['fact'] ?? 'No content');
         }
         break;
 
       case ContentType.chuckNorris:
         if (decoded is Map) {
-          return ContentData(
-            preview: decoded['joke'] ?? 'No joke',
-          );
+          return ContentData(preview: decoded['joke'] ?? 'No joke');
         }
         break;
 
-      case ContentType.advice:
+      case ContentType.celebrityQuote:
         if (decoded is List && decoded.isNotEmpty) {
-          final quote = decoded[0]['quote'] ?? '';
+          final quote  = decoded[0]['quote']  ?? '';
           final author = decoded[0]['author'] ?? 'Anonymous';
-          final category = decoded[0]['category'] ?? '';
           return ContentData(
             preview: '"$quote"',
-            details: '— $author\nCategory: $category',
+            details: '— $author',
             hasDetails: true,
           );
         }
@@ -219,18 +140,16 @@ Future<ContentData> fetchContent(ContentType type) async {
 
       case ContentType.history:
         if (decoded is List && decoded.isNotEmpty) {
-          final event = decoded[0];
-          final rawYear = event['year'] as String? ?? '';
-          final yearInt = int.tryParse(rawYear) ?? 0;
+          final event    = decoded[0];
+          final rawYear  = event['year'] as String? ?? '';
+          final yearInt  = int.tryParse(rawYear) ?? 0;
           final displayYear = yearInt < 0 ? '${yearInt.abs()} BC' : rawYear;
           final eventText = (event['event'] as String? ?? '')
-              .replaceAll(RegExp(r'\[citation needed\]', caseSensitive: false), '')
-              .replaceAll(RegExp(r'\[réf\. nécessaire\]', caseSensitive: false), '')
               .replaceAll(RegExp(r'\[[^\]]*\]'), '')
               .trim();
           final now = DateTime.now();
           final monthNames = ['', 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-          final day = now.day;
+          final day    = now.day;
           final suffix = day == 1 ? 'st' : day == 2 ? 'nd' : day == 3 ? 'rd' : 'th';
           return ContentData(
             preview: '$day$suffix ${monthNames[now.month]} $displayYear\n\n$eventText',
@@ -238,131 +157,63 @@ Future<ContentData> fetchContent(ContentType type) async {
         }
         break;
 
-      case ContentType.country:
-        if (decoded is List && decoded.isNotEmpty) {
-          final c = decoded[0] as Map<String, dynamic>;
-          final name = c['name'] ?? 'Unknown';
-          final iso2 = (c['iso2'] as String? ?? '').toUpperCase();
-          final flag = iso2.length == 2
-              ? iso2.split('').map((ch) => String.fromCharCode(ch.codeUnitAt(0) - 0x41 + 0x1F1E6)).join()
-              : '🌍';
-          final capital = c['capital'] ?? '';
-          final region = c['region'] ?? '';
-          final population = c['population'];
-          final area = c['surface_area'] ?? c['area'];
-          final gdp = c['gdp'];
-          final currency = c['currency'] as Map<String, dynamic>?;
-          final languages = c['languages'] as Map<String, dynamic>?;
-          final lifeExpectancy = c['life_expectancy'];
-          final unemployment = c['unemployment'];
-
-          final details = StringBuffer();
-          if (capital.isNotEmpty) details.writeln('🏛️ Capital: $capital');
-          if (region.isNotEmpty) details.writeln('🌐 Region: $region');
-          if (population != null) {
-            // L'API retourne la population en milliers → multiplier par 1000
-            final pop = ((population as num) * 1000).toInt();
-            final String formatted;
-            if (pop >= 1000000000) {
-              formatted = '${(pop / 1000000000).toStringAsFixed(1)}B';
-            } else if (pop >= 1000000) {
-              formatted = '${(pop / 1000000).toStringAsFixed(1)}M';
-            } else if (pop >= 1000) {
-              formatted = '${(pop / 1000).toStringAsFixed(0)}K';
-            } else {
-              formatted = '$pop';
-            }
-            details.writeln('👥 Population: $formatted');
-          }
-          if (area != null) {
-            final km2 = (area as num).toInt();
-            details.writeln('📐 Area: ${km2.toString().replaceAllMapped(RegExp(r'(\d{1,3})(?=(\d{3})+(?!\d))'), (m) => '${m[1]},')} km²');
-          }
-          if (gdp != null) {
-            final gdpM = (gdp as num).toInt();
-            details.writeln('💰 GDP: \$${(gdpM / 1000).toStringAsFixed(0)}B');
-          }
-          if (currency != null) {
-            final cName = currency['name'] ?? '';
-            final cCode = currency['code'] ?? '';
-            final cSymbol = currency['symbol'] ?? '';
-            details.writeln('💱 Currency: $cName ($cCode $cSymbol)'.trim());
-          }
-          if (languages != null && languages.isNotEmpty) {
-            details.writeln('🗣️ Languages: ${languages.values.join(', ')}');
-          }
-          if (lifeExpectancy != null) {
-            details.writeln('❤️ Life expectancy: ${lifeExpectancy.toStringAsFixed(1)} yrs');
-          }
-          if (unemployment != null) {
-            details.writeln('📊 Unemployment: ${unemployment.toStringAsFixed(1)}%');
-          }
-
-          return ContentData(
-            preview: '$flag $name',
-            details: details.toString().trim(),
-            hasDetails: true,
-          );
-        }
-        break;
-
       case ContentType.animals:
         if (decoded is List && decoded.isNotEmpty) {
-          final animal = decoded[0];
-          final name = animal['name'] ?? 'Unknown';
-          final taxonomy = animal['taxonomy'] as Map<String, dynamic>? ?? {};
+          final animal         = decoded[0];
+          final name           = animal['name'] ?? 'Unknown';
+          final taxonomy       = animal['taxonomy']       as Map<String, dynamic>? ?? {};
           final characteristics = animal['characteristics'] as Map<String, dynamic>? ?? {};
-          final locations = animal['locations'] as List? ?? [];
+          final locations      = animal['locations']      as List? ?? [];
 
-          final dayOfYear = _dayOfYear();
+          final dayOfYear  = _dayOfYear();
           final animalKeys = verifiedAnimals.keys.toList();
-          final searchKey = animalKeys[dayOfYear % animalKeys.length];
-          final emoji = animalEmojis[searchKey] ?? '🐾';
-          final preview = '$emoji $name';
+          final searchKey  = animalKeys[dayOfYear % animalKeys.length];
+          final emoji      = animalEmojis[searchKey] ?? '🐾';
 
-          final detailsBuffer = StringBuffer();
-
+          final buf = StringBuffer();
           if (taxonomy.isNotEmpty) {
-            detailsBuffer.writeln('📚 TAXONOMY');
-            if (taxonomy['kingdom'] != null) detailsBuffer.writeln('  Kingdom: ${taxonomy['kingdom']}');
-            if (taxonomy['phylum'] != null) detailsBuffer.writeln('  Phylum: ${taxonomy['phylum']}');
-            if (taxonomy['class'] != null) detailsBuffer.writeln('  Class: ${taxonomy['class']}');
-            if (taxonomy['order'] != null) detailsBuffer.writeln('  Order: ${taxonomy['order']}');
-            if (taxonomy['family'] != null) detailsBuffer.writeln('  Family: ${taxonomy['family']}');
-            if (taxonomy['genus'] != null) detailsBuffer.writeln('  Genus: ${taxonomy['genus']}');
-            if (taxonomy['scientific_name'] != null) detailsBuffer.writeln('  Scientific name: ${taxonomy['scientific_name']}');
-            detailsBuffer.writeln('');
+            buf.writeln('📚 TAXONOMY');
+            if (taxonomy['kingdom']       != null) buf.writeln('  Kingdom: ${taxonomy['kingdom']}');
+            if (taxonomy['phylum']        != null) buf.writeln('  Phylum: ${taxonomy['phylum']}');
+            if (taxonomy['class']         != null) buf.writeln('  Class: ${taxonomy['class']}');
+            if (taxonomy['order']         != null) buf.writeln('  Order: ${taxonomy['order']}');
+            if (taxonomy['family']        != null) buf.writeln('  Family: ${taxonomy['family']}');
+            if (taxonomy['genus']         != null) buf.writeln('  Genus: ${taxonomy['genus']}');
+            if (taxonomy['scientific_name'] != null) buf.writeln('  Scientific name: ${taxonomy['scientific_name']}');
+            buf.writeln('');
           }
-
           if (characteristics.isNotEmpty) {
-            detailsBuffer.writeln('📊 CHARACTERISTICS');
-            if (characteristics['lifespan'] != null) detailsBuffer.writeln('  Lifespan: ${characteristics['lifespan']}');
-            if (characteristics['weight'] != null) detailsBuffer.writeln('  Weight: ${characteristics['weight']}');
-            if (characteristics['height'] != null) detailsBuffer.writeln('  Height: ${characteristics['height']}');
-            if (characteristics['length'] != null) detailsBuffer.writeln('  Length: ${characteristics['length']}');
-            if (characteristics['top_speed'] != null) detailsBuffer.writeln('  Top speed: ${characteristics['top_speed']}');
-            if (characteristics['diet'] != null) detailsBuffer.writeln('  Diet: ${characteristics['diet']}');
-            if (characteristics['habitat'] != null) detailsBuffer.writeln('  Habitat: ${characteristics['habitat']}');
-            if (characteristics['prey'] != null) detailsBuffer.writeln('  Prey: ${characteristics['prey']}');
-            if (characteristics['predators'] != null) detailsBuffer.writeln('  Predators: ${characteristics['predators']}');
-            detailsBuffer.writeln('');
+            buf.writeln('📊 CHARACTERISTICS');
+            if (characteristics['lifespan']  != null) buf.writeln('  Lifespan: ${characteristics['lifespan']}');
+            if (characteristics['weight']    != null) buf.writeln('  Weight: ${characteristics['weight']}');
+            if (characteristics['height']    != null) buf.writeln('  Height: ${characteristics['height']}');
+            if (characteristics['length']    != null) buf.writeln('  Length: ${characteristics['length']}');
+            if (characteristics['top_speed'] != null) buf.writeln('  Top speed: ${characteristics['top_speed']}');
+            if (characteristics['diet']      != null) buf.writeln('  Diet: ${characteristics['diet']}');
+            if (characteristics['habitat']   != null) buf.writeln('  Habitat: ${characteristics['habitat']}');
+            if (characteristics['prey']      != null) buf.writeln('  Prey: ${characteristics['prey']}');
+            if (characteristics['predators'] != null) buf.writeln('  Predators: ${characteristics['predators']}');
+            buf.writeln('');
           }
-
           if (locations.isNotEmpty) {
-            detailsBuffer.writeln('📍 LOCATION');
-            detailsBuffer.writeln('  ${locations.join(', ')}');
+            buf.writeln('📍 LOCATION');
+            buf.writeln('  ${locations.join(', ')}');
           }
 
           return ContentData(
-            preview: preview,
-            details: detailsBuffer.toString().trim(),
+            preview: '$emoji $name',
+            details: buf.toString().trim(),
             hasDetails: true,
           );
         }
         break;
 
+      case ContentType.country:
+      case ContentType.frenchDepartment:
+      case ContentType.pacificIsland:
+      case ContentType.world:
       case ContentType.exoplanet:
-        break; // jamais atteint, géré en amont dans fetchContent
+        break;
     }
     return ContentData(preview: 'Content not available');
   }

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import '../generated/app_localizations.dart';
 import '../models/content_data.dart';
 
@@ -56,21 +55,16 @@ class CountryCard extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                ClipRRect(
-                  borderRadius: const BorderRadius.vertical(top: Radius.circular(24)),
-                  child: contentData?.flagSvg != null
-                      ? SvgPicture.string(
-                          contentData!.flagSvg!,
-                          width: double.infinity,
-                          fit: BoxFit.fitWidth,
-                        )
-                      : Container(
-                          height: 160,
-                          decoration: BoxDecoration(gradient: LinearGradient(colors: gradient)),
-                          child: Center(
-                            child: Text(emojiFlag, style: const TextStyle(fontSize: 100)),
-                          ),
-                        ),
+                Container(
+                  width: double.infinity,
+                  height: 160,
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(colors: gradient),
+                    borderRadius: const BorderRadius.vertical(top: Radius.circular(24)),
+                  ),
+                  child: Center(
+                    child: Text(emojiFlag, style: const TextStyle(fontSize: 80)),
+                  ),
                 ),
                 Padding(
                   padding: const EdgeInsets.fromLTRB(24, 20, 24, 4),

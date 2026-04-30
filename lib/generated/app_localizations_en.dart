@@ -50,6 +50,15 @@ class AppLocalizationsEn extends AppLocalizations {
   String get categoryCountry => 'Countries';
 
   @override
+  String get categoryWorld => 'World';
+
+  @override
+  String get categoryFrenchDepartment => 'French Department';
+
+  @override
+  String get categoryPacificIsland => 'Pacific Island';
+
+  @override
   String get categoryExoplanet => 'Exoplanet';
 
   @override

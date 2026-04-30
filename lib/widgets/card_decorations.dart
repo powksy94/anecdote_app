@@ -54,7 +54,7 @@ Widget buildCardDecoration(ContentType type) {
           ),
         ],
       );
-    case ContentType.advice:
+    case ContentType.celebrityQuote:
       return Stack(
         children: [
           Positioned(
@@ -152,6 +152,47 @@ Widget buildCardDecoration(ContentType type) {
             bottom: 35,
             left: 12,
             child: Icon(Icons.location_on, size: 10, color: Colors.white.withValues(alpha: 0.25)),
+          ),
+        ],
+      );
+    case ContentType.frenchDepartment:
+      return Stack(
+        children: [
+          Positioned(top: -20, right: -20, child: _circle(60, Colors.white.withValues(alpha: 0.1))),
+          Positioned(bottom: -15, left: -15, child: _circle(50, Colors.white.withValues(alpha: 0.08))),
+          Positioned(top: 15, right: 12, child: Icon(Icons.location_city, size: 14, color: Colors.white.withValues(alpha: 0.3))),
+        ],
+      );
+    case ContentType.pacificIsland:
+      return Stack(
+        children: [
+          Positioned(top: -10, left: 30, child: _circle(50, Colors.white.withValues(alpha: 0.1))),
+          Positioned(bottom: -20, right: -20, child: _circle(65, Colors.white.withValues(alpha: 0.08))),
+          Positioned(top: 20, right: 10, child: Icon(Icons.waves, size: 14, color: Colors.white.withValues(alpha: 0.3))),
+        ],
+      );
+    case ContentType.world:
+      return Stack(
+        children: [
+          Positioned(
+            top: -20,
+            left: -20,
+            child: _circle(70, Colors.white.withValues(alpha: 0.08)),
+          ),
+          Positioned(
+            bottom: -15,
+            right: -15,
+            child: _circle(55, Colors.white.withValues(alpha: 0.1)),
+          ),
+          Positioned(
+            top: 15,
+            right: 12,
+            child: Icon(Icons.travel_explore, size: 14, color: Colors.white.withValues(alpha: 0.3)),
+          ),
+          Positioned(
+            bottom: 35,
+            left: 12,
+            child: Icon(Icons.pin_drop, size: 10, color: Colors.white.withValues(alpha: 0.25)),
           ),
         ],
       );

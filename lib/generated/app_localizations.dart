@@ -178,6 +178,24 @@ abstract class AppLocalizations {
   /// **'Countries'**
   String get categoryCountry;
 
+  /// No description provided for @categoryWorld.
+  ///
+  /// In en, this message translates to:
+  /// **'World'**
+  String get categoryWorld;
+
+  /// No description provided for @categoryFrenchDepartment.
+  ///
+  /// In en, this message translates to:
+  /// **'French Department'**
+  String get categoryFrenchDepartment;
+
+  /// No description provided for @categoryPacificIsland.
+  ///
+  /// In en, this message translates to:
+  /// **'Pacific Island'**
+  String get categoryPacificIsland;
+
   /// No description provided for @categoryExoplanet.
   ///
   /// In en, this message translates to:

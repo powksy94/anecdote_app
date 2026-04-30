@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'content_page.dart';
+import 'world_page.dart';
 import '../models/content_type.dart';
 import '../generated/app_localizations.dart';
 import '../services/ad_service.dart';
@@ -15,9 +16,19 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  static const _topLevelTypes = [
+    ContentType.anecdote,
+    ContentType.chuckNorris,
+    ContentType.celebrityQuote,
+    ContentType.history,
+    ContentType.animals,
+    ContentType.world,
+    ContentType.exoplanet,
+  ];
+
   final AdService _adService = AdService();
   final Map<ContentType, GlobalKey<_CategoryCardState>> _cardKeys = {
-    for (final type in ContentType.values) type: GlobalKey(),
+    for (final type in _topLevelTypes) type: GlobalKey(),
   };
 
   @override
@@ -35,12 +46,23 @@ class _HomePageState extends State<HomePage> {
   void _navigate(ContentType type) {
     _adService.showInterstitialAd(onComplete: () {
       if (!mounted) return;
+      if (type == ContentType.world) {
+        Navigator.push(
+          context,
+          PageRouteBuilder(
+            pageBuilder: (_, __, ___) => const WorldPage(),
+            transitionsBuilder: (_, animation, __, child) =>
+                FadeTransition(opacity: animation, child: child),
+            transitionDuration: const Duration(milliseconds: 250),
+          ),
+        ).then((_) => _cardKeys[type]?.currentState?.onNavigationComplete());
+        return;
+      }
       Navigator.push(
         context,
         PageRouteBuilder(
-          pageBuilder: (context, animation, secondaryAnimation) =>
-              ContentPage(contentType: type),
-          transitionsBuilder: (context, animation, secondaryAnimation, child) =>
+          pageBuilder: (_, __, ___) => ContentPage(contentType: type),
+          transitionsBuilder: (_, animation, __, child) =>
               FadeTransition(opacity: animation, child: child),
           transitionDuration: const Duration(milliseconds: 250),
         ),
@@ -82,9 +104,9 @@ class _HomePageState extends State<HomePage> {
                     crossAxisSpacing: 16,
                     childAspectRatio: 1.0,
                   ),
-                  itemCount: ContentType.values.length,
+                  itemCount: _topLevelTypes.length,
                   itemBuilder: (context, index) {
-                    final type = ContentType.values[index];
+                    final type = _topLevelTypes[index];
                     return CategoryCard(
                       key: _cardKeys[type],
                       type: type,
@@ -101,5 +123,4 @@ class _HomePageState extends State<HomePage> {
   }
 }
 
-// Alias pour accès au state depuis HomePage via GlobalKey
 typedef _CategoryCardState = CategoryCardState;
