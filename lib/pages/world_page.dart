@@ -1,12 +1,52 @@
 import 'package:flutter/material.dart';
 import '../models/content_type.dart';
 import '../generated/app_localizations.dart';
+import '../services/ad_service.dart';
 import '../widgets/subcategory_card.dart';
+import 'content_page.dart';
 
-class WorldPage extends StatelessWidget {
+class WorldPage extends StatefulWidget {
   const WorldPage({super.key});
 
-  static const _subCategories = [ContentType.country];
+  @override
+  State<WorldPage> createState() => _WorldPageState();
+}
+
+class _WorldPageState extends State<WorldPage> {
+  static const _subCategories = [
+    ContentType.country,
+    ContentType.frenchDepartment,
+    ContentType.pacificIsland,
+  ];
+
+  final AdService _adService = AdService();
+
+  @override
+  void initState() {
+    super.initState();
+    _adService.loadInterstitialAd();
+  }
+
+  @override
+  void dispose() {
+    _adService.dispose();
+    super.dispose();
+  }
+
+  void _navigate(ContentType type) {
+    _adService.showInterstitialAd(onComplete: () {
+      if (!mounted) return;
+      Navigator.push(
+        context,
+        PageRouteBuilder(
+          pageBuilder: (_, __, ___) => ContentPage(contentType: type),
+          transitionsBuilder: (_, animation, __, child) =>
+              FadeTransition(opacity: animation, child: child),
+          transitionDuration: const Duration(milliseconds: 250),
+        ),
+      );
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -58,8 +98,10 @@ class WorldPage extends StatelessWidget {
           child: ListView.builder(
             padding: const EdgeInsets.fromLTRB(20, 24, 20, 24),
             itemCount: _subCategories.length,
-            itemBuilder: (context, index) =>
-                SubCategoryCard(type: _subCategories[index]),
+            itemBuilder: (context, index) => SubCategoryCard(
+              type: _subCategories[index],
+              onNavigate: () => _navigate(_subCategories[index]),
+            ),
           ),
         ),
       ),

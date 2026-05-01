@@ -5,8 +5,9 @@ import '../pages/content_page.dart';
 
 class SubCategoryCard extends StatelessWidget {
   final ContentType type;
+  final VoidCallback? onNavigate;
 
-  const SubCategoryCard({super.key, required this.type});
+  const SubCategoryCard({super.key, required this.type, this.onNavigate});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +16,7 @@ class SubCategoryCard extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(bottom: 16),
       child: GestureDetector(
-        onTap: () => Navigator.push(
+        onTap: onNavigate ?? () => Navigator.push(
           context,
           PageRouteBuilder(
             pageBuilder: (_, __, ___) => ContentPage(contentType: type),

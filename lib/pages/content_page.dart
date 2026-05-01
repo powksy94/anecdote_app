@@ -52,8 +52,14 @@ class _ContentPageState extends State<ContentPage> {
     }
   }
 
+  static const _geoTypes = {
+    ContentType.country,
+    ContentType.frenchDepartment,
+    ContentType.pacificIsland,
+  };
+
   ContentData _applyLocaleUnits(ContentData content, AppLocalizations l10n) {
-    if (widget.contentType != ContentType.country) return content;
+    if (!_geoTypes.contains(widget.contentType)) return content;
     var details = content.details;
     details = details.replaceAllMapped(
       RegExp(r'(\d+\.?\d*)B\b'),
@@ -206,7 +212,7 @@ class _ContentPageState extends State<ContentPage> {
                       accentColor: accentColor,
                       onRetry: _loadContent,
                     )
-                  : widget.contentType == ContentType.country
+                  : _geoTypes.contains(widget.contentType)
                       ? CountryCard(
                           contentData: contentData,
                           gradient: gradient,

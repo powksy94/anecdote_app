@@ -21,13 +21,9 @@ class CountryCard extends StatelessWidget {
     final theme = Theme.of(context);
     final loc = AppLocalizations.of(context)!;
     final preview = contentData?.preview ?? '';
-    final emojiFlag = RegExp(r'[\u{1F1E0}-\u{1F1FF}]{2}', unicode: true)
-            .firstMatch(preview)
-            ?.group(0) ??
-        '🌍';
-    final countryName = preview
-        .replaceAll(RegExp(r'[\u{1F1E0}-\u{1F1FF}]{2}\s*', unicode: true), '')
-        .trim();
+    final split = RegExp(r'^(\S+)\s(.+)$').firstMatch(preview.trim());
+    final emojiFlag = split?.group(1) ?? '🌍';
+    final countryName = split?.group(2) ?? preview;
     final detailLines = (contentData?.details ?? '')
         .split('\n')
         .where((l) => l.trim().isNotEmpty)

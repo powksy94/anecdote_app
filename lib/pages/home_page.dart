@@ -44,20 +44,20 @@ class _HomePageState extends State<HomePage> {
   }
 
   void _navigate(ContentType type) {
+    if (type == ContentType.world) {
+      Navigator.push(
+        context,
+        PageRouteBuilder(
+          pageBuilder: (_, __, ___) => const WorldPage(),
+          transitionsBuilder: (_, animation, __, child) =>
+              FadeTransition(opacity: animation, child: child),
+          transitionDuration: const Duration(milliseconds: 250),
+        ),
+      ).then((_) => _cardKeys[type]?.currentState?.onNavigationComplete());
+      return;
+    }
     _adService.showInterstitialAd(onComplete: () {
       if (!mounted) return;
-      if (type == ContentType.world) {
-        Navigator.push(
-          context,
-          PageRouteBuilder(
-            pageBuilder: (_, __, ___) => const WorldPage(),
-            transitionsBuilder: (_, animation, __, child) =>
-                FadeTransition(opacity: animation, child: child),
-            transitionDuration: const Duration(milliseconds: 250),
-          ),
-        ).then((_) => _cardKeys[type]?.currentState?.onNavigationComplete());
-        return;
-      }
       Navigator.push(
         context,
         PageRouteBuilder(

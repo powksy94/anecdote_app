@@ -6,7 +6,9 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../models/content_type.dart';
 import '../models/content_data.dart';
 import '../data/verified_animals.dart';
-import 'country_service.dart';
+import 'world_service/country_service.dart';
+import 'world_service/department_service.dart';
+import 'world_service/pacific_island_service.dart';
 import 'exoplanet_service.dart';
 
 int _dayOfYear() {
@@ -53,6 +55,12 @@ class ApiService {
       }
       if (type == ContentType.country) {
         return await CountryService().getDailyContent();
+      }
+      if (type == ContentType.frenchDepartment) {
+        return await DepartmentService().getDailyContent();
+      }
+      if (type == ContentType.pacificIsland) {
+        return await PacificIslandsService().getDailyContent();
       }
       if (type == ContentType.chuckNorris) {
         return await _fetchChuckNorrisContent();
