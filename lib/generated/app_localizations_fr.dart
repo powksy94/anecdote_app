@@ -90,4 +90,14 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get popBillion => 'Md';
+
+  @override
+  String get updateTitle => 'Mise à jour disponible';
+
+  @override
+  String get updateMessage =>
+      'Une nouvelle version de l\'application est disponible. Mettez à jour pour profiter des dernières fonctionnalités.';
+
+  @override
+  String get updateButton => 'Mettre à jour';
 }

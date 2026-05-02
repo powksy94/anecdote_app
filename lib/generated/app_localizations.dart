@@ -261,6 +261,24 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'B'**
   String get popBillion;
+
+  /// No description provided for @updateTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Update available'**
+  String get updateTitle;
+
+  /// No description provided for @updateMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'A new version of the app is available. Update to enjoy the latest features.'**
+  String get updateMessage;
+
+  /// No description provided for @updateButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Update'**
+  String get updateButton;
 }
 
 class _AppLocalizationsDelegate

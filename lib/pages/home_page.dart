@@ -4,7 +4,9 @@ import 'world_page.dart';
 import '../models/content_type.dart';
 import '../generated/app_localizations.dart';
 import '../services/ad_service.dart';
+import '../services/version_check_service.dart';
 import '../widgets/category_card.dart';
+import '../widgets/update_popup.dart';
 
 class HomePage extends StatefulWidget {
   final void Function(Locale locale)? onLocaleChange;
@@ -35,12 +37,31 @@ class _HomePageState extends State<HomePage> {
   void initState() {
     super.initState();
     _adService.loadInterstitialAd();
+    _checkForUpdate();
   }
 
   @override
   void dispose() {
     _adService.dispose();
     super.dispose();
+  }
+
+  Future<void> _checkForUpdate() async {
+    final result = await VersionCheckService().check();
+    if (!mounted) return;
+    if (result == VersionCheckResult.updateAvailable) {
+      showDialog(
+        context: context,
+        barrierDismissible: false,
+        builder: (_) => const UpdatePopup(mode: UpdatePopupMode.update),
+      );
+    } else if (result == VersionCheckResult.justUpdated) {
+      showDialog(
+        context: context,
+        barrierDismissible: true,
+        builder: (_) => const UpdatePopup(mode: UpdatePopupMode.celebration),
+      );
+    }
   }
 
   void _navigate(ContentType type) {

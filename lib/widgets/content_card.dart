@@ -119,28 +119,33 @@ class _ContentCardState extends State<ContentCard> {
                       ),
                     ),
                   ),
-                  AnimatedCrossFade(
-                    firstChild: const SizedBox.shrink(),
-                    secondChild: Container(
-                      width: double.infinity,
-                      margin: const EdgeInsets.only(top: 16),
-                      padding: const EdgeInsets.all(16),
-                      decoration: BoxDecoration(
-                        color: theme.colorScheme.surfaceContainerHighest.withValues(alpha: 0.5),
-                        borderRadius: BorderRadius.circular(16),
-                        border: Border.all(
-                          color: widget.accentColor.withValues(alpha: 0.2),
-                          width: 1,
-                        ),
-                      ),
-                      child: Text(
-                        widget.contentData?.details ?? '',
-                        style: theme.textTheme.bodyMedium?.copyWith(height: 1.6),
-                      ),
-                    ),
-                    crossFadeState:
-                        _showDetails ? CrossFadeState.showSecond : CrossFadeState.showFirst,
+                  AnimatedSize(
                     duration: const Duration(milliseconds: 300),
+                    curve: Curves.easeInOut,
+                    child: _showDetails
+                        ? AnimatedOpacity(
+                            opacity: 1.0,
+                            duration: const Duration(milliseconds: 250),
+                            child: Container(
+                              width: double.infinity,
+                              margin: const EdgeInsets.only(top: 16),
+                              padding: const EdgeInsets.all(16),
+                              decoration: BoxDecoration(
+                                color: theme.colorScheme.surfaceContainerHighest
+                                    .withValues(alpha: 0.5),
+                                borderRadius: BorderRadius.circular(16),
+                                border: Border.all(
+                                  color: widget.accentColor.withValues(alpha: 0.2),
+                                  width: 1,
+                                ),
+                              ),
+                              child: Text(
+                                widget.contentData?.details ?? '',
+                                style: theme.textTheme.bodyMedium?.copyWith(height: 1.6),
+                              ),
+                            ),
+                          )
+                        : const SizedBox.shrink(),
                   ),
                 ],
                 const SizedBox(height: 20),

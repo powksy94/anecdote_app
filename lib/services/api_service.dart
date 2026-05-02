@@ -113,6 +113,10 @@ class ApiService {
       debugPrint('Chuck Norris duplicate (attempt $attempt), retrying...');
     }
 
+    if (lastJoke == 'No joke') {
+      throw Exception('Unable to fetch Chuck Norris joke');
+    }
+
     history.add(lastJoke);
     if (history.length > _chuckHistorySize) history.removeAt(0);
     await prefs.setStringList(_chuckHistoryKey, history);

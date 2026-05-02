@@ -90,4 +90,14 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get popBillion => 'MM';
+
+  @override
+  String get updateTitle => 'Actualización disponible';
+
+  @override
+  String get updateMessage =>
+      'Hay una nueva versión de la aplicación disponible. Actualiza para disfrutar de las últimas novedades.';
+
+  @override
+  String get updateButton => 'Actualizar';
 }

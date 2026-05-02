@@ -31,5 +31,8 @@
   "french": "Francés",
   "spanish": "Español",
   "popMillion": "M",
-  "popBillion": "MM"
+  "popBillion": "MM",
+  "updateTitle": "Actualización disponible",
+  "updateMessage": "Hay una nueva versión de la aplicación disponible. Actualiza para disfrutar de las últimas novedades.",
+  "updateButton": "Actualizar"
 }

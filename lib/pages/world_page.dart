@@ -62,7 +62,12 @@ class _WorldPageState extends State<WorldPage> {
           children: [
             Icon(ContentType.world.icon, size: 24),
             const SizedBox(width: 8),
-            Text(ContentType.world.localizedTitle(loc)),
+            Flexible(
+              child: Text(
+                ContentType.world.localizedTitle(loc),
+                overflow: TextOverflow.ellipsis,
+              ),
+            ),
           ],
         ),
         centerTitle: true,

@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:math' as math;
 import 'package:flutter/services.dart';
 
 class Exoplanet {
@@ -69,12 +70,21 @@ Future<List<Exoplanet>> loadExoplanets() async {
   return list.map((e) => Exoplanet.fromJson(e as Map<String, dynamic>)).toList();
 }
 
-/// Retourne l'exoplanète du jour à partir d'une liste déjà chargée.
-/// Avance d'une planète par jour depuis le 1er janvier 2026.
+List<Exoplanet>? _shuffledCache;
+
 Exoplanet dailyExoplanet(List<Exoplanet> planets) {
-  final now       = DateTime.now();
-  final todayUtc  = DateTime.utc(now.year, now.month, now.day);
+  if (_shuffledCache == null) {
+    final list = List<Exoplanet>.from(planets);
+    final rng = math.Random(20260100);
+    for (int i = list.length - 1; i > 0; i--) {
+      final j = rng.nextInt(i + 1);
+      final tmp = list[i]; list[i] = list[j]; list[j] = tmp;
+    }
+    _shuffledCache = list;
+  }
+  final now = DateTime.now();
+  final todayUtc = DateTime.utc(now.year, now.month, now.day);
   final originUtc = DateTime.utc(2026, 1, 1);
-  final dayIndex  = todayUtc.difference(originUtc).inDays.abs();
-  return planets[dayIndex % planets.length];
+  final index = todayUtc.difference(originUtc).inDays.abs();
+  return _shuffledCache![index % _shuffledCache!.length];
 }

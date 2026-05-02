@@ -90,7 +90,8 @@ class _ContentPageState extends State<ContentPage> {
       final cacheValid = cached != null &&
           cached.preview.isNotEmpty &&
           cached.preview != 'Content not available' &&
-          (widget.contentType != ContentType.exoplanet || cached.details.contains('🛸'));
+          (widget.contentType != ContentType.exoplanet || cached.details.contains('🛸')) &&
+          (widget.contentType != ContentType.chuckNorris || cached.preview.length > 20);
       if (cacheValid) {
         setState(() {
           contentData = cached;
@@ -105,7 +106,8 @@ class _ContentPageState extends State<ContentPage> {
       final englishCacheValid = englishContent != null &&
           englishContent.preview.isNotEmpty &&
           englishContent.preview != 'Content not available' &&
-          (widget.contentType != ContentType.exoplanet || englishContent.details.contains('🛸'));
+          (widget.contentType != ContentType.exoplanet || englishContent.details.contains('🛸')) &&
+          (widget.contentType != ContentType.chuckNorris || englishContent.preview.length > 20);
       if (!englishCacheValid) {
         englishContent = await apiService.fetchContent(widget.contentType);
         await cacheService.saveTodayContent(widget.contentType, englishContent, locale: 'en');
@@ -157,7 +159,12 @@ class _ContentPageState extends State<ContentPage> {
           children: [
             Icon(widget.contentType.icon, size: 24),
             const SizedBox(width: 8),
-            Text(widget.contentType.localizedTitle(loc)),
+            Flexible(
+              child: Text(
+                widget.contentType.localizedTitle(loc),
+                overflow: TextOverflow.ellipsis,
+              ),
+            ),
           ],
         ),
         centerTitle: true,

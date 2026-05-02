@@ -90,4 +90,14 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get popBillion => 'B';
+
+  @override
+  String get updateTitle => 'Update available';
+
+  @override
+  String get updateMessage =>
+      'A new version of the app is available. Update to enjoy the latest features.';
+
+  @override
+  String get updateButton => 'Update';
 }
