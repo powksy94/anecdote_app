@@ -262,6 +262,12 @@ abstract class AppLocalizations {
   /// **'B'**
   String get popBillion;
 
+  /// No description provided for @lightYear.
+  ///
+  /// In en, this message translates to:
+  /// **'ly'**
+  String get lightYear;
+
   /// No description provided for @updateTitle.
   ///
   /// In en, this message translates to:
@@ -279,6 +285,24 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Update'**
   String get updateButton;
+
+  /// No description provided for @categorySpace.
+  ///
+  /// In en, this message translates to:
+  /// **'Space'**
+  String get categorySpace;
+
+  /// No description provided for @categoryStar.
+  ///
+  /// In en, this message translates to:
+  /// **'Stars'**
+  String get categoryStar;
+
+  /// No description provided for @categorySolarSystemMoon.
+  ///
+  /// In en, this message translates to:
+  /// **'Solar System Moons'**
+  String get categorySolarSystemMoon;
 }
 
 class _AppLocalizationsDelegate

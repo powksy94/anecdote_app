@@ -9,6 +9,8 @@ import '../data/verified_animals.dart';
 import 'world_service/country_service.dart';
 import 'world_service/department_service.dart';
 import 'world_service/pacific_island_service.dart';
+import 'space_service/star_service.dart';
+import 'space_service/moon_service.dart';
 import 'exoplanet_service.dart';
 
 int _dayOfYear() {
@@ -44,6 +46,9 @@ class ApiService {
       case ContentType.pacificIsland:
       case ContentType.world:
       case ContentType.exoplanet:
+      case ContentType.star:
+      case ContentType.solarSystemMoon:
+      case ContentType.space:
         return '';
     }
   }
@@ -61,6 +66,12 @@ class ApiService {
       }
       if (type == ContentType.pacificIsland) {
         return await PacificIslandsService().getDailyContent();
+      }
+      if (type == ContentType.star) {
+        return await StarService().getDailyContent();
+      }
+      if (type == ContentType.solarSystemMoon) {
+        return await MoonService().getDailyContent();
       }
       if (type == ContentType.chuckNorris) {
         return await _fetchChuckNorrisContent();
@@ -225,6 +236,9 @@ class ApiService {
       case ContentType.pacificIsland:
       case ContentType.world:
       case ContentType.exoplanet:
+      case ContentType.star:
+      case ContentType.solarSystemMoon:
+      case ContentType.space:
         break;
     }
     return ContentData(preview: 'Content not available');

@@ -92,6 +92,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get popBillion => 'B';
 
   @override
+  String get lightYear => 'ly';
+
+  @override
   String get updateTitle => 'Update available';
 
   @override
@@ -100,4 +103,13 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get updateButton => 'Update';
+
+  @override
+  String get categorySpace => 'Space';
+
+  @override
+  String get categoryStar => 'Stars';
+
+  @override
+  String get categorySolarSystemMoon => 'Solar System Moons';
 }

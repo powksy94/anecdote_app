@@ -171,6 +171,32 @@ Widget buildCardDecoration(ContentType type) {
           Positioned(top: 20, right: 10, child: Icon(Icons.waves, size: 14, color: Colors.white.withValues(alpha: 0.3))),
         ],
       );
+    case ContentType.space:
+      return Stack(
+        children: [
+          Positioned(top: -20, right: -20, child: _circle(65, Colors.white.withValues(alpha: 0.07))),
+          Positioned(bottom: -15, left: -15, child: _circle(45, Colors.white.withValues(alpha: 0.09))),
+          Positioned(top: 12, left: 14, child: Icon(Icons.star, size: 8, color: Colors.white.withValues(alpha: 0.3))),
+          Positioned(bottom: 30, right: 14, child: Icon(Icons.star, size: 5, color: Colors.white.withValues(alpha: 0.2))),
+          Positioned(top: 40, right: 8, child: Icon(Icons.star, size: 6, color: Colors.white.withValues(alpha: 0.25))),
+        ],
+      );
+    case ContentType.star:
+      return Stack(
+        children: [
+          Positioned(top: -15, right: -15, child: _circle(55, Colors.white.withValues(alpha: 0.12))),
+          Positioned(bottom: -20, left: 20, child: _circle(40, Colors.white.withValues(alpha: 0.08))),
+          Positioned(top: 20, left: 10, child: Icon(Icons.star, size: 14, color: Colors.white.withValues(alpha: 0.35))),
+        ],
+      );
+    case ContentType.solarSystemMoon:
+      return Stack(
+        children: [
+          Positioned(top: -10, right: 30, child: _circle(45, Colors.white.withValues(alpha: 0.1))),
+          Positioned(bottom: -20, left: -10, child: _circle(60, Colors.white.withValues(alpha: 0.08))),
+          Positioned(top: 15, right: 15, child: Icon(Icons.brightness_2, size: 12, color: Colors.white.withValues(alpha: 0.3))),
+        ],
+      );
     case ContentType.world:
       return Stack(
         children: [

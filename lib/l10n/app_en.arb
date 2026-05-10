@@ -32,7 +32,11 @@
   "spanish": "Spanish",
   "popMillion": "M",
   "popBillion": "B",
+  "lightYear": "ly",
   "updateTitle": "Update available",
   "updateMessage": "A new version of the app is available. Update to enjoy the latest features.",
-  "updateButton": "Update"
+  "updateButton": "Update",
+  "categorySpace": "Space",
+  "categoryStar": "Stars",
+  "categorySolarSystemMoon": "Solar System Moons"
 }

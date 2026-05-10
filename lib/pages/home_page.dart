@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'content_page.dart';
 import 'world_page.dart';
+import 'space_page.dart';
 import '../models/content_type.dart';
 import '../generated/app_localizations.dart';
 import '../services/ad_service.dart';
@@ -25,7 +26,7 @@ class _HomePageState extends State<HomePage> {
     ContentType.history,
     ContentType.animals,
     ContentType.world,
-    ContentType.exoplanet,
+    ContentType.space,
   ];
 
   final AdService _adService = AdService();
@@ -65,11 +66,13 @@ class _HomePageState extends State<HomePage> {
   }
 
   void _navigate(ContentType type) {
-    if (type == ContentType.world) {
+    if (type == ContentType.world || type == ContentType.space) {
       Navigator.push(
         context,
         PageRouteBuilder(
-          pageBuilder: (_, __, ___) => const WorldPage(),
+          pageBuilder: (_, __, ___) => type == ContentType.world
+              ? const WorldPage()
+              : const SpacePage(),
           transitionsBuilder: (_, animation, __, child) =>
               FadeTransition(opacity: animation, child: child),
           transitionDuration: const Duration(milliseconds: 250),

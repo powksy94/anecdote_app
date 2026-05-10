@@ -59,22 +59,32 @@ class _ContentPageState extends State<ContentPage> {
   };
 
   ContentData _applyLocaleUnits(ContentData content, AppLocalizations l10n) {
-    if (!_geoTypes.contains(widget.contentType)) return content;
-    var details = content.details;
-    details = details.replaceAllMapped(
-      RegExp(r'(\d+\.?\d*)B\b'),
-      (m) => '${m[1]}${l10n.popBillion}',
-    );
-    details = details.replaceAllMapped(
-      RegExp(r'(\d+\.?\d*)M\b'),
-      (m) => '${m[1]}${l10n.popMillion}',
-    );
-    return ContentData(
-      preview: content.preview,
-      details: details,
-      hasDetails: content.hasDetails,
-      flagSvg: content.flagSvg,
-    );
+    if (_geoTypes.contains(widget.contentType)) {
+      var details = content.details;
+      details = details.replaceAllMapped(
+        RegExp(r'(\d+\.?\d*)B\b'),
+        (m) => '${m[1]}${l10n.popBillion}',
+      );
+      details = details.replaceAllMapped(
+        RegExp(r'(\d+\.?\d*)M\b'),
+        (m) => '${m[1]}${l10n.popMillion}',
+      );
+      return ContentData(
+        preview: content.preview,
+        details: details,
+        hasDetails: content.hasDetails,
+        flagSvg: content.flagSvg,
+      );
+    }
+    if (widget.contentType == ContentType.star) {
+      final details = content.details.replaceAll(' ly', ' ${l10n.lightYear}');
+      return ContentData(
+        preview: content.preview,
+        details: details,
+        hasDetails: content.hasDetails,
+      );
+    }
+    return content;
   }
 
   Future<void> _loadContent() async {

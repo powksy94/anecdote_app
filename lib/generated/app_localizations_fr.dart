@@ -92,6 +92,9 @@ class AppLocalizationsFr extends AppLocalizations {
   String get popBillion => 'Md';
 
   @override
+  String get lightYear => 'al';
+
+  @override
   String get updateTitle => 'Mise à jour disponible';
 
   @override
@@ -100,4 +103,13 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get updateButton => 'Mettre à jour';
+
+  @override
+  String get categorySpace => 'Espace';
+
+  @override
+  String get categoryStar => 'Étoiles';
+
+  @override
+  String get categorySolarSystemMoon => 'Lunes du Système Solaire';
 }

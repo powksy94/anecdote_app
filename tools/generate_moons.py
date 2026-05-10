@@ -1,0 +1,70 @@
+import json
+
+moons = [
+    # TERRE
+    {"n":"Moon","pl":"Earth","di":3474,"op":27.3,"dy":1609,"dc":"Prehistoric","fe":"Only natural satellite of Earth, tidal locking, phases"},
+    # MARS
+    {"n":"Phobos","pl":"Mars","di":22,"op":0.32,"dy":1877,"dc":"Asaph Hall","fe":"Closest moon to its planet, will crash into Mars in ~50M years"},
+    {"n":"Deimos","pl":"Mars","di":12,"op":1.26,"dy":1877,"dc":"Asaph Hall","fe":"Smallest known moon in the Solar System"},
+    # JUPITER
+    {"n":"Io","pl":"Jupiter","di":3643,"op":1.77,"dy":1610,"dc":"Galileo Galilei","fe":"Most volcanically active body in the Solar System"},
+    {"n":"Europa","pl":"Jupiter","di":3122,"op":3.55,"dy":1610,"dc":"Galileo Galilei","fe":"Subsurface ocean, prime candidate for extraterrestrial life"},
+    {"n":"Ganymede","pl":"Jupiter","di":5268,"op":7.15,"dy":1610,"dc":"Galileo Galilei","fe":"Largest moon in the Solar System, bigger than Mercury"},
+    {"n":"Callisto","pl":"Jupiter","di":4821,"op":16.69,"dy":1610,"dc":"Galileo Galilei","fe":"Most heavily cratered object in the Solar System"},
+    {"n":"Amalthea","pl":"Jupiter","di":167,"op":0.50,"dy":1892,"dc":"Edward Barnard","fe":"Reddest object in the Solar System"},
+    {"n":"Thebe","pl":"Jupiter","di":99,"op":0.67,"dy":1979,"dc":"Voyager 1","fe":"Contributes to Jupiter's gossamer ring"},
+    {"n":"Metis","pl":"Jupiter","di":43,"op":0.29,"dy":1979,"dc":"Voyager 1","fe":"Innermost known moon of Jupiter"},
+    {"n":"Himalia","pl":"Jupiter","di":170,"op":250.6,"dy":1904,"dc":"Charles Perrine","fe":"Largest irregular moon of Jupiter"},
+    {"n":"Elara","pl":"Jupiter","di":86,"op":259.6,"dy":1905,"dc":"Charles Perrine","fe":"Part of the Himalia group"},
+    {"n":"Pasiphae","pl":"Jupiter","di":60,"op":743.6,"dy":1908,"dc":"Philibert Melotte","fe":"Retrograde orbit, largest of Pasiphae group"},
+    # SATURNE
+    {"n":"Titan","pl":"Saturn","di":5150,"op":15.95,"dy":1655,"dc":"Christiaan Huygens","fe":"Only moon with a dense atmosphere, methane lakes"},
+    {"n":"Enceladus","pl":"Saturn","di":504,"op":1.37,"dy":1789,"dc":"William Herschel","fe":"Active geysers, subsurface ocean of liquid water"},
+    {"n":"Mimas","pl":"Saturn","di":396,"op":0.94,"dy":1789,"dc":"William Herschel","fe":"Resembles the Death Star, giant Herschel crater"},
+    {"n":"Tethys","pl":"Saturn","di":1062,"op":1.89,"dy":1684,"dc":"Giovanni Cassini","fe":"Ithaca Chasma, one of the longest valleys in Solar System"},
+    {"n":"Dione","pl":"Saturn","di":1123,"op":2.74,"dy":1684,"dc":"Giovanni Cassini","fe":"Bright cliffs of ice, shares orbit with Helene"},
+    {"n":"Rhea","pl":"Saturn","di":1528,"op":4.52,"dy":1672,"dc":"Giovanni Cassini","fe":"Second largest moon of Saturn, tenuous oxygen atmosphere"},
+    {"n":"Iapetus","pl":"Saturn","di":1469,"op":79.32,"dy":1671,"dc":"Giovanni Cassini","fe":"Two-tone coloring: one side bright, one side dark"},
+    {"n":"Hyperion","pl":"Saturn","di":270,"op":21.28,"dy":1848,"dc":"Bond & Lassell","fe":"Chaotic rotation, sponge-like appearance"},
+    {"n":"Phoebe","pl":"Saturn","di":213,"op":548.0,"dy":1898,"dc":"William Pickering","fe":"Retrograde orbit, captured Kuiper Belt object"},
+    {"n":"Janus","pl":"Saturn","di":179,"op":0.69,"dy":1966,"dc":"Audouin Dollfus","fe":"Co-orbital with Epimetheus, swap orbits every 4 years"},
+    {"n":"Epimetheus","pl":"Saturn","di":113,"op":0.69,"dy":1966,"dc":"Audouin Dollfus","fe":"Co-orbital with Janus"},
+    {"n":"Helene","pl":"Saturn","di":36,"op":2.74,"dy":1980,"dc":"Laques & Lecacheux","fe":"Trojan moon of Dione"},
+    {"n":"Atlas","pl":"Saturn","di":30,"op":0.60,"dy":1980,"dc":"Voyager 1","fe":"Flying saucer shape, shepherd moon of A ring"},
+    {"n":"Prometheus","pl":"Saturn","di":86,"op":0.61,"dy":1980,"dc":"Voyager 1","fe":"Inner shepherd moon of F ring"},
+    {"n":"Pandora","pl":"Saturn","di":81,"op":0.63,"dy":1980,"dc":"Voyager 1","fe":"Outer shepherd moon of F ring"},
+    {"n":"Pan","pl":"Saturn","di":28,"op":0.58,"dy":1990,"dc":"Mark Showalter","fe":"Ravioli shape, clears the Encke Gap in A ring"},
+    {"n":"Calypso","pl":"Saturn","di":21,"op":1.89,"dy":1980,"dc":"Pascu et al.","fe":"Trojan moon of Tethys"},
+    # URANUS
+    {"n":"Titania","pl":"Uranus","di":1578,"op":8.71,"dy":1787,"dc":"William Herschel","fe":"Largest moon of Uranus, large fault valleys"},
+    {"n":"Oberon","pl":"Uranus","di":1523,"op":13.46,"dy":1787,"dc":"William Herschel","fe":"Outermost large moon of Uranus"},
+    {"n":"Umbriel","pl":"Uranus","di":1169,"op":4.14,"dy":1851,"dc":"William Lassell","fe":"Darkest moon of Uranus"},
+    {"n":"Ariel","pl":"Uranus","di":1158,"op":2.52,"dy":1851,"dc":"William Lassell","fe":"Brightest moon of Uranus, youngest surface"},
+    {"n":"Miranda","pl":"Uranus","di":472,"op":1.41,"dy":1948,"dc":"Gerard Kuiper","fe":"Verona Rupes: tallest known cliff in Solar System (~20km)"},
+    {"n":"Puck","pl":"Uranus","di":162,"op":0.76,"dy":1985,"dc":"Voyager 2","fe":"Largest inner moon of Uranus"},
+    {"n":"Sycorax","pl":"Uranus","di":150,"op":1288.3,"dy":1997,"dc":"Nicholson et al.","fe":"Largest irregular moon of Uranus, retrograde orbit"},
+    {"n":"Caliban","pl":"Uranus","di":72,"op":579.7,"dy":1997,"dc":"Gladman et al.","fe":"Retrograde irregular moon"},
+    # NEPTUNE
+    {"n":"Triton","pl":"Neptune","di":2707,"op":5.88,"dy":1846,"dc":"William Lassell","fe":"Retrograde orbit, nitrogen geysers, likely captured KBO"},
+    {"n":"Nereid","pl":"Neptune","di":340,"op":360.1,"dy":1949,"dc":"Gerard Kuiper","fe":"Most eccentric orbit of any moon in Solar System"},
+    {"n":"Proteus","pl":"Neptune","di":420,"op":1.12,"dy":1989,"dc":"Voyager 2","fe":"Second largest moon of Neptune"},
+    {"n":"Larissa","pl":"Neptune","di":194,"op":0.55,"dy":1989,"dc":"Voyager 2","fe":"Irregular shape, shepherd moon"},
+    {"n":"Galatea","pl":"Neptune","di":176,"op":0.43,"dy":1989,"dc":"Voyager 2","fe":"Shepherd moon of Adams ring"},
+    {"n":"Despina","pl":"Neptune","di":148,"op":0.33,"dy":1989,"dc":"Voyager 2","fe":"Innermost known moon of Neptune"},
+    # PLUTON
+    {"n":"Charon","pl":"Pluto","di":1212,"op":6.39,"dy":1978,"dc":"James Christy","fe":"So large relative to Pluto they orbit each other (binary system)"},
+    {"n":"Nix","pl":"Pluto","di":49,"op":24.86,"dy":2005,"dc":"HST Team","fe":"Chaotic rotation"},
+    {"n":"Hydra","pl":"Pluto","di":61,"op":38.20,"dy":2005,"dc":"HST Team","fe":"Most distant moon of Pluto"},
+    {"n":"Kerberos","pl":"Pluto","di":19,"op":32.17,"dy":2011,"dc":"HST Team","fe":"Double-lobed shape"},
+    {"n":"Styx","pl":"Pluto","di":16,"op":20.16,"dy":2012,"dc":"HST Team","fe":"Smallest known moon of Pluto"},
+    # PLANÈTES NAINES
+    {"n":"Dysnomia","pl":"Eris","di":700,"op":15.79,"dy":2005,"dc":"Brown et al.","fe":"Only known moon of Eris"},
+    {"n":"Hi'iaka","pl":"Haumea","di":320,"op":49.12,"dy":2005,"dc":"Brown et al.","fe":"Largest moon of Haumea"},
+    {"n":"Namaka","pl":"Haumea","di":170,"op":18.28,"dy":2005,"dc":"Brown et al.","fe":"Inner moon of Haumea"},
+    {"n":"MK2","pl":"Makemake","di":175,"op":12.40,"dy":2015,"dc":"HST Team","fe":"Only known moon of Makemake"},
+]
+
+with open("assets/solar_moons.json", "w", encoding="utf-8") as f:
+    json.dump(moons, f, ensure_ascii=False, separators=(',', ':'))
+
+print(f"{len(moons)} lunes générées.")

@@ -32,7 +32,11 @@
   "spanish": "Espagnol",
   "popMillion": "M",
   "popBillion": "Md",
+  "lightYear": "al",
   "updateTitle": "Mise à jour disponible",
   "updateMessage": "Une nouvelle version de l'application est disponible. Mettez à jour pour profiter des dernières fonctionnalités.",
-  "updateButton": "Mettre à jour"
+  "updateButton": "Mettre à jour",
+  "categorySpace": "Espace",
+  "categoryStar": "Étoiles",
+  "categorySolarSystemMoon": "Lunes du Système Solaire"
 }
