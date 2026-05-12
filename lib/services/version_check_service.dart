@@ -6,6 +6,7 @@ enum VersionCheckResult { noUpdate, updateAvailable, justUpdated }
 
 class VersionCheckService {
   static const _keyJustUpdated = 'just_updated';
+  static const _keyLastCheckDate = 'version_last_check_date';
   static const bool _debugForceUpdate = true;
 
   Future<VersionCheckResult> check() async {
@@ -23,8 +24,16 @@ class VersionCheckService {
           : VersionCheckResult.noUpdate;
     }
 
+    // Ne vérifier qu'une fois par jour
+    final today = DateTime.now().toIso8601String().substring(0, 10);
+    final lastCheck = prefs.getString(_keyLastCheckDate) ?? '';
+    if (lastCheck == today) {
+      return VersionCheckResult.noUpdate;
+    }
+
     try {
       final info = await InAppUpdate.checkForUpdate();
+      await prefs.setString(_keyLastCheckDate, today);
       return info.updateAvailability == UpdateAvailability.updateAvailable
           ? VersionCheckResult.updateAvailable
           : VersionCheckResult.noUpdate;

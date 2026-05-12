@@ -71,8 +71,8 @@ class _HomePageState extends State<HomePage> {
         context,
         PageRouteBuilder(
           pageBuilder: (_, __, ___) => type == ContentType.world
-              ? const WorldPage()
-              : const SpacePage(),
+              ? WorldPage(adService: _adService)
+              : SpacePage(adService: _adService),
           transitionsBuilder: (_, animation, __, child) =>
               FadeTransition(opacity: animation, child: child),
           transitionDuration: const Duration(milliseconds: 250),

@@ -163,10 +163,17 @@ class ApiService {
 
       case ContentType.history:
         if (decoded is List && decoded.isNotEmpty) {
-          final event    = decoded[0];
-          final rawYear  = event['year'] as String? ?? '';
-          final yearInt  = int.tryParse(rawYear) ?? 0;
-          final displayYear = yearInt < 0 ? '${yearInt.abs()} BC' : rawYear;
+          final event   = decoded[0];
+          final rawYear = event['year'] as String? ?? '';
+          final yearInt = int.tryParse(rawYear);
+          final String displayYear;
+          if (yearInt == null) {
+            displayYear = '';
+          } else if (yearInt < 0) {
+            displayYear = '${yearInt.abs()} BC';
+          } else {
+            displayYear = rawYear;
+          }
           final eventText = (event['event'] as String? ?? '')
               .replaceAll(RegExp(r'\[[^\]]*\]'), '')
               .trim();

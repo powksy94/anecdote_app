@@ -47,7 +47,7 @@ class _UpdatePopupState extends State<UpdatePopup> with TickerProviderStateMixin
 
     _lightCtrl = AnimationController(
       vsync: this,
-      duration: const Duration(milliseconds: 900),
+      duration: const Duration(milliseconds: 700),
     );
     _scaleAnim = TweenSequence<double>([
       TweenSequenceItem(tween: Tween(begin: 1.0, end: 1.35), weight: 1),
@@ -62,7 +62,7 @@ class _UpdatePopupState extends State<UpdatePopup> with TickerProviderStateMixin
       _isUpdating = true;
       Future.microtask(() async {
         await _lightCtrl.forward();
-        await Future.delayed(const Duration(milliseconds: 800));
+        await Future.delayed(const Duration(milliseconds: 300));
         if (mounted) Navigator.pop(context);
       });
     } else {
@@ -72,21 +72,18 @@ class _UpdatePopupState extends State<UpdatePopup> with TickerProviderStateMixin
 
   void _startFlicker() async {
     final rng = math.Random();
-    while (mounted && !_isUpdating) {
-      await Future.delayed(Duration(milliseconds: 600 + rng.nextInt(1800)));
-      if (!mounted || _isUpdating) break;
-      await _audioPlayer.play(AssetSource('ampoule-qui-eclate.ogg'));
-      await _flickerCtrl.forward();
-      await _flickerCtrl.reverse();
-    }
+    // Un seul flicker puis stop
+    await Future.delayed(Duration(milliseconds: 800 + rng.nextInt(1200)));
+    if (!mounted || _isUpdating) return;
+    await _audioPlayer.play(AssetSource('ampoule-qui-eclate.ogg'));
+    await _flickerCtrl.forward();
+    await _flickerCtrl.reverse();
   }
 
   Future<void> _onUpdate() async {
     setState(() => _isUpdating = true);
     _flickerCtrl.stop();
     await VersionCheckService.markJustUpdated();
-    await _lightCtrl.forward();
-    await Future.delayed(const Duration(milliseconds: 400));
     final uri = Uri.parse(UpdatePopup._storeUrl);
     if (await canLaunchUrl(uri)) {
       await launchUrl(uri, mode: LaunchMode.externalApplication);

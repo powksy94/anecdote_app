@@ -6,7 +6,8 @@ import '../widgets/subcategory_card.dart';
 import 'content_page.dart';
 
 class SpacePage extends StatefulWidget {
-  const SpacePage({super.key});
+  final AdService adService;
+  const SpacePage({super.key, required this.adService});
 
   @override
   State<SpacePage> createState() => _SpacePageState();
@@ -19,22 +20,8 @@ class _SpacePageState extends State<SpacePage> {
     ContentType.solarSystemMoon,
   ];
 
-  final AdService _adService = AdService();
-
-  @override
-  void initState() {
-    super.initState();
-    _adService.loadInterstitialAd();
-  }
-
-  @override
-  void dispose() {
-    _adService.dispose();
-    super.dispose();
-  }
-
   void _navigate(ContentType type) {
-    _adService.showInterstitialAd(onComplete: () {
+    widget.adService.showInterstitialAd(onComplete: () {
       if (!mounted) return;
       Navigator.push(
         context,
