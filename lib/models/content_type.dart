@@ -22,6 +22,7 @@ enum ContentType {
   classicCinema,
   cinema80s90s,
   modernCinema,
+  celebrityHub,
 }
 
 extension ContentTypeExtension on ContentType {
@@ -47,6 +48,7 @@ extension ContentTypeExtension on ContentType {
       case ContentType.classicCinema:      return 'Classic Hollywood';
       case ContentType.cinema80s90s:       return '80s & 90s Movies';
       case ContentType.modernCinema:       return 'Modern Cinema';
+      case ContentType.celebrityHub:       return 'Celebrity';
     }
   }
 
@@ -72,6 +74,7 @@ extension ContentTypeExtension on ContentType {
       case ContentType.classicCinema:      return loc.categoryClassicCinema;
       case ContentType.cinema80s90s:       return loc.categoryCinema80s90s;
       case ContentType.modernCinema:       return loc.categoryModernCinema;
+      case ContentType.celebrityHub:       return loc.categoryCelebrityHub;
     }
   }
 
@@ -97,6 +100,7 @@ extension ContentTypeExtension on ContentType {
       case ContentType.classicCinema:      return Icons.theaters_rounded;
       case ContentType.cinema80s90s:       return Icons.videocam_rounded;
       case ContentType.modernCinema:       return Icons.local_movies_rounded;
+      case ContentType.celebrityHub:       return Icons.stars_rounded;
     }
   }
 
@@ -122,6 +126,7 @@ extension ContentTypeExtension on ContentType {
       case ContentType.classicCinema:      return Colors.brown;
       case ContentType.cinema80s90s:       return Colors.deepOrange;
       case ContentType.modernCinema:       return Colors.red.shade700;
+      case ContentType.celebrityHub:       return Colors.teal;
     }
   }
 
@@ -187,6 +192,8 @@ extension ContentTypeExtension on ContentType {
         return [const Color(0xFF7B2FBE), const Color(0xFFFF6B35)];
       case ContentType.modernCinema:
         return [const Color(0xFF1a1a2e), const Color(0xFFE94560)];
+      case ContentType.celebrityHub:
+        return [const Color(0xFF11998e), const Color(0xFF71B280)];
     }
   }
 
@@ -217,6 +224,7 @@ extension ContentTypeExtension on ContentType {
       case ContentType.classicCinema:
       case ContentType.cinema80s90s:
       case ContentType.modernCinema:
+      case ContentType.celebrityHub:
         return '';
     }
   }

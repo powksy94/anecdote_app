@@ -4,6 +4,7 @@ import 'world_page.dart';
 import 'space_page.dart';
 import 'history_hub_page.dart';
 import 'cinema_hub_page.dart';
+import 'celebrity_hub_page.dart';
 import '../models/content_type.dart';
 import '../generated/app_localizations.dart';
 import '../services/ad_service.dart';
@@ -24,8 +25,7 @@ class _HomePageState extends State<HomePage> {
   static const _topLevelTypes = [
     ContentType.anecdote,
     ContentType.cinemaHub,
-    ContentType.chuckNorris,
-    ContentType.celebrityQuote,
+    ContentType.celebrityHub,
     ContentType.historyHub,
     ContentType.animals,
     ContentType.world,
@@ -70,7 +70,8 @@ class _HomePageState extends State<HomePage> {
 
   void _navigate(ContentType type) {
     if (type == ContentType.world || type == ContentType.space ||
-        type == ContentType.historyHub || type == ContentType.cinemaHub) {
+        type == ContentType.historyHub || type == ContentType.cinemaHub ||
+        type == ContentType.celebrityHub) {
       Navigator.push(
         context,
         PageRouteBuilder(
@@ -78,7 +79,8 @@ class _HomePageState extends State<HomePage> {
             if (type == ContentType.world) return WorldPage(adService: _adService);
             if (type == ContentType.space) return SpacePage(adService: _adService);
             if (type == ContentType.historyHub) return HistoryHubPage(adService: _adService);
-            return CinemaHubPage(adService: _adService);
+            if (type == ContentType.cinemaHub) return CinemaHubPage(adService: _adService);
+            return CelebrityHubPage(adService: _adService);
           },
           transitionsBuilder: (_, animation, __, child) =>
               FadeTransition(opacity: animation, child: child),

@@ -54,4 +54,7 @@ flutter:
     - assets/quotes_classic.json
     - assets/quotes_80s90s.json
     - assets/quotes_modern.json
+    - assets/Parasite.jpg
+    - assets/terminator.jpg
+    - assets/the-good-the-bad-and-the-ugly.jpg
     - assets/ampoule-qui-eclate.ogg

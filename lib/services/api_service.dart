@@ -59,6 +59,7 @@ class ApiService {
       case ContentType.classicCinema:
       case ContentType.cinema80s90s:
       case ContentType.modernCinema:
+      case ContentType.celebrityHub:
         return '';
     }
   }
@@ -277,6 +278,7 @@ class ApiService {
       case ContentType.classicCinema:
       case ContentType.cinema80s90s:
       case ContentType.modernCinema:
+      case ContentType.celebrityHub:
         break;
     }
     return ContentData(preview: 'Content not available');

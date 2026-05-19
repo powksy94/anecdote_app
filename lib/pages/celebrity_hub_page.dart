@@ -2,22 +2,21 @@ import 'package:flutter/material.dart';
 import '../models/content_type.dart';
 import '../generated/app_localizations.dart';
 import '../services/ad_service.dart';
-import '../widgets/cinema_subcategory_card.dart';
+import '../widgets/subcategory_card.dart';
 import 'content_page.dart';
 
-class CinemaHubPage extends StatefulWidget {
+class CelebrityHubPage extends StatefulWidget {
   final AdService adService;
-  const CinemaHubPage({super.key, required this.adService});
+  const CelebrityHubPage({super.key, required this.adService});
 
   @override
-  State<CinemaHubPage> createState() => _CinemaHubPageState();
+  State<CelebrityHubPage> createState() => _CelebrityHubPageState();
 }
 
-class _CinemaHubPageState extends State<CinemaHubPage> {
+class _CelebrityHubPageState extends State<CelebrityHubPage> {
   static const _subCategories = [
-    ContentType.classicCinema,
-    ContentType.cinema80s90s,
-    ContentType.modernCinema,
+    ContentType.celebrityQuote,
+    ContentType.chuckNorris,
   ];
 
   void _navigate(ContentType type) {
@@ -39,7 +38,7 @@ class _CinemaHubPageState extends State<CinemaHubPage> {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final loc = AppLocalizations.of(context)!;
-    final gradient = ContentType.cinemaHub.gradient;
+    final gradient = ContentType.celebrityHub.gradient;
 
     return Scaffold(
       extendBodyBehindAppBar: true,
@@ -47,11 +46,11 @@ class _CinemaHubPageState extends State<CinemaHubPage> {
         title: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Icon(ContentType.cinemaHub.icon, size: 24),
+            Icon(ContentType.celebrityHub.icon, size: 24),
             const SizedBox(width: 8),
             Flexible(
               child: Text(
-                ContentType.cinemaHub.localizedTitle(loc),
+                ContentType.celebrityHub.localizedTitle(loc),
                 overflow: TextOverflow.ellipsis,
               ),
             ),
@@ -90,7 +89,7 @@ class _CinemaHubPageState extends State<CinemaHubPage> {
           child: ListView.builder(
             padding: const EdgeInsets.fromLTRB(20, 24, 20, 24),
             itemCount: _subCategories.length,
-            itemBuilder: (context, index) => CinemaSubCategoryCard(
+            itemBuilder: (context, index) => SubCategoryCard(
               type: _subCategories[index],
               onNavigate: () => _navigate(_subCategories[index]),
             ),

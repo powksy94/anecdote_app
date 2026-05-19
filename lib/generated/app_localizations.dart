@@ -334,6 +334,12 @@ abstract class AppLocalizations {
   /// **'Cinema'**
   String get categoryCinemaHub;
 
+  /// No description provided for @categoryCelebrityHub.
+  ///
+  /// In en, this message translates to:
+  /// **'Celebrity'**
+  String get categoryCelebrityHub;
+
   /// No description provided for @categoryClassicCinema.
   ///
   /// In en, this message translates to:

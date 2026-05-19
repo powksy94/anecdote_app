@@ -129,6 +129,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get categoryCinemaHub => 'Cinema';
 
   @override
+  String get categoryCelebrityHub => 'Celebrity';
+
+  @override
   String get categoryClassicCinema => 'Classic Hollywood';
 
   @override
