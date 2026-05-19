@@ -38,5 +38,9 @@
   "updateButton": "Mettre à jour",
   "categorySpace": "Espace",
   "categoryStar": "Étoiles",
-  "categorySolarSystemMoon": "Lunes du Système Solaire"
+  "categorySolarSystemMoon": "Lunes du Système Solaire",
+  "categoryHistoryHub": "Histoire",
+  "categoryDayOfHistory": "Événement du Jour",
+  "categoryKingOfFrance": "Rois de France",
+  "categoryAmericanPresident": "Présidents Américains"
 }

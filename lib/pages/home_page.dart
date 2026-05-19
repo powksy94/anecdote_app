@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'content_page.dart';
 import 'world_page.dart';
 import 'space_page.dart';
+import 'history_hub_page.dart';
 import '../models/content_type.dart';
 import '../generated/app_localizations.dart';
 import '../services/ad_service.dart';
@@ -23,7 +24,7 @@ class _HomePageState extends State<HomePage> {
     ContentType.anecdote,
     ContentType.chuckNorris,
     ContentType.celebrityQuote,
-    ContentType.history,
+    ContentType.historyHub,
     ContentType.animals,
     ContentType.world,
     ContentType.space,
@@ -66,13 +67,15 @@ class _HomePageState extends State<HomePage> {
   }
 
   void _navigate(ContentType type) {
-    if (type == ContentType.world || type == ContentType.space) {
+    if (type == ContentType.world || type == ContentType.space || type == ContentType.historyHub) {
       Navigator.push(
         context,
         PageRouteBuilder(
           pageBuilder: (_, __, ___) => type == ContentType.world
               ? WorldPage(adService: _adService)
-              : SpacePage(adService: _adService),
+              : type == ContentType.space
+                  ? SpacePage(adService: _adService)
+                  : HistoryHubPage(adService: _adService),
           transitionsBuilder: (_, animation, __, child) =>
               FadeTransition(opacity: animation, child: child),
           transitionDuration: const Duration(milliseconds: 250),

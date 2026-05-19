@@ -38,5 +38,9 @@
   "updateButton": "Actualizar",
   "categorySpace": "Espacio",
   "categoryStar": "Estrellas",
-  "categorySolarSystemMoon": "Lunas del Sistema Solar"
+  "categorySolarSystemMoon": "Lunas del Sistema Solar",
+  "categoryHistoryHub": "Historia",
+  "categoryDayOfHistory": "Evento del Día",
+  "categoryKingOfFrance": "Reyes de Francia",
+  "categoryAmericanPresident": "Presidentes Americanos"
 }

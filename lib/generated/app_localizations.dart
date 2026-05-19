@@ -303,6 +303,30 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Solar System Moons'**
   String get categorySolarSystemMoon;
+
+  /// No description provided for @categoryHistoryHub.
+  ///
+  /// In en, this message translates to:
+  /// **'History'**
+  String get categoryHistoryHub;
+
+  /// No description provided for @categoryDayOfHistory.
+  ///
+  /// In en, this message translates to:
+  /// **'Day of History'**
+  String get categoryDayOfHistory;
+
+  /// No description provided for @categoryKingOfFrance.
+  ///
+  /// In en, this message translates to:
+  /// **'Kings of France'**
+  String get categoryKingOfFrance;
+
+  /// No description provided for @categoryAmericanPresident.
+  ///
+  /// In en, this message translates to:
+  /// **'American Presidents'**
+  String get categoryAmericanPresident;
 }
 
 class _AppLocalizationsDelegate

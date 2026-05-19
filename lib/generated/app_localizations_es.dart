@@ -112,4 +112,16 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get categorySolarSystemMoon => 'Lunas del Sistema Solar';
+
+  @override
+  String get categoryHistoryHub => 'Historia';
+
+  @override
+  String get categoryDayOfHistory => 'Evento del Día';
+
+  @override
+  String get categoryKingOfFrance => 'Reyes de Francia';
+
+  @override
+  String get categoryAmericanPresident => 'Presidentes Americanos';
 }

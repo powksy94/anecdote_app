@@ -1,0 +1,72 @@
+import json
+
+# n=name, dy=dynasty, rs=reign_start, re=reign_end, ni=nickname, fa=famous_for
+kings = [
+    # MÉROVINGIENS
+    {"n":"Clovis I","dy":"Merovingian","rs":481,"re":511,"ni":"The Great","fa":"First king to unite the Franks, converted to Christianity at Reims"},
+    {"n":"Clotaire I","dy":"Merovingian","rs":511,"re":561,"ni":"The Old","fa":"Reunified the Frankish kingdom after years of division"},
+    {"n":"Chilpéric I","dy":"Merovingian","rs":561,"re":584,"ni":"The Nero of the Franks","fa":"Brutal ruler known for conflicts with his wife Frédégonde"},
+    {"n":"Dagobert I","dy":"Merovingian","rs":629,"re":639,"ni":"The Good King","fa":"Last effective Merovingian king, made Paris his capital"},
+    {"n":"Childéric III","dy":"Merovingian","rs":743,"re":751,"ni":"The Last","fa":"Last Merovingian king, deposed by Pépin le Bref"},
+    # CAROLINGIENS
+    {"n":"Pépin le Bref","dy":"Carolingian","rs":751,"re":768,"ni":"The Short","fa":"First Carolingian king, father of Charlemagne, allied with the Pope"},
+    {"n":"Charlemagne","dy":"Carolingian","rs":768,"re":814,"ni":"Charles the Great","fa":"Crowned Holy Roman Emperor in 800, unified much of Western Europe"},
+    {"n":"Louis I","dy":"Carolingian","rs":814,"re":840,"ni":"The Pious","fa":"Son of Charlemagne, attempted to maintain the unified empire"},
+    {"n":"Charles II","dy":"Carolingian","rs":843,"re":877,"ni":"The Bald","fa":"First King of West Francia after the Treaty of Verdun (843)"},
+    {"n":"Louis II","dy":"Carolingian","rs":877,"re":879,"ni":"The Stammerer","fa":"Short reign, son of Charles the Bald"},
+    {"n":"Louis III","dy":"Carolingian","rs":879,"re":882,"ni":None,"fa":"Defeated the Vikings at the Battle of Saucourt (881)"},
+    {"n":"Carloman II","dy":"Carolingian","rs":879,"re":884,"ni":None,"fa":"Co-ruled with his brother Louis III"},
+    {"n":"Charles III","dy":"Carolingian","rs":884,"re":888,"ni":"The Fat","fa":"Briefly reunited the Carolingian empire before deposition"},
+    {"n":"Eudes","dy":"Robertian","rs":888,"re":898,"ni":None,"fa":"Defended Paris against Vikings, first non-Carolingian king"},
+    {"n":"Charles III","dy":"Carolingian","rs":898,"re":922,"ni":"The Simple","fa":"Ceded Normandy to Viking chief Rollo in 911"},
+    {"n":"Robert I","dy":"Robertian","rs":922,"re":923,"ni":None,"fa":"Elected king by rebellious nobles, killed in battle"},
+    {"n":"Raoul","dy":"Burgundian","rs":923,"re":936,"ni":None,"fa":"Defended against Magyar and Viking invasions"},
+    {"n":"Louis IV","dy":"Carolingian","rs":936,"re":954,"ni":"Overseas","fa":"Raised in England, struggled to reclaim royal authority"},
+    {"n":"Lothaire","dy":"Carolingian","rs":954,"re":986,"ni":None,"fa":"Last powerful Carolingian king of West Francia"},
+    {"n":"Louis V","dy":"Carolingian","rs":986,"re":987,"ni":"The Sluggard","fa":"Last Carolingian king, died without heir"},
+    # CAPÉTIENS DIRECTS
+    {"n":"Hugues Capet","dy":"Capetian","rs":987,"re":996,"ni":None,"fa":"Founded the Capetian dynasty, which ruled France for 341 years"},
+    {"n":"Robert II","dy":"Capetian","rs":996,"re":1031,"ni":"The Pious","fa":"Known for his piety, excommunicated by the Pope"},
+    {"n":"Henri I","dy":"Capetian","rs":1031,"re":1060,"ni":None,"fa":"Allied with William the Conqueror before their falling out"},
+    {"n":"Philippe I","dy":"Capetian","rs":1060,"re":1108,"ni":"The Amorous","fa":"First French king to be excommunicated for adultery"},
+    {"n":"Louis VI","dy":"Capetian","rs":1108,"re":1137,"ni":"The Fat","fa":"Consolidated royal power and fought feudal lords"},
+    {"n":"Louis VII","dy":"Capetian","rs":1137,"re":1180,"ni":"The Young","fa":"Led the Second Crusade, divorced Eleanor of Aquitaine"},
+    {"n":"Philippe II","dy":"Capetian","rs":1180,"re":1223,"ni":"Augustus","fa":"Doubled French territory, defeated England at Bouvines (1214)"},
+    {"n":"Louis VIII","dy":"Capetian","rs":1223,"re":1226,"ni":"The Lion","fa":"Invaded England, led the Albigensian Crusade"},
+    {"n":"Louis IX","dy":"Capetian","rs":1226,"re":1270,"ni":"Saint Louis","fa":"Led two crusades, canonized in 1297, model of Christian kingship"},
+    {"n":"Philippe III","dy":"Capetian","rs":1270,"re":1285,"ni":"The Bold","fa":"Expanded French territory through diplomacy and inheritance"},
+    {"n":"Philippe IV","dy":"Capetian","rs":1285,"re":1314,"ni":"The Fair","fa":"Suppressed the Knights Templar, moved the papacy to Avignon"},
+    {"n":"Louis X","dy":"Capetian","rs":1314,"re":1316,"ni":"The Quarrelsome","fa":"First king to free serfs in France"},
+    {"n":"Philippe V","dy":"Capetian","rs":1316,"re":1322,"ni":"The Tall","fa":"Established the Salic Law excluding women from succession"},
+    {"n":"Charles IV","dy":"Capetian","rs":1322,"re":1328,"ni":"The Fair","fa":"Last direct Capetian king, died without male heir"},
+    # VALOIS
+    {"n":"Philippe VI","dy":"Valois","rs":1328,"re":1350,"ni":"The Fortunate","fa":"First Valois king, defeated at Crécy (1346) during the Hundred Years War"},
+    {"n":"Jean II","dy":"Valois","rs":1350,"re":1364,"ni":"The Good","fa":"Captured by the English at Poitiers (1356), held for ransom"},
+    {"n":"Charles V","dy":"Valois","rs":1364,"re":1380,"ni":"The Wise","fa":"Rebuilt France after English defeats, reorganized the army"},
+    {"n":"Charles VI","dy":"Valois","rs":1380,"re":1422,"ni":"The Mad","fa":"Suffered from mental illness, signed Treaty of Troyes ceding France to England"},
+    {"n":"Charles VII","dy":"Valois","rs":1422,"re":1461,"ni":"The Victorious","fa":"Aided by Joan of Arc, expelled the English and ended Hundred Years War"},
+    {"n":"Louis XI","dy":"Valois","rs":1461,"re":1483,"ni":"The Prudent","fa":"Masterful politician nicknamed 'the Universal Spider', unified France"},
+    {"n":"Charles VIII","dy":"Valois","rs":1483,"re":1498,"ni":"The Affable","fa":"Invaded Italy in 1494, starting the Italian Wars"},
+    {"n":"Louis XII","dy":"Valois-Orléans","rs":1498,"re":1515,"ni":"Father of the People","fa":"Reduced taxes, reformed justice, continued Italian campaigns"},
+    {"n":"François I","dy":"Valois-Angoulême","rs":1515,"re":1547,"ni":"The Father of Letters","fa":"Renaissance patron, invited Leonardo da Vinci, built Château de Chambord"},
+    {"n":"Henri II","dy":"Valois-Angoulême","rs":1547,"re":1559,"ni":None,"fa":"Persecuted Protestants, died in a jousting accident"},
+    {"n":"François II","dy":"Valois-Angoulême","rs":1559,"re":1560,"ni":None,"fa":"Brief reign at 15, husband of Mary Queen of Scots"},
+    {"n":"Charles IX","dy":"Valois-Angoulême","rs":1560,"re":1574,"ni":None,"fa":"Ordered the St. Bartholomew's Day Massacre (1572)"},
+    {"n":"Henri III","dy":"Valois-Angoulême","rs":1574,"re":1589,"ni":None,"fa":"Last Valois king, assassinated by a monk"},
+    # BOURBONS
+    {"n":"Henri IV","dy":"Bourbon","rs":1589,"re":1610,"ni":"Good King Henry","fa":"Ended Wars of Religion, issued Edict of Nantes, assassinated by Ravaillac"},
+    {"n":"Louis XIII","dy":"Bourbon","rs":1610,"re":1643,"ni":"The Just","fa":"Relied on Cardinal Richelieu, strengthened absolute monarchy"},
+    {"n":"Louis XIV","dy":"Bourbon","rs":1643,"re":1715,"ni":"The Sun King","fa":"Longest reign in European history (72 yrs), built Versailles, peak of French power"},
+    {"n":"Louis XV","dy":"Bourbon","rs":1715,"re":1774,"ni":"The Well-Beloved","fa":"Lost Canada and India to Britain, laid groundwork for Revolution"},
+    {"n":"Louis XVI","dy":"Bourbon","rs":1774,"re":1792,"ni":None,"fa":"Last king before the Revolution, executed by guillotine on 21 January 1793"},
+    # RESTAURATION
+    {"n":"Louis XVIII","dy":"Bourbon","rs":1814,"re":1824,"ni":"The Desired","fa":"Restored after Napoleon, established constitutional monarchy"},
+    {"n":"Charles X","dy":"Bourbon","rs":1824,"re":1830,"ni":None,"fa":"Absolutist policies provoked the July Revolution, last Bourbon king to reign"},
+    # ORLÉANS
+    {"n":"Louis-Philippe I","dy":"Orléans","rs":1830,"re":1848,"ni":"The Citizen King","fa":"Last king of France, overthrown by 1848 Revolution"},
+]
+
+with open("assets/kings_of_france.json", "w", encoding="utf-8") as f:
+    json.dump(kings, f, ensure_ascii=False, separators=(',', ':'))
+
+print(f"{len(kings)} rois générés.")

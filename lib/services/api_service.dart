@@ -11,6 +11,8 @@ import 'world_service/department_service.dart';
 import 'world_service/pacific_island_service.dart';
 import 'space_service/star_service.dart';
 import 'space_service/moon_service.dart';
+import 'history_service/king_service.dart';
+import 'history_service/president_service.dart';
 import 'exoplanet_service.dart';
 
 int _dayOfYear() {
@@ -49,6 +51,9 @@ class ApiService {
       case ContentType.star:
       case ContentType.solarSystemMoon:
       case ContentType.space:
+      case ContentType.kingOfFrance:
+      case ContentType.americanPresident:
+      case ContentType.historyHub:
         return '';
     }
   }
@@ -72,6 +77,12 @@ class ApiService {
       }
       if (type == ContentType.solarSystemMoon) {
         return await MoonService().getDailyContent();
+      }
+      if (type == ContentType.kingOfFrance) {
+        return await KingService().getDailyContent();
+      }
+      if (type == ContentType.americanPresident) {
+        return await PresidentService().getDailyContent();
       }
       if (type == ContentType.chuckNorris) {
         return await _fetchChuckNorrisContent();
@@ -172,7 +183,7 @@ class ApiService {
           } else if (yearInt < 0) {
             displayYear = '${yearInt.abs()} BC';
           } else {
-            displayYear = rawYear;
+            displayYear = yearInt.toString();
           }
           final eventText = (event['event'] as String? ?? '')
               .replaceAll(RegExp(r'\[[^\]]*\]'), '')
@@ -181,8 +192,11 @@ class ApiService {
           final monthNames = ['', 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
           final day    = now.day;
           final suffix = day == 1 ? 'st' : day == 2 ? 'nd' : day == 3 ? 'rd' : 'th';
+          final datePart = displayYear.isEmpty
+              ? '$day$suffix ${monthNames[now.month]}'
+              : '$day$suffix ${monthNames[now.month]} $displayYear';
           return ContentData(
-            preview: '$day$suffix ${monthNames[now.month]} $displayYear\n\n$eventText',
+            preview: '$datePart\n\n$eventText',
           );
         }
         break;
@@ -246,6 +260,9 @@ class ApiService {
       case ContentType.star:
       case ContentType.solarSystemMoon:
       case ContentType.space:
+      case ContentType.kingOfFrance:
+      case ContentType.americanPresident:
+      case ContentType.historyHub:
         break;
     }
     return ContentData(preview: 'Content not available');
