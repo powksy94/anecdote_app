@@ -26,6 +26,10 @@ class DailyCacheService {
           details: data['details'] ?? '',
           hasDetails: data['hasDetails'] ?? false,
           flagSvg: data['flagSvg'] as String?,
+          quoteLang: data['quoteLang'] as String?,
+          quoteEn: data['quoteEn'] as String?,
+          quoteFr: data['quoteFr'] as String?,
+          quoteEs: data['quoteEs'] as String?,
         );
       }
       return null;
@@ -44,6 +48,10 @@ class DailyCacheService {
       'details': content.details,
       'hasDetails': content.hasDetails,
       if (content.flagSvg != null) 'flagSvg': content.flagSvg,
+      if (content.quoteLang != null) 'quoteLang': content.quoteLang,
+      if (content.quoteEn != null) 'quoteEn': content.quoteEn,
+      if (content.quoteFr != null) 'quoteFr': content.quoteFr,
+      if (content.quoteEs != null) 'quoteEs': content.quoteEs,
     };
     await prefs.setString(_keyFor(type, locale: locale), jsonEncode(data));
   }

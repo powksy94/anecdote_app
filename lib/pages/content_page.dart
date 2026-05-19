@@ -8,6 +8,7 @@ import '../services/daily_cache_service.dart';
 import '../services/translation_service.dart';
 import '../widgets/content_card.dart';
 import '../widgets/country_card.dart';
+import '../widgets/cinema_card.dart';
 import '../widgets/error_card.dart';
 
 class ContentPage extends StatefulWidget {
@@ -58,6 +59,12 @@ class _ContentPageState extends State<ContentPage> {
     ContentType.pacificIsland,
   };
 
+  static const _cinemaTypes = {
+    ContentType.classicCinema,
+    ContentType.cinema80s90s,
+    ContentType.modernCinema,
+  };
+
   ContentData _applyLocaleUnits(ContentData content, AppLocalizations l10n) {
     if (_geoTypes.contains(widget.contentType)) {
       var details = content.details;
@@ -96,7 +103,10 @@ class _ContentPageState extends State<ContentPage> {
     final l10n = AppLocalizations.of(context)!;
 
     try {
-      final cached = await cacheService.getTodayContent(widget.contentType, locale: _locale);
+      // Pour les catégories cinéma on ignore le cache locale (VO uniquement)
+      final cached = _cinemaTypes.contains(widget.contentType)
+          ? null
+          : await cacheService.getTodayContent(widget.contentType, locale: _locale);
       final cacheValid = cached != null &&
           cached.preview.isNotEmpty &&
           cached.preview != 'Content not available' &&
@@ -117,14 +127,15 @@ class _ContentPageState extends State<ContentPage> {
           englishContent.preview.isNotEmpty &&
           englishContent.preview != 'Content not available' &&
           (widget.contentType != ContentType.exoplanet || englishContent.details.contains('🛸')) &&
-          (widget.contentType != ContentType.chuckNorris || englishContent.preview.length > 20);
+          (widget.contentType != ContentType.chuckNorris || englishContent.preview.length > 20) &&
+          (!_cinemaTypes.contains(widget.contentType) || englishContent.quoteLang != null);
       if (!englishCacheValid) {
         englishContent = await apiService.fetchContent(widget.contentType);
         await cacheService.saveTodayContent(widget.contentType, englishContent, locale: 'en');
       }
 
       ContentData finalContent = englishContent;
-      if (_locale != 'en') {
+      if (_locale != 'en' && !_cinemaTypes.contains(widget.contentType)) {
         finalContent = await translationService.translateContent(
           _applyLocaleUnits(englishContent, l10n),
           targetLang: _locale,
@@ -236,13 +247,21 @@ class _ContentPageState extends State<ContentPage> {
                           accentColor: accentColor,
                           timeUntilMidnight: _getTimeUntilMidnight(),
                         )
-                      : ContentCard(
-                          contentData: contentData,
-                          contentType: widget.contentType,
-                          gradient: gradient,
-                          accentColor: accentColor,
-                          timeUntilMidnight: _getTimeUntilMidnight(),
-                        ),
+                      : _cinemaTypes.contains(widget.contentType)
+                          ? CinemaCard(
+                              contentData: contentData,
+                              contentType: widget.contentType,
+                              gradient: gradient,
+                              accentColor: accentColor,
+                              timeUntilMidnight: _getTimeUntilMidnight(),
+                            )
+                          : ContentCard(
+                              contentData: contentData,
+                              contentType: widget.contentType,
+                              gradient: gradient,
+                              accentColor: accentColor,
+                              timeUntilMidnight: _getTimeUntilMidnight(),
+                            ),
         ),
       ),
     );

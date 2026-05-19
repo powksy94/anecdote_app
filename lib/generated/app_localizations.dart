@@ -369,6 +369,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Translation'**
   String get voTranslation;
+
+  /// No description provided for @dubbing.
+  ///
+  /// In en, this message translates to:
+  /// **'Dubbing'**
+  String get dubbing;
+
+  /// No description provided for @hideDubbing.
+  ///
+  /// In en, this message translates to:
+  /// **'Hide dubbing'**
+  String get hideDubbing;
 }
 
 class _AppLocalizationsDelegate

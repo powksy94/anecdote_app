@@ -49,5 +49,7 @@
   "categoryCinema80s90s": "Films des années 80-90",
   "categoryModernCinema": "Cinéma Moderne",
   "voOriginal": "Version originale",
-  "voTranslation": "Traduction"
+  "voTranslation": "Traduction",
+  "dubbing": "Doublage",
+  "hideDubbing": "Cacher le doublage"
 }

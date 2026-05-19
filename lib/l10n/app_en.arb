@@ -49,5 +49,7 @@
   "categoryCinema80s90s": "80s & 90s Movies",
   "categoryModernCinema": "Modern Cinema",
   "voOriginal": "Original version",
-  "voTranslation": "Translation"
+  "voTranslation": "Translation",
+  "dubbing": "Dubbing",
+  "hideDubbing": "Hide dubbing"
 }

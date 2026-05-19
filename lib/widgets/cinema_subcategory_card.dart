@@ -8,6 +8,12 @@ const _posterAssets = {
   ContentType.modernCinema:  'assets/Parasite.jpg',
 };
 
+const _posterAlignments = {
+  ContentType.classicCinema: Alignment.center,
+  ContentType.cinema80s90s:  Alignment(0, -0.4),
+  ContentType.modernCinema:  Alignment(0, -0.7),
+};
+
 class CinemaSubCategoryCard extends StatelessWidget {
   final ContentType type;
   final VoidCallback? onNavigate;
@@ -36,7 +42,11 @@ class CinemaSubCategoryCard extends StatelessWidget {
               children: [
                 // Affiche locale en fond
                 if (posterAsset != null)
-                  Image.asset(posterAsset, fit: BoxFit.cover)
+                  Image.asset(
+                    posterAsset,
+                    fit: BoxFit.cover,
+                    alignment: _posterAlignments[type] ?? Alignment.center,
+                  )
                 else
                   Container(
                     decoration: BoxDecoration(

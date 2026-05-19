@@ -145,4 +145,10 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get voTranslation => 'Traducción';
+
+  @override
+  String get dubbing => 'Doblaje';
+
+  @override
+  String get hideDubbing => 'Ocultar doblaje';
 }
