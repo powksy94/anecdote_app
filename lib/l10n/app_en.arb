@@ -42,5 +42,11 @@
   "categoryHistoryHub": "History",
   "categoryDayOfHistory": "Day of History",
   "categoryKingOfFrance": "Kings of France",
-  "categoryAmericanPresident": "American Presidents"
+  "categoryAmericanPresident": "American Presidents",
+  "categoryCinemaHub": "Cinema",
+  "categoryClassicCinema": "Classic Hollywood",
+  "categoryCinema80s90s": "80s & 90s Movies",
+  "categoryModernCinema": "Modern Cinema",
+  "voOriginal": "Original version",
+  "voTranslation": "Translation"
 }

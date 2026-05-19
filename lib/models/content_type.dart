@@ -18,6 +18,10 @@ enum ContentType {
   star,
   solarSystemMoon,
   space,
+  cinemaHub,
+  classicCinema,
+  cinema80s90s,
+  modernCinema,
 }
 
 extension ContentTypeExtension on ContentType {
@@ -39,6 +43,10 @@ extension ContentTypeExtension on ContentType {
       case ContentType.star:               return 'Star';
       case ContentType.solarSystemMoon:    return 'Moon';
       case ContentType.space:              return 'Space';
+      case ContentType.cinemaHub:          return 'Cinema';
+      case ContentType.classicCinema:      return 'Classic Hollywood';
+      case ContentType.cinema80s90s:       return '80s & 90s Movies';
+      case ContentType.modernCinema:       return 'Modern Cinema';
     }
   }
 
@@ -60,6 +68,10 @@ extension ContentTypeExtension on ContentType {
       case ContentType.star:               return loc.categoryStar;
       case ContentType.solarSystemMoon:    return loc.categorySolarSystemMoon;
       case ContentType.space:              return loc.categorySpace;
+      case ContentType.cinemaHub:          return loc.categoryCinemaHub;
+      case ContentType.classicCinema:      return loc.categoryClassicCinema;
+      case ContentType.cinema80s90s:       return loc.categoryCinema80s90s;
+      case ContentType.modernCinema:       return loc.categoryModernCinema;
     }
   }
 
@@ -81,6 +93,10 @@ extension ContentTypeExtension on ContentType {
       case ContentType.star:               return Icons.star_rounded;
       case ContentType.solarSystemMoon:    return Icons.brightness_2_rounded;
       case ContentType.space:              return Icons.nightlight_round;
+      case ContentType.cinemaHub:          return Icons.movie_rounded;
+      case ContentType.classicCinema:      return Icons.theaters_rounded;
+      case ContentType.cinema80s90s:       return Icons.videocam_rounded;
+      case ContentType.modernCinema:       return Icons.local_movies_rounded;
     }
   }
 
@@ -102,6 +118,10 @@ extension ContentTypeExtension on ContentType {
       case ContentType.star:               return Colors.amber;
       case ContentType.solarSystemMoon:    return Colors.blueGrey;
       case ContentType.space:              return Colors.deepPurple;
+      case ContentType.cinemaHub:          return Colors.red.shade900;
+      case ContentType.classicCinema:      return Colors.brown;
+      case ContentType.cinema80s90s:       return Colors.deepOrange;
+      case ContentType.modernCinema:       return Colors.red.shade700;
     }
   }
 
@@ -115,6 +135,11 @@ extension ContentTypeExtension on ContentType {
         return const Color(0xFFffd200);
       case ContentType.solarSystemMoon:
         return const Color(0xFF90CAF9);
+      case ContentType.cinemaHub:
+      case ContentType.classicCinema:
+      case ContentType.cinema80s90s:
+      case ContentType.modernCinema:
+        return const Color(0xFFFFD700);
       default:
         return gradient[0];
     }
@@ -154,6 +179,14 @@ extension ContentTypeExtension on ContentType {
         return [const Color(0xFF4b6cb7), const Color(0xFF182848)];
       case ContentType.space:
         return [const Color(0xFF0F0C29), const Color(0xFF24243e)];
+      case ContentType.cinemaHub:
+        return [const Color(0xFF1a1a2e), const Color(0xFF8B0000)];
+      case ContentType.classicCinema:
+        return [const Color(0xFF3E1F00), const Color(0xFFB8860B)];
+      case ContentType.cinema80s90s:
+        return [const Color(0xFF7B2FBE), const Color(0xFFFF6B35)];
+      case ContentType.modernCinema:
+        return [const Color(0xFF1a1a2e), const Color(0xFFE94560)];
     }
   }
 
@@ -180,6 +213,10 @@ extension ContentTypeExtension on ContentType {
       case ContentType.kingOfFrance:
       case ContentType.americanPresident:
       case ContentType.historyHub:
+      case ContentType.cinemaHub:
+      case ContentType.classicCinema:
+      case ContentType.cinema80s90s:
+      case ContentType.modernCinema:
         return '';
     }
   }

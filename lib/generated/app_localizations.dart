@@ -327,6 +327,42 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'American Presidents'**
   String get categoryAmericanPresident;
+
+  /// No description provided for @categoryCinemaHub.
+  ///
+  /// In en, this message translates to:
+  /// **'Cinema'**
+  String get categoryCinemaHub;
+
+  /// No description provided for @categoryClassicCinema.
+  ///
+  /// In en, this message translates to:
+  /// **'Classic Hollywood'**
+  String get categoryClassicCinema;
+
+  /// No description provided for @categoryCinema80s90s.
+  ///
+  /// In en, this message translates to:
+  /// **'80s & 90s Movies'**
+  String get categoryCinema80s90s;
+
+  /// No description provided for @categoryModernCinema.
+  ///
+  /// In en, this message translates to:
+  /// **'Modern Cinema'**
+  String get categoryModernCinema;
+
+  /// No description provided for @voOriginal.
+  ///
+  /// In en, this message translates to:
+  /// **'Original version'**
+  String get voOriginal;
+
+  /// No description provided for @voTranslation.
+  ///
+  /// In en, this message translates to:
+  /// **'Translation'**
+  String get voTranslation;
 }
 
 class _AppLocalizationsDelegate

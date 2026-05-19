@@ -124,4 +124,22 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get categoryAmericanPresident => 'American Presidents';
+
+  @override
+  String get categoryCinemaHub => 'Cinema';
+
+  @override
+  String get categoryClassicCinema => 'Classic Hollywood';
+
+  @override
+  String get categoryCinema80s90s => '80s & 90s Movies';
+
+  @override
+  String get categoryModernCinema => 'Modern Cinema';
+
+  @override
+  String get voOriginal => 'Original version';
+
+  @override
+  String get voTranslation => 'Translation';
 }

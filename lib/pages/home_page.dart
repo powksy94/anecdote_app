@@ -3,6 +3,7 @@ import 'content_page.dart';
 import 'world_page.dart';
 import 'space_page.dart';
 import 'history_hub_page.dart';
+import 'cinema_hub_page.dart';
 import '../models/content_type.dart';
 import '../generated/app_localizations.dart';
 import '../services/ad_service.dart';
@@ -22,6 +23,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   static const _topLevelTypes = [
     ContentType.anecdote,
+    ContentType.cinemaHub,
     ContentType.chuckNorris,
     ContentType.celebrityQuote,
     ContentType.historyHub,
@@ -67,15 +69,17 @@ class _HomePageState extends State<HomePage> {
   }
 
   void _navigate(ContentType type) {
-    if (type == ContentType.world || type == ContentType.space || type == ContentType.historyHub) {
+    if (type == ContentType.world || type == ContentType.space ||
+        type == ContentType.historyHub || type == ContentType.cinemaHub) {
       Navigator.push(
         context,
         PageRouteBuilder(
-          pageBuilder: (_, __, ___) => type == ContentType.world
-              ? WorldPage(adService: _adService)
-              : type == ContentType.space
-                  ? SpacePage(adService: _adService)
-                  : HistoryHubPage(adService: _adService),
+          pageBuilder: (_, __, ___) {
+            if (type == ContentType.world) return WorldPage(adService: _adService);
+            if (type == ContentType.space) return SpacePage(adService: _adService);
+            if (type == ContentType.historyHub) return HistoryHubPage(adService: _adService);
+            return CinemaHubPage(adService: _adService);
+          },
           transitionsBuilder: (_, animation, __, child) =>
               FadeTransition(opacity: animation, child: child),
           transitionDuration: const Duration(milliseconds: 250),

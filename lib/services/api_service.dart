@@ -13,6 +13,7 @@ import 'space_service/star_service.dart';
 import 'space_service/moon_service.dart';
 import 'history_service/king_service.dart';
 import 'history_service/president_service.dart';
+import 'cinema_service.dart';
 import 'exoplanet_service.dart';
 
 int _dayOfYear() {
@@ -54,6 +55,10 @@ class ApiService {
       case ContentType.kingOfFrance:
       case ContentType.americanPresident:
       case ContentType.historyHub:
+      case ContentType.cinemaHub:
+      case ContentType.classicCinema:
+      case ContentType.cinema80s90s:
+      case ContentType.modernCinema:
         return '';
     }
   }
@@ -83,6 +88,11 @@ class ApiService {
       }
       if (type == ContentType.americanPresident) {
         return await PresidentService().getDailyContent();
+      }
+      if (type == ContentType.classicCinema ||
+          type == ContentType.cinema80s90s ||
+          type == ContentType.modernCinema) {
+        return await CinemaService(type).getDailyContent();
       }
       if (type == ContentType.chuckNorris) {
         return await _fetchChuckNorrisContent();
@@ -263,6 +273,10 @@ class ApiService {
       case ContentType.kingOfFrance:
       case ContentType.americanPresident:
       case ContentType.historyHub:
+      case ContentType.cinemaHub:
+      case ContentType.classicCinema:
+      case ContentType.cinema80s90s:
+      case ContentType.modernCinema:
         break;
     }
     return ContentData(preview: 'Content not available');

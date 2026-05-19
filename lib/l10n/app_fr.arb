@@ -42,5 +42,11 @@
   "categoryHistoryHub": "Histoire",
   "categoryDayOfHistory": "Événement du Jour",
   "categoryKingOfFrance": "Rois de France",
-  "categoryAmericanPresident": "Présidents Américains"
+  "categoryAmericanPresident": "Présidents Américains",
+  "categoryCinemaHub": "Cinéma",
+  "categoryClassicCinema": "Hollywood Classique",
+  "categoryCinema80s90s": "Films des années 80-90",
+  "categoryModernCinema": "Cinéma Moderne",
+  "voOriginal": "Version originale",
+  "voTranslation": "Traduction"
 }

@@ -51,4 +51,7 @@ flutter:
     - assets/solar_moons.json
     - assets/kings_of_france.json
     - assets/american_presidents.json
+    - assets/quotes_classic.json
+    - assets/quotes_80s90s.json
+    - assets/quotes_modern.json
     - assets/ampoule-qui-eclate.ogg

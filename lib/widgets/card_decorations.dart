@@ -35,6 +35,14 @@ Widget buildCardDecoration(ContentType type) {
       return _singleIcon(Icons.waves);
     case ContentType.historyHub:
       return _singleIcon(Icons.history_edu);
+    case ContentType.cinemaHub:
+      return _doubleIcon(Icons.movie, Icons.star);
+    case ContentType.classicCinema:
+      return _rects(Icons.theaters);
+    case ContentType.cinema80s90s:
+      return _singleIcon(Icons.videocam, iconSize: 16);
+    case ContentType.modernCinema:
+      return _singleIcon(Icons.local_movies);
     case ContentType.kingOfFrance:
       return _singleIcon(Icons.castle);
     case ContentType.americanPresident:
