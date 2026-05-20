@@ -65,7 +65,7 @@ class Exoplanet {
 /// Charge la liste complète depuis l'asset JSON.
 /// À appeler une seule fois au démarrage et mettre en cache.
 Future<List<Exoplanet>> loadExoplanets() async {
-  final raw = await rootBundle.loadString('assets/exoplanets.json');
+  final raw = await rootBundle.loadString('assets/space/exoplanets.json');
   final list = jsonDecode(raw) as List<dynamic>;
   return list.map((e) => Exoplanet.fromJson(e as Map<String, dynamic>)).toList();
 }

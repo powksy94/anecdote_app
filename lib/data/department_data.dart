@@ -23,7 +23,7 @@ class DepartmentData {
 }
 
 Future<List<DepartmentData>> loadDepartments() async {
-  final raw = await rootBundle.loadString('assets/french_departments.json');
+  final raw = await rootBundle.loadString('assets/world/french_departments.json');
   final list = jsonDecode(raw) as List;
   return list.map((e) => DepartmentData.fromJson(e as Map<String, dynamic>)).toList();
 }

@@ -8,7 +8,7 @@ class ExoplanetService {
 
   Future<List<Exoplanet>> _loadPlanets() async {
     if (_cache != null) return _cache!;
-    final raw = await rootBundle.loadString('assets/exoplanets.json');
+    final raw = await rootBundle.loadString('assets/space/exoplanets.json');
     final list = jsonDecode(raw) as List<dynamic>;
     _cache = list
         .map((e) => Exoplanet.fromJson(e as Map<String, dynamic>))

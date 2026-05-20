@@ -27,7 +27,7 @@ class AmericanPresidentData {
 }
 
 Future<List<AmericanPresidentData>> loadAmericanPresidents() async {
-  final raw = await rootBundle.loadString('assets/american_presidents.json');
+  final raw = await rootBundle.loadString('assets/history/american_presidents.json');
   final list = jsonDecode(raw) as List;
   return list.map((e) => AmericanPresidentData.fromJson(e as Map<String, dynamic>)).toList();
 }

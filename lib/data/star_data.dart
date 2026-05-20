@@ -31,7 +31,7 @@ class StarData {
 }
 
 Future<List<StarData>> loadStars() async {
-  final raw = await rootBundle.loadString('assets/stars.json');
+  final raw = await rootBundle.loadString('assets/space/stars.json');
   final list = jsonDecode(raw) as List;
   return list.map((e) => StarData.fromJson(e as Map<String, dynamic>)).toList();
 }

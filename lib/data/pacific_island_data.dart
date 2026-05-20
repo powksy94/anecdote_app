@@ -25,7 +25,7 @@ class PacificIslandData {
 }
 
 Future<List<PacificIslandData>> loadPacificIslands() async{
-  final raw = await rootBundle.loadString('assets/pacific_islands.json');
+  final raw = await rootBundle.loadString('assets/world/pacific_islands.json');
   final list = jsonDecode(raw) as List;
   return list.map((e) => PacificIslandData.fromJson(e as Map<String, dynamic>)).toList();
 }

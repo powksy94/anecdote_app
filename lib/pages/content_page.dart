@@ -8,7 +8,7 @@ import '../services/daily_cache_service.dart';
 import '../services/translation_service.dart';
 import '../widgets/content_card.dart';
 import '../widgets/country_card.dart';
-import '../widgets/cinema_card.dart';
+import '../widgets/cinema/cinema_card.dart';
 import '../widgets/error_card.dart';
 
 class ContentPage extends StatefulWidget {

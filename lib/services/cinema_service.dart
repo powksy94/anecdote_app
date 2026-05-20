@@ -27,6 +27,9 @@ class CinemaService {
       quoteEn: q.qEn,
       quoteFr: q.qFr,
       quoteEs: q.qEs,
+      filmTitleFr: q.fiFr,
+      filmTitleEs: q.fiEs,
+      filmTitleEn: q.fiEn,
     );
   }
 

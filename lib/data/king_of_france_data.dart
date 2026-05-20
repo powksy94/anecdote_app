@@ -23,7 +23,7 @@ class KingOfFranceData {
 }
 
 Future<List<KingOfFranceData>> loadKingsOfFrance() async {
-  final raw = await rootBundle.loadString('assets/kings_of_france.json');
+  final raw = await rootBundle.loadString('assets/history/kings_of_france.json');
   final list = jsonDecode(raw) as List;
   return list.map((e) => KingOfFranceData.fromJson(e as Map<String, dynamic>)).toList();
 }

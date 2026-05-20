@@ -6,13 +6,14 @@ import '../models/content_type.dart';
 class CinemaQuoteData {
   final String quote, quoteLang, film, character, actor, director, timing, context;
   final int year;
-  final String? type, qEn, qFr, qEs;
+  final String? type, qEn, qFr, qEs, fiFr, fiEs, fiEn;
 
   const CinemaQuoteData({
     required this.quote, required this.quoteLang, required this.film,
     required this.character, required this.actor, required this.director,
     required this.year, required this.timing, required this.context,
     this.type, this.qEn, this.qFr, this.qEs,
+    this.fiFr, this.fiEs, this.fiEn,
   });
 
   factory CinemaQuoteData.fromJson(Map<String, dynamic> j) => CinemaQuoteData(
@@ -29,6 +30,9 @@ class CinemaQuoteData {
     qEn:        j['q_en'] as String?,
     qFr:        j['q_fr'] as String?,
     qEs:        j['q_es'] as String?,
+    fiFr:       j['fi_fr'] as String?,
+    fiEs:       j['fi_es'] as String?,
+    fiEn:       j['fi_en'] as String?,
   );
 
   /// Retourne la traduction dans la locale donnée, ou null si VO = locale.
@@ -55,13 +59,13 @@ List<CinemaQuoteData>? _modernCache;
 Future<List<CinemaQuoteData>> loadCinemaQuotes(ContentType type) async {
   switch (type) {
     case ContentType.classicCinema:
-      _classicCache ??= await _loadFile('assets/quotes_classic.json');
+      _classicCache ??= await _loadFile('assets/cinema/quotes_classic.json');
       return _classicCache!;
     case ContentType.cinema80s90s:
-      _cache80s90s ??= await _loadFile('assets/quotes_80s90s.json');
+      _cache80s90s ??= await _loadFile('assets/cinema/quotes_80s90s.json');
       return _cache80s90s!;
     case ContentType.modernCinema:
-      _modernCache ??= await _loadFile('assets/quotes_modern.json');
+      _modernCache ??= await _loadFile('assets/cinema/quotes_modern.json');
       return _modernCache!;
     default:
       return [];

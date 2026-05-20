@@ -26,7 +26,7 @@ class SolarMoonData {
 }
 
 Future<List<SolarMoonData>> loadSolarMoons() async {
-  final raw = await rootBundle.loadString('assets/solar_moons.json');
+  final raw = await rootBundle.loadString('assets/space/solar_moons.json');
   final list = jsonDecode(raw) as List;
   return list.map((e) => SolarMoonData.fromJson(e as Map<String, dynamic>)).toList();
 }

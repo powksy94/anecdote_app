@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import '../models/content_type.dart';
-import '../generated/app_localizations.dart';
+import '../../models/content_type.dart';
+import '../../generated/app_localizations.dart';
 
 const _posterAssets = {
-  ContentType.classicCinema: 'assets/the-good-the-bad-and-the-ugly.jpg',
-  ContentType.cinema80s90s:  'assets/terminator.jpg',
-  ContentType.modernCinema:  'assets/Parasite.jpg',
+  ContentType.classicCinema: 'assets/images/the-good-the-bad-and-the-ugly.jpg',
+  ContentType.cinema80s90s:  'assets/images/terminator.jpg',
+  ContentType.modernCinema:  'assets/images/Parasite.jpg',
 };
 
 const _posterAlignments = {
@@ -40,7 +40,6 @@ class CinemaSubCategoryCard extends StatelessWidget {
             child: Stack(
               fit: StackFit.expand,
               children: [
-                // Affiche locale en fond
                 if (posterAsset != null)
                   Image.asset(
                     posterAsset,
@@ -53,8 +52,6 @@ class CinemaSubCategoryCard extends StatelessWidget {
                       gradient: LinearGradient(colors: type.gradient),
                     ),
                   ),
-
-                // Overlay semi-transparent
                 Container(
                   decoration: BoxDecoration(
                     gradient: LinearGradient(
@@ -67,11 +64,8 @@ class CinemaSubCategoryCard extends StatelessWidget {
                     ),
                   ),
                 ),
-
-                // Contenu
                 Padding(
-                  padding: const EdgeInsets.symmetric(
-                      horizontal: 24, vertical: 20),
+                  padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 20),
                   child: Row(
                     children: [
                       Icon(type.icon, color: Colors.white, size: 32),
@@ -86,11 +80,8 @@ class CinemaSubCategoryCard extends StatelessWidget {
                           ),
                         ),
                       ),
-                      const Icon(
-                        Icons.arrow_forward_ios_rounded,
-                        color: Colors.white,
-                        size: 16,
-                      ),
+                      const Icon(Icons.arrow_forward_ios_rounded,
+                          color: Colors.white, size: 16),
                     ],
                   ),
                 ),

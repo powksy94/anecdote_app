@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import '../models/content_type.dart';
 import '../generated/app_localizations.dart';
 import '../services/ad_service.dart';
-import '../widgets/cinema_subcategory_card.dart';
+import '../widgets/cinema/cinema_subcategory_card.dart';
 import 'content_page.dart';
 
 class CinemaHubPage extends StatefulWidget {

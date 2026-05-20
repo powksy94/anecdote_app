@@ -9,6 +9,10 @@ class ContentData {
   final String? quoteEn;
   final String? quoteFr;
   final String? quoteEs;
+  // Titres du film traduits
+  final String? filmTitleFr;
+  final String? filmTitleEs;
+  final String? filmTitleEn;
 
   ContentData({
     required this.preview,
@@ -19,6 +23,9 @@ class ContentData {
     this.quoteEn,
     this.quoteFr,
     this.quoteEs,
+    this.filmTitleFr,
+    this.filmTitleEs,
+    this.filmTitleEn,
   });
 
   /// Retourne la traduction dans la locale donnée, ou null si VO = locale.

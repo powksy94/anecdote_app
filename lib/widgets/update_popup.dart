@@ -75,7 +75,7 @@ class _UpdatePopupState extends State<UpdatePopup> with TickerProviderStateMixin
     // Un seul flicker puis stop
     await Future.delayed(Duration(milliseconds: 800 + rng.nextInt(1200)));
     if (!mounted || _isUpdating) return;
-    await _audioPlayer.play(AssetSource('ampoule-qui-eclate.ogg'));
+    await _audioPlayer.play(AssetSource('sounds/ampoule-qui-eclate.ogg'));
     await _flickerCtrl.forward();
     await _flickerCtrl.reverse();
   }

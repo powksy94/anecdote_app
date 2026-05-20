@@ -48,7 +48,7 @@ class CountryData {
 }
 
 Future<List<CountryData>> loadCountries() async {
-  final raw = await rootBundle.loadString('assets/countries.json');
+  final raw = await rootBundle.loadString('assets/world/countries.json');
   final list = jsonDecode(raw) as List;
   return list.map((e) => CountryData.fromJson(e as Map<String, dynamic>)).toList();
 }

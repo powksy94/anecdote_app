@@ -54,6 +54,7 @@ android/key.properties
 
 # Environment / secrets
 env.json
+google-services.json
 
 # Raw data sources (générés par tools/generate_exoplanets.py)
 PS_*.csv
