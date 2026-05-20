@@ -33,6 +33,7 @@ class DailyCacheService {
           filmTitleFr: data['filmTitleFr'] as String?,
           filmTitleEs: data['filmTitleEs'] as String?,
           filmTitleEn: data['filmTitleEn'] as String?,
+          mandateNumber: data['mandateNumber'] as int?,
         );
       }
       return null;
@@ -58,6 +59,7 @@ class DailyCacheService {
       if (content.filmTitleFr != null) 'filmTitleFr': content.filmTitleFr,
       if (content.filmTitleEs != null) 'filmTitleEs': content.filmTitleEs,
       if (content.filmTitleEn != null) 'filmTitleEn': content.filmTitleEn,
+      if (content.mandateNumber != null) 'mandateNumber': content.mandateNumber,
     };
     await prefs.setString(_keyFor(type, locale: locale), jsonEncode(data));
   }

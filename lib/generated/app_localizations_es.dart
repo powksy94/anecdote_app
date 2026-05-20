@@ -141,6 +141,18 @@ class AppLocalizationsEs extends AppLocalizations {
   String get categoryModernCinema => 'Cine Moderno';
 
   @override
+  String get term1 => '1er mandato';
+
+  @override
+  String get term2 => '2° mandato';
+
+  @override
+  String get term3 => '3er mandato';
+
+  @override
+  String get term4 => '4° mandato';
+
+  @override
   String get voOriginal => 'Versión original';
 
   @override

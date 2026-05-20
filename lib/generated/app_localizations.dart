@@ -358,6 +358,30 @@ abstract class AppLocalizations {
   /// **'Modern Cinema'**
   String get categoryModernCinema;
 
+  /// No description provided for @term1.
+  ///
+  /// In en, this message translates to:
+  /// **'1st term'**
+  String get term1;
+
+  /// No description provided for @term2.
+  ///
+  /// In en, this message translates to:
+  /// **'2nd term'**
+  String get term2;
+
+  /// No description provided for @term3.
+  ///
+  /// In en, this message translates to:
+  /// **'3rd term'**
+  String get term3;
+
+  /// No description provided for @term4.
+  ///
+  /// In en, this message translates to:
+  /// **'4th term'**
+  String get term4;
+
   /// No description provided for @voOriginal.
   ///
   /// In en, this message translates to:

@@ -91,7 +91,27 @@ class _ContentPageState extends State<ContentPage> {
         hasDetails: content.hasDetails,
       );
     }
+    if (widget.contentType == ContentType.americanPresident &&
+        content.mandateNumber != null) {
+      final termLabel = _termLabel(content.mandateNumber!, l10n);
+      return ContentData(
+        preview: '${content.preview} ($termLabel)',
+        details: content.details,
+        hasDetails: content.hasDetails,
+        mandateNumber: content.mandateNumber,
+      );
+    }
     return content;
+  }
+
+  String _termLabel(int n, AppLocalizations l10n) {
+    switch (n) {
+      case 1: return l10n.term1;
+      case 2: return l10n.term2;
+      case 3: return l10n.term3;
+      case 4: return l10n.term4;
+      default: return '$n';
+    }
   }
 
   Future<void> _loadContent() async {
@@ -121,8 +141,10 @@ class _ContentPageState extends State<ContentPage> {
         return;
       }
 
-      ContentData? englishContent =
-          await cacheService.getTodayContent(widget.contentType, locale: 'en');
+      // Pour le cinéma, on saute aussi le cache anglais (JSON local = instantané)
+      ContentData? englishContent = _cinemaTypes.contains(widget.contentType)
+          ? null
+          : await cacheService.getTodayContent(widget.contentType, locale: 'en');
       final englishCacheValid = englishContent != null &&
           englishContent.preview.isNotEmpty &&
           englishContent.preview != 'Content not available' &&

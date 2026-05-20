@@ -141,6 +141,18 @@ class AppLocalizationsFr extends AppLocalizations {
   String get categoryModernCinema => 'Cinéma Moderne';
 
   @override
+  String get term1 => '1er mandat';
+
+  @override
+  String get term2 => '2e mandat';
+
+  @override
+  String get term3 => '3e mandat';
+
+  @override
+  String get term4 => '4e mandat';
+
+  @override
   String get voOriginal => 'Version originale';
 
   @override

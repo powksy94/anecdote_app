@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import '../../config/env.dart';
 import '../../generated/app_localizations.dart';
 import '../../models/content_data.dart';
 import '../../models/content_type.dart';
+import '../../services/translation_service.dart';
 import 'cinema_header.dart';
 import 'cinema_toggle_section.dart';
 import 'cinema_timer_badge.dart';
@@ -29,6 +31,25 @@ class CinemaCard extends StatefulWidget {
 class _CinemaCardState extends State<CinemaCard> {
   bool _showDubbing = false;
   bool _showDetails = false;
+  String? _translatedContext;
+  bool _translatingContext = false;
+
+  Future<void> _translateContext(String locale) async {
+    if (_translatingContext || _translatedContext != null) return;
+    final raw = widget.contentData?.details ?? '';
+    final contextLine = raw.split('\n').where((l) => l.startsWith('📖')).firstOrNull;
+    if (contextLine == null || locale == 'en') return;
+    final contextText = contextLine.substring(contextLine.indexOf(' ') + 1);
+    _translatingContext = true;
+    try {
+      final ts = TranslationService(apiKey: Env.googleTranslateKey);
+      final translated = await ts.translateText(contextText, locale);
+      if (mounted) setState(() => _translatedContext = translated);
+    } catch (_) {
+    } finally {
+      _translatingContext = false;
+    }
+  }
 
   String? _localFilmTitle(String locale, bool hasDubbing) {
     if (!hasDubbing) return null;
@@ -43,16 +64,31 @@ class _CinemaCardState extends State<CinemaCard> {
   String _localizedDetails(String locale, bool hasDubbing) {
     final raw = widget.contentData?.details ?? '';
     if (!_showDubbing) return raw;
-    final title = _localFilmTitle(locale, hasDubbing);
-    if (title == null) return raw;
     final lines = raw.split('\n');
     if (lines.isEmpty) return raw;
-    final first = lines[0];
-    final yearMatch = RegExp(r'\(\d{4}\)').firstMatch(first);
-    if (yearMatch == null) return raw;
-    final year = yearMatch.group(0)!;
-    final typePart = first.contains(' — ') ? first.substring(first.indexOf(' — ')) : '';
-    lines[0] = '🎬 $title $year$typePart';
+
+    // Remplace le titre du film
+    final title = _localFilmTitle(locale, hasDubbing);
+    if (title != null) {
+      final first = lines[0];
+      final yearMatch = RegExp(r'\(\d{4}\)').firstMatch(first);
+      if (yearMatch != null) {
+        final year = yearMatch.group(0)!;
+        final typePart = first.contains(' — ') ? first.substring(first.indexOf(' — ')) : '';
+        lines[0] = '🎬 $title $year$typePart';
+      }
+    }
+
+    // Remplace le contexte par la traduction si disponible
+    if (_translatedContext != null) {
+      for (int i = 0; i < lines.length; i++) {
+        if (lines[i].startsWith('📖')) {
+          lines[i] = '📖 $_translatedContext';
+          break;
+        }
+      }
+    }
+
     return lines.join('\n');
   }
 
@@ -105,7 +141,13 @@ class _CinemaCardState extends State<CinemaCard> {
                     icon: Icons.translate_rounded,
                     accentColor: widget.accentColor,
                     isExpanded: _showDubbing,
-                    onTap: () => setState(() => _showDubbing = !_showDubbing),
+                    onTap: () {
+                      setState(() {
+                        _showDubbing = !_showDubbing;
+                        if (_showDubbing) _showDetails = true;
+                      });
+                      if (_showDubbing) _translateContext(locale);
+                    },
                     content: dubbed,
                     contentStyle: theme.textTheme.bodyMedium?.copyWith(
                       height: 1.5,

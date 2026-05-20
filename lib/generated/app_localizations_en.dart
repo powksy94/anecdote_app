@@ -141,6 +141,18 @@ class AppLocalizationsEn extends AppLocalizations {
   String get categoryModernCinema => 'Modern Cinema';
 
   @override
+  String get term1 => '1st term';
+
+  @override
+  String get term2 => '2nd term';
+
+  @override
+  String get term3 => '3rd term';
+
+  @override
+  String get term4 => '4th term';
+
+  @override
   String get voOriginal => 'Original version';
 
   @override

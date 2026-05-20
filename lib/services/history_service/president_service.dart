@@ -21,6 +21,7 @@ class PresidentService {
       preview: '🇺🇸 ${p.name}',
       details: buf.toString().trim(),
       hasDetails: true,
+      mandateNumber: p.mandateNumber,
     );
   }
 

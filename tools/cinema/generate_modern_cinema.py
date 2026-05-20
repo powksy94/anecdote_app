@@ -59,7 +59,7 @@ quotes = deduped
 
 assert all(q["yr"] >= 2000 for q in quotes), "ERROR: found a quote before 2000!"
 
-with open("assets/quotes_modern.json", "w", encoding="utf-8") as f:
+with open("assets/cinema/quotes_modern.json", "w", encoding="utf-8") as f:
     json.dump([{k: v for k, v in q.items() if k != "td"} for q in quotes], f, ensure_ascii=False, separators=(',', ':'))
 
 print(f"{len(quotes)} répliques Modern Cinema générées (toutes >= 2000).")

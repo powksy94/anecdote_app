@@ -37,6 +37,10 @@ class TranslationService {
     );
   }
 
+  Future<String> translateText(String text, String targetLang) async {
+    return _translateText(text, targetLang);
+  }
+
   Future<String> _translateText(String text, String targetLang) async {
     final emojis = <String>[];
     final masked = _maskEmojis(text, emojis);

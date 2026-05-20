@@ -71,7 +71,7 @@ quotes = [
 
 assert all(q["yr"] < 1980 for q in quotes), "ERROR: found a quote with year >= 1980!"
 
-with open("assets/quotes_classic.json", "w", encoding="utf-8") as f:
+with open("assets/cinema/quotes_classic.json", "w", encoding="utf-8") as f:
     json.dump([{k: v for k, v in q.items() if k != "td"} for q in quotes], f, ensure_ascii=False, separators=(',', ':'))
 
 print(f"{len(quotes)} répliques Classic Hollywood générées (toutes < 1980).")

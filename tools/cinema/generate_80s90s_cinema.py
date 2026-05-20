@@ -64,7 +64,7 @@ quotes = deduped
 
 assert all(1980 <= q["yr"] <= 1999 for q in quotes), "ERROR: found a quote outside 1980-1999!"
 
-with open("assets/quotes_80s90s.json", "w", encoding="utf-8") as f:
+with open("assets/cinema/quotes_80s90s.json", "w", encoding="utf-8") as f:
     json.dump([{k: v for k, v in q.items() if k != "td"} for q in quotes], f, ensure_ascii=False, separators=(',', ':'))
 
 print(f"{len(quotes)} répliques 80s-90s générées (toutes 1980-1999).")

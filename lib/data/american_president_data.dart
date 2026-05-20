@@ -5,24 +5,25 @@ import 'package:flutter/services.dart';
 class AmericanPresidentData {
   final String name, party, state, vicePresident, famousFor;
   final int number, termStart;
-  final int? termEnd;
+  final int? termEnd, mandateNumber;
 
   const AmericanPresidentData({
     required this.name, required this.number, required this.party,
     required this.state, required this.vicePresident, required this.famousFor,
-    required this.termStart, this.termEnd,
+    required this.termStart, this.termEnd, this.mandateNumber,
   });
 
   factory AmericanPresidentData.fromJson(Map<String, dynamic> j) =>
       AmericanPresidentData(
-    name:         j['n']  ?? '',
-    number:       (j['nu'] as num?)?.toInt() ?? 0,
-    termStart:    (j['ts'] as num?)?.toInt() ?? 0,
-    termEnd:      (j['te'] as num?)?.toInt(),
-    party:        j['pa'] ?? '',
-    state:        j['st'] ?? '',
-    vicePresident:j['vp'] ?? '',
-    famousFor:    j['fa'] ?? '',
+    name:          j['n']  ?? '',
+    number:        (j['nu'] as num?)?.toInt() ?? 0,
+    termStart:     (j['ts'] as num?)?.toInt() ?? 0,
+    termEnd:       (j['te'] as num?)?.toInt(),
+    party:         j['pa'] ?? '',
+    state:         j['st'] ?? '',
+    vicePresident: j['vp'] ?? '',
+    famousFor:     j['fa'] ?? '',
+    mandateNumber: (j['mn'] as num?)?.toInt(),
   );
 }
 
