@@ -18,6 +18,7 @@ class _SpacePageState extends State<SpacePage> {
     ContentType.exoplanet,
     ContentType.star,
     ContentType.solarSystemMoon,
+    ContentType.spaceMission,
   ];
 
   void _navigate(ContentType type) {

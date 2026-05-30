@@ -15,6 +15,8 @@ class ContentData {
   final String? filmTitleEn;
   // Numéro de mandat pour les présidents multi-mandats
   final int? mandateNumber;
+  final String? imageUrl;
+  final String? noImageMessage;
 
   ContentData({
     required this.preview,
@@ -29,6 +31,8 @@ class ContentData {
     this.filmTitleEs,
     this.filmTitleEn,
     this.mandateNumber,
+    this.imageUrl,
+    this.noImageMessage,
   });
 
   /// Retourne la traduction dans la locale donnée, ou null si VO = locale.

@@ -16,6 +16,7 @@ class HistoryHubPage extends StatefulWidget {
 class _HistoryHubPageState extends State<HistoryHubPage> {
   static const _subCategories = [
     ContentType.history,
+    ContentType.battle,
     ContentType.kingOfFrance,
     ContentType.americanPresident,
   ];

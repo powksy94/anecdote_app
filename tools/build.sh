@@ -20,6 +20,8 @@ echo "=== Data generation ==="
 generate_if_needed "tools/world/generate_pacific_islands.py" "assets/pacific_islands.json"
 generate_if_needed "tools/world/generate_departments.py"     "assets/french_departments.json"
 generate_if_needed "tools/world/generate_countries.py"       "assets/countries.json"
+generate_if_needed "tools/world/generate_communes.py"        "assets/world/communes.json"
+generate_if_needed "tools/world/generate_american_states.py" "assets/world/american_states.json"
 # History
 generate_if_needed "tools/history/generate_kings_of_france.py"       "assets/kings_of_france.json"
 generate_if_needed "tools/history/generate_american_presidents.py"   "assets/american_presidents.json"
@@ -27,6 +29,14 @@ generate_if_needed "tools/history/generate_american_presidents.py"   "assets/ame
 generate_if_needed "tools/space/generate_exoplanets.py" "assets/exoplanets.json"
 generate_if_needed "tools/space/generate_stars.py"      "assets/stars.json"
 generate_if_needed "tools/space/generate_moons.py"      "assets/solar_moons.json"
+# History battles
+generate_if_needed "tools/history/generate_battles.py" "assets/history/battles.json"
+# Science
+generate_if_needed "tools/science/generate_dinosaurs.py" "assets/science/dinosaurs.json"
+# Space missions
+generate_if_needed "tools/space/generate_space_missions.py" "assets/space/missions.json"
+# Art
+generate_if_needed "tools/art/generate_paintings.py" "assets/art/paintings.json"
 # Cinema
 generate_if_needed "tools/cinema/generate_classic_cinema.py" "assets/quotes_classic.json"
 generate_if_needed "tools/cinema/generate_80s90s_cinema.py"  "assets/quotes_80s90s.json"

@@ -37,6 +37,14 @@ Widget buildCardDecoration(ContentType type) {
       return _singleIcon(Icons.history_edu);
     case ContentType.celebrityHub:
       return _bubbles(Icons.stars);
+    case ContentType.scienceHub:
+      return _doubleIcon(Icons.science, Icons.eco);
+    case ContentType.spaceMission:
+      return _singleIcon(Icons.rocket, iconSize: 16);
+    case ContentType.battle:
+      return _doubleIcon(Icons.shield, Icons.local_fire_department);
+    case ContentType.dinosaur:
+      return _singleIcon(Icons.rowing_rounded, iconSize: 16);
     case ContentType.cinemaHub:
       return _doubleIcon(Icons.movie, Icons.star);
     case ContentType.classicCinema:
@@ -53,6 +61,14 @@ Widget buildCardDecoration(ContentType type) {
       return _singleIcon(Icons.star, iconSize: 16);
     case ContentType.solarSystemMoon:
       return _singleIcon(Icons.brightness_2);
+    case ContentType.artHub:
+      return _doubleIcon(Icons.palette, Icons.brush);
+    case ContentType.painting:
+      return _singleIcon(Icons.brush, iconSize: 16);
+    case ContentType.frenchCommune:
+      return _doubleIcon(Icons.location_city, Icons.flag);
+    case ContentType.americanState:
+      return _doubleIcon(Icons.flag, Icons.location_on);
   }
 }
 

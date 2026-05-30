@@ -82,6 +82,10 @@ class TranslationService {
       preview: translatedPreview,
       details: translatedDetails,
       hasDetails: content.hasDetails,
+      imageUrl: content.imageUrl,
+      noImageMessage: content.noImageMessage,
+      flagSvg: content.flagSvg,
+      mandateNumber: content.mandateNumber,
     );
   }
 }

@@ -358,6 +358,42 @@ abstract class AppLocalizations {
   /// **'Modern Cinema'**
   String get categoryModernCinema;
 
+  /// No description provided for @categoryScienceHub.
+  ///
+  /// In en, this message translates to:
+  /// **'Science & Nature'**
+  String get categoryScienceHub;
+
+  /// No description provided for @categoryDinosaur.
+  ///
+  /// In en, this message translates to:
+  /// **'Dinosaurs'**
+  String get categoryDinosaur;
+
+  /// No description provided for @categorySpaceMission.
+  ///
+  /// In en, this message translates to:
+  /// **'Space Missions'**
+  String get categorySpaceMission;
+
+  /// No description provided for @categoryBattle.
+  ///
+  /// In en, this message translates to:
+  /// **'Historical Battles'**
+  String get categoryBattle;
+
+  /// No description provided for @categoryArtHub.
+  ///
+  /// In en, this message translates to:
+  /// **'Art & Culture'**
+  String get categoryArtHub;
+
+  /// No description provided for @categoryPainting.
+  ///
+  /// In en, this message translates to:
+  /// **'Famous Paintings'**
+  String get categoryPainting;
+
   /// No description provided for @term1.
   ///
   /// In en, this message translates to:
@@ -405,6 +441,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Hide dubbing'**
   String get hideDubbing;
+
+  /// No description provided for @categoryFrenchCommune.
+  ///
+  /// In en, this message translates to:
+  /// **'French Communes'**
+  String get categoryFrenchCommune;
+
+  /// No description provided for @categoryAmericanState.
+  ///
+  /// In en, this message translates to:
+  /// **'American States'**
+  String get categoryAmericanState;
 }
 
 class _AppLocalizationsDelegate

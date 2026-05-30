@@ -5,21 +5,17 @@ import '../services/ad_service.dart';
 import '../widgets/subcategory_card.dart';
 import 'content_page.dart';
 
-class WorldPage extends StatefulWidget {
+class ArtHubPage extends StatefulWidget {
   final AdService adService;
-  const WorldPage({super.key, required this.adService});
+  const ArtHubPage({super.key, required this.adService});
 
   @override
-  State<WorldPage> createState() => _WorldPageState();
+  State<ArtHubPage> createState() => _ArtHubPageState();
 }
 
-class _WorldPageState extends State<WorldPage> {
+class _ArtHubPageState extends State<ArtHubPage> {
   static const _subCategories = [
-    ContentType.country,
-    ContentType.frenchDepartment,
-    ContentType.pacificIsland,
-    ContentType.frenchCommune,
-    ContentType.americanState,
+    ContentType.painting,
   ];
 
   void _navigate(ContentType type) {
@@ -41,7 +37,7 @@ class _WorldPageState extends State<WorldPage> {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final loc = AppLocalizations.of(context)!;
-    final gradient = ContentType.world.gradient;
+    final gradient = ContentType.artHub.gradient;
 
     return Scaffold(
       extendBodyBehindAppBar: true,
@@ -49,11 +45,11 @@ class _WorldPageState extends State<WorldPage> {
         title: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Icon(ContentType.world.icon, size: 24),
+            Icon(ContentType.artHub.icon, size: 24),
             const SizedBox(width: 8),
             Flexible(
               child: Text(
-                ContentType.world.localizedTitle(loc),
+                ContentType.artHub.localizedTitle(loc),
                 overflow: TextOverflow.ellipsis,
               ),
             ),

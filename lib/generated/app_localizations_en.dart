@@ -141,6 +141,24 @@ class AppLocalizationsEn extends AppLocalizations {
   String get categoryModernCinema => 'Modern Cinema';
 
   @override
+  String get categoryScienceHub => 'Science & Nature';
+
+  @override
+  String get categoryDinosaur => 'Dinosaurs';
+
+  @override
+  String get categorySpaceMission => 'Space Missions';
+
+  @override
+  String get categoryBattle => 'Historical Battles';
+
+  @override
+  String get categoryArtHub => 'Art & Culture';
+
+  @override
+  String get categoryPainting => 'Famous Paintings';
+
+  @override
   String get term1 => '1st term';
 
   @override
@@ -163,4 +181,10 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get hideDubbing => 'Hide dubbing';
+
+  @override
+  String get categoryFrenchCommune => 'French Communes';
+
+  @override
+  String get categoryAmericanState => 'American States';
 }

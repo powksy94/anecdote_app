@@ -9,11 +9,11 @@ import '../services/translation_service.dart';
 import '../widgets/content_card.dart';
 import '../widgets/country_card.dart';
 import '../widgets/cinema/cinema_card.dart';
+import '../widgets/science/image_content_card.dart';
 import '../widgets/error_card.dart';
 
 class ContentPage extends StatefulWidget {
   final ContentType contentType;
-
   const ContentPage({super.key, required this.contentType});
 
   @override
@@ -30,6 +30,28 @@ class _ContentPageState extends State<ContentPage> {
   bool hasError = false;
   String errorMessage = '';
   String _locale = 'en';
+
+  static const _geoTypes = {
+    ContentType.country,
+    ContentType.frenchDepartment,
+    ContentType.pacificIsland,
+  };
+
+  static const _cinemaTypes = {
+    ContentType.classicCinema,
+    ContentType.cinema80s90s,
+    ContentType.modernCinema,
+  };
+
+  // Types dont le contenu doit avoir une image — cache invalidé si imageUrl absent
+  static const _imageTypes = {
+    ContentType.dinosaur,
+    ContentType.battle,
+    ContentType.spaceMission,
+    ContentType.painting,
+    ContentType.frenchCommune,
+    ContentType.americanState,
+  };
 
   @override
   void initState() {
@@ -53,53 +75,31 @@ class _ContentPageState extends State<ContentPage> {
     }
   }
 
-  static const _geoTypes = {
-    ContentType.country,
-    ContentType.frenchDepartment,
-    ContentType.pacificIsland,
-  };
-
-  static const _cinemaTypes = {
-    ContentType.classicCinema,
-    ContentType.cinema80s90s,
-    ContentType.modernCinema,
-  };
+  // ── Logique métier ──────────────────────────────────────────────────────
 
   ContentData _applyLocaleUnits(ContentData content, AppLocalizations l10n) {
     if (_geoTypes.contains(widget.contentType)) {
       var details = content.details;
       details = details.replaceAllMapped(
-        RegExp(r'(\d+\.?\d*)B\b'),
-        (m) => '${m[1]}${l10n.popBillion}',
-      );
+        RegExp(r'(\d+\.?\d*)B\b'), (m) => '${m[1]}${l10n.popBillion}');
       details = details.replaceAllMapped(
-        RegExp(r'(\d+\.?\d*)M\b'),
-        (m) => '${m[1]}${l10n.popMillion}',
-      );
+        RegExp(r'(\d+\.?\d*)M\b'), (m) => '${m[1]}${l10n.popMillion}');
       return ContentData(
-        preview: content.preview,
-        details: details,
-        hasDetails: content.hasDetails,
-        flagSvg: content.flagSvg,
-      );
+        preview: content.preview, details: details,
+        hasDetails: content.hasDetails, flagSvg: content.flagSvg);
     }
     if (widget.contentType == ContentType.star) {
-      final details = content.details.replaceAll(' ly', ' ${l10n.lightYear}');
       return ContentData(
         preview: content.preview,
-        details: details,
-        hasDetails: content.hasDetails,
-      );
+        details: content.details.replaceAll(' ly', ' ${l10n.lightYear}'),
+        hasDetails: content.hasDetails);
     }
     if (widget.contentType == ContentType.americanPresident &&
         content.mandateNumber != null) {
-      final termLabel = _termLabel(content.mandateNumber!, l10n);
       return ContentData(
-        preview: '${content.preview} ($termLabel)',
-        details: content.details,
-        hasDetails: content.hasDetails,
-        mandateNumber: content.mandateNumber,
-      );
+        preview: '${content.preview} (${_termLabel(content.mandateNumber!, l10n)})',
+        details: content.details, hasDetails: content.hasDetails,
+        mandateNumber: content.mandateNumber);
     }
     return content;
   }
@@ -115,15 +115,9 @@ class _ContentPageState extends State<ContentPage> {
   }
 
   Future<void> _loadContent() async {
-    setState(() {
-      isLoading = true;
-      hasError = false;
-    });
-
+    setState(() { isLoading = true; hasError = false; });
     final l10n = AppLocalizations.of(context)!;
-
     try {
-      // Pour les catégories cinéma on ignore le cache locale (VO uniquement)
       final cached = _cinemaTypes.contains(widget.contentType)
           ? null
           : await cacheService.getTodayContent(widget.contentType, locale: _locale);
@@ -131,17 +125,13 @@ class _ContentPageState extends State<ContentPage> {
           cached.preview.isNotEmpty &&
           cached.preview != 'Content not available' &&
           (widget.contentType != ContentType.exoplanet || cached.details.contains('🛸')) &&
-          (widget.contentType != ContentType.chuckNorris || cached.preview.length > 20);
+          (widget.contentType != ContentType.chuckNorris || cached.preview.length > 20) &&
+          (!_imageTypes.contains(widget.contentType) || cached.imageUrl != null || cached.noImageMessage != null);
       if (cacheValid) {
-        setState(() {
-          contentData = cached;
-          isLoading = false;
-          isFromCache = true;
-        });
+        setState(() { contentData = cached; isLoading = false; isFromCache = true; });
         return;
       }
 
-      // Pour le cinéma, on saute aussi le cache anglais (JSON local = instantané)
       ContentData? englishContent = _cinemaTypes.contains(widget.contentType)
           ? null
           : await cacheService.getTodayContent(widget.contentType, locale: 'en');
@@ -150,7 +140,8 @@ class _ContentPageState extends State<ContentPage> {
           englishContent.preview != 'Content not available' &&
           (widget.contentType != ContentType.exoplanet || englishContent.details.contains('🛸')) &&
           (widget.contentType != ContentType.chuckNorris || englishContent.preview.length > 20) &&
-          (!_cinemaTypes.contains(widget.contentType) || englishContent.quoteLang != null);
+          (!_cinemaTypes.contains(widget.contentType) || englishContent.quoteLang != null) &&
+          (!_imageTypes.contains(widget.contentType) || englishContent.imageUrl != null || englishContent.noImageMessage != null);
       if (!englishCacheValid) {
         englishContent = await apiService.fetchContent(widget.contentType);
         await cacheService.saveTodayContent(widget.contentType, englishContent, locale: 'en');
@@ -159,57 +150,33 @@ class _ContentPageState extends State<ContentPage> {
       ContentData finalContent = englishContent;
       if (_locale != 'en' && !_cinemaTypes.contains(widget.contentType)) {
         finalContent = await translationService.translateContent(
-          _applyLocaleUnits(englishContent, l10n),
-          targetLang: _locale,
-        );
+          _applyLocaleUnits(englishContent, l10n), targetLang: _locale);
         await cacheService.saveTodayContent(widget.contentType, finalContent, locale: _locale);
       }
 
-      setState(() {
-        contentData = finalContent;
-        isLoading = false;
-        isFromCache = false;
-        hasError = false;
-      });
+      setState(() { contentData = finalContent; isLoading = false; isFromCache = false; hasError = false; });
     } catch (e) {
-      setState(() {
-        hasError = true;
-        errorMessage = e.toString().replaceAll('Exception: ', '');
-        isLoading = false;
-      });
+      setState(() { hasError = true; errorMessage = e.toString().replaceAll('Exception: ', ''); isLoading = false; });
     }
   }
 
   String _getTimeUntilMidnight() {
     final now = DateTime.now();
-    final midnight = DateTime(now.year, now.month, now.day + 1);
-    final diff = midnight.difference(now);
+    final diff = DateTime(now.year, now.month, now.day + 1).difference(now);
     return '${diff.inHours}h ${diff.inMinutes % 60}min';
   }
 
-  @override
-  Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-    final loc = AppLocalizations.of(context)!;
-    final gradient = widget.contentType.gradient;
-    final accentColor = widget.contentType.accentColor;
+  // ── Build helpers ───────────────────────────────────────────────────────
 
-    return Scaffold(
-      extendBodyBehindAppBar: true,
-      appBar: AppBar(
-        title: Row(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Icon(widget.contentType.icon, size: 24),
-            const SizedBox(width: 8),
-            Flexible(
-              child: Text(
-                widget.contentType.localizedTitle(loc),
-                overflow: TextOverflow.ellipsis,
-              ),
-            ),
-          ],
-        ),
+  AppBar _buildAppBar(AppLocalizations loc) => AppBar(
+        title: Row(mainAxisSize: MainAxisSize.min, children: [
+          Icon(widget.contentType.icon, size: 24),
+          const SizedBox(width: 8),
+          Flexible(
+            child: Text(widget.contentType.localizedTitle(loc),
+                overflow: TextOverflow.ellipsis),
+          ),
+        ]),
         centerTitle: true,
         backgroundColor: Colors.transparent,
         elevation: 0,
@@ -239,17 +206,43 @@ class _ContentPageState extends State<ContentPage> {
               onPressed: _loadContent,
             ),
         ],
-      ),
+      );
+
+  Widget _buildContentCard(List<Color> gradient, Color accentColor, String time) {
+    if (_geoTypes.contains(widget.contentType)) {
+      return CountryCard(contentData: contentData, gradient: gradient,
+          accentColor: accentColor, timeUntilMidnight: time);
+    }
+    if (_cinemaTypes.contains(widget.contentType)) {
+      return CinemaCard(contentData: contentData, contentType: widget.contentType,
+          gradient: gradient, accentColor: accentColor, timeUntilMidnight: time);
+    }
+    if (contentData?.imageUrl != null) {
+      return ImageContentCard(contentData: contentData, contentType: widget.contentType,
+          gradient: gradient, accentColor: accentColor, timeUntilMidnight: time);
+    }
+    return ContentCard(contentData: contentData, contentType: widget.contentType,
+        gradient: gradient, accentColor: accentColor, timeUntilMidnight: time);
+  }
+
+  // ── Build ───────────────────────────────────────────────────────────────
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final loc = AppLocalizations.of(context)!;
+    final gradient = widget.contentType.gradient;
+    final accentColor = widget.contentType.accentColor;
+
+    return Scaffold(
+      extendBodyBehindAppBar: true,
+      appBar: _buildAppBar(loc),
       body: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
-            colors: [
-              gradient[0],
-              gradient[1].withValues(alpha: 0.8),
-              theme.colorScheme.surface,
-            ],
+            colors: [gradient[0], gradient[1].withValues(alpha: 0.8), theme.colorScheme.surface],
             stops: const [0.0, 0.3, 0.6],
           ),
         ),
@@ -257,33 +250,8 @@ class _ContentPageState extends State<ContentPage> {
           child: isLoading
               ? const Center(child: CircularProgressIndicator(color: Colors.white))
               : hasError
-                  ? ErrorCard(
-                      errorMessage: errorMessage,
-                      accentColor: accentColor,
-                      onRetry: _loadContent,
-                    )
-                  : _geoTypes.contains(widget.contentType)
-                      ? CountryCard(
-                          contentData: contentData,
-                          gradient: gradient,
-                          accentColor: accentColor,
-                          timeUntilMidnight: _getTimeUntilMidnight(),
-                        )
-                      : _cinemaTypes.contains(widget.contentType)
-                          ? CinemaCard(
-                              contentData: contentData,
-                              contentType: widget.contentType,
-                              gradient: gradient,
-                              accentColor: accentColor,
-                              timeUntilMidnight: _getTimeUntilMidnight(),
-                            )
-                          : ContentCard(
-                              contentData: contentData,
-                              contentType: widget.contentType,
-                              gradient: gradient,
-                              accentColor: accentColor,
-                              timeUntilMidnight: _getTimeUntilMidnight(),
-                            ),
+                  ? ErrorCard(errorMessage: errorMessage, accentColor: accentColor, onRetry: _loadContent)
+                  : _buildContentCard(gradient, accentColor, _getTimeUntilMidnight()),
         ),
       ),
     );

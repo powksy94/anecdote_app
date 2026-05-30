@@ -48,6 +48,12 @@
   "categoryClassicCinema": "Hollywood Classique",
   "categoryCinema80s90s": "Films des années 80-90",
   "categoryModernCinema": "Cinéma Moderne",
+  "categoryScienceHub": "Sciences & Nature",
+  "categoryDinosaur": "Dinosaures",
+  "categorySpaceMission": "Missions Spatiales",
+  "categoryBattle": "Batailles Historiques",
+  "categoryArtHub": "Art & Culture",
+  "categoryPainting": "Tableaux Célèbres",
   "term1": "1er mandat",
   "term2": "2e mandat",
   "term3": "3e mandat",
@@ -55,5 +61,7 @@
   "voOriginal": "Version originale",
   "voTranslation": "Traduction",
   "dubbing": "Doublage",
-  "hideDubbing": "Cacher le doublage"
+  "hideDubbing": "Cacher le doublage",
+  "categoryFrenchCommune": "Communes Françaises",
+  "categoryAmericanState": "États Américains"
 }
