@@ -30,6 +30,12 @@ extension ContentTypeVisuals on ContentType {
       case ContentType.battle:             return Icons.shield_rounded;
       case ContentType.artHub:             return Icons.palette_rounded;
       case ContentType.painting:           return Icons.brush_rounded;
+      case ContentType.sculpture:          return Icons.view_in_ar_rounded;
+      case ContentType.architecture:       return Icons.domain_rounded;
+      case ContentType.famousArtist:       return Icons.color_lens_rounded;
+      case ContentType.photographer:       return Icons.photo_camera_rounded;
+      case ContentType.classicalComposer:  return Icons.music_note_rounded;
+      case ContentType.nobelPrize:         return Icons.emoji_events_rounded;
       case ContentType.frenchCommune:      return Icons.location_city_rounded;
       case ContentType.americanState:      return Icons.flag_rounded;
     }
@@ -64,6 +70,12 @@ extension ContentTypeVisuals on ContentType {
       case ContentType.battle:             return Colors.red.shade900;
       case ContentType.artHub:             return Colors.purple.shade700;
       case ContentType.painting:           return Colors.purple.shade800;
+      case ContentType.sculpture:          return const Color(0xFF546E7A);
+      case ContentType.architecture:       return const Color(0xFF1565C0);
+      case ContentType.famousArtist:       return const Color(0xFFAD1457);
+      case ContentType.photographer:       return const Color(0xFF263238);
+      case ContentType.classicalComposer:  return const Color(0xFF4A148C);
+      case ContentType.nobelPrize:         return const Color(0xFFB8860B);
       case ContentType.frenchCommune:      return Colors.blue.shade700;
       case ContentType.americanState:      return Colors.red.shade700;
     }
@@ -125,6 +137,18 @@ extension ContentTypeVisuals on ContentType {
         return [const Color(0xFF4A148C), const Color(0xFF7B1FA2)];
       case ContentType.painting:
         return [const Color(0xFF4A148C), const Color(0xFFAB47BC)];
+      case ContentType.sculpture:
+        return [const Color(0xFF546E7A), const Color(0xFF78909C)];
+      case ContentType.architecture:
+        return [const Color(0xFF1565C0), const Color(0xFF0288D1)];
+      case ContentType.famousArtist:
+        return [const Color(0xFFAD1457), const Color(0xFFE91E63)];
+      case ContentType.photographer:
+        return [const Color(0xFF263238), const Color(0xFF455A64)];
+      case ContentType.classicalComposer:
+        return [const Color(0xFF4A148C), const Color(0xFF1A237E)];
+      case ContentType.nobelPrize:
+        return [const Color(0xFFB8860B), const Color(0xFFDAA520)];
       case ContentType.frenchCommune:
         return [const Color(0xFF002395), const Color(0xFF1565C0)];
       case ContentType.americanState:
@@ -151,11 +175,23 @@ extension ContentTypeVisuals on ContentType {
       case ContentType.battle:
         return const Color(0xFFFF6B6B);
       case ContentType.kingOfFrance:
-        return const Color(0xFFDAA520); // or du gradient
+        return const Color(0xFFDAA520);
       case ContentType.americanPresident:
-        return const Color(0xFFBF0A30); // rouge du gradient
+        return const Color(0xFFBF0A30);
       case ContentType.frenchDepartment:
-        return const Color(0xFFED2939); // rouge tricolore
+        return const Color(0xFFED2939);
+      case ContentType.sculpture:
+        return const Color(0xFFB0BEC5);
+      case ContentType.architecture:
+        return const Color(0xFF4FC3F7);
+      case ContentType.famousArtist:
+        return const Color(0xFFF48FB1);
+      case ContentType.photographer:
+        return const Color(0xFF90A4AE);
+      case ContentType.classicalComposer:
+        return const Color(0xFFB39DDB);
+      case ContentType.nobelPrize:
+        return const Color(0xFFFFD700);
       default:
         return gradient[0];
     }

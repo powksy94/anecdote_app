@@ -62,6 +62,12 @@
   "voTranslation": "Translation",
   "dubbing": "Dubbing",
   "hideDubbing": "Hide dubbing",
+  "categorySculpture": "Famous Sculptures",
+  "categoryArchitecture": "Iconic Architecture",
+  "categoryFamousArtist": "Famous Artists",
+  "categoryPhotographer": "Photographers",
+  "categoryClassicalComposer": "Classical Composers",
+  "categoryNobelPrize": "Nobel Prize",
   "categoryFrenchCommune": "French Communes",
   "categoryAmericanState": "American States"
 }

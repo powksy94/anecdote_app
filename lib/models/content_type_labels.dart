@@ -30,6 +30,12 @@ extension ContentTypeLabels on ContentType {
       case ContentType.battle:             return 'Historical Battles';
       case ContentType.artHub:             return 'Art & Culture';
       case ContentType.painting:           return 'Famous Paintings';
+      case ContentType.sculpture:          return 'Famous Sculptures';
+      case ContentType.architecture:       return 'Iconic Architecture';
+      case ContentType.famousArtist:       return 'Famous Artists';
+      case ContentType.photographer:       return 'Photographers';
+      case ContentType.classicalComposer:  return 'Classical Composers';
+      case ContentType.nobelPrize:         return 'Nobel Prize';
       case ContentType.frenchCommune:      return 'French Communes';
       case ContentType.americanState:      return 'American States';
     }
@@ -64,6 +70,12 @@ extension ContentTypeLabels on ContentType {
       case ContentType.battle:             return loc.categoryBattle;
       case ContentType.artHub:             return loc.categoryArtHub;
       case ContentType.painting:           return loc.categoryPainting;
+      case ContentType.sculpture:          return loc.categorySculpture;
+      case ContentType.architecture:       return loc.categoryArchitecture;
+      case ContentType.famousArtist:       return loc.categoryFamousArtist;
+      case ContentType.photographer:       return loc.categoryPhotographer;
+      case ContentType.classicalComposer:  return loc.categoryClassicalComposer;
+      case ContentType.nobelPrize:         return loc.categoryNobelPrize;
       case ContentType.frenchCommune:      return loc.categoryFrenchCommune;
       case ContentType.americanState:      return loc.categoryAmericanState;
     }

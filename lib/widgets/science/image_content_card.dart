@@ -4,6 +4,7 @@ import '../../models/content_data.dart';
 import '../../models/content_type.dart';
 import '../cinema/cinema_toggle_section.dart';
 import '../cinema/cinema_timer_badge.dart';
+import '../warning_badge.dart';
 import 'image_header.dart';
 
 class ImageContentCard extends StatefulWidget {
@@ -65,13 +66,28 @@ class _ImageContentCardState extends State<ImageContentCard> {
                   padding: const EdgeInsets.all(24),
                   child: Column(
                     children: [
-                      Text(
-                        widget.contentData?.preview ?? '',
-                        textAlign: TextAlign.center,
-                        style: theme.textTheme.titleLarge?.copyWith(
-                          fontWeight: FontWeight.bold,
-                          height: 1.3,
-                        ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Flexible(
+                            child: Text(
+                              widget.contentData?.preview ?? '',
+                              textAlign: TextAlign.center,
+                              style: theme.textTheme.titleLarge?.copyWith(
+                                fontWeight: FontWeight.bold,
+                                height: 1.3,
+                              ),
+                            ),
+                          ),
+                          if (widget.contentData?.warningText != null) ...[
+                            const SizedBox(width: 8),
+                            WarningBadge(
+                              text: widget.contentData!.warningText!,
+                              level: widget.contentData!.warningLevel ?? 'orange',
+                            ),
+                          ],
+                        ],
                       ),
                       if (widget.contentData?.hasDetails == true) ...[
                         const SizedBox(height: 16),

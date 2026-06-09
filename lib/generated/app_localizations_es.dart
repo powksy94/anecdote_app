@@ -183,6 +183,24 @@ class AppLocalizationsEs extends AppLocalizations {
   String get hideDubbing => 'Ocultar doblaje';
 
   @override
+  String get categorySculpture => 'Esculturas Célebres';
+
+  @override
+  String get categoryArchitecture => 'Arquitectura Icónica';
+
+  @override
+  String get categoryFamousArtist => 'Artistas Célebres';
+
+  @override
+  String get categoryPhotographer => 'Fotógrafos';
+
+  @override
+  String get categoryClassicalComposer => 'Compositores Clásicos';
+
+  @override
+  String get categoryNobelPrize => 'Premio Nobel';
+
+  @override
   String get categoryFrenchCommune => 'Comunas Francesas';
 
   @override

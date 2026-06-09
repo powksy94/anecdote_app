@@ -33,6 +33,12 @@ enum ContentType {
   battle,
   artHub,
   painting,
+  sculpture,
+  architecture,
+  famousArtist,
+  photographer,
+  classicalComposer,
+  nobelPrize,
   frenchCommune,
   americanState,
 }

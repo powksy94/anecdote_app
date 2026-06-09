@@ -16,6 +16,12 @@ class ArtHubPage extends StatefulWidget {
 class _ArtHubPageState extends State<ArtHubPage> {
   static const _subCategories = [
     ContentType.painting,
+    ContentType.sculpture,
+    ContentType.architecture,
+    ContentType.famousArtist,
+    ContentType.photographer,
+    ContentType.classicalComposer,
+    ContentType.nobelPrize,
   ];
 
   void _navigate(ContentType type) {

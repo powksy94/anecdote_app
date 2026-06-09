@@ -62,6 +62,12 @@
   "voTranslation": "Traduction",
   "dubbing": "Doublage",
   "hideDubbing": "Cacher le doublage",
+  "categorySculpture": "Sculptures Célèbres",
+  "categoryArchitecture": "Architecture Iconique",
+  "categoryFamousArtist": "Artistes Célèbres",
+  "categoryPhotographer": "Photographes",
+  "categoryClassicalComposer": "Compositeurs Classiques",
+  "categoryNobelPrize": "Prix Nobel",
   "categoryFrenchCommune": "Communes Françaises",
   "categoryAmericanState": "États Américains"
 }

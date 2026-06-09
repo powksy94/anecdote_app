@@ -69,6 +69,18 @@ Widget buildCardDecoration(ContentType type) {
       return _doubleIcon(Icons.location_city, Icons.flag);
     case ContentType.americanState:
       return _doubleIcon(Icons.flag, Icons.location_on);
+    case ContentType.sculpture:
+      return _singleIcon(Icons.view_in_ar_rounded, iconSize: 16);
+    case ContentType.architecture:
+      return _singleIcon(Icons.domain_rounded, iconSize: 16);
+    case ContentType.famousArtist:
+      return _doubleIcon(Icons.color_lens_rounded, Icons.brush);
+    case ContentType.photographer:
+      return _singleIcon(Icons.photo_camera_rounded, iconSize: 16);
+    case ContentType.classicalComposer:
+      return _singleIcon(Icons.music_note_rounded, iconSize: 16);
+    case ContentType.nobelPrize:
+      return _doubleIcon(Icons.emoji_events_rounded, Icons.star);
   }
 }
 

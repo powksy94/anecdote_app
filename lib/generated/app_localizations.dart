@@ -442,6 +442,42 @@ abstract class AppLocalizations {
   /// **'Hide dubbing'**
   String get hideDubbing;
 
+  /// No description provided for @categorySculpture.
+  ///
+  /// In en, this message translates to:
+  /// **'Famous Sculptures'**
+  String get categorySculpture;
+
+  /// No description provided for @categoryArchitecture.
+  ///
+  /// In en, this message translates to:
+  /// **'Iconic Architecture'**
+  String get categoryArchitecture;
+
+  /// No description provided for @categoryFamousArtist.
+  ///
+  /// In en, this message translates to:
+  /// **'Famous Artists'**
+  String get categoryFamousArtist;
+
+  /// No description provided for @categoryPhotographer.
+  ///
+  /// In en, this message translates to:
+  /// **'Photographers'**
+  String get categoryPhotographer;
+
+  /// No description provided for @categoryClassicalComposer.
+  ///
+  /// In en, this message translates to:
+  /// **'Classical Composers'**
+  String get categoryClassicalComposer;
+
+  /// No description provided for @categoryNobelPrize.
+  ///
+  /// In en, this message translates to:
+  /// **'Nobel Prize'**
+  String get categoryNobelPrize;
+
   /// No description provided for @categoryFrenchCommune.
   ///
   /// In en, this message translates to:

@@ -56,6 +56,12 @@ class _ContentPageState extends State<ContentPage> {
     ContentType.solarSystemMoon,
     ContentType.frenchDepartment,
     ContentType.animals,
+    ContentType.sculpture,
+    ContentType.architecture,
+    ContentType.famousArtist,
+    ContentType.photographer,
+    ContentType.classicalComposer,
+    ContentType.nobelPrize,
   };
 
   @override

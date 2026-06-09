@@ -18,6 +18,12 @@ import 'cinema_service.dart';
 import 'science_service/dinosaur_service.dart';
 import 'history_service/battle_service.dart';
 import 'art_service/painting_service.dart';
+import 'art_service/sculpture_service.dart';
+import 'art_service/architecture_service.dart';
+import 'art_service/famous_artist_service.dart';
+import 'art_service/photographer_service.dart';
+import 'art_service/classical_composer_service.dart';
+import 'art_service/nobel_prize_service.dart';
 import 'world_service/commune_service.dart';
 import 'world_service/state_service.dart';
 import 'exoplanet_service.dart';
@@ -69,6 +75,12 @@ class ApiService {
       if (type == ContentType.dinosaur)        return await DinosaurService().getDailyContent();
       if (type == ContentType.battle)          return await BattleService().getDailyContent();
       if (type == ContentType.painting)        return await PaintingService().getDailyContent();
+      if (type == ContentType.sculpture)       return await SculptureService().getDailyContent();
+      if (type == ContentType.architecture)    return await ArchitectureService().getDailyContent();
+      if (type == ContentType.famousArtist)    return await FamousArtistService().getDailyContent();
+      if (type == ContentType.photographer)    return await PhotographerService().getDailyContent();
+      if (type == ContentType.classicalComposer) return await ClassicalComposerService().getDailyContent();
+      if (type == ContentType.nobelPrize)      return await NobelPrizeService().getDailyContent();
       if (type == ContentType.frenchCommune)   return await CommuneService().getDailyContent();
       if (type == ContentType.americanState)   return await StateService().getDailyContent();
       if (type == ContentType.classicCinema ||

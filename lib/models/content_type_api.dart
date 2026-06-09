@@ -35,6 +35,12 @@ extension ContentTypeApi on ContentType {
       case ContentType.battle:
       case ContentType.artHub:
       case ContentType.painting:
+      case ContentType.sculpture:
+      case ContentType.architecture:
+      case ContentType.famousArtist:
+      case ContentType.photographer:
+      case ContentType.classicalComposer:
+      case ContentType.nobelPrize:
       case ContentType.frenchCommune:
       case ContentType.americanState:
         return '';

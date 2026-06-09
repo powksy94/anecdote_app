@@ -17,6 +17,9 @@ class ContentData {
   final int? mandateNumber;
   final String? imageUrl;
   final String? noImageMessage;
+  // Warning badge for persons implicated in abuse/violence accusations
+  final String? warningText;
+  final String? warningLevel; // "red" or "orange"
 
   ContentData({
     required this.preview,
@@ -33,6 +36,8 @@ class ContentData {
     this.mandateNumber,
     this.imageUrl,
     this.noImageMessage,
+    this.warningText,
+    this.warningLevel,
   });
 
   /// Retourne la traduction dans la locale donnée, ou null si VO = locale.
