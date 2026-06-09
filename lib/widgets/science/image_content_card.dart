@@ -30,6 +30,21 @@ class ImageContentCard extends StatefulWidget {
 class _ImageContentCardState extends State<ImageContentCard> {
   bool _showDetails = false;
 
+  static const _personTypes = {
+    ContentType.famousArtist,
+    ContentType.photographer,
+    ContentType.classicalComposer,
+    ContentType.nobelPrize,
+    ContentType.kingOfFrance,
+    ContentType.americanPresident,
+  };
+
+  Alignment get _imageAlignment => _personTypes.contains(widget.contentType)
+      ? const Alignment(0, -0.5)
+      : Alignment.center;
+
+  double get _imageHeight => _personTypes.contains(widget.contentType) ? 280 : 200;
+
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
@@ -61,6 +76,8 @@ class _ImageContentCardState extends State<ImageContentCard> {
                   gradient: widget.gradient,
                   fallbackIcon: widget.contentType.icon,
                   noImageMessage: widget.contentData?.noImageMessage,
+                  imageAlignment: _imageAlignment,
+                  height: _imageHeight,
                 ),
                 Padding(
                   padding: const EdgeInsets.all(24),

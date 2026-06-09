@@ -6,6 +6,8 @@ class ImageHeader extends StatelessWidget {
   final List<Color> gradient;
   final IconData fallbackIcon;
   final String? noImageMessage;
+  final Alignment imageAlignment;
+  final double height;
 
   const ImageHeader({
     super.key,
@@ -13,10 +15,12 @@ class ImageHeader extends StatelessWidget {
     required this.gradient,
     required this.fallbackIcon,
     this.noImageMessage,
+    this.imageAlignment = Alignment.center,
+    this.height = 200,
   });
 
   Widget _fallback() => Container(
-        height: 200,
+        height: height,
         decoration: BoxDecoration(
           gradient: LinearGradient(colors: gradient),
         ),
@@ -46,11 +50,12 @@ class ImageHeader extends StatelessWidget {
         child: imageUrl != null
             ? CachedNetworkImage(
                 imageUrl: imageUrl!,
-                height: 200,
+                height: height,
                 width: double.infinity,
                 fit: BoxFit.cover,
+                alignment: imageAlignment,
                 placeholder: (_, __) => Container(
-                  height: 200,
+                  height: height,
                   decoration: BoxDecoration(
                     gradient: LinearGradient(colors: gradient),
                   ),
