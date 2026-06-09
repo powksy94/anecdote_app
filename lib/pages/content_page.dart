@@ -55,6 +55,7 @@ class _ContentPageState extends State<ContentPage> {
     ContentType.americanPresident,
     ContentType.solarSystemMoon,
     ContentType.frenchDepartment,
+    ContentType.animals,
   };
 
   @override
@@ -90,7 +91,8 @@ class _ContentPageState extends State<ContentPage> {
         RegExp(r'(\d+\.?\d*)M\b'), (m) => '${m[1]}${l10n.popMillion}');
       return ContentData(
         preview: content.preview, details: details,
-        hasDetails: content.hasDetails, flagSvg: content.flagSvg);
+        hasDetails: content.hasDetails, flagSvg: content.flagSvg,
+        imageUrl: content.imageUrl, noImageMessage: content.noImageMessage);
     }
     if (widget.contentType == ContentType.star) {
       return ContentData(
@@ -103,7 +105,8 @@ class _ContentPageState extends State<ContentPage> {
       return ContentData(
         preview: '${content.preview} (${_termLabel(content.mandateNumber!, l10n)})',
         details: content.details, hasDetails: content.hasDetails,
-        mandateNumber: content.mandateNumber);
+        mandateNumber: content.mandateNumber,
+        imageUrl: content.imageUrl, noImageMessage: content.noImageMessage);
     }
     return content;
   }
@@ -213,17 +216,18 @@ class _ContentPageState extends State<ContentPage> {
       );
 
   Widget _buildContentCard(List<Color> gradient, Color accentColor, String time) {
-    if (_geoTypes.contains(widget.contentType)) {
-      return CountryCard(contentData: contentData, gradient: gradient,
-          accentColor: accentColor, timeUntilMidnight: time);
-    }
     if (_cinemaTypes.contains(widget.contentType)) {
       return CinemaCard(contentData: contentData, contentType: widget.contentType,
           gradient: gradient, accentColor: accentColor, timeUntilMidnight: time);
     }
+    // Image-based card takes priority over geo card
     if (contentData?.imageUrl != null) {
       return ImageContentCard(contentData: contentData, contentType: widget.contentType,
           gradient: gradient, accentColor: accentColor, timeUntilMidnight: time);
+    }
+    if (_geoTypes.contains(widget.contentType)) {
+      return CountryCard(contentData: contentData, gradient: gradient,
+          accentColor: accentColor, timeUntilMidnight: time);
     }
     return ContentCard(contentData: contentData, contentType: widget.contentType,
         gradient: gradient, accentColor: accentColor, timeUntilMidnight: time);

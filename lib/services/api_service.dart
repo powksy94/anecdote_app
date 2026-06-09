@@ -84,7 +84,17 @@ class ApiService {
       ).timeout(const Duration(seconds: 10));
 
       if (response.statusCode != 200) throw Exception('Server error (${response.statusCode})');
-      return _parseResponse(type, jsonDecode(response.body));
+      final parsed = _parseResponse(type, jsonDecode(response.body));
+      if (type == ContentType.animals) {
+        final searchKey = verifiedAnimals.keys.toList()[_dayOfYear() % verifiedAnimals.length];
+        final imageUrl = await _fetchWikiImage(searchKey);
+        return ContentData(
+          preview: parsed.preview, details: parsed.details, hasDetails: parsed.hasDetails,
+          imageUrl: imageUrl,
+          noImageMessage: imageUrl == null ? '🐾 No image available for this animal' : null,
+        );
+      }
+      return parsed;
     } on http.ClientException {
       throw Exception('Network error');
     } on TimeoutException {
@@ -180,6 +190,17 @@ class ApiService {
     final suffix = day == 1 ? 'st' : day == 2 ? 'nd' : day == 3 ? 'rd' : 'th';
     final datePart = displayYear.isEmpty ? '$day$suffix ${months[now.month]}' : '$day$suffix ${months[now.month]} $displayYear';
     return ContentData(preview: '$datePart\n\n$eventText');
+  }
+
+  Future<String?> _fetchWikiImage(String name) async {
+    try {
+      final url = 'https://en.wikipedia.org/api/rest_v1/page/summary/${Uri.encodeComponent(name)}';
+      final r = await http.get(Uri.parse(url)).timeout(const Duration(seconds: 5));
+      if (r.statusCode == 200) {
+        return (jsonDecode(r.body) as Map<String, dynamic>)['thumbnail']?['source'] as String?;
+      }
+    } catch (_) {}
+    return null;
   }
 
   ContentData _parseAnimals(dynamic decoded) {
