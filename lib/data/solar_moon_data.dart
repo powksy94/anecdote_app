@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 
 class SolarMoonData {
   final String name, planet, discoverer, features;
+  final String? imageUrl;
   final int diameter, discoveryYear;
   final double orbitalPeriod;
 
@@ -11,8 +12,10 @@ class SolarMoonData {
     required this.name, required this.planet,
     required this.discoverer, required this.features,
     required this.diameter, required this.discoveryYear,
-    required this.orbitalPeriod,
+    required this.orbitalPeriod, this.imageUrl,
   });
+
+  String? get noImageMessage => imageUrl != null ? null : '🌙 No image available for this moon';
 
   factory SolarMoonData.fromJson(Map<String, dynamic> j) => SolarMoonData(
     name:          j['n']  ?? '',
@@ -22,6 +25,7 @@ class SolarMoonData {
     discoveryYear: (j['dy'] as num?)?.toInt() ?? 0,
     discoverer:    j['dc'] ?? '',
     features:      j['fe'] ?? '',
+    imageUrl:      j['im'] as String?,
   );
 }
 

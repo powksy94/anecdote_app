@@ -22,6 +22,8 @@ class PresidentService {
       details: buf.toString().trim(),
       hasDetails: true,
       mandateNumber: p.mandateNumber,
+      imageUrl: p.imageUrl,
+      noImageMessage: p.noImageMessage,
     );
   }
 

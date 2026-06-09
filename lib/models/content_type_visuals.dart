@@ -150,6 +150,12 @@ extension ContentTypeVisuals on ContentType {
         return const Color(0xFF9B6DFF);
       case ContentType.battle:
         return const Color(0xFFFF6B6B);
+      case ContentType.kingOfFrance:
+        return const Color(0xFFDAA520); // or du gradient
+      case ContentType.americanPresident:
+        return const Color(0xFFBF0A30); // rouge du gradient
+      case ContentType.frenchDepartment:
+        return const Color(0xFFED2939); // rouge tricolore
       default:
         return gradient[0];
     }

@@ -27,6 +27,8 @@ class DepartmentService {
       preview: '🇫🇷 ${d.code} - ${d.name}',
       details: buf.toString().trim(),
       hasDetails: true,
+      imageUrl: d.imageUrl,
+      noImageMessage: d.noImageMessage,
     );
   }
 }

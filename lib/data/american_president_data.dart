@@ -4,14 +4,17 @@ import 'package:flutter/services.dart';
 
 class AmericanPresidentData {
   final String name, party, state, vicePresident, famousFor;
+  final String? imageUrl;
   final int number, termStart;
   final int? termEnd, mandateNumber;
 
   const AmericanPresidentData({
     required this.name, required this.number, required this.party,
     required this.state, required this.vicePresident, required this.famousFor,
-    required this.termStart, this.termEnd, this.mandateNumber,
+    required this.termStart, this.termEnd, this.mandateNumber, this.imageUrl,
   });
+
+  String? get noImageMessage => imageUrl != null ? null : '🇺🇸 No portrait available for this president';
 
   factory AmericanPresidentData.fromJson(Map<String, dynamic> j) =>
       AmericanPresidentData(
@@ -24,6 +27,7 @@ class AmericanPresidentData {
     vicePresident: j['vp'] ?? '',
     famousFor:     j['fa'] ?? '',
     mandateNumber: (j['mn'] as num?)?.toInt(),
+    imageUrl:      j['im'] as String?,
   );
 }
 

@@ -4,21 +4,25 @@ import 'package:flutter/services.dart';
 
 class DepartmentData {
   final String code, name, prefecture, region;
+  final String? imageUrl;
   final int? population, area;
 
   const DepartmentData({
     required this.code, required this.name,
     required this.prefecture, required this.region,
-    this.population, this.area,
+    this.population, this.area, this.imageUrl,
   });
 
+  String? get noImageMessage => imageUrl != null ? null : '🏛️ No emblem available for this department';
+
   factory DepartmentData.fromJson(Map<String, dynamic> j) => DepartmentData(
-    code:       j['co'] ?? '', 
-    name:       j['n']  ?? '', 
-    prefecture: j['pr'] ?? '', 
+    code:       j['co'] ?? '',
+    name:       j['n']  ?? '',
+    prefecture: j['pr'] ?? '',
     region:     j['re'] ?? '',
     population: (j['po'] as num?)?.toInt(),
     area:       (j['ar'] as num?)?.toInt(),
+    imageUrl:   j['im'] as String?,
   );
 }
 

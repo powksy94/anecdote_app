@@ -4,13 +4,15 @@ import 'package:flutter/services.dart';
 
 class KingOfFranceData {
   final String name, dynasty, famousFor;
-  final String? nickname;
+  final String? nickname, imageUrl;
   final int reignStart, reignEnd;
 
   const KingOfFranceData({
     required this.name, required this.dynasty, required this.famousFor,
-    required this.reignStart, required this.reignEnd, this.nickname,
+    required this.reignStart, required this.reignEnd, this.nickname, this.imageUrl,
   });
+
+  String? get noImageMessage => imageUrl != null ? null : '👑 No portrait available for this king';
 
   factory KingOfFranceData.fromJson(Map<String, dynamic> j) => KingOfFranceData(
     name:        j['n']  ?? '',
@@ -19,6 +21,7 @@ class KingOfFranceData {
     reignEnd:    (j['re'] as num?)?.toInt() ?? 0,
     nickname:    j['ni'] as String?,
     famousFor:   j['fa'] ?? '',
+    imageUrl:    j['im'] as String?,
   );
 }
 

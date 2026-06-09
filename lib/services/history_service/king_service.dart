@@ -19,6 +19,8 @@ class KingService {
       preview: '🇫🇷 ${k.name}',
       details: buf.toString().trim(),
       hasDetails: true,
+      imageUrl: k.imageUrl,
+      noImageMessage: k.noImageMessage,
     );
   }
 }

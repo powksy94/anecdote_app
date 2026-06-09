@@ -51,6 +51,10 @@ class _ContentPageState extends State<ContentPage> {
     ContentType.painting,
     ContentType.frenchCommune,
     ContentType.americanState,
+    ContentType.kingOfFrance,
+    ContentType.americanPresident,
+    ContentType.solarSystemMoon,
+    ContentType.frenchDepartment,
   };
 
   @override
