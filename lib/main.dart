@@ -3,7 +3,7 @@ import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
-import 'app.dart';
+import './app.dart';
 
 // Must be a top-level function, outside any class
 @pragma('vm:entry-point')

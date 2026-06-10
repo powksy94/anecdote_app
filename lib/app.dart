@@ -1,7 +1,7 @@
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
-import 'pages/home_page.dart';
-import 'generated/app_localizations.dart';
+import './core/pages/home_page.dart';
+import './generated/app_localizations.dart';
 
 final navigatorKey = GlobalKey<NavigatorState>();
 final scaffoldMessengerKey = GlobalKey<ScaffoldMessengerState>();
