@@ -64,6 +64,8 @@ class _ContentPageState extends State<ContentPage> {
     ContentType.nobelPrize,
     ContentType.chemicalElement,
     ContentType.volcano,
+    ContentType.insect,
+    ContentType.bird,
   };
 
   @override

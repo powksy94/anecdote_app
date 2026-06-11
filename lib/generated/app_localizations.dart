@@ -525,6 +525,13 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Volcanoes'**
   String get categoryVolcano;
+
+  String get categoryInsect;
+  String get categoryBird;
+  String get insectPhobiaTitle;
+  String get insectPhobiaMessage;
+  String get continueAnyway;
+  String get goBack;
 }
 
 class _AppLocalizationsDelegate

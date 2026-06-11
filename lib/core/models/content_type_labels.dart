@@ -44,6 +44,8 @@ extension ContentTypeLabels on ContentType {
       case ContentType.artArtistsHub:      return 'Artists';
       case ContentType.chemicalElement:    return 'Chemical Elements';
       case ContentType.volcano:            return 'Volcanoes';
+      case ContentType.insect:             return 'Insects';
+      case ContentType.bird:               return 'Birds';
     }
   }
 
@@ -90,6 +92,8 @@ extension ContentTypeLabels on ContentType {
       case ContentType.artArtistsHub:      return loc.categoryArtArtistsHub;
       case ContentType.chemicalElement:    return loc.categoryChemicalElement;
       case ContentType.volcano:            return loc.categoryVolcano;
+      case ContentType.insect:             return loc.categoryInsect;
+      case ContentType.bird:               return loc.categoryBird;
     }
   }
 }

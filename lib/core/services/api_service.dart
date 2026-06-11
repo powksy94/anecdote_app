@@ -28,7 +28,9 @@ import '../../features/world/services/commune_service.dart';
 import '../../features/world/services/state_service.dart';
 import '../../features/space/services/exoplanet_service.dart';
 import '../../features/science/services/chemical_element_service.dart';
-import '../../features/science/services/volcano_service.dart';
+import '../../features/world/services/volcano_service.dart';
+import '../../features/science/services/insect_service.dart';
+import '../../features/science/services/bird_service.dart';
 
 int _dayOfYear() {
   final now = DateTime.now();
@@ -87,6 +89,8 @@ class ApiService {
       if (type == ContentType.americanState)   return await StateService().getDailyContent();
       if (type == ContentType.chemicalElement) return await ChemicalElementService().getDailyContent();
       if (type == ContentType.volcano)         return await VolcanoService().getDailyContent();
+      if (type == ContentType.insect)          return await InsectService().getDailyContent();
+      if (type == ContentType.bird)            return await BirdService().getDailyContent();
       if (type == ContentType.classicCinema ||
           type == ContentType.cinema80s90s ||
           type == ContentType.modernCinema) {

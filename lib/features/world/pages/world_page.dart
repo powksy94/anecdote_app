@@ -20,6 +20,7 @@ class _WorldPageState extends State<WorldPage> {
     ContentType.pacificIsland,
     ContentType.frenchCommune,
     ContentType.americanState,
+    ContentType.volcano,
   ];
 
   void _navigate(ContentType type) {

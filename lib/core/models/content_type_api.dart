@@ -49,6 +49,8 @@ extension ContentTypeApi on ContentType {
       case ContentType.artArtistsHub:
       case ContentType.chemicalElement:
       case ContentType.volcano:
+      case ContentType.insect:
+      case ContentType.bird:
         return '';
     }
   }

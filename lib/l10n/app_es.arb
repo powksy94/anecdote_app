@@ -75,5 +75,11 @@
   "categoryArtWorksHub": "Obras",
   "categoryArtArtistsHub": "Artistas",
   "categoryChemicalElement": "Elementos Químicos",
-  "categoryVolcano": "Volcanes"
+  "categoryVolcano": "Volcanes",
+  "categoryInsect": "Insectos",
+  "categoryBird": "Aves",
+  "insectPhobiaTitle": "⚠️ Sensibilidad a los insectos",
+  "insectPhobiaMessage": "Esta categoría contiene fotos de insectos reales. Si tienes entomofobia (fobia a los insectos), te recomendamos elegir otra categoría.",
+  "continueAnyway": "Continuar de todos modos",
+  "goBack": "Volver"
 }

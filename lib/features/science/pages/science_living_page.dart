@@ -17,9 +17,43 @@ class _ScienceLivingPageState extends State<ScienceLivingPage> {
   static const _subCategories = [
     ContentType.animals,
     ContentType.dinosaur,
+    ContentType.insect,
+    ContentType.bird,
   ];
 
   void _navigate(ContentType type) {
+    if (type == ContentType.insect) {
+      _showInsectWarning();
+    } else {
+      _doNavigate(type);
+    }
+  }
+
+  void _showInsectWarning() {
+    final loc = AppLocalizations.of(context)!;
+    showDialog(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        title: Text(loc.insectPhobiaTitle),
+        content: Text(loc.insectPhobiaMessage),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(ctx),
+            child: Text(loc.goBack),
+          ),
+          ElevatedButton(
+            onPressed: () {
+              Navigator.pop(ctx);
+              _doNavigate(ContentType.insect);
+            },
+            child: Text(loc.continueAnyway),
+          ),
+        ],
+      ),
+    );
+  }
+
+  void _doNavigate(ContentType type) {
     widget.adService.showInterstitialAd(onComplete: () {
       if (!mounted) return;
       Navigator.push(

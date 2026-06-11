@@ -35,6 +35,8 @@ generate_if_needed "tools/history/generate_battles.py" "assets/history/battles.j
 generate_if_needed "tools/science/generate_dinosaurs.py"         "assets/science/dinosaurs.json"
 generate_if_needed "tools/science/generate_chemical_elements.py" "assets/science/chemical_elements.json"
 generate_if_needed "tools/science/generate_volcanoes.py"         "assets/science/volcanoes.json"
+generate_if_needed "tools/science/generate_insects.py"           "assets/science/insects.json"
+generate_if_needed "tools/science/generate_birds.py"             "assets/science/birds.json"
 # Space missions
 generate_if_needed "tools/space/generate_space_missions.py" "assets/space/missions.json"
 # Art

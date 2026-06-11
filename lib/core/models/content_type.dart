@@ -47,4 +47,6 @@ enum ContentType {
   artArtistsHub,
   chemicalElement,
   volcano,
+  insect,
+  bird,
 }

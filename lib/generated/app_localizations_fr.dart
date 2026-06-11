@@ -223,4 +223,22 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get categoryVolcano => 'Volcans';
+
+  @override
+  String get categoryInsect => 'Insectes';
+
+  @override
+  String get categoryBird => 'Oiseaux';
+
+  @override
+  String get insectPhobiaTitle => '⚠️ Sensibilité aux insectes';
+
+  @override
+  String get insectPhobiaMessage => "Cette catégorie contient des photos de vrais insectes. Si vous souffrez d'entomophobie, nous vous recommandons de choisir une autre catégorie.";
+
+  @override
+  String get continueAnyway => 'Continuer quand même';
+
+  @override
+  String get goBack => 'Retour';
 }

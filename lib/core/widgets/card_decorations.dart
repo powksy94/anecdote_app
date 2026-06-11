@@ -93,6 +93,10 @@ Widget buildCardDecoration(ContentType type) {
       return _doubleIcon(Icons.science, Icons.blur_circular);
     case ContentType.volcano:
       return _doubleIcon(Icons.terrain, Icons.local_fire_department);
+    case ContentType.insect:
+      return _doubleIcon(Icons.bug_report_rounded, Icons.eco);
+    case ContentType.bird:
+      return _doubleIcon(Icons.flight_takeoff_rounded, Icons.air_rounded);
   }
 }
 
