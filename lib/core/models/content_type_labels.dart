@@ -38,6 +38,12 @@ extension ContentTypeLabels on ContentType {
       case ContentType.nobelPrize:         return 'Nobel Prize';
       case ContentType.frenchCommune:      return 'French Communes';
       case ContentType.americanState:      return 'American States';
+      case ContentType.scienceLivingHub:   return 'Living World';
+      case ContentType.scienceNonLivingHub: return 'Non-Living';
+      case ContentType.artWorksHub:        return 'Art Works';
+      case ContentType.artArtistsHub:      return 'Artists';
+      case ContentType.chemicalElement:    return 'Chemical Elements';
+      case ContentType.volcano:            return 'Volcanoes';
     }
   }
 
@@ -78,6 +84,12 @@ extension ContentTypeLabels on ContentType {
       case ContentType.nobelPrize:         return loc.categoryNobelPrize;
       case ContentType.frenchCommune:      return loc.categoryFrenchCommune;
       case ContentType.americanState:      return loc.categoryAmericanState;
+      case ContentType.scienceLivingHub:   return loc.categoryScienceLivingHub;
+      case ContentType.scienceNonLivingHub: return loc.categoryScienceNonLivingHub;
+      case ContentType.artWorksHub:        return loc.categoryArtWorksHub;
+      case ContentType.artArtistsHub:      return loc.categoryArtArtistsHub;
+      case ContentType.chemicalElement:    return loc.categoryChemicalElement;
+      case ContentType.volcano:            return loc.categoryVolcano;
     }
   }
 }

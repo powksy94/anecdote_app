@@ -17,6 +17,8 @@ class ContentData {
   final int? mandateNumber;
   final String? imageUrl;
   final String? noImageMessage;
+  final String? elementSymbol;
+  final int? elementAtomicNumber;
   // Warning badge for persons implicated in abuse/violence accusations
   final String? warningText;
   final String? warningLevel; // "red" or "orange"
@@ -36,6 +38,8 @@ class ContentData {
     this.mandateNumber,
     this.imageUrl,
     this.noImageMessage,
+    this.elementSymbol,
+    this.elementAtomicNumber,
     this.warningText,
     this.warningLevel,
   });

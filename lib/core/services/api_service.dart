@@ -27,6 +27,8 @@ import '../../features/art/services/nobel_prize_service.dart';
 import '../../features/world/services/commune_service.dart';
 import '../../features/world/services/state_service.dart';
 import '../../features/space/services/exoplanet_service.dart';
+import '../../features/science/services/chemical_element_service.dart';
+import '../../features/science/services/volcano_service.dart';
 
 int _dayOfYear() {
   final now = DateTime.now();
@@ -83,6 +85,8 @@ class ApiService {
       if (type == ContentType.nobelPrize)      return await NobelPrizeService().getDailyContent();
       if (type == ContentType.frenchCommune)   return await CommuneService().getDailyContent();
       if (type == ContentType.americanState)   return await StateService().getDailyContent();
+      if (type == ContentType.chemicalElement) return await ChemicalElementService().getDailyContent();
+      if (type == ContentType.volcano)         return await VolcanoService().getDailyContent();
       if (type == ContentType.classicCinema ||
           type == ContentType.cinema80s90s ||
           type == ContentType.modernCinema) {

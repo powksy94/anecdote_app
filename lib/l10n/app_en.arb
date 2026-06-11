@@ -69,5 +69,11 @@
   "categoryClassicalComposer": "Classical Composers",
   "categoryNobelPrize": "Nobel Prize",
   "categoryFrenchCommune": "French Communes",
-  "categoryAmericanState": "American States"
+  "categoryAmericanState": "American States",
+  "categoryScienceLivingHub": "Living World",
+  "categoryScienceNonLivingHub": "Non-Living",
+  "categoryArtWorksHub": "Art Works",
+  "categoryArtArtistsHub": "Artists",
+  "categoryChemicalElement": "Chemical Elements",
+  "categoryVolcano": "Volcanoes"
 }

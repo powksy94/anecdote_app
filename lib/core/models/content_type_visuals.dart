@@ -38,6 +38,12 @@ extension ContentTypeVisuals on ContentType {
       case ContentType.nobelPrize:         return Icons.emoji_events_rounded;
       case ContentType.frenchCommune:      return Icons.location_city_rounded;
       case ContentType.americanState:      return Icons.flag_rounded;
+      case ContentType.scienceLivingHub:   return Icons.eco_rounded;
+      case ContentType.scienceNonLivingHub: return Icons.biotech_rounded;
+      case ContentType.artWorksHub:        return Icons.brush_rounded;
+      case ContentType.artArtistsHub:      return Icons.groups_rounded;
+      case ContentType.chemicalElement:    return Icons.science_rounded;
+      case ContentType.volcano:            return Icons.terrain_rounded;
     }
   }
 
@@ -78,6 +84,12 @@ extension ContentTypeVisuals on ContentType {
       case ContentType.nobelPrize:         return const Color(0xFFB8860B);
       case ContentType.frenchCommune:      return Colors.blue.shade700;
       case ContentType.americanState:      return Colors.red.shade700;
+      case ContentType.scienceLivingHub:   return Colors.green.shade900;
+      case ContentType.scienceNonLivingHub: return Colors.indigo.shade900;
+      case ContentType.artWorksHub:        return Colors.purple.shade900;
+      case ContentType.artArtistsHub:      return Colors.pink.shade900;
+      case ContentType.chemicalElement:    return const Color(0xFF1A237E);
+      case ContentType.volcano:            return const Color(0xFF7B0000);
     }
   }
 
@@ -153,6 +165,18 @@ extension ContentTypeVisuals on ContentType {
         return [const Color(0xFF002395), const Color(0xFF1565C0)];
       case ContentType.americanState:
         return [const Color(0xFF002868), const Color(0xFFBF0A30)];
+      case ContentType.scienceLivingHub:
+        return [const Color(0xFF1B5E20), const Color(0xFF388E3C)];
+      case ContentType.scienceNonLivingHub:
+        return [const Color(0xFF0D47A1), const Color(0xFF1565C0)];
+      case ContentType.artWorksHub:
+        return [const Color(0xFF512DA8), const Color(0xFF7E57C2)];
+      case ContentType.artArtistsHub:
+        return [const Color(0xFFAD1457), const Color(0xFFE91E63)];
+      case ContentType.chemicalElement:
+        return [const Color(0xFF1A237E), const Color(0xFF283593)];
+      case ContentType.volcano:
+        return [const Color(0xFF7B0000), const Color(0xFFB71C1C)];
     }
   }
 

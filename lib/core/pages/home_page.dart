@@ -5,8 +5,8 @@ import '../../features/space/pages/space_page.dart';
 import '../../features/history/pages/history_hub_page.dart';
 import '../../features/cinema/pages/cinema_hub_page.dart';
 import '../../features/celebrity/pages/celebrity_hub_page.dart';
-import '../../features/science/pages/science_hub_page.dart';
-import '../../features/art/pages/art_hub_page.dart';
+import '../../features/science/pages/science_navigator.dart';
+import '../../features/art/pages/art_navigator.dart';
 import '../models/content_type.dart';
 import '../../generated/app_localizations.dart';
 import '../services/ad_service.dart';
@@ -72,10 +72,19 @@ class _HomePageState extends State<HomePage> {
   }
 
   void _navigate(ContentType type) {
+    if (type == ContentType.scienceHub) {
+      ScienceNavigator.show(context, _adService)
+          .then((_) => _cardKeys[type]?.currentState?.onNavigationComplete());
+      return;
+    }
+    if (type == ContentType.artHub) {
+      ArtNavigator.show(context, _adService)
+          .then((_) => _cardKeys[type]?.currentState?.onNavigationComplete());
+      return;
+    }
     if (type == ContentType.world || type == ContentType.space ||
         type == ContentType.historyHub || type == ContentType.cinemaHub ||
-        type == ContentType.celebrityHub || type == ContentType.scienceHub ||
-        type == ContentType.artHub) {
+        type == ContentType.celebrityHub) {
       Navigator.push(
         context,
         PageRouteBuilder(
@@ -84,9 +93,7 @@ class _HomePageState extends State<HomePage> {
             if (type == ContentType.space) return SpacePage(adService: _adService);
             if (type == ContentType.historyHub) return HistoryHubPage(adService: _adService);
             if (type == ContentType.cinemaHub) return CinemaHubPage(adService: _adService);
-            if (type == ContentType.celebrityHub) return CelebrityHubPage(adService: _adService);
-            if (type == ContentType.artHub) return ArtHubPage(adService: _adService);
-            return ScienceHubPage(adService: _adService);
+            return CelebrityHubPage(adService: _adService);
           },
           transitionsBuilder: (_, animation, __, child) =>
               FadeTransition(opacity: animation, child: child),

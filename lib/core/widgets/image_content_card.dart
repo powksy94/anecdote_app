@@ -39,11 +39,20 @@ class _ImageContentCardState extends State<ImageContentCard> {
     ContentType.americanPresident,
   };
 
+  static const _containTypes = {
+    ContentType.sculpture,
+    ContentType.architecture,
+  };
+
   Alignment get _imageAlignment => _personTypes.contains(widget.contentType)
       ? const Alignment(0, -0.5)
       : Alignment.center;
 
   double get _imageHeight => _personTypes.contains(widget.contentType) ? 280 : 200;
+
+  BoxFit get _boxFit => _containTypes.contains(widget.contentType)
+      ? BoxFit.contain
+      : BoxFit.cover;
 
   @override
   Widget build(BuildContext context) {
@@ -76,8 +85,11 @@ class _ImageContentCardState extends State<ImageContentCard> {
                   gradient: widget.gradient,
                   fallbackIcon: widget.contentType.icon,
                   noImageMessage: widget.contentData?.noImageMessage,
+                  elementSymbol: widget.contentData?.elementSymbol,
+                  elementAtomicNumber: widget.contentData?.elementAtomicNumber,
                   imageAlignment: _imageAlignment,
                   height: _imageHeight,
+                  boxFit: _boxFit,
                 ),
                 Padding(
                   padding: const EdgeInsets.all(24),

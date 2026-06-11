@@ -81,6 +81,18 @@ Widget buildCardDecoration(ContentType type) {
       return _singleIcon(Icons.music_note_rounded, iconSize: 16);
     case ContentType.nobelPrize:
       return _doubleIcon(Icons.emoji_events_rounded, Icons.star);
+    case ContentType.scienceLivingHub:
+      return _doubleIcon(Icons.eco, Icons.pets);
+    case ContentType.scienceNonLivingHub:
+      return _doubleIcon(Icons.biotech, Icons.science);
+    case ContentType.artWorksHub:
+      return _doubleIcon(Icons.brush, Icons.architecture);
+    case ContentType.artArtistsHub:
+      return _doubleIcon(Icons.groups, Icons.color_lens);
+    case ContentType.chemicalElement:
+      return _doubleIcon(Icons.science, Icons.blur_circular);
+    case ContentType.volcano:
+      return _doubleIcon(Icons.terrain, Icons.local_fire_department);
   }
 }
 

@@ -5,19 +5,16 @@ import '../../../core/services/ad_service.dart';
 import '../../../core/widgets/subcategory_card.dart';
 import '../../../core/pages/content_page.dart';
 
-class ArtHubPage extends StatefulWidget {
+class ArtArtistsPage extends StatefulWidget {
   final AdService adService;
-  const ArtHubPage({super.key, required this.adService});
+  const ArtArtistsPage({super.key, required this.adService});
 
   @override
-  State<ArtHubPage> createState() => _ArtHubPageState();
+  State<ArtArtistsPage> createState() => _ArtArtistsPageState();
 }
 
-class _ArtHubPageState extends State<ArtHubPage> {
+class _ArtArtistsPageState extends State<ArtArtistsPage> {
   static const _subCategories = [
-    ContentType.painting,
-    ContentType.sculpture,
-    ContentType.architecture,
     ContentType.famousArtist,
     ContentType.photographer,
     ContentType.classicalComposer,
@@ -43,7 +40,7 @@ class _ArtHubPageState extends State<ArtHubPage> {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final loc = AppLocalizations.of(context)!;
-    final gradient = ContentType.artHub.gradient;
+    final gradient = ContentType.artArtistsHub.gradient;
 
     return Scaffold(
       extendBodyBehindAppBar: true,
@@ -51,11 +48,11 @@ class _ArtHubPageState extends State<ArtHubPage> {
         title: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Icon(ContentType.artHub.icon, size: 24),
+            Icon(ContentType.artArtistsHub.icon, size: 24),
             const SizedBox(width: 8),
             Flexible(
               child: Text(
-                ContentType.artHub.localizedTitle(loc),
+                ContentType.artArtistsHub.localizedTitle(loc),
                 overflow: TextOverflow.ellipsis,
               ),
             ),

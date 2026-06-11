@@ -5,18 +5,19 @@ import '../../../core/services/ad_service.dart';
 import '../../../core/widgets/subcategory_card.dart';
 import '../../../core/pages/content_page.dart';
 
-class ScienceHubPage extends StatefulWidget {
+class ArtWorksPage extends StatefulWidget {
   final AdService adService;
-  const ScienceHubPage({super.key, required this.adService});
+  const ArtWorksPage({super.key, required this.adService});
 
   @override
-  State<ScienceHubPage> createState() => _ScienceHubPageState();
+  State<ArtWorksPage> createState() => _ArtWorksPageState();
 }
 
-class _ScienceHubPageState extends State<ScienceHubPage> {
+class _ArtWorksPageState extends State<ArtWorksPage> {
   static const _subCategories = [
-    ContentType.animals,
-    ContentType.dinosaur,
+    ContentType.painting,
+    ContentType.sculpture,
+    ContentType.architecture,
   ];
 
   void _navigate(ContentType type) {
@@ -38,7 +39,7 @@ class _ScienceHubPageState extends State<ScienceHubPage> {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final loc = AppLocalizations.of(context)!;
-    final gradient = ContentType.scienceHub.gradient;
+    final gradient = ContentType.artWorksHub.gradient;
 
     return Scaffold(
       extendBodyBehindAppBar: true,
@@ -46,11 +47,11 @@ class _ScienceHubPageState extends State<ScienceHubPage> {
         title: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Icon(ContentType.scienceHub.icon, size: 24),
+            Icon(ContentType.artWorksHub.icon, size: 24),
             const SizedBox(width: 8),
             Flexible(
               child: Text(
-                ContentType.scienceHub.localizedTitle(loc),
+                ContentType.artWorksHub.localizedTitle(loc),
                 overflow: TextOverflow.ellipsis,
               ),
             ),

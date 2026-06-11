@@ -41,4 +41,10 @@ enum ContentType {
   nobelPrize,
   frenchCommune,
   americanState,
+  scienceLivingHub,
+  scienceNonLivingHub,
+  artWorksHub,
+  artArtistsHub,
+  chemicalElement,
+  volcano,
 }

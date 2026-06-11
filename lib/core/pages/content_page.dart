@@ -62,6 +62,8 @@ class _ContentPageState extends State<ContentPage> {
     ContentType.photographer,
     ContentType.classicalComposer,
     ContentType.nobelPrize,
+    ContentType.chemicalElement,
+    ContentType.volcano,
   };
 
   @override

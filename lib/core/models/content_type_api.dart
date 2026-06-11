@@ -43,6 +43,12 @@ extension ContentTypeApi on ContentType {
       case ContentType.nobelPrize:
       case ContentType.frenchCommune:
       case ContentType.americanState:
+      case ContentType.scienceLivingHub:
+      case ContentType.scienceNonLivingHub:
+      case ContentType.artWorksHub:
+      case ContentType.artArtistsHub:
+      case ContentType.chemicalElement:
+      case ContentType.volcano:
         return '';
     }
   }

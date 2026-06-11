@@ -205,4 +205,22 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get categoryAmericanState => 'Estados Americanos';
+
+  @override
+  String get categoryScienceLivingHub => 'El Mundo Vivo';
+
+  @override
+  String get categoryScienceNonLivingHub => 'Lo Inanimado';
+
+  @override
+  String get categoryArtWorksHub => 'Obras';
+
+  @override
+  String get categoryArtArtistsHub => 'Artistas';
+
+  @override
+  String get categoryChemicalElement => 'Elementos Químicos';
+
+  @override
+  String get categoryVolcano => 'Volcanes';
 }

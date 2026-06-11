@@ -489,6 +489,42 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'American States'**
   String get categoryAmericanState;
+
+  /// No description provided for @categoryScienceLivingHub.
+  ///
+  /// In en, this message translates to:
+  /// **'Living World'**
+  String get categoryScienceLivingHub;
+
+  /// No description provided for @categoryScienceNonLivingHub.
+  ///
+  /// In en, this message translates to:
+  /// **'Non-Living'**
+  String get categoryScienceNonLivingHub;
+
+  /// No description provided for @categoryArtWorksHub.
+  ///
+  /// In en, this message translates to:
+  /// **'Art Works'**
+  String get categoryArtWorksHub;
+
+  /// No description provided for @categoryArtArtistsHub.
+  ///
+  /// In en, this message translates to:
+  /// **'Artists'**
+  String get categoryArtArtistsHub;
+
+  /// No description provided for @categoryChemicalElement.
+  ///
+  /// In en, this message translates to:
+  /// **'Chemical Elements'**
+  String get categoryChemicalElement;
+
+  /// No description provided for @categoryVolcano.
+  ///
+  /// In en, this message translates to:
+  /// **'Volcanoes'**
+  String get categoryVolcano;
 }
 
 class _AppLocalizationsDelegate
