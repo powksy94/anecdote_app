@@ -97,6 +97,8 @@ Widget buildCardDecoration(ContentType type) {
       return _doubleIcon(Icons.bug_report_rounded, Icons.eco);
     case ContentType.bird:
       return _doubleIcon(Icons.flight_takeoff_rounded, Icons.air_rounded);
+    case ContentType.mineral:
+      return _doubleIcon(Icons.diamond_rounded, Icons.blur_circular_rounded);
   }
 }
 

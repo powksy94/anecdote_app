@@ -16,6 +16,7 @@ class ScienceNonLivingPage extends StatefulWidget {
 class _ScienceNonLivingPageState extends State<ScienceNonLivingPage> {
   static const _subCategories = [
     ContentType.chemicalElement,
+    ContentType.mineral,
   ];
 
   void _navigate(ContentType type) {

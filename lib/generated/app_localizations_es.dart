@@ -231,6 +231,9 @@ class AppLocalizationsEs extends AppLocalizations {
   String get categoryBird => 'Aves';
 
   @override
+  String get categoryMineral => 'Minerales';
+
+  @override
   String get insectPhobiaTitle => '⚠️ Sensibilidad a los insectos';
 
   @override

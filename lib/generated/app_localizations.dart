@@ -528,6 +528,7 @@ abstract class AppLocalizations {
 
   String get categoryInsect;
   String get categoryBird;
+  String get categoryMineral;
   String get insectPhobiaTitle;
   String get insectPhobiaMessage;
   String get continueAnyway;

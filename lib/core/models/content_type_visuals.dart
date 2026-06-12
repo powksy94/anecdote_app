@@ -46,6 +46,7 @@ extension ContentTypeVisuals on ContentType {
       case ContentType.volcano:            return Icons.terrain_rounded;
       case ContentType.insect:             return Icons.bug_report_rounded;
       case ContentType.bird:               return Icons.flight_takeoff_rounded;
+      case ContentType.mineral:            return Icons.diamond_rounded;
     }
   }
 
@@ -94,6 +95,7 @@ extension ContentTypeVisuals on ContentType {
       case ContentType.volcano:            return const Color(0xFF7B0000);
       case ContentType.insect:             return const Color(0xFF2E7D32);
       case ContentType.bird:               return const Color(0xFF0277BD);
+      case ContentType.mineral:            return const Color(0xFF4527A0);
     }
   }
 
@@ -185,6 +187,8 @@ extension ContentTypeVisuals on ContentType {
         return [const Color(0xFF1B5E20), const Color(0xFF66BB6A)];
       case ContentType.bird:
         return [const Color(0xFF0277BD), const Color(0xFF29B6F6)];
+      case ContentType.mineral:
+        return [const Color(0xFF37474F), const Color(0xFF7B1FA2)];
     }
   }
 

@@ -49,4 +49,5 @@ enum ContentType {
   volcano,
   insect,
   bird,
+  mineral,
 }

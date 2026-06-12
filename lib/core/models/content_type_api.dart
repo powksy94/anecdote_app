@@ -51,6 +51,7 @@ extension ContentTypeApi on ContentType {
       case ContentType.volcano:
       case ContentType.insect:
       case ContentType.bird:
+      case ContentType.mineral:
         return '';
     }
   }

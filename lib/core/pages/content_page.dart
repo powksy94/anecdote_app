@@ -4,6 +4,7 @@ import '../../generated/app_localizations.dart';
 import '../models/content_type.dart';
 import '../models/content_data.dart';
 import '../services/api_service.dart';
+import '../services/content_dispatcher.dart';
 import '../services/daily_cache_service.dart';
 import '../services/translation_service.dart';
 import '../widgets/content_card.dart';
@@ -66,6 +67,7 @@ class _ContentPageState extends State<ContentPage> {
     ContentType.volcano,
     ContentType.insect,
     ContentType.bird,
+    ContentType.mineral,
   };
 
   @override
@@ -160,7 +162,7 @@ class _ContentPageState extends State<ContentPage> {
           (!_cinemaTypes.contains(widget.contentType) || englishContent.quoteLang != null) &&
           (!_imageTypes.contains(widget.contentType) || englishContent.imageUrl != null || englishContent.noImageMessage != null);
       if (!englishCacheValid) {
-        englishContent = await apiService.fetchContent(widget.contentType);
+        englishContent = await fetchDailyContent(widget.contentType, apiService: apiService);
         await cacheService.saveTodayContent(widget.contentType, englishContent, locale: 'en');
       }
 
