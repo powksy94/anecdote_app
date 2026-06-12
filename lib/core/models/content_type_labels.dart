@@ -47,6 +47,8 @@ extension ContentTypeLabels on ContentType {
       case ContentType.insect:             return 'Insects';
       case ContentType.bird:               return 'Birds';
       case ContentType.mineral:            return 'Minerals';
+      case ContentType.cloud:              return 'Clouds';
+      case ContentType.humanBone:          return 'Human Bones';
     }
   }
 
@@ -96,6 +98,8 @@ extension ContentTypeLabels on ContentType {
       case ContentType.insect:             return loc.categoryInsect;
       case ContentType.bird:               return loc.categoryBird;
       case ContentType.mineral:            return loc.categoryMineral;
+      case ContentType.cloud:              return loc.categoryCloud;
+      case ContentType.humanBone:          return loc.categoryHumanBone;
     }
   }
 }

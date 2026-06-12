@@ -234,6 +234,12 @@ class AppLocalizationsFr extends AppLocalizations {
   String get categoryMineral => 'Minéraux';
 
   @override
+  String get categoryCloud => 'Nuages';
+
+  @override
+  String get categoryHumanBone => 'Os du corps humain';
+
+  @override
   String get insectPhobiaTitle => '⚠️ Sensibilité aux insectes';
 
   @override

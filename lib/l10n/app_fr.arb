@@ -79,6 +79,8 @@
   "categoryInsect": "Insectes",
   "categoryBird": "Oiseaux",
   "categoryMineral": "Minéraux",
+  "categoryCloud": "Nuages",
+  "categoryHumanBone": "Os du corps humain",
   "insectPhobiaTitle": "⚠️ Sensibilité aux insectes",
   "insectPhobiaMessage": "Cette catégorie contient des photos de vrais insectes. Si vous souffrez d'entomophobie, nous vous recommandons de choisir une autre catégorie.",
   "continueAnyway": "Continuer quand même",

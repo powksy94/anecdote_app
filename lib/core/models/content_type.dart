@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import '../../generated/app_localizations.dart';
 
 part './content_type_labels.dart';
-part './content_type_visuals.dart';
+part './content_type_icons.dart';
+part './content_type_colors.dart';
+part './content_type_gradients.dart';
+part './content_type_accent_colors.dart';
 part './content_type_api.dart';
 
 enum ContentType {
@@ -50,4 +53,6 @@ enum ContentType {
   insect,
   bird,
   mineral,
+  cloud,
+  humanBone,
 }

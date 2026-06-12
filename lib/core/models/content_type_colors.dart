@@ -1,0 +1,54 @@
+part of 'content_type.dart';
+
+extension ContentTypeColors on ContentType {
+  Color get color {
+    switch (this) {
+      case ContentType.anecdote:            return Colors.indigo;
+      case ContentType.chuckNorris:         return Colors.red;
+      case ContentType.celebrityQuote:      return Colors.teal;
+      case ContentType.history:             return Colors.amber.shade700;
+      case ContentType.kingOfFrance:        return Colors.purple;
+      case ContentType.americanPresident:   return Colors.blue.shade900;
+      case ContentType.historyHub:          return Colors.amber.shade700;
+      case ContentType.animals:             return Colors.green;
+      case ContentType.country:             return Colors.blue;
+      case ContentType.frenchDepartment:    return Colors.blueGrey;
+      case ContentType.pacificIsland:       return Colors.cyan;
+      case ContentType.world:               return const Color(0xFF1A237E);
+      case ContentType.exoplanet:           return Colors.deepPurple;
+      case ContentType.star:                return Colors.amber;
+      case ContentType.solarSystemMoon:     return Colors.blueGrey;
+      case ContentType.space:               return Colors.deepPurple;
+      case ContentType.cinemaHub:           return Colors.red.shade900;
+      case ContentType.classicCinema:       return Colors.brown;
+      case ContentType.cinema80s90s:        return Colors.deepOrange;
+      case ContentType.modernCinema:        return Colors.red.shade700;
+      case ContentType.celebrityHub:        return Colors.teal;
+      case ContentType.scienceHub:          return Colors.green.shade800;
+      case ContentType.dinosaur:            return Colors.brown.shade700;
+      case ContentType.spaceMission:        return Colors.indigo.shade700;
+      case ContentType.battle:              return Colors.red.shade900;
+      case ContentType.artHub:              return Colors.purple.shade700;
+      case ContentType.painting:            return Colors.purple.shade800;
+      case ContentType.sculpture:           return const Color(0xFF546E7A);
+      case ContentType.architecture:        return const Color(0xFF1565C0);
+      case ContentType.famousArtist:        return const Color(0xFFAD1457);
+      case ContentType.photographer:        return const Color(0xFF263238);
+      case ContentType.classicalComposer:   return const Color(0xFF4A148C);
+      case ContentType.nobelPrize:          return const Color(0xFFB8860B);
+      case ContentType.frenchCommune:       return Colors.blue.shade700;
+      case ContentType.americanState:       return Colors.red.shade700;
+      case ContentType.scienceLivingHub:    return Colors.green.shade900;
+      case ContentType.scienceNonLivingHub: return Colors.indigo.shade900;
+      case ContentType.artWorksHub:         return Colors.purple.shade900;
+      case ContentType.artArtistsHub:       return Colors.pink.shade900;
+      case ContentType.chemicalElement:     return const Color(0xFF1A237E);
+      case ContentType.volcano:             return const Color(0xFF7B0000);
+      case ContentType.insect:              return const Color(0xFF2E7D32);
+      case ContentType.bird:                return const Color(0xFF0277BD);
+      case ContentType.mineral:             return const Color(0xFF4527A0);
+      case ContentType.cloud:               return const Color(0xFF1565C0);
+      case ContentType.humanBone:           return const Color(0xFF00695C);
+    }
+  }
+}

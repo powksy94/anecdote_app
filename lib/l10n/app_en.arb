@@ -79,6 +79,8 @@
   "categoryInsect": "Insects",
   "categoryBird": "Birds",
   "categoryMineral": "Minerals",
+  "categoryCloud": "Clouds",
+  "categoryHumanBone": "Human Bones",
   "insectPhobiaTitle": "⚠️ Insect Sensitivity",
   "insectPhobiaMessage": "This category contains photos of real insects. If you have entomophobia (insect phobia), we recommend choosing a different category.",
   "continueAnyway": "Continue anyway",
