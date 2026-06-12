@@ -42,6 +42,7 @@ class _ImageContentCardState extends State<ImageContentCard> {
   static const _containTypes = {
     ContentType.sculpture,
     ContentType.architecture,
+    ContentType.humanBone,
   };
 
   Alignment get _imageAlignment => _personTypes.contains(widget.contentType)

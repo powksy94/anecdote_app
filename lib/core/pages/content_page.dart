@@ -68,6 +68,8 @@ class _ContentPageState extends State<ContentPage> {
     ContentType.insect,
     ContentType.bird,
     ContentType.mineral,
+    ContentType.cloud,
+    ContentType.humanBone,
   };
 
   @override

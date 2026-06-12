@@ -17,6 +17,7 @@ class _ScienceNonLivingPageState extends State<ScienceNonLivingPage> {
   static const _subCategories = [
     ContentType.chemicalElement,
     ContentType.mineral,
+    ContentType.cloud,
   ];
 
   void _navigate(ContentType type) {

@@ -20,6 +20,8 @@ import '../../features/science/services/chemical_element_service.dart';
 import '../../features/science/services/insect_service.dart';
 import '../../features/science/services/bird_service.dart';
 import '../../features/science/services/mineral_service.dart';
+import '../../features/science/services/cloud_service.dart';
+import '../../features/science/services/human_bone_service.dart';
 import '../../features/art/services/painting_service.dart';
 import '../../features/art/services/sculpture_service.dart';
 import '../../features/art/services/architecture_service.dart';
@@ -60,6 +62,8 @@ Future<ContentData> fetchDailyContent(
     // ── Science (non-living) ───────────────────────────────────────────────
     case ContentType.chemicalElement:  return ChemicalElementService().getDailyContent();
     case ContentType.mineral:          return MineralService().getDailyContent();
+    case ContentType.cloud:            return CloudService().getDailyContent();
+    case ContentType.humanBone:        return HumanBoneService().getDailyContent();
     // ── Art ────────────────────────────────────────────────────────────────
     case ContentType.painting:         return PaintingService().getDailyContent();
     case ContentType.sculpture:        return SculptureService().getDailyContent();
