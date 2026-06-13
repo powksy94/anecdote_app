@@ -18,6 +18,7 @@ WIKI_OVERRIDES = {
     "Columbia STS-107": "Space Shuttle Columbia disaster",
     "Tiangong-3": "Tiangong space station",
     "SpaceX Crew Dragon Demo-2": "Crew Dragon Demo-2",
+    "Phoenix": "Phoenix (spacecraft)",
     "Artemis I": "Artemis 1",
     "JWST First Images": "James Webb Space Telescope",
     "Chandrayaan-3": "Chandrayaan-3",

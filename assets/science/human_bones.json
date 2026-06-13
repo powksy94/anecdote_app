@@ -1,0 +1,542 @@
+[
+  {
+    "n": "Frontal bone",
+    "reg": "Skull",
+    "cnt": "1",
+    "tp": "Flat",
+    "fn": "Forms forehead, roof of eye sockets, and front part of skull",
+    "ff": "Contains the frontal sinuses; target of facial surgical reconstruction; named from Latin 'frons' (forehead)",
+    "im": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Frontal_bone_lateral3.png/960px-Frontal_bone_lateral3.png"
+  },
+  {
+    "n": "Parietal bone",
+    "reg": "Skull",
+    "cnt": "2",
+    "tp": "Flat",
+    "fn": "Forms the top and sides of the cranium; protects the parietal lobe",
+    "ff": "The two parietals meet at the sagittal suture — the most prominent seam on the top of the skull",
+    "im": "https://upload.wikimedia.org/wikipedia/commons/e/e5/Parietal_bone_posterior2.png"
+  },
+  {
+    "n": "Temporal bone",
+    "reg": "Skull",
+    "cnt": "2",
+    "tp": "Irregular",
+    "fn": "Houses the entire hearing apparatus (cochlea, ear canal); mastoid process; anchors jaw muscles",
+    "ff": "Contains more anatomy per volume than any other bone; includes the internal ear, ear canal and mastoid air cells",
+    "im": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Temporal_bone_lateral5.png/960px-Temporal_bone_lateral5.png"
+  },
+  {
+    "n": "Occipital bone",
+    "reg": "Skull",
+    "cnt": "1",
+    "tp": "Flat",
+    "fn": "Forms back and base of skull; foramen magnum allows spinal cord to pass to brain",
+    "ff": "The foramen magnum is one of the largest holes in the skull; its position distinguishes human bipedalism from apes",
+    "im": "https://upload.wikimedia.org/wikipedia/commons/1/19/Occipital_bone_lateral2.png"
+  },
+  {
+    "n": "Sphenoid bone",
+    "reg": "Skull",
+    "cnt": "1",
+    "tp": "Irregular",
+    "fn": "Butterfly-shaped keystone of the skull base; houses pituitary gland in sella turcica",
+    "ff": "Articulates with every other cranial bone — called the 'keystone'; the sella turcica (Turkish saddle) cradles the pituitary",
+    "im": "https://upload.wikimedia.org/wikipedia/commons/a/af/Sphenoid_bone_-_lateral_view.png"
+  },
+  {
+    "n": "Ethmoid bone",
+    "reg": "Skull",
+    "cnt": "1",
+    "tp": "Irregular",
+    "fn": "Forms nasal cavity roof and septum; cribriform plate transmits olfactory nerves",
+    "ff": "The cribriform plate ('sieve-like') has ~20 tiny holes per side for olfactory nerve fibres; damage causes loss of smell",
+    "im": "https://upload.wikimedia.org/wikipedia/commons/8/8d/Orbital_bones.png"
+  },
+  {
+    "n": "Nasal bone",
+    "reg": "Skull",
+    "cnt": "2",
+    "tp": "Flat",
+    "fn": "Forms the bridge of the nose; provides attachment for nasal cartilages",
+    "ff": "The most frequently broken bone in sports and falls; nasal fractures account for ~40 % of all facial fractures",
+    "im": "https://upload.wikimedia.org/wikipedia/commons/7/77/Illu_facial_bones.jpg"
+  },
+  {
+    "n": "Vomer",
+    "reg": "Skull",
+    "cnt": "1",
+    "tp": "Flat",
+    "fn": "Forms the lower posterior part of the nasal septum",
+    "ff": "Named from Latin 'vomer' (ploughshare) for its shape; deviation of the vomer causes nasal obstruction in ~80 % of adults",
+    "im": "https://upload.wikimedia.org/wikipedia/commons/7/77/Illu_facial_bones.jpg"
+  },
+  {
+    "n": "Mandible",
+    "reg": "Face",
+    "cnt": "1",
+    "tp": "Irregular",
+    "fn": "Lower jaw; holds the lower teeth; allows chewing, speaking and swallowing",
+    "ff": "The only movable bone of the skull; the mandible condyle is the only synovial joint in the head",
+    "im": "https://upload.wikimedia.org/wikipedia/commons/7/77/Mandible_bone_-_animation_02.gif"
+  },
+  {
+    "n": "Maxilla",
+    "reg": "Face",
+    "cnt": "2",
+    "tp": "Irregular",
+    "fn": "Forms upper jaw, hard palate, floor of orbit; holds upper teeth",
+    "ff": "Contains the largest sinus in the skull — the maxillary sinus; fused at birth; a cleft palate involves the maxilla",
+    "im": "https://upload.wikimedia.org/wikipedia/commons/7/7f/Maxilla_anterior.png"
+  },
+  {
+    "n": "Zygomatic bone",
+    "reg": "Face",
+    "cnt": "2",
+    "tp": "Irregular",
+    "fn": "Forms the cheekbone and lateral orbital wall; provides facial prominence",
+    "ff": "'Cheekbone' fractures are the 2nd most common facial fracture; the zygomatic arch bridges to the temporal bone",
+    "im": "https://upload.wikimedia.org/wikipedia/commons/0/0b/Zygomatic_bone_anterior.png"
+  },
+  {
+    "n": "Lacrimal bone",
+    "reg": "Face",
+    "cnt": "2",
+    "tp": "Flat",
+    "fn": "Forms part of the medial orbital wall; contains the lacrimal groove for tear drainage",
+    "ff": "Smallest and most fragile facial bone (fingernail-thin); the nasolacrimal duct runs through it to drain tears into the nose",
+    "im": "https://upload.wikimedia.org/wikipedia/commons/c/c6/Lacrimal_bone_-_lateral_view6.png"
+  },
+  {
+    "n": "Palatine bone",
+    "reg": "Face",
+    "cnt": "2",
+    "tp": "Irregular",
+    "fn": "Forms the posterior hard palate, nasal floor and part of the orbital floor",
+    "ff": "L-shaped; cleft palate surgery often involves the palatine; also contributes to the pterygopalatine fossa — a nerve crossroads",
+    "im": "https://upload.wikimedia.org/wikipedia/commons/3/38/Palatine_bone_-_animation_02.gif"
+  },
+  {
+    "n": "Inferior nasal concha",
+    "reg": "Face",
+    "cnt": "2",
+    "tp": "Irregular",
+    "fn": "Scroll-shaped bone projecting into the nasal cavity; creates turbulence to warm and humidify air",
+    "ff": "One of only three independent bones in the face (not fused); turbinate reduction surgery treats chronic nasal obstruction",
+    "im": "https://upload.wikimedia.org/wikipedia/commons/6/62/Gray192.png"
+  },
+  {
+    "n": "Hyoid bone",
+    "reg": "Throat",
+    "cnt": "1",
+    "tp": "Irregular",
+    "fn": "Supports and moves the tongue; anchors throat muscles; enables swallowing and speech",
+    "ff": "The only bone in the body that does not articulate with any other bone; hyoid fracture is rare but indicates strangulation",
+    "im": "https://upload.wikimedia.org/wikipedia/commons/8/83/712_Hyoid_Bone.jpg"
+  },
+  {
+    "n": "Malleus",
+    "reg": "Middle ear",
+    "cnt": "2",
+    "tp": "Irregular",
+    "fn": "Hammer-shaped; attached to eardrum; transmits sound vibrations to the incus",
+    "ff": "Largest ear ossicle; its handle fuses with the eardrum; named from Latin 'malleus' (hammer)",
+    "im": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Gray916.png"
+  },
+  {
+    "n": "Incus",
+    "reg": "Middle ear",
+    "cnt": "2",
+    "tp": "Irregular",
+    "fn": "Anvil-shaped; transfers vibrations from malleus to stapes",
+    "ff": "Named from Latin 'incus' (anvil); least frequently dislocated ossicle despite being in the middle of the chain",
+    "im": "https://upload.wikimedia.org/wikipedia/commons/d/df/Gray917.png"
+  },
+  {
+    "n": "Stapes",
+    "reg": "Middle ear",
+    "cnt": "2",
+    "tp": "Irregular",
+    "fn": "Stirrup-shaped; transmits vibrations from incus to oval window of inner ear",
+    "ff": "Smallest bone in the human body (~3 mm); stapedius muscle protects it from loud noises — the smallest muscle too",
+    "im": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Stapes_bone_svg_hariadhi.svg/960px-Stapes_bone_svg_hariadhi.svg.png"
+  },
+  {
+    "n": "Atlas (C1)",
+    "reg": "Spine",
+    "cnt": "1",
+    "tp": "Irregular",
+    "fn": "Supports the skull; allows nodding ('yes' movement); has no vertebral body",
+    "ff": "Named after the Titan Atlas who held up the sky; the only vertebra with no vertebral body — just two arches",
+    "im": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/C1_lateral.png/960px-C1_lateral.png"
+  },
+  {
+    "n": "Axis (C2)",
+    "reg": "Spine",
+    "cnt": "1",
+    "tp": "Irregular",
+    "fn": "Provides pivot for head rotation ('no' movement) via the odontoid process (dens)",
+    "ff": "The dens is a peg-shaped process that projects into the atlas ring; fracture (hangman's fracture) can sever the spinal cord",
+    "im": "https://upload.wikimedia.org/wikipedia/commons/8/8b/C2_lateral.png"
+  },
+  {
+    "n": "Cervical vertebrae (C3-C7)",
+    "reg": "Spine",
+    "cnt": "5",
+    "tp": "Irregular",
+    "fn": "Support and mobilise the neck; protect the cervical spinal cord; smallest vertebrae",
+    "ff": "C7 has the longest spinous process — the prominent bump at the base of the neck; whiplash most commonly injures C4-C6",
+    "im": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Cervical_vertebrae_lateral2.png/960px-Cervical_vertebrae_lateral2.png"
+  },
+  {
+    "n": "Thoracic vertebrae (T1-T12)",
+    "reg": "Spine",
+    "cnt": "12",
+    "tp": "Irregular",
+    "fn": "Attach to the 12 pairs of ribs; protect the thoracic spinal cord; limited flexion/extension",
+    "ff": "The most stable spinal region due to rib cage support; kyphosis (hunchback) typically occurs here",
+    "im": "https://upload.wikimedia.org/wikipedia/commons/b/bd/Thoracic_vertebrae_back5.png"
+  },
+  {
+    "n": "Lumbar vertebrae (L1-L5)",
+    "reg": "Spine",
+    "cnt": "5",
+    "tp": "Irregular",
+    "fn": "Bear most of the body's axial load; allow trunk flexion and extension; no rib attachment",
+    "ff": "Largest vertebrae in the spine; lumbar disc herniation is the most common cause of lower back pain and sciatica",
+    "im": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Lumbar_vertebrae_anterior.png/960px-Lumbar_vertebrae_anterior.png"
+  },
+  {
+    "n": "Sacrum",
+    "reg": "Spine",
+    "cnt": "1 (5 fused)",
+    "tp": "Irregular",
+    "fn": "Wedge-shaped; transfers weight from spine to pelvis; anchors pelvic girdle",
+    "ff": "Formed by fusion of 5 vertebrae; the sacral hiatus is used for caudal epidural anaesthesia",
+    "im": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Sacrum_-_anterior_view04.png/960px-Sacrum_-_anterior_view04.png"
+  },
+  {
+    "n": "Coccyx",
+    "reg": "Spine",
+    "cnt": "1 (3-5 fused)",
+    "tp": "Irregular",
+    "fn": "Vestigial tail; provides attachment for pelvic floor muscles and ligaments",
+    "ff": "A remnant of the tail found in our evolutionary ancestors; can be fractured in a fall onto hard surfaces",
+    "im": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Coccyx_-_anterior_view02.png/960px-Coccyx_-_anterior_view02.png"
+  },
+  {
+    "n": "Sternum",
+    "reg": "Thorax",
+    "cnt": "1",
+    "tp": "Flat",
+    "fn": "Protects heart and major vessels; anchors ribs via costal cartilage; landmark for CPR",
+    "ff": "The xiphoid process (lower tip) is a CPR landmark; the sternum is the preferred site for bone marrow biopsy",
+    "im": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Sternum_composition.png/960px-Sternum_composition.png"
+  },
+  {
+    "n": "True ribs (R1-R7)",
+    "reg": "Thorax",
+    "cnt": "14",
+    "tp": "Flat",
+    "fn": "Protect lungs and heart; attach directly to sternum via costal cartilage; assist breathing",
+    "ff": "The first rib is the shortest and most curved; rib fractures cause pain with every breath — pleurisy-like",
+    "im": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Costae_-_collection.jpg/960px-Costae_-_collection.jpg"
+  },
+  {
+    "n": "False ribs (R8-R10)",
+    "reg": "Thorax",
+    "cnt": "6",
+    "tp": "Flat",
+    "fn": "Protect lower lungs and upper abdominal organs; attach to rib 7 cartilage, not sternum",
+    "ff": "Named 'false' because they do not reach the sternum directly; the costal margin formed by R8-R10 is a clinical landmark",
+    "im": "https://upload.wikimedia.org/wikipedia/commons/d/d1/Rib_cage.gif"
+  },
+  {
+    "n": "Floating ribs (R11-R12)",
+    "reg": "Thorax",
+    "cnt": "4",
+    "tp": "Flat",
+    "fn": "Protect kidneys; no anterior attachment; allow trunk rotation",
+    "ff": "Only ribs with no anterior attachment; the 12th rib can be very short (3 cm); occasionally surgically removed for extra kidney access",
+    "im": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Costae_-_collection.jpg/960px-Costae_-_collection.jpg"
+  },
+  {
+    "n": "Clavicle",
+    "reg": "Shoulder",
+    "cnt": "2",
+    "tp": "Long",
+    "fn": "Strut between sternum and shoulder blade; transmits forces from arm to axial skeleton",
+    "ff": "The most frequently fractured bone — accounting for ~5 % of all fractures; the only horizontal long bone in the body",
+    "im": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Clavicle_-_anterior_view.png/960px-Clavicle_-_anterior_view.png"
+  },
+  {
+    "n": "Scapula",
+    "reg": "Shoulder",
+    "cnt": "2",
+    "tp": "Flat",
+    "fn": "Shoulder blade; glenoid cavity forms shoulder joint; 17 muscles attach to it",
+    "ff": "The scapula 'floats' on the back — only the clavicle connects it to the skeleton; winged scapula occurs when serratus anterior is paralysed",
+    "im": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Pectoral_girdle_front_diagram.svg/960px-Pectoral_girdle_front_diagram.svg.png"
+  },
+  {
+    "n": "Humerus",
+    "reg": "Upper arm",
+    "cnt": "2",
+    "tp": "Long",
+    "fn": "Upper arm bone; proximal end forms shoulder joint; distal end forms elbow; attachment for rotator cuff",
+    "ff": "The radial nerve winds around the humerus shaft — 'humeral shaft fracture' can paralyse wrist extension ('wrist drop')",
+    "im": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Humerus_-_anterior_view.png/960px-Humerus_-_anterior_view.png"
+  },
+  {
+    "n": "Radius",
+    "reg": "Forearm",
+    "cnt": "2",
+    "tp": "Long",
+    "fn": "Lateral (thumb side) forearm; rotates for supination/pronation; forms wrist joint with carpals",
+    "ff": "Distal radius fracture (Colles fracture) is the most common wrist fracture — typical result of falling on an outstretched hand",
+    "im": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Radius_-_anterior_view2.png/960px-Radius_-_anterior_view2.png"
+  },
+  {
+    "n": "Ulna",
+    "reg": "Forearm",
+    "cnt": "2",
+    "tp": "Long",
+    "fn": "Medial forearm; olecranon forms point of elbow; forms stable hinge joint with humerus",
+    "ff": "The olecranon is the bony point of the elbow — 'hitting your funny bone' is actually the ulnar nerve at the medial epicondyle of the humerus",
+    "im": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Ulna_-_anterior_view.png/960px-Ulna_-_anterior_view.png"
+  },
+  {
+    "n": "Scaphoid",
+    "reg": "Wrist",
+    "cnt": "2",
+    "tp": "Short",
+    "fn": "Proximal row; bridges proximal and distal carpal rows; transmits forces from hand to forearm",
+    "ff": "The most commonly fractured carpal (70 % of carpal fractures); poor blood supply causes avascular necrosis if untreated",
+    "im": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/ArticulatedScaphoid.png/960px-ArticulatedScaphoid.png"
+  },
+  {
+    "n": "Lunate",
+    "reg": "Wrist",
+    "cnt": "2",
+    "tp": "Short",
+    "fn": "Proximal row; central articulation with radius; key to wrist stability",
+    "ff": "The most commonly dislocated carpal; lunate dislocation can compress the median nerve causing acute carpal tunnel syndrome",
+    "im": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/RightHandSkeleton.png/960px-RightHandSkeleton.png"
+  },
+  {
+    "n": "Triquetrum",
+    "reg": "Wrist",
+    "cnt": "2",
+    "tp": "Short",
+    "fn": "Proximal row; articulates with pisiform and hamate; contributes to ulnar deviation",
+    "ff": "Pyramid-shaped; 2nd most commonly fractured carpal; triquetral avulsion fracture is classic chip seen on lateral wrist X-ray",
+    "im": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/HandSkeletonWithTriqueterumHighlighted.png/960px-HandSkeletonWithTriqueterumHighlighted.png"
+  },
+  {
+    "n": "Pisiform",
+    "reg": "Wrist",
+    "cnt": "2",
+    "tp": "Sesamoid",
+    "fn": "Sits in the flexor carpi ulnaris tendon; acts as a pulley to increase tendon leverage",
+    "ff": "Only carpal classified as a sesamoid bone; pea-sized; Guyon's canal runs adjacent — ulnar nerve compression point",
+    "im": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/ArticulatedHighlightedPisiform.png/960px-ArticulatedHighlightedPisiform.png"
+  },
+  {
+    "n": "Trapezium",
+    "reg": "Wrist",
+    "cnt": "2",
+    "tp": "Short",
+    "fn": "Distal row; forms the saddle joint with the 1st metacarpal — allows thumb opposition",
+    "ff": "The thumb's saddle joint (trapeziometacarpal) is what enables human precision grip; osteoarthritis here is the most common hand arthritis",
+    "im": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/ArticulatedTrapezium.png/960px-ArticulatedTrapezium.png"
+  },
+  {
+    "n": "Trapezoid",
+    "reg": "Wrist",
+    "cnt": "2",
+    "tp": "Short",
+    "fn": "Distal row; tightly wedged between trapezium and capitate; articulates with 2nd metacarpal",
+    "ff": "Smallest distal carpal; the rarest carpal to fracture due to deep protective position — isolated fracture is extremely unusual",
+    "im": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/ArticulatedTrapezoid.png/960px-ArticulatedTrapezoid.png"
+  },
+  {
+    "n": "Capitate",
+    "reg": "Wrist",
+    "cnt": "2",
+    "tp": "Short",
+    "fn": "Largest carpal; distal row centre; head articulates with lunate; keystone of wrist architecture",
+    "ff": "Largest carpal bone; the 'keystone' of the carpus — its head is the most prominent structure felt in a wrist X-ray",
+    "im": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/RightOsMagnum.png/960px-RightOsMagnum.png"
+  },
+  {
+    "n": "Hamate",
+    "reg": "Wrist",
+    "cnt": "2",
+    "tp": "Short",
+    "fn": "Distal row; hook (hamulus) forms wall of carpal tunnel; articulates with 4th and 5th metacarpals",
+    "ff": "The hamulus hook can fracture from golf, tennis or baseball swings — a common missed diagnosis on plain X-ray",
+    "im": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/ArticulatedHighlightedHamate.png/960px-ArticulatedHighlightedHamate.png"
+  },
+  {
+    "n": "Metacarpal bones",
+    "reg": "Hand",
+    "cnt": "10",
+    "tp": "Long",
+    "fn": "Form the palm; numbered 1 (thumb) to 5 (little finger); base of hand movements",
+    "ff": "5th metacarpal neck fracture (Boxer's fracture) is the most common; 2nd metacarpal is longest and most rigid",
+    "im": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Metacarpal_bones_%28left_hand%29_01_palmar_view_with_label.png/960px-Metacarpal_bones_%28left_hand%29_01_palmar_view_with_label.png"
+  },
+  {
+    "n": "Phalanges of hand",
+    "reg": "Hand",
+    "cnt": "28",
+    "tp": "Long",
+    "fn": "Finger bones; 3 per finger (proximal, middle, distal) and 2 per thumb; grip and fine motor function",
+    "ff": "14 per hand; distal phalanges house fingernails; fingertip amputation affects more people than any other traumatic amputation",
+    "im": "https://upload.wikimedia.org/wikipedia/commons/0/07/Gray220_-_Intermediate_phalanges_of_the_hand.png"
+  },
+  {
+    "n": "Ilium",
+    "reg": "Pelvis",
+    "cnt": "2",
+    "tp": "Irregular",
+    "fn": "Largest part of hip bone; forms the iliac crest; transfers spine load to acetabulum",
+    "ff": "The iliac crest is the most common autograft donor site for bone grafting; the 'hip' we feel is actually the iliac crest",
+    "im": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Pelvis_diagram.png/960px-Pelvis_diagram.png"
+  },
+  {
+    "n": "Ischium",
+    "reg": "Pelvis",
+    "cnt": "2",
+    "tp": "Irregular",
+    "fn": "Posterior-inferior hip bone; ischial tuberosities bear sitting pressure; attachment for hamstrings",
+    "ff": "The ischial tuberosities ('sit bones') support body weight when seated; ischial bursitis (tailor's bottom) is a repetitive-strain condition",
+    "im": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Pelvic_girdle_illustration.svg/960px-Pelvic_girdle_illustration.svg.png"
+  },
+  {
+    "n": "Pubis",
+    "reg": "Pelvis",
+    "cnt": "2",
+    "tp": "Irregular",
+    "fn": "Anterior hip bone; pubic symphysis joins left and right sides; forms obturator foramen with ischium",
+    "ff": "Pubic symphysis separates up to 10 mm during childbirth; stress fractures common in runners and footballers ('osteitis pubis')",
+    "im": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/The_anatomy_and_physiology_of_the_human_body._Containing_the_anatomy_of_the_bones%2C_muscles%2C_and_joints%3B_and_the_heart_and_arteries_%281822%29_%2814586555227%29.jpg/960px-The_anatomy_and_physiology_of_the_human_body._Containing_the_anatomy_of_the_bones%2C_muscles%2C_and_joints%3B_and_the_heart_and_arteries_%281822%29_%2814586555227%29.jpg"
+  },
+  {
+    "n": "Femur",
+    "reg": "Upper leg",
+    "cnt": "2",
+    "tp": "Long",
+    "fn": "Transfers weight from hip to knee; attachment for the most powerful muscles in the body",
+    "ff": "Longest and strongest bone in the human body; femoral neck fracture in the elderly is a life-threatening orthopaedic emergency",
+    "im": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Femur_-_anterior_view2.png/960px-Femur_-_anterior_view2.png"
+  },
+  {
+    "n": "Patella",
+    "reg": "Knee",
+    "cnt": "2",
+    "tp": "Sesamoid",
+    "fn": "Protects the knee joint; increases the leverage (mechanical advantage) of the quadriceps by ~50 %",
+    "ff": "Largest sesamoid bone; develops within the quadriceps tendon; bipartite patella (naturally in two pieces) occurs in ~2 % of people",
+    "im": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Knee_diagram.svg/960px-Knee_diagram.svg.png"
+  },
+  {
+    "n": "Tibia",
+    "reg": "Lower leg",
+    "cnt": "2",
+    "tp": "Long",
+    "fn": "Shinbone; bears ~80 % of body weight; medial malleolus forms inner ankle; tibial tuberosity anchors patellar tendon",
+    "ff": "2nd strongest bone; tibial shaft stress fracture is the most common running injury; the flat anteromedial surface has no muscle covering",
+    "im": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Tibia_-_frontal_view.png/960px-Tibia_-_frontal_view.png"
+  },
+  {
+    "n": "Fibula",
+    "reg": "Lower leg",
+    "cnt": "2",
+    "tp": "Long",
+    "fn": "Lateral leg; lateral malleolus forms outer ankle; not weight-bearing; muscle attachment",
+    "ff": "Bears < 10 % of body weight but the lateral malleolus is the most commonly fractured ankle bone; fibula graft used in mandible reconstruction",
+    "im": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Fibula_-_anterior_view.png/960px-Fibula_-_anterior_view.png"
+  },
+  {
+    "n": "Calcaneus",
+    "reg": "Foot",
+    "cnt": "2",
+    "tp": "Short",
+    "fn": "Heel bone; largest tarsal; Achilles tendon attaches posteriorly; forms subtalar joint",
+    "ff": "Largest bone in the foot; calcaneal fractures (falling from height) are the most common tarsal fractures — causes severe chronic pain",
+    "im": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Subtalar_Joint.svg/960px-Subtalar_Joint.svg.png"
+  },
+  {
+    "n": "Talus",
+    "reg": "Foot",
+    "cnt": "2",
+    "tp": "Short",
+    "fn": "Ankle bone; transmits entire body weight from tibia to foot; links ankle to subtalar and midtarsal joints",
+    "ff": "The only bone in the foot with no muscle attachments; covered 60 % by cartilage; avascular necrosis risk after fracture",
+    "im": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Subtalar_Joint.svg/960px-Subtalar_Joint.svg.png"
+  },
+  {
+    "n": "Navicular",
+    "reg": "Foot",
+    "cnt": "2",
+    "tp": "Short",
+    "fn": "Boat-shaped medial tarsal; keystone of the medial longitudinal arch; articulates with talus and cuneiforms",
+    "ff": "Navicular stress fracture is the most serious in sport — occurs in sprinters and basketball players; slow to heal due to poor blood supply",
+    "im": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/SkeletonOfHumanFoot.png/960px-SkeletonOfHumanFoot.png"
+  },
+  {
+    "n": "Cuboid",
+    "reg": "Foot",
+    "cnt": "2",
+    "tp": "Short",
+    "fn": "Lateral tarsal; forms peroneal groove (peroneus longus route); articulates with calcaneus and 4th-5th metatarsals",
+    "ff": "Cuboid syndrome (subluxation) causes lateral foot pain in dancers and athletes; the peroneal groove makes it unique among tarsals",
+    "im": "https://upload.wikimedia.org/wikipedia/commons/1/12/CuboidOfRightFoot.png"
+  },
+  {
+    "n": "Medial cuneiform",
+    "reg": "Foot",
+    "cnt": "2",
+    "tp": "Short",
+    "fn": "Largest cuneiform; medial foot; articulates with navicular, intermediate cuneiform, and 1st metatarsal",
+    "ff": "Forms the medial column of the Lisfranc joint; Lisfranc injuries (ligament tears here) are often missed on initial X-ray",
+    "im": "https://upload.wikimedia.org/wikipedia/commons/d/df/Cuneiform_bone_animation01.gif"
+  },
+  {
+    "n": "Intermediate cuneiform",
+    "reg": "Foot",
+    "cnt": "2",
+    "tp": "Short",
+    "fn": "Middle cuneiform; articulates with navicular, adjacent cuneiforms, and 2nd metatarsal",
+    "ff": "Smallest and most wedge-shaped cuneiform; its recessed position locks the 2nd metatarsal — this is why 2nd MTP is stable but the joint injures in Lisfranc trauma",
+    "im": "https://upload.wikimedia.org/wikipedia/commons/d/df/Cuneiform_bone_animation01.gif"
+  },
+  {
+    "n": "Lateral cuneiform",
+    "reg": "Foot",
+    "cnt": "2",
+    "tp": "Short",
+    "fn": "Lateral wedge bone; articulates with navicular, cuboid, intermediate cuneiform, and 3rd metatarsal",
+    "ff": "Completes the transverse arch of the foot alongside the cuboid; cuneiform fractures are rare in isolation",
+    "im": "https://upload.wikimedia.org/wikipedia/commons/d/df/Cuneiform_bone_animation01.gif"
+  },
+  {
+    "n": "Metatarsal bones",
+    "reg": "Foot",
+    "cnt": "10",
+    "tp": "Long",
+    "fn": "Connect tarsals to toes; form the forefoot arch; transmit propulsive forces during walking and running",
+    "ff": "The 2nd metatarsal is longest and bears the most stress ('march fracture' in soldiers and runners); 5th metatarsal base avulsion is the most common foot fracture",
+    "im": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Metatarsal_bones01_-_superior_view.png/960px-Metatarsal_bones01_-_superior_view.png"
+  },
+  {
+    "n": "Phalanges of foot",
+    "reg": "Foot",
+    "cnt": "28",
+    "tp": "Long",
+    "fn": "Toe bones; propulsion and balance; 3 per toe except hallux (big toe) which has 2",
+    "ff": "The hallux (big toe) bears 40-60 % of forward propulsion; hallux valgus (bunion) deformity of the 1st MTP affects ~23 % of adults",
+    "im": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Morris%27_human_anatomy_%281898%29_-_Fig_166.png/960px-Morris%27_human_anatomy_%281898%29_-_Fig_166.png"
+  }
+]

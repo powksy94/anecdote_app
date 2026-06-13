@@ -106,7 +106,8 @@ class _ContentPageState extends State<ContentPage> {
       return ContentData(
         preview: content.preview, details: details,
         hasDetails: content.hasDetails, flagSvg: content.flagSvg,
-        imageUrl: content.imageUrl, noImageMessage: content.noImageMessage);
+        imageUrl: content.imageUrl, noImageMessage: content.noImageMessage,
+        warningText: content.warningText, warningLevel: content.warningLevel);
     }
     if (widget.contentType == ContentType.star) {
       return ContentData(

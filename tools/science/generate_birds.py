@@ -5,6 +5,21 @@ from birds_raw import BIRDS_RAW
 
 HEADERS = {"User-Agent": "projet_app_annecdote/1.0 (daily-facts educational app; github.com/uzan)"}
 
+# Wikipedia article titles differ from display names (case + disambiguation)
+WIKI_TITLE_OVERRIDES = {
+    "Merlin":                       "Merlin (bird)",
+    "Great White Egret":            "Great egret",
+    "Common Kingfisher":            "Common kingfisher",
+    "Resplendent Quetzal":          "Resplendent quetzal",
+    "Victoria Crowned Pigeon":      "Victoria crowned pigeon",
+    "Superb Lyrebird":              "Superb lyrebird",
+    "Magnificent Bird-of-Paradise": "Magnificent bird-of-paradise",
+    "Secretary Bird":               "Secretarybird",
+    "Kea":                          "Kea",
+    "Little Blue Penguin":          "Little penguin",
+    "North Island Brown Kiwi":      "North Island brown kiwi",
+}
+
 def fetch_wiki_image(name, size=500):
     for attempt in range(3):
         if attempt > 0:
@@ -72,7 +87,8 @@ for i, e in enumerate(BIRDS_RAW, 1):
     else:
         fetch_idx += 1
         print(f"[{i:3}/{len(BIRDS_RAW)}] Fetching image for {name} ...")
-        im = fetch_wiki_image(name)
+        wiki_title = WIKI_TITLE_OVERRIDES.get(name, name.capitalize())
+        im = fetch_wiki_image(wiki_title)
         if im is None:
             im = fetch_commons_image(f"{name} bird")
         if im is None:

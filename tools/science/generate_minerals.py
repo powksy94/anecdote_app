@@ -2,6 +2,7 @@
 """Generate assets/science/minerals.json — fetch images from Wikipedia/Wikimedia."""
 
 import json, time, urllib.parse, urllib.request, os, sys
+sys.stdout.reconfigure(encoding="utf-8")
 
 sys.path.insert(0, os.path.dirname(__file__))
 from minerals_raw import MINERALS
@@ -37,6 +38,7 @@ WIKI_TITLE_OVERRIDES = {
 }
 
 SKIP_EXTENSIONS = {".svg", ".gif"}
+HEADERS = {"User-Agent": "DailyFactsApp/1.0 (matthieuuzan@gmail.com)"}
 
 def fetch_wiki_image(title: str) -> str | None:
     title_enc = urllib.parse.quote(title.replace(" ", "_"))
@@ -45,7 +47,8 @@ def fetch_wiki_image(title: str) -> str | None:
         "&prop=pageimages&format=json&pithumbsize=600"
     )
     try:
-        with urllib.request.urlopen(url, timeout=10) as r:
+        req = urllib.request.Request(url, headers=HEADERS)
+        with urllib.request.urlopen(req, timeout=10) as r:
             data = json.load(r)
         pages = data["query"]["pages"]
         page = next(iter(pages.values()))
@@ -66,7 +69,8 @@ def fetch_commons_image(title: str) -> str | None:
         "&prop=imageinfo&iiprop=url&format=json"
     )
     try:
-        with urllib.request.urlopen(url, timeout=10) as r:
+        req = urllib.request.Request(url, headers=HEADERS)
+        with urllib.request.urlopen(req, timeout=10) as r:
             data = json.load(r)
         pages = data.get("query", {}).get("pages", {})
         for page in pages.values():
@@ -92,14 +96,15 @@ def main():
         name = m["n"]
         if name in existing:
             image_url = existing[name]
-            print(f"  [cache] {name}")
+            sys.stdout.buffer.write(f"  [cache] {name}\n".encode("utf-8")); sys.stdout.buffer.flush()
         else:
             wiki_title = WIKI_TITLE_OVERRIDES.get(name, name)
             image_url = fetch_wiki_image(wiki_title)
             if image_url is None:
                 image_url = fetch_commons_image(wiki_title)
-            status = "✓" if image_url else "✗"
-            print(f"  [{status}] {name}: {image_url or 'no image'}")
+            status = "ok" if image_url else "xx"
+            sys.stdout.buffer.write(f"  [{status}] {name}: {image_url or 'no image'}\n".encode("utf-8"))
+            sys.stdout.buffer.flush()
             time.sleep(0.8)
 
         results.append({**m, "im": image_url})
@@ -107,7 +112,7 @@ def main():
     os.makedirs(os.path.dirname(OUTPUT), exist_ok=True)
     with open(OUTPUT, "w", encoding="utf-8") as f:
         json.dump(results, f, ensure_ascii=False, separators=(",", ":"))
-    print(f"\nWrote {len(results)} minerals → {OUTPUT}")
+    sys.stdout.buffer.write(f"\nWrote {len(results)} minerals -> {OUTPUT}\n".encode("utf-8"))
 
 if __name__ == "__main__":
     main()

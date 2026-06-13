@@ -36,6 +36,8 @@ class DailyCacheService {
           mandateNumber: data['mandateNumber'] as int?,
           imageUrl: data['imageUrl'] as String?,
           noImageMessage: data['noImageMessage'] as String?,
+          warningText: data['warningText'] as String?,
+          warningLevel: data['warningLevel'] as String?,
         );
       }
       return null;
@@ -64,6 +66,8 @@ class DailyCacheService {
       if (content.mandateNumber != null) 'mandateNumber': content.mandateNumber,
       if (content.imageUrl != null) 'imageUrl': content.imageUrl,
       if (content.noImageMessage != null) 'noImageMessage': content.noImageMessage,
+      if (content.warningText != null) 'warningText': content.warningText,
+      if (content.warningLevel != null) 'warningLevel': content.warningLevel,
     };
     await prefs.setString(_keyFor(type, locale: locale), jsonEncode(data));
   }

@@ -45,7 +45,7 @@ WIKI_OVERRIDES = {
     "The Annunciation": "Annunciation (Fra Angelico, San Marco)",
     "The Surrender of Breda": "The Surrender of Breda",
     "The Three Graces": "The Three Graces (Rubens)",
-    "Washington Crossing the Delaware": "Washington Crossing the Delaware",
+    "Washington Crossing the Delaware": "Washington Crossing the Delaware (1851 paintings)",
     "Impression, Sunrise": "Impression, Sunrise",
     "Starry Night over the Rhône": "Starry Night over the Rhône",
     "The Potato Eaters": "The Potato Eaters",

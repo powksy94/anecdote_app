@@ -5,6 +5,29 @@ from insects_raw import INSECTS_RAW
 
 HEADERS = {"User-Agent": "projet_app_annecdote/1.0 (daily-facts educational app; github.com/uzan)"}
 
+WIKI_TITLE_OVERRIDES = {
+    "Monarch Butterfly":            "Monarch butterfly",
+    "Swallowtail Butterfly":        "Swallowtail butterfly",
+    "Blue Morpho Butterfly":        "Blue morpho",
+    "Painted Lady Butterfly":       "Painted lady",
+    "Six-spot Burnet Moth":         "Six-spot burnet",
+    "Death's-head Hawkmoth":        "Deaths-head hawk-moth",
+    "Madagascar Hissing Cockroach": "Madagascar hissing cockroach",
+    "Mound-building Termite":       "Mound-building termites",
+    "Tarantula Hawk":               "Tarantula hawk",
+    "House Fly":                    "Housefly",
+    "Horse Fly":                    "Tabanidae",
+    "Stick Insect":                 "Phasmatodea",
+    "Leaf-cutter Ant":              "Leafcutter ant",
+    "Red Wood Ant":                 "Formica rufa",
+    "Bullet Ant":                   "Paraponera clavata",
+    "Driver Ant":                   "Dorylus",
+    "Orchid Mantis":                "Hymenopus coronatus",
+    "Leaf Insect":                  "Phyllium",
+    "Shield Bug":                   "Pentatomidae",
+    "Giant Water Bug":              "Belostomatidae",
+}
+
 def fetch_wiki_image(name, size=500):
     for attempt in range(3):
         if attempt > 0:
@@ -72,7 +95,8 @@ for i, e in enumerate(INSECTS_RAW, 1):
     else:
         fetch_idx += 1
         print(f"[{i:3}/{len(INSECTS_RAW)}] Fetching image for {name} ...")
-        im = fetch_wiki_image(name)
+        wiki_title = WIKI_TITLE_OVERRIDES.get(name, name.capitalize())
+        im = fetch_wiki_image(wiki_title)
         if im is None:
             im = fetch_commons_image(f"{name} insect")
         if im is None:

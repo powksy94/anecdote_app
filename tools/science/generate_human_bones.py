@@ -36,8 +36,8 @@ WIKI_TITLE_OVERRIDES = {
     "Coccyx":                        "Coccyx",
     "Sternum":                       "Sternum",
     "True ribs (R1-R7)":             "Rib",
-    "False ribs (R8-R10)":           "False rib",
-    "Floating ribs (R11-R12)":       "Floating rib",
+    "False ribs (R8-R10)":           "Rib cage",
+    "Floating ribs (R11-R12)":       "Rib",
     "Clavicle":                      "Clavicle",
     "Scapula":                       "Scapula",
     "Humerus":                       "Humerus",
@@ -45,7 +45,7 @@ WIKI_TITLE_OVERRIDES = {
     "Ulna":                          "Ulna",
     "Scaphoid":                      "Scaphoid bone",
     "Lunate":                        "Lunate bone",
-    "Triquetrum":                    "Triquetrum bone",
+    "Triquetrum":                    "Triquetral bone",
     "Pisiform":                      "Pisiform bone",
     "Trapezium":                     "Trapezium (bone)",
     "Trapezoid":                     "Trapezoid bone",
@@ -64,14 +64,15 @@ WIKI_TITLE_OVERRIDES = {
     "Talus":                         "Talus bone",
     "Navicular":                     "Navicular bone",
     "Cuboid":                        "Cuboid bone",
-    "Medial cuneiform":              "Medial cuneiform bone",
-    "Intermediate cuneiform":        "Intermediate cuneiform bone",
-    "Lateral cuneiform":             "Lateral cuneiform bone",
+    "Medial cuneiform":              "Cuneiform bones",
+    "Intermediate cuneiform":        "Cuneiform bones",
+    "Lateral cuneiform":             "Cuneiform bones",
     "Metatarsal bones":              "Metatarsal bones",
     "Phalanges of foot":             "Phalanges of the foot",
 }
 
 SKIP_EXTENSIONS = {".svg", ".gif"}
+HEADERS = {"User-Agent": "DailyFactsApp/1.0 (matthieuuzan@gmail.com)"}
 
 def fetch_wiki_image(title: str) -> str | None:
     title_enc = urllib.parse.quote(title.replace(" ", "_"))
@@ -80,7 +81,8 @@ def fetch_wiki_image(title: str) -> str | None:
         "&prop=pageimages&format=json&pithumbsize=600"
     )
     try:
-        with urllib.request.urlopen(url, timeout=10) as r:
+        req = urllib.request.Request(url, headers=HEADERS)
+        with urllib.request.urlopen(req, timeout=10) as r:
             data = json.load(r)
         pages = data["query"]["pages"]
         page = next(iter(pages.values()))
@@ -92,8 +94,32 @@ def fetch_wiki_image(title: str) -> str | None:
             return None
         return thumb
     except Exception as e:
-        print(f"  WARNING: {title} — {e}")
+        sys.stdout.buffer.write(f"  WARNING: {title} -- {e}\n".encode("utf-8")); sys.stdout.buffer.flush()
         return None
+
+def fetch_commons_image(query: str) -> str | None:
+    enc = urllib.parse.quote(query)
+    url = (
+        f"https://commons.wikimedia.org/w/api.php?action=query&generator=search"
+        f"&gsrsearch={enc}&gsrnamespace=6&gsrlimit=5"
+        "&prop=imageinfo&iiprop=url&iiurlwidth=600&format=json"
+    )
+    try:
+        req = urllib.request.Request(url, headers=HEADERS)
+        with urllib.request.urlopen(req, timeout=10) as r:
+            data = json.load(r)
+        pages = data.get("query", {}).get("pages", {})
+        for page in sorted(pages.values(), key=lambda p: p.get("index", 99)):
+            infos = page.get("imageinfo", [])
+            if infos:
+                img_url = infos[0].get("thumburl") or infos[0].get("url")
+                if img_url:
+                    ext = os.path.splitext(img_url.split("?")[0])[1].lower()
+                    if ext not in SKIP_EXTENSIONS:
+                        return img_url
+    except Exception:
+        pass
+    return None
 
 def main():
     existing: list = []
@@ -106,20 +132,25 @@ def main():
     for bone in HUMAN_BONES:
         name = bone["n"]
         if name in existing_map and existing_map[name].get("im") is not None:
-            print(f"  skip (cached)  {name}")
+            sys.stdout.buffer.write(f"  skip (cached)  {name}\n".encode("utf-8")); sys.stdout.buffer.flush()
             result.append({**bone, "im": existing_map[name]["im"]})
             continue
 
         wiki_title = WIKI_TITLE_OVERRIDES.get(name, name)
-        print(f"  fetch  {name}  →  {wiki_title}")
+        sys.stdout.buffer.write(f"  fetch  {name}  ->  {wiki_title}\n".encode("utf-8"))
+        sys.stdout.buffer.flush()
         image_url = fetch_wiki_image(wiki_title)
+        if image_url is None:
+            image_url = fetch_commons_image(f"{name} anatomy bone")
+        if image_url is None:
+            image_url = fetch_commons_image(name)
         result.append({**bone, "im": image_url})
         time.sleep(0.3)
 
     os.makedirs(os.path.dirname(OUTPUT), exist_ok=True)
     with open(OUTPUT, "w", encoding="utf-8") as f:
         json.dump(result, f, ensure_ascii=False, indent=2)
-    print(f"\nWrote {len(result)} bones → {OUTPUT}")
+    sys.stdout.buffer.write(f"\nWrote {len(result)} bones -> {OUTPUT}\n".encode("utf-8"))
 
 if __name__ == "__main__":
     main()
