@@ -55,4 +55,6 @@ enum ContentType {
   mineral,
   cloud,
   humanBone,
+  territoriesHub,
+  naturalWondersHub,
 }

@@ -33,6 +33,8 @@ class StarService {
       preview: '⭐ ${s.name}',
       details: buf.toString().trim(),
       hasDetails: true,
+      imageUrl: s.imageUrl,
+      noImageMessage: s.noImageMessage,
     );
   }
 

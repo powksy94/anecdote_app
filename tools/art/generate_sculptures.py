@@ -78,6 +78,11 @@ WIKI_EN = {
     "Trevi Fountain":                       "Trevi Fountain",
 }
 
+# Sculptures under copyright with no free image — force null to avoid wrong photos
+IMAGE_NULL_OVERRIDES = {
+    "She-Goat",
+}
+
 sculptures = [
     # ── Antiquité égyptienne & préhistorique ────────────────────────────────
     {"n":"Nefertiti Bust","ar":"Thutmose","yr":"~1345 BC","ma":"Limestone, stucco","lo":"Neues Museum, Berlin","st":"Ancient Egyptian","fa":"Found in 1912 by a German expedition; Egypt has demanded its return ever since. The painted left eye was intentionally left blank — scholars still debate why"},
@@ -196,6 +201,11 @@ def main():
     total = len(sculptures)
     found = 0
     for i, s in enumerate(sculptures):
+        if s["n"] in IMAGE_NULL_OVERRIDES:
+            s["im"] = None
+            sys.stdout.buffer.write(f"  [{i+1:2}/{total}] -- {s['n']} (no free image)\n".encode("utf-8"))
+            sys.stdout.buffer.flush()
+            continue
         title = WIKI_EN.get(s["n"], s["n"])
         img = wiki_img(title)
         s["im"] = img

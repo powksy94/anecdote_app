@@ -70,6 +70,8 @@ class _ContentPageState extends State<ContentPage> {
     ContentType.mineral,
     ContentType.cloud,
     ContentType.humanBone,
+    ContentType.exoplanet,
+    ContentType.star,
   };
 
   @override
@@ -113,7 +115,9 @@ class _ContentPageState extends State<ContentPage> {
       return ContentData(
         preview: content.preview,
         details: content.details.replaceAll(' ly', ' ${l10n.lightYear}'),
-        hasDetails: content.hasDetails);
+        hasDetails: content.hasDetails,
+        imageUrl: content.imageUrl,
+        noImageMessage: content.noImageMessage);
     }
     if (widget.contentType == ContentType.americanPresident &&
         content.mandateNumber != null) {
@@ -236,7 +240,7 @@ class _ContentPageState extends State<ContentPage> {
           gradient: gradient, accentColor: accentColor, timeUntilMidnight: time);
     }
     // Image-based card takes priority over geo card
-    if (contentData?.imageUrl != null) {
+    if (contentData?.imageUrl != null || contentData?.noImageMessage != null) {
       return ImageContentCard(contentData: contentData, contentType: widget.contentType,
           gradient: gradient, accentColor: accentColor, timeUntilMidnight: time);
     }

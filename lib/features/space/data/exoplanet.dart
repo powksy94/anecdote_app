@@ -41,6 +41,16 @@ class Exoplanet {
     this.dist,
   });
 
+  String get noImageMessage {
+    final m = method.toLowerCase();
+    if (m.contains('imaging')) return '🪐 $name — directly imaged, no free photo currently archived';
+    if (m.contains('transit')) return '🪐 $name — detected by starlight dimming (transit), no direct image';
+    if (m.contains('radial') || m.contains('velocity')) return '🪐 $name — detected by stellar wobble, no direct image';
+    if (m.contains('microlensing')) return '🪐 $name — detected by gravitational microlensing, no direct image';
+    if (m.contains('timing')) return '🪐 $name — detected by timing variations, no direct image';
+    return '🪐 $name — no direct image available';
+  }
+
   factory Exoplanet.fromJson(Map<String, dynamic> j) => Exoplanet(
         name:     j['n']  as String? ?? '',
         host:     j['h']  as String? ?? '',

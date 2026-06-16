@@ -13,6 +13,8 @@ class SpaceMissionData {
     required this.launchYear, this.imageUrl,
   });
 
+  String? get noImageMessage => imageUrl != null ? null : '🚀 No image available for this mission';
+
   factory SpaceMissionData.fromJson(Map<String, dynamic> j) => SpaceMissionData(
     name:        j['n']  ?? '',
     agency:      j['ag'] ?? '',

@@ -49,6 +49,8 @@ extension ContentTypeLabels on ContentType {
       case ContentType.mineral:            return 'Minerals';
       case ContentType.cloud:              return 'Clouds';
       case ContentType.humanBone:          return 'Human Bones';
+      case ContentType.territoriesHub:     return 'Territories';
+      case ContentType.naturalWondersHub:  return 'Natural Wonders';
     }
   }
 
@@ -100,6 +102,8 @@ extension ContentTypeLabels on ContentType {
       case ContentType.mineral:            return loc.categoryMineral;
       case ContentType.cloud:              return loc.categoryCloud;
       case ContentType.humanBone:          return loc.categoryHumanBone;
+      case ContentType.territoriesHub:     return loc.categoryTerritoriesHub;
+      case ContentType.naturalWondersHub:  return loc.categoryNaturalWondersHub;
     }
   }
 }

@@ -49,6 +49,8 @@ extension ContentTypeIcons on ContentType {
       case ContentType.mineral:             return Icons.diamond_rounded;
       case ContentType.cloud:               return Icons.cloud_rounded;
       case ContentType.humanBone:           return Icons.medical_services_rounded;
+      case ContentType.territoriesHub:      return Icons.map_rounded;
+      case ContentType.naturalWondersHub:   return Icons.landscape_rounded;
     }
   }
 }

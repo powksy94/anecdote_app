@@ -22,6 +22,7 @@ class SpaceMissionService {
       details: buf.toString().trim(),
       hasDetails: true,
       imageUrl: m.imageUrl,
+      noImageMessage: m.noImageMessage,
     );
   }
 

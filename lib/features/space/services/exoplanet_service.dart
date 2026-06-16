@@ -58,6 +58,7 @@ class ExoplanetService {
       preview: preview,
       details: buf.toString().trim(),
       hasDetails: true,
+      noImageMessage: p.noImageMessage,
     );
   }
 }

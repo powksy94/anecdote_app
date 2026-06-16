@@ -49,6 +49,8 @@ extension ContentTypeColors on ContentType {
       case ContentType.mineral:             return const Color(0xFF4527A0);
       case ContentType.cloud:               return const Color(0xFF1565C0);
       case ContentType.humanBone:           return const Color(0xFF00695C);
+      case ContentType.territoriesHub:      return const Color(0xFF1A237E);
+      case ContentType.naturalWondersHub:   return const Color(0xFF2E7D32);
     }
   }
 }

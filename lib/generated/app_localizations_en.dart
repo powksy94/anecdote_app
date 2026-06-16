@@ -240,10 +240,37 @@ class AppLocalizationsEn extends AppLocalizations {
   String get categoryHumanBone => 'Human Bones';
 
   @override
+  String get categoryTerritoriesHub => 'Territories';
+
+  @override
+  String get categoryNaturalWondersHub => 'Natural Wonders';
+
+  @override
+  String get noImageTitle => 'Image unavailable';
+
+  @override
+  String get noImageExplanation =>
+      'This work is still protected by copyright. No free image is currently available.';
+
+  @override
+  String get noImageExoplanet =>
+      '🪐 Not directly observable — detected by indirect methods';
+
+  @override
+  String get noImageStar => '⭐ No telescope image available for this star';
+
+  @override
+  String get noImageSpaceMission => '🚀 No image available for this mission';
+
+  @override
+  String get noImageGeneric => 'No image available';
+
+  @override
   String get insectPhobiaTitle => '⚠️ Insect Sensitivity';
 
   @override
-  String get insectPhobiaMessage => 'This category contains photos of real insects. If you have entomophobia (insect phobia), we recommend choosing a different category.';
+  String get insectPhobiaMessage =>
+      'This category contains photos of real insects. If you have entomophobia (insect phobia), we recommend choosing a different category.';
 
   @override
   String get continueAnyway => 'Continue anyway';

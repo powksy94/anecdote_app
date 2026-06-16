@@ -95,6 +95,10 @@ extension ContentTypeGradients on ContentType {
         return [const Color(0xFF0D47A1), const Color(0xFF42A5F5)];
       case ContentType.humanBone:
         return [const Color(0xFF004D40), const Color(0xFF26A69A)];
+      case ContentType.territoriesHub:
+        return [const Color(0xFF1A237E), const Color(0xFF0288D1)];
+      case ContentType.naturalWondersHub:
+        return [const Color(0xFF2E7D32), const Color(0xFF795548)];
     }
   }
 }

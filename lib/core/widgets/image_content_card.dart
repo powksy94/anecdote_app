@@ -39,6 +39,21 @@ class _ImageContentCardState extends State<ImageContentCard> {
     ContentType.americanPresident,
   };
 
+  static const _copyrightTypes = {
+    ContentType.painting,
+    ContentType.sculpture,
+  };
+
+  String? _nimText(AppLocalizations loc) {
+    if (widget.contentData?.noImageMessage == null) return null;
+    switch (widget.contentType) {
+      case ContentType.exoplanet:    return loc.noImageExoplanet;
+      case ContentType.star:         return loc.noImageStar;
+      case ContentType.spaceMission: return loc.noImageSpaceMission;
+      default:                       return loc.noImageGeneric;
+    }
+  }
+
   static const _containTypes = {
     ContentType.sculpture,
     ContentType.architecture,
@@ -102,7 +117,12 @@ class _ImageContentCardState extends State<ImageContentCard> {
                   imageUrl: widget.contentData?.imageUrl,
                   gradient: widget.gradient,
                   fallbackIcon: widget.contentType.icon,
-                  noImageMessage: widget.contentData?.noImageMessage,
+                  noImageMessage: _nimText(loc),
+                  noImageTitle: loc.noImageTitle,
+                  noImageExplanation: widget.contentData?.noImageMessage != null &&
+                      _copyrightTypes.contains(widget.contentType)
+                      ? loc.noImageExplanation
+                      : null,
                   elementSymbol: widget.contentData?.elementSymbol,
                   elementAtomicNumber: widget.contentData?.elementAtomicNumber,
                   imageAlignment: _imageAlignment,

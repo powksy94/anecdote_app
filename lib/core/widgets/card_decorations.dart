@@ -106,5 +106,9 @@ Widget buildCardDecoration(ContentType type) {
       return _doubleIcon(Icons.cloud_rounded, Icons.air_rounded);
     case ContentType.humanBone:
       return _doubleIcon(Icons.medical_services_rounded, Icons.straighten_rounded);
+    case ContentType.territoriesHub:
+      return _doubleIcon(Icons.map_rounded, Icons.pin_drop);
+    case ContentType.naturalWondersHub:
+      return _doubleIcon(Icons.landscape_rounded, Icons.local_fire_department);
   }
 }

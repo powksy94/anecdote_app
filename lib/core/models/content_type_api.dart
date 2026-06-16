@@ -54,6 +54,8 @@ extension ContentTypeApi on ContentType {
       case ContentType.mineral:
       case ContentType.cloud:
       case ContentType.humanBone:
+      case ContentType.territoriesHub:
+      case ContentType.naturalWondersHub:
         return '';
     }
   }

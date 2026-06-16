@@ -240,10 +240,39 @@ class AppLocalizationsEs extends AppLocalizations {
   String get categoryHumanBone => 'Huesos humanos';
 
   @override
+  String get categoryTerritoriesHub => 'Territorios';
+
+  @override
+  String get categoryNaturalWondersHub => 'Maravillas naturales';
+
+  @override
+  String get noImageTitle => 'Imagen no disponible';
+
+  @override
+  String get noImageExplanation =>
+      'Esta obra todavía está protegida por derechos de autor. No hay ninguna imagen libre disponible por el momento.';
+
+  @override
+  String get noImageExoplanet =>
+      '🪐 No observable directamente — detectado por métodos indirectos';
+
+  @override
+  String get noImageStar =>
+      '⭐ No hay imagen telescópica disponible para esta estrella';
+
+  @override
+  String get noImageSpaceMission =>
+      '🚀 No hay imagen disponible para esta misión';
+
+  @override
+  String get noImageGeneric => 'No hay imagen disponible';
+
+  @override
   String get insectPhobiaTitle => '⚠️ Sensibilidad a los insectos';
 
   @override
-  String get insectPhobiaMessage => 'Esta categoría contiene fotos de insectos reales. Si tienes entomofobia (fobia a los insectos), te recomendamos elegir otra categoría.';
+  String get insectPhobiaMessage =>
+      'Esta categoría contiene fotos de insectos reales. Si tienes entomofobia (fobia a los insectos), te recomendamos elegir otra categoría.';
 
   @override
   String get continueAnyway => 'Continuar de todos modos';

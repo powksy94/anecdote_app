@@ -7,6 +7,7 @@ class StarData {
   final double distance, magnitude;
   final double? radius, mass;
   final int planets;
+  final String? imageUrl;
 
   const StarData({
     required this.name, required this.constellation,
@@ -14,7 +15,12 @@ class StarData {
     required this.distance, required this.magnitude,
     required this.planets,
     this.radius, this.mass,
+    this.imageUrl,
   });
+
+  String? get noImageMessage => imageUrl != null
+      ? null
+      : '⭐ $name ($category) — no telescope image currently available';
 
   factory StarData.fromJson(Map<String, dynamic> j) => StarData(
     name:          j['n']  ?? '',
@@ -27,6 +33,7 @@ class StarData {
     planets:       (j['pl'] as num?)?.toInt() ?? 0,
     radius:        (j['ra'] as num?)?.toDouble(),
     mass:          (j['ms'] as num?)?.toDouble(),
+    imageUrl:      (j['im'] as String?)?.isEmpty == true ? null : j['im'] as String?,
   );
 }
 

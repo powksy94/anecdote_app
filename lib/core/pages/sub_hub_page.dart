@@ -1,25 +1,27 @@
 import 'package:flutter/material.dart';
-import '../../../core/models/content_type.dart';
-import '../../../generated/app_localizations.dart';
-import '../../../core/services/ad_service.dart';
-import '../../../core/widgets/subcategory_card.dart';
-import '../../../core/pages/content_page.dart';
+import '../models/content_type.dart';
+import '../../generated/app_localizations.dart';
+import '../services/ad_service.dart';
+import '../widgets/subcategory_card.dart';
+import 'content_page.dart';
 
-class ArtWorksPage extends StatefulWidget {
+class SubHubPage extends StatefulWidget {
+  final ContentType hubType;
+  final List<ContentType> categories;
   final AdService adService;
-  const ArtWorksPage({super.key, required this.adService});
+
+  const SubHubPage({
+    super.key,
+    required this.hubType,
+    required this.categories,
+    required this.adService,
+  });
 
   @override
-  State<ArtWorksPage> createState() => _ArtWorksPageState();
+  State<SubHubPage> createState() => _SubHubPageState();
 }
 
-class _ArtWorksPageState extends State<ArtWorksPage> {
-  static const _subCategories = [
-    ContentType.painting,
-    ContentType.sculpture,
-    ContentType.architecture,
-  ];
-
+class _SubHubPageState extends State<SubHubPage> {
   void _navigate(ContentType type) {
     widget.adService.showInterstitialAd(onComplete: () {
       if (!mounted) return;
@@ -39,7 +41,7 @@ class _ArtWorksPageState extends State<ArtWorksPage> {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final loc = AppLocalizations.of(context)!;
-    final gradient = ContentType.artWorksHub.gradient;
+    final gradient = widget.hubType.gradient;
 
     return Scaffold(
       extendBodyBehindAppBar: true,
@@ -47,11 +49,11 @@ class _ArtWorksPageState extends State<ArtWorksPage> {
         title: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Icon(ContentType.artWorksHub.icon, size: 24),
+            Icon(widget.hubType.icon, size: 24),
             const SizedBox(width: 8),
             Flexible(
               child: Text(
-                ContentType.artWorksHub.localizedTitle(loc),
+                widget.hubType.localizedTitle(loc),
                 overflow: TextOverflow.ellipsis,
               ),
             ),
@@ -89,10 +91,10 @@ class _ArtWorksPageState extends State<ArtWorksPage> {
         child: SafeArea(
           child: ListView.builder(
             padding: const EdgeInsets.fromLTRB(20, 24, 20, 24),
-            itemCount: _subCategories.length,
+            itemCount: widget.categories.length,
             itemBuilder: (context, index) => SubCategoryCard(
-              type: _subCategories[index],
-              onNavigate: () => _navigate(_subCategories[index]),
+              type: widget.categories[index],
+              onNavigate: () => _navigate(widget.categories[index]),
             ),
           ),
         ),

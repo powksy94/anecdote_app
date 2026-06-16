@@ -41,6 +41,20 @@ class TranslationService {
     return _translateText(text, targetLang);
   }
 
+  // Google Translate API v2 may return HTML entities and tags even with
+  // format:'text'. Strip them so Flutter's Text widget doesn't show raw markup.
+  static String _cleanTranslated(String text) {
+    var result = text
+        .replaceAll('&amp;', '&')
+        .replaceAll('&lt;', '<')
+        .replaceAll('&gt;', '>')
+        .replaceAll('&quot;', '"')
+        .replaceAll('&#39;', "'")
+        .replaceAll('&nbsp;', ' ');
+    result = result.replaceAll(RegExp(r'<[^>]+>'), '');
+    return result;
+  }
+
   Future<String> _translateText(String text, String targetLang) async {
     final emojis = <String>[];
     final masked = _maskEmojis(text, emojis);
@@ -61,8 +75,8 @@ class TranslationService {
     }
 
     final data = jsonDecode(response.body);
-    final translated = data['data']['translations'][0]['translatedText'] as String;
-    return _restoreEmojis(translated, emojis);
+    final raw = data['data']['translations'][0]['translatedText'] as String;
+    return _restoreEmojis(_cleanTranslated(raw), emojis);
   }
 
   Future<ContentData> translateContent(

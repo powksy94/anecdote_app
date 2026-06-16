@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import './content_page.dart';
-import '../../features/world/pages/world_page.dart';
+import '../../features/world/pages/world_navigator.dart';
 import '../../features/space/pages/space_page.dart';
 import '../../features/history/pages/history_hub_page.dart';
 import '../../features/cinema/pages/cinema_hub_page.dart';
@@ -82,14 +82,18 @@ class _HomePageState extends State<HomePage> {
           .then((_) => _cardKeys[type]?.currentState?.onNavigationComplete());
       return;
     }
-    if (type == ContentType.world || type == ContentType.space ||
+    if (type == ContentType.world) {
+      WorldNavigator.show(context, _adService)
+          .then((_) => _cardKeys[type]?.currentState?.onNavigationComplete());
+      return;
+    }
+    if (type == ContentType.space ||
         type == ContentType.historyHub || type == ContentType.cinemaHub ||
         type == ContentType.celebrityHub) {
       Navigator.push(
         context,
         PageRouteBuilder(
           pageBuilder: (_, __, ___) {
-            if (type == ContentType.world) return WorldPage(adService: _adService);
             if (type == ContentType.space) return SpacePage(adService: _adService);
             if (type == ContentType.historyHub) return HistoryHubPage(adService: _adService);
             if (type == ContentType.cinemaHub) return CinemaHubPage(adService: _adService);

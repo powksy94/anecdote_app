@@ -6,6 +6,8 @@ class ImageHeader extends StatelessWidget {
   final List<Color> gradient;
   final IconData fallbackIcon;
   final String? noImageMessage;
+  final String? noImageTitle;
+  final String? noImageExplanation;
   final String? elementSymbol;
   final int? elementAtomicNumber;
   final Alignment imageAlignment;
@@ -18,6 +20,8 @@ class ImageHeader extends StatelessWidget {
     required this.gradient,
     required this.fallbackIcon,
     this.noImageMessage,
+    this.noImageTitle,
+    this.noImageExplanation,
     this.elementSymbol,
     this.elementAtomicNumber,
     this.imageAlignment = Alignment.center,
@@ -65,17 +69,49 @@ class ImageHeader extends StatelessWidget {
                 ),
               )
             : noImageMessage != null
-                ? Padding(
-                    padding: const EdgeInsets.all(24),
-                    child: Center(
-                      child: Text(
-                        noImageMessage!,
-                        textAlign: TextAlign.center,
-                        style: const TextStyle(
-                          color: Colors.white,
-                          fontSize: 14,
-                          fontStyle: FontStyle.italic,
-                          height: 1.5,
+                ? Builder(
+                    builder: (ctx) => GestureDetector(
+                      onTap: noImageExplanation != null
+                          ? () => showDialog(
+                                context: ctx,
+                                builder: (dialogCtx) => AlertDialog(
+                                  title: Text(noImageTitle ?? ''),
+                                  content: Text(noImageExplanation!),
+                                  actions: [
+                                    TextButton(
+                                      onPressed: () => Navigator.pop(dialogCtx),
+                                      child: const Text('OK'),
+                                    ),
+                                  ],
+                                ),
+                              )
+                          : null,
+                      child: Padding(
+                        padding: const EdgeInsets.all(24),
+                        child: Center(
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Text(
+                                noImageMessage!,
+                                textAlign: TextAlign.center,
+                                style: const TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 14,
+                                  fontStyle: FontStyle.italic,
+                                  height: 1.5,
+                                ),
+                              ),
+                              if (noImageExplanation != null) ...[
+                                const SizedBox(height: 8),
+                                Icon(
+                                  Icons.info_outline_rounded,
+                                  color: Colors.white.withValues(alpha: 0.7),
+                                  size: 18,
+                                ),
+                              ],
+                            ],
+                          ),
                         ),
                       ),
                     ),

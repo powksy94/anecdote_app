@@ -526,14 +526,106 @@ abstract class AppLocalizations {
   /// **'Volcanoes'**
   String get categoryVolcano;
 
+  /// No description provided for @categoryInsect.
+  ///
+  /// In en, this message translates to:
+  /// **'Insects'**
   String get categoryInsect;
+
+  /// No description provided for @categoryBird.
+  ///
+  /// In en, this message translates to:
+  /// **'Birds'**
   String get categoryBird;
+
+  /// No description provided for @categoryMineral.
+  ///
+  /// In en, this message translates to:
+  /// **'Minerals'**
   String get categoryMineral;
+
+  /// No description provided for @categoryCloud.
+  ///
+  /// In en, this message translates to:
+  /// **'Clouds'**
   String get categoryCloud;
+
+  /// No description provided for @categoryHumanBone.
+  ///
+  /// In en, this message translates to:
+  /// **'Human Bones'**
   String get categoryHumanBone;
+
+  /// No description provided for @categoryTerritoriesHub.
+  ///
+  /// In en, this message translates to:
+  /// **'Territories'**
+  String get categoryTerritoriesHub;
+
+  /// No description provided for @categoryNaturalWondersHub.
+  ///
+  /// In en, this message translates to:
+  /// **'Natural Wonders'**
+  String get categoryNaturalWondersHub;
+
+  /// No description provided for @noImageTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Image unavailable'**
+  String get noImageTitle;
+
+  /// No description provided for @noImageExplanation.
+  ///
+  /// In en, this message translates to:
+  /// **'This work is still protected by copyright. No free image is currently available.'**
+  String get noImageExplanation;
+
+  /// No description provided for @noImageExoplanet.
+  ///
+  /// In en, this message translates to:
+  /// **'🪐 Not directly observable — detected by indirect methods'**
+  String get noImageExoplanet;
+
+  /// No description provided for @noImageStar.
+  ///
+  /// In en, this message translates to:
+  /// **'⭐ No telescope image available for this star'**
+  String get noImageStar;
+
+  /// No description provided for @noImageSpaceMission.
+  ///
+  /// In en, this message translates to:
+  /// **'🚀 No image available for this mission'**
+  String get noImageSpaceMission;
+
+  /// No description provided for @noImageGeneric.
+  ///
+  /// In en, this message translates to:
+  /// **'No image available'**
+  String get noImageGeneric;
+
+  /// No description provided for @insectPhobiaTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'⚠️ Insect Sensitivity'**
   String get insectPhobiaTitle;
+
+  /// No description provided for @insectPhobiaMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'This category contains photos of real insects. If you have entomophobia (insect phobia), we recommend choosing a different category.'**
   String get insectPhobiaMessage;
+
+  /// No description provided for @continueAnyway.
+  ///
+  /// In en, this message translates to:
+  /// **'Continue anyway'**
   String get continueAnyway;
+
+  /// No description provided for @goBack.
+  ///
+  /// In en, this message translates to:
+  /// **'Go back'**
   String get goBack;
 }
 
