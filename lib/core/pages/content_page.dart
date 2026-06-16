@@ -72,6 +72,9 @@ class _ContentPageState extends State<ContentPage> {
     ContentType.humanBone,
     ContentType.exoplanet,
     ContentType.star,
+    ContentType.lgbtqiaPersonality,
+    ContentType.pioneerWoman,
+    ContentType.legendaryAthlete,
   };
 
   @override

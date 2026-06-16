@@ -604,6 +604,60 @@ abstract class AppLocalizations {
   /// **'No image available'**
   String get noImageGeneric;
 
+  /// No description provided for @categoryHumorHub.
+  ///
+  /// In en, this message translates to:
+  /// **'Humor'**
+  String get categoryHumorHub;
+
+  /// No description provided for @categoryPersonalityHub.
+  ///
+  /// In en, this message translates to:
+  /// **'Personalities'**
+  String get categoryPersonalityHub;
+
+  /// No description provided for @categoryLgbtqiaPersonality.
+  ///
+  /// In en, this message translates to:
+  /// **'LGBTQIA+'**
+  String get categoryLgbtqiaPersonality;
+
+  /// No description provided for @categoryPioneerWoman.
+  ///
+  /// In en, this message translates to:
+  /// **'Pioneer Women'**
+  String get categoryPioneerWoman;
+
+  /// No description provided for @categoryLegendaryAthlete.
+  ///
+  /// In en, this message translates to:
+  /// **'Legendary Athletes'**
+  String get categoryLegendaryAthlete;
+
+  /// No description provided for @noImageLgbtqia.
+  ///
+  /// In en, this message translates to:
+  /// **'No portrait image available for this personality'**
+  String get noImageLgbtqia;
+
+  /// No description provided for @noImagePioneerWoman.
+  ///
+  /// In en, this message translates to:
+  /// **'No portrait image available for this pioneer'**
+  String get noImagePioneerWoman;
+
+  /// No description provided for @noImageLegendaryAthlete.
+  ///
+  /// In en, this message translates to:
+  /// **'No photo available for this athlete'**
+  String get noImageLegendaryAthlete;
+
+  /// No description provided for @orientationUncertain.
+  ///
+  /// In en, this message translates to:
+  /// **'Sexual orientation or gender identity is uncertain or debated by historians'**
+  String get orientationUncertain;
+
   /// No description provided for @insectPhobiaTitle.
   ///
   /// In en, this message translates to:

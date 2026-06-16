@@ -51,6 +51,11 @@ extension ContentTypeIcons on ContentType {
       case ContentType.humanBone:           return Icons.medical_services_rounded;
       case ContentType.territoriesHub:      return Icons.map_rounded;
       case ContentType.naturalWondersHub:   return Icons.landscape_rounded;
+      case ContentType.humorHub:            return Icons.sentiment_very_satisfied_rounded;
+      case ContentType.personalityHub:      return Icons.people_alt_rounded;
+      case ContentType.lgbtqiaPersonality:  return Icons.diversity_3_rounded;
+      case ContentType.pioneerWoman:        return Icons.woman_rounded;
+      case ContentType.legendaryAthlete:    return Icons.emoji_events_rounded;
     }
   }
 }

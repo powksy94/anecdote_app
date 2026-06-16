@@ -57,4 +57,9 @@ enum ContentType {
   humanBone,
   territoriesHub,
   naturalWondersHub,
+  humorHub,
+  personalityHub,
+  lgbtqiaPersonality,
+  pioneerWoman,
+  legendaryAthlete,
 }

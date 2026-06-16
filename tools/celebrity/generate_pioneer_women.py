@@ -1,0 +1,213 @@
+import json, requests, time, sys
+from pathlib import Path
+from urllib.parse import quote
+
+# n=name, co=country, yr=years, fi=field, ctx=socio-feminist context of era,
+# fa=impact, im=imageUrl
+
+HEADERS = {"User-Agent": "DailyFactsApp/1.0 (matthieuuzan@gmail.com)"}
+
+WIKI_EN = {
+    "Marie Curie":              "Marie Curie",
+    "Simone de Beauvoir":       "Simone de Beauvoir",
+    "Rosa Parks":               "Rosa Parks",
+    "Florence Nightingale":     "Florence Nightingale",
+    "Amelia Earhart":           "Amelia Earhart",
+    "Harriet Tubman":           "Harriet Tubman",
+    "Wangari Maathai":          "Wangari Maathai",
+    "Emmeline Pankhurst":       "Emmeline Pankhurst",
+    "Hypatia":                  "Hypatia",
+    "Ada Lovelace":             "Ada Lovelace",
+    "Sojourner Truth":          "Sojourner Truth",
+    "Valentina Tereshkova":     "Valentina Tereshkova",
+    "Nellie Bly":               "Nellie Bly",
+    "Rigoberta Menchu":         "Rigoberta Menchu",
+    "Sally Ride":               "Sally Ride",
+    "Olympe de Gouges":         "Olympe de Gouges",
+    "Susan B. Anthony":         "Susan B. Anthony",
+    "Clara Barton":             "Clara Barton",
+    "Razia Sultana":            "Razia Sultana",
+    "Marie Curie":              "Marie Curie",
+    "Mary Wollstonecraft":      "Mary Wollstonecraft",
+    "Elizabeth Blackwell":      "Elizabeth Blackwell",
+    "Rosalind Franklin":        "Rosalind Franklin",
+    "Malala Yousafzai":         "Malala Yousafzai",
+    "Simone Veil":              "Simone Veil",
+    "Nelly Bly":                "Nellie Bly",
+}
+
+women = [
+    # ── Science & Medicine ────────────────────────────────────────────────────
+    {"n": "Marie Curie", "co": "Poland / France", "yr": "1867-1934",
+     "fi": "Physics & Chemistry",
+     "ctx": "Women were barred from higher education in Russian-occupied Poland and excluded from the French Academy of Sciences throughout her life. A woman pursuing a doctorate in physics was virtually unheard of.",
+     "fa": "First woman to win a Nobel Prize (1903, Physics) and the only person to win Nobel Prizes in two different sciences (also 1911, Chemistry). Discovered polonium and radium. Her research on radioactivity laid the foundation for nuclear physics and cancer radiotherapy."},
+
+    {"n": "Rosalind Franklin", "co": "United Kingdom", "yr": "1920-1958",
+     "fi": "Biophysics & Molecular Biology",
+     "ctx": "Women scientists were routinely denied full academic positions and credit for their discoveries. At King's College London, female staff were not allowed in the common room where scientific discussion often happened.",
+     "fa": "Her X-ray crystallography work — particularly Photo 51 — was essential to Watson and Crick's discovery of DNA's double helix structure (1953). Her contribution was not acknowledged in their Nobel Prize. She died at 37 of ovarian cancer; her role was only fully recognised posthumously."},
+
+    {"n": "Elizabeth Blackwell", "co": "United States / United Kingdom", "yr": "1821-1910",
+     "fi": "Medicine",
+     "ctx": "Every American medical school refused her application. She was admitted to Geneva Medical College in New York after the all-male student body voted 'yes' as a joke — not expecting she would actually enroll.",
+     "fa": "First woman to receive a medical degree in the United States (1849). Founded the New York Infirmary for Indigent Women and Children. Her persistence shattered the barrier for women entering the medical profession."},
+
+    {"n": "Ada Lovelace", "co": "United Kingdom", "yr": "1815-1852",
+     "fi": "Mathematics & Computing",
+     "ctx": "In Victorian England, women of the aristocracy were educated in 'ornamental' subjects; mathematics was considered unsuitable for the female mind. Her mother insisted on rigorous mathematical education specifically to counter any 'poetic' tendencies inherited from her father, Lord Byron.",
+     "fa": "Wrote the first algorithm intended to be processed by a machine — Charles Babbage's Analytical Engine. Recognised as the world's first computer programmer, a century before the first modern computer was built. The Ada programming language is named in her honour."},
+
+    {"n": "Hypatia", "co": "Egypt (Roman Alexandria)", "yr": "c. 360-415 CE",
+     "fi": "Mathematics & Astronomy",
+     "ctx": "Late Roman Alexandria was a place of intellectual ferment but also violent religious and political conflict. As a woman holding a public teaching position and intellectual authority, she occupied an almost unique position in the ancient world.",
+     "fa": "Head of the Neoplatonist school in Alexandria and the first female mathematician recorded in history. Wrote commentaries on major mathematical and astronomical works. Murdered by a Christian mob in 415 CE; her death is often seen as a symbol of the decline of Greco-Roman science."},
+
+    # ── Activism & Civil Rights ────────────────────────────────────────────────
+    {"n": "Harriet Tubman", "co": "United States", "yr": "~1822-1913",
+     "fi": "Abolitionism & Civil Rights",
+     "ctx": "Born into slavery in Maryland at a time when enslaved people were legally property. The Fugitive Slave Act of 1850 meant even escaped slaves in the North could be captured and returned.",
+     "fa": "Escaped slavery in 1849 and returned south approximately 13 times to guide about 70 enslaved people to freedom via the Underground Railroad. During the Civil War, she became the first woman to lead an armed assault — the Combahee River Raid, freeing 700 enslaved people."},
+
+    {"n": "Sojourner Truth", "co": "United States", "yr": "~1797-1883",
+     "fi": "Abolitionism & Women's Rights",
+     "ctx": "Born into slavery in New York when slavery was still legal there. Even after emancipation, Black women were systematically excluded from the women's suffrage movement by white leaders who feared alienating Southern states.",
+     "fa": "Escaped slavery in 1826. Delivered her landmark 'Ain't I a Woman?' speech (1851) challenging the exclusion of Black women from the feminist movement. First Black woman to win a legal case against a white man when she successfully sued for the return of her son in 1828."},
+
+    {"n": "Rosa Parks", "co": "United States", "yr": "1913-2005",
+     "fi": "Civil Rights Activism",
+     "ctx": "In Alabama in 1955, racial segregation on buses was enforced by law. Black passengers had to give up their seats to white passengers. This was not mere custom — refusal was a criminal act.",
+     "fa": "Her arrest in December 1955 for refusing to give up her seat on a Montgomery bus sparked the 381-day Montgomery Bus Boycott, a turning point in the American Civil Rights Movement. Called 'the mother of the civil rights movement' by the US Congress."},
+
+    {"n": "Emmeline Pankhurst", "co": "United Kingdom", "yr": "1858-1928",
+     "fi": "Women's Suffrage",
+     "ctx": "In Victorian and Edwardian Britain, women of all classes were denied the right to vote. Political arguments that women were too emotional for political decisions were mainstream. Peaceful suffrage campaigns had achieved nothing in 40 years.",
+     "fa": "Founded the Women's Social and Political Union (WSPU) in 1903, adopting 'Deeds, not Words' as its motto. Led increasingly militant suffragette campaigns including window-smashing, arson, and hunger strikes in prison. Died weeks before British women finally gained equal voting rights in 1928."},
+
+    {"n": "Olympe de Gouges", "co": "France", "yr": "1748-1793",
+     "fi": "Political Writing & Feminism",
+     "ctx": "The French Revolution proclaimed 'Liberty, Equality, Fraternity' — but entirely for men. The Declaration of the Rights of Man (1789) explicitly excluded women from political and civil rights.",
+     "fa": "Author of the Declaration of the Rights of Woman and of the Female Citizen (1791), which asserted that women are equal to men and deserved the same political rights. Condemned that 'a woman has the right to mount the scaffold; she must equally have the right to mount the rostrum.' Guillotined in 1793."},
+
+    {"n": "Susan B. Anthony", "co": "United States", "yr": "1820-1906",
+     "fi": "Women's Suffrage",
+     "ctx": "In 19th-century America, married women could not own property, sign contracts, or keep their wages. Women were legally considered the property of their husbands. The suffrage movement was widely ridiculed as absurd and dangerous.",
+     "fa": "A central leader of the women's suffrage movement for over 50 years. Arrested and tried for voting in 1872. The 19th Amendment granting women the right to vote (1920) is often called the 'Susan B. Anthony Amendment.' She died 14 years before seeing her life's work become law."},
+
+    {"n": "Mary Wollstonecraft", "co": "United Kingdom", "yr": "1759-1797",
+     "fi": "Philosophy & Feminist Writing",
+     "ctx": "In 18th-century Britain, women were educated only for marriage and considered intellectually inferior by nature. Rousseau, the era's leading philosopher on education, explicitly argued women should be raised to please men.",
+     "fa": "Author of A Vindication of the Rights of Woman (1792), the founding document of modern feminism. Argued that women appeared inferior only because they were denied education. She was the mother of Mary Shelley. Her work was ridiculed in her lifetime; she died at 38 of childbed fever."},
+
+    {"n": "Rigoberta Menchu", "co": "Guatemala", "yr": "1959-",
+     "fi": "Indigenous Rights Activism",
+     "ctx": "Guatemala's civil war (1960-1996) saw mass atrocities against the indigenous Mayan population. Indigenous women faced triple marginalisation: as women, as indigenous people, and as poor campesinas. Advocating for indigenous rights meant risking death.",
+     "fa": "K'iche' Mayan activist who documented human rights abuses during the Guatemalan Civil War. Her autobiography I, Rigoberta Menchú (1983) brought international attention to indigenous oppression. Nobel Peace Prize laureate in 1992 — the first indigenous person so honoured."},
+
+    {"n": "Wangari Maathai", "co": "Kenya", "yr": "1940-2011",
+     "fi": "Environmental Activism",
+     "ctx": "Post-independence Kenya was governed by authoritarian regimes that criminalised dissent. Women had virtually no voice in political or environmental policy. Deforestation was driving rural poverty, particularly affecting women who collected firewood.",
+     "fa": "Founded the Green Belt Movement in 1977, mobilising rural women to plant over 51 million trees across Kenya. First African woman to win the Nobel Peace Prize (2004). First woman to earn a Ph.D. in East and Central Africa. Imprisoned multiple times for her activism."},
+
+    {"n": "Malala Yousafzai", "co": "Pakistan", "yr": "2000-- (b. 1997)",
+     "fi": "Education Activism",
+     "ctx": "Under Taliban occupation of Pakistan's Swat Valley (2007-2009), girls' schools were bombed and girls forbidden to attend school. The Taliban issued death threats against those who promoted girls' education.",
+     "fa": "Survived a Taliban assassination attempt in 2012 at age 15 for publicly advocating for girls' education. Became the youngest Nobel Peace Prize laureate in 2014 (age 17). Founded the Malala Fund, which has helped millions of girls access education worldwide."},
+
+    # ── Aviation & Exploration ─────────────────────────────────────────────────
+    {"n": "Amelia Earhart", "co": "United States", "yr": "1897-1937",
+     "fi": "Aviation",
+     "ctx": "In the 1920s-30s, aviation was an exclusively male domain. Women were considered physically and mentally unfit to pilot aircraft. Female aviators were dismissed as novelty acts rather than serious pilots.",
+     "fa": "First woman to fly solo across the Atlantic Ocean (1932). Set multiple world aviation records. Disappeared over the Pacific Ocean in 1937 during an attempted circumnavigation of the globe. Her courage and skill permanently changed attitudes about what women could accomplish."},
+
+    {"n": "Valentina Tereshkova", "co": "Soviet Union (Russia)", "yr": "1937-",
+     "fi": "Aerospace",
+     "ctx": "The Space Race between the USSR and USA had used only male military pilots as cosmonauts. The selection of a woman was partly a Cold War propaganda move, but Tereshkova proved herself through rigorous training alongside men.",
+     "fa": "First woman in space (June 1963), orbiting Earth 48 times over three days aboard Vostok 6. She remains the only woman to have completed a solo space mission. Her flight preceded the second woman in space by 19 years."},
+
+    # ── Journalism & Media ─────────────────────────────────────────────────────
+    {"n": "Nellie Bly", "co": "United States", "yr": "1864-1922",
+     "fi": "Investigative Journalism",
+     "ctx": "In the Gilded Age, newspaper work for women was restricted to 'women's pages' covering fashion and society. Investigative journalism was a men's domain. Mental asylums were largely unregulated and virtually invisible to public scrutiny.",
+     "fa": "Pioneered investigative journalism by faking insanity to expose the brutal conditions of New York's Blackwell's Island asylum (1887). Circumnavigated the globe in 72 days, beating Phileas Fogg's fictional record. Her reporting drove direct legal reforms."},
+
+    # ── Nursing & Humanitarianism ─────────────────────────────────────────────
+    {"n": "Florence Nightingale", "co": "United Kingdom", "yr": "1820-1910",
+     "fi": "Nursing & Public Health",
+     "ctx": "Nursing was considered disreputable work for 'fallen women.' Upper-class women were expected to be idle ornaments. The British Army during the Crimean War had no organised medical care and a mortality rate from disease 10× that from battle wounds.",
+     "fa": "Transformed nursing into a respected profession. During the Crimean War (1853-1856) she cut hospital mortality rates from 42% to 2% through hygiene reforms. Pioneered the use of statistical graphics in medicine. Founded the first secular nursing school (1860), now part of King's College London."},
+
+    {"n": "Clara Barton", "co": "United States", "yr": "1821-1912",
+     "fi": "Nursing & Humanitarian Aid",
+     "ctx": "During the American Civil War, women were barred from official military nursing. The social norm was that 'proper' women should not witness or treat battlefield wounds. Organising aid for soldiers was done entirely outside official channels.",
+     "fa": "Provided battlefield nursing and supplies during the Civil War despite official obstacles. Founded the American Red Cross in 1881 and served as its first president for 23 years. Lobbied successfully for the U.S. ratification of the Geneva Convention."},
+
+    # ── Philosophy & Social Thought ────────────────────────────────────────────
+    {"n": "Simone de Beauvoir", "co": "France", "yr": "1908-1986",
+     "fi": "Philosophy & Feminism",
+     "ctx": "Post-war France was a deeply patriarchal society where women had only just gained the vote in 1944. The concept of gender as a social construct rather than a biological destiny was radical and widely rejected.",
+     "fa": "Author of The Second Sex (1949), the foundational text of second-wave feminism. Her phrase 'One is not born, but rather becomes, a woman' articulated the distinction between biological sex and socially constructed gender. Her work directly inspired the women's liberation movements of the 1960s-70s."},
+
+    {"n": "Simone Veil", "co": "France", "yr": "1927-2017",
+     "fi": "Politics & Law",
+     "ctx": "In France in 1975, abortion was a criminal act. The debate in the National Assembly was savage; several deputies compared the bill to the Holocaust (which Veil, an Auschwitz survivor, found deeply offensive). Death threats were common.",
+     "fa": "Holocaust survivor and French politician who as Health Minister successfully passed the Veil Law (1975) legalising abortion in France, in the face of extraordinary hostility. Elected to the Académie Française. Her legacy spans human rights, European construction, and women's emancipation."},
+
+    # ── Royalty & Power ────────────────────────────────────────────────────────
+    {"n": "Razia Sultana", "co": "Delhi Sultanate (India)", "yr": "~1205-1240",
+     "fi": "Governance",
+     "ctx": "The Delhi Sultanate was a conservative Islamic monarchy in which female rule was considered religiously and politically illegitimate. Her own brothers and nobles repeatedly challenged her authority solely on the grounds of her sex.",
+     "fa": "First female Sultan of Delhi (reigned 1236-1240). Rode elephants into battle, appeared unveiled in court, and refused to use a litter. She told her critics: 'If I am worthy to be sultan, my sex is irrelevant.' Ruled competently until overthrown by nobles who could not accept a female sovereign."},
+
+    {"n": "Sally Ride", "co": "United States", "yr": "1951-2012",
+     "fi": "Aerospace & Physics",
+     "ctx": "NASA had no female astronauts until 1978. The media coverage of Sally Ride's selection was notably patronising — reporters asked if spaceflight would affect her reproductive system and whether she would wear makeup.",
+     "fa": "First American woman in space (1983), aboard the Space Shuttle Challenger. Became a physics professor at UC San Diego and founded Sally Ride Science to inspire girls in STEM. Came out as a lesbian in her obituary, making her the first known LGBT astronaut."},
+]
+
+
+def wiki_img(title: str) -> str | None:
+    for attempt in range(2):
+        try:
+            if attempt == 0:
+                url = (f"https://en.wikipedia.org/w/api.php?action=query&prop=pageimages"
+                       f"&format=json&titles={quote(title)}&pithumbsize=500")
+                r = requests.get(url, headers=HEADERS, timeout=10)
+                pages = r.json().get("query", {}).get("pages", {})
+                for page in pages.values():
+                    src = page.get("thumbnail", {}).get("source")
+                    if src:
+                        return src
+            else:
+                url = f"https://en.wikipedia.org/api/rest_v1/page/summary/{quote(title)}"
+                r = requests.get(url, headers=HEADERS, timeout=10)
+                if r.status_code == 200:
+                    src = r.json().get("thumbnail", {}).get("source")
+                    if src:
+                        return src
+        except Exception:
+            pass
+    return None
+
+
+def main():
+    total = len(women)
+    found = 0
+    for i, s in enumerate(women):
+        title = WIKI_EN.get(s["n"], s["n"])
+        img = wiki_img(title)
+        s["im"] = img
+        if img:
+            found += 1
+        status = "ok" if img else "xx"
+        sys.stdout.buffer.write(f"  [{i+1:2}/{total}] {status} {s['n']}\n".encode("utf-8"))
+        sys.stdout.buffer.flush()
+        time.sleep(0.3)
+    out = Path("assets/celebrity/pioneer_women.json")
+    out.parent.mkdir(parents=True, exist_ok=True)
+    out.write_text(json.dumps(women, ensure_ascii=False, separators=(',', ':')), encoding="utf-8")
+    sys.stdout.buffer.write(f"\nDone: {found}/{total} images — {total} women total.\n".encode("utf-8"))
+
+
+if __name__ == "__main__":
+    main()

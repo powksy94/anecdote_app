@@ -266,6 +266,36 @@ class AppLocalizationsEn extends AppLocalizations {
   String get noImageGeneric => 'No image available';
 
   @override
+  String get categoryHumorHub => 'Humor';
+
+  @override
+  String get categoryPersonalityHub => 'Personalities';
+
+  @override
+  String get categoryLgbtqiaPersonality => 'LGBTQIA+';
+
+  @override
+  String get categoryPioneerWoman => 'Pioneer Women';
+
+  @override
+  String get categoryLegendaryAthlete => 'Legendary Athletes';
+
+  @override
+  String get noImageLgbtqia =>
+      'No portrait image available for this personality';
+
+  @override
+  String get noImagePioneerWoman =>
+      'No portrait image available for this pioneer';
+
+  @override
+  String get noImageLegendaryAthlete => 'No photo available for this athlete';
+
+  @override
+  String get orientationUncertain =>
+      'Sexual orientation or gender identity is uncertain or debated by historians';
+
+  @override
   String get insectPhobiaTitle => '⚠️ Insect Sensitivity';
 
   @override

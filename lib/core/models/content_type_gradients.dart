@@ -99,6 +99,16 @@ extension ContentTypeGradients on ContentType {
         return [const Color(0xFF1A237E), const Color(0xFF0288D1)];
       case ContentType.naturalWondersHub:
         return [const Color(0xFF2E7D32), const Color(0xFF795548)];
+      case ContentType.humorHub:
+        return [const Color(0xFFFF6D00), const Color(0xFFFF9100)];
+      case ContentType.personalityHub:
+        return [const Color(0xFF4A148C), const Color(0xFFAD1457)];
+      case ContentType.lgbtqiaPersonality:
+        return [const Color(0xFF880E4F), const Color(0xFF6A1B9A)];
+      case ContentType.pioneerWoman:
+        return [const Color(0xFF004D40), const Color(0xFF0277BD)];
+      case ContentType.legendaryAthlete:
+        return [const Color(0xFF1B4332), const Color(0xFFB7791F)];
     }
   }
 }

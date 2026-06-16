@@ -51,6 +51,11 @@ extension ContentTypeLabels on ContentType {
       case ContentType.humanBone:          return 'Human Bones';
       case ContentType.territoriesHub:     return 'Territories';
       case ContentType.naturalWondersHub:  return 'Natural Wonders';
+      case ContentType.humorHub:           return 'Humor';
+      case ContentType.personalityHub:     return 'Personalities';
+      case ContentType.lgbtqiaPersonality: return 'LGBTQIA+';
+      case ContentType.pioneerWoman:       return 'Pioneer Women';
+      case ContentType.legendaryAthlete:   return 'Legendary Athletes';
     }
   }
 
@@ -104,6 +109,11 @@ extension ContentTypeLabels on ContentType {
       case ContentType.humanBone:          return loc.categoryHumanBone;
       case ContentType.territoriesHub:     return loc.categoryTerritoriesHub;
       case ContentType.naturalWondersHub:  return loc.categoryNaturalWondersHub;
+      case ContentType.humorHub:           return loc.categoryHumorHub;
+      case ContentType.personalityHub:     return loc.categoryPersonalityHub;
+      case ContentType.lgbtqiaPersonality: return loc.categoryLgbtqiaPersonality;
+      case ContentType.pioneerWoman:       return loc.categoryPioneerWoman;
+      case ContentType.legendaryAthlete:   return loc.categoryLegendaryAthlete;
     }
   }
 }

@@ -110,5 +110,15 @@ Widget buildCardDecoration(ContentType type) {
       return _doubleIcon(Icons.map_rounded, Icons.pin_drop);
     case ContentType.naturalWondersHub:
       return _doubleIcon(Icons.landscape_rounded, Icons.local_fire_department);
+    case ContentType.humorHub:
+      return _bubbles(Icons.sentiment_very_satisfied_rounded);
+    case ContentType.personalityHub:
+      return _doubleIcon(Icons.people_alt_rounded, Icons.psychology_rounded);
+    case ContentType.lgbtqiaPersonality:
+      return _bubbles(Icons.diversity_3_rounded);
+    case ContentType.pioneerWoman:
+      return _doubleIcon(Icons.woman_rounded, Icons.school_rounded);
+    case ContentType.legendaryAthlete:
+      return _doubleIcon(Icons.emoji_events_rounded, Icons.sports_rounded);
   }
 }

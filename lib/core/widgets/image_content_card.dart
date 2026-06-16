@@ -37,6 +37,9 @@ class _ImageContentCardState extends State<ImageContentCard> {
     ContentType.nobelPrize,
     ContentType.kingOfFrance,
     ContentType.americanPresident,
+    ContentType.lgbtqiaPersonality,
+    ContentType.pioneerWoman,
+    ContentType.legendaryAthlete,
   };
 
   static const _copyrightTypes = {
@@ -49,8 +52,11 @@ class _ImageContentCardState extends State<ImageContentCard> {
     switch (widget.contentType) {
       case ContentType.exoplanet:    return loc.noImageExoplanet;
       case ContentType.star:         return loc.noImageStar;
-      case ContentType.spaceMission: return loc.noImageSpaceMission;
-      default:                       return loc.noImageGeneric;
+      case ContentType.spaceMission:       return loc.noImageSpaceMission;
+      case ContentType.lgbtqiaPersonality: return loc.noImageLgbtqia;
+      case ContentType.pioneerWoman:       return loc.noImagePioneerWoman;
+      case ContentType.legendaryAthlete:   return loc.noImageLegendaryAthlete;
+      default:                             return loc.noImageGeneric;
     }
   }
 

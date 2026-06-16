@@ -268,6 +268,37 @@ class AppLocalizationsFr extends AppLocalizations {
   String get noImageGeneric => 'Aucune image disponible';
 
   @override
+  String get categoryHumorHub => 'Humour';
+
+  @override
+  String get categoryPersonalityHub => 'Personnalités';
+
+  @override
+  String get categoryLgbtqiaPersonality => 'LGBTQIA+';
+
+  @override
+  String get categoryPioneerWoman => 'Femmes Pionnières';
+
+  @override
+  String get categoryLegendaryAthlete => 'Athlètes Légendaires';
+
+  @override
+  String get noImageLgbtqia =>
+      'Aucun portrait disponible pour cette personnalité';
+
+  @override
+  String get noImagePioneerWoman =>
+      'Aucun portrait disponible pour cette pionnière';
+
+  @override
+  String get noImageLegendaryAthlete =>
+      'Aucune photo disponible pour cet athlète';
+
+  @override
+  String get orientationUncertain =>
+      'L\'orientation sexuelle ou l\'identité de genre est incertaine ou débattue par les historiens';
+
+  @override
   String get insectPhobiaTitle => '⚠️ Sensibilité aux insectes';
 
   @override

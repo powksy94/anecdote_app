@@ -29,6 +29,9 @@ import '../../features/art/services/famous_artist_service.dart';
 import '../../features/art/services/photographer_service.dart';
 import '../../features/art/services/classical_composer_service.dart';
 import '../../features/art/services/nobel_prize_service.dart';
+import '../../features/celebrity/services/lgbtqia_service.dart';
+import '../../features/celebrity/services/pioneer_woman_service.dart';
+import '../../features/celebrity/services/legendary_athlete_service.dart';
 
 Future<ContentData> fetchDailyContent(
   ContentType type, {
@@ -71,8 +74,12 @@ Future<ContentData> fetchDailyContent(
     case ContentType.famousArtist:     return FamousArtistService().getDailyContent();
     case ContentType.photographer:     return PhotographerService().getDailyContent();
     case ContentType.classicalComposer:return ClassicalComposerService().getDailyContent();
-    case ContentType.nobelPrize:       return NobelPrizeService().getDailyContent();
+    case ContentType.nobelPrize:         return NobelPrizeService().getDailyContent();
+    // ── Celebrity ──────────────────────────────────────────────────────────
+    case ContentType.lgbtqiaPersonality: return LgbtqiaService().getDailyContent();
+    case ContentType.pioneerWoman:       return PioneerWomanService().getDailyContent();
+    case ContentType.legendaryAthlete:   return LegendaryAthleteService().getDailyContent();
     // ── API-ninjas / HTTP ──────────────────────────────────────────────────
-    default:                           return apiService.fetchRemoteContent(type);
+    default:                             return apiService.fetchRemoteContent(type);
   }
 }

@@ -56,6 +56,11 @@ extension ContentTypeApi on ContentType {
       case ContentType.humanBone:
       case ContentType.territoriesHub:
       case ContentType.naturalWondersHub:
+      case ContentType.humorHub:
+      case ContentType.personalityHub:
+      case ContentType.lgbtqiaPersonality:
+      case ContentType.pioneerWoman:
+      case ContentType.legendaryAthlete:
         return '';
     }
   }

@@ -51,6 +51,11 @@ extension ContentTypeColors on ContentType {
       case ContentType.humanBone:           return const Color(0xFF00695C);
       case ContentType.territoriesHub:      return const Color(0xFF1A237E);
       case ContentType.naturalWondersHub:   return const Color(0xFF2E7D32);
+      case ContentType.humorHub:            return Colors.deepOrange;
+      case ContentType.personalityHub:      return Colors.purple.shade900;
+      case ContentType.lgbtqiaPersonality:  return const Color(0xFF880E4F);
+      case ContentType.pioneerWoman:        return const Color(0xFF00695C);
+      case ContentType.legendaryAthlete:    return const Color(0xFF1B5E20);
     }
   }
 }
