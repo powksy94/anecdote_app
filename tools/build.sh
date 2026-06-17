@@ -50,6 +50,10 @@ generate_if_needed "tools/art/generate_famous_artists.py"      "assets/art/famou
 generate_if_needed "tools/art/generate_photographers.py"       "assets/art/photographers.json"
 generate_if_needed "tools/art/generate_classical_composers.py" "assets/art/classical_composers.json"
 generate_if_needed "tools/art/generate_nobel_prize.py"         "assets/art/nobel_prize.json"
+# Celebrity
+generate_if_needed "tools/celebrity/generate_lgbtqia.py"             "assets/celebrity/lgbtqia.json"
+generate_if_needed "tools/celebrity/generate_pioneer_women.py"       "assets/celebrity/pioneer_women.json"
+generate_if_needed "tools/celebrity/generate_legendary_athletes.py"  "assets/celebrity/legendary_athletes.json"
 # Cinema
 generate_if_needed "tools/cinema/generate_classic_cinema.py" "assets/quotes_classic.json"
 generate_if_needed "tools/cinema/generate_80s90s_cinema.py"  "assets/quotes_80s90s.json"

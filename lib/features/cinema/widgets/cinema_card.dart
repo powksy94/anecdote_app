@@ -61,6 +61,41 @@ class _CinemaCardState extends State<CinemaCard> {
     }
   }
 
+  static const _timingLabels = {
+    'fr': {
+      'Opening act': "Acte d'ouverture",
+      'Final scene': 'Scène finale',
+      'Final act':   'Acte final',
+      'Opening':     'Ouverture',
+      'Title card':  'Carton titre',
+      'Climax':      'Climax',
+      'Act 1':       'Acte 1',
+      'Act 2':       'Acte 2',
+      'Act 3':       'Acte 3',
+    },
+    'es': {
+      'Opening act': 'Acto de apertura',
+      'Final scene': 'Escena final',
+      'Final act':   'Acto final',
+      'Opening':     'Apertura',
+      'Title card':  'Título',
+      'Climax':      'Clímax',
+      'Act 1':       'Acto 1',
+      'Act 2':       'Acto 2',
+      'Act 3':       'Acto 3',
+    },
+  };
+
+  String _localizeTimingLine(String line, String locale) {
+    final map = _timingLabels[locale];
+    if (map == null) return line;
+    String result = line;
+    for (final e in map.entries) {
+      result = result.replaceAll(e.key, e.value);
+    }
+    return result;
+  }
+
   String _localizedDetails(String locale, bool hasDubbing) {
     final raw = widget.contentData?.details ?? '';
     if (!_showDubbing) return raw;
@@ -76,6 +111,14 @@ class _CinemaCardState extends State<CinemaCard> {
         final year = yearMatch.group(0)!;
         final typePart = first.contains(' — ') ? first.substring(first.indexOf(' — ')) : '';
         lines[0] = '🎬 $title $year$typePart';
+      }
+    }
+
+    // Traduit le label de timing (⏱️)
+    for (int i = 0; i < lines.length; i++) {
+      if (lines[i].startsWith('⏱️')) {
+        lines[i] = _localizeTimingLine(lines[i], locale);
+        break;
       }
     }
 

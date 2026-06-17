@@ -48,15 +48,24 @@ class _ImageContentCardState extends State<ImageContentCard> {
   };
 
   String? _nimText(AppLocalizations loc) {
-    if (widget.contentData?.noImageMessage == null) return null;
     switch (widget.contentType) {
-      case ContentType.exoplanet:    return loc.noImageExoplanet;
-      case ContentType.star:         return loc.noImageStar;
-      case ContentType.spaceMission:       return loc.noImageSpaceMission;
-      case ContentType.lgbtqiaPersonality: return loc.noImageLgbtqia;
-      case ContentType.pioneerWoman:       return loc.noImagePioneerWoman;
-      case ContentType.legendaryAthlete:   return loc.noImageLegendaryAthlete;
-      default:                             return loc.noImageGeneric;
+      case ContentType.exoplanet:
+        return widget.contentData?.noImageMessage != null ? loc.noImageExoplanet : null;
+      case ContentType.star:
+        return widget.contentData?.noImageMessage != null ? loc.noImageStar : null;
+      case ContentType.spaceMission:
+        return widget.contentData?.noImageMessage != null ? loc.noImageSpaceMission : null;
+      case ContentType.lgbtqiaPersonality:
+        return widget.contentData?.noImageMessage != null ? loc.noImageLgbtqia : null;
+      case ContentType.pioneerWoman:
+        return widget.contentData?.noImageMessage != null ? loc.noImagePioneerWoman : null;
+      case ContentType.legendaryAthlete:
+        return widget.contentData?.noImageMessage != null ? loc.noImageLegendaryAthlete : null;
+      case ContentType.insect:
+        // Toujours disponible : l'URL Wikipedia peut échouer silencieusement
+        return loc.noImageGeneric;
+      default:
+        return widget.contentData?.noImageMessage != null ? loc.noImageGeneric : null;
     }
   }
 
