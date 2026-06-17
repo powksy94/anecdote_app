@@ -32,6 +32,44 @@ WIKI_EN = {
     "Eliud Kipchoge":     "Eliud Kipchoge",
     "Steffi Graf":        "Steffi Graf",
     "Ronaldo":            "Ronaldo (Brazilian footballer)",
+    # additional entries
+    "Martina Navratilova":    "Martina Navratilova",
+    "Rafael Nadal":           "Rafael Nadal",
+    "Novak Djokovic":         "Novak Djokovic",
+    "LeBron James":           "LeBron James",
+    "Magic Johnson":          "Magic Johnson",
+    "Kareem Abdul-Jabbar":    "Kareem Abdul-Jabbar",
+    "Wilt Chamberlain":       "Wilt Chamberlain",
+    "Sachin Tendulkar":       "Sachin Tendulkar",
+    "Mia Hamm":               "Mia Hamm",
+    "Marta":                  "Marta (footballer)",
+    "Cristiano Ronaldo":      "Cristiano Ronaldo",
+    "Gerd Muller":            "Gerd Müller",
+    "Florence Griffith-Joyner": "Florence Griffith-Joyner",
+    "Wilma Rudolph":          "Wilma Rudolph",
+    "Paavo Nurmi":            "Paavo Nurmi",
+    "Emil Zatopek":           "Emil Zátopek",
+    "Bob Beamon":             "Bob Beamon",
+    "Fanny Blankers-Koen":    "Fanny Blankers-Koen",
+    "Haile Gebrselassie":     "Haile Gebrselassie",
+    "Cathy Freeman":          "Cathy Freeman",
+    "Roger Bannister":        "Roger Bannister",
+    "Mark Spitz":             "Mark Spitz",
+    "Dawn Fraser":            "Dawn Fraser (swimmer)",
+    "Eddy Merckx":            "Eddy Merckx",
+    "Valentino Rossi":        "Valentino Rossi (motorcyclist)",
+    "Jonah Lomu":             "Jonah Lomu",
+    "Richie McCaw":           "Richie McCaw",
+    "Jack Nicklaus":          "Jack Nicklaus",
+    "Babe Ruth":              "Babe Ruth",
+    "Jim Thorpe":             "Jim Thorpe",
+    "Babe Didrikson Zaharias":"Babe Didrikson Zaharias",
+    "Eric Heiden":            "Eric Heiden",
+    "Katarina Witt":          "Katarina Witt",
+    "Greg Louganis":          "Greg Louganis",
+    "Yelena Isinbayeva":      "Yelena Isinbayeva",
+    "Bo Jackson":             "Bo Jackson",
+    "Jim Brown":              "Jim Brown (American football)",
 }
 
 athletes = [
@@ -160,6 +198,202 @@ athletes = [
      "tr": "World Series winner 1955. National League MVP 1949.",
      "md": None,
      "fa": "First African-American to play in Major League Baseball (1947), breaking the sport's colour barrier. Endured death threats, racial abuse, and physical attacks throughout his career. His courage paved the way for the desegregation of all American professional sports. Received the Presidential Medal of Freedom and the Congressional Gold Medal."},
+
+    {"n": "Babe Ruth", "co": "United States", "sp": "Baseball", "yr": "1914-1935",
+     "tr": "7x World Series Champion. 714 home runs (stood as MLB record until 1974).",
+     "md": None,
+     "fa": "The most iconic figure in American sports history. Transformed baseball from a low-scoring game into a power-hitting spectacle that captivated a nation. Hit 60 home runs in 1927 — a single-season record that stood for 34 years. Called 'the Sultan of Swat'; his fame popularised professional baseball globally."},
+
+    # ── Tennis (additional) ───────────────────────────────────────────────────
+    {"n": "Martina Navratilova", "co": "Czech Republic / United States", "sp": "Tennis", "yr": "1978-2006",
+     "tr": "18 Grand Slam singles titles. 59 Grand Slam titles overall (singles, doubles, mixed).",
+     "md": None,
+     "fa": "Dominated women's tennis for two decades. Won Wimbledon nine times — a record. Held the World No. 1 ranking for a total of 332 weeks. Defected from communist Czechoslovakia at 18. Came out as a lesbian in 1981 — at enormous personal and commercial cost. One of the greatest athletes in any sport."},
+
+    {"n": "Rafael Nadal", "co": "Spain", "sp": "Tennis", "yr": "2001-2024",
+     "tr": "22 Grand Slam singles titles. 14x French Open champion — the most titles at a single major in history.",
+     "md": "Olympic gold medal: singles (Beijing 2008) and doubles (2016)",
+     "fa": "The greatest clay court player in history. His 14 French Open titles at Roland Garros is one of the most dominant records in all of sport. Overcame serious knee injuries multiple times to return to the top. His rivalry with Federer is considered the greatest in tennis history."},
+
+    {"n": "Novak Djokovic", "co": "Serbia", "sp": "Tennis", "yr": "2003-",
+     "tr": "24 Grand Slam singles titles — the all-time men's record.",
+     "md": "Olympic gold medal: singles (Paris 2024)",
+     "fa": "Holds the all-time record for most Grand Slam titles in men's tennis (24) and most weeks at World No. 1 (428 weeks). Won the Career Golden Slam in 2024. Overcame sanctions for not being vaccinated — including deportation from Australia — to continue competing at the highest level into his late 30s."},
+
+    # ── Basketball (additional) ───────────────────────────────────────────────
+    {"n": "LeBron James", "co": "United States", "sp": "Basketball", "yr": "2003-",
+     "tr": "4x NBA Champion (2012, 2013, 2016, 2020). 4x NBA Finals MVP. 4x NBA Most Valuable Player.",
+     "md": "2 Olympic gold medals (2004, 2012)",
+     "fa": "The only player to win NBA championships with three different franchises. The all-time NBA scoring leader. Drafted first overall aged 18 directly from high school, he has sustained elite performance for over 20 years. A global figure off the court through his LeBron James Family Foundation and social justice advocacy."},
+
+    {"n": "Magic Johnson", "co": "United States", "sp": "Basketball", "yr": "1979-1996",
+     "tr": "5x NBA Champion (1980, 1982, 1985, 1987, 1988). 3x NBA Finals MVP. 3x NBA Most Valuable Player.",
+     "md": "Olympic gold medal (1992 Dream Team)",
+     "fa": "Revolutionised the point guard position at 6'9\". His 'Showtime' Lakers dominated the 1980s. Retired suddenly in 1991 after testing HIV-positive — a moment that transformed public understanding of HIV/AIDS. His openness about his condition saved countless lives and removed a massive stigma from the disease."},
+
+    {"n": "Kareem Abdul-Jabbar", "co": "United States", "sp": "Basketball", "yr": "1969-1989",
+     "tr": "6x NBA Champion. 6x NBA Most Valuable Player (record). All-time NBA scoring leader (38,387 points) until 2023.",
+     "md": None,
+     "fa": "The all-time NBA scoring leader for 38 years. His 'skyhook' shot — virtually unblockable — is the most devastating weapon in basketball history. Converted to Islam at 24 and changed his name from Lew Alcindor. A civil rights activist who refused to play for the 1968 US Olympic team in protest."},
+
+    {"n": "Wilt Chamberlain", "co": "United States", "sp": "Basketball", "yr": "1959-1973",
+     "tr": "2x NBA Champion (1967, 1972). 4x NBA Most Valuable Player.",
+     "md": None,
+     "fa": "Scored 100 points in a single NBA game on 2 March 1962 — a record that will almost certainly never be broken. In that same season, averaged 50.4 points and 25.7 rebounds per game — statistics so extraordinary they seem impossible. The most dominant physical force in NBA history."},
+
+    # ── Cricket ───────────────────────────────────────────────────────────────
+    {"n": "Sachin Tendulkar", "co": "India", "sp": "Cricket", "yr": "1989-2013",
+     "tr": "ICC Cricket World Cup 2011. 100 international centuries — the only player in history.",
+     "md": None,
+     "fa": "Called 'the God of Cricket' in India. The first and only cricketer to score 100 international centuries. Played 200 Test matches and 463 One Day Internationals over 24 years. In a country of over a billion people, his retirement was a national moment of mourning. Awarded India's highest civilian honour, the Bharat Ratna."},
+
+    # ── Football / Soccer (additional) ────────────────────────────────────────
+    {"n": "Cristiano Ronaldo", "co": "Portugal", "sp": "Football (Soccer)", "yr": "2002-",
+     "tr": "5x UEFA Champions League. 5x Ballon d'Or. All-time international top scorer (130 goals).",
+     "md": None,
+     "fa": "The all-time top scorer in international football with 130 goals. Won the Champions League with three different clubs (Manchester United, Real Madrid x4, Juventus). His relentless self-discipline and physical conditioning redefined what a footballer's body could achieve into their late 30s."},
+
+    {"n": "Mia Hamm", "co": "United States", "sp": "Football (Soccer)", "yr": "1987-2004",
+     "tr": "2x FIFA Women's World Cup (1991, 1999).",
+     "md": "2 Olympic gold medals (1996, 2004)",
+     "fa": "The most famous female footballer in history — the face that made women's football a mass sport. Her penalty in the 1999 World Cup final shootout, watched by 90,000 fans in the Rose Bowl and 40 million on television, is one of sport's iconic moments. Held the international goals record for both men and women for years."},
+
+    {"n": "Marta", "co": "Brazil", "sp": "Football (Soccer)", "yr": "2002-",
+     "tr": "6x FIFA World Player of the Year — the record for any player, male or female.",
+     "md": None,
+     "fa": "The greatest female footballer in history. Won FIFA World Player of the Year a record six times. Became the all-time leading scorer in Women's World Cup history. Born in poverty in rural Brazil, she overcame every obstacle — including a football culture that actively discouraged girls — to become the defining figure of the women's game."},
+
+    {"n": "Gerd Muller", "co": "Germany", "sp": "Football (Soccer)", "yr": "1964-1981",
+     "tr": "FIFA World Cup 1974. UEFA Euro 1972. 4x Bundesliga. 4x European Cup.",
+     "md": None,
+     "fa": "'Der Bomber' — the greatest pure goalscorer in football history. Scored 68 goals in 62 international appearances. His 365 goals in Bundesliga football — at a rate of 0.85 per game — was a record for 49 years. Scored the winning goal in the 1974 World Cup final. Struck with an economy and precision that no defender could read."},
+
+    # ── Athletics (additional) ────────────────────────────────────────────────
+    {"n": "Florence Griffith-Joyner", "co": "United States", "sp": "Athletics (Sprinting)", "yr": "1980-1989",
+     "tr": None,
+     "md": "3 Olympic gold medals, 1 silver (Seoul 1988: 100m, 200m, 4x100m relay)",
+     "fa": "Set world records in the 100m (10.49s) and 200m (21.34s) at the 1988 Olympics that still stand today — 36 years later. 'FloJo' combined unprecedented physical power with extraordinary style, transforming how female athletes presented themselves. Died of an epileptic seizure at 38 — one of sport's greatest losses."},
+
+    {"n": "Wilma Rudolph", "co": "United States", "sp": "Athletics (Sprinting)", "yr": "1958-1962",
+     "tr": None,
+     "md": "3 Olympic gold medals (Rome 1960: 100m, 200m, 4x100m relay)",
+     "fa": "First American woman to win three gold medals at a single Olympics. Born premature and survived polio and scarlet fever as a child, wearing a leg brace until age 12. Her 1960 Rome victories — as a Black woman in the Jim Crow era — made her a global symbol of overcoming adversity. She refused to attend her own homecoming parade unless it was desegregated — it was."},
+
+    {"n": "Paavo Nurmi", "co": "Finland", "sp": "Athletics (Long Distance)", "yr": "1919-1934",
+     "tr": "12 World records",
+     "md": "9 Olympic gold medals, 3 silver — the most of any track and field athlete",
+     "fa": "Called 'the Flying Finn' — the dominant distance runner of the 1920s. Won 9 Olympic gold medals at three Games (1920, 1924, 1928). At the 1924 Paris Olympics, he won the 1500m and 5000m within an hour of each other — a feat considered physiologically impossible. Ran with a stopwatch in hand, the first athlete to use scientific pacing."},
+
+    {"n": "Emil Zatopek", "co": "Czech Republic (Czechoslovakia)", "sp": "Athletics (Long Distance)", "yr": "1948-1958",
+     "tr": "18 World records",
+     "md": "4 Olympic gold medals, 1 silver (1948, 1952). At Helsinki 1952: 5000m, 10000m, and marathon — the only man to win all three at a single Olympics.",
+     "fa": "The greatest long-distance runner of all time. His Helsinki triple — including a marathon he had never run before — is sport's greatest single Games performance. Invented interval training, the method that still underpins distance running. Spoke out against the 1968 Prague Spring suppression; was punished by the Czech regime and forced to work in a uranium mine."},
+
+    {"n": "Bob Beamon", "co": "United States", "sp": "Athletics (Long Jump)", "yr": "1964-1973",
+     "tr": None,
+     "md": "Olympic gold medal (Mexico City 1968)",
+     "fa": "His long jump of 8.90m at the 1968 Mexico City Olympics shattered the world record by 55cm — the largest margin improvement in the history of the event. The record stood for 23 years. Sports commentators called it 'the perfect jump.' Beamon himself collapsed and was helped off the runway, overcome by the realisation of what he had done."},
+
+    {"n": "Fanny Blankers-Koen", "co": "Netherlands", "sp": "Athletics (Sprinting & Jumping)", "yr": "1936-1955",
+     "tr": None,
+     "md": "4 Olympic gold medals (London 1948: 100m, 200m, 80m hurdles, 4x100m relay)",
+     "fa": "Won four gold medals at the 1948 London Olympics at age 30 — a mother of two. Before the Games, the press wrote that she was 'too old to compete.' She held world records in six events but was only allowed to enter four. Called 'the Flying Housewife' in a phrase that revealed every prejudice of the era. The greatest female athlete of the immediate post-war generation."},
+
+    {"n": "Haile Gebrselassie", "co": "Ethiopia", "sp": "Long Distance Running", "yr": "1992-2010",
+     "tr": "2x Olympic gold medals. 2x World Athletics Championships 10000m. Multiple world records.",
+     "md": "2 Olympic gold medals (10000m: Atlanta 1996, Sydney 2000)",
+     "fa": "One of the greatest distance runners in history. Set 27 world records across distances from 2000m to the marathon. Set the marathon world record (2:03:59) in 2008 — the first man under 2:04. Ran barefoot as a child to school; became the face of Ethiopian athletics and a global ambassador for the sport."},
+
+    {"n": "Cathy Freeman", "co": "Australia", "sp": "Athletics (400m)", "yr": "1990-2003",
+     "tr": "2x World Athletics Championships 400m gold (1997, 1999).",
+     "md": "Olympic gold medal (Sydney 2000)",
+     "fa": "Won Olympic gold in the 400m at the Sydney 2000 home Games — the most watched moment in Australian sports history. An Aboriginal Australian, she carried both the Australian and Aboriginal flags after winning the 1994 Commonwealth Games, sparking national debate about reconciliation. Her Sydney gold, lit by the entirety of Australia watching, became a moment of profound national meaning."},
+
+    {"n": "Roger Bannister", "co": "United Kingdom", "sp": "Athletics (Middle Distance)", "yr": "1951-1954",
+     "tr": None,
+     "md": None,
+     "fa": "On 6 May 1954, became the first human to run a mile in under four minutes (3:59.4) — a barrier many physiologists had declared biologically impossible. The four-minute mile had been the sporting world's great obsession for decades. Within 46 days, his record was broken — proving that the barrier was psychological, not physical."},
+
+    # ── Swimming (additional) ─────────────────────────────────────────────────
+    {"n": "Mark Spitz", "co": "United States", "sp": "Swimming", "yr": "1965-1972",
+     "tr": None,
+     "md": "9 Olympic gold medals. Won 7 gold medals at Munich 1972 — each in world record time.",
+     "fa": "At the 1972 Munich Olympics, won 7 gold medals in 7 events — all in world record time — a record that stood until Michael Phelps's 8 golds in 2008. His image in a swimsuit with seven gold medals became one of the most reproduced sports photographs of the 20th century. Competed in the shadow of the Munich massacre."},
+
+    {"n": "Dawn Fraser", "co": "Australia", "sp": "Swimming", "yr": "1956-1964",
+     "tr": "3x World record in 100m freestyle.",
+     "md": "4 Olympic gold medals: 100m freestyle at three consecutive Olympics (1956, 1960, 1964) — the first swimmer to win the same event at three consecutive Games.",
+     "fa": "The first swimmer to win the same individual event at three consecutive Olympics. Held the world record in the 100m freestyle for 15 years. Banned for 10 years after the 1964 Tokyo Olympics for stealing a flag as a prank — a punishment that ended her competitive career. The most beloved Australian athlete of her generation."},
+
+    # ── Cycling ───────────────────────────────────────────────────────────────
+    {"n": "Eddy Merckx", "co": "Belgium", "sp": "Cycling", "yr": "1965-1978",
+     "tr": "5x Tour de France. 5x Giro d'Italia. 3x World Road Championship. 11 Grand Tours total.",
+     "md": None,
+     "fa": "Called 'The Cannibal' because he devoured every race. Won 11 Grand Tours and holds the record for most Tour de France stage wins (34). In 1972 set the Hour Record (the most prestigious individual record in cycling) that stood for 12 years. Considered by many the greatest athlete in any sport."},
+
+    # ── Motorcycle Racing ─────────────────────────────────────────────────────
+    {"n": "Valentino Rossi", "co": "Italy", "sp": "Motorcycle Racing (MotoGP)", "yr": "1996-2021",
+     "tr": "9x World Motorcycle Champion (1997, 1999, 2001-2005, 2008, 2009)",
+     "md": None,
+     "fa": "The most celebrated motorcycle racer in history. Won world titles in four different classes. His nine world championships include seven in the top class (MotoGP). His showmanship, yellow and sun-logo helmet, and team 'VR46' created a global fan base unequalled in motorsport outside F1. His duels with Sete Gibernau and Jorge Lorenzo defined an era."},
+
+    # ── Rugby ─────────────────────────────────────────────────────────────────
+    {"n": "Jonah Lomu", "co": "New Zealand", "sp": "Rugby Union", "yr": "1994-2002",
+     "tr": "2x Rugby World Cup winner (1995 finalist, 2003 squad). 63 tries in 63 Tests.",
+     "md": None,
+     "fa": "Changed rugby union forever at the 1995 World Cup, where his performance against England — running through and over defenders — was broadcast globally to audiences who had never watched rugby. At 6'5\" and 119kg, he had sprint speed that smaller backs could not match. Died at 40 from kidney disease, mourned worldwide."},
+
+    {"n": "Richie McCaw", "co": "New Zealand", "sp": "Rugby Union", "yr": "2001-2015",
+     "tr": "2x Rugby World Cup winner (2011, 2015). Most capped All Black (148 Tests). Most wins as Test captain (110).",
+     "md": None,
+     "fa": "The greatest rugby player of all time by most measures. Led the All Blacks to consecutive Rugby World Cup victories (2011, 2015) — the first team to win back-to-back World Cups. Named World Rugby Player of the Year three times. Redefined the openside flanker position through reading of the game and relentless physicality."},
+
+    # ── Golf (additional) ─────────────────────────────────────────────────────
+    {"n": "Jack Nicklaus", "co": "United States", "sp": "Golf", "yr": "1961-2005",
+     "tr": "18 Major championships — the all-time record.",
+     "md": None,
+     "fa": "The 'Golden Bear' — holds the all-time record of 18 Major victories, including 6 Masters titles. His rivalry with Arnold Palmer defined golf in the 1960s-70s. His 1986 Masters win at age 46, coming from behind in the final round, is considered the greatest final round in golf history. Tiger Woods built his entire career in pursuit of this record."},
+
+    # ── Multi-sport ────────────────────────────────────────────────────────────
+    {"n": "Jim Thorpe", "co": "United States", "sp": "Athletics, American Football & Baseball", "yr": "1908-1928",
+     "tr": "Olympic gold medals: pentathlon and decathlon (Stockholm 1912). NFL champion 1920.",
+     "md": "2 Olympic gold medals (Stockholm 1912)",
+     "fa": "Considered by many the greatest all-round athlete in American history. Won Olympic gold in both the pentathlon and decathlon in 1912 — medals that were controversially stripped because he had played semi-professional baseball. Also played professional baseball and football. A member of the Sac and Fox Nation, his story is one of extraordinary achievement against systemic discrimination."},
+
+    {"n": "Babe Didrikson Zaharias", "co": "United States", "sp": "Athletics, Golf & Basketball", "yr": "1930-1956",
+     "tr": "3 LPGA majors. 82 competitive golf titles.",
+     "md": "2 Olympic gold medals, 1 silver (Los Angeles 1932: javelin, 80m hurdles)",
+     "fa": "Possibly the greatest female athlete of the 20th century. Won Olympic gold medals in athletics in 1932, then became one of the greatest golfers of all time, winning 82 competitive titles. Also excelled at basketball, baseball, and tennis. Overcame colon cancer in 1953 to win the 1954 US Women's Open by 12 strokes."},
+
+    # ── Speed Skating ─────────────────────────────────────────────────────────
+    {"n": "Eric Heiden", "co": "United States", "sp": "Speed Skating", "yr": "1977-1980",
+     "tr": "5 World Championship titles (1977-1979).",
+     "md": "5 Olympic gold medals (Lake Placid 1980: all five speed skating distances — 500m to 10000m)",
+     "fa": "At the 1980 Lake Placid Olympics, won all five individual speed skating events — from sprint to endurance — a feat never equalled. Set world records in four of the five. Then retired from skating at 22 and became a professional cyclist, finishing in the top 10 at the Tour de France. His Lake Placid performance is one of sport's greatest single Olympic achievements."},
+
+    # ── Figure Skating ────────────────────────────────────────────────────────
+    {"n": "Katarina Witt", "co": "Germany (East Germany)", "sp": "Figure Skating", "yr": "1983-1994",
+     "tr": "6x European Champion. 4x World Champion.",
+     "md": "2 Olympic gold medals (Sarajevo 1984, Calgary 1988)",
+     "fa": "The most dominant figure skater of the 1980s, winning two Olympic gold medals and four world titles. As an East German athlete, she was a product of the state sporting machine — and used that position to become a global celebrity at a time when East-West Cold War tensions were at their peak. Her 1988 Olympic performance to Carmen is considered the greatest in figure skating history."},
+
+    # ── Diving ────────────────────────────────────────────────────────────────
+    {"n": "Greg Louganis", "co": "United States", "sp": "Diving", "yr": "1976-1988",
+     "tr": "5 World Championship titles.",
+     "md": "4 Olympic gold medals (Los Angeles 1984: platform, springboard; Seoul 1988: platform, springboard)",
+     "fa": "The greatest diver in history. Won both platform and springboard gold at two consecutive Olympics. At the 1988 Seoul Games, hit his head on the springboard during preliminaries — sustaining a concussion — but returned to win gold. He was HIV-positive at the time, a fact he revealed years later. Came out as gay in 1994, becoming a prominent advocate for HIV awareness."},
+
+    # ── Athletics (Pole Vault) ────────────────────────────────────────────────
+    {"n": "Yelena Isinbayeva", "co": "Russia", "sp": "Athletics (Pole Vault)", "yr": "2000-2016",
+     "tr": "2x World Athletics Championship. 28 world records — the most in any single athletics discipline.",
+     "md": "2 Olympic gold medals (Athens 2004, Beijing 2008), 1 bronze (London 2012)",
+     "fa": "The most decorated female pole vaulter in history. Set 28 world records across her career — an unprecedented number for any individual event. Was the first woman to vault over 5 metres. Her dominance of the event for over a decade redefined what was thought physically possible for female athletes."},
+
+    # ── American Football ─────────────────────────────────────────────────────
+    {"n": "Jim Brown", "co": "United States", "sp": "American Football", "yr": "1957-1965",
+     "tr": "NFL Champion 1964. 3x NFL Most Valuable Player.",
+     "md": None,
+     "fa": "Considered the greatest running back in NFL history. Rushed for 12,312 yards at an average of 5.2 yards per carry over 9 seasons — averages never surpassed. Retired at the peak of his powers at 29 to become an actor and civil rights activist. Marched alongside Martin Luther King Jr. His combination of power, speed, and agility set the template for the position."},
 ]
 
 

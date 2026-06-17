@@ -34,6 +34,35 @@ WIKI_EN = {
     "Willa Cather":              "Willa Cather",
     "Audre Lorde":               "Audre Lorde",
     "David Bowie":               "David Bowie",
+    "Walt Whitman":              "Walt Whitman",
+    "Arthur Rimbaud":            "Arthur Rimbaud",
+    "Tennessee Williams":        "Tennessee Williams",
+    "Truman Capote":             "Truman Capote",
+    "Gertrude Stein":            "Gertrude Stein",
+    "Radclyffe Hall":            "Radclyffe Hall",
+    "Patricia Highsmith":        "Patricia Highsmith",
+    "E.M. Forster":              "E. M. Forster",
+    "Jean Genet":                "Jean Genet",
+    "Noel Coward":               "Noel Coward",
+    "Langston Hughes":           "Langston Hughes",
+    "Cole Porter":               "Cole Porter",
+    "Dusty Springfield":         "Dusty Springfield",
+    "George Michael":            "George Michael",
+    "Rock Hudson":               "Rock Hudson",
+    "Montgomery Clift":          "Montgomery Clift",
+    "Derek Jarman":              "Derek Jarman",
+    "Pedro Almodovar":           "Pedro Almodovar",
+    "Magnus Hirschfeld":         "Magnus Hirschfeld",
+    "Sylvia Rivera":             "Sylvia Rivera",
+    "Lorraine Hansberry":        "Lorraine Hansberry",
+    "Hadrian":                   "Hadrian",
+    "Alexander the Great":       "Alexander the Great",
+    "Queen Christina of Sweden": "Christina, Queen of Sweden",
+    "Yukio Mishima":             "Yukio Mishima",
+    "Liberace":                  "Liberace",
+    "Janis Joplin":              "Janis Joplin",
+    "Ian McKellen":              "Ian McKellen",
+    "Pier Paolo Pasolini":       "Pier Paolo Pasolini",
 }
 
 personalities = [
@@ -144,6 +173,126 @@ personalities = [
     {"n": "Lili Elbe", "co": "Denmark", "yr": "1882-1931",
      "or": "transgender woman", "fi": "Painting & Advocacy",
      "fa": "Danish painter and one of the first known recipients of gender reassignment surgery (1930). Born Einar Wegener, her life and courage inspired the novel and film The Danish Girl. A landmark figure in the history of transgender identity and rights."},
+
+    # ── Literature (additional) ───────────────────────────────────────────────
+    {"n": "Walt Whitman", "co": "United States", "yr": "1819-1892",
+     "or": "gay", "fi": "Poetry",
+     "fa": "Author of Leaves of Grass (1855), one of the most influential collections in American literature. His Calamus poems openly celebrated same-sex love — revolutionary in 19th-century America. Often called the 'father of free verse', he shaped modern poetry worldwide."},
+
+    {"n": "Arthur Rimbaud", "co": "France", "yr": "1854-1891",
+     "or": "gay", "fi": "Poetry",
+     "fa": "Wrote some of the most experimental poetry of the 19th century — including A Season in Hell and Illuminations — before the age of 21, then abandoned literature entirely. His intense relationship with poet Paul Verlaine (who shot him) scandalised Paris and shaped Symbolism and Surrealism."},
+
+    {"n": "Tennessee Williams", "co": "United States", "yr": "1911-1983",
+     "or": "gay", "fi": "Theatre",
+     "fa": "Two-time Pulitzer Prize-winning playwright (A Streetcar Named Desire, Cat on a Hot Tin Roof). His plays explored repressed desire, identity, and the American South. A closeted gay man whose works subtly but powerfully encoded queer experience in mid-century American drama."},
+
+    {"n": "Truman Capote", "co": "United States", "yr": "1924-1984",
+     "or": "gay", "fi": "Literature",
+     "fa": "Author of In Cold Blood (1966), which invented the 'non-fiction novel' genre, and Breakfast at Tiffany's. Openly gay at a time when it was deeply stigmatised in American society. His flamboyant public persona challenged the idea of what a serious American writer could look like."},
+
+    {"n": "Gertrude Stein", "co": "United States / France", "yr": "1874-1946",
+     "or": "lesbian", "fi": "Literature & Art",
+     "fa": "Avant-garde writer and art collector whose Paris salon was the hub of Modernism — she was the patron and friend of Picasso, Hemingway, Matisse, and Fitzgerald. Lived openly with her partner Alice B. Toklas for nearly 40 years. Her experimental prose directly influenced American literature."},
+
+    {"n": "Radclyffe Hall", "co": "United Kingdom", "yr": "1880-1943",
+     "or": "lesbian", "fi": "Literature",
+     "fa": "Author of The Well of Loneliness (1928), the first serious English-language novel to portray lesbian relationships with dignity. The British government banned it as obscene, but it became an underground classic that gave millions of readers the first language for their own identity."},
+
+    {"n": "Patricia Highsmith", "co": "United States", "yr": "1921-1995",
+     "or": "lesbian", "fi": "Literature",
+     "fa": "Crime novelist whose characters — including Tom Ripley — redefined the psychological thriller. Her lesbian novel The Price of Salt (1952), published pseudonymously, was the first novel featuring a same-sex romance with a happy ending; republished as Carol in 1984 under her own name."},
+
+    {"n": "E.M. Forster", "co": "United Kingdom", "yr": "1879-1970",
+     "or": "gay", "fi": "Literature",
+     "fa": "Author of A Room with a View and A Passage to India. His novel Maurice — a gay love story — was written in 1913 but only published posthumously in 1971, the year after his death. He feared it would destroy his reputation. It is now a landmark in LGBTQ+ literature."},
+
+    {"n": "Jean Genet", "co": "France", "yr": "1910-1986",
+     "or": "gay", "fi": "Literature & Theatre",
+     "fa": "Raised in a reformatory, he turned petty crime and prison life into literature. Our Lady of the Flowers, The Maids, and The Balcony explored homosexuality, transgression, and power. Sartre championed him; his work became foundational for queer theory and postcolonial studies."},
+
+    {"n": "Noel Coward", "co": "United Kingdom", "yr": "1899-1973",
+     "or": "gay", "fi": "Theatre, Music & Film",
+     "fa": "Playwright, composer, actor, and director who defined British wit and sophistication for 50 years. Openly gay in his private life but guarded publicly due to the era's laws. Works like Private Lives and Brief Encounter remain staples of the British theatrical canon."},
+
+    {"n": "Langston Hughes", "co": "United States", "yr": "1902-1967",
+     "or": "gay", "fi": "Poetry & Literature",
+     "fa": "Central figure of the Harlem Renaissance whose poems celebrated Black American life with jazz rhythms and vernacular speech. His sexual orientation — extensively documented by biographers — was kept private during his lifetime due to the racism and homophobia he faced simultaneously."},
+
+    # ── Music (additional) ────────────────────────────────────────────────────
+    {"n": "Cole Porter", "co": "United States", "yr": "1891-1964",
+     "or": "gay", "fi": "Music & Theatre",
+     "fa": "Songwriter of over 800 songs and 21 Broadway musicals including Anything Goes and Kiss Me, Kate. His lyrics were famous for their double entendres encoding queer desire into mainstream entertainment. Lived openly with his male partner while maintaining a marriage of convenience with Linda Lee Thomas."},
+
+    {"n": "Dusty Springfield", "co": "United Kingdom", "yr": "1939-1999",
+     "or": "bisexual", "fi": "Music",
+     "fa": "One of the greatest British vocalists of the 1960s-70s, known for Son of a Preacher Man and her album Dusty in Memphis. A pioneer of blue-eyed soul. Openly bisexual in interviews as early as 1970, she was one of the first major British pop stars to come out publicly."},
+
+    {"n": "George Michael", "co": "United Kingdom", "yr": "1963-2016",
+     "or": "gay", "fi": "Music",
+     "fa": "One of the best-selling music artists of all time (over 100 million records). Came out publicly in 1998 and became an outspoken advocate for HIV/AIDS charities and LGBTQ+ rights. His album Faith (1987) remains one of the best-selling albums in history."},
+
+    # ── Film & Arts (additional) ──────────────────────────────────────────────
+    {"n": "Rock Hudson", "co": "United States", "yr": "1925-1985",
+     "or": "gay", "fi": "Film",
+     "fa": "Major Hollywood star of the 1950s-60s, known for Magnificent Obsession and Giant. His public disclosure of his AIDS diagnosis in 1985 was the first by a major celebrity and transformed global awareness of the epidemic, helping galvanise political action that had been ignored for years."},
+
+    {"n": "Montgomery Clift", "co": "United States", "yr": "1920-1966",
+     "or": "bisexual", "fi": "Film",
+     "fa": "One of the most acclaimed actors of the 1950s, known for A Place in the Sun and From Here to Eternity. His bisexuality, kept hidden due to Hollywood's strict moral codes, and a car accident in 1956 that disfigured his face contributed to his personal and professional decline."},
+
+    {"n": "Derek Jarman", "co": "United Kingdom", "yr": "1942-1994",
+     "or": "gay", "fi": "Film & Visual Arts",
+     "fa": "Avant-garde filmmaker and activist whose films (Sebastiane, Caravaggio, Edward II) radically reimagined queer history and aesthetics. His memoir Modern Nature, written while living with AIDS, is a masterpiece of landscape writing and queer grief. A defining voice of British gay culture."},
+
+    {"n": "Pedro Almodovar", "co": "Spain", "yr": "1949-",
+     "or": "gay", "fi": "Film",
+     "fa": "Spain's most celebrated filmmaker, whose work (Women on the Verge of a Nervous Breakdown, All About My Mother, Pain and Glory) centres on women, queer characters, and the absurdity of desire. Emerged from Madrid's post-Franco La Movida counterculture and brought Spanish cinema to global recognition."},
+
+    # ── Activism & History (additional) ──────────────────────────────────────
+    {"n": "Magnus Hirschfeld", "co": "Germany", "yr": "1868-1935",
+     "or": "gay", "fi": "Medicine & Activism",
+     "fa": "Founded the Institut fur Sexualwissenschaft in Berlin (1919) — the world's first institute for the scientific study of human sexuality. Coined the word 'transvestism'. His institute was destroyed by the Nazis in 1933 in one of the first book-burnings of the regime. Called the 'Einstein of sex.'"},
+
+    {"n": "Sylvia Rivera", "co": "United States", "yr": "1951-2002",
+     "or": "transgender woman", "fi": "LGBTQ+ Activism",
+     "fa": "Latina transgender activist who fought at the Stonewall Inn in 1969 alongside Marsha P. Johnson. Co-founded STAR (Street Transvestite Action Revolutionaries). Spent decades fighting for transgender people of colour who were systematically excluded from mainstream gay rights organisations."},
+
+    {"n": "Lorraine Hansberry", "co": "United States", "yr": "1930-1965",
+     "or": "lesbian", "fi": "Theatre & Activism",
+     "fa": "Author of A Raisin in the Sun (1959), the first play by a Black woman produced on Broadway. The youngest American and first Black playwright to win the New York Drama Critics' Circle Award. Wrote anonymously to lesbian publications; died at 34 of pancreatic cancer, her full identity only widely known posthumously."},
+
+    {"n": "Hadrian", "co": "Roman Empire", "yr": "76-138 CE",
+     "or": "bisexual", "fi": "Politics & Architecture",
+     "fa": "Roman Emperor who built Hadrian's Wall in Britain and the Pantheon in Rome. His grief over the death of his male lover Antinous — whom he deified — led to the creation of one of antiquity's most extensive religious cults. Considered one of Rome's 'Five Good Emperors'."},
+
+    {"n": "Alexander the Great", "co": "Ancient Macedonia", "yr": "356-323 BCE",
+     "or": "bisexual", "fi": "Military & Politics",
+     "fa": "Created one of the largest empires in ancient history by age 30, spanning from Greece to northwestern India. His deep emotional relationship with his companion Hephaestion was widely recognised in antiquity; he mourned his death by crucifying the court physician who failed to save him."},
+
+    {"n": "Queen Christina of Sweden", "co": "Sweden", "yr": "1626-1689",
+     "or": None, "fi": "Politics & Philosophy",
+     "fa": "Queen of Sweden who abdicated at 27, scandalising Europe. She dressed in men's clothes, refused to marry, and surrounded herself with female favourites; historians widely discuss her identity in terms of gender non-conformity and same-sex attraction. Converted to Catholicism and spent her life in Rome as an intellectual patron."},
+
+    {"n": "Yukio Mishima", "co": "Japan", "yr": "1925-1970",
+     "or": "gay", "fi": "Literature",
+     "fa": "Japan's most controversial modern writer (Confessions of a Mask, The Temple of the Golden Pavilion), nominated multiple times for the Nobel Prize. Openly wrote about homosexual desire. Founded a private paramilitary group and died by ritual suicide (seppuku) after a failed attempt to incite a nationalist uprising."},
+
+    {"n": "Liberace", "co": "United States", "yr": "1919-1987",
+     "or": "gay", "fi": "Entertainment",
+     "fa": "The highest-paid entertainer in the world during the 1950s-70s, known for his flamboyant costumes, candelabra, and pianism. Successfully sued a British newspaper for suggesting he was gay in 1959 — while privately gay throughout his career. Died of AIDS-related illness in 1987."},
+
+    {"n": "Janis Joplin", "co": "United States", "yr": "1943-1970",
+     "or": "bisexual", "fi": "Music",
+     "fa": "One of the most powerful rock and blues vocalists in history, known for Piece of My Heart and Me and Bobby McGee. Openly bisexual, she had relationships with both men and women throughout her short life. Died at 27 of a heroin overdose; her vocal intensity has never been matched."},
+
+    {"n": "Ian McKellen", "co": "United Kingdom", "yr": "1939-",
+     "or": "gay", "fi": "Theatre & Film",
+     "fa": "Widely regarded as one of the greatest living Shakespearean actors and known globally for Gandalf (Lord of the Rings) and Magneto (X-Men). Came out in 1988 on BBC radio while opposing Clause 28, a law banning 'promotion of homosexuality'. Co-founded Stonewall UK, the leading LGBTQ+ rights organisation."},
+
+    {"n": "Pier Paolo Pasolini", "co": "Italy", "yr": "1922-1975",
+     "or": "gay", "fi": "Film, Poetry & Literature",
+     "fa": "Italian filmmaker, poet, and intellectual whose films (Accattone, Teorema, Salo) provoked fierce controversy for their treatment of religion, sexuality, and politics. Openly gay in a Catholic society, he was repeatedly prosecuted for obscenity. Murdered in 1975 under circumstances never fully explained."},
 ]
 
 
