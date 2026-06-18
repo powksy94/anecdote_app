@@ -1,7 +1,8 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter_cache_manager/flutter_cache_manager.dart';
 import 'package:flutter/material.dart';
 
-class ImageHeader extends StatelessWidget {
+class ImageHeader extends StatefulWidget {
   final String? imageUrl;
   final List<Color> gradient;
   final IconData fallbackIcon;
@@ -29,12 +30,57 @@ class ImageHeader extends StatelessWidget {
     this.boxFit = BoxFit.cover,
   });
 
-  Widget _fallback() => Container(
-        height: height,
+  @override
+  State<ImageHeader> createState() => _ImageHeaderState();
+}
+
+class _ImageHeaderState extends State<ImageHeader> {
+  // Wikimedia's on-demand thumbnail generation occasionally returns an HTML
+  // error page with a 200 status instead of the image; flutter_cache_manager
+  // caches that bad response as-is, so a plain rebuild would keep reusing it.
+  // Evicting the cache entry before retrying forces a real network refetch.
+  static const _maxRetries = 2;
+  int _retryCount = 0;
+  bool _retryScheduled = false;
+
+  @override
+  void didUpdateWidget(ImageHeader oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (oldWidget.imageUrl != widget.imageUrl) {
+      _retryCount = 0;
+      _retryScheduled = false;
+    }
+  }
+
+  void _scheduleRetry() {
+    if (_retryScheduled || _retryCount >= _maxRetries || widget.imageUrl == null) return;
+    _retryScheduled = true;
+    DefaultCacheManager().removeFile(widget.imageUrl!).catchError((_) {});
+    Future.delayed(const Duration(seconds: 2), () {
+      if (!mounted) return;
+      setState(() {
+        _retryCount++;
+        _retryScheduled = false;
+      });
+    });
+  }
+
+  Widget _loadingPlaceholder() => Container(
+        height: widget.height,
         decoration: BoxDecoration(
-          gradient: LinearGradient(colors: gradient),
+          gradient: LinearGradient(colors: widget.gradient),
         ),
-        child: elementSymbol != null
+        child: const Center(
+          child: CircularProgressIndicator(color: Colors.white),
+        ),
+      );
+
+  Widget _fallback() => Container(
+        height: widget.height,
+        decoration: BoxDecoration(
+          gradient: LinearGradient(colors: widget.gradient),
+        ),
+        child: widget.elementSymbol != null
             ? Center(
                 child: Container(
                   width: 120,
@@ -46,9 +92,9 @@ class ImageHeader extends StatelessWidget {
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      if (elementAtomicNumber != null)
+                      if (widget.elementAtomicNumber != null)
                         Text(
-                          '$elementAtomicNumber',
+                          '${widget.elementAtomicNumber}',
                           style: TextStyle(
                             color: Colors.white.withValues(alpha: 0.8),
                             fontSize: 13,
@@ -56,7 +102,7 @@ class ImageHeader extends StatelessWidget {
                           ),
                         ),
                       Text(
-                        elementSymbol!,
+                        widget.elementSymbol!,
                         style: const TextStyle(
                           color: Colors.white,
                           fontSize: 48,
@@ -68,15 +114,15 @@ class ImageHeader extends StatelessWidget {
                   ),
                 ),
               )
-            : noImageMessage != null
+            : widget.noImageMessage != null
                 ? Builder(
                     builder: (ctx) => GestureDetector(
-                      onTap: noImageExplanation != null
+                      onTap: widget.noImageExplanation != null
                           ? () => showDialog(
                                 context: ctx,
                                 builder: (dialogCtx) => AlertDialog(
-                                  title: Text(noImageTitle ?? ''),
-                                  content: Text(noImageExplanation!),
+                                  title: Text(widget.noImageTitle ?? ''),
+                                  content: Text(widget.noImageExplanation!),
                                   actions: [
                                     TextButton(
                                       onPressed: () => Navigator.pop(dialogCtx),
@@ -93,7 +139,7 @@ class ImageHeader extends StatelessWidget {
                             mainAxisSize: MainAxisSize.min,
                             children: [
                               Text(
-                                noImageMessage!,
+                                widget.noImageMessage!,
                                 textAlign: TextAlign.center,
                                 style: const TextStyle(
                                   color: Colors.white,
@@ -102,7 +148,7 @@ class ImageHeader extends StatelessWidget {
                                   height: 1.5,
                                 ),
                               ),
-                              if (noImageExplanation != null) ...[
+                              if (widget.noImageExplanation != null) ...[
                                 const SizedBox(height: 8),
                                 Icon(
                                   Icons.info_outline_rounded,
@@ -116,30 +162,29 @@ class ImageHeader extends StatelessWidget {
                       ),
                     ),
                   )
-                : Icon(fallbackIcon,
+                : Icon(widget.fallbackIcon,
                     size: 60, color: Colors.white.withValues(alpha: 0.5)),
       );
 
   @override
   Widget build(BuildContext context) => ClipRRect(
         borderRadius: const BorderRadius.vertical(top: Radius.circular(24)),
-        child: imageUrl != null
+        child: widget.imageUrl != null
             ? CachedNetworkImage(
-                imageUrl: imageUrl!,
-                height: height,
+                key: ValueKey('${widget.imageUrl}#$_retryCount'),
+                imageUrl: widget.imageUrl!,
+                height: widget.height,
                 width: double.infinity,
-                fit: boxFit,
-                alignment: imageAlignment,
-                placeholder: (_, __) => Container(
-                  height: height,
-                  decoration: BoxDecoration(
-                    gradient: LinearGradient(colors: gradient),
-                  ),
-                  child: const Center(
-                    child: CircularProgressIndicator(color: Colors.white),
-                  ),
-                ),
-                errorWidget: (_, __, ___) => _fallback(),
+                fit: widget.boxFit,
+                alignment: widget.imageAlignment,
+                placeholder: (_, __) => _loadingPlaceholder(),
+                errorWidget: (_, __, ___) {
+                  if (_retryCount < _maxRetries) {
+                    WidgetsBinding.instance.addPostFrameCallback((_) => _scheduleRetry());
+                    return _loadingPlaceholder();
+                  }
+                  return _fallback();
+                },
               )
             : _fallback(),
       );
