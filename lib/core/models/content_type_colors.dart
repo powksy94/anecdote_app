@@ -56,6 +56,9 @@ extension ContentTypeColors on ContentType {
       case ContentType.lgbtqiaPersonality:  return const Color(0xFF880E4F);
       case ContentType.pioneerWoman:        return const Color(0xFF00695C);
       case ContentType.legendaryAthlete:    return const Color(0xFF1B5E20);
+      case ContentType.desert:              return const Color(0xFFE65100);
+      case ContentType.river:               return const Color(0xFF0288D1);
+      case ContentType.sea:                 return const Color(0xFF006064);
     }
   }
 }

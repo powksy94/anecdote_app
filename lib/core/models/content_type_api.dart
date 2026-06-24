@@ -61,6 +61,9 @@ extension ContentTypeApi on ContentType {
       case ContentType.lgbtqiaPersonality:
       case ContentType.pioneerWoman:
       case ContentType.legendaryAthlete:
+      case ContentType.desert:
+      case ContentType.river:
+      case ContentType.sea:
         return '';
     }
   }

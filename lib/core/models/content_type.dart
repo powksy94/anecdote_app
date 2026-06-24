@@ -62,4 +62,7 @@ enum ContentType {
   lgbtqiaPersonality,
   pioneerWoman,
   legendaryAthlete,
+  desert,
+  river,
+  sea,
 }

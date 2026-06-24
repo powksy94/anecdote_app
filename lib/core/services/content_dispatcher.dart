@@ -7,6 +7,9 @@ import '../../features/world/services/pacific_island_service.dart';
 import '../../features/world/services/commune_service.dart';
 import '../../features/world/services/state_service.dart';
 import '../../features/world/services/volcano_service.dart';
+import '../../features/world/services/desert_service.dart';
+import '../../features/world/services/river_service.dart';
+import '../../features/world/services/sea_service.dart';
 import '../../features/space/services/star_service.dart';
 import '../../features/space/services/moon_service.dart';
 import '../../features/space/services/mission_service.dart';
@@ -45,6 +48,9 @@ Future<ContentData> fetchDailyContent(
     case ContentType.frenchCommune:    return CommuneService().getDailyContent();
     case ContentType.americanState:    return StateService().getDailyContent();
     case ContentType.volcano:          return VolcanoService().getDailyContent();
+    case ContentType.desert:           return DesertService().getDailyContent();
+    case ContentType.river:            return RiverService().getDailyContent();
+    case ContentType.sea:              return SeaService().getDailyContent();
     // ── Space ──────────────────────────────────────────────────────────────
     case ContentType.exoplanet:        return ExoplanetService().getDailyContent();
     case ContentType.star:             return StarService().getDailyContent();

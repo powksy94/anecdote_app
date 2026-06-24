@@ -526,6 +526,24 @@ abstract class AppLocalizations {
   /// **'Volcanoes'**
   String get categoryVolcano;
 
+  /// No description provided for @categoryDesert.
+  ///
+  /// In en, this message translates to:
+  /// **'Deserts'**
+  String get categoryDesert;
+
+  /// No description provided for @categoryRiver.
+  ///
+  /// In en, this message translates to:
+  /// **'Rivers'**
+  String get categoryRiver;
+
+  /// No description provided for @categorySea.
+  ///
+  /// In en, this message translates to:
+  /// **'Seas'**
+  String get categorySea;
+
   /// No description provided for @categoryInsect.
   ///
   /// In en, this message translates to:

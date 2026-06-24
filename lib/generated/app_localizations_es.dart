@@ -225,6 +225,15 @@ class AppLocalizationsEs extends AppLocalizations {
   String get categoryVolcano => 'Volcanes';
 
   @override
+  String get categoryDesert => 'Desiertos';
+
+  @override
+  String get categoryRiver => 'Ríos';
+
+  @override
+  String get categorySea => 'Mares';
+
+  @override
   String get categoryInsect => 'Insectos';
 
   @override

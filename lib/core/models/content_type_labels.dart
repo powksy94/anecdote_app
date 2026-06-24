@@ -56,6 +56,9 @@ extension ContentTypeLabels on ContentType {
       case ContentType.lgbtqiaPersonality: return 'LGBTQIA+';
       case ContentType.pioneerWoman:       return 'Pioneer Women';
       case ContentType.legendaryAthlete:   return 'Legendary Athletes';
+      case ContentType.desert:             return 'Deserts';
+      case ContentType.river:              return 'Rivers';
+      case ContentType.sea:                return 'Seas';
     }
   }
 
@@ -114,6 +117,9 @@ extension ContentTypeLabels on ContentType {
       case ContentType.lgbtqiaPersonality: return loc.categoryLgbtqiaPersonality;
       case ContentType.pioneerWoman:       return loc.categoryPioneerWoman;
       case ContentType.legendaryAthlete:   return loc.categoryLegendaryAthlete;
+      case ContentType.desert:             return loc.categoryDesert;
+      case ContentType.river:              return loc.categoryRiver;
+      case ContentType.sea:                return loc.categorySea;
     }
   }
 }

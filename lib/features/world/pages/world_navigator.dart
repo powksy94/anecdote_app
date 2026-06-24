@@ -43,6 +43,9 @@ abstract class WorldNavigator {
                 hubType: ContentType.naturalWondersHub,
                 categories: const [
                   ContentType.volcano,
+                  ContentType.desert,
+                  ContentType.river,
+                  ContentType.sea,
                 ],
                 adService: adService,
               ),

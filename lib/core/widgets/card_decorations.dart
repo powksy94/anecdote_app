@@ -120,5 +120,11 @@ Widget buildCardDecoration(ContentType type) {
       return _doubleIcon(Icons.woman_rounded, Icons.school_rounded);
     case ContentType.legendaryAthlete:
       return _doubleIcon(Icons.emoji_events_rounded, Icons.sports_rounded);
+    case ContentType.desert:
+      return _doubleIcon(Icons.wb_sunny_rounded, Icons.terrain_rounded);
+    case ContentType.river:
+      return _doubleIcon(Icons.water_rounded, Icons.landscape_rounded);
+    case ContentType.sea:
+      return _doubleIcon(Icons.sailing_rounded, Icons.waves_rounded);
   }
 }

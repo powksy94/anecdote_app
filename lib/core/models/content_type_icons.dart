@@ -56,6 +56,9 @@ extension ContentTypeIcons on ContentType {
       case ContentType.lgbtqiaPersonality:  return Icons.diversity_3_rounded;
       case ContentType.pioneerWoman:        return Icons.woman_rounded;
       case ContentType.legendaryAthlete:    return Icons.emoji_events_rounded;
+      case ContentType.desert:              return Icons.wb_sunny_rounded;
+      case ContentType.river:               return Icons.water_rounded;
+      case ContentType.sea:                 return Icons.sailing_rounded;
     }
   }
 }
