@@ -17,18 +17,21 @@ generate_if_needed() {
 
 echo "=== Data generation ==="
 # World
-generate_if_needed "tools/world/generate_pacific_islands.py" "assets/pacific_islands.json"
-generate_if_needed "tools/world/generate_departments.py"     "assets/french_departments.json"
-generate_if_needed "tools/world/generate_countries.py"       "assets/countries.json"
+generate_if_needed "tools/world/generate_pacific_islands.py" "assets/world/pacific_islands.json"
+generate_if_needed "tools/world/generate_departments.py"     "assets/world/french_departments.json"
+generate_if_needed "tools/world/generate_countries.py"       "assets/world/countries.json"
 generate_if_needed "tools/world/generate_communes.py"        "assets/world/communes.json"
 generate_if_needed "tools/world/generate_american_states.py" "assets/world/american_states.json"
+generate_if_needed "tools/world/generate_deserts.py"         "assets/world/deserts.json"
+generate_if_needed "tools/world/generate_rivers.py"          "assets/world/rivers.json"
+generate_if_needed "tools/world/generate_seas.py"            "assets/world/seas.json"
 # History
-generate_if_needed "tools/history/generate_kings_of_france.py"       "assets/kings_of_france.json"
-generate_if_needed "tools/history/generate_american_presidents.py"   "assets/american_presidents.json"
+generate_if_needed "tools/history/generate_kings_of_france.py"       "assets/history/kings_of_france.json"
+generate_if_needed "tools/history/generate_american_presidents.py"   "assets/history/american_presidents.json"
 # Space
-generate_if_needed "tools/space/generate_exoplanets.py" "assets/exoplanets.json"
-generate_if_needed "tools/space/generate_stars.py"      "assets/stars.json"
-generate_if_needed "tools/space/generate_moons.py"      "assets/solar_moons.json"
+generate_if_needed "tools/space/generate_exoplanets.py" "assets/space/exoplanets.json"
+generate_if_needed "tools/space/generate_stars.py"      "assets/space/stars.json"
+generate_if_needed "tools/space/generate_moons.py"      "assets/space/solar_moons.json"
 # History battles
 generate_if_needed "tools/history/generate_battles.py" "assets/history/battles.json"
 # Science
@@ -55,9 +58,9 @@ generate_if_needed "tools/celebrity/generate_lgbtqia.py"             "assets/cel
 generate_if_needed "tools/celebrity/generate_pioneer_women.py"       "assets/celebrity/pioneer_women.json"
 generate_if_needed "tools/celebrity/generate_legendary_athletes.py"  "assets/celebrity/legendary_athletes.json"
 # Cinema
-generate_if_needed "tools/cinema/generate_classic_cinema.py" "assets/quotes_classic.json"
-generate_if_needed "tools/cinema/generate_80s90s_cinema.py"  "assets/quotes_80s90s.json"
-generate_if_needed "tools/cinema/generate_modern_cinema.py"  "assets/quotes_modern.json"
+generate_if_needed "tools/cinema/generate_classic_cinema.py" "assets/cinema/quotes_classic.json"
+generate_if_needed "tools/cinema/generate_80s90s_cinema.py"  "assets/cinema/quotes_80s90s.json"
+generate_if_needed "tools/cinema/generate_modern_cinema.py"  "assets/cinema/quotes_modern.json"
 
 echo ""
 echo "=== Flutter build ==="

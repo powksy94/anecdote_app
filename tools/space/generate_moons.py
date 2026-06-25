@@ -1,4 +1,5 @@
-import json
+import json, sys
+sys.stdout.reconfigure(encoding="utf-8")
 
 moons = [
     # TERRE
@@ -64,7 +65,7 @@ moons = [
     {"n":"MK2","pl":"Makemake","di":175,"op":12.40,"dy":2015,"dc":"HST Team","fe":"Only known moon of Makemake"},
 ]
 
-with open("assets/solar_moons.json", "w", encoding="utf-8") as f:
+with open("assets/space/solar_moons.json", "w", encoding="utf-8") as f:
     json.dump(moons, f, ensure_ascii=False, separators=(',', ':'))
 
 print(f"{len(moons)} lunes générées.")

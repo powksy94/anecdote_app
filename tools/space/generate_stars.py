@@ -1,4 +1,5 @@
-import json
+import json, sys
+sys.stdout.reconfigure(encoding="utf-8")
 
 # ra = radius (solar radii), ms = mass (solar masses)
 stars = [
@@ -156,7 +157,7 @@ stars = [
     {"n":"Mebsuda","co":"Gemini","di":1168.00,"ma":3.79,"ca":"Yellow Supergiant (G-type)","sy":"Single","ga":"Milky Way","pl":0,"ra":105.0,"ms":7.7},
 ]
 
-with open("assets/stars.json", "w", encoding="utf-8") as f:
+with open("assets/space/stars.json", "w", encoding="utf-8") as f:
     json.dump(stars, f, ensure_ascii=False, separators=(',', ':'))
 
 print(f"{len(stars)} étoiles générées.")

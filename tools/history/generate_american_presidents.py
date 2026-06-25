@@ -1,4 +1,5 @@
-import json
+import json, sys
+sys.stdout.reconfigure(encoding="utf-8")
 
 # n=name, nu=number, mn=mandate_number(None=single term), ts=term_start, te=term_end,
 # pa=party, st=state, vp=vice_president, fa=famous_for

@@ -12,9 +12,10 @@ import csv
 import json
 import os
 import sys
+sys.stdout.reconfigure(encoding="utf-8")
 
 INPUT_FILE  = "PS_2026.04.09_03.06.45.csv"
-OUTPUT_FILE = os.path.join("assets", "exoplanets.json")
+OUTPUT_FILE = os.path.join("assets", "space", "exoplanets.json")
 
 # Indices des colonnes (en-tete ligne 90 du fichier CSV)
 COL = {

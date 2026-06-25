@@ -1,4 +1,5 @@
-import json, requests, time
+import json, requests, time, sys
+sys.stdout.reconfigure(encoding="utf-8")
 
 # --- REST Countries : États souverains uniquement ---
 rc = requests.get("https://restcountries.com/v3.1/independent?status=true&fields=name,cca2,cca3,capital,region,area,population,currencies,languages").json()
@@ -69,7 +70,7 @@ for iso2, country in by_iso2.items():
     result.append(country)
     print(f"    {country['n']} ✓")
 
-with open("assets/countries.json", "w", encoding="utf-8") as f:
+with open("assets/world/countries.json", "w", encoding="utf-8") as f:
     json.dump(result, f, ensure_ascii=False, separators=(',', ':'))
 
 print(f"\n{len(result)} pays générés.")

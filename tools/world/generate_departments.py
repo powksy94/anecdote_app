@@ -1,4 +1,5 @@
-import json, requests, time
+import json, requests, time, sys
+sys.stdout.reconfigure(encoding="utf-8")
 
 # geo.api.gouv.fr - liste des départements
 depts = requests.get(
@@ -105,7 +106,7 @@ for d in depts:
     })
     print(f"    {code} - {d['nom']} ✓")
 
-with open("assets/french_departments.json", "w", encoding="utf-8") as f:
+with open("assets/world/french_departments.json", "w", encoding="utf-8") as f:
     json.dump(result, f, ensure_ascii=False, separators=(',', ':'))
 
 print(f"\n{len(result)} départements générés.")

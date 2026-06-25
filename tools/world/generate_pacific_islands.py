@@ -1,4 +1,5 @@
-import json
+import json, sys
+sys.stdout.reconfigure(encoding="utf-8")
 
 islands = [
     # POLYNÉSIE FRANÇAISE — Society Islands
@@ -231,7 +232,7 @@ islands = [
     {"n":"Palawan","ar":"Philippines","te":"Palawan Province","co":"Philippines","oc":"Western Pacific","ar_km2":14650,"po":1000000},
 ]
 
-with open("assets/pacific_islands.json", "w", encoding="utf-8") as f:
+with open("assets/world/pacific_islands.json", "w", encoding="utf-8") as f:
     json.dump(islands, f, ensure_ascii=False, separators=(',', ':'))
 
 print(f"{len(islands)} iles générées.")

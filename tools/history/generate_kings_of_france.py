@@ -1,4 +1,5 @@
-import json
+import json, sys
+sys.stdout.reconfigure(encoding="utf-8")
 
 # n=name, dy=dynasty, rs=reign_start, re=reign_end, ni=nickname, fa=famous_for
 kings = [
@@ -66,7 +67,7 @@ kings = [
     {"n":"Louis-Philippe I","dy":"Orléans","rs":1830,"re":1848,"ni":"The Citizen King","fa":"Last king of France, overthrown by 1848 Revolution"},
 ]
 
-with open("assets/kings_of_france.json", "w", encoding="utf-8") as f:
+with open("assets/history/kings_of_france.json", "w", encoding="utf-8") as f:
     json.dump(kings, f, ensure_ascii=False, separators=(',', ':'))
 
 print(f"{len(kings)} rois générés.")
