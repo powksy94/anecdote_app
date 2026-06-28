@@ -38,6 +38,7 @@ class DailyCacheService {
           noImageMessage: data['noImageMessage'] as String?,
           warningText: data['warningText'] as String?,
           warningLevel: data['warningLevel'] as String?,
+          imageNote: data['imageNote'] as String?,
         );
       }
       return null;
@@ -68,6 +69,7 @@ class DailyCacheService {
       if (content.noImageMessage != null) 'noImageMessage': content.noImageMessage,
       if (content.warningText != null) 'warningText': content.warningText,
       if (content.warningLevel != null) 'warningLevel': content.warningLevel,
+      if (content.imageNote != null) 'imageNote': content.imageNote,
     };
     await prefs.setString(_keyFor(type, locale: locale), jsonEncode(data));
   }

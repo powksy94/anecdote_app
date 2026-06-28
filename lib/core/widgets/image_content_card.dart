@@ -5,6 +5,7 @@ import '../models/content_type.dart';
 import '../../features/cinema/widgets/cinema_toggle_section.dart';
 import '../../features/cinema/widgets/cinema_timer_badge.dart';
 import './warning_badge.dart';
+import './info_note_badge.dart';
 import './image_header.dart';
 
 class ImageContentCard extends StatefulWidget {
@@ -171,6 +172,10 @@ class _ImageContentCardState extends State<ImageContentCard> {
                               text: widget.contentData!.warningText!,
                               level: widget.contentData!.warningLevel ?? 'orange',
                             ),
+                          ],
+                          if (widget.contentData?.imageNote != null) ...[
+                            const SizedBox(width: 8),
+                            InfoNoteBadge(text: widget.contentData!.imageNote!),
                           ],
                         ],
                       ),

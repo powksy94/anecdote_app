@@ -21,6 +21,7 @@ class KingService {
       hasDetails: true,
       imageUrl: k.imageUrl,
       noImageMessage: k.noImageMessage,
+      imageNote: k.historicalNote,
     );
   }
 }

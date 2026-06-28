@@ -4,12 +4,13 @@ import 'package:flutter/services.dart';
 
 class KingOfFranceData {
   final String name, dynasty, famousFor;
-  final String? nickname, imageUrl;
+  final String? nickname, imageUrl, historicalNote;
   final int reignStart, reignEnd;
 
   const KingOfFranceData({
     required this.name, required this.dynasty, required this.famousFor,
     required this.reignStart, required this.reignEnd, this.nickname, this.imageUrl,
+    this.historicalNote,
   });
 
   String? get noImageMessage => imageUrl != null ? null : '👑 No portrait available for this king';
@@ -22,6 +23,7 @@ class KingOfFranceData {
     nickname:    j['ni'] as String?,
     famousFor:   j['fa'] ?? '',
     imageUrl:    j['im'] as String?,
+    historicalNote: j['hn'] as String?,
   );
 }
 

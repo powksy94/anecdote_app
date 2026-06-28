@@ -22,6 +22,8 @@ class ContentData {
   // Warning badge for persons implicated in abuse/violence accusations
   final String? warningText;
   final String? warningLevel; // "red" or "orange"
+  // Neutral info badge, e.g. explaining why a coin/seal stands in for a portrait
+  final String? imageNote;
 
   ContentData({
     required this.preview,
@@ -42,6 +44,7 @@ class ContentData {
     this.elementAtomicNumber,
     this.warningText,
     this.warningLevel,
+    this.imageNote,
   });
 
   /// Retourne la traduction dans la locale donnée, ou null si VO = locale.
