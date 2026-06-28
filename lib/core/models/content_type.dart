@@ -7,6 +7,7 @@ part './content_type_colors.dart';
 part './content_type_gradients.dart';
 part './content_type_accent_colors.dart';
 part './content_type_api.dart';
+part './content_type_flags.dart';
 
 enum ContentType {
   anecdote,

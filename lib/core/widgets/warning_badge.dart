@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../generated/app_localizations.dart';
 
 class WarningBadge extends StatefulWidget {
   final String text;
@@ -36,6 +37,7 @@ class _WarningBadgeState extends State<WarningBadge>
   Color get _color => widget.level == 'red' ? Colors.red : Colors.orange;
 
   void _showDialog(BuildContext context) {
+    final loc = AppLocalizations.of(context)!;
     showDialog<void>(
       context: context,
       builder: (ctx) => AlertDialog(
@@ -45,9 +47,9 @@ class _WarningBadgeState extends State<WarningBadge>
           children: [
             Icon(Icons.warning_rounded, color: _color, size: 22),
             const SizedBox(width: 10),
-            const Text(
-              'Content Warning',
-              style: TextStyle(color: Colors.white, fontSize: 16),
+            Text(
+              loc.contentWarningTitle,
+              style: const TextStyle(color: Colors.white, fontSize: 16),
             ),
           ],
         ),
@@ -62,7 +64,7 @@ class _WarningBadgeState extends State<WarningBadge>
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(ctx),
-            child: Text('Close', style: TextStyle(color: _color)),
+            child: Text(loc.closeButton, style: TextStyle(color: _color)),
           ),
         ],
       ),

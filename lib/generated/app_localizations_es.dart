@@ -21,6 +21,15 @@ class AppLocalizationsEs extends AppLocalizations {
   String get hideDetails => 'Ocultar detalles';
 
   @override
+  String get closeButton => 'Cerrar';
+
+  @override
+  String get contentWarningTitle => 'Advertencia de contenido';
+
+  @override
+  String get historicalNoteTitle => 'Nota histórica';
+
+  @override
   String get unableToLoad => 'No se puede cargar el contenido';
 
   @override

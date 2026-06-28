@@ -21,6 +21,15 @@ class AppLocalizationsEn extends AppLocalizations {
   String get hideDetails => 'Hide details';
 
   @override
+  String get closeButton => 'Close';
+
+  @override
+  String get contentWarningTitle => 'Content Warning';
+
+  @override
+  String get historicalNoteTitle => 'Historical Note';
+
+  @override
   String get unableToLoad => 'Unable to load content';
 
   @override

@@ -124,6 +124,24 @@ abstract class AppLocalizations {
   /// **'Hide details'**
   String get hideDetails;
 
+  /// No description provided for @closeButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Close'**
+  String get closeButton;
+
+  /// No description provided for @contentWarningTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Content Warning'**
+  String get contentWarningTitle;
+
+  /// No description provided for @historicalNoteTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Historical Note'**
+  String get historicalNoteTitle;
+
   /// No description provided for @unableToLoad.
   ///
   /// In en, this message translates to:

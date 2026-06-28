@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../generated/app_localizations.dart';
 
 class InfoNoteBadge extends StatelessWidget {
   final String text;
@@ -6,16 +7,17 @@ class InfoNoteBadge extends StatelessWidget {
   const InfoNoteBadge({required this.text, super.key});
 
   void _showDialog(BuildContext context) {
+    final loc = AppLocalizations.of(context)!;
     showDialog<void>(
       context: context,
       builder: (ctx) => AlertDialog(
         backgroundColor: const Color(0xFF1E1E2E),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-        title: const Row(
+        title: Row(
           children: [
-            Icon(Icons.info_outline_rounded, color: Colors.lightBlueAccent, size: 22),
-            SizedBox(width: 10),
-            Text('Historical Note', style: TextStyle(color: Colors.white, fontSize: 16)),
+            const Icon(Icons.info_outline_rounded, color: Colors.lightBlueAccent, size: 22),
+            const SizedBox(width: 10),
+            Text(loc.historicalNoteTitle, style: const TextStyle(color: Colors.white, fontSize: 16)),
           ],
         ),
         content: Text(
@@ -25,7 +27,7 @@ class InfoNoteBadge extends StatelessWidget {
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(ctx),
-            child: const Text('Close', style: TextStyle(color: Colors.lightBlueAccent)),
+            child: Text(loc.closeButton, style: const TextStyle(color: Colors.lightBlueAccent)),
           ),
         ],
       ),

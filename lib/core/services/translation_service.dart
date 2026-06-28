@@ -97,6 +97,11 @@ class TranslationService {
       translatedWarning = await _translateText(content.warningText!, targetLang);
     }
 
+    String? translatedImageNote = content.imageNote;
+    if (content.imageNote != null && content.imageNote!.isNotEmpty) {
+      translatedImageNote = await _translateText(content.imageNote!, targetLang);
+    }
+
     return ContentData(
       preview: translatedPreview,
       details: translatedDetails,
@@ -107,6 +112,7 @@ class TranslationService {
       mandateNumber: content.mandateNumber,
       warningText: translatedWarning,
       warningLevel: content.warningLevel,
+      imageNote: translatedImageNote,
     );
   }
 }
