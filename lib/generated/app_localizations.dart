@@ -717,6 +717,102 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Go back'**
   String get goBack;
+
+  /// No description provided for @categoryGamingHub.
+  ///
+  /// In en, this message translates to:
+  /// **'Gaming'**
+  String get categoryGamingHub;
+
+  /// No description provided for @categoryGamesHub.
+  ///
+  /// In en, this message translates to:
+  /// **'Games'**
+  String get categoryGamesHub;
+
+  /// No description provided for @categoryGamersHub.
+  ///
+  /// In en, this message translates to:
+  /// **'Gamers'**
+  String get categoryGamersHub;
+
+  /// No description provided for @categoryGamingAnecdote.
+  ///
+  /// In en, this message translates to:
+  /// **'Gaming Trivia'**
+  String get categoryGamingAnecdote;
+
+  /// No description provided for @categoryGamingNomination.
+  ///
+  /// In en, this message translates to:
+  /// **'Game Awards'**
+  String get categoryGamingNomination;
+
+  /// No description provided for @categoryClassicGame.
+  ///
+  /// In en, this message translates to:
+  /// **'Classic Games'**
+  String get categoryClassicGame;
+
+  /// No description provided for @categoryWorstGame.
+  ///
+  /// In en, this message translates to:
+  /// **'Worst Games'**
+  String get categoryWorstGame;
+
+  /// No description provided for @categoryBannedGame.
+  ///
+  /// In en, this message translates to:
+  /// **'Banned Games'**
+  String get categoryBannedGame;
+
+  /// No description provided for @categoryGamingLegend.
+  ///
+  /// In en, this message translates to:
+  /// **'Gaming Legends'**
+  String get categoryGamingLegend;
+
+  /// No description provided for @bannedGameWarningTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'⚠️ Sensitive Content'**
+  String get bannedGameWarningTitle;
+
+  /// No description provided for @bannedGameWarningMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'This category contains information about games banned for violence, sexual content, or political censorship. Some descriptions may be disturbing. Do you want to continue?'**
+  String get bannedGameWarningMessage;
+
+  /// No description provided for @noImageGamingLegend.
+  ///
+  /// In en, this message translates to:
+  /// **'🎮 No image available for this legend'**
+  String get noImageGamingLegend;
+
+  /// No description provided for @noImageClassicGame.
+  ///
+  /// In en, this message translates to:
+  /// **'🕹️ No image available — game artwork is under copyright'**
+  String get noImageClassicGame;
+
+  /// No description provided for @noImageGamingNomination.
+  ///
+  /// In en, this message translates to:
+  /// **'🏆 No image available — game artwork is under copyright'**
+  String get noImageGamingNomination;
+
+  /// No description provided for @noImageWorstGame.
+  ///
+  /// In en, this message translates to:
+  /// **'💀 No image available — game artwork is under copyright'**
+  String get noImageWorstGame;
+
+  /// No description provided for @noImageBannedGame.
+  ///
+  /// In en, this message translates to:
+  /// **'🚫 No image available — game artwork is under copyright'**
+  String get noImageBannedGame;
 }
 
 class _AppLocalizationsDelegate

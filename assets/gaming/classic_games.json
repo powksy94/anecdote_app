@@ -1,0 +1,618 @@
+[
+    {
+        "n":  "Pong",
+        "y":  1972,
+        "de":  "Atari",
+        "ge":  "Sports / Arcade",
+        "fa":  "Pong was Atari\u0027s first commercially successful arcade game and is widely credited with launching the commercial video game industry. Its simple table tennis simulation demonstrated that electronic games could be a viable entertainment product, filling arcades and leading to millions of home console sales.",
+        "nim": "🕹️ No image available"
+    },
+    {
+        "n":  "Space Invaders",
+        "y":  1978,
+        "de":  "Taito",
+        "ge":  "Fixed Shooter",
+        "fa":  "Space Invaders was the first fixed shooter and became the most successful arcade game of its era, grossing over $2 billion in quarters by 1981. It is credited with establishing the shoot-em-up genre and transforming arcades from novelty venues into mainstream entertainment centers.",
+        "nim": "🕹️ No image available"
+    },
+    {
+        "n":  "Pac-Man",
+        "y":  1980,
+        "de":  "Namco",
+        "ge":  "Maze / Arcade",
+        "fa":  "Pac-Man became a global cultural phenomenon, the first video game character to receive mass merchandising and the first game to be licensed for a hit TV cartoon. Its maze-chase gameplay introduced power-ups, boss characters, and cutscenes, influencing game design for decades.",
+        "nim": "🕹️ No image available"
+    },
+    {
+        "n":  "Donkey Kong",
+        "y":  1981,
+        "de":  "Nintendo",
+        "ge":  "Platform / Arcade",
+        "fa":  "Donkey Kong introduced Mario (then Jumpman) and Pauline to the world and is considered the first true platform game with multiple stages, obstacles, and a save-the-princess narrative. It was Nintendo\u0027s first major international hit and established Shigeru Miyamoto as one of gaming\u0027s most important designers.",
+        "nim": "🕹️ No image available"
+    },
+    {
+        "n":  "Galaga",
+        "y":  1981,
+        "de":  "Namco",
+        "ge":  "Fixed Shooter",
+        "fa":  "Galaga refined Space Invaders\u0027 formula with dive-bombing enemy patterns, the tractor beam capture mechanic, and a dual-fighter power-up that added strategic depth. Its perfect difficulty curve made it one of the most enduring arcade games in North American history.",
+        "nim": "🕹️ No image available"
+    },
+    {
+        "n":  "Frogger",
+        "y":  1981,
+        "de":  "Konami",
+        "ge":  "Arcade",
+        "fa":  "Frogger\u0027s simple but tense concept of guiding a frog across traffic and a river made it one of the best-selling arcade games of the early 1980s. Its design influenced mobile games like Crossy Road and demonstrated that games need not involve violence to be compulsively playable.",
+        "nim": "🕹️ No image available"
+    },
+    {
+        "n":  "Centipede",
+        "y":  1980,
+        "de":  "Atari",
+        "ge":  "Fixed Shooter",
+        "fa":  "Centipede was one of the first arcade games to attract a significant female player base, partly due to its trackball control and less aggressive visual style. It became one of the best-selling Atari 2600 cartridges and remains a touchstone of early shooter design.",
+        "nim": "🕹️ No image available"
+    },
+    {
+        "n":  "Asteroids",
+        "y":  1979,
+        "de":  "Atari",
+        "ge":  "Multi-directional Shooter",
+        "fa":  "Asteroids was the best-selling Atari arcade game of its era and introduced vector graphics to mainstream gaming. Its physics-based movement - including inertia and wraparound screen edges - gave it a unique feel that influenced space shooters for over a decade.",
+        "nim": "🕹️ No image available"
+    },
+    {
+        "n":  "Super Mario Bros.",
+        "y":  1985,
+        "de":  "Nintendo",
+        "ge":  "Platform",
+        "fa":  "Super Mario Bros. is credited with reviving the North American video game industry after the 1983 crash, selling over 40 million cartridges and establishing the side-scrolling platform game as gaming\u0027s most enduring genre. Its tight controls, secret areas, and progressive difficulty remain the benchmark for game design.",
+        "nim": "🕹️ No image available"
+    },
+    {
+        "n":  "The Legend of Zelda",
+        "y":  1986,
+        "de":  "Nintendo",
+        "ge":  "Action-Adventure",
+        "fa":  "The Legend of Zelda introduced the open-world action-adventure format with dungeons, items, and an overworld map that could be explored non-linearly. Its battery-backed save feature was the first to allow players to preserve progress, fundamentally changing how games could be designed.",
+        "nim": "🕹️ No image available"
+    },
+    {
+        "n":  "Metroid",
+        "y":  1986,
+        "de":  "Nintendo R\u0026D1",
+        "ge":  "Action-Adventure",
+        "fa":  "Metroid introduced non-linear exploration with ability gating to console gaming, establishing the Metroidvania genre. The reveal that protagonist Samus Aran was a woman - hidden unless the game was completed under a time limit - became one of gaming\u0027s most famous plot twists.",
+        "nim": "🕹️ No image available"
+    },
+    {
+        "n":  "Mega Man 2",
+        "y":  1988,
+        "de":  "Capcom",
+        "ge":  "Action Platform",
+        "fa":  "Mega Man 2 refined the weapon-acquisition formula introduced in the first game and is widely considered the pinnacle of the NES action platformer. Its stage select system, boss designs, and soundtrack composed by Takashi Tateishi are referenced as models of perfect level design balance.",
+        "nim": "🕹️ No image available"
+    },
+    {
+        "n":  "Tetris",
+        "y":  1989,
+        "de":  "Alexey Pajitnov / Nintendo (Game Boy)",
+        "ge":  "Puzzle",
+        "fa":  "The Game Boy version of Tetris was bundled with the handheld and sold 35 million copies, making it one of the best-selling games of all time. Its falling-block puzzle design is considered the most elegant game mechanic ever created, accessible to all ages with no prior gaming experience required.",
+        "nim": "🕹️ No image available"
+    },
+    {
+        "n":  "Final Fantasy",
+        "y":  1987,
+        "de":  "Square",
+        "ge":  "RPG",
+        "fa":  "The original Final Fantasy was Square\u0027s last attempt to stay solvent as a company, and its success created one of gaming\u0027s most beloved franchises spanning over 35 years. It established the class-based party RPG formula for console JRPGs and brought role-playing games to the Nintendo mainstream audience.",
+        "nim": "🕹️ No image available"
+    },
+    {
+        "n":  "Castlevania",
+        "y":  1986,
+        "de":  "Konami",
+        "ge":  "Action Platform",
+        "fa":  "Castlevania\u0027s gothic horror atmosphere, methodical platform gameplay, and progressive whip-upgrade system made it one of the NES\u0027s defining titles. Its music composed by Kinuyo Yamashita remains among the most revered game soundtracks ever produced.",
+        "nim": "🕹️ No image available"
+    },
+    {
+        "n":  "Super Mario Bros. 3",
+        "y":  1988,
+        "de":  "Nintendo",
+        "ge":  "Platform",
+        "fa":  "Super Mario Bros. 3 is frequently cited by critics as one of the greatest games ever made, with its world-map structure, varied power-ups, and hidden content providing an enormous and endlessly replayable experience. Its North American launch in 1990 generated mass hysteria, partly fueled by the film The Wizard which previewed it.",
+        "nim": "🕹️ No image available"
+    },
+    {
+        "n":  "Street Fighter II: The World Warrior",
+        "y":  1991,
+        "de":  "Capcom",
+        "ge":  "Fighting",
+        "fa":  "Street Fighter II invented the competitive fighting game genre as we know it, with its six-button layout, special move inputs, and diverse character roster. Its accidental combo system spawned a competitive scene still active today, and it became one of the highest-grossing arcade games in history.",
+        "nim": "🕹️ No image available"
+    },
+    {
+        "n":  "Sonic the Hedgehog",
+        "y":  1991,
+        "de":  "Sega",
+        "ge":  "Platform",
+        "fa":  "Sonic the Hedgehog was designed specifically to showcase the speed capabilities of the Sega Genesis and serve as a mascot to compete with Mario. Its momentum-based gameplay and attitude-forward personality fueled the Sega vs. Nintendo console war of the early 1990s and sold over 15 million copies.",
+        "nim": "🕹️ No image available"
+    },
+    {
+        "n":  "Super Metroid",
+        "y":  1994,
+        "de":  "Nintendo R\u0026D1",
+        "ge":  "Action-Adventure",
+        "fa":  "Super Metroid perfected the Metroidvania formula with atmospheric world design, minimal text instructions, and a final boss designed to be emotionally resonant. It is consistently ranked among the greatest games ever made and its Wall Jump technique - not explicitly taught - remains one of gaming\u0027s most celebrated secrets.",
+        "nim": "🕹️ No image available"
+    },
+    {
+        "n":  "Chrono Trigger",
+        "y":  1995,
+        "de":  "Square",
+        "ge":  "RPG",
+        "fa":  "Chrono Trigger was created by the \u0027Dream Team\u0027 of Final Fantasy creator Hironobu Sakaguchi, Dragon Ball artist Akira Toriyama, and director Yuji Horii. Its 13 different endings, New Game+ mode, and active-time battle system made it the most innovative JRPG of the 16-bit era.",
+        "nim": "🕹️ No image available"
+    },
+    {
+        "n":  "Mortal Kombat",
+        "y":  1992,
+        "de":  "Midway Games",
+        "ge":  "Fighting",
+        "fa":  "Mortal Kombat\u0027s digitized actor graphics and explicit Fatality finishing moves made it one of the most controversial games in history and directly triggered U.S. Senate hearings on video game violence. The resulting controversy led to the creation of the ESRB rating system in 1994.",
+        "nim": "🕹️ No image available"
+    },
+    {
+        "n":  "Doom",
+        "y":  1993,
+        "de":  "id Software",
+        "ge":  "First-Person Shooter",
+        "fa":  "Doom essentially invented the first-person shooter genre as we know it and popularized 3D gaming with its pseudo-3D engine. Distributed freely via shareware, it spread to an estimated 10 million computers and single-handedly created the market for PC action games.",
+        "nim": "🕹️ No image available"
+    },
+    {
+        "n":  "Warcraft: Orcs and Humans",
+        "y":  1994,
+        "de":  "Blizzard Entertainment",
+        "ge":  "Real-Time Strategy",
+        "fa":  "Warcraft established Blizzard as a major developer and launched one of gaming\u0027s most expansive universes. Its head-to-head RTS formula refined the genre established by Dune II and set the stage for StarCraft and World of Warcraft.",
+        "nim": "🕹️ No image available"
+    },
+    {
+        "n":  "Command and Conquer",
+        "y":  1995,
+        "de":  "Westwood Studios",
+        "ge":  "Real-Time Strategy",
+        "fa":  "Command and Conquer popularized real-time strategy on PC with its dual-faction campaign structure, FMV briefings, and free multiplayer via modem. It sold over 3 million copies and its sequel Red Alert became a cultural touchstone of 1990s PC gaming.",
+        "nim": "🕹️ No image available"
+    },
+    {
+        "n":  "Diablo",
+        "y":  1996,
+        "de":  "Blizzard North",
+        "ge":  "Action RPG",
+        "fa":  "Diablo created the action RPG genre with its procedurally generated dungeons, randomized loot drops, and clicking-based hack-and-slash combat. Its online play via Battle.net pioneered the concept of a persistent online game world for PC action games.",
+        "nim": "🕹️ No image available"
+    },
+    {
+        "n":  "Quake",
+        "y":  1996,
+        "de":  "id Software",
+        "ge":  "First-Person Shooter",
+        "fa":  "Quake was the first true 3D first-person shooter, built entirely with polygonal graphics rather than the 2.5D tricks used by Doom. Its modding community spawned Counter-Strike and Team Fortress, and its engine technology was licensed by studios worldwide.",
+        "nim": "🕹️ No image available"
+    },
+    {
+        "n":  "Super Mario 64",
+        "y":  1996,
+        "de":  "Nintendo",
+        "ge":  "3D Platform",
+        "fa":  "Super Mario 64 defined 3D platforming with analog movement, dynamic camera control, and physics-based interactions in a fully three-dimensional world. Its 120-star mission structure and freely explorable worlds set the template that virtually every 3D platformer since has followed.",
+        "nim": "🕹️ No image available"
+    },
+    {
+        "n":  "GoldenEye 007",
+        "y":  1997,
+        "de":  "Rare",
+        "ge":  "First-Person Shooter",
+        "fa":  "GoldenEye 007 proved that first-person shooters could work on consoles, introducing a mission-objective structure, stealth elements, and a four-player split-screen multiplayer mode that became a fixture of N64 gaming throughout the late 1990s.",
+        "nim": "🕹️ No image available"
+    },
+    {
+        "n":  "Final Fantasy VII",
+        "y":  1997,
+        "de":  "Square",
+        "ge":  "RPG",
+        "fa":  "Final Fantasy VII brought JRPGs into Western mainstream consciousness with its cinematic presentation, fully 3D battles, and mature story tackling themes of identity and environmental destruction. The death of Aerith Gainsborough remains one of the most emotionally impactful moments in gaming history.",
+        "nim": "🕹️ No image available"
+    },
+    {
+        "n":  "Starcraft",
+        "y":  1998,
+        "de":  "Blizzard Entertainment",
+        "ge":  "Real-Time Strategy",
+        "fa":  "StarCraft became South Korea\u0027s national esport, broadcast on television with celebrity commentators and sold-out stadiums. Its three asymmetric factions - Terran, Zerg, and Protoss - are considered the gold standard of balanced, distinct playstyle design in competitive strategy gaming.",
+        "nim": "🕹️ No image available"
+    },
+    {
+        "n":  "The Legend of Zelda: Ocarina of Time",
+        "y":  1998,
+        "de":  "Nintendo",
+        "ge":  "Action-Adventure",
+        "fa":  "Ocarina of Time introduced Z-targeting combat and music-based puzzle solving to 3D adventure games and is the highest-rated video game in history on Metacritic with a score of 99. Its design of a child hero who grows up and must save a transformed world remains influential in narrative game design.",
+        "nim": "🕹️ No image available"
+    },
+    {
+        "n":  "Metal Gear Solid",
+        "y":  1998,
+        "de":  "Konami",
+        "ge":  "Stealth Action",
+        "fa":  "Metal Gear Solid elevated cinematic storytelling in games with lengthy voice-acted cutscenes, a complex geopolitical narrative, and fourth-wall-breaking moments including having players switch controller ports to defeat Psycho Mantis. It sold over 6 million copies and defined the stealth-action genre.",
+        "nim": "🕹️ No image available"
+    },
+    {
+        "n":  "Half-Life",
+        "y":  1998,
+        "de":  "Valve Software",
+        "ge":  "First-Person Shooter",
+        "fa":  "Half-Life delivered its entire story through the player\u0027s perspective without cutscenes, redefining environmental storytelling in games. It won over 50 Game of the Year awards and its Black Mesa setting sparked a series of acclaimed sequels and mods including Counter-Strike and Team Fortress.",
+        "nim": "🕹️ No image available"
+    },
+    {
+        "n":  "Resident Evil 2",
+        "y":  1998,
+        "de":  "Capcom",
+        "ge":  "Survival Horror",
+        "fa":  "Resident Evil 2 introduced the dual-protagonist structure with branching scenarios, allowing players to see events from both Leon S. Kennedy\u0027s and Claire Redfield\u0027s perspectives. Its pacing, atmosphere, and the relentless Mr. X enemy set the template for survival horror games.",
+        "nim": "🕹️ No image available"
+    },
+    {
+        "n":  "Age of Empires II",
+        "y":  1999,
+        "de":  "Ensemble Studios",
+        "ge":  "Real-Time Strategy",
+        "fa":  "Age of Empires II is considered one of the greatest RTS games ever made and has maintained an active competitive scene for over 25 years with regular professional tournaments. Its 13 civilizations, historical campaigns, and balanced gameplay design remain a reference for the genre.",
+        "nim": "🕹️ No image available"
+    },
+    {
+        "n":  "Counter-Strike",
+        "y":  2000,
+        "de":  "Valve / Minh Le \u0026 Jess Cliffe",
+        "ge":  "Tactical Shooter",
+        "fa":  "Counter-Strike began as a Half-Life mod and became the best-selling PC FPS in history with sequels played competitively at the highest level for over 20 years. Its team-based buy-round economy system pioneered the tactical shooter genre.",
+        "nim": "🕹️ No image available"
+    },
+    {
+        "n":  "The Sims",
+        "y":  2000,
+        "de":  "Maxis / EA",
+        "ge":  "Life Simulation",
+        "fa":  "The Sims created the life simulation genre and became the best-selling PC game series of all time until surpassed by The Sims 3. Players controlled the day-to-day lives of virtual people in a satirical suburban setting, attracting demographics that had never played video games before.",
+        "nim": "🕹️ No image available"
+    },
+    {
+        "n":  "Deus Ex",
+        "y":  2000,
+        "de":  "Ion Storm",
+        "ge":  "Action RPG",
+        "fa":  "Deus Ex combined first-person shooter mechanics with deep RPG skill systems and conspiracy thriller storytelling, creating a genre-defying game that predicted post-9/11 surveillance anxieties a year before the attacks. Its multiple solutions to every problem defined the concept of immersive sim design.",
+        "nim": "🕹️ No image available"
+    },
+    {
+        "n":  "Grand Theft Auto III",
+        "y":  2001,
+        "de":  "Rockstar North",
+        "ge":  "Open World Action",
+        "fa":  "GTA III translated the series to full 3D with a free-roaming open world that players could explore and interact with at will, establishing the sandbox game genre. Its morally provocative content and massive open city generated controversy but also sold over 11 million copies.",
+        "nim": "🕹️ No image available"
+    },
+    {
+        "n":  "Halo: Combat Evolved",
+        "y":  2001,
+        "de":  "Bungie",
+        "ge":  "First-Person Shooter",
+        "fa":  "Halo: Combat Evolved launched the Xbox and proved that FPS games could work on consoles with dual-analog controls. Its well-designed vehicular combat, engaging AI, and four-player split-screen multiplayer established Halo as Xbox\u0027s defining franchise.",
+        "nim": "🕹️ No image available"
+    },
+    {
+        "n":  "Ico",
+        "y":  2001,
+        "de":  "Team Ico / Sony",
+        "ge":  "Puzzle-Adventure",
+        "fa":  "Ico\u0027s minimalist design - guiding a boy and girl through a castle with almost no UI, no combat system, and a story told through atmosphere - influenced a generation of designers who cited it as proof that games could be art.",
+        "nim": "🕹️ No image available"
+    },
+    {
+        "n":  "Shadow of the Colossus",
+        "y":  2005,
+        "de":  "Team Ico / Sony",
+        "ge":  "Action-Adventure",
+        "fa":  "Shadow of the Colossus featured 16 colossal boss encounters as its only enemies and delivered one of gaming\u0027s most emotionally devastating narratives entirely through environmental storytelling. Roger Ebert cited it as evidence games could be art.",
+        "nim": "🕹️ No image available"
+    },
+    {
+        "n":  "Warcraft III: Reign of Chaos",
+        "y":  2002,
+        "de":  "Blizzard Entertainment",
+        "ge":  "Real-Time Strategy",
+        "fa":  "Warcraft III introduced hero units to RTS gameplay and its custom map editor spawned Defense of the Ancients (DotA), the mod that created the MOBA genre. It sold over 4 million copies in its first month, a record for PC games at the time.",
+        "nim": "🕹️ No image available"
+    },
+    {
+        "n":  "Metroid Prime",
+        "y":  2002,
+        "de":  "Retro Studios",
+        "ge":  "First-Person Adventure",
+        "fa":  "Metroid Prime successfully translated Samus Aran\u0027s 2D exploration formula into a first-person perspective while maintaining all the atmosphere and isolation of the originals. Retro Studios, an unproven Texas studio, delivered what many considered the greatest GameCube game.",
+        "nim": "🕹️ No image available"
+    },
+    {
+        "n":  "Knights of the Old Republic",
+        "y":  2003,
+        "de":  "BioWare",
+        "ge":  "RPG",
+        "fa":  "Star Wars: Knights of the Old Republic is considered one of the greatest RPGs ever made, winning over 40 Game of the Year awards for its companion system, moral alignment choices, and one of gaming\u0027s most celebrated plot twists in its third act.",
+        "nim": "🕹️ No image available"
+    },
+    {
+        "n":  "Half-Life 2",
+        "y":  2004,
+        "de":  "Valve Software",
+        "ge":  "First-Person Shooter",
+        "fa":  "Half-Life 2 introduced the Source engine and the Gravity Gun, which became one of the most beloved weapons in FPS history. Its seamlessly integrated physics puzzles, character performances, and world design made it one of the most critically acclaimed games of the 2000s.",
+        "nim": "🕹️ No image available"
+    },
+    {
+        "n":  "World of Warcraft",
+        "y":  2004,
+        "de":  "Blizzard Entertainment",
+        "ge":  "MMORPG",
+        "fa":  "World of Warcraft defined the MMORPG genre and at its peak had 12 million paying subscribers, generating over $1 billion in annual revenue. Its accessible design, faction conflict, and structured raid content brought online RPGs to a mainstream audience for the first time.",
+        "nim": "🕹️ No image available"
+    },
+    {
+        "n":  "Resident Evil 4",
+        "y":  2005,
+        "de":  "Capcom",
+        "ge":  "Third-Person Shooter",
+        "fa":  "Resident Evil 4\u0027s over-the-shoulder camera, context-sensitive controls, and action-focused gameplay redefined the survival horror and third-person shooter genres simultaneously. It is on virtually every list of the greatest games ever made and spawned a generation of imitators including Gears of War.",
+        "nim": "🕹️ No image available"
+    },
+    {
+        "n":  "God of War",
+        "y":  2005,
+        "de":  "Santa Monica Studio",
+        "ge":  "Action-Adventure",
+        "fa":  "God of War combined brutal hack-and-slash combat with spectacular set pieces drawn from Greek mythology, establishing a new high bar for cinematic action games. Its Kratos became PlayStation\u0027s most recognizable exclusive character alongside Crash Bandicoot and Spyro.",
+        "nim": "🕹️ No image available"
+    },
+    {
+        "n":  "Guitar Hero",
+        "y":  2005,
+        "de":  "Harmonix / RedOctane",
+        "ge":  "Music / Rhythm",
+        "fa":  "Guitar Hero\u0027s plastic guitar controller and note-highway gameplay created an entirely new genre of party games and music entertainment, generating billions in revenue and introducing millions to classic rock songs. It peaked as the fastest entertainment franchise to reach $1 billion in sales.",
+        "nim": "🕹️ No image available"
+    },
+    {
+        "n":  "Portal",
+        "y":  2007,
+        "de":  "Valve Software",
+        "ge":  "Puzzle / First-Person",
+        "fa":  "Portal introduced a spatial portal mechanic for puzzle-solving that earned it near-universal perfect review scores and multiple Innovation Awards. Its darkly comedic villain GLaDOS became one of gaming\u0027s most beloved characters, and \u0027Still Alive\u0027 became a cult video game anthem.",
+        "nim": "🕹️ No image available"
+    },
+    {
+        "n":  "BioShock",
+        "y":  2007,
+        "de":  "Irrational Games",
+        "ge":  "First-Person Shooter",
+        "fa":  "BioShock\u0027s underwater city of Rapture delivered a critique of Ayn Rand\u0027s objectivism through exceptional environmental storytelling, with a mid-game plot twist about player agency that remains one of gaming\u0027s most discussed narrative moments. It proved that a shooter could carry serious intellectual weight.",
+        "nim": "🕹️ No image available"
+    },
+    {
+        "n":  "Mass Effect",
+        "y":  2007,
+        "de":  "BioWare",
+        "ge":  "Action RPG",
+        "fa":  "Mass Effect created one of gaming\u0027s most expansive science fiction universes with a conversation wheel system that gave players meaningful dialogue choices and romanceable companions. The promise of choices that carried across three games was unprecedented in scope for an RPG series.",
+        "nim": "🕹️ No image available"
+    },
+    {
+        "n":  "Braid",
+        "y":  2008,
+        "de":  "Number None / Jonathan Blow",
+        "ge":  "Puzzle Platform",
+        "fa":  "Braid used time manipulation mechanics unique to each world and wrapped them in a cryptic narrative about loss and regret, establishing the modern prestige indie game. Jonathan Blow\u0027s solo project launched the Xbox Live Arcade era of serious indie development.",
+        "nim": "🕹️ No image available"
+    },
+    {
+        "n":  "Left 4 Dead",
+        "y":  2008,
+        "de":  "Valve Software",
+        "ge":  "Co-op Shooter",
+        "fa":  "Left 4 Dead\u0027s AI Director dynamically adjusted enemy spawning based on player stress levels, creating a unique cooperative horror experience that felt different every playthrough. Its four-player co-op survival formula influenced every cooperative shooter that followed.",
+        "nim": "🕹️ No image available"
+    },
+    {
+        "n":  "Minecraft",
+        "y":  2009,
+        "de":  "Mojang Studios",
+        "ge":  "Sandbox / Survival",
+        "fa":  "Minecraft\u0027s open-ended sandbox gameplay of mining and building from procedurally generated worlds became the best-selling game of all time with over 300 million copies sold. Its creative mode inspired a generation of builders and its educational applications led to official school curricula in over 115 countries.",
+        "nim": "🕹️ No image available"
+    },
+    {
+        "n":  "Demon\u0027s Souls",
+        "y":  2009,
+        "de":  "FromSoftware",
+        "ge":  "Action RPG",
+        "fa":  "Demon\u0027s Souls introduced the challenging design philosophy that would define the Soulsborne genre, with sparse storytelling delivered through item descriptions and environmental cues, harsh death penalties, and an emphasis on learning through failure.",
+        "nim": "🕹️ No image available"
+    },
+    {
+        "n":  "Uncharted 2: Among Thieves",
+        "y":  2009,
+        "de":  "Naughty Dog",
+        "ge":  "Action-Adventure",
+        "fa":  "Uncharted 2 set a new benchmark for cinematic game presentation with its train-top opening sequence and seamless transitions between gameplay and story. It won over 100 Game of the Year awards and remains a reference for action-adventure production quality.",
+        "nim": "🕹️ No image available"
+    },
+    {
+        "n":  "Red Dead Redemption",
+        "y":  2010,
+        "de":  "Rockstar San Diego",
+        "ge":  "Open World Action",
+        "fa":  "Red Dead Redemption brought cinematic storytelling about the death of the American frontier to open-world gaming, with a final act widely regarded as gaming\u0027s most emotional conclusion. It sold over 23 million copies and elevated Rockstar\u0027s storytelling reputation beyond just GTA.",
+        "nim": "🕹️ No image available"
+    },
+    {
+        "n":  "Dark Souls",
+        "y":  2011,
+        "de":  "FromSoftware",
+        "ge":  "Action RPG",
+        "fa":  "Dark Souls refined Demon\u0027s Souls formula and introduced interconnected world design, cryptic lore delivered through item text, and multiplayer systems involving player messages and invasions. The Soulslike genre it spawned remains the most discussed design philosophy in modern game development.",
+        "nim": "🕹️ No image available"
+    },
+    {
+        "n":  "The Elder Scrolls V: Skyrim",
+        "y":  2011,
+        "de":  "Bethesda Game Studios",
+        "ge":  "Action RPG",
+        "fa":  "Skyrim\u0027s vast open world of dragon-slaying, dungeon exploration, and faction quests made it one of the most played RPGs ever made, with Bethesda releasing it on virtually every platform over the following decade. Its modding community has created thousands of new quests, graphics overhauls, and gameplay overhauls.",
+        "nim": "🕹️ No image available"
+    },
+    {
+        "n":  "The Last of Us",
+        "y":  2013,
+        "de":  "Naughty Dog",
+        "ge":  "Action-Adventure",
+        "fa":  "The Last of Us delivered a post-apocalyptic survival story of remarkable emotional depth through the relationship between Joel and Ellie, winning 249 Game of the Year awards. It was adapted into an HBO television series that debuted to the highest viewership since Game of Thrones.",
+        "nim": "🕹️ No image available"
+    },
+    {
+        "n":  "Limbo",
+        "y":  2010,
+        "de":  "Playdead",
+        "ge":  "Puzzle Platform",
+        "fa":  "Limbo\u0027s monochromatic silhouette art style and trial-and-error puzzle design created a haunting, wordless narrative that expanded what indie games could look and feel like. It became one of the most discussed games of the early 2010s and helped define the premium indie market on Xbox Live Arcade.",
+        "nim": "🕹️ No image available"
+    },
+    {
+        "n":  "FTL: Faster Than Light",
+        "y":  2012,
+        "de":  "Subset Games",
+        "ge":  "Roguelike Strategy",
+        "fa":  "FTL was Kickstarter-funded by a two-person team and delivered a procedurally generated space survival experience that defined the roguelite genre for the indie market. Its replayability, permadeath structure, and random encounters influenced dozens of subsequent indie hits.",
+        "nim": "🕹️ No image available"
+    },
+    {
+        "n":  "Papers, Please",
+        "y":  2013,
+        "de":  "Lucas Pope",
+        "ge":  "Puzzle / Simulation",
+        "fa":  "Papers, Please put players in the role of an immigration inspector in a fictional Soviet-era state, turning bureaucratic document checking into a morally complex experience about complicity and survival. Created by one developer, it became one of the most discussed games about politics and human dignity.",
+        "nim": "🕹️ No image available"
+    },
+    {
+        "n":  "The Witcher 3: Wild Hunt",
+        "y":  2015,
+        "de":  "CD Projekt Red",
+        "ge":  "Action RPG",
+        "fa":  "The Witcher 3 set a new standard for open-world RPG writing, with hundreds of authored side quests as richly written as the main story and a living world that reacted meaningfully to player choices. It won over 800 Game of the Year awards - more than any other game in history.",
+        "nim": "🕹️ No image available"
+    },
+    {
+        "n":  "Bloodborne",
+        "y":  2015,
+        "de":  "FromSoftware",
+        "ge":  "Action RPG",
+        "fa":  "Bloodborne took the Soulslike formula into a Victorian gothic horror setting inspired by H.P. Lovecraft, with faster, more aggressive combat that rewarded offense rather than patience. It became one of PlayStation 4\u0027s most critically acclaimed exclusive titles.",
+        "nim": "🕹️ No image available"
+    },
+    {
+        "n":  "Planescape: Torment",
+        "y":  1999,
+        "de":  "Black Isle Studios",
+        "ge":  "RPG",
+        "fa":  "Planescape: Torment is considered the greatest achievement in video game writing, asking \u0027What can change the nature of a man?\u0027 and giving players a protagonist who had died hundreds of times with no memory of previous lives. Its dense philosophical dialogue and moral complexity have no equal in RPG history.",
+        "nim": "🕹️ No image available"
+    },
+    {
+        "n":  "System Shock 2",
+        "y":  1999,
+        "de":  "Irrational Games / Looking Glass Studios",
+        "ge":  "Action RPG / Immersive Sim",
+        "fa":  "System Shock 2 combined RPG progression with survival horror in a space setting, featuring SHODAN as one of gaming\u0027s greatest villains. It directly influenced Bioshock and remains the purest expression of the immersive sim genre.",
+        "nim": "🕹️ No image available"
+    },
+    {
+        "n":  "Baldur\u0027s Gate II: Shadows of Amn",
+        "y":  2000,
+        "de":  "BioWare",
+        "ge":  "RPG",
+        "fa":  "Baldur\u0027s Gate II is considered the pinnacle of computer RPG design for its enormous scope, complex companion characters including the iconic villain Jon Irenicus, and deep implementation of AD\u0026D ruleset. It set a standard for western RPG companion writing not surpassed for over a decade.",
+        "nim": "🕹️ No image available"
+    },
+    {
+        "n":  "Dune II: The Building of a Dynasty",
+        "y":  1992,
+        "de":  "Westwood Studios",
+        "ge":  "Real-Time Strategy",
+        "fa":  "Dune II is credited with establishing the conventions of real-time strategy gaming - base building, resource harvesting, and unit production - that every subsequent RTS from Warcraft to StarCraft would follow. Without Dune II, the entire RTS genre as we know it would not exist.",
+        "nim": "🕹️ No image available"
+    },
+    {
+        "n":  "Ultima IV: Quest of the Avatar",
+        "y":  1985,
+        "de":  "Origin Systems",
+        "ge":  "RPG",
+        "fa":  "Ultima IV was groundbreaking for rejecting the standard \u0027defeat the villain\u0027 objective and instead challenging players to become virtuous through their in-game moral choices. It is the first major video game to explore ethics as core gameplay and influenced the design of nearly every western RPG that followed.",
+        "nim": "🕹️ No image available"
+    },
+    {
+        "n":  "Civilization",
+        "y":  1991,
+        "de":  "MicroProse",
+        "ge":  "Turn-Based Strategy",
+        "fa":  "Sid Meier\u0027s Civilization introduced the 4X (explore, expand, exploit, exterminate) strategy formula and its \u0027one more turn\u0027 addictive loop that has defined the genre for over 30 years. The series has shipped over 60 million copies and spawned numerous spiritual successors.",
+        "nim": "🕹️ No image available"
+    },
+    {
+        "n":  "Myst",
+        "y":  1993,
+        "de":  "Cyan Worlds",
+        "ge":  "Puzzle Adventure",
+        "fa":  "Myst was the best-selling PC game of the 1990s and pioneered the CD-ROM era of gaming with its pre-rendered photo-realistic environments. Its atmospheric, text-free puzzle design attracted a mainstream audience to computer gaming and demonstrated that exploration without combat could sustain a full game.",
+        "nim": "🕹️ No image available"
+    },
+    {
+        "n":  "Halo 3",
+        "y":  2007,
+        "de":  "Bungie",
+        "ge":  "First-Person Shooter",
+        "fa":  "Halo 3 concluded the original Halo trilogy with one of the most anticipated gaming launches in history, earning $300 million in its first week. Its online multiplayer via Xbox Live and extensive theater and forge modes set a new standard for multiplayer customization and content creation in console shooters.",
+        "nim": "🕹️ No image available"
+    },
+    {
+        "n":  "Uncharted 4: A Thief\u0027s End",
+        "y":  2016,
+        "de":  "Naughty Dog",
+        "ge":  "Action-Adventure",
+        "fa":  "Uncharted 4 brought Nathan Drake\u0027s adventures to a cinematic conclusion on PlayStation 4, with performance capture and environmental detail that represented the highest fidelity storytelling in console game history at the time. Its Madagascar open section showed how exploration and story could coexist in an action game.",
+        "nim": "🕹️ No image available"
+    },
+    {
+        "n":  "Celeste",
+        "y":  2018,
+        "de":  "Extremely OK Games",
+        "ge":  "Precision Platform",
+        "fa":  "Celeste used its demanding precision platformer mechanics as a metaphor for mental health struggles, with the protagonist Madeline\u0027s climb of Celeste Mountain mirroring a journey through anxiety and depression. Made by a tiny team over months, it won multiple GOTY awards and sparked mainstream conversations about games addressing mental illness.",
+        "nim": "🕹️ No image available"
+    }
+]

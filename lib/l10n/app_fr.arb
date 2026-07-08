@@ -107,5 +107,21 @@
   "insectPhobiaTitle": "⚠️ Sensibilité aux insectes",
   "insectPhobiaMessage": "Cette catégorie contient des photos de vrais insectes. Si vous souffrez d'entomophobie, nous vous recommandons de choisir une autre catégorie.",
   "continueAnyway": "Continuer quand même",
-  "goBack": "Retour"
+  "goBack": "Retour",
+  "categoryGamingHub": "Gaming",
+  "categoryGamesHub": "Jeux",
+  "categoryGamersHub": "Joueurs",
+  "categoryGamingAnecdote": "Anecdotes Gaming",
+  "categoryGamingNomination": "Récompenses",
+  "categoryClassicGame": "Jeux Cultes",
+  "categoryWorstGame": "Pires Jeux",
+  "categoryBannedGame": "Jeux Bannis",
+  "categoryGamingLegend": "Légendes du Gaming",
+  "bannedGameWarningTitle": "⚠️ Contenu sensible",
+  "bannedGameWarningMessage": "Cette catégorie contient des informations sur des jeux censurés pour violence, contenu sexuel ou raisons politiques. Certaines descriptions peuvent être choquantes. Voulez-vous continuer ?",
+  "noImageGamingLegend": "🎮 Aucune image disponible pour cette légende",
+  "noImageClassicGame": "🕹️ Aucune image disponible — les visuels de jeux sont protégés par copyright",
+  "noImageGamingNomination": "🏆 Aucune image disponible — les visuels de jeux sont protégés par copyright",
+  "noImageWorstGame": "💀 Aucune image disponible — les visuels de jeux sont protégés par copyright",
+  "noImageBannedGame": "🚫 Aucune image disponible — les visuels de jeux sont protégés par copyright"
 }

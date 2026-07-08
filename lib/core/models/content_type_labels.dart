@@ -59,6 +59,15 @@ extension ContentTypeLabels on ContentType {
       case ContentType.desert:             return 'Deserts';
       case ContentType.river:              return 'Rivers';
       case ContentType.sea:                return 'Seas';
+      case ContentType.gamingHub:          return 'Gaming';
+      case ContentType.gamesHub:           return 'Games';
+      case ContentType.gamersHub:          return 'Gamers';
+      case ContentType.gamingAnecdote:     return 'Gaming Trivia';
+      case ContentType.gamingNomination:   return 'Game Awards';
+      case ContentType.classicGame:        return 'Classic Games';
+      case ContentType.worstGame:          return 'Worst Games';
+      case ContentType.bannedGame:         return 'Banned Games';
+      case ContentType.gamingLegend:       return 'Gaming Legends';
     }
   }
 
@@ -120,6 +129,15 @@ extension ContentTypeLabels on ContentType {
       case ContentType.desert:             return loc.categoryDesert;
       case ContentType.river:              return loc.categoryRiver;
       case ContentType.sea:                return loc.categorySea;
+      case ContentType.gamingHub:          return loc.categoryGamingHub;
+      case ContentType.gamesHub:           return loc.categoryGamesHub;
+      case ContentType.gamersHub:          return loc.categoryGamersHub;
+      case ContentType.gamingAnecdote:     return loc.categoryGamingAnecdote;
+      case ContentType.gamingNomination:   return loc.categoryGamingNomination;
+      case ContentType.classicGame:        return loc.categoryClassicGame;
+      case ContentType.worstGame:          return loc.categoryWorstGame;
+      case ContentType.bannedGame:         return loc.categoryBannedGame;
+      case ContentType.gamingLegend:       return loc.categoryGamingLegend;
     }
   }
 }

@@ -1,0 +1,610 @@
+[
+    {
+        "n":  "Manhunt 2",
+        "y":  2007,
+        "de":  "Rockstar North",
+        "ban":  "United Kingdom, Ireland",
+        "rea":  "Manhunt 2 was refused classification by the BBFC in the UK and the IFCO in Ireland, making it the only game to receive an Adults Only rating from the ESRB to be fully commercially released in North America. The BBFC cited its sustained and unrelenting focus on brutal killing as likely to cause harm to viewers.",
+        "nim": "🚫 No image available"
+    },
+    {
+        "n":  "Mortal Kombat (original)",
+        "y":  1992,
+        "de":  "Midway Games",
+        "ban":  "Germany, restricted in Australia",
+        "rea":  "Germany banned Mortal Kombat and several of its sequels under the country\u0027s youth protection laws, keeping them on the BPjM index for years. Australia required the game\u0027s blood to be changed to green sweat for its classification, and the controversy directly triggered U.S. Senate hearings that led to the ESRB\u0027s creation.",
+        "nim": "🚫 No image available"
+    },
+    {
+        "n":  "Grand Theft Auto: San Andreas",
+        "y":  2004,
+        "de":  "Rockstar North",
+        "ban":  "Australia (temporarily), banned in Thailand after real-world incident",
+        "rea":  "San Andreas was briefly refused classification in Australia after the discovery of the hidden Hot Coffee minigame containing sexual content, forcing Rockstar to release a patch and re-rate the game. In Thailand, a teenager murdered a taxi driver to steal money to fund his gaming, citing GTA SA, prompting a temporary restriction on the series.",
+        "nim": "🚫 No image available"
+    },
+    {
+        "n":  "Battlefield 4",
+        "y":  2013,
+        "de":  "DICE",
+        "ban":  "China",
+        "rea":  "China banned Battlefield 4 entirely, calling it a threat to national security and cultural sovereignty, as the game depicted China as the antagonist in a fictional near-future military conflict. State media labeled it an example of \u0027cultural invasion\u0027 and Chinese retailers were ordered to stop selling it.",
+        "nim": "🚫 No image available"
+    },
+    {
+        "n":  "Call of Duty: Modern Warfare 2",
+        "y":  2009,
+        "de":  "Infinity Ward",
+        "ban":  "Russia",
+        "rea":  "Russia banned Modern Warfare 2 following the controversial \u0027No Russian\u0027 level in which the player participates in a terrorist massacre of civilians at a Moscow airport. The level could be skipped but was deemed inappropriate by Russian authorities, and the game was pulled from retail.",
+        "nim": "🚫 No image available"
+    },
+    {
+        "n":  "Pokemon GO",
+        "y":  2016,
+        "de":  "Niantic",
+        "ban":  "Iran",
+        "rea":  "Iran became the first country to officially ban Pokemon GO in 2016, citing unspecified security concerns raised by the country\u0027s High Council of Virtual Spaces. The real-world GPS tracking features of the game were cited as a potential intelligence risk.",
+        "nim": "🚫 No image available"
+    },
+    {
+        "n":  "Football Manager (various)",
+        "y":  2004,
+        "de":  "Sports Interactive",
+        "ban":  "China",
+        "rea":  "Sports Interactive\u0027s Football Manager series was banned in China for depicting Tibet and Taiwan as independent nations on its in-game world map. The studio eventually released a modified China-only version with the map altered to reflect Chinese territorial claims, which critics described as a form of censorship compliance.",
+        "nim": "🚫 No image available"
+    },
+    {
+        "n":  "Bully",
+        "y":  2006,
+        "de":  "Rockstar Vancouver",
+        "ban":  "Brazil (attempted ban)",
+        "rea":  "A Brazilian court ordered Bully banned and all copies recalled, though the decision was later overturned on appeal. Anti-violence advocate Jack Thompson campaigned extensively in the US to have it banned before release, and several UK local councils called for restrictions despite the game\u0027s Teen rating.",
+        "nim": "🚫 No image available"
+    },
+    {
+        "n":  "Postal 2",
+        "y":  2003,
+        "de":  "Running With Scissors",
+        "ban":  "New Zealand, Australia, Sweden, various others",
+        "rea":  "Postal 2 was banned outright in New Zealand, where possession of the game was a criminal offense punishable by a fine. Australia refused it classification twice, and Sweden banned it after the developer made an offhand comment about setting the game in a Swedish town. Running With Scissors responded to the bans with extensive publicity campaigns.",
+        "nim": "🚫 No image available"
+    },
+    {
+        "n":  "Carmageddon",
+        "y":  1997,
+        "de":  "Stainless Games",
+        "ban":  "UK, Germany, Brazil, multiple others",
+        "rea":  "Carmageddon was banned or heavily censored in numerous countries for allowing players to run over pedestrians for bonus points. The UK version replaced human victims with green-blooded zombies, and Germany required them to be robots. Brazil banned it entirely, and the controversy made it a major commercial success in markets where it was available.",
+        "nim": "🚫 No image available"
+    },
+    {
+        "n":  "Fallout 3",
+        "y":  2008,
+        "de":  "Bethesda Game Studios",
+        "ban":  "Australia (modified), India (modified)",
+        "rea":  "Australia refused to classify Fallout 3 in its original form because it allowed players to use a drug called \u0027Morphine\u0027 as an in-game painkiller. Bethesda renamed the drug \u0027Med-X\u0027 for all regional versions, which then received classification. India similarly required the removal of bovine creatures used for experience points.",
+        "nim": "🚫 No image available"
+    },
+    {
+        "n":  "Command and Conquer: Generals",
+        "y":  2003,
+        "de":  "EA Pacific",
+        "ban":  "China",
+        "rea":  "China banned Command and Conquer: Generals for depicting a fictional conflict in which China suffers major civilian casualties and terrorist attacks on the Three Gorges Dam. The game was available in Hong Kong but mainland distribution was prohibited, and all Chinese imagery was ordered removed from the game.",
+        "nim": "🚫 No image available"
+    },
+    {
+        "n":  "Left 4 Dead 2",
+        "y":  2009,
+        "de":  "Valve Software",
+        "ban":  "Australia (initially)",
+        "rea":  "Australia\u0027s Classification Board refused to classify Left 4 Dead 2 due to its graphic depictions of dismemberment and zombie gore, as Australia had no R18+ rating for games at the time. An edited version was eventually classified, and Australia introduced an R18+ rating for games in 2013.",
+        "nim": "🚫 No image available"
+    },
+    {
+        "n":  "Hatred",
+        "y":  2015,
+        "de":  "Destructive Creations",
+        "ban":  "Briefly removed from Steam",
+        "rea":  "Valve removed Hatred from Steam Greenlight in December 2014, citing the game\u0027s sole purpose being to kill as many civilian characters as possible. After public backlash about censorship, Valve reversed the decision, and the game was released in 2015. Australia refused it classification, effectively banning it there.",
+        "nim": "🚫 No image available"
+    },
+    {
+        "n":  "RapeLay",
+        "y":  2006,
+        "de":  "Illusion",
+        "ban":  "UK, Australia, Argentina, multiple Western countries",
+        "rea":  "RapeLay, a Japanese adult simulation game depicting sexual violence, was never sold outside Japan but was available on international import sites. After an Equality Now campaign, Amazon and other retailers removed it, and Australia, UK, and several other countries formally banned its import.",
+        "nim": "🚫 No image available"
+    },
+    {
+        "n":  "Dead Island",
+        "y":  2011,
+        "de":  "Techland",
+        "ban":  "Germany",
+        "rea":  "Dead Island was added to Germany\u0027s BPjM index of media harmful to minors, restricting its advertising and public display in stores. Germany\u0027s youth protection laws frequently resulted in zombie and gore-heavy games being indexed, though indexed games could still be sold to adults.",
+        "nim": "🚫 No image available"
+    },
+    {
+        "n":  "Mass Effect",
+        "y":  2007,
+        "de":  "BioWare",
+        "ban":  "Singapore (initially), age-restricted UAE",
+        "rea":  "Singapore\u0027s Media Development Authority initially banned Mass Effect for containing an optional same-sex romance cutscene between two female characters, before reversing the decision with an M18 rating. The game\u0027s brief, non-explicit romantic content was sufficient to trigger classification concerns in multiple conservative markets.",
+        "nim": "🚫 No image available"
+    },
+    {
+        "n":  "The Guy Game",
+        "y":  2004,
+        "de":  "Topheavy Studios",
+        "ban":  "United States (court-ordered)",
+        "rea":  "The Guy Game, a trivia game featuring real women lifting their tops, was subject to a legal injunction after one of the women was revealed to have been underage during filming. Retailers pulled it from shelves and it remains one of the few games removed from US sale by court order rather than voluntary withdrawal.",
+        "nim": "🚫 No image available"
+    },
+    {
+        "n":  "Splatterhouse (various)",
+        "y":  1988,
+        "de":  "Namco",
+        "ban":  "Multiple Western markets",
+        "rea":  "The original Splatterhouse was heavily modified or banned in multiple Western markets for its extreme horror imagery. The US home versions replaced the protagonist\u0027s hockey mask (resembling Jason Voorhees), and several European distributors refused to release the game at all.",
+        "nim": "🚫 No image available"
+    },
+    {
+        "n":  "PUBG: Battlegrounds",
+        "y":  2017,
+        "de":  "Krafton",
+        "ban":  "India (2020), Nepal, Jordan, Iraq",
+        "rea":  "India banned PUBG Mobile in September 2020 along with 118 other Chinese-linked apps on national security grounds, affecting over 33 million players. Nepal banned it after parents complained of addiction-related behavioral changes in children, and Jordan, Iraq, and several other nations banned it citing similar social concerns.",
+        "nim": "🚫 No image available"
+    },
+    {
+        "n":  "The Witcher 2: Assassins of Kings",
+        "y":  2011,
+        "de":  "CD Projekt Red",
+        "ban":  "Australia (unmodified version)",
+        "rea":  "Australia refused classification to The Witcher 2 in its unmodified form for sexual content, including optional romance scenes, before classifying a slightly modified version with MA15+ rating. The game exemplified how Australia\u0027s lack of an R18+ game rating forced modifications to content that was legal in all other major Western markets.",
+        "nim": "🚫 No image available"
+    },
+    {
+        "n":  "Mercenaries 2: World in Flames",
+        "y":  2008,
+        "de":  "Pandemic Studios",
+        "ban":  "Venezuela (contested)",
+        "rea":  "Venezuela\u0027s government protested Mercenaries 2 for depicting Venezuela as a failed state invaded by foreign military contractors, with a villain resembling Hugo Chavez. The Venezuelan government formally complained to the US State Department, and the game was restricted in Venezuelan retail channels.",
+        "nim": "🚫 No image available"
+    },
+    {
+        "n":  "Grand Theft Auto (series)",
+        "y":  1997,
+        "de":  "Rockstar Games",
+        "ban":  "Thailand, UAE, Saudi Arabia, various others",
+        "rea":  "The GTA series has been restricted or banned in numerous countries over its 25-year history for violence, sexual content, and its ability to steal and drive police vehicles. Saudi Arabia banned multiple entries, and Thailand implemented restrictions following high-profile incidents in which perpetrators cited GTA.",
+        "nim": "🚫 No image available"
+    },
+    {
+        "n":  "Manhunt",
+        "y":  2003,
+        "de":  "Rockstar North",
+        "ban":  "New Zealand, banned from retailers in UK after 2004",
+        "rea":  "New Zealand banned Manhunt outright, and UK retailers voluntarily pulled it from shelves after a 2004 murder case in which the victim had a copy of the game. Police initially alleged the killer had been inspired by Manhunt, though subsequent investigation found the victim - not the killer - owned the copy.",
+        "nim": "🚫 No image available"
+    },
+    {
+        "n":  "StarCraft",
+        "y":  1998,
+        "de":  "Blizzard Entertainment",
+        "ban":  "South Korea (internet cafes, minors, restricted hours)",
+        "rea":  "South Korea, where StarCraft was a national obsession, enacted a series of laws restricting minors from internet cafes after midnight due to gaming addiction concerns. Several deaths from marathon gaming sessions led to a national discussion about gaming regulation that influenced policies worldwide.",
+        "nim": "🚫 No image available"
+    },
+    {
+        "n":  "The Elder Scrolls IV: Oblivion",
+        "y":  2006,
+        "de":  "Bethesda Game Studios",
+        "ban":  "Re-rated M in USA",
+        "rea":  "Oblivion was re-rated from T to M by the ESRB after a modder discovered that removing a piece of armor revealed female characters with anatomically detailed textures intended to be invisible during normal play. Bethesda issued a statement and the game was re-submitted for rating.",
+        "nim": "🚫 No image available"
+    },
+    {
+        "n":  "Darkness II, The",
+        "y":  2012,
+        "de":  "Digital Extremes",
+        "ban":  "Germany",
+        "rea":  "The Darkness II was indexed by Germany\u0027s BPjM for its graphic content involving tearing enemies apart with supernatural tentacles. The game joined dozens of violent titles on Germany\u0027s restricted list, where indexed games cannot be advertised in general media or displayed in store windows.",
+        "nim": "🚫 No image available"
+    },
+    {
+        "n":  "Bioshock",
+        "y":  2007,
+        "de":  "Irrational Games",
+        "ban":  "Australia (modified version required)",
+        "rea":  "BioShock required content modifications for Australian classification, with certain scenes of graphic violence toned down to achieve an MA15+ rating. The original unmodified version was refused classification, illustrating the limitations of Australia\u0027s pre-2013 classification system for games.",
+        "nim": "🚫 No image available"
+    },
+    {
+        "n":  "Soldier of Fortune II",
+        "y":  2002,
+        "de":  "Raven Software",
+        "ban":  "Germany, New Zealand",
+        "rea":  "Soldier of Fortune II\u0027s graphic dismemberment system, which could realistically sever limbs with appropriate ammunition, was banned in Germany and refused classification in New Zealand. The game was available with reduced gore in Australian and some European releases.",
+        "nim": "🚫 No image available"
+    },
+    {
+        "n":  "Gears of War",
+        "y":  2006,
+        "de":  "Epic Games",
+        "ban":  "Japan (modified version), Germany (indexed)",
+        "rea":  "Gears of War required content modification for Japanese release as the chainsaw bayonet executions were considered excessive even by Japanese ratings standards. Germany indexed it under youth protection laws, restricting its visibility in retail environments though adults could still legally purchase it.",
+        "nim": "🚫 No image available"
+    },
+    {
+        "n":  "All video games (general)",
+        "y":  2000,
+        "de":  "Various",
+        "ban":  "Saudi Arabia (pre-2018)",
+        "rea":  "Saudi Arabia effectively banned all commercial video game sales for much of the early 2000s, with religious authorities issuing fatwas against games deemed un-Islamic. The ban was unevenly enforced and games circulated through informal channels, and Saudi Arabia has since become a major investor in the gaming industry.",
+        "nim": "🚫 No image available"
+    },
+    {
+        "n":  "China: Gaming Time Limits for Minors",
+        "y":  2019,
+        "de":  "Chinese Government Policy",
+        "ban":  "China (minors)",
+        "rea":  "China implemented nationwide regulations limiting players under 18 to 90 minutes of gaming per weekday and 3 hours on weekends, with no gaming permitted between 10 PM and 8 AM. In 2021, restrictions were tightened further to just 3 hours total per week for minors, requiring real-name registration.",
+        "nim": "🚫 No image available"
+    },
+    {
+        "n":  "Call of Duty: Modern Warfare (2019)",
+        "y":  2019,
+        "de":  "Infinity Ward",
+        "ban":  "Russia (contested), age-restricted multiple Middle Eastern countries",
+        "rea":  "Modern Warfare 2019 depicted a controversial \u0027Highway of Death\u0027 mission drawing comparisons to a 1991 incident involving US forces in Iraq, leading to Russian and Middle Eastern sensitivities. Several Gulf states required retailer-level age verification beyond standard ratings.",
+        "nim": "🚫 No image available"
+    },
+    {
+        "n":  "Quake III Arena",
+        "y":  1999,
+        "de":  "id Software",
+        "ban":  "Brazil (contested Christian advocacy)",
+        "rea":  "Brazilian Christian advocacy groups campaigned for Quake III Arena\u0027s prohibition due to its demonic imagery and game-world satanic references. While no formal national ban was enacted, several Brazilian retailers and regional governments restricted its sale.",
+        "nim": "🚫 No image available"
+    },
+    {
+        "n":  "Custer\u0027s Revenge",
+        "y":  1982,
+        "de":  "Mystique",
+        "ban":  "Multiple US states attempted bans",
+        "rea":  "Custer\u0027s Revenge was an adult Atari 2600 game depicting sexual violence against a Native American woman and immediately drew campaigns for banning from women\u0027s rights organizations and Native American groups. Several cities attempted to pass ordinances restricting its sale, and it remains one of the most controversial games in history.",
+        "nim": "🚫 No image available"
+    },
+    {
+        "n":  "BioShock Infinite",
+        "y":  2013,
+        "de":  "Irrational Games",
+        "ban":  "Australia (modified version)",
+        "rea":  "BioShock Infinite required minor modifications for Australian classification due to drug use depictions, reflecting the country\u0027s strict classification guidelines. The Australian Classification Board\u0027s treatment of drug references in games was frequently criticized as more restrictive than the film classification standards applied to identical content.",
+        "nim": "🚫 No image available"
+    },
+    {
+        "n":  "This War of Mine",
+        "y":  2014,
+        "de":  "11 bit studios",
+        "ban":  "Age-restricted in Russia and Saudi Arabia",
+        "rea":  "This War of Mine\u0027s depiction of civilian suffering during a siege - modeled on the Siege of Sarajevo - led to restrictions in markets with stricter controls on war-related content. Russia required age verification above 18, and several Middle Eastern retailers refused to stock it due to its bleak depiction of conflict.",
+        "nim": "🚫 No image available"
+    },
+    {
+        "n":  "Dead or Alive Xtreme Beach Volleyball",
+        "y":  2003,
+        "de":  "Team Ninja",
+        "ban":  "Refused wider release in Asia by publisher",
+        "rea":  "Koei Tecmo declined to release Dead or Alive Xtreme 3 in Western markets in 2016, publicly citing concerns about Western cultural sensitivity to its sexualized female character depictions following social media controversies. The game was released in Asia only, with Western players importing it.",
+        "nim": "🚫 No image available"
+    },
+    {
+        "n":  "South Park: The Stick of Truth",
+        "y":  2014,
+        "de":  "Obsidian Entertainment",
+        "ban":  "Europe (censored), Australia (censored)",
+        "rea":  "European and Australian versions of South Park: The Stick of Truth had several scenes replaced with static text describing censored content, affecting anal probe minigames and abortion clinic sections. The censored text descriptions became internet memes, and fans used VPN purchases to obtain uncensored versions.",
+        "nim": "🚫 No image available"
+    },
+    {
+        "n":  "Kakuto Chojin",
+        "y":  2002,
+        "de":  "Dream Factory",
+        "ban":  "Japan, pulled worldwide",
+        "rea":  "Microsoft\u0027s Xbox fighting game Kakuto Chojin was recalled worldwide after it was discovered that one character\u0027s battle chant contained a verse from the Quran. Microsoft pulled the game from sale out of respect for Muslim sensitivities and recalled unsold inventory, making it extremely rare.",
+        "nim": "🚫 No image available"
+    },
+    {
+        "n":  "ARMA 3",
+        "y":  2013,
+        "de":  "Bohemia Interactive",
+        "ban":  "Greece",
+        "rea":  "Two Czech Bohemia Interactive developers were arrested in Greece in 2012 and charged with espionage after filming military installations to use as reference for an ARMA 3 expansion set on a Greek island. They were held for over a year before being released, and Greece briefly restricted the game.",
+        "nim": "🚫 No image available"
+    },
+    {
+        "n":  "Far Cry 4",
+        "y":  2014,
+        "de":  "Ubisoft Montreal",
+        "ban":  "India (contested)",
+        "rea":  "Far Cry 4\u0027s setting in a fictional Himalayan country called Kyrat drew criticism in India for its resemblance to Nepal and Bhutan, and some interpretations of its political satire were deemed offensive. Indian retailers applied unofficial restrictions in certain regions, though no formal national ban was enacted.",
+        "nim": "🚫 No image available"
+    },
+    {
+        "n":  "Resident Evil 5",
+        "y":  2009,
+        "de":  "Capcom",
+        "ban":  "No formal ban but significant controversy in Africa and Western advocacy groups",
+        "rea":  "Resident Evil 5 generated international controversy for depicting a white protagonist killing large numbers of African zombie villagers, with critics including N\u0027Gai Croal arguing the imagery invoked historical racial tropes. No country formally banned it but Capcom faced public pressure campaigns in multiple markets.",
+        "nim": "🚫 No image available"
+    },
+    {
+        "n":  "Football Manager 2005",
+        "y":  2004,
+        "de":  "Sports Interactive",
+        "ban":  "China (withdrawn by publisher)",
+        "rea":  "Sports Interactive agreed to modify Football Manager\u0027s world map for the Chinese market after Chinese authorities objected to representations of Taiwan and Tibet as independent territories. Later versions included a China-specific edition with the contested regions displayed differently.",
+        "nim": "🚫 No image available"
+    },
+    {
+        "n":  "Tom Clancy\u0027s Ghost Recon",
+        "y":  2001,
+        "de":  "Red Storm Entertainment",
+        "ban":  "Macedonia",
+        "rea":  "The original Ghost Recon was banned in Macedonia because its story depicted a future in which Macedonian ultranationalists start a war in Europe, depicting Macedonian military forces as the antagonists. The Macedonian government formally protested its release.",
+        "nim": "🚫 No image available"
+    },
+    {
+        "n":  "Tropico (series)",
+        "y":  2001,
+        "de":  "PopTop Software",
+        "ban":  "Cuba",
+        "rea":  "Cuba restricted the Tropico series for its satirical depiction of a fictional Caribbean dictatorship that many saw as analogous to Cuba under Castro. While not a formal nationwide ban, state media condemned it and official importers were instructed not to carry it.",
+        "nim": "🚫 No image available"
+    },
+    {
+        "n":  "Age of Mythology",
+        "y":  2002,
+        "de":  "Ensemble Studios",
+        "ban":  "Saudi Arabia",
+        "rea":  "Age of Mythology was banned in Saudi Arabia for depicting polytheistic religious pantheons including Greek, Egyptian, and Norse gods as powerful supernatural beings. Saudi Arabia\u0027s strict restrictions on content depicting polytheism as valid affected multiple strategy games during the 2000s.",
+        "nim": "🚫 No image available"
+    },
+    {
+        "n":  "Dead Space",
+        "y":  2008,
+        "de":  "EA Redwood Shores",
+        "ban":  "Germany (indexed), Japan (modified)",
+        "rea":  "Dead Space\u0027s dismemberment-focused combat system, in which players must sever limbs to kill enemies, was indexed in Germany under youth protection regulations and required modification for Japanese release. The game\u0027s gore system - central to its gameplay - was repeatedly cited as the restriction trigger.",
+        "nim": "🚫 No image available"
+    },
+    {
+        "n":  "Wolfenstein II: The New Colossus",
+        "y":  2017,
+        "de":  "MachineGames",
+        "ban":  "Germany (modified version only)",
+        "rea":  "Germany required the removal of all swastika symbols and Adolf Hitler\u0027s identity to be obscured in Wolfenstein II, even though the game\u0027s entire premise was explicitly anti-Nazi. Germany relaxed its laws on displaying Nazi symbols in 2018, and an unmodified version was later approved.",
+        "nim": "🚫 No image available"
+    },
+    {
+        "n":  "Wolfenstein 3D",
+        "y":  1992,
+        "de":  "id Software",
+        "ban":  "Germany",
+        "rea":  "Wolfenstein 3D was banned in Germany in 1994 and remained on the BPjM index for 23 years, despite the game\u0027s explicitly anti-Nazi content. The ban covered the original shareware distribution as well as commercial versions, and was not lifted until 2019 when German law recognized historical and artistic contexts for Nazi symbolism.",
+        "nim": "🚫 No image available"
+    },
+    {
+        "n":  "Diablo Immortal",
+        "y":  2022,
+        "de":  "Blizzard / NetEase",
+        "ban":  "Belgium, Netherlands (soft ban due to loot box laws)",
+        "rea":  "Belgium and the Netherlands, which classify certain loot box mechanics as illegal gambling, required Blizzard to disable real-money purchases entirely for players in those countries. Belgium\u0027s stricter enforcement effectively made the game\u0027s full monetization inaccessible and prompted refund demands.",
+        "nim": "🚫 No image available"
+    },
+    {
+        "n":  "Medal of Honor (2010)",
+        "y":  2010,
+        "de":  "EA DICE",
+        "ban":  "US, UK military bases (retailers)",
+        "rea":  "The US Army and UK Ministry of Defence prohibited Medal of Honor from being sold in stores on military bases worldwide after the game allowed players to play as Taliban fighters in its multiplayer mode. EA subsequently renamed the Taliban faction \u0027Opposing Forces\u0027 but the base store ban remained.",
+        "nim": "🚫 No image available"
+    },
+    {
+        "n":  "Tekken 6",
+        "y":  2009,
+        "de":  "Namco Bandai",
+        "ban":  "Age-restricted in UAE, Saudi Arabia",
+        "rea":  "Tekken 6 and several entries in the Tekken series were restricted in UAE and Saudi Arabia due to female character costumes that authorities deemed too revealing and the series\u0027 history of suggestive character animations.",
+        "nim": "🚫 No image available"
+    },
+    {
+        "n":  "Spec Ops: The Line",
+        "y":  2012,
+        "de":  "Yager Development",
+        "ban":  "UAE",
+        "rea":  "Spec Ops: The Line depicted Dubai destroyed and flooded by a catastrophic sandstorm, with various factions fighting over the ruined city. The UAE found the game\u0027s depiction of the emirate in ruins offensive and instructed retailers to remove it from sale.",
+        "nim": "🚫 No image available"
+    },
+    {
+        "n":  "Street Fighter IV",
+        "y":  2009,
+        "de":  "Capcom",
+        "ban":  "Saudi Arabia, UAE",
+        "rea":  "Street Fighter IV was restricted in Saudi Arabia and UAE due to the female character Cammy, whose fighting costume was deemed too revealing by regional standards. Capcom\u0027s decision not to create region-specific costume variations meant the entire game was restricted in certain Gulf markets.",
+        "nim": "🚫 No image available"
+    },
+    {
+        "n":  "F.E.A.R.",
+        "y":  2005,
+        "de":  "Monolith Productions",
+        "ban":  "Germany (indexed)",
+        "rea":  "F.E.A.R. was placed on Germany\u0027s BPjM harmful media index due to its graphic body horror content and the ability to see dismembered body parts after combat. The game was the subject of a lengthy review by German classification authorities before ultimately being restricted to adult sales only.",
+        "nim": "🚫 No image available"
+    },
+    {
+        "n":  "Silent Hill: Homecoming",
+        "y":  2008,
+        "de":  "Double Helix Games",
+        "ban":  "Australia (initially refused), Germany",
+        "rea":  "Australia initially refused to classify Silent Hill: Homecoming for its graphic torture sequences, before eventually granting an MA15+ rating to a modified version. Germany indexed the game under youth protection laws for its depictions of brutal violence against characters in vulnerable positions.",
+        "nim": "🚫 No image available"
+    },
+    {
+        "n":  "GoldenEye 007",
+        "y":  1997,
+        "de":  "Rare",
+        "ban":  "Germany (modified)",
+        "rea":  "The N64 classic GoldenEye 007 was modified for its German release to remove blood effects and alter the death animations of enemy soldiers so they disappeared rather than showing falling bodies. Germany\u0027s BPjM required these changes to allow the game to be marketed to general audiences.",
+        "nim": "🚫 No image available"
+    },
+    {
+        "n":  "Doom (1993)",
+        "y":  1993,
+        "de":  "id Software",
+        "ban":  "Germany (indexed for decades), banned from US military and corporation networks",
+        "rea":  "Doom was placed on Germany\u0027s restricted youth protection index in 1994 and remained there until 2011, when the index classification was lifted after 17 years. Several US government agencies and corporations banned it from their networks due to productivity concerns during the shareware distribution era.",
+        "nim": "🚫 No image available"
+    },
+    {
+        "n":  "Splinter Cell: Double Agent",
+        "y":  2006,
+        "de":  "Ubisoft Montreal",
+        "ban":  "China",
+        "rea":  "Splinter Cell: Double Agent was banned in China for depicting Chinese soldiers being killed and for scenes set in a Shanghai that the Chinese government deemed an inaccurate and unflattering portrayal. Ubisoft\u0027s profitable relationship with Chinese investors made the diplomatic fallout more complex.",
+        "nim": "🚫 No image available"
+    },
+    {
+        "n":  "The Binding of Isaac",
+        "y":  2011,
+        "de":  "Edmund McMillen",
+        "ban":  "Nintendo (3DS eShop initially)",
+        "rea":  "Nintendo refused to allow The Binding of Isaac on the 3DS eShop because its storyline, in which a child flees a mother who believes she is hearing God\u0027s voice, was deemed to have \u0027questionable religious content.\u0027 The game was later allowed on Nintendo Switch and 3DS in a revised format after years of negotiations.",
+        "nim": "🚫 No image available"
+    },
+    {
+        "n":  "Assassin\u0027s Creed (various)",
+        "y":  2007,
+        "de":  "Ubisoft Montreal",
+        "ban":  "UAE, Saudi Arabia, other Gulf states",
+        "rea":  "The Assassin\u0027s Creed series has been restricted in multiple Gulf states for depicting historical Muslim warriors and the Crusades in ways authorities deemed disrespectful to Islamic history. Specific plot elements involving the Crusades and representations of Jerusalem were the most commonly cited concerns.",
+        "nim": "🚫 No image available"
+    },
+    {
+        "n":  "Diablo III",
+        "y":  2012,
+        "de":  "Blizzard Entertainment",
+        "ban":  "South Korea (auction house feature)",
+        "rea":  "Diablo III\u0027s Real Money Auction House was challenged by South Korean gaming authorities under laws regulating the monetization of in-game items, requiring Blizzard to disable the feature entirely for Korean players. South Korea\u0027s gaming regulations are among the world\u0027s most comprehensive regarding virtual economies.",
+        "nim": "🚫 No image available"
+    },
+    {
+        "n":  "Mafia II",
+        "y":  2010,
+        "de":  "2K Czech",
+        "ban":  "Cuba",
+        "rea":  "Mafia II was banned in Cuba for its depiction of Cubans as criminals and low-level organized crime figures in its 1950s American setting. The Cuban Institute of Radio and Television formally protested its release, calling the portrayal defamatory to the Cuban people.",
+        "nim": "🚫 No image available"
+    },
+    {
+        "n":  "This is the Police 2",
+        "y":  2018,
+        "de":  "Weappy Studio",
+        "ban":  "Ukraine (contested)",
+        "rea":  "This is the Police 2 was accused by Ukrainian media of including dialogue that could be interpreted as pro-Russian propaganda, referencing characters with Ukrainian names in a negative light. The game was developed by a Belarusian studio, and Ukrainian outlets called for its restriction.",
+        "nim": "🚫 No image available"
+    },
+    {
+        "n":  "Age of Empires Online",
+        "y":  2011,
+        "de":  "Gas Powered Games",
+        "ban":  "Contested in Middle Eastern markets",
+        "rea":  "Age of Empires Online\u0027s microtransaction model - selling gameplay boosts directly - was contested in South Korea under its gaming fairness laws, and several Middle Eastern distributors refused to carry it after it was reclassified as a gambling-adjacent product by regional authorities.",
+        "nim": "🚫 No image available"
+    },
+    {
+        "n":  "World of Warcraft (under-18 restrictions)",
+        "y":  2004,
+        "de":  "Blizzard Entertainment",
+        "ban":  "China (minor-only restrictions)",
+        "rea":  "China implemented fatigue systems requiring players under 18 in World of Warcraft to stop gaining experience after three hours of continuous play. Chinese authorities later introduced real-name identity verification for all online games, making China one of the world\u0027s most heavily regulated gaming markets.",
+        "nim": "🚫 No image available"
+    },
+    {
+        "n":  "Battle Realms",
+        "y":  2001,
+        "de":  "Liquid Entertainment",
+        "ban":  "China (contested)",
+        "rea":  "Battle Realms was reviewed by Chinese authorities for its depiction of Japanese-inspired clans in a way that certain government officials claimed showed cultural insensitivity. While not formally banned nationally, several regional distributors declined to carry it.",
+        "nim": "🚫 No image available"
+    },
+    {
+        "n":  "Red Dead Redemption 2",
+        "y":  2018,
+        "de":  "Rockstar Games",
+        "ban":  "Japan (modified), Australia (minor adjustments)",
+        "rea":  "Red Dead Redemption 2 required content modifications for its Japanese release, primarily around torture and mutilation sequences that exceeded Japan\u0027s CERO rating guidelines. Australia required adjustments to drug-use references before granting an R18+ classification.",
+        "nim": "🚫 No image available"
+    },
+    {
+        "n":  "Hearts of Iron IV",
+        "y":  2016,
+        "de":  "Paradox Interactive",
+        "ban":  "China",
+        "rea":  "Hearts of Iron IV was banned in China for allowing players to control a Republic of China (Taiwan) faction and for depicting Tibet as a separate historical region with its own political status. Paradox released a separate China-specific version removing these elements to access the Chinese market.",
+        "nim": "🚫 No image available"
+    },
+    {
+        "n":  "Tropico 6",
+        "y":  2019,
+        "de":  "Limbic Entertainment",
+        "ban":  "Cuba, contested in Russia",
+        "rea":  "Tropico 6\u0027s continued satirical portrayal of a Caribbean dictatorship maintained Cuba\u0027s informal restrictions on the series, and Russian nationalist groups criticized the game\u0027s depiction of Soviet-style governance as mocking. Neither resulted in formal national bans but both affected regional distribution.",
+        "nim": "🚫 No image available"
+    },
+    {
+        "n":  "Call of Duty: Black Ops",
+        "y":  2010,
+        "de":  "Treyarch",
+        "ban":  "Cuba (informal)",
+        "rea":  "Black Ops included an assassination mission targeting Cuban president Fidel Castro, which Cuban state media condemned as US government propaganda glorifying political assassination. The Cuban government issued a formal protest, though the game was never officially retailed in Cuba in any case.",
+        "nim": "🚫 No image available"
+    },
+    {
+        "n":  "Little Big Planet",
+        "y":  2008,
+        "de":  "Media Molecule",
+        "ban":  "Worldwide launch delayed",
+        "rea":  "LittleBigPlanet\u0027s worldwide launch was delayed after it was discovered that a licensed music track contained two phrases from the Quran. Sony recalled all manufactured copies and re-pressed the game without the track, delaying the launch by two weeks and costing millions in logistics and manufacturing.",
+        "nim": "🚫 No image available"
+    },
+    {
+        "n":  "Winnie the Pooh: Blood and Honey",
+        "y":  2023,
+        "de":  "Jagged Edge Entertainment",
+        "ban":  "China, Hong Kong, Macau",
+        "rea":  "The horror film tie-in game was banned in China, Hong Kong, and Macau because Winnie the Pooh\u0027s image has been associated with satire of President Xi Jinping in Chinese internet culture. Any Pooh-related content is politically sensitive in mainland China and its affiliated territories.",
+        "nim": "🚫 No image available"
+    },
+    {
+        "n":  "Hatred",
+        "y":  2015,
+        "de":  "Destructive Creations",
+        "ban":  "Australia (refused classification)",
+        "rea":  "Australia\u0027s Classification Board refused to classify Hatred, finding no artistic merit in a game whose sole purpose was killing as many civilians as possible. Without classification, the game cannot be legally sold in Australia, effectively banning it without a formal nationwide prohibition order.",
+        "nim": "🚫 No image available"
+    },
+    {
+        "n":  "Euro Truck Simulator 2",
+        "y":  2012,
+        "de":  "SCS Software",
+        "ban":  "China (map modification required)",
+        "rea":  "Euro Truck Simulator 2\u0027s addition of a China expansion required the developer to modify map boundaries to comply with Chinese territorial claims regarding Taiwan and disputed border regions. SCS Software produced a China-specific edition with the contested geography revised.",
+        "nim": "🚫 No image available"
+    }
+]

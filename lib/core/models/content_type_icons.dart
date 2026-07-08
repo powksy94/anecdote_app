@@ -59,6 +59,15 @@ extension ContentTypeIcons on ContentType {
       case ContentType.desert:              return Icons.wb_sunny_rounded;
       case ContentType.river:               return Icons.water_rounded;
       case ContentType.sea:                 return Icons.sailing_rounded;
+      case ContentType.gamingHub:           return Icons.sports_esports_rounded;
+      case ContentType.gamesHub:            return Icons.videogame_asset_rounded;
+      case ContentType.gamersHub:           return Icons.groups_rounded;
+      case ContentType.gamingAnecdote:      return Icons.tips_and_updates_rounded;
+      case ContentType.gamingNomination:    return Icons.emoji_events_rounded;
+      case ContentType.classicGame:         return Icons.history_rounded;
+      case ContentType.worstGame:           return Icons.thumb_down_rounded;
+      case ContentType.bannedGame:          return Icons.block_rounded;
+      case ContentType.gamingLegend:        return Icons.military_tech_rounded;
     }
   }
 }

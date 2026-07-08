@@ -126,5 +126,23 @@ Widget buildCardDecoration(ContentType type) {
       return _doubleIcon(Icons.water_rounded, Icons.landscape_rounded);
     case ContentType.sea:
       return _doubleIcon(Icons.sailing_rounded, Icons.waves_rounded);
+    case ContentType.gamingHub:
+      return _doubleIcon(Icons.sports_esports_rounded, Icons.videogame_asset_rounded);
+    case ContentType.gamesHub:
+      return _doubleIcon(Icons.videogame_asset_rounded, Icons.history_rounded);
+    case ContentType.gamersHub:
+      return _doubleIcon(Icons.groups_rounded, Icons.military_tech_rounded);
+    case ContentType.gamingAnecdote:
+      return _singleIcon(Icons.tips_and_updates_rounded, iconSize: 16);
+    case ContentType.gamingNomination:
+      return _doubleIcon(Icons.emoji_events_rounded, Icons.star_rounded);
+    case ContentType.classicGame:
+      return _singleIcon(Icons.history_rounded, iconSize: 16);
+    case ContentType.worstGame:
+      return _singleIcon(Icons.thumb_down_rounded, iconSize: 16);
+    case ContentType.bannedGame:
+      return _singleIcon(Icons.block_rounded, iconSize: 16);
+    case ContentType.gamingLegend:
+      return _doubleIcon(Icons.military_tech_rounded, Icons.sports_esports_rounded);
   }
 }

@@ -115,6 +115,24 @@ extension ContentTypeGradients on ContentType {
         return [const Color(0xFF0288D1), const Color(0xFF4FC3F7)];
       case ContentType.sea:
         return [const Color(0xFF006064), const Color(0xFF00ACC1)];
+      case ContentType.gamingHub:
+        return [const Color(0xFF0D1117), const Color(0xFF238636)];
+      case ContentType.gamesHub:
+        return [const Color(0xFF1a1a2e), const Color(0xFF533483)];
+      case ContentType.gamersHub:
+        return [const Color(0xFF2C003E), const Color(0xFF7B2FBE)];
+      case ContentType.gamingAnecdote:
+        return [const Color(0xFF0D1117), const Color(0xFF2EA043)];
+      case ContentType.gamingNomination:
+        return [const Color(0xFF3D2900), const Color(0xFFD4A017)];
+      case ContentType.classicGame:
+        return [const Color(0xFF1a0533), const Color(0xFF6B21A8)];
+      case ContentType.worstGame:
+        return [const Color(0xFF1A0000), const Color(0xFFDC2626)];
+      case ContentType.bannedGame:
+        return [const Color(0xFF3B0000), const Color(0xFFB91C1C)];
+      case ContentType.gamingLegend:
+        return [const Color(0xFF1B2838), const Color(0xFF66C0F4)];
     }
   }
 }

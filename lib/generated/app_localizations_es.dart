@@ -328,4 +328,58 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get goBack => 'Volver';
+
+  @override
+  String get categoryGamingHub => 'Gaming';
+
+  @override
+  String get categoryGamesHub => 'Juegos';
+
+  @override
+  String get categoryGamersHub => 'Jugadores';
+
+  @override
+  String get categoryGamingAnecdote => 'Curiosidades Gaming';
+
+  @override
+  String get categoryGamingNomination => 'Premios Gaming';
+
+  @override
+  String get categoryClassicGame => 'Juegos Clásicos';
+
+  @override
+  String get categoryWorstGame => 'Peores Juegos';
+
+  @override
+  String get categoryBannedGame => 'Juegos Prohibidos';
+
+  @override
+  String get categoryGamingLegend => 'Leyendas del Gaming';
+
+  @override
+  String get bannedGameWarningTitle => '⚠️ Contenido sensible';
+
+  @override
+  String get bannedGameWarningMessage =>
+      'Esta categoría contiene información sobre juegos prohibidos por violencia, contenido sexual o censura política. Algunas descripciones pueden ser perturbadoras. ¿Deseas continuar?';
+
+  @override
+  String get noImageGamingLegend =>
+      '🎮 No hay imagen disponible para esta leyenda';
+
+  @override
+  String get noImageClassicGame =>
+      '🕹️ No hay imagen disponible — los gráficos de juegos están bajo copyright';
+
+  @override
+  String get noImageGamingNomination =>
+      '🏆 No hay imagen disponible — los gráficos de juegos están bajo copyright';
+
+  @override
+  String get noImageWorstGame =>
+      '💀 No hay imagen disponible — los gráficos de juegos están bajo copyright';
+
+  @override
+  String get noImageBannedGame =>
+      '🚫 No hay imagen disponible — los gráficos de juegos están bajo copyright';
 }

@@ -44,6 +44,11 @@ extension ContentTypeFlags on ContentType {
     ContentType.lgbtqiaPersonality,
     ContentType.pioneerWoman,
     ContentType.legendaryAthlete,
+    ContentType.gamingLegend,
+    ContentType.classicGame,
+    ContentType.gamingNomination,
+    ContentType.worstGame,
+    ContentType.bannedGame,
   };
 
   bool get isGeoType => _geoTypes.contains(this);

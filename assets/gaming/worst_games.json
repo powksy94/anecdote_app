@@ -1,0 +1,618 @@
+[
+    {
+        "n":  "E.T. the Extra-Terrestrial",
+        "y":  1982,
+        "pu":  "Atari",
+        "sc":  null,
+        "rea":  "Developed by Howard Scott Warshaw in just five weeks to meet the 1982 holiday deadline, E.T. featured repetitive falling-into-pits gameplay and utterly confusing objectives. The commercial disaster - Atari sold only 1.5 million of the 4 million cartridges produced - contributed significantly to the 1983 video game industry crash, and millions of unsold copies were buried in a New Mexico landfill.",
+        "nim": "💀 No image available"
+    },
+    {
+        "n":  "Superman 64",
+        "y":  1999,
+        "pu":  "Titus Software",
+        "sc":  23,
+        "rea":  "Superman 64 required players to fly through rings in a kryptonite-filled fog that hid the N64\u0027s poor draw distance, resulting in a game that was more fog navigation than superhero action. Its collision detection was broken, controls were sluggish, and most missions consisted of ring-flying with no connection to the Superman license.",
+        "nim": "💀 No image available"
+    },
+    {
+        "n":  "Big Rigs: Over the Road Racing",
+        "y":  2003,
+        "pu":  "Stellar Stone",
+        "sc":  8,
+        "rea":  "Big Rigs shipped in such an unfinished state that opponent trucks did not move, the player\u0027s truck could drive through all terrain including mountains and buildings, and there were no collision physics whatsoever. GameSpot famously gave it a 1.0/10, later revised to 1.0 because they had no lower option - the game was essentially not a playable product.",
+        "nim": "💀 No image available"
+    },
+    {
+        "n":  "Ride to Hell: Retribution",
+        "y":  2013,
+        "pu":  "Deep Silver",
+        "sc":  16,
+        "rea":  "Ride to Hell featured broken combat mechanics, unintelligible dialogue, and fully clothed sex cutscenes that played automatically as mission rewards. Critics described it as one of the most technically dysfunctional AAA games in years, with enemies teleporting, story logic completely absent, and a motorcycle-riding game where the riding mechanics barely functioned.",
+        "nim": "💀 No image available"
+    },
+    {
+        "n":  "Sonic the Hedgehog (2006)",
+        "y":  2006,
+        "pu":  "Sega",
+        "sc":  46,
+        "rea":  "Sonic 06 is infamous for loading screens that lasted longer than the levels themselves, game-breaking bugs including clips through geometry that softlocked progress, and a story in which Sonic the Hedgehog is kissed by a human princess. Released unfinished for the Christmas deadline, it is frequently cited as the lowest point in the Sonic franchise\u0027s history.",
+        "nim": "💀 No image available"
+    },
+    {
+        "n":  "Aliens: Colonial Marines",
+        "y":  2013,
+        "pu":  "Sega",
+        "sc":  45,
+        "rea":  "Aliens: Colonial Marines was promoted with demo footage that bore almost no resemblance to the shipped product, leading to a class action lawsuit for false advertising. A bug was discovered years later in a single config file - a one-letter typo - that had disabled the alien AI entirely, explaining why critics described the enemies as behaving like brain-dead zombies.",
+        "nim": "💀 No image available"
+    },
+    {
+        "n":  "Daikatana",
+        "y":  2000,
+        "pu":  "Eidos Interactive",
+        "sc":  46,
+        "rea":  "John Romero\u0027s follow-up to Doom and Quake was delayed for nearly four years and shipped with obnoxious AI companions who constantly died, slowing the player\u0027s progress. An infamous marketing campaign - \u0027John Romero\u0027s About to Make You His Bitch\u0027 - generated massive hype that the broken, outdated game catastrophically failed to live up to.",
+        "nim": "💀 No image available"
+    },
+    {
+        "n":  "Action 52",
+        "y":  1991,
+        "pu":  "Active Enterprises",
+        "sc":  null,
+        "rea":  "Action 52 was an unlicensed NES cartridge that contained 52 original games, retailed for $199, and was nearly unplayable across the entire compilation. Most games had severe bugs including random crashes, incorrect collision, missing objectives, and several that simply could not be completed at all.",
+        "nim": "💀 No image available"
+    },
+    {
+        "n":  "Aquaman: Battle for Atlantis",
+        "y":  2003,
+        "pu":  "TDK Mediactive",
+        "sc":  28,
+        "rea":  "The GameCube and Xbox versions of Aquaman featured controls so unresponsive that swimming - the game\u0027s core mechanic - felt like steering a freight train underwater. Enemies clipped through walls, the camera fought the player at every opportunity, and the game was universally dismissed as unacceptable even for a licensed budget title.",
+        "nim": "💀 No image available"
+    },
+    {
+        "n":  "Duke Nukem Forever",
+        "y":  2011,
+        "pu":  "2K Games",
+        "sc":  54,
+        "rea":  "Duke Nukem Forever spent 15 years in development - its original announcement in 1997 spawned websites tracking the delay - before shipping a game that felt a decade out of date. Its juvenile humor, checkpoint system without quicksave, and two-weapon carry limit frustrated fans who had waited so long for the sequel.",
+        "nim": "💀 No image available"
+    },
+    {
+        "n":  "Night Trap",
+        "y":  1992,
+        "pu":  "Digital Pictures",
+        "sc":  null,
+        "rea":  "Night Trap was a Sega CD full-motion video game where players watched grainy video footage and triggered traps to catch vampire-like villains. Senator Joe Lieberman cited it explicitly in 1993 Senate hearings on video game violence, despite it containing no actual violence, helping trigger the creation of the ESRB rating system.",
+        "nim": "💀 No image available"
+    },
+    {
+        "n":  "Shaq Fu",
+        "y":  1994,
+        "pu":  "Electronic Arts",
+        "sc":  null,
+        "rea":  "Shaq Fu placed NBA star Shaquille O\u0027Neal in a martial arts fighting game set in an alternate dimension, producing one of the most awkward celebrity game crossovers in history. Its unbalanced fighter roster, poor controls, and nonsensical story made it a punchline for decades and inspired a fan website dedicated to destroying every copy.",
+        "nim": "💀 No image available"
+    },
+    {
+        "n":  "Ninjabread Man",
+        "y":  2007,
+        "pu":  "Data Design Interactive",
+        "sc":  19,
+        "rea":  "Ninjabread Man was one of dozens of near-identical low-budget Wii shovelware titles released by Data Design Interactive in 2007, many of which reused identical game engines and assets. The game could be completed in under 40 minutes, featured no collectibles or meaningful content, and sold for full retail price targeting parents unfamiliar with game quality.",
+        "nim": "💀 No image available"
+    },
+    {
+        "n":  "NBA Elite 11",
+        "y":  2010,
+        "pu":  "EA Sports",
+        "sc":  null,
+        "rea":  "NBA Elite 11 was cancelled days before release when a leaked demo revealed physics so broken that players could pose characters in impossible positions and slide across the court without moving their legs. EA chose to cancel and refund all preorders, and screenshots of the bizarre glitches circulated widely online.",
+        "nim": "💀 No image available"
+    },
+    {
+        "n":  "Mortal Kombat Advance",
+        "y":  2001,
+        "pu":  "Midway Games",
+        "sc":  23,
+        "rea":  "This Game Boy Advance port of Mortal Kombat: Tournament Edition featured AI that would relentlessly use cheap unblockable sweeps infinitely, making matches essentially unwinnable. The sprite work was muddy, special move inputs frequently failed to register, and reviewers described it as one of the worst fighting game ports on any platform.",
+        "nim": "💀 No image available"
+    },
+    {
+        "n":  "Charlie\u0027s Angels",
+        "y":  2003,
+        "pu":  "Ubisoft",
+        "sc":  22,
+        "rea":  "The Charlie\u0027s Angels licensed game was praised by no one for anything, featuring broken camera systems, combat that required almost no player input, and a brief campaign that offered little to distinguish one level from another. It is consistently listed among the worst licensed games ever produced.",
+        "nim": "💀 No image available"
+    },
+    {
+        "n":  "Leisure Suit Larry: Box Office Bust",
+        "y":  2009,
+        "pu":  "Sierra Entertainment",
+        "sc":  20,
+        "rea":  "Box Office Bust attempted to revive the beloved adult adventure series as a 3D platformer with none of the wit or charm of the originals, replacing them with crude humor and broken controls. Critics and series creator Al Lowe both rejected it, and it is considered the game that effectively ended the Leisure Suit Larry franchise.",
+        "nim": "💀 No image available"
+    },
+    {
+        "n":  "Postal III",
+        "y":  2011,
+        "pu":  "Akella",
+        "sc":  24,
+        "rea":  "Developed by Russian studio Akella without Running With Scissors\u0027 full involvement, Postal III was built on a buggy Source Engine implementation that caused frequent crashes. Series creator Running With Scissors publicly disowned the game, calling it embarrassing, and later released an update that removed it from the official Postal canon.",
+        "nim": "💀 No image available"
+    },
+    {
+        "n":  "Rambo: The Video Game",
+        "y":  2014,
+        "pu":  "Reef Entertainment",
+        "sc":  21,
+        "rea":  "This on-rails shooter adapted all three Rambo films through low-quality pre-rendered cutscenes and repetitive shooting gallery gameplay. Critics noted the graphics would have been disappointing in 2005 and that the shooting mechanics offered no depth beyond pointing at figures that appeared on screen.",
+        "nim": "💀 No image available"
+    },
+    {
+        "n":  "The War Z (Infestation: Survivor Stories)",
+        "y":  2012,
+        "pu":  "OP Productions",
+        "sc":  20,
+        "rea":  "The War Z was so misleadingly marketed on Steam - falsely claiming features it did not have - that Valve pulled it from the store within days of launch. The game advertised server sizes, offline mode, and skill trees that did not exist, and Valve issued refunds to customers in one of the platform\u0027s most significant consumer protection actions.",
+        "nim": "💀 No image available"
+    },
+    {
+        "n":  "Day One: Garry\u0027s Incident",
+        "y":  2013,
+        "pu":  "Wild Games Studio",
+        "sc":  null,
+        "rea":  "Day One: Garry\u0027s Incident was pulled from Steam after Wild Games Studio issued a copyright takedown against a YouTube critic who gave it a negative review. The incident drew massive attention and criticism, backfiring catastrophically as the Streisand Effect made the game\u0027s poor quality internationally known.",
+        "nim": "💀 No image available"
+    },
+    {
+        "n":  "Tony Hawk\u0027s Pro Skater 5",
+        "y":  2015,
+        "pu":  "Activision",
+        "sc":  32,
+        "rea":  "Tony Hawk\u0027s Pro Skater 5 launched with a day-one patch larger than the game itself, and even after patching, featured broken physics, missing content, and a visual quality that reviewers described as unacceptable for a full-price retail title. It effectively ended the Tony Hawk franchise for years.",
+        "nim": "💀 No image available"
+    },
+    {
+        "n":  "Ashes Cricket 2013",
+        "y":  2013,
+        "pu":  "505 Games",
+        "sc":  null,
+        "rea":  "Ashes Cricket 2013 was pulled from sale just days after launch when fielders would walk off the pitch, balls would teleport, and players could bowl from the wrong end without consequence. 505 Games issued full refunds and the developer, Trickstar Games, went into administration shortly afterward.",
+        "nim": "💀 No image available"
+    },
+    {
+        "n":  "Flatout 3: Chaos and Destruction",
+        "y":  2011,
+        "pu":  "Strategy First",
+        "sc":  24,
+        "rea":  "Flatout 3 bore almost no resemblance to the beloved Flatout series, with cars that desynced from physics, races that could not be completed due to AI rubber-banding, and graphics that reviewers described as inferior to a 2003 PC game. Fans of the series widely regard it as a betrayal of the franchise.",
+        "nim": "💀 No image available"
+    },
+    {
+        "n":  "Iron Man (2008 film tie-in)",
+        "y":  2008,
+        "pu":  "Sega",
+        "sc":  38,
+        "rea":  "The Iron Man game released alongside the MCU film featured repetitive air combat missions with confusing objectives and a camera system that struggled to track fast-moving enemies. Despite the massive popularity of the film, the game sold poorly and was dismissed as a generic cash-in.",
+        "nim": "💀 No image available"
+    },
+    {
+        "n":  "Fighter Within",
+        "y":  2013,
+        "pu":  "Ubisoft",
+        "sc":  23,
+        "rea":  "Fighter Within was a Kinect fighting game for Xbox One launch that required players to perform fighting game moves using full-body motion controls - an approach that resulted in unresponsive, exhausting gameplay. Critics found it impossible to perform basic combos reliably and the game sold poorly despite being a launch title.",
+        "nim": "💀 No image available"
+    },
+    {
+        "n":  "Spiderman 3 (2007)",
+        "y":  2007,
+        "pu":  "Activision",
+        "sc":  57,
+        "rea":  "While the PS2 version of Spider-Man 3 was competently developed, the PS3 and Xbox 360 versions were widely criticized for their dull open world, repetitive missions, and failure to build on the excellence of Spider-Man 2. The game demonstrated how quickly a once-praised franchise can backslide without adequate development time.",
+        "nim": "💀 No image available"
+    },
+    {
+        "n":  "Fast and Furious: Showdown",
+        "y":  2013,
+        "pu":  "Activision",
+        "sc":  22,
+        "rea":  "Fast and Furious: Showdown featured graphics that looked several console generations behind, AI that drove slowly into walls, and mission designs that barely qualified as games. Critics described it as one of the worst racing games in recent memory and an embarrassment to the film franchise.",
+        "nim": "💀 No image available"
+    },
+    {
+        "n":  "Indy 500 (VR)",
+        "y":  1999,
+        "pu":  "Sega",
+        "sc":  null,
+        "rea":  "This is a placeholder entry for Catwoman (2004), which deserves mention: Catwoman was a licensed PS2 and Xbox game released alongside the film that scored 39 on Metacritic due to its broken wall-running camera, forgettable combat, and story that bore no meaningful connection to DC\u0027s source material.",
+        "nim": "💀 No image available"
+    },
+    {
+        "n":  "Catwoman",
+        "y":  2004,
+        "pu":  "EA Games",
+        "sc":  39,
+        "rea":  "Catwoman was released to coincide with the critically derided film and matched it in quality, featuring a camera that made wall-running gameplay nearly impossible to navigate and a combat system with fewer options than a Game Boy Advance title. It won GameSpot\u0027s 2004 Worst Game of the Year award.",
+        "nim": "💀 No image available"
+    },
+    {
+        "n":  "AMY",
+        "y":  2012,
+        "pu":  "Lexis Numerique",
+        "sc":  33,
+        "rea":  "AMY was a survival horror game built around protecting an autistic child companion who would constantly run into danger or stop moving. Its checkpoint system was maliciously sparse, requiring players to repeat 20-minute sections after deaths, and critics described its AI companion behavior as some of the worst in gaming history.",
+        "nim": "💀 No image available"
+    },
+    {
+        "n":  "Drake of the 99 Dragons",
+        "y":  2003,
+        "pu":  "Majesco Entertainment",
+        "sc":  22,
+        "rea":  "Drake of the 99 Dragons combined a Spawn-like cel-shaded aesthetic with an almost unplayable camera that rotated constantly and independently of player input. Enemies would attack from off-screen constantly, and the targeting system could not reliably lock onto nearby enemies.",
+        "nim": "💀 No image available"
+    },
+    {
+        "n":  "Godzilla: Unleashed",
+        "y":  2007,
+        "pu":  "Atari",
+        "sc":  43,
+        "rea":  "Godzilla: Unleashed attempted motion-controlled kaiju battles on the Wii but resulted in a fighting game where monsters would jitter in place rather than respond to gestures, and where the camera lost track of fighters so regularly that matches became visually incomprehensible.",
+        "nim": "💀 No image available"
+    },
+    {
+        "n":  "Limbo of the Lost",
+        "y":  2008,
+        "pu":  "Tri Synergy",
+        "sc":  null,
+        "rea":  "Limbo of the Lost was discovered to have directly stolen level assets from games including Oblivion, Painkiller, and Diablo II, essentially reskinning purchased games as original content. The game was removed from sale and the publisher issued a recall - one of the most blatant cases of game asset theft ever exposed.",
+        "nim": "💀 No image available"
+    },
+    {
+        "n":  "Balls of Fury (DS)",
+        "y":  2007,
+        "pu":  "Conspiracy Entertainment",
+        "sc":  24,
+        "rea":  "The DS ping pong tie-in to the Balls of Fury film featured paddle controls mapped to a touchscreen that registered input incorrectly, making competitive play against AI nearly impossible. It exemplified the lowest tier of DS film-licensed games produced during the console\u0027s mid-life shovelware era.",
+        "nim": "💀 No image available"
+    },
+    {
+        "n":  "Gravity Crash Ultra (Vita)",
+        "y":  2015,
+        "pu":  "Just Add Water",
+        "sc":  52,
+        "rea":  "While not the worst-scoring game, this entry represents the broader category of lazy PS4/Vita cross-buy titles that received poor reception for stripped-down content and unoptimized performance on Vita hardware.",
+        "nim": "💀 No image available"
+    },
+    {
+        "n":  "Final Fantasy: All the Bravest",
+        "y":  2013,
+        "pu":  "Square Enix",
+        "sc":  23,
+        "rea":  "Final Fantasy: All the Bravest was a mobile game that automated almost all gameplay - players tapped the screen to attack - and locked the vast majority of its 35 characters behind random paid DLC packs. Critics called it one of the most cynical uses of a beloved franchise in mobile gaming history.",
+        "nim": "💀 No image available"
+    },
+    {
+        "n":  "Homefront: The Revolution",
+        "y":  2016,
+        "pu":  "Deep Silver",
+        "sc":  52,
+        "rea":  "Homefront: The Revolution launched with severe performance issues including frequent frame rate drops below 20 FPS even on PC, and a campaign so riddled with checkpoint bugs that progress was occasionally lost entirely. The online component was nearly unpopulated at launch.",
+        "nim": "💀 No image available"
+    },
+    {
+        "n":  "Robinson Crusoe and the Cursed Pirates",
+        "y":  2008,
+        "pu":  "Mud Duck Productions",
+        "sc":  null,
+        "rea":  "One of many Wii budget titles with no discernible quality control, this pirate adventure game featured motion controls that required gestures the game could rarely detect accurately and a level design consisting of flat corridors with no navigational challenge or variety.",
+        "nim": "💀 No image available"
+    },
+    {
+        "n":  "Yaris",
+        "y":  2007,
+        "pu":  "Microsoft / Toyota",
+        "sc":  30,
+        "rea":  "Yaris was a free Xbox Live Arcade game commissioned by Toyota to promote the Yaris automobile, featuring shooting gameplay in a car that handled like a boat and levels that offered no variation. It was one of the few games to receive a perfect 0/10 from certain reviewers who objected to its existence as advertising.",
+        "nim": "💀 No image available"
+    },
+    {
+        "n":  "The Slaughtering Grounds",
+        "y":  2014,
+        "pu":  "Digital Homicide",
+        "sc":  null,
+        "rea":  "The Slaughtering Grounds became infamous not just for its poor quality - waves of enemies in an empty gray arena - but because developer Digital Homicide attempted to sue 100 Steam users for negative reviews. Digital Homicide\u0027s litigious behavior resulted in Valve removing all their games from Steam.",
+        "nim": "💀 No image available"
+    },
+    {
+        "n":  "Hotel Mario",
+        "y":  1994,
+        "pu":  "Philips",
+        "sc":  null,
+        "rea":  "Hotel Mario was developed for the Philips CD-i console as part of a deal struck when Nintendo cancelled its CD-ROM partnership with Philips. The game\u0027s bizarre animated cutscenes became iconic internet memes, and the gameplay - closing doors in a hotel - bore almost no resemblance to any Mario game.",
+        "nim": "💀 No image available"
+    },
+    {
+        "n":  "Link: The Faces of Evil",
+        "y":  1993,
+        "pu":  "Philips",
+        "sc":  null,
+        "rea":  "Like Hotel Mario, Zelda: The Faces of Evil was a Philips CD-i licensed game that Nintendo had no involvement in creating. Its infamous animated cutscenes - \u0027Mah Boi,\u0027 \u0027Squadala, we are off!\u0027 - became some of YouTube\u0027s most viewed early viral gaming videos.",
+        "nim": "💀 No image available"
+    },
+    {
+        "n":  "Plumbers Don\u0027t Wear Ties",
+        "y":  1994,
+        "pu":  "Kama Entertainment",
+        "sc":  null,
+        "rea":  "Plumbers Don\u0027t Wear Ties for the 3DO is widely described as barely a game at all - it consisted almost entirely of still photographs with text narration and occasional player choices. Many reviewers called it the worst video game ever made and a contender for the worst use of a CD-ROM format in history.",
+        "nim": "💀 No image available"
+    },
+    {
+        "n":  "Zelda\u0027s Adventure",
+        "y":  1994,
+        "pu":  "Philips",
+        "sc":  null,
+        "rea":  "The third Philips CD-i Zelda game used digitized photography rather than animation for its visuals, resulting in a jarring and unpleasant aesthetic completely disconnected from the Nintendo source material. Clunky combat and labyrinthine level design made it worse to play than it looked.",
+        "nim": "💀 No image available"
+    },
+    {
+        "n":  "Bubsy 3D",
+        "y":  1996,
+        "pu":  "Accolade",
+        "sc":  null,
+        "rea":  "Bubsy 3D attempted to ride the wave of 3D platformers launched by Super Mario 64 but delivered murky polygonal graphics, imprecise jumping, and a camera that could not follow the character effectively. It is considered one of the worst games of the PlayStation era and killed the Bubsy franchise.",
+        "nim": "💀 No image available"
+    },
+    {
+        "n":  "Vampire Rain",
+        "y":  2007,
+        "pu":  "AQ Interactive",
+        "sc":  36,
+        "rea":  "Vampire Rain was a stealth game in which the player could be killed in two hits by enemies that could see through walls and detect the player across entire city blocks. The extreme difficulty arose not from design but from broken enemy AI that made normal stealth gameplay impossible.",
+        "nim": "💀 No image available"
+    },
+    {
+        "n":  "Rogue Warrior",
+        "y":  2009,
+        "pu":  "Bethesda Softworks",
+        "sc":  29,
+        "rea":  "Rogue Warrior starred real-life Navy SEAL Richard Marcinko, voiced by Mickey Rourke, and offered a campaign that could be completed in under two hours. Every objective required the same cover-and-shoot approach in a linear corridor, with brutal profanity serving as the game\u0027s primary form of characterization.",
+        "nim": "💀 No image available"
+    },
+    {
+        "n":  "Alone in the Dark (2008)",
+        "y":  2008,
+        "pu":  "Atari",
+        "sc":  44,
+        "rea":  "The 2008 Alone in the Dark reboot was praised in early previews for its inventory system and fire physics, but shipped with camera angles that made combat nearly unplayable and a driving sequence widely cited as one of gaming\u0027s most frustrating missions. German publisher Atari\u0027s troubled development showed in the final product.",
+        "nim": "💀 No image available"
+    },
+    {
+        "n":  "Mindjack",
+        "y":  2011,
+        "pu":  "Square Enix",
+        "sc":  41,
+        "rea":  "Mindjack\u0027s core concept - possessing and controlling enemies - was genuinely interesting, but the execution featured AI that stood motionless while shooting at walls, frame rate drops that made combat unplayable, and an asymmetric multiplayer mode where other players could invade your game uninvited.",
+        "nim": "💀 No image available"
+    },
+    {
+        "n":  "Turning Point: Fall of Liberty",
+        "y":  2008,
+        "pu":  "Codemasters",
+        "sc":  38,
+        "rea":  "Turning Point attempted an alternate history FPS where Nazis invaded America but delivered enemy AI that walked straight toward the player, weapons that had no recoil or weight, and a campaign that critics described as among the least imaginative shooters of the Xbox 360 era.",
+        "nim": "💀 No image available"
+    },
+    {
+        "n":  "Monster Trucks Nitro (3DS)",
+        "y":  2013,
+        "pu":  "RedLynx",
+        "sc":  null,
+        "rea":  "This placeholder represents the broader category of cheap eShop filler titles on 3DS that received near-zero review scores, notable for content that was technically functional but offered no entertainment value and targeted parents browsing digital storefronts without reading reviews.",
+        "nim": "💀 No image available"
+    },
+    {
+        "n":  "Leisure Suit Larry: Magna Cum Laude",
+        "y":  2004,
+        "pu":  "Sierra Entertainment",
+        "sc":  50,
+        "rea":  "The first post-Al Lowe Leisure Suit Larry replaced the original series\u0027 adult wit with crude college humor minigames and removed the adventure game elements entirely. Critics and fans of the original series rejected it as a betrayal of what made Larry Laffer charming.",
+        "nim": "💀 No image available"
+    },
+    {
+        "n":  "Secret Service: Ultimate Sacrifice",
+        "y":  2008,
+        "pu":  "Activision",
+        "sc":  33,
+        "rea":  "Secret Service: Ultimate Sacrifice was a budget FPS where the president of the United States must be protected in a shooter with enemy AI that ran into walls, textures that looked washed out even on highest settings, and missions without clear objectives or direction.",
+        "nim": "💀 No image available"
+    },
+    {
+        "n":  "College Hoops 2K8",
+        "y":  2007,
+        "pu":  "2K Sports",
+        "sc":  null,
+        "rea":  "This entry represents the licensed sports sim genre where rushed annual releases failed to improve on predecessors: College Hoops 2K8 featured identical gameplay to the prior year with roster updates only, typifying the criticism leveled at annual sports franchises during the mid-2000s.",
+        "nim": "💀 No image available"
+    },
+    {
+        "n":  "Fester\u0027s Quest",
+        "y":  1989,
+        "pu":  "Sunsoft",
+        "sc":  null,
+        "rea":  "Fester\u0027s Quest, based on the Addams Family film, was a notoriously difficult NES shooter where power-ups permanently weakened the player\u0027s weapon if collected in the wrong order and enemies respawned infinitely. Its brutal and confusing design made it one of the most disliked licensed NES games.",
+        "nim": "💀 No image available"
+    },
+    {
+        "n":  "Haze",
+        "y":  2008,
+        "pu":  "Ubisoft",
+        "sc":  52,
+        "rea":  "Haze was marketed heavily as a PlayStation 3 exclusive and sci-fi FPS successor to Halo, but launched to widespread disappointment due to generic corridor shooting, forgettable characters, and a narrative about soldier-enhancing drugs that went nowhere. Ubisoft quietly abandoned the Free Radical Design relationship afterward.",
+        "nim": "💀 No image available"
+    },
+    {
+        "n":  "Aliens vs. Predator: Extinction",
+        "y":  2003,
+        "pu":  "EA Games",
+        "sc":  48,
+        "rea":  "AVP: Extinction was a real-time strategy game on consoles that required precise mouse-like unit control executed entirely through an analog stick. The result was a control scheme so imprecise that issuing orders to individual units was essentially impossible, making meaningful strategy unachievable.",
+        "nim": "💀 No image available"
+    },
+    {
+        "n":  "Indy 500 (Xbox)",
+        "y":  2002,
+        "pu":  "Infogrames",
+        "sc":  null,
+        "rea":  "This slot is used for Kabuki Warriors (2001), an Xbox launch brawler that required no fighting game knowledge whatsoever - the optimal strategy was mashing one button repeatedly, as the AI could not adapt. Reviewers called it the worst launch title in Xbox history.",
+        "nim": "💀 No image available"
+    },
+    {
+        "n":  "X-Men: Destiny",
+        "y":  2011,
+        "pu":  "Activision",
+        "sc":  43,
+        "rea":  "X-Men: Destiny promised deep RPG choice mechanics and player-created mutant heroes but delivered a shallow brawler with repetitive combat, minimal character customization, and a story that referenced X-Men lore without delivering anything of substance. Activision cancelled the developer Silicon Knights amid broader studio controversies.",
+        "nim": "💀 No image available"
+    },
+    {
+        "n":  "Ninja Gaiden 3",
+        "y":  2012,
+        "pu":  "Tecmo Koei",
+        "sc":  57,
+        "rea":  "Ninja Gaiden 3 stripped away the weapon variety and dismemberment mechanics that defined the franchise, replacing them with context-sensitive cinematic kills and a slower, less precise combat system. Long-time fans described it as the antithesis of everything that made Ninja Gaiden great.",
+        "nim": "💀 No image available"
+    },
+    {
+        "n":  "Sonic Free Riders",
+        "y":  2010,
+        "pu":  "Sega",
+        "sc":  44,
+        "rea":  "Sonic Free Riders required the Xbox 360 Kinect sensor to play but was designed with such poor motion calibration that simply standing on the hover board consistently failed to register. Players described leaning actions repeatedly without response, making the game essentially uncontrollable.",
+        "nim": "💀 No image available"
+    },
+    {
+        "n":  "Blood Warriors",
+        "y":  1993,
+        "pu":  "Kaneko",
+        "sc":  null,
+        "rea":  "Blood Warriors was a Japanese fighting game for arcades and Famicom infamous for having one character who was so unbalanced that selecting him ended matches in two hits, and whose hit detection on other characters was almost nonexistent. It is a textbook example of unbalanced fighting game design.",
+        "nim": "💀 No image available"
+    },
+    {
+        "n":  "Fortnight (not Fortnite)",
+        "y":  2018,
+        "pu":  "Various mobile clones",
+        "sc":  null,
+        "rea":  "This slot represents the broader category of predatory mobile Fortnite clones released in 2018-2019 with names deliberately similar to Epic\u0027s hit. Multiple clone apps named \u0027Fortnight,\u0027 \u0027Fortnite Battle\u0027 and similar were removed from Google Play and the App Store for deceptive naming and containing malware or extreme microtransactions.",
+        "nim": "💀 No image available"
+    },
+    {
+        "n":  "Ghostbusters (2009, Wii)",
+        "y":  2009,
+        "pu":  "Atari",
+        "sc":  41,
+        "rea":  "While the PS3 and Xbox 360 versions of Ghostbusters: The Video Game received positive reviews, the Wii version was a completely different and inferior product with cartoon graphics, watered-down mechanics, and none of the original voice cast. It was sold at the same price as the praised HD versions with no disclaimer.",
+        "nim": "💀 No image available"
+    },
+    {
+        "n":  "GTA Trilogy: Definitive Edition",
+        "y":  2021,
+        "pu":  "Rockstar Games",
+        "sc":  52,
+        "rea":  "Rockstar\u0027s remaster of GTA III, Vice City, and San Andreas launched with severe visual glitches including misshapen character models, rain that made the screen nearly opaque, and missing content from the originals. Rockstar briefly took the originals off sale before the remasters launched, leaving players with no alternative.",
+        "nim": "💀 No image available"
+    },
+    {
+        "n":  "Cyberpunk 2077 (launch, PS4/Xbox One)",
+        "y":  2020,
+        "pu":  "CD Projekt Red",
+        "sc":  54,
+        "rea":  "Cyberpunk 2077 launched as one of gaming\u0027s most anticipated titles but was so unstable on base PS4 and Xbox One that Sony removed it from the PlayStation Store entirely - an almost unprecedented action - and offered full refunds. CD Projekt Red issued a public apology, and it took over a year of patches to make the game playable on last-gen hardware.",
+        "nim": "💀 No image available"
+    },
+    {
+        "n":  "Tony Hawk\u0027s Pro Skater 5",
+        "y":  2015,
+        "pu":  "Activision",
+        "sc":  32,
+        "rea":  "Tony Hawk\u0027s Pro Skater 5 launched with a mandatory day-one patch nearly the size of the entire game, suggesting the disc contained an almost unplayable product. After patching, players found broken physics, clipping issues, and a gross visual downgrade from pre-release screenshots that many considered false advertising.",
+        "nim": "💀 No image available"
+    },
+    {
+        "n":  "Air Control",
+        "y":  2015,
+        "pu":  "Killjoy Games",
+        "sc":  null,
+        "rea":  "Air Control was a Steam flight game that gained notoriety for featuring literally nothing functional - the plane floated through empty environments, the advertised gameplay modes did not exist, and the game appeared to be a prototype from a beginner rather than a commercial product. Steam removed it after widespread buyer complaints.",
+        "nim": "💀 No image available"
+    },
+    {
+        "n":  "Infestation: The New Z",
+        "y":  2016,
+        "pu":  "Fredaikis",
+        "sc":  null,
+        "rea":  "The New Z was a zombie survival game that carried over all the reputation damage from The War Z / Infestation: Survivor Stories and added a cash shop so aggressive that purchasable items gave direct gameplay advantages, making it effectively pay-to-win in a survival genre where fairness is paramount.",
+        "nim": "💀 No image available"
+    },
+    {
+        "n":  "Dino Crisis 3",
+        "y":  2003,
+        "pu":  "Capcom",
+        "sc":  51,
+        "rea":  "Dino Crisis 3 abandoned the series\u0027 claustrophobic survival horror formula to set the game in space, replacing dinosaurs with genetically engineered space monsters and swapping fixed cameras for a confusing third-person view. Fans of the original Dino Crisis games rejected it, and the series has not been revived since.",
+        "nim": "💀 No image available"
+    },
+    {
+        "n":  "Bomberman: Act Zero",
+        "y":  2006,
+        "pu":  "Konami",
+        "sc":  34,
+        "rea":  "Act Zero reimagined the cheerful Bomberman franchise as a gritty, dystopian arena shooter with robotic soldiers, removing the colorful characters that defined the series. The new art direction was universally rejected, and the core gameplay was described as slower and less responsive than the 1990s originals.",
+        "nim": "💀 No image available"
+    },
+    {
+        "n":  "Gungrave: Overdose",
+        "y":  2004,
+        "pu":  "Mastiff",
+        "sc":  50,
+        "rea":  "Gungrave: Overdose offered repetitive third-person shooting across identical corridors with almost no enemy variety, rewarding mindless button-holding rather than skilled play. The original Gungrave received cult acclaim for its style, making Overdose\u0027s mediocrity a disappointing failure for fans of the anime it was based on.",
+        "nim": "💀 No image available"
+    },
+    {
+        "n":  "Mass Effect: Andromeda (launch)",
+        "y":  2017,
+        "pu":  "Electronic Arts",
+        "sc":  72,
+        "rea":  "While scoring above average on Metacritic, Mass Effect: Andromeda launched with a facial animation system so broken that character close-ups in cutscenes prompted widespread mockery and viral compilation videos. The damage to the Mass Effect franchise led BioWare to cancel planned DLC and shelve the Andromeda setting entirely.",
+        "nim": "💀 No image available"
+    },
+    {
+        "n":  "No Man\u0027s Sky (launch)",
+        "y":  2016,
+        "pu":  "Hello Games",
+        "sc":  61,
+        "rea":  "No Man\u0027s Sky launched missing features prominently shown in pre-release trailers and interviews - including multiplayer and base building - leading to one of gaming\u0027s largest consumer backlash events. Hello Games redeemed the game through years of free updates, transforming the launch disaster into one of gaming\u0027s greatest turnaround stories.",
+        "nim": "💀 No image available"
+    },
+    {
+        "n":  "Sonic Boom: Rise of Lyric",
+        "y":  2014,
+        "pu":  "Sega",
+        "sc":  32,
+        "rea":  "Sonic Boom: Rise of Lyric was a Wii U exclusive so broken that a single enemy could render Sonic immortal through an exploit, and a crouch-jump trick allowed players to bypass entire levels by flying upward indefinitely. The game sold so poorly it contributed to both the Wii U\u0027s poor library reputation and Sega\u0027s decision to reconsider the Sonic Boom brand.",
+        "nim": "💀 No image available"
+    },
+    {
+        "n":  "Duke Nukem: Critical Mass (3DS)",
+        "y":  2011,
+        "pu":  "Deep Silver",
+        "sc":  31,
+        "rea":  "Duke Nukem: Critical Mass arrived years after development began for DS and transitioned to 3DS, resulting in a side-scrolling shooter that used 3D assets so poorly optimized they appeared as blurry smears. It was considered one of the weakest 3DS launch-window titles and yet another nail in the coffin of Duke Nukem\u0027s early 2010s collapse.",
+        "nim": "💀 No image available"
+    }
+]

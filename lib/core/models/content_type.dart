@@ -66,4 +66,13 @@ enum ContentType {
   desert,
   river,
   sea,
+  gamingHub,
+  gamesHub,
+  gamersHub,
+  gamingAnecdote,
+  gamingNomination,
+  classicGame,
+  worstGame,
+  bannedGame,
+  gamingLegend,
 }

@@ -7,6 +7,7 @@ import '../../features/cinema/pages/cinema_hub_page.dart';
 import '../../features/celebrity/pages/celebrity_navigator.dart';
 import '../../features/science/pages/science_navigator.dart';
 import '../../features/art/pages/art_navigator.dart';
+import '../../features/gaming/pages/gaming_navigator.dart';
 import '../models/content_type.dart';
 import '../../generated/app_localizations.dart';
 import '../services/ad_service.dart';
@@ -33,6 +34,7 @@ class _HomePageState extends State<HomePage> {
     ContentType.artHub,
     ContentType.world,
     ContentType.space,
+    ContentType.gamingHub,
   ];
 
   final AdService _adService = AdService();
@@ -72,6 +74,11 @@ class _HomePageState extends State<HomePage> {
   }
 
   void _navigate(ContentType type) {
+    if (type == ContentType.gamingHub) {
+      GamingNavigator.show(context, _adService)
+          .then((_) => _cardKeys[type]?.currentState?.onNavigationComplete());
+      return;
+    }
     if (type == ContentType.scienceHub) {
       ScienceNavigator.show(context, _adService)
           .then((_) => _cardKeys[type]?.currentState?.onNavigationComplete());

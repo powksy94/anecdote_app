@@ -35,6 +35,12 @@ import '../../features/art/services/nobel_prize_service.dart';
 import '../../features/celebrity/services/lgbtqia_service.dart';
 import '../../features/celebrity/services/pioneer_woman_service.dart';
 import '../../features/celebrity/services/legendary_athlete_service.dart';
+import '../../features/gaming/services/gaming_anecdote_service.dart';
+import '../../features/gaming/services/gaming_nomination_service.dart';
+import '../../features/gaming/services/classic_game_service.dart';
+import '../../features/gaming/services/worst_game_service.dart';
+import '../../features/gaming/services/banned_game_service.dart';
+import '../../features/gaming/services/gaming_legend_service.dart';
 
 Future<ContentData> fetchDailyContent(
   ContentType type, {
@@ -85,6 +91,13 @@ Future<ContentData> fetchDailyContent(
     case ContentType.lgbtqiaPersonality: return LgbtqiaService().getDailyContent();
     case ContentType.pioneerWoman:       return PioneerWomanService().getDailyContent();
     case ContentType.legendaryAthlete:   return LegendaryAthleteService().getDailyContent();
+    // ── Gaming ─────────────────────────────────────────────────────────────
+    case ContentType.gamingAnecdote:     return GamingAnecdoteService().getDailyContent();
+    case ContentType.gamingNomination:   return GamingNominationService().getDailyContent();
+    case ContentType.classicGame:        return ClassicGameService().getDailyContent();
+    case ContentType.worstGame:          return WorstGameService().getDailyContent();
+    case ContentType.bannedGame:         return BannedGameService().getDailyContent();
+    case ContentType.gamingLegend:       return GamingLegendService().getDailyContent();
     // ── API-ninjas / HTTP ──────────────────────────────────────────────────
     default:                             return apiService.fetchRemoteContent(type);
   }

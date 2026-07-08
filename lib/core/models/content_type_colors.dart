@@ -59,6 +59,15 @@ extension ContentTypeColors on ContentType {
       case ContentType.desert:              return const Color(0xFFE65100);
       case ContentType.river:               return const Color(0xFF0288D1);
       case ContentType.sea:                 return const Color(0xFF006064);
+      case ContentType.gamingHub:           return const Color(0xFF238636);
+      case ContentType.gamesHub:            return const Color(0xFF533483);
+      case ContentType.gamersHub:           return const Color(0xFF7B2FBE);
+      case ContentType.gamingAnecdote:      return const Color(0xFF2EA043);
+      case ContentType.gamingNomination:    return const Color(0xFFD4A017);
+      case ContentType.classicGame:         return const Color(0xFF6B21A8);
+      case ContentType.worstGame:           return const Color(0xFFDC2626);
+      case ContentType.bannedGame:          return const Color(0xFFB91C1C);
+      case ContentType.gamingLegend:        return const Color(0xFF66C0F4);
     }
   }
 }

@@ -325,4 +325,57 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get goBack => 'Go back';
+
+  @override
+  String get categoryGamingHub => 'Gaming';
+
+  @override
+  String get categoryGamesHub => 'Games';
+
+  @override
+  String get categoryGamersHub => 'Gamers';
+
+  @override
+  String get categoryGamingAnecdote => 'Gaming Trivia';
+
+  @override
+  String get categoryGamingNomination => 'Game Awards';
+
+  @override
+  String get categoryClassicGame => 'Classic Games';
+
+  @override
+  String get categoryWorstGame => 'Worst Games';
+
+  @override
+  String get categoryBannedGame => 'Banned Games';
+
+  @override
+  String get categoryGamingLegend => 'Gaming Legends';
+
+  @override
+  String get bannedGameWarningTitle => '⚠️ Sensitive Content';
+
+  @override
+  String get bannedGameWarningMessage =>
+      'This category contains information about games banned for violence, sexual content, or political censorship. Some descriptions may be disturbing. Do you want to continue?';
+
+  @override
+  String get noImageGamingLegend => '🎮 No image available for this legend';
+
+  @override
+  String get noImageClassicGame =>
+      '🕹️ No image available — game artwork is under copyright';
+
+  @override
+  String get noImageGamingNomination =>
+      '🏆 No image available — game artwork is under copyright';
+
+  @override
+  String get noImageWorstGame =>
+      '💀 No image available — game artwork is under copyright';
+
+  @override
+  String get noImageBannedGame =>
+      '🚫 No image available — game artwork is under copyright';
 }

@@ -1,0 +1,740 @@
+[
+    {
+        "y":  2023,
+        "cat":  "Game of the Year",
+        "n":  "Baldur\u0027s Gate 3",
+        "de":  "Larian Studios",
+        "aw":  "The Game Awards",
+        "fa":  "Larian\u0027s massive RPG swept most major awards in 2023, winning GOTY at The Game Awards, BAFTA, and the D.I.C.E. Awards in a historic clean sweep.",
+        "nim": "🏆 No image available"
+    },
+    {
+        "y":  2023,
+        "cat":  "Best RPG",
+        "n":  "Baldur\u0027s Gate 3",
+        "de":  "Larian Studios",
+        "aw":  "The Game Awards",
+        "fa":  "The game redefined the CRPG genre with its unprecedented reactivity to player choices, full co-op support, and hundreds of hours of authored content.",
+        "nim": "🏆 No image available"
+    },
+    {
+        "y":  2022,
+        "cat":  "Game of the Year",
+        "n":  "Elden Ring",
+        "de":  "FromSoftware",
+        "aw":  "The Game Awards",
+        "fa":  "Elden Ring dominated 2022 awards, winning GOTY at TGA, BAFTA, and D.I.C.E., driven by the collaboration between Hidetaka Miyazaki and author George R.R. Martin.",
+        "nim": "🏆 No image available"
+    },
+    {
+        "y":  2022,
+        "cat":  "Best Art Direction",
+        "n":  "Elden Ring",
+        "de":  "FromSoftware",
+        "aw":  "The Game Awards",
+        "fa":  "The Lands Between featured breathtaking vistas and a cohesive, tragic mythology expressed entirely through environmental storytelling.",
+        "nim": "🏆 No image available"
+    },
+    {
+        "y":  2021,
+        "cat":  "Game of the Year",
+        "n":  "It Takes Two",
+        "de":  "Hazelight Studios",
+        "aw":  "The Game Awards",
+        "fa":  "Josef Fares\u0027s cooperative platformer was considered a major upset winner, beating out Deathloop and Metroid Dread in what many called the most competitive GOTY race in years.",
+        "nim": "🏆 No image available"
+    },
+    {
+        "y":  2021,
+        "cat":  "Best Narrative",
+        "n":  "Returnal",
+        "de":  "Housemarque",
+        "aw":  "BAFTA Games Awards",
+        "fa":  "Returnal\u0027s fractured, unreliable narrative delivered through environmental storytelling in a roguelike structure was recognized as a breakthrough in game storytelling.",
+        "nim": "🏆 No image available"
+    },
+    {
+        "y":  2020,
+        "cat":  "Game of the Year",
+        "n":  "The Last of Us Part II",
+        "de":  "Naughty Dog",
+        "aw":  "The Game Awards",
+        "fa":  "The Last of Us Part II won 7 awards at The Game Awards 2020, the most wins in a single night in TGA history, despite being one of the most divisive games in recent memory.",
+        "nim": "🏆 No image available"
+    },
+    {
+        "y":  2020,
+        "cat":  "Best Narrative",
+        "n":  "The Last of Us Part II",
+        "de":  "Naughty Dog",
+        "aw":  "The Game Awards",
+        "fa":  "The game\u0027s controversial dual-protagonist structure, which forces players to play as a character who commits a shocking act early in the story, defined debates about narrative in games.",
+        "nim": "🏆 No image available"
+    },
+    {
+        "y":  2020,
+        "cat":  "Game of the Year",
+        "n":  "Hades",
+        "de":  "Supergiant Games",
+        "aw":  "BAFTA Games Awards",
+        "fa":  "Hades became the first video game to win the Hugo Award for Best Game, and its 4 wins at The Game Awards 2020 made it the most award-winning indie game of the year.",
+        "nim": "🏆 No image available"
+    },
+    {
+        "y":  2019,
+        "cat":  "Game of the Year",
+        "n":  "Sekiro: Shadows Die Twice",
+        "de":  "FromSoftware",
+        "aw":  "The Game Awards",
+        "fa":  "Sekiro\u0027s win over the widely expected Death Stranding surprised many, recognizing FromSoftware\u0027s innovative parry-based combat system and Japanese feudal setting.",
+        "nim": "🏆 No image available"
+    },
+    {
+        "y":  2019,
+        "cat":  "Best Performance",
+        "n":  "Death Stranding",
+        "de":  "Kojima Productions",
+        "aw":  "The Game Awards",
+        "fa":  "Norman Reedus won Best Performance for portraying Sam Bridges, in a game that pushed the boundaries of cinematic acting capture in video games.",
+        "nim": "🏆 No image available"
+    },
+    {
+        "y":  2018,
+        "cat":  "Game of the Year",
+        "n":  "God of War",
+        "de":  "Santa Monica Studio",
+        "aw":  "The Game Awards",
+        "fa":  "The soft reboot of God of War, shifting from Greek to Norse mythology and adding Kratos\u0027s son Atreus as a central character, was universally celebrated and won over 200 Game of the Year awards.",
+        "nim": "🏆 No image available"
+    },
+    {
+        "y":  2018,
+        "cat":  "Best Narrative",
+        "n":  "God of War",
+        "de":  "Santa Monica Studio",
+        "aw":  "BAFTA Games Awards",
+        "fa":  "The father-son dynamic between Kratos and Atreus was praised as one of gaming\u0027s most emotionally resonant stories, redefining what action games could accomplish narratively.",
+        "nim": "🏆 No image available"
+    },
+    {
+        "y":  2017,
+        "cat":  "Game of the Year",
+        "n":  "The Legend of Zelda: Breath of the Wild",
+        "de":  "Nintendo",
+        "aw":  "The Game Awards",
+        "fa":  "BotW swept virtually every Game of the Year award in 2017, winning at TGA, D.I.C.E., GDC, IGN, GameSpot, and nearly every major publication for its revolutionary open-world design.",
+        "nim": "🏆 No image available"
+    },
+    {
+        "y":  2017,
+        "cat":  "Best Game Design",
+        "n":  "The Legend of Zelda: Breath of the Wild",
+        "de":  "Nintendo",
+        "aw":  "GDC Awards",
+        "fa":  "The GDC recognized BotW\u0027s emergent physics-based puzzle design, which allowed players to solve challenges in ways designers had not anticipated.",
+        "nim": "🏆 No image available"
+    },
+    {
+        "y":  2016,
+        "cat":  "Game of the Year",
+        "n":  "Overwatch",
+        "de":  "Blizzard Entertainment",
+        "aw":  "The Game Awards",
+        "fa":  "Overwatch won GOTY at The Game Awards despite only launching in May 2016, fueled by its diverse hero roster, polished team-based gameplay, and record 35 million players in its first year.",
+        "nim": "🏆 No image available"
+    },
+    {
+        "y":  2016,
+        "cat":  "Best Multiplayer",
+        "n":  "Overwatch",
+        "de":  "Blizzard Entertainment",
+        "aw":  "D.I.C.E. Awards",
+        "fa":  "Overwatch redefined the hero shooter genre and was praised for making competitive multiplayer accessible to players who had never engaged with the format before.",
+        "nim": "🏆 No image available"
+    },
+    {
+        "y":  2015,
+        "cat":  "Game of the Year",
+        "n":  "The Witcher 3: Wild Hunt",
+        "de":  "CD Projekt Red",
+        "aw":  "The Game Awards",
+        "fa":  "The Witcher 3 won over 800 individual Game of the Year awards globally in 2015 - the most ever awarded to a single title - setting a Guinness World Record.",
+        "nim": "🏆 No image available"
+    },
+    {
+        "y":  2015,
+        "cat":  "Best Narrative",
+        "n":  "The Witcher 3: Wild Hunt",
+        "de":  "CD Projekt Red",
+        "aw":  "BAFTA Games Awards",
+        "fa":  "The game\u0027s mature, morally complex storytelling set a new benchmark for open-world RPG writing, with both main story and side quests receiving near-universal praise.",
+        "nim": "🏆 No image available"
+    },
+    {
+        "y":  2014,
+        "cat":  "Game of the Year",
+        "n":  "Dragon Age: Inquisition",
+        "de":  "BioWare",
+        "aw":  "The Game Awards",
+        "fa":  "Dragon Age: Inquisition took home GOTY at The Game Awards 2014, TGA\u0027s inaugural year, recognized for its expansive world and ambitious party-based RPG design.",
+        "nim": "🏆 No image available"
+    },
+    {
+        "y":  2013,
+        "cat":  "Game of the Year",
+        "n":  "The Last of Us",
+        "de":  "Naughty Dog",
+        "aw":  "BAFTA Games Awards",
+        "fa":  "The Last of Us won 249 Game of the Year awards in 2013 - a record at the time - and is credited with establishing that video games could achieve the emotional weight of prestige television.",
+        "nim": "🏆 No image available"
+    },
+    {
+        "y":  2013,
+        "cat":  "Best Original Score",
+        "n":  "The Last of Us",
+        "de":  "Naughty Dog",
+        "aw":  "BAFTA Games Awards",
+        "fa":  "Gustavo Santaolalla\u0027s acoustic guitar score for The Last of Us was celebrated for its restraint and emotional precision, becoming one of gaming\u0027s most recognizable musical identities.",
+        "nim": "🏆 No image available"
+    },
+    {
+        "y":  2012,
+        "cat":  "Game of the Year",
+        "n":  "Journey",
+        "de":  "thatgamecompany",
+        "aw":  "BAFTA Games Awards",
+        "fa":  "Journey\u0027s wordless, emotionally resonant cooperative experience won BAFTA Game of the Year, making thatgamecompany only the third studio to win the award with their third consecutive nominated game.",
+        "nim": "🏆 No image available"
+    },
+    {
+        "y":  2012,
+        "cat":  "Best Original Score",
+        "n":  "Journey",
+        "de":  "thatgamecompany",
+        "aw":  "D.I.C.E. Awards",
+        "fa":  "Austin Wintory\u0027s score for Journey became the first video game soundtrack nominated for a Grammy Award for Best Score Soundtrack for Visual Media.",
+        "nim": "🏆 No image available"
+    },
+    {
+        "y":  2011,
+        "cat":  "Game of the Year",
+        "n":  "The Elder Scrolls V: Skyrim",
+        "de":  "Bethesda Game Studios",
+        "aw":  "Spike Video Game Awards",
+        "fa":  "Skyrim swept awards in 2011 and became a cultural phenomenon, its ubiquity inspiring years of memes and Bethesda releasing it on virtually every platform including Amazon Alexa.",
+        "nim": "🏆 No image available"
+    },
+    {
+        "y":  2011,
+        "cat":  "Best RPG",
+        "n":  "Dark Souls",
+        "de":  "FromSoftware",
+        "aw":  "GameSpot Awards",
+        "fa":  "Dark Souls introduced the Soulslike genre to mainstream awareness and sparked debates about difficulty, accessibility, and player agency that continue to shape game design discussions.",
+        "nim": "🏆 No image available"
+    },
+    {
+        "y":  2010,
+        "cat":  "Game of the Year",
+        "n":  "Red Dead Redemption",
+        "de":  "Rockstar San Diego",
+        "aw":  "Spike Video Game Awards",
+        "fa":  "Red Dead Redemption brought the American Western setting to open-world gaming with a cinematic quality that earned comparisons to the films of Sergio Leone and Sam Peckinpah.",
+        "nim": "🏆 No image available"
+    },
+    {
+        "y":  2009,
+        "cat":  "Game of the Year",
+        "n":  "Uncharted 2: Among Thieves",
+        "de":  "Naughty Dog",
+        "aw":  "BAFTA Games Awards",
+        "fa":  "Uncharted 2 won over 100 Game of the Year awards and set a new standard for action-adventure cinematic presentation, particularly its train sequence opener which remains a benchmark for in-game spectacle.",
+        "nim": "🏆 No image available"
+    },
+    {
+        "y":  2009,
+        "cat":  "Best Narrative",
+        "n":  "Uncharted 2: Among Thieves",
+        "de":  "Naughty Dog",
+        "aw":  "D.I.C.E. Awards",
+        "fa":  "Uncharted 2 elevated game writing and acting to a level that drew direct comparisons to Hollywood blockbusters, establishing characters players genuinely cared about.",
+        "nim": "🏆 No image available"
+    },
+    {
+        "y":  2008,
+        "cat":  "Game of the Year",
+        "n":  "Grand Theft Auto IV",
+        "de":  "Rockstar North",
+        "aw":  "Spike Video Game Awards",
+        "fa":  "GTA IV launched to record-breaking sales of $310 million in its first week and received critical acclaim for its serious narrative treatment of the American immigrant experience.",
+        "nim": "🏆 No image available"
+    },
+    {
+        "y":  2008,
+        "cat":  "Best Artistic Design",
+        "n":  "LittleBigPlanet",
+        "de":  "Media Molecule",
+        "aw":  "BAFTA Games Awards",
+        "fa":  "LittleBigPlanet\u0027s user-generated content model and distinctive crafted-material art style won widespread recognition and pioneered the creation-tool genre of platformers.",
+        "nim": "🏆 No image available"
+    },
+    {
+        "y":  2007,
+        "cat":  "Game of the Year",
+        "n":  "BioShock",
+        "de":  "Irrational Games",
+        "aw":  "Spike Video Game Awards",
+        "fa":  "BioShock\u0027s underwater city of Rapture was celebrated as one of gaming\u0027s most realized settings, delivering both sharp political commentary on Ayn Rand\u0027s objectivism and outstanding FPS gameplay.",
+        "nim": "🏆 No image available"
+    },
+    {
+        "y":  2007,
+        "cat":  "Innovation Award",
+        "n":  "Portal",
+        "de":  "Valve",
+        "aw":  "GDC Awards",
+        "fa":  "Portal introduced an entirely new spatial puzzle mechanic and won the GDC Innovation Award for a puzzle game that could be completed in under two hours yet felt wholly original.",
+        "nim": "🏆 No image available"
+    },
+    {
+        "y":  2006,
+        "cat":  "Game of the Year",
+        "n":  "The Legend of Zelda: Twilight Princess",
+        "de":  "Nintendo",
+        "aw":  "Spike Video Game Awards",
+        "fa":  "Twilight Princess launched alongside the Wii and was praised for its darker tone and expanded world, though it competed with Gears of War in one of the year\u0027s most hotly contested GOTY races.",
+        "nim": "🏆 No image available"
+    },
+    {
+        "y":  2006,
+        "cat":  "Best Fighting Game",
+        "n":  "Dead Rising",
+        "de":  "Capcom",
+        "aw":  "IGN Awards",
+        "fa":  "Dead Rising\u0027s sandbox zombie slaughter in a shopping mall captured the cultural zeitgeist and demonstrated what open-world survival gameplay could accomplish on the Xbox 360.",
+        "nim": "🏆 No image available"
+    },
+    {
+        "y":  2005,
+        "cat":  "Game of the Year",
+        "n":  "Resident Evil 4",
+        "de":  "Capcom",
+        "aw":  "Spike Video Game Awards",
+        "fa":  "Resident Evil 4 redefined the third-person shooter genre with its over-the-shoulder camera and context-sensitive controls, winning numerous GOTY awards and remaining on best-of-all-time lists nearly 20 years later.",
+        "nim": "🏆 No image available"
+    },
+    {
+        "y":  2005,
+        "cat":  "Best Action/Adventure Game",
+        "n":  "Shadow of the Colossus",
+        "de":  "Team Ico",
+        "aw":  "Spike Video Game Awards",
+        "fa":  "Shadow of the Colossus\u0027 16-boss structure with no traditional enemies was recognized as a masterpiece of minimalist game design with an emotionally devastating conclusion.",
+        "nim": "🏆 No image available"
+    },
+    {
+        "y":  2004,
+        "cat":  "Game of the Year",
+        "n":  "Halo 2",
+        "de":  "Bungie",
+        "aw":  "Spike Video Game Awards",
+        "fa":  "Halo 2\u0027s online multiplayer via Xbox Live set the template for console online shooters and its launch sold 2.4 million copies in 24 hours, breaking records for entertainment releases at the time.",
+        "nim": "🏆 No image available"
+    },
+    {
+        "y":  2004,
+        "cat":  "Best RPG",
+        "n":  "World of Warcraft",
+        "de":  "Blizzard Entertainment",
+        "aw":  "Spike Video Game Awards",
+        "fa":  "WoW launched in November 2004 and quickly became the world\u0027s most popular MMORPG, defining a genre and business model that continues to influence game design.",
+        "nim": "🏆 No image available"
+    },
+    {
+        "y":  2003,
+        "cat":  "Game of the Year",
+        "n":  "The Legend of Zelda: The Wind Waker",
+        "de":  "Nintendo",
+        "aw":  "BAFTA Games Awards",
+        "fa":  "Wind Waker\u0027s cel-shaded art style was initially controversial but became one of gaming\u0027s most beloved visual styles, demonstrating that expressive graphics can age better than realistic ones.",
+        "nim": "🏆 No image available"
+    },
+    {
+        "y":  2002,
+        "cat":  "Game of the Year",
+        "n":  "Metroid Prime",
+        "de":  "Retro Studios",
+        "aw":  "Spike Video Game Awards",
+        "fa":  "Retro Studios succeeded in converting the 2D Metroid formula to a first-person 3D perspective while preserving its isolation and exploration, winning near-universal critical praise.",
+        "nim": "🏆 No image available"
+    },
+    {
+        "y":  2002,
+        "cat":  "Best Fighting Game",
+        "n":  "Mortal Kombat: Deadly Alliance",
+        "de":  "Midway Games",
+        "aw":  "Spike Video Game Awards",
+        "fa":  "Deadly Alliance revived the MK franchise with a three-fighting-style system, multiple fatalities per character, and a Krypt collectibles mode that extended replay value significantly.",
+        "nim": "🏆 No image available"
+    },
+    {
+        "y":  2001,
+        "cat":  "Game of the Year",
+        "n":  "Metal Gear Solid 2: Sons of Liberty",
+        "de":  "Konami",
+        "aw":  "Spike Video Game Awards",
+        "fa":  "MGS2\u0027s then-stunning graphics and meta-narrative about information control sparked massive controversy when players discovered they would control new character Raiden rather than Solid Snake for most of the game.",
+        "nim": "🏆 No image available"
+    },
+    {
+        "y":  2001,
+        "cat":  "Best Action Game",
+        "n":  "Halo: Combat Evolved",
+        "de":  "Bungie",
+        "aw":  "Spike Video Game Awards",
+        "fa":  "Halo: CE launched alongside the original Xbox and is credited with proving that first-person shooters could work on consoles, establishing Bungie and Microsoft\u0027s franchise simultaneously.",
+        "nim": "🏆 No image available"
+    },
+    {
+        "y":  2000,
+        "cat":  "Game of the Year",
+        "n":  "Diablo II",
+        "de":  "Blizzard North",
+        "aw":  "GameSpot Awards",
+        "fa":  "Diablo II\u0027s deep itemization, act-based structure, and online Battle.net play defined the action RPG genre for a decade and remains one of the most played PC games ever made.",
+        "nim": "🏆 No image available"
+    },
+    {
+        "y":  1999,
+        "cat":  "Game of the Year",
+        "n":  "Chrono Cross",
+        "de":  "Square",
+        "aw":  "GameSpot Awards",
+        "fa":  "Chrono Cross featured 45 playable characters and a complex parallel-world narrative, winning critical acclaim as one of the most ambitious RPGs on PlayStation.",
+        "nim": "🏆 No image available"
+    },
+    {
+        "y":  1998,
+        "cat":  "Game of the Year",
+        "n":  "The Legend of Zelda: Ocarina of Time",
+        "de":  "Nintendo",
+        "aw":  "Spike Video Game Awards",
+        "fa":  "Ocarina of Time is frequently cited as the greatest video game ever made, introducing Z-targeting combat and 3D exploration that defined the formula for 3D adventure games for decades.",
+        "nim": "🏆 No image available"
+    },
+    {
+        "y":  1998,
+        "cat":  "Best PC Game",
+        "n":  "Half-Life",
+        "de":  "Valve Software",
+        "aw":  "PC Gamer Awards",
+        "fa":  "Half-Life won over 50 Game of the Year awards and is credited with establishing narrative storytelling as a core component of first-person shooters.",
+        "nim": "🏆 No image available"
+    },
+    {
+        "y":  1997,
+        "cat":  "Game of the Year",
+        "n":  "GoldenEye 007",
+        "de":  "Rare",
+        "aw":  "IGN Awards",
+        "fa":  "GoldenEye defined the console FPS genre with its mission-based structure, multiplayer split-screen, and use of a film license, outselling the N64 itself in multiple markets at launch.",
+        "nim": "🏆 No image available"
+    },
+    {
+        "y":  1997,
+        "cat":  "Best RPG",
+        "n":  "Final Fantasy VII",
+        "de":  "Square",
+        "aw":  "GameSpot Awards",
+        "fa":  "Final Fantasy VII brought JRPGs to Western mainstream audiences and remains one of the most influential games ever made, famed for the death of Aerith that shocked millions of players.",
+        "nim": "🏆 No image available"
+    },
+    {
+        "y":  1996,
+        "cat":  "Game of the Year",
+        "n":  "Super Mario 64",
+        "de":  "Nintendo",
+        "aw":  "Spike Video Game Awards",
+        "fa":  "Super Mario 64 defined 3D platform gaming and the N64 launch, introducing analog stick control, camera management, and 3D level design concepts that still influence platformers today.",
+        "nim": "🏆 No image available"
+    },
+    {
+        "y":  2023,
+        "cat":  "Best Indie Game",
+        "n":  "Dave the Diver",
+        "de":  "MINTROCKET",
+        "aw":  "The Game Awards",
+        "fa":  "Dave the Diver blended deep-sea exploration with restaurant management in a charming hybrid that resonated with millions, making it one of 2023\u0027s surprise hits and a discussion about what qualifies as indie.",
+        "nim": "🏆 No image available"
+    },
+    {
+        "y":  2023,
+        "cat":  "Best Mobile Game",
+        "n":  "Honkai: Star Rail",
+        "de":  "HoYoverse",
+        "aw":  "The Game Awards",
+        "fa":  "HoYoverse\u0027s turn-based space RPG achieved over 20 million downloads in its first three days, demonstrating the continued dominance of gacha RPGs in the mobile market.",
+        "nim": "🏆 No image available"
+    },
+    {
+        "y":  2022,
+        "cat":  "Best Indie Game",
+        "n":  "Stray",
+        "de":  "BlueTwelve Studio",
+        "aw":  "The Game Awards",
+        "fa":  "Stray\u0027s concept of playing as a cat exploring a cyberpunk city captured global attention and became one of the most wishlisted games in Steam history before its launch.",
+        "nim": "🏆 No image available"
+    },
+    {
+        "y":  2022,
+        "cat":  "Best Narrative",
+        "n":  "Horizon Forbidden West",
+        "de":  "Guerrilla Games",
+        "aw":  "D.I.C.E. Awards",
+        "fa":  "Guerrilla\u0027s sequel to Horizon Zero Dawn expanded on the first game\u0027s complex worldbuilding with a richer cast of characters and an emotionally satisfying narrative arc for Aloy.",
+        "nim": "🏆 No image available"
+    },
+    {
+        "y":  2021,
+        "cat":  "Best Indie Game",
+        "n":  "Kena: Bridge of Spirits",
+        "de":  "Ember Lab",
+        "aw":  "The Game Awards",
+        "fa":  "Kena was Ember Lab\u0027s first game, created by a studio with a background in animated films, and its Pixar-quality visuals set a new visual bar for small independent developers.",
+        "nim": "🏆 No image available"
+    },
+    {
+        "y":  2020,
+        "cat":  "Best Performance",
+        "n":  "Ghost of Tsushima",
+        "de":  "Sucker Punch Productions",
+        "aw":  "The Game Awards",
+        "fa":  "Daisuke Tsuji won Best Performance for his nuanced portrayal of Jin Sakai, delivered in both English and Japanese, reflecting the game\u0027s commitment to authentic Japanese cultural representation.",
+        "nim": "🏆 No image available"
+    },
+    {
+        "y":  2020,
+        "cat":  "Best Art Direction",
+        "n":  "Ghost of Tsushima",
+        "de":  "Sucker Punch Productions",
+        "aw":  "The Game Awards",
+        "fa":  "Ghost of Tsushima\u0027s Kurosawa Mode in black and white and its painterly visual style drew direct comparisons to the greatest samurai films, winning art direction awards across the industry.",
+        "nim": "🏆 No image available"
+    },
+    {
+        "y":  2019,
+        "cat":  "Best Indie Game",
+        "n":  "Disco Elysium",
+        "de":  "ZA/UM",
+        "aw":  "The Game Awards",
+        "fa":  "Disco Elysium\u0027s million-word RPG with no traditional combat won both Best Indie Game and Best Narrative at TGA 2019, announced to thunderous applause by a visibly emotional developer team.",
+        "nim": "🏆 No image available"
+    },
+    {
+        "y":  2019,
+        "cat":  "Best Narrative",
+        "n":  "Disco Elysium",
+        "de":  "ZA/UM",
+        "aw":  "The Game Awards",
+        "fa":  "The game\u0027s politically charged detective noir writing was hailed as the finest game writing in the medium\u0027s history by numerous critics and awards bodies.",
+        "nim": "🏆 No image available"
+    },
+    {
+        "y":  2018,
+        "cat":  "Best Indie Game",
+        "n":  "Celeste",
+        "de":  "Extremely OK Games",
+        "aw":  "The Game Awards",
+        "fa":  "Celeste addressed mental health themes through its precision platformer mechanics, with the protagonist\u0027s journey up a mountain mirroring a personal struggle with anxiety and depression.",
+        "nim": "🏆 No image available"
+    },
+    {
+        "y":  2018,
+        "cat":  "Best Score/Music",
+        "n":  "Red Dead Redemption 2",
+        "de":  "Rockstar Games",
+        "aw":  "The Game Awards",
+        "fa":  "Woody Jackson\u0027s atmospheric score blended Ennio Morricone-style spaghetti western compositions with acoustic Americana to create an immersive musical backdrop for the frontier setting.",
+        "nim": "🏆 No image available"
+    },
+    {
+        "y":  2017,
+        "cat":  "Best Indie Game",
+        "n":  "Cuphead",
+        "de":  "Studio MDHR",
+        "aw":  "The Game Awards",
+        "fa":  "Cuphead\u0027s hand-drawn 1930s cartoon animation took three developers over six years to produce and won the art direction award while introducing run-and-gun gameplay to the aesthetic.",
+        "nim": "🏆 No image available"
+    },
+    {
+        "y":  2017,
+        "cat":  "Best Score/Music",
+        "n":  "NieR:Automata",
+        "de":  "PlatinumGames",
+        "aw":  "The Game Awards",
+        "fa":  "Keiichi Okabe\u0027s multilayered NieR:Automata soundtrack, which shifts language and instrumentation based on the game\u0027s emotional state, is considered one of gaming\u0027s greatest musical achievements.",
+        "nim": "🏆 No image available"
+    },
+    {
+        "y":  2016,
+        "cat":  "Best Indie Game",
+        "n":  "Inside",
+        "de":  "Playdead",
+        "aw":  "The Game Awards",
+        "fa":  "Inside built on Playdead\u0027s Limbo with a deeper and more disturbing narrative delivered entirely without words, winning critical acclaim for its environmental storytelling and haunting final sequence.",
+        "nim": "🏆 No image available"
+    },
+    {
+        "y":  2016,
+        "cat":  "Best Narrative",
+        "n":  "Uncharted 4: A Thief\u0027s End",
+        "de":  "Naughty Dog",
+        "aw":  "The Game Awards",
+        "fa":  "Uncharted 4 brought Nathan Drake\u0027s story to a mature, emotionally satisfying conclusion that received widespread praise for its character writing and performance capture work.",
+        "nim": "🏆 No image available"
+    },
+    {
+        "y":  2015,
+        "cat":  "Best Indie Game",
+        "n":  "Undertale",
+        "de":  "Toby Fox",
+        "aw":  "PC Gamer Awards",
+        "fa":  "Undertale was created almost entirely by one person, Toby Fox, and its metacommentary on RPG violence and player choice created one of the most devoted fanbases in indie game history.",
+        "nim": "🏆 No image available"
+    },
+    {
+        "y":  2014,
+        "cat":  "Best Indie Game",
+        "n":  "Shovel Knight",
+        "de":  "Yacht Club Games",
+        "aw":  "IGN Awards",
+        "fa":  "Shovel Knight was Kickstarter-funded and became the gold standard for modern indie games that evoke classic NES aesthetics while delivering fresh gameplay ideas and level design.",
+        "nim": "🏆 No image available"
+    },
+    {
+        "y":  2013,
+        "cat":  "Best Score/Music",
+        "n":  "Bioshock Infinite",
+        "de":  "Irrational Games",
+        "aw":  "The Game Awards",
+        "fa":  "Garry Schyman\u0027s orchestral score for Bioshock Infinite blended original compositions with period-appropriate barbershop arrangements of modern songs, creating a surreal sonic environment.",
+        "nim": "🏆 No image available"
+    },
+    {
+        "y":  2023,
+        "cat":  "Innovation in Accessibility",
+        "n":  "Hi-Fi Rush",
+        "de":  "Tango Gameworks",
+        "aw":  "The Game Awards",
+        "fa":  "Hi-Fi Rush was released as a surprise drop directly to Xbox Game Pass and became a critical darling for its music-synced gameplay and colorful cel-shaded art direction.",
+        "nim": "🏆 No image available"
+    },
+    {
+        "y":  2024,
+        "cat":  "Game of the Year",
+        "n":  "Astro Bot",
+        "de":  "Team Asobi",
+        "aw":  "The Game Awards",
+        "fa":  "Astro Bot became the first PlayStation exclusive to win GOTY at The Game Awards, celebrated for its pure platforming joy and love letter to PlayStation\u0027s gaming history across 30 years.",
+        "nim": "🏆 No image available"
+    },
+    {
+        "y":  2024,
+        "cat":  "Best Narrative",
+        "n":  "Black Myth: Wukong",
+        "de":  "Game Science",
+        "aw":  "The Game Awards",
+        "fa":  "Black Myth: Wukong became the first major AAA game from a Chinese studio to achieve global critical and commercial success, selling 10 million copies within 72 hours of launch.",
+        "nim": "🏆 No image available"
+    },
+    {
+        "y":  2021,
+        "cat":  "Best Mobile Game",
+        "n":  "Genshin Impact",
+        "de":  "HoYoverse",
+        "aw":  "The Game Awards",
+        "fa":  "Genshin Impact was nominated after generating over $1 billion in mobile revenue within six months of its launch, redefining expectations for free-to-play gacha game production values.",
+        "nim": "🏆 No image available"
+    },
+    {
+        "y":  2012,
+        "cat":  "Game of the Year",
+        "n":  "The Walking Dead",
+        "de":  "Telltale Games",
+        "aw":  "Spike Video Game Awards",
+        "fa":  "Telltale\u0027s episodic adventure won the Spike VGA GOTY over Dishonored and Mass Effect 3, marking the first time an episodic, dialogue-driven game with no traditional action beat a blockbuster for gaming\u0027s top prize.",
+        "nim": "🏆 No image available"
+    },
+    {
+        "y":  2011,
+        "cat":  "Game of the Year",
+        "n":  "Portal 2",
+        "de":  "Valve Software",
+        "aw":  "BAFTA Games Awards",
+        "fa":  "Portal 2 won BAFTA GOTY for expanding its predecessor\u0027s spatial puzzle mechanics with co-op and a full single-player narrative, widely considered one of the most polished sequels ever made.",
+        "nim": "🏆 No image available"
+    },
+    {
+        "y":  2010,
+        "cat":  "Game of the Year",
+        "n":  "Mass Effect 2",
+        "de":  "BioWare",
+        "aw":  "Spike Video Game Awards",
+        "fa":  "Mass Effect 2 won the Spike VGA GOTY and over 50 individual awards from publications, praised for tightening the first game\u0027s RPG mechanics and delivering one of gaming\u0027s greatest suicide mission finales.",
+        "nim": "🏆 No image available"
+    },
+    {
+        "y":  2024,
+        "cat":  "Game of the Year",
+        "n":  "Balatro",
+        "de":  "LocalThunk",
+        "aw":  "BAFTA Games Awards",
+        "fa":  "Balatro, a poker-themed roguelike created by a single anonymous developer, won BAFTA GOTY for 2024 - one of the highest-profile solo indie wins in BAFTA history and a testament to how one person with a great idea can reach millions.",
+        "nim": "🏆 No image available"
+    },
+    {
+        "y":  2024,
+        "cat":  "Best Debut Indie Game",
+        "n":  "Balatro",
+        "de":  "LocalThunk",
+        "aw":  "The Game Awards",
+        "fa":  "Balatro was created entirely by one developer over several years and became a cultural phenomenon with over 5 million copies sold, earning nominations across nearly every category at TGA 2024.",
+        "nim": "🏆 No image available"
+    },
+    {
+        "y":  2022,
+        "cat":  "Game of the Year",
+        "n":  "God of War Ragnarok",
+        "de":  "Santa Monica Studio",
+        "aw":  "D.I.C.E. Awards",
+        "fa":  "God of War Ragnarok won the D.I.C.E. Outstanding Achievement in Game Direction award, narrowly losing TGA GOTY to Elden Ring in one of the most debated GOTY races of the decade.",
+        "nim": "🏆 No image available"
+    },
+    {
+        "y":  2020,
+        "cat":  "Game of the Year",
+        "n":  "Ghost of Tsushima",
+        "de":  "Sucker Punch Productions",
+        "aw":  "Players Choice Award",
+        "fa":  "Ghost of Tsushima won The Game Awards Players Choice (fan vote) for 2020 while The Last of Us Part II won the jury GOTY, reflecting a split between critical and popular reception that year.",
+        "nim": "🏆 No image available"
+    },
+    {
+        "y":  2019,
+        "cat":  "Game of the Year",
+        "n":  "Control",
+        "de":  "Remedy Entertainment",
+        "aw":  "BAFTA Games Awards",
+        "fa":  "Remedy\u0027s surreal action game set in a brutalist Oldest House won the BAFTA GOTY, competing with Sekiro (TGA) in a year where critically acclaimed games were spread across multiple award shows.",
+        "nim": "🏆 No image available"
+    },
+    {
+        "y":  2006,
+        "cat":  "Game of the Year",
+        "n":  "Gears of War",
+        "de":  "Epic Games",
+        "aw":  "Spike Video Game Awards",
+        "fa":  "Gears of War won the Spike VGA GOTY at launch for its cover-based shooter mechanics and cinematic gore, beating Twilight Princess in a hotly contested vote and establishing the Xbox 360 as the definitive console for action games.",
+        "nim": "🏆 No image available"
+    }
+]

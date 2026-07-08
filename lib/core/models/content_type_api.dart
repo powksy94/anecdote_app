@@ -64,6 +64,15 @@ extension ContentTypeApi on ContentType {
       case ContentType.desert:
       case ContentType.river:
       case ContentType.sea:
+      case ContentType.gamingHub:
+      case ContentType.gamesHub:
+      case ContentType.gamersHub:
+      case ContentType.gamingAnecdote:
+      case ContentType.gamingNomination:
+      case ContentType.classicGame:
+      case ContentType.worstGame:
+      case ContentType.bannedGame:
+      case ContentType.gamingLegend:
         return '';
     }
   }
