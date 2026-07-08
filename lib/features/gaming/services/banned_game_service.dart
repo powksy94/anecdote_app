@@ -20,6 +20,7 @@ class BannedGameService {
       hasDetails: true,
       imageUrl: g.imageUrl,
       noImageMessage: g.noImageMessage,
+      protectedTerms: [g.name],
     );
   }
 }

@@ -20,6 +20,7 @@ class WorstGameService {
       hasDetails: true,
       imageUrl: g.imageUrl,
       noImageMessage: g.noImageMessage,
+      protectedTerms: [g.name],
     );
   }
 }

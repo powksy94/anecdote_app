@@ -4,7 +4,7 @@
         "bi":  1996,
         "na":  "South Korean",
         "sp":  "League of Legends (Mid Lane)",
-        "ach":  "Faker is widely regarded as the greatest League of Legends player of all time, having won four World Championship titles (2013, 2015, 2016, 2023) with T1. He is the only player to have competed at Worlds for over a decade at an elite level, earning the title \u0027The Unkillable Demon King.\u0027",
+        "ach":  "Faker is widely regarded as the greatest League of Legends player of all time, having won four World Championship titles (2013, 2015, 2016, 2023) with T1. He is the only player to have competed at Worlds for over a decade at an elite level, earning the title 'The Unkillable Demon King.'",
         "im":  "https://upload.wikimedia.org/wikipedia/commons/8/8a/Faker_%28Lee_Sang-hyeok%29_at_LoL_World_Championship_2013.jpg"
     },
     {
@@ -21,14 +21,14 @@
         "na":  "American",
         "sp":  "Quake / FPS",
         "ach":  "Fatal1ty was one of the first professional esports players to earn a six-figure income from gaming, winning 12 Major Championships across Quake III Arena and Painkiller. He pioneered the concept of professional FPS gaming before esports was an established industry and became the first gamer to have his own branded hardware line.",
-        "nim": "🎮 No image available for this legend"
+        "im":  "https://upload.wikimedia.org/wikipedia/commons/3/3c/Johnathan_Wendel.jpg"
     },
     {
         "n":  "Daigo Umehara (The Beast)",
         "bi":  1981,
         "na":  "Japanese",
         "sp":  "Street Fighter",
-        "ach":  "Daigo Umehara holds the Guinness World Record as the most successful Street Fighter player of all time. His 2004 EVO parry sequence against Justin Wong - dubbed \u0027EVO Moment 37\u0027 - is the most watched competitive gaming clip in history and is cited as the moment that legitimized fighting games as a spectator sport.",
+        "ach":  "Daigo Umehara holds the Guinness World Record as the most successful Street Fighter player of all time. His 2004 EVO parry sequence against Justin Wong - dubbed 'EVO Moment 37' - is the most watched competitive gaming clip in history and is cited as the moment that legitimized fighting games as a spectator sport.",
         "im":  "https://upload.wikimedia.org/wikipedia/commons/2/2b/Daigo_Umehara_at_Capcom_Cup_2018_%28cropped%29.png"
     },
     {
@@ -36,7 +36,7 @@
         "bi":  1997,
         "na":  "Ukrainian",
         "sp":  "Counter-Strike: Global Offensive",
-        "ach":  "s1mple is considered the greatest Counter-Strike player of all time, having won HLTV\u0027s Player of the Year award four times (2018, 2021, 2022, 2023) - more than any other player in CS history. His mechanical skill, particularly his AWP sniping, is considered technically unmatched in the history of the game.",
+        "ach":  "s1mple is considered the greatest Counter-Strike player of all time, having won HLTV's Player of the Year award four times (2018, 2021, 2022, 2023). His mechanical skill, particularly his AWP sniping, is considered technically unmatched in the history of the game.",
         "im":  "https://upload.wikimedia.org/wikipedia/commons/2/24/Oleksandr_s1mple_Kostyliev.jpg"
     },
     {
@@ -44,8 +44,8 @@
         "bi":  2000,
         "na":  "French",
         "sp":  "Counter-Strike: Global Offensive / CS2",
-        "ach":  "ZywOo won HLTV\u0027s Player of the Year award in 2019 and 2020, becoming only the second player besides s1mple to win the award, and is considered s1mple\u0027s only legitimate rival for the title of best CS player ever. His consistent performances for Vitality made him one of France\u0027s most celebrated sports figures.",
-        "nim": "🎮 No image available for this legend"
+        "ach":  "ZywOo won HLTV's Player of the Year award in 2019 and 2020, becoming only the second player besides s1mple to win it, and is considered s1mple's only legitimate rival for the title of best CS player ever. His consistent performances for Vitality made him one of France's most celebrated sports figures.",
+        "im":  "https://upload.wikimedia.org/wikipedia/commons/3/38/Zywoo_in_2022_%28cropped%29.jpg"
     },
     {
         "n":  "Nikola Kovac (NiKo)",
@@ -53,14 +53,14 @@
         "na":  "Bosnian",
         "sp":  "Counter-Strike: Global Offensive",
         "ach":  "NiKo is one of the most consistently high-performing riflers in CS:GO history, having spent years ranked in the HLTV top 5 with teams including FaZe Clan and G2 Esports. Despite his individual brilliance, his long pursuit of a Major Championship defined a narrative about peak individual skill without team success.",
-        "nim": "🎮 No image available for this legend"
+        "im":  "https://upload.wikimedia.org/wikipedia/commons/5/51/NiKo_2022.png"
     },
     {
         "n":  "Nicolai Reedtz (dev1ce)",
         "bi":  1995,
         "na":  "Danish",
         "sp":  "Counter-Strike: Global Offensive",
-        "ach":  "dev1ce is the most decorated Major Championship winner in CS:GO history, having won four Majors across his career with Astralis. His methodical AWP play and team-first mentality made Astralis the most dominant team in CS:GO history during their 2018-2019 peak, during which they held the world number one ranking for over 300 consecutive days.",
+        "ach":  "dev1ce is the most decorated Major Championship winner in CS:GO history, having won four Majors with Astralis. His methodical AWP play and team-first mentality made Astralis the most dominant team in CS:GO history during their 2018-2019 peak, holding the world number one ranking for over 300 consecutive days.",
         "im":  "https://upload.wikimedia.org/wikipedia/commons/0/0f/DH_Leipzig16_devve_device.JPG"
     },
     {
@@ -68,24 +68,24 @@
         "bi":  1990,
         "na":  "Swedish",
         "sp":  "Counter-Strike",
-        "ach":  "GeT_RiGhT was the definitive Counter-Strike player of the transitional era between 1.6 and CS:GO, winning the first Major Championship with NiP and reaching a legendary 87-0 map win streak at the start of CS:GO\u0027s competitive history. He is widely credited with establishing the philosophy of the support rifler in CS.",
-        "nim": "🎮 No image available for this legend"
+        "ach":  "GeT_RiGhT was the definitive Counter-Strike player of the transitional era between 1.6 and CS:GO, winning the first Major Championship with NiP and reaching a legendary 87-0 map win streak at the start of CS:GO's competitive history. He is widely credited with establishing the philosophy of the support rifler in CS.",
+        "im":  "https://upload.wikimedia.org/wikipedia/commons/6/62/Interview_GeT_RiGhT_%28ESL_One_Cologne_2016%29_%28cropped%29.jpg"
     },
     {
         "n":  "Justin Wong (JWong)",
         "bi":  1984,
         "na":  "American",
         "sp":  "Marvel vs. Capcom / Mortal Kombat / Street Fighter",
-        "ach":  "Justin Wong won eight EVO Championship titles across multiple fighting games and is known for his versatility across nearly every major fighting franchise. He was Daigo Umehara\u0027s opponent in EVO Moment 37 and has remained at the top of competitive fighting for over 20 years.",
-        "nim": "🎮 No image available for this legend"
+        "ach":  "Justin Wong won eight EVO Championship titles across multiple fighting games and is known for his versatility across nearly every major fighting franchise. He was Daigo Umehara's opponent in EVO Moment 37 and has remained at the top of competitive fighting for over 20 years.",
+        "im":  "https://upload.wikimedia.org/wikipedia/commons/c/c1/Justin_Wong_at_Combo_Breaker_2018.jpg"
     },
     {
         "n":  "Felix Kjellberg (PewDiePie)",
         "bi":  1989,
         "na":  "Swedish",
         "sp":  "YouTube gaming content",
-        "ach":  "PewDiePie was the most subscribed YouTube channel in the world for multiple years between 2013 and 2019, pioneering the Let\u0027s Play commentary format that became YouTube\u0027s dominant gaming content style. At his peak he influenced game sales more than any gaming publication, and his playthroughs of games like Slender Man and Amnesia defined indie horror discovery.",
-        "im": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/PewDiePie_2019_by_Gage_Skidmore.jpg/440px-PewDiePie_2019_by_Gage_Skidmore.jpg"
+        "ach":  "PewDiePie was the most subscribed YouTube channel in the world for multiple years between 2013 and 2019, pioneering the Let's Play commentary format that became YouTube's dominant gaming content style. At his peak he influenced game sales more than any gaming publication, and his playthroughs defined indie horror discovery.",
+        "im":  "https://upload.wikimedia.org/wikipedia/commons/5/53/Pewdiepie_head_shot.jpg"
     },
     {
         "n":  "Michael Grzesiek (Shroud)",
@@ -100,7 +100,7 @@
         "bi":  1995,
         "na":  "Canadian",
         "sp":  "Overwatch / variety streaming",
-        "ach":  "xQc was a professional Overwatch League player for the Dallas Fuel before becoming Twitch\u0027s most-watched streamer by total hours viewed, surpassing all competitors including Ninja. His unfiltered commentary, frequent controversial statements, and marathon streaming sessions attract millions of daily viewers.",
+        "ach":  "xQc was a professional Overwatch League player for the Dallas Fuel before becoming Twitch's most-watched streamer by total hours viewed, surpassing all competitors including Ninja. His unfiltered commentary, frequent controversial statements, and marathon streaming sessions attract millions of daily viewers.",
         "im":  "https://upload.wikimedia.org/wikipedia/commons/7/70/XQc_at_S-Camp_2021.png"
     },
     {
@@ -108,7 +108,7 @@
         "bi":  1996,
         "na":  "Canadian (Moroccan origin)",
         "sp":  "Variety streaming / content creation",
-        "ach":  "Pokimane became the most followed female streamer on Twitch, building a massive audience across Fortnite, League of Legends, and variety content. She is one of the co-founders of the content creation company Offline TV and has been among Forbes\u0027 Top Creators lists multiple times.",
+        "ach":  "Pokimane became the most followed female streamer on Twitch, building a massive audience across Fortnite, League of Legends, and variety content. She is one of the co-founders of the content creation company Offline TV and has been among Forbes' Top Creators lists multiple times.",
         "im":  "https://upload.wikimedia.org/wikipedia/commons/1/10/Pokimane_2019.png"
     },
     {
@@ -116,16 +116,16 @@
         "bi":  1989,
         "na":  "Ukrainian",
         "sp":  "Dota 2",
-        "ach":  "Dendi was the most celebrated Dota 2 player of the early competitive era, finishing second at The International 2011 with Na\u0027Vi and winning TI1, and is best known for his flamboyant Pudge and Invoker plays that made him a fan favorite worldwide. His presence at events electrified audiences and gave Dota 2 its first true celebrity.",
-        "nim": "🎮 No image available for this legend"
+        "ach":  "Dendi was the most celebrated Dota 2 player of the early competitive era, winning TI1 with Na'Vi and finishing second at TI2. He is best known for his flamboyant Pudge and Invoker plays that made him a fan favorite worldwide. His presence at events electrified audiences and gave Dota 2 its first true celebrity.",
+        "im":  "https://upload.wikimedia.org/wikipedia/commons/6/6a/Dendi_TI4.jpg"
     },
     {
         "n":  "Johan Sundstein (N0tail)",
         "bi":  1993,
         "na":  "Danish",
         "sp":  "Dota 2",
-        "ach":  "N0tail won The International (Dota 2\u0027s world championship) twice back-to-back with OG in 2018 and 2019, making OG the only team to win The International twice. He was the highest cumulative prize money earner in esports history at multiple points, and his team\u0027s underdog 2019 TI run is considered one of esports\u0027 greatest stories.",
-        "nim": "🎮 No image available for this legend"
+        "ach":  "N0tail won The International back-to-back with OG in 2018 and 2019, making OG the only team to win The International twice. He was the highest cumulative prize money earner in esports history at multiple points, and his team's underdog 2019 TI run is considered one of esports' greatest stories.",
+        "im":  "https://upload.wikimedia.org/wikipedia/commons/6/68/OG_N0tail_at_Dreamhack_2015.jpg"
     },
     {
         "n":  "Kuro Takhasomi (KuroKy)",
@@ -133,15 +133,15 @@
         "na":  "German (Iranian origin)",
         "sp":  "Dota 2",
         "ach":  "KuroKy appeared at The International every year from 2011 through 2019 and won TI7 as captain of Team Liquid. He holds records for most TI appearances and most TI prize money earnings among support players, and his longevity at the top of Dota 2 for nearly a decade is unmatched.",
-        "nim": "🎮 No image available for this legend"
+        "im":  "https://upload.wikimedia.org/wikipedia/commons/4/41/DreamHack_2015_Bucharest_-_StarLadder_XII_08.jpg"
     },
     {
         "n":  "Clement Ivanov (Puppey)",
         "bi":  1990,
         "na":  "Estonian",
         "sp":  "Dota 2",
-        "ach":  "Puppey is the only player to have attended every single edition of The International from TI1 through TI11, making him the most consistent Dota 2 competitive presence in history. He captained Na\u0027Vi to a TI1 win and has led Team Secret to multiple Valve Major victories across a decade of competition.",
-        "nim": "🎮 No image available for this legend"
+        "ach":  "Puppey is the only player to have attended every single edition of The International from TI1 through TI11, making him the most consistent Dota 2 competitive presence in history. He captained Na'Vi to a TI1 win and has led Team Secret to multiple Valve Major victories across a decade of competition.",
+        "im":  "https://upload.wikimedia.org/wikipedia/commons/c/cc/Puppey_at_The_International_2014.jpg"
     },
     {
         "n":  "Kyle Giersdorf (Bugha)",
@@ -156,15 +156,15 @@
         "bi":  2000,
         "na":  "Mexican",
         "sp":  "Super Smash Bros. Ultimate",
-        "ach":  "MkLeo is widely considered the best Super Smash Bros. Ultimate player in the world, having won multiple major championship events and Smash World Tour championships. His dominance of Ultimate elevated Mexican players\u0027 global recognition in the fighting game community.",
-        "nim": "🎮 No image available for this legend"
+        "ach":  "MkLeo is widely considered the best Super Smash Bros. Ultimate player in the world, having won multiple major championship events and Smash World Tour championships. His dominance of Ultimate elevated Mexican players' global recognition in the fighting game community.",
+        "im":  "https://upload.wikimedia.org/wikipedia/commons/0/09/MKLeo_at_Frostbite_2020.jpg"
     },
     {
         "n":  "Adam Lindgren (Armada)",
         "bi":  1993,
         "na":  "Swedish",
         "sp":  "Super Smash Bros. Melee",
-        "ach":  "Armada was ranked the number one Smash Bros. Melee player in the world multiple times and is considered one of the greatest Melee players in the game\u0027s history. His patient, analytical playstyle with Peach and Young Link contrasted with the more aggressive American scene and made him a transcontinental figure in the community.",
+        "ach":  "Armada was ranked the number one Smash Bros. Melee player in the world multiple times and is considered one of the greatest Melee players in the game's history. His patient, analytical playstyle with Peach and Young Link contrasted with the more aggressive American scene and made him a transcontinental figure in the community.",
         "im":  "https://upload.wikimedia.org/wikipedia/commons/e/ef/Heir_5_-_Armada.jpg"
     },
     {
@@ -196,8 +196,8 @@
         "bi":  1999,
         "na":  "Danish",
         "sp":  "League of Legends (Mid Lane)",
-        "ach":  "Caps won multiple LEC titles with G2 Esports and reached multiple World Championship finals, consistently ranked among Europe\u0027s best mid laners. His aggressive carry playstyle earned him the nickname \u0027Baby Faker\u0027 from Korean fans during his first Worlds appearance at just 17 years old.",
-        "nim": "🎮 No image available for this legend"
+        "ach":  "Caps won multiple LEC titles with G2 Esports and reached multiple World Championship finals, consistently ranked among Europe's best mid laners. His aggressive carry playstyle earned him the nickname 'Baby Faker' from Korean fans during his first Worlds appearance at just 17 years old.",
+        "im":  "https://upload.wikimedia.org/wikipedia/commons/1/18/Caps_2025.jpg"
     },
     {
         "n":  "Jian Zihao (Uzi)",
@@ -205,7 +205,7 @@
         "na":  "Chinese",
         "sp":  "League of Legends (ADC)",
         "ach":  "Uzi reached the World Championship final twice with Royal Never Give Up and is universally considered the greatest ADC player in League of Legends history. His mechanical ceiling was described by analysts and professionals as exceeding that of any other player at the position, though injuries forced his retirement at just 22.",
-        "nim": "🎮 No image available for this legend"
+        "im":  "https://upload.wikimedia.org/wikipedia/commons/0/0a/Uzi_at_All-Star_Los_Angeles_2015.jpg"
     },
     {
         "n":  "Joona Sotala (Serral)",
@@ -220,31 +220,31 @@
         "bi":  1992,
         "na":  "South Korean",
         "sp":  "StarCraft: Brood War",
-        "ach":  "Flash is considered the greatest StarCraft: Brood War player of all time, nicknamed \u0027The God\u0027 by fans and peers for his perfect macro, unmatched multitasking, and mechanical skill across all three Brood War races. He dominated Korean competitive play from 2007 through the end of the Brood War progaming era, winning four OSL titles and three MSL titles.",
-        "nim": "🎮 No image available for this legend"
+        "ach":  "Flash is considered the greatest StarCraft: Brood War player of all time, nicknamed 'The God' for his perfect macro, unmatched multitasking, and mechanical skill. He dominated Korean competitive play from 2007 through the end of the Brood War progaming era, winning four OSL titles and three MSL titles.",
+        "im":  "https://upload.wikimedia.org/wikipedia/commons/4/43/Lee_Young-Ho_at_2012_Korea_e-Sports_Awards_from_acrofan.jpg"
     },
     {
         "n":  "Lim Yo-hwan (Boxer)",
         "bi":  1980,
         "na":  "South Korean",
         "sp":  "StarCraft: Brood War (Terran)",
-        "ach":  "Boxer was the first esports superstar, nicknamed \u0027The Terran Emperor\u0027 for his innovative Terran play that included popularizing early game aggression with the Marine and Medic combo. He won the first two OSL championships and is credited with creating the Korean esports celebrity culture and team-based progaming infrastructure.",
-        "nim": "🎮 No image available for this legend"
+        "ach":  "Boxer was the first esports superstar, nicknamed 'The Terran Emperor' for his innovative Terran play that popularized early aggression with the Marine and Medic combo. He won the first two OSL championships and is credited with creating the Korean esports celebrity culture and team-based progaming infrastructure.",
+        "im":  "https://upload.wikimedia.org/wikipedia/commons/a/a0/Boxer_in_2021.jpg"
     },
     {
         "n":  "Lee Jae-dong (Jaedong)",
         "bi":  1989,
         "na":  "South Korean",
         "sp":  "StarCraft: Brood War (Zerg)",
-        "ach":  "Jaedong was Zerg\u0027s greatest champion in Brood War and Flash\u0027s greatest rival, with their battles referred to as the \u0027Tyrant vs. God\u0027 rivalry. He won two OSL titles and four MSL titles, and his dramatic wins and losses in finals against Flash are considered the greatest rivalry in StarCraft competitive history.",
-        "nim": "🎮 No image available for this legend"
+        "ach":  "Jaedong was Zerg's greatest champion in Brood War and Flash's greatest rival, with their battles referred to as the 'Tyrant vs. God' rivalry. He won two OSL titles and four MSL titles, and his battles against Flash in finals are considered the greatest rivalry in StarCraft competitive history.",
+        "im":  "https://upload.wikimedia.org/wikipedia/commons/1/1d/Jaedong_at_BlizzCon_2014.jpg"
     },
     {
         "n":  "Manuel Schenkhuizen (Grubby)",
         "bi":  1984,
         "na":  "Dutch",
         "sp":  "Warcraft III / StarCraft II",
-        "ach":  "Grubby was the dominant Warcraft III player outside of South Korea, winning multiple World Cyber Games gold medals and the WC3L title multiple times. He later became one of Twitch\u0027s most educational StarCraft II streamers, known for his analytical commentary and coaching streams.",
+        "ach":  "Grubby was the dominant Warcraft III player outside of South Korea, winning multiple World Cyber Games gold medals and the WC3L title multiple times. He later became one of Twitch's most educational StarCraft II streamers, known for his analytical commentary and coaching streams.",
         "im":  "https://upload.wikimedia.org/wikipedia/commons/7/77/Manuel_%22Grubby%22_Schenkhuizen.jpg"
     },
     {
@@ -256,36 +256,52 @@
         "im":  "https://upload.wikimedia.org/wikipedia/commons/9/9a/Matt_Haag_OpTic_Nadeshot.jpg"
     },
     {
-        "n":  "Karine Takahashi (Hafu)",
+        "n":  "Rumay Wang (Hafu)",
         "bi":  1989,
-        "na":  "American (Japanese-Brazilian origin)",
+        "na":  "American (Taiwanese origin)",
         "sp":  "Hearthstone / Poker / variety",
-        "ach":  "Hafu became the most recognized female gaming personality in streaming through her Hearthstone and later Among Us content, consistently placing in the top 100 of Hearthstone\u0027s competitive ladder. She was also a professional online poker player before streaming and represents one of the longest-running female gaming careers.",
-        "nim": "🎮 No image available for this legend"
+        "ach":  "Hafu became the most recognized female gaming personality in streaming through her Hearthstone and later Among Us content, consistently placing in the top 100 of Hearthstone's competitive ladder. She was also a professional online poker player before streaming and represents one of the longest-running female gaming careers.",
+        "im":  "https://upload.wikimedia.org/wikipedia/commons/0/04/Hafu2018.jpg"
     },
     {
-        "n":  "William Peter Hjelte (Scump)",
+        "n":  "Seth Abner (Scump)",
         "bi":  1995,
         "na":  "American",
         "sp":  "Call of Duty",
-        "ach":  "Scump is considered the greatest Call of Duty player in history, having won the Call of Duty World League Championship twice with OpTic Gaming and Chicago Huntsmen. His consistency across nearly a decade of competing at world-championship level established him as the franchise\u0027s most enduring competitive personality.",
-        "nim": "🎮 No image available for this legend"
+        "ach":  "Scump is considered the greatest Call of Duty player in history, having won the Call of Duty World League Championship twice with OpTic Gaming and Chicago Huntsmen. His consistency across nearly a decade of competing at world-championship level established him as the franchise's most enduring competitive personality.",
+        "im":  "https://upload.wikimedia.org/wikipedia/commons/9/98/Scump_at_OpTic_first_MW3_Lan_2023.jpg"
     },
     {
-        "n":  "Rasmus Bjaerg (Thijs)",
+        "n":  "Thijs Molendijk (Thijs)",
         "bi":  1993,
         "na":  "Dutch",
         "sp":  "Hearthstone",
-        "ach":  "Thijs Molendijk was among the first dominant Hearthstone players in the game\u0027s early competitive era, representing Team Liquid and later G2 Esports to multiple HCT Season wins and Worlds appearances. His analytical streaming approach helped establish Hearthstone as a competitive game deserving serious analysis.",
+        "ach":  "Thijs was among the first dominant Hearthstone players in the game's early competitive era, representing Team Liquid and later G2 Esports to multiple HCT Season wins and Worlds appearances. His analytical streaming approach helped establish Hearthstone as a competitive game deserving serious analysis.",
         "nim": "🎮 No image available for this legend"
     },
     {
-        "n":  "Cho Jae-won (Moon)",
+        "n":  "Jang Jae-ho (Moon)",
         "bi":  1986,
         "na":  "South Korean",
         "sp":  "Warcraft III (Night Elf)",
-        "ach":  "Moon won the World Cyber Games gold medal four times for Warcraft III, making him the most decorated WCG champion in the game\u0027s history. His Night Elf play with mass DotA and Moon Wells became iconic, and his 2004-2006 dominance of world events established him as the game\u0027s greatest champion.",
-        "nim": "🎮 No image available for this legend"
+        "ach":  "Moon won the World Cyber Games gold medal four times for Warcraft III, making him the most decorated WCG champion in the game's history. His Night Elf play with mass Dryads and Moon Wells became iconic, and his 2004-2006 dominance of world events established him as the game's greatest champion.",
+        "im":  "https://upload.wikimedia.org/wikipedia/commons/f/f9/Jang_Jae_Ho%28Moon%29.jpg"
+    },
+    {
+        "n":  "Park Sung-jun (Taeja)",
+        "bi":  1992,
+        "na":  "South Korean",
+        "sp":  "StarCraft II (Terran)",
+        "ach":  "Taeja was the dominant Terran player in StarCraft II's early era, winning multiple WCS and GSL titles in 2012-2013 and holding the world number one ranking. His sustained aggression with Marines and Medivacs inspired a generation of Terran players worldwide.",
+        "im":  "https://upload.wikimedia.org/wikipedia/commons/3/31/Smix_interviews_TaeJa_at_BlizzCon_2014.jpg"
+    },
+    {
+        "n":  "Jason Zimmerman (Mew2King)",
+        "bi":  1990,
+        "na":  "American",
+        "sp":  "Super Smash Bros. Melee / Brawl / Ultimate",
+        "ach":  "Mew2King is one of the most technically precise Smash players of all time, consistently ranking in the Melee top 10 for over a decade with Marth and Sheik. His ability to compete across multiple Smash titles simultaneously is unmatched, and he won EVO in Brawl in 2008.",
+        "im":  "https://upload.wikimedia.org/wikipedia/commons/7/76/Mew2King_at_Frostbite_2020_%28cropped%29.jpg"
     },
     {
         "n":  "Sasha Hostyn (Scarlett)",
@@ -296,27 +312,11 @@
         "im":  "https://upload.wikimedia.org/wikipedia/commons/9/95/Sasha_%E2%80%9CScarlett%E2%80%9D_Hostyn_%287593566518%29.jpg"
     },
     {
-        "n":  "Park Sung-jun (Taeja)",
-        "bi":  1992,
+        "n":  "Bae Jun-sik (Bang)",
+        "bi":  1995,
         "na":  "South Korean",
-        "sp":  "StarCraft II (Terran)",
-        "ach":  "Taeja was the dominant Terran player in StarCraft II\u0027s early era, winning multiple WCS and GSL titles in 2012-2013 and holding the world number one ranking. His sustained aggression with Marines and Medivacs inspired a generation of Terran players worldwide.",
-        "nim": "🎮 No image available for this legend"
-    },
-    {
-        "n":  "Dustin Mouret (Mew2King)",
-        "bi":  1990,
-        "na":  "American",
-        "sp":  "Super Smash Bros. Melee / Brawl / Ultimate",
-        "ach":  "Mew2King is one of the most technically precise Smash players of all time, consistently ranking in the Melee top 10 for over a decade with Marth and Sheik. His ability to compete across multiple Smash titles simultaneously is unmatched, and he won EVO in Brawl in 2008.",
-        "nim": "🎮 No image available for this legend"
-    },
-    {
-        "n":  "Lee Seung-hyun (Faker)",
-        "bi":  1996,
-        "na":  "South Korean",
-        "sp":  "League of Legends",
-        "ach":  "This is a duplicate entry - Faker appears above. Use this slot for: Gabe Logan Newell (Gabe Newell), born 1962, American, Valve co-founder: Gabe Newell co-founded Valve in 1996 and created Steam, which now hosts over 50,000 games and has over 132 million monthly active users. His decisions to release Portal, Left 4 Dead, and Counter-Strike as full commercial products from fan mods transformed how the industry values community-created content.",
+        "sp":  "League of Legends (ADC)",
+        "ach":  "Bang is one of the most decorated ADC players in League of Legends history, winning three consecutive World Championships (2015, 2016, 2017) with SK Telecom T1 alongside Faker. He formed what many consider the most dominant bot lane duo in Worlds history with support Wolf, and his precise mechanical play earned consistent top rankings across multiple seasons.",
         "nim": "🎮 No image available for this legend"
     },
     {
@@ -324,23 +324,23 @@
         "bi":  1994,
         "na":  "South Korean",
         "sp":  "Overwatch (Support)",
-        "ach":  "Ryujehong was the most celebrated Overwatch player of the game\u0027s inaugural competitive era, leading the Seoul Dynasty to the 2018 Overwatch World Cup victory and being named MVP. His Ana gameplay - particularly his sleeping of key targets - was considered mechanically unmatchable and set the standard for support play in OWL.",
-        "nim": "🎮 No image available for this legend"
+        "ach":  "Ryujehong was the most celebrated Overwatch player of the game's inaugural competitive era, leading the Seoul Dynasty to the 2018 Overwatch World Cup victory and being named MVP. His Ana gameplay - particularly his sleeping of key targets - was considered mechanically unmatchable and set the standard for support play in OWL.",
+        "im":  "https://upload.wikimedia.org/wikipedia/commons/2/20/Ryujehong_Seoul_Dynasty_1_%28cropped%29.jpg"
     },
     {
         "n":  "Jay Won (sinatraa)",
         "bi":  1999,
         "na":  "American",
         "sp":  "Overwatch / Valorant",
-        "ach":  "Sinatraa won the Overwatch League MVP award in his rookie season with the San Francisco Shock and was the highest-profile player in OWL Season 1. He later transitioned to Valorant where he competed with Sentinels, influencing the game\u0027s early competitive meta.",
-        "nim": "🎮 No image available for this legend"
+        "ach":  "Sinatraa won the Overwatch League MVP award in his rookie season with the San Francisco Shock and was the highest-profile player in OWL Season 1. He later transitioned to Valorant where he competed with Sentinels, influencing the game's early competitive meta.",
+        "im":  "https://upload.wikimedia.org/wikipedia/commons/2/29/Sinatraa_at_OWWC_2018_-_cropped.jpg"
     },
     {
         "n":  "Jaryd Lazar (summit1g)",
         "bi":  1987,
         "na":  "American",
         "sp":  "Counter-Strike / variety streaming",
-        "ach":  "Summit1g was a professional CS:GO player who pivoted to full-time streaming and became one of Twitch\u0027s top 5 most-watched streamers for several years. His personality-driven streams across FPS, survival, and roleplay servers made him one of the streaming era\u0027s most enduring personalities.",
+        "ach":  "Summit1g was a professional CS:GO player who pivoted to full-time streaming and became one of Twitch's top 5 most-watched streamers for several years. His personality-driven streams across FPS, survival, and roleplay servers made him one of the streaming era's most enduring personalities.",
         "nim": "🎮 No image available for this legend"
     },
     {
@@ -348,16 +348,16 @@
         "bi":  1990,
         "na":  "American",
         "sp":  "Fortnite / variety streaming",
-        "ach":  "TimTheTatman grew from a World of Warcraft streamer to one of Twitch\u0027s top personalities through his infectious personality during Fortnite\u0027s peak. He signed an exclusive deal with YouTube Gaming in 2021, and his comedic streaming style expanded gaming content into mainstream entertainment.",
-        "nim": "🎮 No image available for this legend"
+        "ach":  "TimTheTatman grew from a World of Warcraft streamer to one of Twitch's top personalities through his infectious personality during Fortnite's peak. He signed an exclusive deal with YouTube Gaming in 2021, and his comedic streaming style expanded gaming content into mainstream entertainment.",
+        "im":  "https://upload.wikimedia.org/wikipedia/commons/2/2c/TimTheTatMan_at_Complexity_Launch_Event_2021.jpg"
     },
     {
         "n":  "Sebastien Debs (Ceb)",
         "bi":  1993,
         "na":  "French",
         "sp":  "Dota 2 (Offlane / Support)",
-        "ach":  "Ceb won The International twice with OG in 2018 and 2019, uniquely playing in the offlane position during TI8 and as a support for TI9. His mid-tournament roster change between TI8 and TI9 - dropping to support to accommodate Topson - is one of esports\u0027 most celebrated acts of team sacrifice.",
-        "nim": "🎮 No image available for this legend"
+        "ach":  "Ceb won The International twice with OG in 2018 and 2019, uniquely playing in the offlane position during TI8 and as a support for TI9. His mid-tournament roster change between TI8 and TI9 - dropping to support to accommodate Topson - is one of esports' most celebrated acts of team sacrifice.",
+        "im":  "https://upload.wikimedia.org/wikipedia/commons/6/61/Dota_2_desk_analysis_-_ESL_One_Frankfurt_2014_%28cropped_to_Ceb%29.jpg"
     },
     {
         "n":  "Anathan Pham (ana)",
@@ -365,62 +365,54 @@
         "na":  "Australian",
         "sp":  "Dota 2 (Carry)",
         "ach":  "ana won The International back-to-back with OG in 2018 and 2019, and is considered the most individually skilled carry player in Dota 2 history. His signature Io carry play at TI8 - choosing the position-5 support hero as a carry in a World Championship final - is the most discussed strategic innovation in Dota history.",
-        "nim": "🎮 No image available for this legend"
+        "im":  "https://upload.wikimedia.org/wikipedia/commons/a/a1/Ana_The_International_2018.jpg"
     },
     {
-        "n":  "Park Sang-hyeon (Ruler)",
+        "n":  "Park Jae-hyuk (Ruler)",
         "bi":  1998,
         "na":  "South Korean",
         "sp":  "League of Legends (ADC)",
         "ach":  "Ruler won two League of Legends World Championships with different teams (Samsung Galaxy 2017, Gen.G 2022), making him one of only a handful of players to win Worlds multiple times. His longevity at the ADC position at world-championship level and consistency across teams earns him a place among the greatest Korean ADC players.",
-        "nim": "🎮 No image available for this legend"
+        "im":  "https://upload.wikimedia.org/wikipedia/commons/b/bc/Ruler_interview_2022.jpg"
     },
     {
-        "n":  "Martin Lund (Rekkles)",
-        "bi":  1996,
-        "na":  "Swedish",
-        "sp":  "League of Legends (ADC)",
-        "ach":  "Rekkles is the most decorated European ADC in League of Legends history, winning five LEC titles and representing Europe at multiple World Championships with Fnatic and later G2. He became the first player in European LoL history to reach 2,000 LEC kills.",
-        "im":  "https://upload.wikimedia.org/wikipedia/commons/e/e4/Fnatic_Rekkles_2015.jpg"
-    },
-    {
-        "n":  "Ryo Aoki (Fuudo)",
+        "n":  "Keita Ai (Fuudo)",
         "bi":  1983,
         "na":  "Japanese",
         "sp":  "Street Fighter IV / V",
-        "ach":  "Fuudo won the EVO Championship for Super Street Fighter IV: Arcade Edition in 2011, one of the most competitive years in the tournament\u0027s history. He remained a top competitor in the Street Fighter circuit for years and is among Japan\u0027s most enduring fighting game champions.",
-        "nim": "🎮 No image available for this legend"
+        "ach":  "Fuudo won the EVO Championship for Super Street Fighter IV: Arcade Edition in 2011, one of the most competitive years in the tournament's history. He remained a top competitor in the Street Fighter circuit for years and is among Japan's most enduring fighting game champions.",
+        "im":  "https://upload.wikimedia.org/wikipedia/commons/b/b4/Fuudo_at_Evo_2011.jpg"
     },
     {
-        "n":  "Marcus Hill (Bizzle)",
+        "n":  "Timothy Miller (Bizzle)",
         "bi":  2001,
         "na":  "American",
         "sp":  "Fortnite (Solos)",
-        "ach":  "Bizzle is recognized as one of the most consistent solo players in Fortnite\u0027s competitive history, with multiple FNCS and Cash Cup victories. His longevity at the top of competitive Fortnite despite roster changes and meta shifts makes him one of the title\u0027s most respected long-term competitors.",
+        "ach":  "Bizzle is recognized as one of the most consistent solo players in Fortnite's competitive history, with multiple FNCS and Cash Cup victories. His longevity at the top of competitive Fortnite despite roster changes and meta shifts makes him one of the title's most respected long-term competitors.",
         "nim": "🎮 No image available for this legend"
     },
     {
-        "n":  "Terrence Miller (Blind)",
+        "n":  "Thomas Paparatto (ZooMaa)",
         "bi":  1993,
         "na":  "American",
-        "sp":  "Call of Duty / Twitch streaming",
-        "ach":  "This slot is used for: Thomas Taylor (ZooMaa), an American professional Call of Duty player known for his SMG-specialist role with OpTic Gaming, who won multiple CoD Championships and was widely considered one of the best SMG players in CoD competitive history before injuries restricted his play.",
+        "sp":  "Call of Duty",
+        "ach":  "ZooMaa was FaZe Clan's SMG specialist and is widely regarded as the most mechanically gifted SMG player in Call of Duty competitive history. He won the CoD World League Championship with FaZe Clan and was one of the most feared slayers in the game. Career-ending hand injuries cut short one of CoD's most brilliant playing careers.",
         "nim": "🎮 No image available for this legend"
     },
     {
-        "n":  "Nikita Pankov (Ustilo)",
-        "bi":  1998,
-        "na":  "Russian",
-        "sp":  "Hearthstone",
-        "ach":  "This slot covers the broader category of Eastern European card game champions. More accurately: Pavel Beltukov (Pavel), born 1994, Russian, won the Hearthstone World Championship in 2016 at BlizzCon, becoming the first Russian player to win a Blizzard esports world title and inspiring a generation of Eastern European Hearthstone players.",
+        "n":  "Jaroslaw Jarzabkowski (pashaBiceps)",
+        "bi":  1990,
+        "na":  "Polish",
+        "sp":  "Counter-Strike: Global Offensive",
+        "ach":  "pashaBiceps was the most beloved personality in CS:GO and the face of the legendary Virtus.pro Polish lineup that dominated European competition and won multiple tournament titles. His famous 'big plays' - running AWP kills, jumping shots, and eccentric celebration dances - made him one of esports' most recognized characters globally.",
         "nim": "🎮 No image available for this legend"
     },
     {
-        "n":  "Sung-won Park (Flash)",
-        "bi":  1988,
+        "n":  "Cho Seung-hyun (Stats)",
+        "bi":  1991,
         "na":  "South Korean",
-        "sp":  "StarCraft: Brood War",
-        "ach":  "This entry refers to KT Rolster\u0027s Flash (Lee Young-ho), covered above. Updated entry: Lee Je-dong (Jaedong) and Flash met in the most-watched individual match in Brood War history - the 2010 Proleague Final - drawing an in-person audience of 60,000 at Olympic Park in Seoul, the largest live esports audience in history at the time.",
+        "sp":  "StarCraft II (Protoss)",
+        "ach":  "Stats is one of the most successful Protoss players in StarCraft II history, winning the WCS Finals in 2014 and multiple GSL titles. His macro play and late-game decision-making with Protoss units were considered among the most technically perfect in SC2 competitive history, earning him consistent top rankings in Korean Grandmaster league.",
         "nim": "🎮 No image available for this legend"
     },
     {
@@ -428,40 +420,40 @@
         "bi":  1985,
         "na":  "American",
         "sp":  "Street Fighter / Marvel vs. Capcom",
-        "ach":  "Ricki Ortiz is one of the most celebrated female competitive fighting game players in history, winning EVO-caliber events with Chun-Li in Street Fighter IV and becoming a prominent advocate for inclusivity in the fighting game community. Her tournament placements against the world\u0027s elite male competitors earned widespread respect.",
+        "ach":  "Ricki Ortiz is one of the most celebrated female competitive fighting game players in history, winning EVO-caliber events with Chun-Li in Street Fighter IV and becoming a prominent advocate for inclusivity in the fighting game community. Her tournament placements against the world's elite male competitors earned widespread respect.",
         "nim": "🎮 No image available for this legend"
     },
     {
-        "n":  "TSM Bjergsen (player-coach era)",
-        "bi":  1996,
-        "na":  "Danish",
-        "sp":  "League of Legends",
-        "ach":  "After retiring from play, Bjergsen joined TSM\u0027s coaching staff and later co-owned the organization, representing one of the earliest transitions from superstar player to influential team builder in North American League of Legends. His dual role as player and eventual team owner is unique in NA LoL\u0027s organizational history.",
-        "im":  "https://upload.wikimedia.org/wikipedia/commons/5/5b/Bjergsen_at_2015_Worlds.jpeg"
+        "n":  "Anas Taha (Mitr0)",
+        "bi":  2001,
+        "na":  "Dutch",
+        "sp":  "Fortnite / Counter-Strike 2",
+        "ach":  "Mitr0 was considered the greatest European Fortnite player of his era, winning multiple FNCS championships and becoming the first EU player to achieve global Fortnite solo recognition. He later signed with Natus Vincere as a CS2 player, becoming one of gaming's most successful multi-title professionals bridging battle royale and tactical shooter genres.",
+        "nim": "🎮 No image available for this legend"
     },
     {
-        "n":  "Kim Sang-soo (LS)",
+        "n":  "Kim Won-ki (LS)",
         "bi":  1989,
         "na":  "American (residing in South Korea)",
         "sp":  "League of Legends analyst / coach",
-        "ach":  "LS built a reputation as the most analytical and controversial League of Legends content creator and coach, coaching the Korean national team C9 and NaJin to strong results. His detailed breakdown videos transformed how Western audiences understood Korean LoL strategy.",
+        "ach":  "LS built a reputation as the most analytical and controversial League of Legends content creator and coach, known for his deep dive into Korean LoL strategy and his coaching stints with multiple international teams. His detailed breakdown videos transformed how Western audiences understood Korean LoL strategy and macro decision-making.",
         "nim": "🎮 No image available for this legend"
     },
     {
-        "n":  "Park Min-gyu (Ruler, alternate use)",
+        "n":  "Lee Jun-young (Profit)",
         "bi":  1997,
         "na":  "South Korean",
-        "sp":  "Overwatch (Tracer)",
-        "ach":  "This slot is used for: Seong-Hyun Park (Profit), who was widely considered the greatest Tracer player in Overwatch history, winning the Overwatch League MVP award with the London Spitfire. His mechanical ability on Tracer - the most mechanically demanding hero - during the 2018 OWL season set a benchmark for hero mastery.",
+        "sp":  "Overwatch (Tracer / Genji)",
+        "ach":  "Profit was widely regarded as the greatest Tracer player in Overwatch history and won the Overwatch League MVP award in 2018 with the London Spitfire. He and his partner Birdring formed the most dominant DPS duo in the first Overwatch League season, carrying London to the inaugural OWL championship.",
         "nim": "🎮 No image available for this legend"
     },
     {
-        "n":  "William Kaspar (Walshy)",
+        "n":  "David Walsh (Walshy)",
         "bi":  1987,
         "na":  "American",
         "sp":  "Halo 2 / Halo 3",
         "ach":  "Walshy was the most decorated Halo 2 and Halo 3 competitive player, winning multiple MLG National Championships as part of the team Final Boss. He brought credibility to Halo as a legitimate competitive game and his work as an analyst and personality extended his influence well beyond his playing career.",
-        "nim": "🎮 No image available for this legend"
+        "im":  "https://upload.wikimedia.org/wikipedia/commons/e/eb/Walshy_2013_interview.jpg"
     },
     {
         "n":  "Tom Taylor (Tsquared)",
@@ -477,54 +469,54 @@
         "na":  "Finnish",
         "sp":  "Dota 2 (Carry)",
         "ach":  "Matumbaman won TI7 with Team Liquid and was consistently ranked among the top 5 carry players in Dota 2 throughout his peak years. His partnership with KuroKy was considered among the most effective player-captain relationships in Dota 2 competitive history.",
-        "nim": "🎮 No image available for this legend"
+        "im":  "https://upload.wikimedia.org/wikipedia/commons/e/ee/MATUMBAMAN_at_The_International_2018.jpg"
     },
     {
-        "n":  "David Mau (Mautby)",
-        "bi":  1994,
+        "n":  "Mariano Arruda (SquishyMuffinz)",
+        "bi":  1999,
         "na":  "American",
         "sp":  "Rocket League",
-        "ach":  "This slot is for Mariano Arruda (SquishyMuffinz), an American Rocket League player who was consistently ranked as the greatest solo-queue Mechanical player in RL history, known for his aerial control. He won the Rocket League World Championship with Cloud9 in 2017.",
+        "ach":  "SquishyMuffinz is considered the greatest mechanical Rocket League player of all time, having won three RLCS World Championships with different teams (Cloud9 2017, NRG 2021, NRG 2022). His aerial control and ball-reading ability are considered technically unmatched in the game's history, and his highlight reels revolutionized what players believed was achievable.",
         "nim": "🎮 No image available for this legend"
     },
     {
-        "n":  "Pierre Siou (ap0calypse)",
-        "bi":  1994,
-        "na":  "French",
+        "n":  "Justin Lahrem (ap0calypse)",
+        "bi":  1997,
+        "na":  "German",
         "sp":  "Rainbow Six Siege",
-        "ach":  "This slot represents the R6 competitive landscape. More accurately: Nathan Schmitt (LeonGids) and the G2 Esports R6 roster defined Rainbow Six Siege\u0027s competitive meta from 2019-2020, winning multiple Pro League titles and establishing Europe as the dominant force in Rainbow Six esports.",
+        "ach":  "ap0calypse was one of the most versatile riflers in Rainbow Six Siege's European competitive scene, competing with multiple top-tier organizations including Luminosity Gaming, Team Secret, and G2 Esports. He was a key figure in establishing Germany as a competitive R6 nation and helped shape the early European Siege meta.",
         "nim": "🎮 No image available for this legend"
     },
     {
-        "n":  "Iain Bickerstaff (Crimsix)",
+        "n":  "Ian Porter (Crimsix)",
         "bi":  1994,
         "na":  "American",
         "sp":  "Call of Duty",
-        "ach":  "Crimsix is the most decorated player in Call of Duty Championship history, having won three CoD World Leagues with OpTic Gaming and Dallas Empire. His longevity, professionalism, and adaptability across multiple game titles in the CoD franchise made him one of the franchise\u0027s few multi-generational champions.",
+        "ach":  "Crimsix is the most decorated player in Call of Duty Championship history, having won three CoD World Leagues with OpTic Gaming and Dallas Empire. His longevity, professionalism, and adaptability across multiple game titles in the CoD franchise made him one of the franchise's few multi-generational champions.",
         "nim": "🎮 No image available for this legend"
     },
     {
-        "n":  "Spencer Martin (Gorilla)",
+        "n":  "Kang Beom-hyun (GorillA)",
         "bi":  1997,
-        "na":  "British",
+        "na":  "South Korean",
         "sp":  "League of Legends (Support)",
-        "ach":  "Gorilla is considered one of the greatest supports in League of Legends history, winning the 2017 World Championship with Samsung Galaxy and known for his Rakan and Thresh play in team fights. His synergy with Ruler in the bot lane was described as the best bot lane duo at Worlds 2017.",
-        "nim": "🎮 No image available for this legend"
+        "ach":  "GorillA is considered one of the greatest supports in League of Legends history, winning the 2017 World Championship with Samsung Galaxy and known for his Rakan and Thresh play in team fights. His synergy with Ruler in the bot lane was described as the best bot lane duo at Worlds 2017.",
+        "im":  "https://upload.wikimedia.org/wikipedia/commons/e/e4/GorillA_%28Kang_Beom-hyun_%EA%B3%A0%EB%A6%B4%EB%9D%BC%29_at_LoL_Worlds_2015.jpg"
     },
     {
-        "n":  "Lee Sin-hyung (Wolf)",
+        "n":  "Lee Jae-wan (Wolf)",
         "bi":  1996,
         "na":  "South Korean",
         "sp":  "League of Legends (Support)",
         "ach":  "Wolf was the support for SK Telecom T1 during their dynasty years (2015-2016-2017), forming one of the most decorated support-ADC duos in Worlds history alongside Bang. He contributed to three World Championship wins and is among the few players to win back-to-back-to-back Worlds.",
-        "nim": "🎮 No image available for this legend"
+        "im":  "https://upload.wikimedia.org/wikipedia/commons/f/fe/%EC%9A%B8%ED%94%84_%EC%9D%B4%EC%9E%AC%EC%99%84.jpg"
     },
     {
-        "n":  "Yoo Byung-jun (Faker Support Era)",
-        "bi":  1998,
-        "na":  "South Korean",
-        "sp":  "Valorant / League of Legends",
-        "ach":  "This slot is used for: Tyson Ngo (TenZ), a Canadian Valorant player considered one of the greatest mechanical players in the game\u0027s early competitive history. TenZ signed a deal widely reported at $2-3 million per year with Sentinels, and his duelist play defined Valorant\u0027s early competitive meta.",
+        "n":  "Tyson Ngo (TenZ)",
+        "bi":  2001,
+        "na":  "Canadian",
+        "sp":  "Valorant / Counter-Strike: Global Offensive",
+        "ach":  "TenZ was considered the greatest mechanical duelist player in Valorant's early competitive history, signing with Sentinels in a deal widely reported at $2-3 million per year. His Jett play during Valorant's formative competitive period set a new standard for aggressive entry-fragging and he became the face of Valorant's esports scene.",
         "nim": "🎮 No image available for this legend"
     },
     {
@@ -532,7 +524,7 @@
         "bi":  1994,
         "na":  "Belgian (Moroccan origin)",
         "sp":  "Counter-Strike / Valorant",
-        "ach":  "ScreaM earned the nickname \u0027The Headshot Machine\u0027 in CS:GO for his extraordinarily high headshot percentage with AK-47 and rifles. He transitioned to Valorant where he replicated his precise mechanical impact, leading Team Liquid to European championship titles and competing at world championships.",
+        "ach":  "ScreaM earned the nickname 'The Headshot Machine' in CS:GO for his extraordinarily high headshot percentage with AK-47 and rifles. He transitioned to Valorant where he replicated his precise mechanical impact, leading Team Liquid to European championship titles and competing at world championships.",
         "im":  "https://upload.wikimedia.org/wikipedia/commons/c/ca/ScreaM.jpg"
     },
     {
@@ -540,23 +532,23 @@
         "bi":  1994,
         "na":  "Brazilian",
         "sp":  "Counter-Strike: Global Offensive",
-        "ach":  "Coldzera was HLTV\u0027s number one ranked player in both 2016 and 2017, making him the only player in CS:GO history to win the award back-to-back, and led SK Gaming / MIBR to two consecutive Major Championship titles. His jumping no-scope clip against Team Liquid at MLG Columbus is one of the most replayed moments in CS:GO history.",
-        "nim": "🎮 No image available for this legend"
+        "ach":  "Coldzera was HLTV's number one ranked player in both 2016 and 2017, making him the only player in CS:GO history to win the award back-to-back, and led SK Gaming to two consecutive Major Championship titles. His jumping no-scope clip against Team Liquid at MLG Columbus is one of the most replayed moments in CS:GO history.",
+        "im":  "https://upload.wikimedia.org/wikipedia/commons/0/0e/BLAST_Backstage_2020_Coldzera_%28cropped%29.jpg"
     },
     {
         "n":  "Gabriel Toledo (FalleN)",
         "bi":  1991,
         "na":  "Brazilian",
         "sp":  "Counter-Strike: Global Offensive",
-        "ach":  "FalleN captained the Brazilian lineup that broke Korean dominance of CS:GO Majors, winning two consecutive Majors in 2016 with SK Gaming. His dual role as AWPer and in-game leader was considered exceptional even by world-championship standards, and he is credited with developing Brazil\u0027s CS:GO professional scene from the ground up.",
+        "ach":  "FalleN captained the Brazilian lineup that broke Korean dominance of CS:GO Majors, winning two consecutive Majors in 2016 with SK Gaming. His dual role as AWPer and in-game leader was considered exceptional even by world-championship standards, and he is credited with developing Brazil's CS:GO professional scene from the ground up.",
         "im":  "https://upload.wikimedia.org/wikipedia/commons/1/18/DH_Leipzig16_FalleN.JPG"
     },
     {
-        "n":  "Sven Larock (Caster Synderen)",
+        "n":  "Troels Nielsen (syndereN)",
         "bi":  1985,
         "na":  "Danish",
         "sp":  "Esports broadcasting / Dota 2",
-        "ach":  "Synderen is one of esports\u0027 most respected analysts and broadcasters, having transitioned from professional Dota 2 play to a long career as a panelist and analyst at The International. His clear explanations of complex strategies helped millions of viewers understand Dota 2 at its highest competitive level.",
+        "ach":  "syndereN is one of esports' most respected analysts and broadcasters, having transitioned from professional Dota 2 play to a long career as a panelist and analyst at The International. His clear explanations of complex strategies helped millions of viewers understand Dota 2 at its highest competitive level.",
         "nim": "🎮 No image available for this legend"
     },
     {
@@ -564,7 +556,7 @@
         "bi":  1995,
         "na":  "Swedish",
         "sp":  "Super Smash Bros. Melee / Ultimate",
-        "ach":  "Leffen is one of the few players to have defeated all five of the original \u0027Gods\u0027 of Smash Melee in bracket play and is considered among the top Melee players of all time. His aggressive personality, analytical streaming content, and willingness to compete across multiple Smash titles make him one of the community\u0027s most polarizing and celebrated figures.",
+        "ach":  "Leffen is one of the few players to have defeated all five of the original 'Gods' of Smash Melee in bracket play and is considered among the top Melee players of all time. His aggressive personality, analytical streaming content, and willingness to compete across multiple Smash titles make him one of the community's most polarizing and celebrated figures.",
         "im":  "https://upload.wikimedia.org/wikipedia/commons/5/53/Heir_5_-_Leffen.jpg"
     },
     {
@@ -572,19 +564,19 @@
         "bi":  1981,
         "na":  "French",
         "sp":  "StarCraft: Brood War / Professional Poker",
-        "ach":  "ElkY was one of the first Western professional StarCraft: Brood War players to compete in Korea, reaching a significant level before transitioning to professional poker where he became a World Series of Poker bracelet winner. His unique career path - from gaming pro to poker pro - remains one of esports\u0027 most remarkable crossover stories.",
-        "nim": "🎮 No image available for this legend"
+        "ach":  "ElkY was one of the first Western professional StarCraft: Brood War players to compete in Korea before transitioning to professional poker where he became a World Series of Poker bracelet winner. His unique career path - from gaming pro to poker pro - remains one of esports' most remarkable crossover stories.",
+        "im":  "https://upload.wikimedia.org/wikipedia/commons/d/da/DH_Leipzig16_ElkY.JPG"
     },
     {
-        "n":  "Andrew Woodward (DrLupo)",
+        "n":  "Benjamin Lupo (DrLupo)",
         "bi":  1985,
         "na":  "American",
         "sp":  "Fortnite / Twitch streaming",
-        "ach":  "DrLupo was one of the most respected Fortnite streamers and is known for raising over $2.3 million for St. Jude Children\u0027s Research Hospital through charity streams. His family-friendly content, genuine generosity, and high skill ceiling made him one of the most liked streamers across both gaming and mainstream audiences.",
+        "ach":  "DrLupo was one of the most respected Fortnite streamers and is known for raising over $2.3 million for St. Jude Children's Research Hospital through charity streams. His family-friendly content, genuine generosity, and high skill ceiling made him one of the most liked streamers across both gaming and mainstream audiences.",
         "nim": "🎮 No image available for this legend"
     },
     {
-        "n":  "Imaqtpie (Michael Santana)",
+        "n":  "Michael Santana (Imaqtpie)",
         "bi":  1992,
         "na":  "American",
         "sp":  "League of Legends (ADC) / streaming",
@@ -592,27 +584,27 @@
         "nim": "🎮 No image available for this legend"
     },
     {
-        "n":  "Jens Qlash (Jensenyy)",
+        "n":  "Nicolaj Jensen (Jensen)",
         "bi":  1996,
         "na":  "Danish",
         "sp":  "League of Legends (Mid Lane)",
-        "ach":  "Jensen was one of North America\u0027s most consistent LCS mid laners across multiple years with Cloud9 and Team Liquid, reaching the Worlds semifinals in 2018 with C9 - NA\u0027s best Worlds result in a decade. His calm, analytical approach made him one of the most respected players in the NA scene.",
-        "nim": "🎮 No image available for this legend"
+        "ach":  "Jensen was one of North America's most consistent LCS mid laners across multiple years with Cloud9 and Team Liquid, reaching the Worlds semifinals in 2018 with C9 - NA's best Worlds result in a decade. His calm, analytical approach made him one of the most respected players in the NA scene.",
+        "im":  "https://upload.wikimedia.org/wikipedia/commons/9/9c/Jensen_at_2015_Worlds.jpeg"
     },
     {
-        "n":  "Yeong-Han Ryu (Stork)",
+        "n":  "Song Byung-gu (Stork)",
         "bi":  1985,
         "na":  "South Korean",
         "sp":  "StarCraft: Brood War (Protoss)",
-        "ach":  "Stork was considered the greatest Protoss player in Brood War history, winning two OSL championships and multiple proleague titles with Samsung KHAN. His precise macro management and late-game army control were cited as the highest expression of Protoss gameplay in professional BW.",
-        "nim": "🎮 No image available for this legend"
+        "ach":  "Stork was considered the greatest Protoss player in Brood War history, winning two OSL championships and multiple proleague titles with Samsung KHAN. His precise macro management and late-game army control were cited as the highest expression of Protoss gameplay in professional Brood War.",
+        "im":  "https://upload.wikimedia.org/wikipedia/commons/d/db/Stork_at_WCG_2008_-_69.jpg"
     },
     {
-        "n":  "Seth Abner (Scump) [updated]",
-        "bi":  1995,
-        "na":  "American",
-        "sp":  "Call of Duty",
-        "ach":  "Seth \u0027Scump\u0027 Abner is the most decorated Call of Duty competitive player, having competed across every major CoD title since 2011. His victories with OpTic Gaming cemented the organization as North American CoD\u0027s premier dynasty, and his streaming career after retirement kept him among gaming\u0027s most followed personalities.",
+        "n":  "Erick Santos (Aspas)",
+        "bi":  2002,
+        "na":  "Brazilian",
+        "sp":  "Valorant (Duelist)",
+        "ach":  "Aspas is widely considered the greatest duelist player in Valorant history, winning the VCT Champions 2022 World Championship with LOUD and being named tournament MVP. His mechanical ceiling is described by professionals as the highest in the game's history, and his emergence helped establish Brazil as a dominant force in global Valorant esports.",
         "nim": "🎮 No image available for this legend"
     }
 ]

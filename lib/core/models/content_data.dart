@@ -24,6 +24,8 @@ class ContentData {
   final String? warningLevel; // "red" or "orange"
   // Neutral info badge, e.g. explaining why a coin/seal stands in for a portrait
   final String? imageNote;
+  // Terms that must not be translated (e.g. game titles, player names)
+  final List<String> protectedTerms;
 
   ContentData({
     required this.preview,
@@ -45,6 +47,7 @@ class ContentData {
     this.warningText,
     this.warningLevel,
     this.imageNote,
+    this.protectedTerms = const [],
   });
 
   /// Retourne la traduction dans la locale donnée, ou null si VO = locale.

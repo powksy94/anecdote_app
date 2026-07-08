@@ -37,6 +37,19 @@ extension ContentTypeAccentColors on ContentType {
         return const Color(0xFFB39DDB);
       case ContentType.nobelPrize:
         return const Color(0xFFFFD700);
+      case ContentType.gamingHub:
+      case ContentType.gamesHub:
+      case ContentType.gamingAnecdote:
+      case ContentType.classicGame:
+        return const Color(0xFF4ADE80);
+      case ContentType.gamersHub:
+      case ContentType.gamingLegend:
+        return const Color(0xFF66C0F4);
+      case ContentType.gamingNomination:
+        return const Color(0xFFD4A017);
+      case ContentType.worstGame:
+      case ContentType.bannedGame:
+        return const Color(0xFFEF4444);
       default:
         return gradient[0];
     }

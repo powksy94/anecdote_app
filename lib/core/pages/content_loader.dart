@@ -104,7 +104,10 @@ class ContentLoader {
     }
 
     final finalContent = await translationService.translateContent(
-      _applyLocaleUnits(englishContent!, l10n), targetLang: locale);
+      _applyLocaleUnits(englishContent!, l10n),
+      targetLang: locale,
+      skipPreview: contentType.hasUntranslatablePreview,
+    );
     await cacheService.saveTodayContent(contentType, finalContent, locale: locale);
     return finalContent;
   }

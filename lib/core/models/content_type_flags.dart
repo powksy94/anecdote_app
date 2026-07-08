@@ -51,7 +51,17 @@ extension ContentTypeFlags on ContentType {
     ContentType.bannedGame,
   };
 
+  // Game/person names in preview should NOT be translated
+  static const _untranslatablePreviewTypes = {
+    ContentType.classicGame,
+    ContentType.worstGame,
+    ContentType.bannedGame,
+    ContentType.gamingNomination,
+    ContentType.gamingLegend,
+  };
+
   bool get isGeoType => _geoTypes.contains(this);
   bool get isCinemaType => _cinemaTypes.contains(this);
   bool get requiresImage => _imageTypes.contains(this);
+  bool get hasUntranslatablePreview => _untranslatablePreviewTypes.contains(this);
 }

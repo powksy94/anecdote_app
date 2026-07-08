@@ -8,9 +8,9 @@ class GamingAnecdoteService {
     _cache ??= await loadGamingAnecdotes();
     final a = dailyGamingAnecdote(_cache!);
     return ContentData(
-      preview: '🎮 ${a.name}',
-      details: a.fact,
-      hasDetails: true,
+      preview: a.fact,
+      details: '',
+      hasDetails: false,
     );
   }
 }

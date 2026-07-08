@@ -21,6 +21,7 @@ class GamingNominationService {
       hasDetails: true,
       imageUrl: n.imageUrl,
       noImageMessage: n.noImageMessage,
+      protectedTerms: [n.name],
     );
   }
 }

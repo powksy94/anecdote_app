@@ -79,17 +79,42 @@ class TranslationService {
     return _restoreEmojis(_cleanTranslated(raw), emojis);
   }
 
+  static String _maskTerms(String text, List<String> terms) {
+    var result = text;
+    for (int i = 0; i < terms.length; i++) {
+      if (terms[i].isNotEmpty) result = result.replaceAll(terms[i], '[N$i]');
+    }
+    return result;
+  }
+
+  static String _restoreTerms(String text, List<String> terms) {
+    var result = text;
+    for (int i = 0; i < terms.length; i++) {
+      if (terms[i].isNotEmpty) result = result.replaceAll('[N$i]', terms[i]);
+    }
+    return result;
+  }
+
   Future<ContentData> translateContent(
     ContentData content, {
     required String targetLang,
+    bool skipPreview = false,
   }) async {
     if (targetLang == 'en') return content;
 
-    final translatedPreview = await _translateText(content.preview, targetLang);
+    final translatedPreview = skipPreview
+        ? content.preview
+        : await _translateText(content.preview, targetLang);
 
     String translatedDetails = content.details;
     if (content.hasDetails && content.details.isNotEmpty) {
-      translatedDetails = await _translateText(content.details, targetLang);
+      final terms = content.protectedTerms;
+      final toTranslate = terms.isNotEmpty
+          ? _maskTerms(content.details, terms)
+          : content.details;
+      final translated = await _translateText(toTranslate, targetLang);
+      translatedDetails =
+          terms.isNotEmpty ? _restoreTerms(translated, terms) : translated;
     }
 
     String? translatedWarning = content.warningText;

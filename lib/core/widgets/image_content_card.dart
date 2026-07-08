@@ -62,6 +62,16 @@ class _ImageContentCardState extends State<ImageContentCard> {
         return widget.contentData?.noImageMessage != null ? loc.noImagePioneerWoman : null;
       case ContentType.legendaryAthlete:
         return widget.contentData?.noImageMessage != null ? loc.noImageLegendaryAthlete : null;
+      case ContentType.gamingLegend:
+        return widget.contentData?.noImageMessage != null ? loc.noImageGamingLegend : null;
+      case ContentType.classicGame:
+        return widget.contentData?.noImageMessage != null ? loc.noImageClassicGame : null;
+      case ContentType.gamingNomination:
+        return widget.contentData?.noImageMessage != null ? loc.noImageGamingNomination : null;
+      case ContentType.worstGame:
+        return widget.contentData?.noImageMessage != null ? loc.noImageWorstGame : null;
+      case ContentType.bannedGame:
+        return widget.contentData?.noImageMessage != null ? loc.noImageBannedGame : null;
       case ContentType.insect:
         // Toujours disponible : l'URL Wikipedia peut échouer silencieusement
         return loc.noImageGeneric;
