@@ -4,6 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../../generated/app_localizations.dart';
 import '../services/version_check_service.dart';
+import 'update_popup_background.dart';
+import 'update_popup_bulb.dart';
+import 'update_popup_content.dart';
+import 'update_popup_painters.dart';
 
 enum UpdatePopupMode { update, celebration }
 
@@ -25,6 +29,10 @@ class UpdatePopup extends StatefulWidget {
 }
 
 class _UpdatePopupState extends State<UpdatePopup> with TickerProviderStateMixin {
+  late final AnimationController _entryCtrl;
+  late final Animation<double> _entryScale;
+  late final Animation<double> _entryOpacity;
+
   late final AnimationController _flickerCtrl;
   late final Animation<double> _flickerAnim;
 
@@ -33,27 +41,34 @@ class _UpdatePopupState extends State<UpdatePopup> with TickerProviderStateMixin
   late final Animation<double> _glowAnim;
   late final Animation<Color?> _colorAnim;
 
+  late final AnimationController _ambientCtrl;
+  late final AnimationController _shimmerCtrl;
+
   bool _isUpdating = false;
   final AudioPlayer _audioPlayer = AudioPlayer();
+  late final List<StarData> _stars;
 
   @override
   void initState() {
     super.initState();
 
-    _flickerCtrl = AnimationController(
-      vsync: this,
-      duration: const Duration(milliseconds: 120),
-    );
+    _stars = _buildStars();
+
+    _entryCtrl = AnimationController(vsync: this, duration: const Duration(milliseconds: 400));
+    _entryScale = Tween<double>(begin: 0.80, end: 1.0)
+        .animate(CurvedAnimation(parent: _entryCtrl, curve: Curves.easeOutBack));
+    _entryOpacity = Tween<double>(begin: 0.0, end: 1.0)
+        .animate(CurvedAnimation(parent: _entryCtrl, curve: Curves.easeOut));
+    _entryCtrl.forward();
+
+    _flickerCtrl = AnimationController(vsync: this, duration: const Duration(milliseconds: 120));
     _flickerAnim = TweenSequence<double>([
       TweenSequenceItem(tween: Tween(begin: 0.35, end: 0.65), weight: 1),
       TweenSequenceItem(tween: Tween(begin: 0.65, end: 0.20), weight: 2),
       TweenSequenceItem(tween: Tween(begin: 0.20, end: 0.45), weight: 1),
     ]).animate(_flickerCtrl);
 
-    _lightCtrl = AnimationController(
-      vsync: this,
-      duration: const Duration(milliseconds: 700),
-    );
+    _lightCtrl = AnimationController(vsync: this, duration: const Duration(milliseconds: 700));
     _scaleAnim = TweenSequence<double>([
       TweenSequenceItem(tween: Tween(begin: 1.0, end: 1.35), weight: 1),
       TweenSequenceItem(tween: Tween(begin: 1.35, end: 1.0), weight: 1),
@@ -62,6 +77,11 @@ class _UpdatePopupState extends State<UpdatePopup> with TickerProviderStateMixin
         .animate(CurvedAnimation(parent: _lightCtrl, curve: Curves.easeOut));
     _colorAnim = ColorTween(begin: Colors.grey.shade400, end: Colors.amber)
         .animate(CurvedAnimation(parent: _lightCtrl, curve: Curves.easeIn));
+
+    _ambientCtrl = AnimationController(vsync: this, duration: const Duration(seconds: 6))
+      ..repeat();
+    _shimmerCtrl = AnimationController(vsync: this, duration: const Duration(milliseconds: 2000))
+      ..repeat();
 
     if (widget.mode == UpdatePopupMode.celebration) {
       _isUpdating = true;
@@ -73,6 +93,17 @@ class _UpdatePopupState extends State<UpdatePopup> with TickerProviderStateMixin
     } else {
       _startFlicker();
     }
+  }
+
+  static List<StarData> _buildStars() {
+    final rng = math.Random(42);
+    return List.generate(16, (i) => StarData(
+      x: rng.nextDouble(),
+      y: rng.nextDouble(),
+      size: 1.0 + rng.nextDouble() * 2.2,
+      opacity: 0.2 + rng.nextDouble() * 0.55,
+      phase: rng.nextDouble(),
+    ));
   }
 
   void _startFlicker() async {
@@ -102,8 +133,11 @@ class _UpdatePopupState extends State<UpdatePopup> with TickerProviderStateMixin
 
   @override
   void dispose() {
+    _entryCtrl.dispose();
     _flickerCtrl.dispose();
     _lightCtrl.dispose();
+    _ambientCtrl.dispose();
+    _shimmerCtrl.dispose();
     _audioPlayer.dispose();
     super.dispose();
   }
@@ -113,138 +147,53 @@ class _UpdatePopupState extends State<UpdatePopup> with TickerProviderStateMixin
     final loc = AppLocalizations.of(context)!;
     final isCelebration = widget.mode == UpdatePopupMode.celebration;
 
-    return Dialog(
-      backgroundColor: Colors.transparent,
-      insetPadding: const EdgeInsets.symmetric(horizontal: 32, vertical: 24),
-      child: Container(
-        decoration: BoxDecoration(
-          gradient: const LinearGradient(
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-            colors: [Color(0xFF3730A3), Color(0xFF6D28D9)],
-          ),
-          borderRadius: BorderRadius.circular(24),
-          boxShadow: [
-            BoxShadow(
-              color: const Color(0xFF3730A3).withValues(alpha: 0.5),
-              blurRadius: 40,
-              spreadRadius: 4,
-              offset: const Offset(0, 12),
-            ),
-          ],
-        ),
-        child: Padding(
-          padding: const EdgeInsets.fromLTRB(28, 36, 28, 28),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              _buildBulb(),
-              const SizedBox(height: 24),
-              if (!isCelebration) ...[
-                Text(
-                  loc.updateTitle,
-                  textAlign: TextAlign.center,
-                  style: const TextStyle(
-                    color: Colors.white,
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                    height: 1.3,
+    return ListenableBuilder(
+      listenable: _entryCtrl,
+      builder: (context, child) => Opacity(
+        opacity: _entryOpacity.value,
+        child: Transform.scale(scale: _entryScale.value, child: child),
+      ),
+      child: Dialog(
+        backgroundColor: Colors.transparent,
+        insetPadding: const EdgeInsets.symmetric(horizontal: 28, vertical: 24),
+        child: ConstrainedBox(
+          constraints: const BoxConstraints(maxWidth: 380),
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(28),
+            child: Stack(
+              children: [
+                UpdatePopupBackground(ambientCtrl: _ambientCtrl, stars: _stars),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(28, 44, 28, 32),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      UpdatePopupBulb(
+                        flickerAnim: _flickerAnim,
+                        lightCtrl: _lightCtrl,
+                        scaleAnim: _scaleAnim,
+                        glowAnim: _glowAnim,
+                        colorAnim: _colorAnim,
+                        ambientCtrl: _ambientCtrl,
+                      ),
+                      if (!isCelebration) ...[
+                        const SizedBox(height: 30),
+                        UpdatePopupContent(
+                          loc: loc,
+                          shimmerCtrl: _shimmerCtrl,
+                          isUpdating: _isUpdating,
+                          onUpdate: _onUpdate,
+                          onLater: widget.onLater != null ? _onLater : null,
+                        ),
+                      ],
+                    ],
                   ),
                 ),
-                const SizedBox(height: 10),
-                Text(
-                  loc.updateMessage,
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    color: Colors.white.withValues(alpha: 0.8),
-                    fontSize: 14,
-                    height: 1.5,
-                  ),
-                ),
-                const SizedBox(height: 28),
-                SizedBox(
-                  width: double.infinity,
-                  child: ElevatedButton.icon(
-                    onPressed: _isUpdating ? null : _onUpdate,
-                    icon: const Icon(Icons.download_rounded),
-                    label: Text(loc.updateButton),
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.amber.shade600,
-                      foregroundColor: Colors.black87,
-                      disabledBackgroundColor: Colors.amber.shade200,
-                      padding: const EdgeInsets.symmetric(vertical: 14),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(14),
-                      ),
-                      textStyle: const TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
-                ),
-                if (widget.onLater != null) ...[
-                  const SizedBox(height: 10),
-                  TextButton(
-                    onPressed: _isUpdating ? null : _onLater,
-                    child: Text(
-                      loc.updateLaterButton,
-                      style: TextStyle(
-                        color: Colors.white.withValues(alpha: 0.6),
-                        fontSize: 14,
-                      ),
-                    ),
-                  ),
-                ],
               ],
-            ],
+            ),
           ),
         ),
       ),
-    );
-  }
-
-  Widget _buildBulb() {
-    return AnimatedBuilder(
-      animation: Listenable.merge([_flickerAnim, _lightCtrl]),
-      builder: (context, _) {
-        final lit = _lightCtrl.value > 0;
-        final opacity = lit ? 1.0 : _flickerAnim.value;
-        final color = lit
-            ? (_colorAnim.value ?? Colors.amber)
-            : Colors.grey.shade300;
-        final scale = lit ? _scaleAnim.value : 1.0;
-        final glow = lit ? _glowAnim.value : 0.0;
-
-        return Transform.scale(
-          scale: scale,
-          child: Container(
-            width: 88,
-            height: 88,
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              color: Colors.white.withValues(alpha: 0.12),
-              boxShadow: glow > 0
-                  ? [
-                      BoxShadow(
-                        color: Colors.amber.withValues(alpha: 0.6),
-                        blurRadius: glow,
-                        spreadRadius: glow / 4,
-                      ),
-                    ]
-                  : [],
-            ),
-            child: Opacity(
-              opacity: opacity,
-              child: Icon(
-                lit ? Icons.lightbulb : Icons.lightbulb_outline,
-                size: 52,
-                color: color,
-              ),
-            ),
-          ),
-        );
-      },
     );
   }
 }
