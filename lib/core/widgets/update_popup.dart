@@ -9,8 +9,13 @@ enum UpdatePopupMode { update, celebration }
 
 class UpdatePopup extends StatefulWidget {
   final UpdatePopupMode mode;
+  final VoidCallback? onLater;
 
-  const UpdatePopup({super.key, this.mode = UpdatePopupMode.update});
+  const UpdatePopup({
+    super.key,
+    this.mode = UpdatePopupMode.update,
+    this.onLater,
+  });
 
   static const _storeUrl =
       'https://play.google.com/store/apps/details?id=com.uzan.dailyfacts';
@@ -72,7 +77,6 @@ class _UpdatePopupState extends State<UpdatePopup> with TickerProviderStateMixin
 
   void _startFlicker() async {
     final rng = math.Random();
-    // Un seul flicker puis stop
     await Future.delayed(Duration(milliseconds: 800 + rng.nextInt(1200)));
     if (!mounted || _isUpdating) return;
     await _audioPlayer.play(AssetSource('sounds/ampoule-qui-eclate.ogg'));
@@ -91,6 +95,11 @@ class _UpdatePopupState extends State<UpdatePopup> with TickerProviderStateMixin
     if (mounted) Navigator.pop(context);
   }
 
+  void _onLater() {
+    widget.onLater?.call();
+    Navigator.pop(context);
+  }
+
   @override
   void dispose() {
     _flickerCtrl.dispose();
@@ -104,73 +113,138 @@ class _UpdatePopupState extends State<UpdatePopup> with TickerProviderStateMixin
     final loc = AppLocalizations.of(context)!;
     final isCelebration = widget.mode == UpdatePopupMode.celebration;
 
-    return AlertDialog(
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-      title: Text(loc.updateTitle, textAlign: TextAlign.center),
-      content: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          AnimatedBuilder(
-            animation: Listenable.merge([_flickerAnim, _lightCtrl]),
-            builder: (context, _) {
-              final lit = _lightCtrl.value > 0;
-              final opacity = lit ? 1.0 : _flickerAnim.value;
-              final color = lit
-                  ? (_colorAnim.value ?? Colors.amber)
-                  : Colors.grey.shade400;
-              final scale = lit ? _scaleAnim.value : 1.0;
-              final glow = lit ? _glowAnim.value : 0.0;
-
-              return Transform.scale(
-                scale: scale,
-                child: Container(
-                  width: 80,
-                  height: 80,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    boxShadow: glow > 0
-                        ? [
-                            BoxShadow(
-                              color: Colors.amber.withValues(alpha: 0.5),
-                              blurRadius: glow,
-                              spreadRadius: glow / 4,
-                            ),
-                          ]
-                        : [],
+    return Dialog(
+      backgroundColor: Colors.transparent,
+      insetPadding: const EdgeInsets.symmetric(horizontal: 32, vertical: 24),
+      child: Container(
+        decoration: BoxDecoration(
+          gradient: const LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            colors: [Color(0xFF3730A3), Color(0xFF6D28D9)],
+          ),
+          borderRadius: BorderRadius.circular(24),
+          boxShadow: [
+            BoxShadow(
+              color: const Color(0xFF3730A3).withValues(alpha: 0.5),
+              blurRadius: 40,
+              spreadRadius: 4,
+              offset: const Offset(0, 12),
+            ),
+          ],
+        ),
+        child: Padding(
+          padding: const EdgeInsets.fromLTRB(28, 36, 28, 28),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              _buildBulb(),
+              const SizedBox(height: 24),
+              if (!isCelebration) ...[
+                Text(
+                  loc.updateTitle,
+                  textAlign: TextAlign.center,
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    height: 1.3,
                   ),
-                  child: Opacity(
-                    opacity: opacity,
-                    child: Icon(
-                      lit ? Icons.lightbulb : Icons.lightbulb_outline,
-                      size: 64,
-                      color: color,
+                ),
+                const SizedBox(height: 10),
+                Text(
+                  loc.updateMessage,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: Colors.white.withValues(alpha: 0.8),
+                    fontSize: 14,
+                    height: 1.5,
+                  ),
+                ),
+                const SizedBox(height: 28),
+                SizedBox(
+                  width: double.infinity,
+                  child: ElevatedButton.icon(
+                    onPressed: _isUpdating ? null : _onUpdate,
+                    icon: const Icon(Icons.download_rounded),
+                    label: Text(loc.updateButton),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.amber.shade600,
+                      foregroundColor: Colors.black87,
+                      disabledBackgroundColor: Colors.amber.shade200,
+                      padding: const EdgeInsets.symmetric(vertical: 14),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(14),
+                      ),
+                      textStyle: const TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ),
                 ),
-              );
-            },
-          ),
-          const SizedBox(height: 16),
-          Text(
-            isCelebration ? '' : loc.updateMessage,
-            textAlign: TextAlign.center,
-          ),
-        ],
-      ),
-      actionsAlignment: MainAxisAlignment.center,
-      actions: isCelebration
-          ? []
-          : [
-              ElevatedButton.icon(
-                onPressed: _isUpdating ? null : _onUpdate,
-                icon: const Icon(Icons.download_rounded),
-                label: Text(loc.updateButton),
-                style: ElevatedButton.styleFrom(
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(12)),
-                ),
-              ),
+                if (widget.onLater != null) ...[
+                  const SizedBox(height: 10),
+                  TextButton(
+                    onPressed: _isUpdating ? null : _onLater,
+                    child: Text(
+                      loc.updateLaterButton,
+                      style: TextStyle(
+                        color: Colors.white.withValues(alpha: 0.6),
+                        fontSize: 14,
+                      ),
+                    ),
+                  ),
+                ],
+              ],
             ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildBulb() {
+    return AnimatedBuilder(
+      animation: Listenable.merge([_flickerAnim, _lightCtrl]),
+      builder: (context, _) {
+        final lit = _lightCtrl.value > 0;
+        final opacity = lit ? 1.0 : _flickerAnim.value;
+        final color = lit
+            ? (_colorAnim.value ?? Colors.amber)
+            : Colors.grey.shade300;
+        final scale = lit ? _scaleAnim.value : 1.0;
+        final glow = lit ? _glowAnim.value : 0.0;
+
+        return Transform.scale(
+          scale: scale,
+          child: Container(
+            width: 88,
+            height: 88,
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              color: Colors.white.withValues(alpha: 0.12),
+              boxShadow: glow > 0
+                  ? [
+                      BoxShadow(
+                        color: Colors.amber.withValues(alpha: 0.6),
+                        blurRadius: glow,
+                        spreadRadius: glow / 4,
+                      ),
+                    ]
+                  : [],
+            ),
+            child: Opacity(
+              opacity: opacity,
+              child: Icon(
+                lit ? Icons.lightbulb : Icons.lightbulb_outline,
+                size: 52,
+                color: color,
+              ),
+            ),
+          ),
+        );
+      },
     );
   }
 }

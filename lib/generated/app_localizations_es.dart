@@ -104,14 +104,16 @@ class AppLocalizationsEs extends AppLocalizations {
   String get lightYear => 'al';
 
   @override
-  String get updateTitle => 'Actualización disponible';
+  String get updateTitle => '¡Nueva versión disponible!';
 
   @override
-  String get updateMessage =>
-      'Hay una nueva versión de la aplicación disponible. Actualiza para disfrutar de las últimas novedades.';
+  String get updateMessage => 'Te esperan mejoras y nuevos contenidos.';
 
   @override
-  String get updateButton => 'Actualizar';
+  String get updateButton => 'Actualizar ahora';
+
+  @override
+  String get updateLaterButton => 'Más tarde';
 
   @override
   String get categorySpace => 'Espacio';

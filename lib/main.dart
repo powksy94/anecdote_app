@@ -17,6 +17,12 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
 
+  // Cold-start : notification tappée quand l'app était tuée
+  final initialMessage = await FirebaseMessaging.instance.getInitialMessage();
+  if (initialMessage != null) {
+    debugPrint('[FCM] cold-start from notification: ${initialMessage.notification?.title}');
+  }
+
   // Register background handler before the app starts
   FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
 

@@ -9,10 +9,11 @@ import '../../features/science/pages/science_navigator.dart';
 import '../../features/art/pages/art_navigator.dart';
 import '../../features/gaming/pages/gaming_navigator.dart';
 import '../models/content_type.dart';
-import '../../generated/app_localizations.dart';
 import '../services/ad_service.dart';
+import '../services/rating_service.dart';
 import '../services/version_check_service.dart';
 import '../widgets/category_card.dart';
+import '../widgets/home_header.dart';
 import '../widgets/update_popup.dart';
 
 class HomePage extends StatefulWidget {
@@ -62,7 +63,10 @@ class _HomePageState extends State<HomePage> {
       showDialog(
         context: context,
         barrierDismissible: false,
-        builder: (_) => const UpdatePopup(mode: UpdatePopupMode.update),
+        builder: (_) => UpdatePopup(
+          mode: UpdatePopupMode.update,
+          onLater: () => VersionCheckService.snoozeUpdate(),
+        ),
       );
     } else if (result == VersionCheckResult.justUpdated) {
       showDialog(
@@ -70,6 +74,14 @@ class _HomePageState extends State<HomePage> {
         barrierDismissible: true,
         builder: (_) => const UpdatePopup(mode: UpdatePopupMode.celebration),
       );
+    }
+
+    // Rating : toujours compter l'ouverture, proposer seulement si pas d'update
+    final ratingService = RatingService();
+    await ratingService.recordOpen();
+    if (result == VersionCheckResult.noUpdate && await ratingService.shouldPrompt()) {
+      await ratingService.markShown();
+      await ratingService.requestReview();
     }
   }
 
@@ -132,28 +144,11 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-    final loc = AppLocalizations.of(context)!;
-
     return Scaffold(
       body: SafeArea(
         child: Column(
           children: [
-            const SizedBox(height: 32),
-            Text(
-              loc.appTitle,
-              style: theme.textTheme.headlineMedium?.copyWith(
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            const SizedBox(height: 8),
-            Text(
-              loc.chooseCategory,
-              style: theme.textTheme.bodyLarge?.copyWith(
-                color: theme.colorScheme.onSurface.withValues(alpha: 0.6),
-              ),
-            ),
-            const SizedBox(height: 32),
+            const HomeHeader(),
             Expanded(
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20),

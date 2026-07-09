@@ -104,14 +104,17 @@ class AppLocalizationsFr extends AppLocalizations {
   String get lightYear => 'al';
 
   @override
-  String get updateTitle => 'Mise à jour disponible';
+  String get updateTitle => 'Nouvelle version disponible !';
 
   @override
   String get updateMessage =>
-      'Une nouvelle version de l\'application est disponible. Mettez à jour pour profiter des dernières fonctionnalités.';
+      'Des améliorations et de nouveaux contenus vous attendent.';
 
   @override
   String get updateButton => 'Mettre à jour';
+
+  @override
+  String get updateLaterButton => 'Plus tard';
 
   @override
   String get categorySpace => 'Espace';

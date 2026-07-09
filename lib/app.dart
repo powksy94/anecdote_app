@@ -22,7 +22,7 @@ class _AnecdoteAppState extends State<AnecdoteApp> {
     _initFCM();
   }
 
-  void _initFCM() {
+  Future<void> _initFCM() async {
     // Foreground: l'OS Android n'affiche pas les notifs automatiquement
     // quand l'app est ouverte → on affiche un SnackBar
     FirebaseMessaging.onMessage.listen((RemoteMessage message) {
@@ -47,6 +47,15 @@ class _AnecdoteAppState extends State<AnecdoteApp> {
         ),
       );
     });
+
+    // Background tap (app en arrière-plan)
+    FirebaseMessaging.onMessageOpenedApp.listen((RemoteMessage message) {
+      debugPrint('[FCM] opened from background: ${message.notification?.title}');
+    });
+
+    // Token (ciblage par appareil)
+    final token = await FirebaseMessaging.instance.getToken();
+    debugPrint('[FCM] token: $token');
   }
 
   @override

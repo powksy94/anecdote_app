@@ -289,20 +289,26 @@ abstract class AppLocalizations {
   /// No description provided for @updateTitle.
   ///
   /// In en, this message translates to:
-  /// **'Update available'**
+  /// **'New version available!'**
   String get updateTitle;
 
   /// No description provided for @updateMessage.
   ///
   /// In en, this message translates to:
-  /// **'A new version of the app is available. Update to enjoy the latest features.'**
+  /// **'Improvements and new content are waiting for you.'**
   String get updateMessage;
 
   /// No description provided for @updateButton.
   ///
   /// In en, this message translates to:
-  /// **'Update'**
+  /// **'Update now'**
   String get updateButton;
+
+  /// No description provided for @updateLaterButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Later'**
+  String get updateLaterButton;
 
   /// No description provided for @categorySpace.
   ///
