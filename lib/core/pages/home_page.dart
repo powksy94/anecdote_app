@@ -14,7 +14,7 @@ import '../services/rating_service.dart';
 import '../services/version_check_service.dart';
 import '../widgets/category_card.dart';
 import '../widgets/home_header.dart';
-import '../widgets/update_popup.dart';
+import '../widgets/update_popup_fog.dart';
 
 class HomePage extends StatefulWidget {
   final void Function(Locale locale)? onLocaleChange;
@@ -60,20 +60,12 @@ class _HomePageState extends State<HomePage> {
     final result = await VersionCheckService().check();
     if (!mounted) return;
     if (result == VersionCheckResult.updateAvailable) {
-      showDialog(
-        context: context,
-        barrierDismissible: false,
-        builder: (_) => UpdatePopup(
-          mode: UpdatePopupMode.update,
-          onLater: () => VersionCheckService.snoozeUpdate(),
-        ),
+      showUpdateFogDialog(
+        context,
+        onLater: () => VersionCheckService.snoozeUpdate(),
       );
     } else if (result == VersionCheckResult.justUpdated) {
-      showDialog(
-        context: context,
-        barrierDismissible: true,
-        builder: (_) => const UpdatePopup(mode: UpdatePopupMode.celebration),
-      );
+      showCelebrationDialog(context);
     }
 
     // Rating : toujours compter l'ouverture, proposer seulement si pas d'update

@@ -1,6 +1,4 @@
-import 'dart:math' as math;
 import 'package:flutter/material.dart';
-import 'update_popup_painters.dart';
 
 /// Contient et initialise tous les AnimationControllers + animations dérivées
 /// du popup de mise à jour.
@@ -26,10 +24,6 @@ class UpdatePopupControllers {
   // Shimmer bouton
   final AnimationController shimmer;
 
-  // Phase brouillard (mode update — au clic)
-  final AnimationController dimming;
-  final Animation<double> dimmingAnim;
-
   // Phase halos (mode celebration — 3 pulses staggerées)
   final AnimationController halo;
   final Animation<double> haloAnim1;
@@ -42,7 +36,6 @@ class UpdatePopupControllers {
     required this.light,      required this.scaleAnim,   required this.glowAnim,
     required this.colorAnim,
     required this.ambient,    required this.shimmer,
-    required this.dimming,    required this.dimmingAnim,
     required this.halo,
     required this.haloAnim1,  required this.haloAnim2,   required this.haloAnim3,
   });
@@ -78,10 +71,6 @@ class UpdatePopupControllers {
     final ambient = AnimationController(vsync: vsync, duration: const Duration(seconds: 6));
     final shimmer = AnimationController(vsync: vsync, duration: const Duration(milliseconds: 2000));
 
-    // — Brouillard —
-    final dimming = AnimationController(vsync: vsync, duration: const Duration(milliseconds: 750));
-    final dimmingAnim = CurvedAnimation(parent: dimming, curve: Curves.easeIn);
-
     // — Halos (3 pulses staggerées sur 2.4 s) —
     final halo = AnimationController(vsync: vsync, duration: const Duration(milliseconds: 2400));
     final haloAnim1 = CurvedAnimation(
@@ -97,7 +86,6 @@ class UpdatePopupControllers {
       light: light,           scaleAnim: scaleAnim,       glowAnim: glowAnim,
       colorAnim: colorAnim,
       ambient: ambient,       shimmer: shimmer,
-      dimming: dimming,       dimmingAnim: dimmingAnim,
       halo: halo,
       haloAnim1: haloAnim1,   haloAnim2: haloAnim2,       haloAnim3: haloAnim3,
     );
@@ -109,18 +97,7 @@ class UpdatePopupControllers {
     light.dispose();
     ambient.dispose();
     shimmer.dispose();
-    dimming.dispose();
     halo.dispose();
   }
 
-  static List<StarData> buildStars() {
-    final rng = math.Random(42);
-    return List.generate(16, (i) => StarData(
-      x: rng.nextDouble(),
-      y: rng.nextDouble(),
-      size: 1.0 + rng.nextDouble() * 2.2,
-      opacity: 0.2 + rng.nextDouble() * 0.55,
-      phase: rng.nextDouble(),
-    ));
-  }
 }
