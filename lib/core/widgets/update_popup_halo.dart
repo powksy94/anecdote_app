@@ -20,7 +20,6 @@ class UpdatePopupHalo extends StatelessWidget {
   }
 }
 
-/// Peint un burst solaire par valeur : disque de halo + ring + 12 rayons triangulaires.
 class _SolarHaloPainter extends CustomPainter {
   final List<double> values;
 
@@ -29,7 +28,6 @@ class _SolarHaloPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     final center = Offset(size.width / 2, size.height / 2);
-    // Rayon max = distance du centre au coin le plus éloigné
     final maxR = math.sqrt(
       (size.width / 2) * (size.width / 2) +
           (size.height / 2) * (size.height / 2),
@@ -73,41 +71,51 @@ class _SolarHaloPainter extends CustomPainter {
         ..strokeWidth = (7.0 * (1.0 - v * 0.65)).clamp(0.5, 7.0),
     );
 
-    // — Rayons solaires (12 triangles du centre vers le ring) —
+    // — Rayons solaires : 12 longs + 12 courts intercalés, 3 couches par rayon —
     if (radius < 4) return;
-    const nRays = 12;
-    const halfAngle = 0.065; // ≈ 3.7 degrés
-    final innerRayR = math.max(radius * 0.06, 2.0);
-    final rayPaint = Paint()
-      ..shader = RadialGradient(
-        colors: [
-          Colors.amber.withValues(alpha: alpha * 0.75),
-          Colors.amber.withValues(alpha: alpha * 0.22),
-          Colors.transparent,
-        ],
-        stops: const [0.0, 0.5, 1.0],
-      ).createShader(Rect.fromCircle(center: center, radius: radius));
 
-    for (int i = 0; i < nRays; i++) {
-      final angle = i * (2 * math.pi / nRays);
-      canvas.drawPath(
-        Path()
-          ..moveTo(
-            center.dx + innerRayR * math.cos(angle - halfAngle),
-            center.dy + innerRayR * math.sin(angle - halfAngle),
-          )
-          ..lineTo(
-            center.dx + radius * math.cos(angle),
-            center.dy + radius * math.sin(angle),
-          )
-          ..lineTo(
-            center.dx + innerRayR * math.cos(angle + halfAngle),
-            center.dy + innerRayR * math.sin(angle + halfAngle),
-          )
-          ..close(),
-        rayPaint,
-      );
+    const nRays = 12;
+    // 3 couches angulaires (large/medium/fine) pour l'effet dégradé sur les bords
+    // (halfAngle en radians, alphaFactor)
+    const layers = [
+      (0.22, 0.09),  // large fond doux
+      (0.11, 0.25),  // faisceau médian
+      (0.048, 0.52), // cœur lumineux
+    ];
+
+    for (int i = 0; i < nRays * 2; i++) {
+      final angle = i * (math.pi / nRays);
+      // Longs et courts alternés
+      final rayR = i.isEven ? radius : radius * 0.62;
+      if (rayR < 2) continue;
+
+      final innerRayR = math.max(rayR * 0.10, 3.0);
+      final burstRect = Rect.fromCircle(center: center, radius: rayR);
+
+      for (final (ha, aFactor) in layers) {
+        canvas.drawPath(
+          _rayPath(center, innerRayR, rayR, angle, ha),
+          Paint()
+            ..shader = RadialGradient(
+              colors: [
+                Colors.amber.withValues(alpha: alpha * aFactor),
+                Colors.amber.withValues(alpha: alpha * aFactor * 0.35),
+                Colors.transparent,
+              ],
+              stops: const [0.0, 0.55, 1.0],
+            ).createShader(burstRect),
+        );
+      }
     }
+  }
+
+  /// Triangle du rayon avec un innerR pour éviter de partir du pixel central.
+  Path _rayPath(Offset c, double innerR, double outerR, double angle, double ha) {
+    return Path()
+      ..moveTo(c.dx + innerR * math.cos(angle - ha), c.dy + innerR * math.sin(angle - ha))
+      ..lineTo(c.dx + outerR * math.cos(angle),      c.dy + outerR * math.sin(angle))
+      ..lineTo(c.dx + innerR * math.cos(angle + ha), c.dy + innerR * math.sin(angle + ha))
+      ..close();
   }
 
   @override

@@ -81,15 +81,7 @@ class _UpdatePopupState extends State<UpdatePopup> with TickerProviderStateMixin
     await Future.delayed(const Duration(milliseconds: 500));
     if (!mounted) return;
 
-    // Scintillement 1
-    await _audioPlayer.play(AssetSource('sounds/ampoule-qui-eclate.ogg'));
-    await _ctrl.flicker.forward();
-    await _ctrl.flicker.reverse();
-    if (!mounted) return;
-    await Future.delayed(const Duration(milliseconds: 80));
-    if (!mounted) return;
-
-    // Scintillement 2
+    // Unique scintillement silencieux (tentative d'allumage)
     await _ctrl.flicker.forward();
     await _ctrl.flicker.reverse();
     if (!mounted) return;
