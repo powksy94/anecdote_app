@@ -1,4 +1,3 @@
-import 'dart:math' as math;
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -7,6 +6,8 @@ import '../services/version_check_service.dart';
 import 'update_popup_background.dart';
 import 'update_popup_bulb.dart';
 import 'update_popup_content.dart';
+import 'update_popup_controllers.dart';
+import 'update_popup_halo.dart';
 import 'update_popup_painters.dart';
 
 enum UpdatePopupMode { update, celebration }
@@ -29,95 +30,47 @@ class UpdatePopup extends StatefulWidget {
 }
 
 class _UpdatePopupState extends State<UpdatePopup> with TickerProviderStateMixin {
-  late final AnimationController _entryCtrl;
-  late final Animation<double> _entryScale;
-  late final Animation<double> _entryOpacity;
-
-  late final AnimationController _flickerCtrl;
-  late final Animation<double> _flickerAnim;
-
-  late final AnimationController _lightCtrl;
-  late final Animation<double> _scaleAnim;
-  late final Animation<double> _glowAnim;
-  late final Animation<Color?> _colorAnim;
-
-  late final AnimationController _ambientCtrl;
-  late final AnimationController _shimmerCtrl;
-
+  late final UpdatePopupControllers _ctrl;
+  late final List<StarData> _stars;
   bool _isUpdating = false;
   final AudioPlayer _audioPlayer = AudioPlayer();
-  late final List<StarData> _stars;
 
   @override
   void initState() {
     super.initState();
+    _ctrl = UpdatePopupControllers.create(this);
+    _stars = UpdatePopupControllers.buildStars();
 
-    _stars = _buildStars();
-
-    _entryCtrl = AnimationController(vsync: this, duration: const Duration(milliseconds: 400));
-    _entryScale = Tween<double>(begin: 0.80, end: 1.0)
-        .animate(CurvedAnimation(parent: _entryCtrl, curve: Curves.easeOutBack));
-    _entryOpacity = Tween<double>(begin: 0.0, end: 1.0)
-        .animate(CurvedAnimation(parent: _entryCtrl, curve: Curves.easeOut));
-    _entryCtrl.forward();
-
-    _flickerCtrl = AnimationController(vsync: this, duration: const Duration(milliseconds: 120));
-    _flickerAnim = TweenSequence<double>([
-      TweenSequenceItem(tween: Tween(begin: 0.35, end: 0.65), weight: 1),
-      TweenSequenceItem(tween: Tween(begin: 0.65, end: 0.20), weight: 2),
-      TweenSequenceItem(tween: Tween(begin: 0.20, end: 0.45), weight: 1),
-    ]).animate(_flickerCtrl);
-
-    _lightCtrl = AnimationController(vsync: this, duration: const Duration(milliseconds: 700));
-    _scaleAnim = TweenSequence<double>([
-      TweenSequenceItem(tween: Tween(begin: 1.0, end: 1.35), weight: 1),
-      TweenSequenceItem(tween: Tween(begin: 1.35, end: 1.0), weight: 1),
-    ]).animate(CurvedAnimation(parent: _lightCtrl, curve: Curves.easeInOut));
-    _glowAnim = Tween<double>(begin: 0, end: 32)
-        .animate(CurvedAnimation(parent: _lightCtrl, curve: Curves.easeOut));
-    _colorAnim = ColorTween(begin: Colors.grey.shade400, end: Colors.amber)
-        .animate(CurvedAnimation(parent: _lightCtrl, curve: Curves.easeIn));
-
-    _ambientCtrl = AnimationController(vsync: this, duration: const Duration(seconds: 6))
-      ..repeat();
-    _shimmerCtrl = AnimationController(vsync: this, duration: const Duration(milliseconds: 2000))
-      ..repeat();
+    _ctrl.entry.forward();
+    _ctrl.ambient.repeat();
+    _ctrl.shimmer.repeat();
 
     if (widget.mode == UpdatePopupMode.celebration) {
       _isUpdating = true;
-      Future.microtask(() async {
-        await _lightCtrl.forward();
-        await Future.delayed(const Duration(milliseconds: 300));
-        if (mounted) Navigator.pop(context);
-      });
+      _runCelebration();
     } else {
       _startFlicker();
     }
   }
 
-  static List<StarData> _buildStars() {
-    final rng = math.Random(42);
-    return List.generate(16, (i) => StarData(
-      x: rng.nextDouble(),
-      y: rng.nextDouble(),
-      size: 1.0 + rng.nextDouble() * 2.2,
-      opacity: 0.2 + rng.nextDouble() * 0.55,
-      phase: rng.nextDouble(),
-    ));
-  }
+  // ── Mode update ──────────────────────────────────────────────────────────────
 
   void _startFlicker() async {
-    final rng = math.Random();
-    await Future.delayed(Duration(milliseconds: 800 + rng.nextInt(1200)));
+    await Future.delayed(Duration(milliseconds: 800 + (DateTime.now().millisecond % 1200)));
     if (!mounted || _isUpdating) return;
     await _audioPlayer.play(AssetSource('sounds/ampoule-qui-eclate.ogg'));
-    await _flickerCtrl.forward();
-    await _flickerCtrl.reverse();
+    await _ctrl.flicker.forward();
+    await _ctrl.flicker.reverse();
   }
 
   Future<void> _onUpdate() async {
+    if (_isUpdating) return;
     setState(() => _isUpdating = true);
-    _flickerCtrl.stop();
+    _ctrl.flicker.stop();
+
+    // Phase 1 : brouillard sombre — l'app plonge dans le quasi-noir
+    await _ctrl.dimming.forward();
+
     await VersionCheckService.markJustUpdated();
     final uri = Uri.parse(UpdatePopup._storeUrl);
     if (await canLaunchUrl(uri)) {
@@ -131,16 +84,26 @@ class _UpdatePopupState extends State<UpdatePopup> with TickerProviderStateMixin
     Navigator.pop(context);
   }
 
+  // ── Mode celebration ─────────────────────────────────────────────────────────
+
+  Future<void> _runCelebration() async {
+    _ctrl.light.forward(); // ampoule s'allume en parallèle
+    await Future.delayed(const Duration(milliseconds: 150));
+    await _ctrl.halo.forward(); // 3 halos rayonnants (2.4 s)
+    await Future.delayed(const Duration(milliseconds: 250));
+    if (mounted) Navigator.pop(context);
+  }
+
+  // ── Lifecycle ────────────────────────────────────────────────────────────────
+
   @override
   void dispose() {
-    _entryCtrl.dispose();
-    _flickerCtrl.dispose();
-    _lightCtrl.dispose();
-    _ambientCtrl.dispose();
-    _shimmerCtrl.dispose();
+    _ctrl.dispose();
     _audioPlayer.dispose();
     super.dispose();
   }
+
+  // ── Build ────────────────────────────────────────────────────────────────────
 
   @override
   Widget build(BuildContext context) {
@@ -148,10 +111,10 @@ class _UpdatePopupState extends State<UpdatePopup> with TickerProviderStateMixin
     final isCelebration = widget.mode == UpdatePopupMode.celebration;
 
     return ListenableBuilder(
-      listenable: _entryCtrl,
+      listenable: _ctrl.entry,
       builder: (context, child) => Opacity(
-        opacity: _entryOpacity.value,
-        child: Transform.scale(scale: _entryScale.value, child: child),
+        opacity: _ctrl.entryOpacity.value,
+        child: Transform.scale(scale: _ctrl.entryScale.value, child: child),
       ),
       child: Dialog(
         backgroundColor: Colors.transparent,
@@ -162,25 +125,31 @@ class _UpdatePopupState extends State<UpdatePopup> with TickerProviderStateMixin
             borderRadius: BorderRadius.circular(28),
             child: Stack(
               children: [
-                UpdatePopupBackground(ambientCtrl: _ambientCtrl, stars: _stars),
+                UpdatePopupBackground(
+                  ambientCtrl: _ctrl.ambient,
+                  stars: _stars,
+                  dimmingAnim: isCelebration ? null : _ctrl.dimmingAnim,
+                ),
                 Padding(
                   padding: const EdgeInsets.fromLTRB(28, 44, 28, 32),
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       UpdatePopupBulb(
-                        flickerAnim: _flickerAnim,
-                        lightCtrl: _lightCtrl,
-                        scaleAnim: _scaleAnim,
-                        glowAnim: _glowAnim,
-                        colorAnim: _colorAnim,
-                        ambientCtrl: _ambientCtrl,
+                        flickerAnim: _ctrl.flickerAnim,
+                        lightCtrl: _ctrl.light,
+                        scaleAnim: _ctrl.scaleAnim,
+                        glowAnim: _ctrl.glowAnim,
+                        colorAnim: _ctrl.colorAnim,
+                        ambientCtrl: _ctrl.ambient,
+                        dimmingAnim: isCelebration ? null : _ctrl.dimmingAnim,
+                        onTap: isCelebration ? null : _onUpdate,
                       ),
                       if (!isCelebration) ...[
                         const SizedBox(height: 30),
                         UpdatePopupContent(
                           loc: loc,
-                          shimmerCtrl: _shimmerCtrl,
+                          shimmerCtrl: _ctrl.shimmer,
                           isUpdating: _isUpdating,
                           onUpdate: _onUpdate,
                           onLater: widget.onLater != null ? _onLater : null,
@@ -189,6 +158,12 @@ class _UpdatePopupState extends State<UpdatePopup> with TickerProviderStateMixin
                     ],
                   ),
                 ),
+                if (isCelebration)
+                  Positioned.fill(
+                    child: UpdatePopupHalo(
+                      pulses: [_ctrl.haloAnim1, _ctrl.haloAnim2, _ctrl.haloAnim3],
+                    ),
+                  ),
               ],
             ),
           ),
