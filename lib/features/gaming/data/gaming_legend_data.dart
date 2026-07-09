@@ -2,16 +2,21 @@ import 'dart:convert';
 import 'dart:math' as math;
 import 'package:flutter/services.dart';
 
+// n=name, bi=birthYear, na=nationality, sp=specialty, ach=achievements,
+// im=imageUrl, nim=noImageMessage, wl=warningLevel, wi=warningText
+
 class GamingLegendData {
   final String name, nationality, specialty, achievements;
   final int birthYear;
   final String? imageUrl;
   final String? noImageMessage;
+  final String? warningLevel;
+  final String? warningText;
 
   const GamingLegendData({
     required this.name, required this.birthYear, required this.nationality,
     required this.specialty, required this.achievements,
-    this.imageUrl, this.noImageMessage,
+    this.imageUrl, this.noImageMessage, this.warningLevel, this.warningText,
   });
 
   factory GamingLegendData.fromJson(Map<String, dynamic> j) => GamingLegendData(
@@ -22,6 +27,8 @@ class GamingLegendData {
     achievements:   j['ach'] ?? '',
     imageUrl:       j['im']  as String?,
     noImageMessage: j['nim'] as String?,
+    warningLevel:   j['wl']  as String?,
+    warningText:    j['wi']  as String?,
   );
 }
 

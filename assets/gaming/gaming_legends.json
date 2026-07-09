@@ -37,7 +37,9 @@
         "na":  "Ukrainian",
         "sp":  "Counter-Strike: Global Offensive",
         "ach":  "s1mple is considered the greatest Counter-Strike player of all time, having won HLTV's Player of the Year award four times (2018, 2021, 2022, 2023). His mechanical skill, particularly his AWP sniping, is considered technically unmatched in the history of the game.",
-        "im":  "https://upload.wikimedia.org/wikipedia/commons/2/24/Oleksandr_s1mple_Kostyliev.jpg"
+        "im":  "https://upload.wikimedia.org/wikipedia/commons/2/24/Oleksandr_s1mple_Kostyliev.jpg",
+        "wl":  "orange",
+        "wi":  "Received a VAC ban in 2014 at age 16 for using cheat software on a non-competitive CS:GO server. He served a 1-year competitive ban before building his legitimate career as the world's best player."
     },
     {
         "n":  "Mathieu Herbaut (ZywOo)",
@@ -85,7 +87,9 @@
         "na":  "Swedish",
         "sp":  "YouTube gaming content",
         "ach":  "PewDiePie was the most subscribed YouTube channel in the world for multiple years between 2013 and 2019, pioneering the Let's Play commentary format that became YouTube's dominant gaming content style. At his peak he influenced game sales more than any gaming publication, and his playthroughs defined indie horror discovery.",
-        "im":  "https://upload.wikimedia.org/wikipedia/commons/5/53/Pewdiepie_head_shot.jpg"
+        "im":  "https://upload.wikimedia.org/wikipedia/commons/5/53/Pewdiepie_head_shot.jpg",
+        "wl":  "red",
+        "wi":  "Documented controversies: paid users in 2017 to hold an antisemitic sign ('Death to all Jews'), losing his Disney partnership, and used a racial slur live on stream the same year."
     },
     {
         "n":  "Michael Grzesiek (Shroud)",
@@ -101,7 +105,9 @@
         "na":  "Canadian",
         "sp":  "Overwatch / variety streaming",
         "ach":  "xQc was a professional Overwatch League player for the Dallas Fuel before becoming Twitch's most-watched streamer by total hours viewed, surpassing all competitors including Ninja. His unfiltered commentary, frequent controversial statements, and marathon streaming sessions attract millions of daily viewers.",
-        "im":  "https://upload.wikimedia.org/wikipedia/commons/7/70/XQc_at_S-Camp_2021.png"
+        "im":  "https://upload.wikimedia.org/wikipedia/commons/7/70/XQc_at_S-Camp_2021.png",
+        "wl":  "orange",
+        "wi":  "Dropped from the Overwatch League Dallas Fuel in 2018 for using a homophobic slur on stream. Also penalized for stream sniping and has been criticized for promoting gambling content to a young audience."
     },
     {
         "n":  "Imane Anys (Pokimane)",
@@ -333,7 +339,9 @@
         "na":  "American",
         "sp":  "Overwatch / Valorant",
         "ach":  "Sinatraa won the Overwatch League MVP award in his rookie season with the San Francisco Shock and was the highest-profile player in OWL Season 1. He later transitioned to Valorant where he competed with Sentinels, influencing the game's early competitive meta.",
-        "im":  "https://upload.wikimedia.org/wikipedia/commons/2/29/Sinatraa_at_OWWC_2018_-_cropped.jpg"
+        "im":  "https://upload.wikimedia.org/wikipedia/commons/2/29/Sinatraa_at_OWWC_2018_-_cropped.jpg",
+        "wl":  "red",
+        "wi":  "In 2021, his ex-girlfriend publicly accused him of sexual abuse. Riot Games suspended him from competitive Valorant for 6 months during the investigation. He left the pro scene shortly after his reinstatement."
     },
     {
         "n":  "Jaryd Lazar (summit1g)",

@@ -19,6 +19,8 @@ class GamingLegendService {
       hasDetails: true,
       imageUrl: l.imageUrl,
       noImageMessage: l.noImageMessage,
+      warningText: l.warningText,
+      warningLevel: l.warningLevel,
       protectedTerms: [l.name],
     );
   }
