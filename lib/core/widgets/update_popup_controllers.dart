@@ -63,9 +63,9 @@ class UpdatePopupControllers {
     final flickerAnim = Tween<double>(begin: 0.15, end: 0.90)
         .animate(CurvedAnimation(parent: flicker, curve: Curves.easeInOut));
 
-    // — Brouillard update (1.2 s, easeInOut) —
-    final fogIn = AnimationController(vsync: vsync, duration: const Duration(milliseconds: 1200));
-    final fogInAnim = CurvedAnimation(parent: fogIn, curve: Curves.easeInOut);
+    // — Blackout update : noirceur quasi-instantanée (200 ms, easeOut = rapide au début) —
+    final fogIn = AnimationController(vsync: vsync, duration: const Duration(milliseconds: 200));
+    final fogInAnim = CurvedAnimation(parent: fogIn, curve: Curves.easeOut);
 
     // — Allumage —
     final light = AnimationController(vsync: vsync, duration: const Duration(milliseconds: 700));

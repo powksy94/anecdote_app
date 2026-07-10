@@ -63,14 +63,16 @@ class _UpdatePopupState extends State<UpdatePopup> with TickerProviderStateMixin
       if (i < 2) await Future.delayed(const Duration(milliseconds: 110));
     }
 
-    // Burst : ampoule au maximum, puis brouillard s'installe
+    // Burst : ampoule au maximum
     await _ctrl.flicker.forward();
-    await Future.delayed(const Duration(milliseconds: 80));
     if (!mounted) return;
-    _ctrl.fogIn.forward();
 
-    // Titre + boutons émergent du brouillard
-    await Future.delayed(const Duration(milliseconds: 380));
+    // Hub éteint brutalement + ampoule qui grille (simultanés)
+    _ctrl.fogIn.forward();
+    _ctrl.flicker.reverse(); // l'ampoule meurt pendant que le noir tombe
+
+    // Titre + boutons émergent dans le noir
+    await Future.delayed(const Duration(milliseconds: 500));
     if (!mounted) return;
     _ctrl.entry.forward();
   }
