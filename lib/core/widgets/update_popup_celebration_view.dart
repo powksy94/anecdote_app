@@ -25,10 +25,18 @@ class CelebrationModeView extends StatelessWidget {
           clearAnim: ctrl.clearAnim,
         ),
 
-        // Halos solaires plein-écran (sans SafeArea — s'étendent jusqu'aux coins)
+        // Halos solaires plein-écran centrés sur le globe de l'ampoule
         Positioned.fill(
-          child: UpdatePopupHalo(
-            pulses: [ctrl.haloAnim1, ctrl.haloAnim2, ctrl.haloAnim3],
+          child: Builder(
+            builder: (context) {
+              final p = MediaQuery.of(context).padding;
+              // Globe = centre SafeArea − 27 px (offset dans BulbPainter)
+              final centerDy = (p.top - p.bottom) / 2 - 27;
+              return UpdatePopupHalo(
+                pulses: [ctrl.haloAnim1, ctrl.haloAnim2, ctrl.haloAnim3],
+                centerDy: centerDy,
+              );
+            },
           ),
         ),
 

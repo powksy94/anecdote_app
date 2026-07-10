@@ -62,11 +62,15 @@ class UpdatePopupBulb extends StatelessWidget {
                 if (raysAlpha > 0)
                   Transform.rotate(
                     angle: rayRotation,
+                    // Pivot = centre du globe dans le SizedBox 150×200 :
+                    // y_globe = 100 − 27 = 73 → alignment.y = (73−100)/100 = −0.27
+                    alignment: const Alignment(0, -0.27),
                     child: CustomPaint(
                       painter: RaysPainter(
                         color: Colors.amber.withValues(alpha: raysAlpha),
+                        centerDy: -27,
                       ),
-                      child: const SizedBox(width: 150, height: 150),
+                      child: const SizedBox(width: 150, height: 200),
                     ),
                   ),
 

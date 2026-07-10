@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -67,7 +68,8 @@ class _UpdatePopupState extends State<UpdatePopup> with TickerProviderStateMixin
     await _ctrl.flicker.forward();
     if (!mounted) return;
 
-    // Hub éteint brutalement + ampoule qui grille + éclats (simultanés)
+    // Son d'éclatement + hub éteint brutalement + éclats (simultanés)
+    unawaited(_audioPlayer.play(AssetSource('sounds/ampoule-qui-eclate.ogg')));
     _ctrl.fogIn.forward();
     _ctrl.burst.forward();
     _ctrl.flicker.reverse(); // l'ampoule meurt pendant que le noir tombe
@@ -113,6 +115,7 @@ class _UpdatePopupState extends State<UpdatePopup> with TickerProviderStateMixin
     _ctrl.light.forward();
     await Future.delayed(const Duration(milliseconds: 180));
     if (!mounted) return;
+    unawaited(_audioPlayer.play(AssetSource('sounds/lightning.mp3')));
     _ctrl.clear.forward(); // repousse les volutes au moment du burst
     await _ctrl.halo.forward();
 
