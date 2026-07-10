@@ -1,7 +1,7 @@
-import 'package:flutter/material.dart';
-import '../../generated/app_localizations.dart';
-import '../models/content_data.dart';
-import '../models/content_type.dart';
+﻿import 'package:flutter/material.dart';
+import '../../../generated/app_localizations.dart';
+import '../../models/content_data.dart';
+import '../../models/content_type.dart';
 
 class ContentCard extends StatefulWidget {
   final ContentData? contentData;

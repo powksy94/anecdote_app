@@ -1,7 +1,7 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import '../../../core/models/content_type.dart';
 import '../../../core/services/ad_service.dart';
-import '../../../core/widgets/hub_split_dialog.dart';
+import '../../../core/widgets/cards/hub_split_dialog.dart';
 import '../../../core/pages/sub_hub_page.dart';
 
 abstract class WorldNavigator {

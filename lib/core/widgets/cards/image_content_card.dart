@@ -1,12 +1,12 @@
-import 'package:flutter/material.dart';
-import '../../generated/app_localizations.dart';
-import '../models/content_data.dart';
-import '../models/content_type.dart';
-import '../../features/cinema/widgets/cinema_toggle_section.dart';
-import '../../features/cinema/widgets/cinema_timer_badge.dart';
-import './warning_badge.dart';
-import './info_note_badge.dart';
-import './image_header.dart';
+﻿import 'package:flutter/material.dart';
+import '../../../generated/app_localizations.dart';
+import '../../models/content_data.dart';
+import '../../models/content_type.dart';
+import '../../../features/cinema/widgets/cinema_toggle_section.dart';
+import '../../../features/cinema/widgets/cinema_timer_badge.dart';
+import '../badges/warning_badge.dart';
+import '../badges/info_note_badge.dart';
+import '../layout/image_header.dart';
 
 class ImageContentCard extends StatefulWidget {
   final ContentData? contentData;

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import '../models/content_type.dart';
 import '../../generated/app_localizations.dart';
 import '../services/ad_service.dart';
-import '../widgets/subcategory_card.dart';
+import '../widgets/cards/subcategory_card.dart';
 import 'content_page.dart';
 
 class SubHubPage extends StatefulWidget {

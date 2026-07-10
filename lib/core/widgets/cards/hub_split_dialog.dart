@@ -1,6 +1,6 @@
-import 'package:flutter/material.dart';
-import '../models/content_type.dart';
-import '../../generated/app_localizations.dart';
+﻿import 'package:flutter/material.dart';
+import '../../models/content_type.dart';
+import '../../../generated/app_localizations.dart';
 import 'hub_section_card.dart';
 
 class HubSplitDialog extends StatelessWidget {

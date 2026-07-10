@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
-import '../models/content_type.dart';
+﻿import 'package:flutter/material.dart';
+import '../../models/content_type.dart';
 
 part './card_decoration_builders.dart';
 part './card_decoration_primitives.dart';

@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
-import '../../generated/app_localizations.dart';
+﻿import 'package:flutter/material.dart';
+import '../../../generated/app_localizations.dart';
 
 class WarningBadge extends StatefulWidget {
   final String text;

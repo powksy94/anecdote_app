@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../generated/app_localizations.dart';
+import '../../../generated/app_localizations.dart';
 
 class HomeHeader extends StatefulWidget {
   const HomeHeader({super.key});

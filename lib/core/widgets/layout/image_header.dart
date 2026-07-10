@@ -1,7 +1,7 @@
-import 'package:cached_network_image/cached_network_image.dart';
+﻿import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter_cache_manager/flutter_cache_manager.dart';
 import 'package:flutter/material.dart';
-import '../../generated/app_localizations.dart';
+import '../../../generated/app_localizations.dart';
 
 class ImageHeader extends StatefulWidget {
   final String? imageUrl;

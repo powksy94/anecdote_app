@@ -1,6 +1,6 @@
-import 'package:flutter/material.dart';
-import '../../generated/app_localizations.dart';
-import '../models/content_type.dart';
+﻿import 'package:flutter/material.dart';
+import '../../../generated/app_localizations.dart';
+import '../../models/content_type.dart';
 
 class ContentAppBar extends StatelessWidget implements PreferredSizeWidget {
   final ContentType contentType;

@@ -1,8 +1,8 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import '../../../core/models/content_type.dart';
 import '../../../generated/app_localizations.dart';
 import '../../../core/services/ad_service.dart';
-import '../../../core/widgets/subcategory_card.dart';
+import '../../../core/widgets/cards/subcategory_card.dart';
 import '../../../core/pages/content_page.dart';
 
 class SpacePage extends StatefulWidget {

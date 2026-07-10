@@ -1,7 +1,7 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'dart:math' as math;
-import '../models/content_type.dart';
-import '../../generated/app_localizations.dart';
+import '../../models/content_type.dart';
+import '../../../generated/app_localizations.dart';
 import './card_decorations.dart';
 
 class Particle {

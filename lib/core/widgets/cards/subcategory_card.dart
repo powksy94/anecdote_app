@@ -1,7 +1,7 @@
-import 'package:flutter/material.dart';
-import '../models/content_type.dart';
-import '../../generated/app_localizations.dart';
-import '../pages/content_page.dart';
+﻿import 'package:flutter/material.dart';
+import '../../models/content_type.dart';
+import '../../../generated/app_localizations.dart';
+import '../../pages/content_page.dart';
 
 class SubCategoryCard extends StatelessWidget {
   final ContentType type;

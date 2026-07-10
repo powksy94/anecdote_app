@@ -6,9 +6,9 @@ import '../models/content_data.dart';
 import '../services/api_service.dart';
 import '../services/daily_cache_service.dart';
 import '../services/translation_service.dart';
-import '../widgets/content_app_bar.dart';
-import '../widgets/content_card_selector.dart';
-import '../widgets/error_card.dart';
+import '../widgets/layout/content_app_bar.dart';
+import '../widgets/cards/content_card_selector.dart';
+import '../widgets/layout/error_card.dart';
 import './content_loader.dart';
 
 class ContentPage extends StatefulWidget {

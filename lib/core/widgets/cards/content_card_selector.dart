@@ -1,10 +1,10 @@
-import 'package:flutter/material.dart';
-import '../models/content_type.dart';
-import '../models/content_data.dart';
+﻿import 'package:flutter/material.dart';
+import '../../models/content_type.dart';
+import '../../models/content_data.dart';
 import './content_card.dart';
 import './image_content_card.dart';
-import '../../features/world/widgets/country_card.dart';
-import '../../features/cinema/widgets/cinema_card.dart';
+import '../../../features/world/widgets/country_card.dart';
+import '../../../features/cinema/widgets/cinema_card.dart';
 
 /// Choisit le widget carte adapté au type de contenu : cinéma, image,
 /// géographique (drapeau) ou texte générique — dans cet ordre de priorité.
