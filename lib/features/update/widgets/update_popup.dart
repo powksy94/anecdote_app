@@ -2,7 +2,7 @@ import 'dart:async';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
-import '../../generated/app_localizations.dart';
+import '../../../generated/app_localizations.dart';
 import '../services/version_check_service.dart';
 import 'update_popup_celebration_view.dart';
 import 'update_popup_controllers.dart';

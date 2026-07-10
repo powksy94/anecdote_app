@@ -10,11 +10,11 @@ import '../../features/art/pages/art_navigator.dart';
 import '../../features/gaming/pages/gaming_navigator.dart';
 import '../models/content_type.dart';
 import '../services/ad_service.dart';
-import '../services/rating_service.dart';
-import '../services/version_check_service.dart';
-import '../widgets/category_card.dart';
-import '../widgets/home_header.dart';
-import '../widgets/update_popup_fog.dart';
+import '../widgets/cards/category_card.dart';
+import '../../features/home/widgets/home_header.dart';
+import '../../features/rating/services/rating_service.dart';
+import '../../features/update/services/version_check_service.dart';
+import '../../features/update/widgets/update_popup_fog.dart';
 
 class HomePage extends StatefulWidget {
   final void Function(Locale locale)? onLocaleChange;

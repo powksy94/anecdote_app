@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../generated/app_localizations.dart';
+import '../../../generated/app_localizations.dart';
 import 'update_popup_button.dart';
 
 class UpdatePopupContent extends StatelessWidget {
