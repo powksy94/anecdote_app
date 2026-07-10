@@ -46,6 +46,7 @@ class CelebrationModeView extends StatelessWidget {
                 glowAnim: ctrl.glowAnim,
                 colorAnim: ctrl.colorAnim,
                 ambientCtrl: ctrl.ambient,
+                burstCtrl: ctrl.burst,
               ),
             ),
           ),

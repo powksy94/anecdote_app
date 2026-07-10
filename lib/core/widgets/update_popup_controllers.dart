@@ -28,6 +28,9 @@ class UpdatePopupControllers {
   // Shimmer bouton
   final AnimationController shimmer;
 
+  // Explosion ampoule (600 ms, linéaire — shards + broken state)
+  final AnimationController burst;
+
   // Dégagement du brouillard (mode celebration — au burst)
   final AnimationController clear;
   final Animation<double> clearAnim;
@@ -42,6 +45,7 @@ class UpdatePopupControllers {
     required this.entry,      required this.entryScale,  required this.entryOpacity,
     required this.flicker,    required this.flickerAnim,
     required this.fogIn,      required this.fogInAnim,
+    required this.burst,
     required this.light,      required this.scaleAnim,   required this.glowAnim,
     required this.colorAnim,
     required this.ambient,    required this.shimmer,
@@ -66,6 +70,9 @@ class UpdatePopupControllers {
     // — Blackout update : noirceur quasi-instantanée (200 ms, easeOut = rapide au début) —
     final fogIn = AnimationController(vsync: vsync, duration: const Duration(milliseconds: 200));
     final fogInAnim = CurvedAnimation(parent: fogIn, curve: Curves.easeOut);
+
+    // — Explosion ampoule (600 ms, linéaire) —
+    final burst = AnimationController(vsync: vsync, duration: const Duration(milliseconds: 600));
 
     // — Allumage —
     final light = AnimationController(vsync: vsync, duration: const Duration(milliseconds: 700));
@@ -99,6 +106,7 @@ class UpdatePopupControllers {
       entry: entry,           entryScale: entryScale,     entryOpacity: entryOpacity,
       flicker: flicker,       flickerAnim: flickerAnim,
       fogIn: fogIn,           fogInAnim: fogInAnim,
+      burst: burst,
       light: light,           scaleAnim: scaleAnim,       glowAnim: glowAnim,
       colorAnim: colorAnim,
       ambient: ambient,       shimmer: shimmer,
@@ -112,6 +120,7 @@ class UpdatePopupControllers {
     entry.dispose();
     flicker.dispose();
     fogIn.dispose();
+    burst.dispose();
     light.dispose();
     ambient.dispose();
     shimmer.dispose();

@@ -50,6 +50,7 @@ class UpdateModeView extends StatelessWidget {
                     glowAnim: ctrl.glowAnim,
                     colorAnim: ctrl.colorAnim,
                     ambientCtrl: ctrl.ambient,
+                    burstCtrl: ctrl.burst,
                     onTap: onUpdate,
                   ),
                   const SizedBox(height: 30),

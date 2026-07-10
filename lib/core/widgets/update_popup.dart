@@ -55,7 +55,7 @@ class _UpdatePopupState extends State<UpdatePopup> with TickerProviderStateMixin
     if (!mounted || _isUpdating) return;
 
     // Son de grésillage + 3 flashs rapides (80 ms aller + 80 ms retour)
-    await _audioPlayer.play(AssetSource('sounds/ampoule-qui-eclate.ogg'));
+    await _audioPlayer.play(AssetSource('sounds/light-bulb-crackeling.mp3'));
     for (int i = 0; i < 3; i++) {
       await _ctrl.flicker.forward();
       await _ctrl.flicker.reverse();
@@ -67,8 +67,9 @@ class _UpdatePopupState extends State<UpdatePopup> with TickerProviderStateMixin
     await _ctrl.flicker.forward();
     if (!mounted) return;
 
-    // Hub éteint brutalement + ampoule qui grille (simultanés)
+    // Hub éteint brutalement + ampoule qui grille + éclats (simultanés)
     _ctrl.fogIn.forward();
+    _ctrl.burst.forward();
     _ctrl.flicker.reverse(); // l'ampoule meurt pendant que le noir tombe
 
     // Titre + boutons émergent dans le noir
