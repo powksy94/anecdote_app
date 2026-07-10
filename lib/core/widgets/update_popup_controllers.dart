@@ -8,9 +8,13 @@ class UpdatePopupControllers {
   final Animation<double> entryScale;
   final Animation<double> entryOpacity;
 
-  // Flicker (mode update — idle)
+  // Flicker (mode update — grésillements de démarrage)
   final AnimationController flicker;
   final Animation<double> flickerAnim;
+
+  // Brouillard update (apparaît après le burst, piloté séparément)
+  final AnimationController fogIn;
+  final Animation<double> fogInAnim;
 
   // Allumage ampoule (mode celebration)
   final AnimationController light;
@@ -37,6 +41,7 @@ class UpdatePopupControllers {
   UpdatePopupControllers._({
     required this.entry,      required this.entryScale,  required this.entryOpacity,
     required this.flicker,    required this.flickerAnim,
+    required this.fogIn,      required this.fogInAnim,
     required this.light,      required this.scaleAnim,   required this.glowAnim,
     required this.colorAnim,
     required this.ambient,    required this.shimmer,
@@ -53,13 +58,14 @@ class UpdatePopupControllers {
     final entryOpacity = Tween<double>(begin: 0.0, end: 1.0)
         .animate(CurvedAnimation(parent: entry, curve: Curves.easeOut));
 
-    // — Flicker —
-    final flicker = AnimationController(vsync: vsync, duration: const Duration(milliseconds: 120));
-    final flickerAnim = TweenSequence<double>([
-      TweenSequenceItem(tween: Tween(begin: 0.35, end: 0.65), weight: 1),
-      TweenSequenceItem(tween: Tween(begin: 0.65, end: 0.20), weight: 2),
-      TweenSequenceItem(tween: Tween(begin: 0.20, end: 0.45), weight: 1),
-    ]).animate(flicker);
+    // — Flicker : simple aller-retour dim→bright, 80 ms par flash —
+    final flicker = AnimationController(vsync: vsync, duration: const Duration(milliseconds: 80));
+    final flickerAnim = Tween<double>(begin: 0.15, end: 0.90)
+        .animate(CurvedAnimation(parent: flicker, curve: Curves.easeInOut));
+
+    // — Brouillard update (1.2 s, easeInOut) —
+    final fogIn = AnimationController(vsync: vsync, duration: const Duration(milliseconds: 1200));
+    final fogInAnim = CurvedAnimation(parent: fogIn, curve: Curves.easeInOut);
 
     // — Allumage —
     final light = AnimationController(vsync: vsync, duration: const Duration(milliseconds: 700));
@@ -92,6 +98,7 @@ class UpdatePopupControllers {
     return UpdatePopupControllers._(
       entry: entry,           entryScale: entryScale,     entryOpacity: entryOpacity,
       flicker: flicker,       flickerAnim: flickerAnim,
+      fogIn: fogIn,           fogInAnim: fogInAnim,
       light: light,           scaleAnim: scaleAnim,       glowAnim: glowAnim,
       colorAnim: colorAnim,
       ambient: ambient,       shimmer: shimmer,
@@ -104,6 +111,7 @@ class UpdatePopupControllers {
   void dispose() {
     entry.dispose();
     flicker.dispose();
+    fogIn.dispose();
     light.dispose();
     ambient.dispose();
     shimmer.dispose();

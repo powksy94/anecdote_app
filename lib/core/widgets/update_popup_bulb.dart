@@ -37,14 +37,19 @@ class UpdatePopupBulb extends StatelessWidget {
           final scale = lit ? scaleAnim.value : 1.0;
           final glow = lit ? glowAnim.value : 0.0;
           final rayRotation = ambientCtrl.value * 2 * math.pi;
-          final raysAlpha = lit ? 0.75 : 0.20;
+
+          // Rayons plus visibles quand allumé, subtils mais présents à l'idle
+          final raysAlpha = lit ? 0.80 : (flickerAnim.value * 0.55).clamp(0.18, 0.55);
+
+          // Halo violet ambiant qui respire — s'intensifie lors des grésillements
           final ambientGlow = lit
               ? 0.0
-              : (math.sin(ambientCtrl.value * 2 * math.pi) + 1) / 2 * 6;
+              : (math.sin(ambientCtrl.value * 2 * math.pi) + 1) / 2 * 8
+                + (flickerAnim.value - 0.15) * 6; // boost pendant les flashs
 
           return SizedBox(
-            width: 130,
-            height: 130,
+            width: 150,
+            height: 150,
             child: Stack(
               alignment: Alignment.center,
               children: [
@@ -55,30 +60,32 @@ class UpdatePopupBulb extends StatelessWidget {
                     painter: RaysPainter(
                       color: Colors.amber.withValues(alpha: raysAlpha),
                     ),
-                    child: const SizedBox(width: 130, height: 130),
+                    child: const SizedBox(width: 150, height: 150),
                   ),
                 ),
-                // Halo violet ambiant (respire doucement à l'idle)
+
+                // Halo violet ambiant (respire + boost flicker)
                 if (ambientGlow > 0)
                   Container(
-                    width: 90,
-                    height: 90,
+                    width: 110,
+                    height: 110,
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
                       boxShadow: [
                         BoxShadow(
-                          color: const Color(0xFF6D28D9).withValues(alpha: 0.4),
+                          color: const Color(0xFF6D28D9).withValues(alpha: 0.45),
                           blurRadius: ambientGlow * 3,
-                          spreadRadius: ambientGlow * 0.5,
+                          spreadRadius: ambientGlow * 0.6,
                         ),
                       ],
                     ),
                   ),
-                // Halo amber (allumage)
+
+                // Halo amber (allumage celebration)
                 if (glow > 0)
                   Container(
-                    width: 90,
-                    height: 90,
+                    width: 110,
+                    height: 110,
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
                       boxShadow: [
@@ -90,17 +97,26 @@ class UpdatePopupBulb extends StatelessWidget {
                       ],
                     ),
                   ),
-                // Ampoule
+
+                // Globe en verre
                 Transform.scale(
                   scale: scale,
                   child: Container(
-                    width: 80,
-                    height: 80,
+                    width: 86,
+                    height: 86,
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
-                      color: Colors.white.withValues(alpha: 0.07),
+                      // Gradient radial décalé → effet globe de verre
+                      gradient: RadialGradient(
+                        center: const Alignment(-0.3, -0.4),
+                        radius: 1.0,
+                        colors: [
+                          Colors.white.withValues(alpha: lit ? 0.20 : 0.12),
+                          Colors.white.withValues(alpha: 0.02),
+                        ],
+                      ),
                       border: Border.all(
-                        color: Colors.white.withValues(alpha: 0.14),
+                        color: Colors.white.withValues(alpha: 0.24),
                         width: 1.5,
                       ),
                       boxShadow: glow > 0
@@ -113,13 +129,32 @@ class UpdatePopupBulb extends StatelessWidget {
                             ]
                           : [],
                     ),
-                    child: Opacity(
-                      opacity: opacity,
-                      child: Icon(
-                        lit ? Icons.lightbulb : Icons.lightbulb_outline,
-                        size: 44,
-                        color: bulbColor,
-                      ),
+                    child: Stack(
+                      alignment: Alignment.center,
+                      children: [
+                        // Reflet du verre (highlight spot, coin supérieur gauche)
+                        Positioned(
+                          left: 17,
+                          top: 11,
+                          child: Container(
+                            width: 20,
+                            height: 13,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(8),
+                              color: Colors.white.withValues(alpha: 0.28),
+                            ),
+                          ),
+                        ),
+                        // Icône ampoule
+                        Opacity(
+                          opacity: opacity,
+                          child: Icon(
+                            lit ? Icons.lightbulb : Icons.lightbulb_outline,
+                            size: 52,
+                            color: bulbColor,
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ),

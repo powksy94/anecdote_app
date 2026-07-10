@@ -35,26 +35,44 @@ class _UpdatePopupState extends State<UpdatePopup> with TickerProviderStateMixin
   void initState() {
     super.initState();
     _ctrl = UpdatePopupControllers.create(this);
-    _ctrl.entry.forward();
     _ctrl.ambient.repeat();
     _ctrl.shimmer.repeat();
 
     if (widget.mode == UpdatePopupMode.celebration) {
+      _ctrl.entry.forward(); // ampoule visible immédiatement en mode celebration
       _isUpdating = true;
       _runCelebration();
     } else {
-      _startFlicker();
+      _startFlicker(); // entry.forward() appelé en fin de séquence, après le brouillard
     }
   }
 
   // ── Mode update ──────────────────────────────────────────────────────────────
 
   void _startFlicker() async {
-    await Future.delayed(Duration(milliseconds: 800 + (DateTime.now().millisecond % 1200)));
+    // Ampoule visible sur fond transparent — petite pause avant de grésiller
+    await Future.delayed(const Duration(milliseconds: 600));
     if (!mounted || _isUpdating) return;
+
+    // Son de grésillage + 3 flashs rapides (80 ms aller + 80 ms retour)
     await _audioPlayer.play(AssetSource('sounds/ampoule-qui-eclate.ogg'));
+    for (int i = 0; i < 3; i++) {
+      await _ctrl.flicker.forward();
+      await _ctrl.flicker.reverse();
+      if (!mounted) return;
+      if (i < 2) await Future.delayed(const Duration(milliseconds: 110));
+    }
+
+    // Burst : ampoule au maximum, puis brouillard s'installe
     await _ctrl.flicker.forward();
-    await _ctrl.flicker.reverse();
+    await Future.delayed(const Duration(milliseconds: 80));
+    if (!mounted) return;
+    _ctrl.fogIn.forward();
+
+    // Titre + boutons émergent du brouillard
+    await Future.delayed(const Duration(milliseconds: 380));
+    if (!mounted) return;
+    _ctrl.entry.forward();
   }
 
   Future<void> _onUpdate() async {

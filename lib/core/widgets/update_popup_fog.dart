@@ -2,14 +2,32 @@ import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'update_popup.dart';
 
-/// Affiche la célébration post-mise-à-jour : fond quasi-noir (brouillard)
-/// qui s'installe en 500 ms, puis l'ampoule s'allume et les halos solaires
-/// explosent plein-écran.
+/// Affiche le popup de mise à jour.
+/// Le brouillard est géré par UpdateFog à l'intérieur du widget,
+/// déclenché après le grésillage de l'ampoule.
+Future<T?> showUpdateFogDialog<T>(
+  BuildContext context, {
+  VoidCallback? onLater,
+}) {
+  return showGeneralDialog<T>(
+    context: context,
+    barrierDismissible: false,
+    barrierColor: Colors.transparent,
+    transitionDuration: Duration.zero,
+    // Material fix : sans ce wrapper les Text héritent d'un style sans contexte
+    // (TextStyle avec soulignement jaune — comportement Flutter par défaut hors Material).
+    pageBuilder: (ctx, _, __) => Material(
+      color: Colors.transparent,
+      child: UpdatePopup(mode: UpdatePopupMode.update, onLater: onLater),
+    ),
+  );
+}
+
+/// Affiche la célébration post-mise-à-jour.
 Future<T?> showCelebrationDialog<T>(BuildContext context) {
   return showGeneralDialog<T>(
     context: context,
     barrierDismissible: false,
-    // Le fond sombre est géré par CelebrationFog à l'intérieur du widget
     barrierColor: Colors.transparent,
     transitionDuration: Duration.zero,
     pageBuilder: (ctx, _, __) => const Material(
@@ -19,119 +37,60 @@ Future<T?> showCelebrationDialog<T>(BuildContext context) {
   );
 }
 
-/// Affiche le popup de mise à jour avec un vrai brouillard animé qui recouvre
-/// toute la home page. Le contenu du popup (ampoule + texte + boutons)
-/// flotte au-dessus de ce fond obscurci.
-Future<T?> showUpdateFogDialog<T>(
-  BuildContext context, {
-  VoidCallback? onLater,
-}) {
-  return showGeneralDialog<T>(
-    context: context,
-    barrierDismissible: false,
-    barrierColor: Colors.transparent,
-    transitionDuration: const Duration(milliseconds: 900),
-    transitionBuilder: (ctx, anim, _, child) => _FogTransition(
-      animation: anim,
-      child: child,
-    ),
-    // Material fix : sans ce wrapper les Text héritent d'un style sans contexte
-    // (TextStyle avec soulignement jaune — comportement Flutter par défaut hors Material).
-    pageBuilder: (ctx, _, __) => Material(
-      color: Colors.transparent,
-      child: UpdatePopup(
-        mode: UpdatePopupMode.update,
-        onLater: onLater,
-      ),
-    ),
-  );
-}
+/// Fond sombre + volutes animées pour le mode update.
+/// Opacité pilotée par [fogInAnim] (0→1 après le burst de l'ampoule).
+class UpdateFog extends StatelessWidget {
+  final Animation<double> fogInAnim;
+  final AnimationController ambientCtrl;
 
-/// Transition brouillard : fond sombre + volutes de brume animées en continu.
-class _FogTransition extends StatefulWidget {
-  final Animation<double> animation;
-  final Widget child;
-
-  const _FogTransition({required this.animation, required this.child});
-
-  @override
-  State<_FogTransition> createState() => _FogTransitionState();
-}
-
-class _FogTransitionState extends State<_FogTransition>
-    with SingleTickerProviderStateMixin {
-  late final AnimationController _fogCtrl;
-
-  @override
-  void initState() {
-    super.initState();
-    _fogCtrl = AnimationController(
-      vsync: this,
-      duration: const Duration(seconds: 10),
-    )..repeat();
-  }
-
-  @override
-  void dispose() {
-    _fogCtrl.dispose();
-    super.dispose();
-  }
+  const UpdateFog({
+    super.key,
+    required this.fogInAnim,
+    required this.ambientCtrl,
+  });
 
   @override
   Widget build(BuildContext context) {
     return AnimatedBuilder(
-      animation: Listenable.merge([widget.animation, _fogCtrl]),
-      builder: (context, _) {
-        final t = Curves.easeInOut.transform(widget.animation.value);
-        return Stack(
-          fit: StackFit.expand,
-          children: [
-            // Brouillard : fond sombre + volutes violacées
-            CustomPaint(painter: _FogPainter(t, _fogCtrl.value)),
-            // Popup : ampoule + texte + boutons
-            widget.child,
-          ],
-        );
-      },
+      animation: Listenable.merge([fogInAnim, ambientCtrl]),
+      builder: (_, __) => CustomPaint(
+        painter: _FogPainter(fogInAnim.value, ambientCtrl.value),
+        child: const SizedBox.expand(),
+      ),
     );
   }
 }
 
-/// Peint un fond sombre et 5 volutes de brume qui se déplacent lentement.
+/// Peint un fond sombre et 5 volutes de brume en orbite elliptique.
 class _FogPainter extends CustomPainter {
-  final double t;    // progression route 0 → 1
-  final double fog;  // cycle continu des volutes 0 → 1
+  final double fogOpacity; // 0 → 1 piloté par fogIn
+  final double fog;        // cycle continu 0 → 1 pour les orbites
 
-  const _FogPainter(this.t, this.fog);
+  const _FogPainter(this.fogOpacity, this.fog);
 
   @override
   void paint(Canvas canvas, Size size) {
-    if (t <= 0) return;
+    if (fogOpacity <= 0) return;
 
     final w = size.width;
     final h = size.height;
 
-    // — Fond quasi-opaque radial (assombrissement de la home page) —
     final basePaint = Paint()
       ..shader = RadialGradient(
         center: Alignment.center,
         radius: 1.6,
         colors: [
-          const Color(0xFF0D0B1E).withValues(alpha: t * 0.83),
-          const Color(0xFF020109).withValues(alpha: t * 0.97),
+          const Color(0xFF0D0B1E).withValues(alpha: fogOpacity * 0.83),
+          const Color(0xFF020109).withValues(alpha: fogOpacity * 0.97),
         ],
       ).createShader(Rect.fromLTWH(0, 0, w, h));
     canvas.drawRect(Rect.fromLTWH(0, 0, w, h), basePaint);
 
-    // Les volutes apparaissent après que le fond est à 25 % de son opacité cible
-    if (t < 0.25) return;
-    final fa = ((t - 0.25) / 0.75).clamp(0.0, 1.0); // fog alpha factor
+    if (fogOpacity < 0.25) return;
+    final fa = ((fogOpacity - 0.25) / 0.75).clamp(0.0, 1.0);
 
-    // Chaque volute décrit une orbite elliptique complète par cycle fog.
-    // sin(a) pilote x et cos(a) pilote y avec le même angle → ellipse propre, sans demi-tour.
     final a = fog * math.pi * 2;
 
-    // — Volute 1 : orbite CCW, centre (22 %, 28 %) —
     _drawWisp(canvas, size,
       cx: w * 0.22 + math.sin(a) * w * 0.12,
       cy: h * 0.28 + math.cos(a) * h * 0.07,
@@ -139,7 +98,6 @@ class _FogPainter extends CustomPainter {
       color: const Color(0xFFB8A0FF), alpha: fa * 0.13,
     );
 
-    // — Volute 2 : orbite CW, centre (72 %, 50 %), décalée 120° —
     final a2 = a + 2.094;
     _drawWisp(canvas, size,
       cx: w * 0.72 + math.sin(a2) * w * 0.10,
@@ -148,7 +106,6 @@ class _FogPainter extends CustomPainter {
       color: const Color(0xFF8060CC), alpha: fa * 0.15,
     );
 
-    // — Volute 3 : orbite CCW, centre (45 %, 72 %), décalée 240° —
     final a3 = a + 4.189;
     _drawWisp(canvas, size,
       cx: w * 0.45 + math.sin(a3) * w * 0.09,
@@ -157,7 +114,6 @@ class _FogPainter extends CustomPainter {
       color: const Color(0xFF7040B8), alpha: fa * 0.12,
     );
 
-    // — Volute 4 : orbite douce, centre (50 %, 44 %), décalée 60° —
     final a4 = a + 1.047;
     _drawWisp(canvas, size,
       cx: w * 0.50 + math.sin(a4) * w * 0.05,
@@ -166,8 +122,6 @@ class _FogPainter extends CustomPainter {
       color: Colors.white, alpha: fa * 0.07,
     );
 
-    // — Volute 5 : 2 orbites/cycle, centre (80 %, 18 %), décalée 180° —
-    // Multiplicateur entier (×2) → position identique à fog=0 et fog=1 → pas de saut.
     final a5 = fog * math.pi * 4 + math.pi;
     _drawWisp(canvas, size,
       cx: w * 0.80 + math.sin(a5) * w * 0.08,
@@ -199,5 +153,6 @@ class _FogPainter extends CustomPainter {
   }
 
   @override
-  bool shouldRepaint(_FogPainter old) => old.t != t || old.fog != fog;
+  bool shouldRepaint(_FogPainter old) =>
+      old.fogOpacity != fogOpacity || old.fog != fog;
 }
