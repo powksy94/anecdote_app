@@ -54,8 +54,12 @@ class _AnecdoteAppState extends State<AnecdoteApp> {
     });
 
     // Token (ciblage par appareil)
-    final token = await FirebaseMessaging.instance.getToken();
-    debugPrint('[FCM] token: $token');
+    try {
+      final token = await FirebaseMessaging.instance.getToken();
+      debugPrint('[FCM] token: $token');
+    } catch (e) {
+      debugPrint('[FCM] getToken error: $e');
+    }
   }
 
   @override
