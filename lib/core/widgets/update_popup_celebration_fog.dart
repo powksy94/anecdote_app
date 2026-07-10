@@ -40,10 +40,10 @@ class _CelebrationFogPainter extends CustomPainter {
     final rng = math.Random(99);
     return List.generate(16, (_) => (
       rng.nextDouble(),               // x fraction
-      rng.nextDouble(),               // y base fraction
+      rng.nextDouble(),               // y phase (position de départ dans le cycle)
       1.2 + rng.nextDouble() * 1.8,  // size 1.2 – 3 px
       0.25 + rng.nextDouble() * 0.35, // opacité
-      0.3 + rng.nextDouble() * 0.7,  // vitesse de dérive
+      rng.nextBool() ? 1.0 : 2.0,    // vitesse entière → boucle sans saut au reset
     ));
   }
 
@@ -70,30 +70,45 @@ class _CelebrationFogPainter extends CustomPainter {
 
     final wispA = (1.0 - clear * 0.85).clamp(0.0, 1.0);
 
-    // — 5 volutes repoussées radialement au burst —
+    // Orbites elliptiques continues : sin(a) pour x, ±cos(a) pour y → pas de demi-tour.
+    final a = fog * math.pi * 2;
+
+    // — Volute 1 : orbite CCW, centre (22 %, 28 %) —
     _wisp(canvas, center,
-      cx: w * (0.15 + math.sin(fog * math.pi * 2) * 0.12),
-      cy: h * (0.28 + math.cos(fog * math.pi * 2 + 0.5) * 0.06),
+      cx: w * 0.22 + math.sin(a) * w * 0.12,
+      cy: h * 0.28 + math.cos(a) * h * 0.07,
       rx: w * 0.48, ry: h * 0.20,
       color: const Color(0xFFB8A0FF), alpha: wispA * 0.13);
+
+    // — Volute 2 : orbite CW, centre (72 %, 50 %), décalée 120° —
+    final a2 = a + 2.094;
     _wisp(canvas, center,
-      cx: w * (0.72 + math.cos((fog + 0.3) * math.pi * 2) * 0.10),
-      cy: h * (0.50 + math.sin((fog + 0.3) * math.pi * 2) * 0.09),
+      cx: w * 0.72 + math.sin(a2) * w * 0.10,
+      cy: h * 0.50 - math.cos(a2) * h * 0.09,
       rx: w * 0.44, ry: h * 0.18,
       color: const Color(0xFF8060CC), alpha: wispA * 0.15);
+
+    // — Volute 3 : orbite CCW, centre (45 %, 72 %), décalée 240° —
+    final a3 = a + 4.189;
     _wisp(canvas, center,
-      cx: w * (0.45 + math.sin((fog + 0.6) * math.pi * 2) * 0.09),
-      cy: h * (0.72 + math.cos((fog + 0.6) * math.pi * 2 + 1.0) * 0.06),
+      cx: w * 0.45 + math.sin(a3) * w * 0.09,
+      cy: h * 0.72 + math.cos(a3) * h * 0.06,
       rx: w * 0.58, ry: h * 0.24,
       color: const Color(0xFF7040B8), alpha: wispA * 0.12);
+
+    // — Volute 4 : orbite douce, centre (50 %, 44 %), décalée 60° —
+    final a4 = a + 1.047;
     _wisp(canvas, center,
-      cx: w * 0.50,
-      cy: h * (0.44 + math.sin((fog + 0.8) * math.pi * 2) * 0.03),
+      cx: w * 0.50 + math.sin(a4) * w * 0.05,
+      cy: h * 0.44 - math.cos(a4) * h * 0.04,
       rx: w * 0.40, ry: h * 0.30,
       color: Colors.white, alpha: wispA * 0.07);
+
+    // — Volute 5 : 2 orbites/cycle, centre (80 %, 18 %), décalée 180° —
+    final a5 = fog * math.pi * 4 + math.pi;
     _wisp(canvas, center,
-      cx: w * (0.80 + math.cos((fog * 1.5 + 0.15) * math.pi * 2) * 0.08),
-      cy: h * (0.18 + math.sin((fog * 1.5 + 0.15) * math.pi * 2) * 0.07),
+      cx: w * 0.80 + math.sin(a5) * w * 0.08,
+      cy: h * 0.18 - math.cos(a5) * h * 0.07,
       rx: w * 0.30, ry: h * 0.14,
       color: const Color(0xFFD0B8FF), alpha: wispA * 0.10);
 
@@ -101,8 +116,9 @@ class _CelebrationFogPainter extends CustomPainter {
     final pA = (1.0 - clear * 0.90).clamp(0.0, 1.0);
     if (pA > 0.02) {
       for (final (px, py, pSize, pOpacity, pSpeed) in _particles) {
-        final rawY = (py - fog * pSpeed * 0.6) % 1.0;
-        final y = (rawY < 0 ? rawY + 1.0 : rawY) * h;
+        // pSpeed entier (1 ou 2) → position identique à fog=0 et fog=1 → boucle sans saut.
+        // Le % de Dart sur double retourne toujours un résultat non-négatif pour diviseur > 0.
+        final y = ((py - fog * pSpeed) % 1.0) * h;
         canvas.drawCircle(
           Offset(px * w, y),
           pSize,
