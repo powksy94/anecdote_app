@@ -5,15 +5,16 @@ import 'package:flutter/material.dart';
 /// Chaque pulse a sa propre couleur et son décalage angulaire des rayons.
 class UpdatePopupHalo extends StatelessWidget {
   final List<Animation<double>> pulses;
+  final double centerDy; // pixels depuis le centre de l'écran (négatif = vers le haut)
 
-  const UpdatePopupHalo({super.key, required this.pulses});
+  const UpdatePopupHalo({super.key, required this.pulses, this.centerDy = 0.0});
 
   @override
   Widget build(BuildContext context) {
     return AnimatedBuilder(
       animation: Listenable.merge(pulses),
       builder: (context, _) => CustomPaint(
-        painter: _SolarHaloPainter(pulses.map((a) => a.value).toList()),
+        painter: _SolarHaloPainter(pulses.map((a) => a.value).toList(), centerDy: centerDy),
         child: const SizedBox.expand(),
       ),
     );
@@ -22,8 +23,9 @@ class UpdatePopupHalo extends StatelessWidget {
 
 class _SolarHaloPainter extends CustomPainter {
   final List<double> values;
+  final double centerDy;
 
-  const _SolarHaloPainter(this.values);
+  const _SolarHaloPainter(this.values, {this.centerDy = 0.0});
 
   // Couleur + décalage angulaire par pulse (effet parallaxe / profondeur)
   static const _pulseColors = [Colors.white, Colors.amber, Color(0xFFD4860A)];
@@ -31,11 +33,10 @@ class _SolarHaloPainter extends CustomPainter {
 
   @override
   void paint(Canvas canvas, Size size) {
-    final center = Offset(size.width / 2, size.height / 2);
-    final maxR = math.sqrt(
-      (size.width / 2) * (size.width / 2) +
-          (size.height / 2) * (size.height / 2),
-    );
+    final center = Offset(size.width / 2, size.height / 2 + centerDy);
+    final dx = math.max(center.dx, size.width  - center.dx);
+    final dy = math.max(center.dy, size.height - center.dy);
+    final maxR = math.sqrt(dx * dx + dy * dy);
 
     for (int i = 0; i < values.length; i++) {
       final v = values[i];
@@ -128,6 +129,7 @@ class _SolarHaloPainter extends CustomPainter {
 
   @override
   bool shouldRepaint(_SolarHaloPainter old) {
+    if (old.centerDy != centerDy) return true;
     if (old.values.length != values.length) return true;
     for (int i = 0; i < values.length; i++) {
       if (old.values[i] != values[i]) return true;
