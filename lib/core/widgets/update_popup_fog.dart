@@ -9,10 +9,9 @@ Future<T?> showCelebrationDialog<T>(BuildContext context) {
   return showGeneralDialog<T>(
     context: context,
     barrierDismissible: false,
-    barrierColor: const Color(0xF2020109), // quasi-noir — couleur du brouillard
-    transitionDuration: const Duration(milliseconds: 500),
-    // Le contenu gère sa propre animation d'entrée via _ctrl.entry
-    transitionBuilder: (ctx, anim, _, child) => child,
+    // Le fond sombre est géré par CelebrationFog à l'intérieur du widget
+    barrierColor: Colors.transparent,
+    transitionDuration: Duration.zero,
     pageBuilder: (ctx, _, __) => const Material(
       color: Colors.transparent,
       child: UpdatePopup(mode: UpdatePopupMode.celebration),

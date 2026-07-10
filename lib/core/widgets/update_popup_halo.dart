@@ -1,8 +1,8 @@
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
 
-/// Trois halos solaires qui explosent depuis le centre plein-écran.
-/// Chaque [pulses[i].value] doit progresser de 0 → 1.
+/// Trois halos solaires en parallaxe qui explosent depuis le centre plein-écran.
+/// Chaque pulse a sa propre couleur et son décalage angulaire des rayons.
 class UpdatePopupHalo extends StatelessWidget {
   final List<Animation<double>> pulses;
 
@@ -25,6 +25,10 @@ class _SolarHaloPainter extends CustomPainter {
 
   const _SolarHaloPainter(this.values);
 
+  // Couleur + décalage angulaire par pulse (effet parallaxe / profondeur)
+  static const _pulseColors = [Colors.white, Colors.amber, Color(0xFFD4860A)];
+  static const _rotOffsets  = [0.0, math.pi / 24, math.pi / 12]; // 0° / 7.5° / 15°
+
   @override
   void paint(Canvas canvas, Size size) {
     final center = Offset(size.width / 2, size.height / 2);
@@ -33,15 +37,26 @@ class _SolarHaloPainter extends CustomPainter {
           (size.height / 2) * (size.height / 2),
     );
 
-    for (final v in values) {
+    for (int i = 0; i < values.length; i++) {
+      final v = values[i];
       if (v <= 0) continue;
-      _drawBurst(canvas, center, v, maxR);
+      _drawBurst(canvas, center, v, maxR,
+        baseColor: _pulseColors[i % _pulseColors.length],
+        rotOffset: _rotOffsets[i % _rotOffsets.length],
+      );
     }
   }
 
-  void _drawBurst(Canvas canvas, Offset center, double v, double maxR) {
+  void _drawBurst(
+    Canvas canvas,
+    Offset center,
+    double v,
+    double maxR, {
+    required Color baseColor,
+    required double rotOffset,
+  }) {
     final radius = maxR * v;
-    final alpha = (1.0 - v).clamp(0.0, 1.0);
+    final alpha  = (1.0 - v).clamp(0.0, 1.0);
 
     // — Disque de halo central lumineux —
     final innerR = radius * 0.52;
@@ -52,7 +67,7 @@ class _SolarHaloPainter extends CustomPainter {
         Paint()
           ..shader = RadialGradient(
             colors: [
-              Colors.amber.withValues(alpha: alpha * 0.55),
+              baseColor.withValues(alpha: alpha * 0.55),
               Colors.white.withValues(alpha: alpha * 0.22),
               Colors.transparent,
             ],
@@ -66,27 +81,21 @@ class _SolarHaloPainter extends CustomPainter {
       center,
       radius,
       Paint()
-        ..color = Colors.amber.withValues(alpha: alpha * 0.90)
+        ..color = baseColor.withValues(alpha: alpha * 0.90)
         ..style = PaintingStyle.stroke
         ..strokeWidth = (7.0 * (1.0 - v * 0.65)).clamp(0.5, 7.0),
     );
 
-    // — Rayons solaires : 12 longs + 12 courts intercalés, 3 couches par rayon —
+    // — Rayons solaires : 12 longs + 12 courts, 3 couches angulaires + décalage par pulse —
     if (radius < 4) return;
 
     const nRays = 12;
-    // 3 couches angulaires (large/medium/fine) pour l'effet dégradé sur les bords
-    // (halfAngle en radians, alphaFactor)
-    const layers = [
-      (0.22, 0.09),  // large fond doux
-      (0.11, 0.25),  // faisceau médian
-      (0.048, 0.52), // cœur lumineux
-    ];
+    // (halfAngle, alphaFactor) par couche : fond doux / faisceau / cœur lumineux
+    const layers = [(0.22, 0.09), (0.11, 0.25), (0.048, 0.52)];
 
     for (int i = 0; i < nRays * 2; i++) {
-      final angle = i * (math.pi / nRays);
-      // Longs et courts alternés
-      final rayR = i.isEven ? radius : radius * 0.62;
+      final angle  = i * (math.pi / nRays) + rotOffset;
+      final rayR   = i.isEven ? radius : radius * 0.62;
       if (rayR < 2) continue;
 
       final innerRayR = math.max(rayR * 0.10, 3.0);
@@ -98,8 +107,8 @@ class _SolarHaloPainter extends CustomPainter {
           Paint()
             ..shader = RadialGradient(
               colors: [
-                Colors.amber.withValues(alpha: alpha * aFactor),
-                Colors.amber.withValues(alpha: alpha * aFactor * 0.35),
+                baseColor.withValues(alpha: alpha * aFactor),
+                baseColor.withValues(alpha: alpha * aFactor * 0.35),
                 Colors.transparent,
               ],
               stops: const [0.0, 0.55, 1.0],
@@ -109,7 +118,6 @@ class _SolarHaloPainter extends CustomPainter {
     }
   }
 
-  /// Triangle du rayon avec un innerR pour éviter de partir du pixel central.
   Path _rayPath(Offset c, double innerR, double outerR, double angle, double ha) {
     return Path()
       ..moveTo(c.dx + innerR * math.cos(angle - ha), c.dy + innerR * math.sin(angle - ha))

@@ -88,10 +88,11 @@ class _UpdatePopupState extends State<UpdatePopup> with TickerProviderStateMixin
     await Future.delayed(const Duration(milliseconds: 120));
     if (!mounted) return;
 
-    // Allumage complet + halos solaires plein-écran
+    // Allumage + dégagement du brouillard + halos solaires (simultanés)
     _ctrl.light.forward();
     await Future.delayed(const Duration(milliseconds: 180));
     if (!mounted) return;
+    _ctrl.clear.forward(); // repousse les volutes au moment du burst
     await _ctrl.halo.forward();
 
     await Future.delayed(const Duration(milliseconds: 400));

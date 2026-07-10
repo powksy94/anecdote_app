@@ -18,13 +18,17 @@ class UpdatePopupControllers {
   final Animation<double> glowAnim;
   final Animation<Color?> colorAnim;
 
-  // Ambiant (étoiles + blobs + rayons)
+  // Ambiant (volutes + particules + rayons)
   final AnimationController ambient;
 
   // Shimmer bouton
   final AnimationController shimmer;
 
-  // Phase halos (mode celebration — 3 pulses staggerées)
+  // Dégagement du brouillard (mode celebration — au burst)
+  final AnimationController clear;
+  final Animation<double> clearAnim;
+
+  // Halos solaires (mode celebration — 3 pulses staggerées)
   final AnimationController halo;
   final Animation<double> haloAnim1;
   final Animation<double> haloAnim2;
@@ -36,6 +40,7 @@ class UpdatePopupControllers {
     required this.light,      required this.scaleAnim,   required this.glowAnim,
     required this.colorAnim,
     required this.ambient,    required this.shimmer,
+    required this.clear,      required this.clearAnim,
     required this.halo,
     required this.haloAnim1,  required this.haloAnim2,   required this.haloAnim3,
   });
@@ -71,6 +76,10 @@ class UpdatePopupControllers {
     final ambient = AnimationController(vsync: vsync, duration: const Duration(seconds: 6));
     final shimmer = AnimationController(vsync: vsync, duration: const Duration(milliseconds: 2000));
 
+    // — Dégagement brouillard (700 ms, easeOut) —
+    final clear = AnimationController(vsync: vsync, duration: const Duration(milliseconds: 700));
+    final clearAnim = CurvedAnimation(parent: clear, curve: Curves.easeOut);
+
     // — Halos (3 pulses staggerées sur 2.4 s) —
     final halo = AnimationController(vsync: vsync, duration: const Duration(milliseconds: 2400));
     final haloAnim1 = CurvedAnimation(
@@ -86,6 +95,7 @@ class UpdatePopupControllers {
       light: light,           scaleAnim: scaleAnim,       glowAnim: glowAnim,
       colorAnim: colorAnim,
       ambient: ambient,       shimmer: shimmer,
+      clear: clear,           clearAnim: clearAnim,
       halo: halo,
       haloAnim1: haloAnim1,   haloAnim2: haloAnim2,       haloAnim3: haloAnim3,
     );
@@ -97,7 +107,7 @@ class UpdatePopupControllers {
     light.dispose();
     ambient.dispose();
     shimmer.dispose();
+    clear.dispose();
     halo.dispose();
   }
-
 }
