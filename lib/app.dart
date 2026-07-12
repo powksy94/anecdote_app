@@ -1,6 +1,6 @@
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
-import './core/navigation/main_shell.dart';
+import './core/navigation/root_gate.dart';
 import './generated/app_localizations.dart';
 
 final navigatorKey = GlobalKey<NavigatorState>();
@@ -82,7 +82,7 @@ class _AnecdoteAppState extends State<AnecdoteApp> {
         useMaterial3: true,
         colorSchemeSeed: Colors.indigo,
       ),
-      home: MainShell(
+      home: RootGate(
         onLocaleChange: (locale) {
           setState(() => _locale = locale);
         },

@@ -7,7 +7,6 @@ import '../widgets/register_step_email.dart';
 import '../widgets/register_step_name.dart';
 import '../widgets/register_view.dart';
 import 'login_page.dart';
-import 'onboarding_page.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({super.key});
@@ -83,10 +82,7 @@ class _RegisterPageState extends State<RegisterPage> {
     setState(() => _loading = false);
 
     if (errorCode == null) {
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(builder: (_) => const OnboardingPage()),
-      );
+      Navigator.of(context).popUntil((r) => r.isFirst);
     } else {
       final msg = AuthErrorMapper.fromRegisterCode(
           AppLocalizations.of(context)!, errorCode);
