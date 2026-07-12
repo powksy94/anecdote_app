@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../../features/auth/widgets/account_icon.dart';
 import '../../../generated/app_localizations.dart';
 
 class HomeHeader extends StatefulWidget {
@@ -44,6 +45,11 @@ class _HomeHeaderState extends State<HomeHeader> with SingleTickerProviderStateM
     return Stack(
       alignment: Alignment.topCenter,
       children: [
+        Positioned(
+          top: 36,
+          right: 16,
+          child: const AccountIcon(),
+        ),
         // Fond dégradé décoratif en arc
         Positioned(
           top: 0,
