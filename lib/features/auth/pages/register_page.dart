@@ -82,7 +82,7 @@ class _RegisterPageState extends State<RegisterPage> {
     setState(() => _loading = false);
 
     if (errorCode == null) {
-      Navigator.of(context).popUntil((r) => r.isFirst);
+      Navigator.of(context).pop();
     } else {
       final msg = AuthErrorMapper.fromRegisterCode(
           AppLocalizations.of(context)!, errorCode);

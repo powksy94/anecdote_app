@@ -31,7 +31,7 @@ class _LoginPageState extends State<LoginPage> {
     setState(() => _loading = true);
     try {
       await AuthService().signInWithEmail(_emailCtrl.text.trim(), _passwordCtrl.text);
-      if (mounted) Navigator.of(context).popUntil((r) => r.isFirst);
+      if (mounted) Navigator.of(context).pop();
     } on FirebaseAuthException catch (e) {
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
