@@ -381,4 +381,33 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get noImageBannedGame =>
       '🚫 No image available — game artwork is under copyright';
+
+  @override
+  String get navGeneral => 'General';
+
+  @override
+  String get navFavorites => 'Favorites';
+
+  @override
+  String get favoritesTitle => 'My favorites';
+
+  @override
+  String get favoritesEmpty => 'No favorites this month';
+
+  @override
+  String favoritesMonth(String month) {
+    return 'Your $month favorites';
+  }
+
+  @override
+  String get loginRequired => 'Sign in required';
+
+  @override
+  String get loginToSaveFavorites => 'Sign in to save your favorite facts.';
+
+  @override
+  String get signIn => 'Sign in';
+
+  @override
+  String get createAccount => 'Create an account';
 }

@@ -124,5 +124,16 @@
   "noImageClassicGame": "🕹️ No image available — game artwork is under copyright",
   "noImageGamingNomination": "🏆 No image available — game artwork is under copyright",
   "noImageWorstGame": "💀 No image available — game artwork is under copyright",
-  "noImageBannedGame": "🚫 No image available — game artwork is under copyright"
+  "noImageBannedGame": "🚫 No image available — game artwork is under copyright",
+
+  "navGeneral": "General",
+  "navFavorites": "Favorites",
+  "favoritesTitle": "My favorites",
+  "favoritesEmpty": "No favorites this month",
+  "favoritesMonth": "Your {month} favorites",
+  "@favoritesMonth": { "placeholders": { "month": { "type": "String" } } },
+  "loginRequired": "Sign in required",
+  "loginToSaveFavorites": "Sign in to save your favorite facts.",
+  "signIn": "Sign in",
+  "createAccount": "Create an account"
 }

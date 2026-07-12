@@ -819,6 +819,60 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'🚫 No image available — game artwork is under copyright'**
   String get noImageBannedGame;
+
+  /// No description provided for @navGeneral.
+  ///
+  /// In en, this message translates to:
+  /// **'General'**
+  String get navGeneral;
+
+  /// No description provided for @navFavorites.
+  ///
+  /// In en, this message translates to:
+  /// **'Favorites'**
+  String get navFavorites;
+
+  /// No description provided for @favoritesTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'My favorites'**
+  String get favoritesTitle;
+
+  /// No description provided for @favoritesEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'No favorites this month'**
+  String get favoritesEmpty;
+
+  /// No description provided for @favoritesMonth.
+  ///
+  /// In en, this message translates to:
+  /// **'Your {month} favorites'**
+  String favoritesMonth(String month);
+
+  /// No description provided for @loginRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign in required'**
+  String get loginRequired;
+
+  /// No description provided for @loginToSaveFavorites.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign in to save your favorite facts.'**
+  String get loginToSaveFavorites;
+
+  /// No description provided for @signIn.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign in'**
+  String get signIn;
+
+  /// No description provided for @createAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Create an account'**
+  String get createAccount;
 }
 
 class _AppLocalizationsDelegate

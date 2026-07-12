@@ -385,4 +385,34 @@ class AppLocalizationsFr extends AppLocalizations {
   @override
   String get noImageBannedGame =>
       '🚫 Aucune image disponible — les visuels de jeux sont protégés par copyright';
+
+  @override
+  String get navGeneral => 'Général';
+
+  @override
+  String get navFavorites => 'Favoris';
+
+  @override
+  String get favoritesTitle => 'Mes favoris';
+
+  @override
+  String get favoritesEmpty => 'Aucun favori ce mois-ci';
+
+  @override
+  String favoritesMonth(String month) {
+    return 'Vos favoris de $month';
+  }
+
+  @override
+  String get loginRequired => 'Connexion requise';
+
+  @override
+  String get loginToSaveFavorites =>
+      'Connectez-vous pour sauvegarder vos anecdotes préférées.';
+
+  @override
+  String get signIn => 'Se connecter';
+
+  @override
+  String get createAccount => 'Créer un compte';
 }

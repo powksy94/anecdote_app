@@ -124,5 +124,16 @@
   "noImageClassicGame": "🕹️ Aucune image disponible — les visuels de jeux sont protégés par copyright",
   "noImageGamingNomination": "🏆 Aucune image disponible — les visuels de jeux sont protégés par copyright",
   "noImageWorstGame": "💀 Aucune image disponible — les visuels de jeux sont protégés par copyright",
-  "noImageBannedGame": "🚫 Aucune image disponible — les visuels de jeux sont protégés par copyright"
+  "noImageBannedGame": "🚫 Aucune image disponible — les visuels de jeux sont protégés par copyright",
+
+  "navGeneral": "Général",
+  "navFavorites": "Favoris",
+  "favoritesTitle": "Mes favoris",
+  "favoritesEmpty": "Aucun favori ce mois-ci",
+  "favoritesMonth": "Vos favoris de {month}",
+  "@favoritesMonth": { "placeholders": { "month": { "type": "String" } } },
+  "loginRequired": "Connexion requise",
+  "loginToSaveFavorites": "Connectez-vous pour sauvegarder vos anecdotes préférées.",
+  "signIn": "Se connecter",
+  "createAccount": "Créer un compte"
 }

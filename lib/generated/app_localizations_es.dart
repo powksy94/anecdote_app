@@ -384,4 +384,34 @@ class AppLocalizationsEs extends AppLocalizations {
   @override
   String get noImageBannedGame =>
       '🚫 No hay imagen disponible — los gráficos de juegos están bajo copyright';
+
+  @override
+  String get navGeneral => 'General';
+
+  @override
+  String get navFavorites => 'Favoritos';
+
+  @override
+  String get favoritesTitle => 'Mis favoritos';
+
+  @override
+  String get favoritesEmpty => 'Sin favoritos este mes';
+
+  @override
+  String favoritesMonth(String month) {
+    return 'Tus favoritos de $month';
+  }
+
+  @override
+  String get loginRequired => 'Inicio de sesión requerido';
+
+  @override
+  String get loginToSaveFavorites =>
+      'Inicia sesión para guardar tus anécdotas favoritas.';
+
+  @override
+  String get signIn => 'Iniciar sesión';
+
+  @override
+  String get createAccount => 'Crear una cuenta';
 }
