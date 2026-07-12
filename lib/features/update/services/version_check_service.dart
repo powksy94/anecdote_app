@@ -8,7 +8,7 @@ class VersionCheckService {
   static const _keyJustUpdated = 'just_updated';
   static const _keyLastCheckDate = 'version_last_check_date';
   static const _keySnoozeUntil = 'update_snooze_until';
-  static const bool _debugForceUpdate = true;
+  static const bool _debugForceUpdate = false;
 
   Future<VersionCheckResult> check() async {
     final prefs = await SharedPreferences.getInstance();
