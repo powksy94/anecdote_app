@@ -193,5 +193,15 @@
   "catBirds": "Oiseaux",
   "catCloud": "Nuages",
   "catInsects": "Insectes",
-  "filterAll": "Tout"
+  "filterAll": "Tout",
+  "welcomeTitle": "Bienvenue !",
+  "welcomeSubtitle": "Découvrez des anecdotes incroyables chaque jour.",
+  "continueWithoutAccount": "Continuer sans compte",
+  "onboardingOverlayFavoritesTitle": "Vos favoris",
+  "onboardingOverlayFavoritesBody": "Sauvegardez les anecdotes que vous aimez dans cet onglet.",
+  "onboardingOverlayAccountTitle": "Votre compte",
+  "onboardingOverlayAccountBody": "Accédez à votre profil et paramètres depuis cette icône.",
+  "onboardingOverlayDoneTitle": "Tout est prêt !",
+  "onboardingOverlayDoneBody": "Explorez des centaines d'anecdotes par catégorie.",
+  "onboardingOverlayGotIt": "C'est parti !"
 }

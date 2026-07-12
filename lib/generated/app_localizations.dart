@@ -1209,6 +1209,66 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'All'**
   String get filterAll;
+
+  /// No description provided for @welcomeTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Welcome!'**
+  String get welcomeTitle;
+
+  /// No description provided for @welcomeSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Discover incredible facts every day.'**
+  String get welcomeSubtitle;
+
+  /// No description provided for @continueWithoutAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Continue without account'**
+  String get continueWithoutAccount;
+
+  /// No description provided for @onboardingOverlayFavoritesTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Your favorites'**
+  String get onboardingOverlayFavoritesTitle;
+
+  /// No description provided for @onboardingOverlayFavoritesBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Save the facts you love in this tab.'**
+  String get onboardingOverlayFavoritesBody;
+
+  /// No description provided for @onboardingOverlayAccountTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Your account'**
+  String get onboardingOverlayAccountTitle;
+
+  /// No description provided for @onboardingOverlayAccountBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Access your profile and settings from this icon.'**
+  String get onboardingOverlayAccountBody;
+
+  /// No description provided for @onboardingOverlayDoneTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'All set!'**
+  String get onboardingOverlayDoneTitle;
+
+  /// No description provided for @onboardingOverlayDoneBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Explore hundreds of facts by category.'**
+  String get onboardingOverlayDoneBody;
+
+  /// No description provided for @onboardingOverlayGotIt.
+  ///
+  /// In en, this message translates to:
+  /// **'Let\'s go!'**
+  String get onboardingOverlayGotIt;
 }
 
 class _AppLocalizationsDelegate

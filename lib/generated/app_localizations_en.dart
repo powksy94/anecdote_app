@@ -583,4 +583,37 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get filterAll => 'All';
+
+  @override
+  String get welcomeTitle => 'Welcome!';
+
+  @override
+  String get welcomeSubtitle => 'Discover incredible facts every day.';
+
+  @override
+  String get continueWithoutAccount => 'Continue without account';
+
+  @override
+  String get onboardingOverlayFavoritesTitle => 'Your favorites';
+
+  @override
+  String get onboardingOverlayFavoritesBody =>
+      'Save the facts you love in this tab.';
+
+  @override
+  String get onboardingOverlayAccountTitle => 'Your account';
+
+  @override
+  String get onboardingOverlayAccountBody =>
+      'Access your profile and settings from this icon.';
+
+  @override
+  String get onboardingOverlayDoneTitle => 'All set!';
+
+  @override
+  String get onboardingOverlayDoneBody =>
+      'Explore hundreds of facts by category.';
+
+  @override
+  String get onboardingOverlayGotIt => 'Let\'s go!';
 }

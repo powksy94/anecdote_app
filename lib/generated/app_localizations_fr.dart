@@ -591,4 +591,38 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get filterAll => 'Tout';
+
+  @override
+  String get welcomeTitle => 'Bienvenue !';
+
+  @override
+  String get welcomeSubtitle =>
+      'Découvrez des anecdotes incroyables chaque jour.';
+
+  @override
+  String get continueWithoutAccount => 'Continuer sans compte';
+
+  @override
+  String get onboardingOverlayFavoritesTitle => 'Vos favoris';
+
+  @override
+  String get onboardingOverlayFavoritesBody =>
+      'Sauvegardez les anecdotes que vous aimez dans cet onglet.';
+
+  @override
+  String get onboardingOverlayAccountTitle => 'Votre compte';
+
+  @override
+  String get onboardingOverlayAccountBody =>
+      'Accédez à votre profil et paramètres depuis cette icône.';
+
+  @override
+  String get onboardingOverlayDoneTitle => 'Tout est prêt !';
+
+  @override
+  String get onboardingOverlayDoneBody =>
+      'Explorez des centaines d\'anecdotes par catégorie.';
+
+  @override
+  String get onboardingOverlayGotIt => 'C\'est parti !';
 }
