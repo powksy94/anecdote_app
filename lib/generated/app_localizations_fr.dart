@@ -415,4 +415,177 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get createAccount => 'Créer un compte';
+
+  @override
+  String get emailLabel => 'Email';
+
+  @override
+  String get passwordLabel => 'Mot de passe';
+
+  @override
+  String get confirmPasswordLabel => 'Confirmer le mot de passe';
+
+  @override
+  String get firstNameLabel => 'Prénom';
+
+  @override
+  String get requiredField => 'Requis';
+
+  @override
+  String get nextButton => 'Suivant';
+
+  @override
+  String get skipButton => 'Passer';
+
+  @override
+  String get startButton => 'Commencer';
+
+  @override
+  String get signOut => 'Se déconnecter';
+
+  @override
+  String get noAccountYet => 'Pas encore de compte ?';
+
+  @override
+  String get alreadyHaveAccount => 'Déjà un compte ?';
+
+  @override
+  String get invalidEmail => 'Email invalide';
+
+  @override
+  String get passwordMinLength => '12 caractères minimum';
+
+  @override
+  String get passwordsDoNotMatch => 'Les mots de passe ne correspondent pas';
+
+  @override
+  String get registerTitle => 'Créez votre compte';
+
+  @override
+  String get registerStep1Subtitle => 'Étape 1 sur 3 — Vos identifiants';
+
+  @override
+  String get registerStep2Title => 'Comment vous appelle-t-on ?';
+
+  @override
+  String get registerStep2Subtitle => 'Étape 2 sur 3 — Votre prénom';
+
+  @override
+  String get registerStep3Title => 'Qu\'est-ce qui vous intéresse ?';
+
+  @override
+  String get registerStep3Subtitle =>
+      'Étape 3 sur 3 — Choisissez au moins 3 thèmes';
+
+  @override
+  String get chooseAtLeast3 => 'Choisissez au moins 3 thèmes';
+
+  @override
+  String themesSelectedCount(int count) {
+    return '$count thème(s) sélectionné(s)';
+  }
+
+  @override
+  String get authErrorUserNotFound => 'Aucun compte trouvé pour cet email.';
+
+  @override
+  String get authErrorWrongPassword => 'Mot de passe incorrect.';
+
+  @override
+  String get authErrorUserDisabled => 'Ce compte est désactivé.';
+
+  @override
+  String get authErrorTooManyRequests =>
+      'Trop de tentatives. Réessayez plus tard.';
+
+  @override
+  String get authErrorGeneric => 'Erreur de connexion. Réessayez.';
+
+  @override
+  String get authErrorEmailInUse => 'Cet email est déjà utilisé.';
+
+  @override
+  String get authErrorWeakPassword => 'Mot de passe trop faible.';
+
+  @override
+  String get authErrorAccountCreation =>
+      'Erreur lors de la création du compte.';
+
+  @override
+  String get onboarding1Title => 'Une nouvelle découverte chaque jour';
+
+  @override
+  String get onboarding1Subtitle =>
+      'Explorez des dizaines de catégories : histoire, science, art, espace et bien plus encore.';
+
+  @override
+  String get onboarding2Title => 'Sauvegardez vos favoris';
+
+  @override
+  String get onboarding2Subtitle =>
+      'Gardez une trace de vos anecdotes préférées. Retrouvez-les à tout moment dans l\'onglet Favoris.';
+
+  @override
+  String get onboarding2Hint => 'Voir l\'onglet Favoris en bas de l\'écran';
+
+  @override
+  String get onboarding3Title => 'Passez à Premium';
+
+  @override
+  String get onboarding3Subtitle =>
+      'Favoris illimités, sans publicité et accès à du contenu exclusif.';
+
+  @override
+  String get catAnecdote => 'Anecdotes';
+
+  @override
+  String get catCinema => 'Cinéma';
+
+  @override
+  String get catCelebrities => 'Célébrités';
+
+  @override
+  String get catHistory => 'Histoire';
+
+  @override
+  String get catScience => 'Science';
+
+  @override
+  String get catArt => 'Art';
+
+  @override
+  String get catWorld => 'Monde';
+
+  @override
+  String get catSpace => 'Espace';
+
+  @override
+  String get catGaming => 'Gaming';
+
+  @override
+  String get catAnimals => 'Animaux';
+
+  @override
+  String get catVolcano => 'Volcans & Merveilles';
+
+  @override
+  String get catDinosaur => 'Dinosaures';
+
+  @override
+  String get catArchitecture => 'Architecture';
+
+  @override
+  String get catMusic => 'Musique classique';
+
+  @override
+  String get catMineral => 'Minéraux';
+
+  @override
+  String get catBirds => 'Oiseaux';
+
+  @override
+  String get catCloud => 'Nuages';
+
+  @override
+  String get catInsects => 'Insectes';
 }

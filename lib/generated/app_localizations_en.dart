@@ -410,4 +410,174 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get createAccount => 'Create an account';
+
+  @override
+  String get emailLabel => 'Email';
+
+  @override
+  String get passwordLabel => 'Password';
+
+  @override
+  String get confirmPasswordLabel => 'Confirm password';
+
+  @override
+  String get firstNameLabel => 'First name';
+
+  @override
+  String get requiredField => 'Required';
+
+  @override
+  String get nextButton => 'Next';
+
+  @override
+  String get skipButton => 'Skip';
+
+  @override
+  String get startButton => 'Get started';
+
+  @override
+  String get signOut => 'Sign out';
+
+  @override
+  String get noAccountYet => 'Don\'t have an account?';
+
+  @override
+  String get alreadyHaveAccount => 'Already have an account?';
+
+  @override
+  String get invalidEmail => 'Invalid email';
+
+  @override
+  String get passwordMinLength => 'At least 12 characters';
+
+  @override
+  String get passwordsDoNotMatch => 'Passwords do not match';
+
+  @override
+  String get registerTitle => 'Create your account';
+
+  @override
+  String get registerStep1Subtitle => 'Step 1 of 3 — Your credentials';
+
+  @override
+  String get registerStep2Title => 'What should we call you?';
+
+  @override
+  String get registerStep2Subtitle => 'Step 2 of 3 — Your first name';
+
+  @override
+  String get registerStep3Title => 'What are you interested in?';
+
+  @override
+  String get registerStep3Subtitle => 'Step 3 of 3 — Choose at least 3 topics';
+
+  @override
+  String get chooseAtLeast3 => 'Choose at least 3 topics';
+
+  @override
+  String themesSelectedCount(int count) {
+    return '$count topic(s) selected';
+  }
+
+  @override
+  String get authErrorUserNotFound => 'No account found for this email.';
+
+  @override
+  String get authErrorWrongPassword => 'Incorrect password.';
+
+  @override
+  String get authErrorUserDisabled => 'This account is disabled.';
+
+  @override
+  String get authErrorTooManyRequests => 'Too many attempts. Try again later.';
+
+  @override
+  String get authErrorGeneric => 'Connection error. Please try again.';
+
+  @override
+  String get authErrorEmailInUse => 'This email is already in use.';
+
+  @override
+  String get authErrorWeakPassword => 'Password is too weak.';
+
+  @override
+  String get authErrorAccountCreation => 'Error creating account.';
+
+  @override
+  String get onboarding1Title => 'A new discovery every day';
+
+  @override
+  String get onboarding1Subtitle =>
+      'Explore dozens of categories: history, science, art, space and much more.';
+
+  @override
+  String get onboarding2Title => 'Save your favorites';
+
+  @override
+  String get onboarding2Subtitle =>
+      'Keep track of your favorite facts. Find them anytime in the Favorites tab.';
+
+  @override
+  String get onboarding2Hint => 'See the Favorites tab at the bottom';
+
+  @override
+  String get onboarding3Title => 'Go Premium';
+
+  @override
+  String get onboarding3Subtitle =>
+      'Unlimited favorites, ad-free and access to exclusive content.';
+
+  @override
+  String get catAnecdote => 'Anecdotes';
+
+  @override
+  String get catCinema => 'Cinema';
+
+  @override
+  String get catCelebrities => 'Celebrities';
+
+  @override
+  String get catHistory => 'History';
+
+  @override
+  String get catScience => 'Science';
+
+  @override
+  String get catArt => 'Art';
+
+  @override
+  String get catWorld => 'World';
+
+  @override
+  String get catSpace => 'Space';
+
+  @override
+  String get catGaming => 'Gaming';
+
+  @override
+  String get catAnimals => 'Animals';
+
+  @override
+  String get catVolcano => 'Volcanoes & Wonders';
+
+  @override
+  String get catDinosaur => 'Dinosaurs';
+
+  @override
+  String get catArchitecture => 'Architecture';
+
+  @override
+  String get catMusic => 'Classical music';
+
+  @override
+  String get catMineral => 'Minerals';
+
+  @override
+  String get catBirds => 'Birds';
+
+  @override
+  String get catCloud => 'Clouds';
+
+  @override
+  String get catInsects => 'Insects';
 }

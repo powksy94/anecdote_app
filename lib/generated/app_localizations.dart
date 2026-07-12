@@ -873,6 +873,336 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Create an account'**
   String get createAccount;
+
+  /// No description provided for @emailLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Email'**
+  String get emailLabel;
+
+  /// No description provided for @passwordLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Password'**
+  String get passwordLabel;
+
+  /// No description provided for @confirmPasswordLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Confirm password'**
+  String get confirmPasswordLabel;
+
+  /// No description provided for @firstNameLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'First name'**
+  String get firstNameLabel;
+
+  /// No description provided for @requiredField.
+  ///
+  /// In en, this message translates to:
+  /// **'Required'**
+  String get requiredField;
+
+  /// No description provided for @nextButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Next'**
+  String get nextButton;
+
+  /// No description provided for @skipButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Skip'**
+  String get skipButton;
+
+  /// No description provided for @startButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Get started'**
+  String get startButton;
+
+  /// No description provided for @signOut.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign out'**
+  String get signOut;
+
+  /// No description provided for @noAccountYet.
+  ///
+  /// In en, this message translates to:
+  /// **'Don\'t have an account?'**
+  String get noAccountYet;
+
+  /// No description provided for @alreadyHaveAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Already have an account?'**
+  String get alreadyHaveAccount;
+
+  /// No description provided for @invalidEmail.
+  ///
+  /// In en, this message translates to:
+  /// **'Invalid email'**
+  String get invalidEmail;
+
+  /// No description provided for @passwordMinLength.
+  ///
+  /// In en, this message translates to:
+  /// **'At least 12 characters'**
+  String get passwordMinLength;
+
+  /// No description provided for @passwordsDoNotMatch.
+  ///
+  /// In en, this message translates to:
+  /// **'Passwords do not match'**
+  String get passwordsDoNotMatch;
+
+  /// No description provided for @registerTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Create your account'**
+  String get registerTitle;
+
+  /// No description provided for @registerStep1Subtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Step 1 of 3 — Your credentials'**
+  String get registerStep1Subtitle;
+
+  /// No description provided for @registerStep2Title.
+  ///
+  /// In en, this message translates to:
+  /// **'What should we call you?'**
+  String get registerStep2Title;
+
+  /// No description provided for @registerStep2Subtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Step 2 of 3 — Your first name'**
+  String get registerStep2Subtitle;
+
+  /// No description provided for @registerStep3Title.
+  ///
+  /// In en, this message translates to:
+  /// **'What are you interested in?'**
+  String get registerStep3Title;
+
+  /// No description provided for @registerStep3Subtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Step 3 of 3 — Choose at least 3 topics'**
+  String get registerStep3Subtitle;
+
+  /// No description provided for @chooseAtLeast3.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose at least 3 topics'**
+  String get chooseAtLeast3;
+
+  /// No description provided for @themesSelectedCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} topic(s) selected'**
+  String themesSelectedCount(int count);
+
+  /// No description provided for @authErrorUserNotFound.
+  ///
+  /// In en, this message translates to:
+  /// **'No account found for this email.'**
+  String get authErrorUserNotFound;
+
+  /// No description provided for @authErrorWrongPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Incorrect password.'**
+  String get authErrorWrongPassword;
+
+  /// No description provided for @authErrorUserDisabled.
+  ///
+  /// In en, this message translates to:
+  /// **'This account is disabled.'**
+  String get authErrorUserDisabled;
+
+  /// No description provided for @authErrorTooManyRequests.
+  ///
+  /// In en, this message translates to:
+  /// **'Too many attempts. Try again later.'**
+  String get authErrorTooManyRequests;
+
+  /// No description provided for @authErrorGeneric.
+  ///
+  /// In en, this message translates to:
+  /// **'Connection error. Please try again.'**
+  String get authErrorGeneric;
+
+  /// No description provided for @authErrorEmailInUse.
+  ///
+  /// In en, this message translates to:
+  /// **'This email is already in use.'**
+  String get authErrorEmailInUse;
+
+  /// No description provided for @authErrorWeakPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Password is too weak.'**
+  String get authErrorWeakPassword;
+
+  /// No description provided for @authErrorAccountCreation.
+  ///
+  /// In en, this message translates to:
+  /// **'Error creating account.'**
+  String get authErrorAccountCreation;
+
+  /// No description provided for @onboarding1Title.
+  ///
+  /// In en, this message translates to:
+  /// **'A new discovery every day'**
+  String get onboarding1Title;
+
+  /// No description provided for @onboarding1Subtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Explore dozens of categories: history, science, art, space and much more.'**
+  String get onboarding1Subtitle;
+
+  /// No description provided for @onboarding2Title.
+  ///
+  /// In en, this message translates to:
+  /// **'Save your favorites'**
+  String get onboarding2Title;
+
+  /// No description provided for @onboarding2Subtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Keep track of your favorite facts. Find them anytime in the Favorites tab.'**
+  String get onboarding2Subtitle;
+
+  /// No description provided for @onboarding2Hint.
+  ///
+  /// In en, this message translates to:
+  /// **'See the Favorites tab at the bottom'**
+  String get onboarding2Hint;
+
+  /// No description provided for @onboarding3Title.
+  ///
+  /// In en, this message translates to:
+  /// **'Go Premium'**
+  String get onboarding3Title;
+
+  /// No description provided for @onboarding3Subtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Unlimited favorites, ad-free and access to exclusive content.'**
+  String get onboarding3Subtitle;
+
+  /// No description provided for @catAnecdote.
+  ///
+  /// In en, this message translates to:
+  /// **'Anecdotes'**
+  String get catAnecdote;
+
+  /// No description provided for @catCinema.
+  ///
+  /// In en, this message translates to:
+  /// **'Cinema'**
+  String get catCinema;
+
+  /// No description provided for @catCelebrities.
+  ///
+  /// In en, this message translates to:
+  /// **'Celebrities'**
+  String get catCelebrities;
+
+  /// No description provided for @catHistory.
+  ///
+  /// In en, this message translates to:
+  /// **'History'**
+  String get catHistory;
+
+  /// No description provided for @catScience.
+  ///
+  /// In en, this message translates to:
+  /// **'Science'**
+  String get catScience;
+
+  /// No description provided for @catArt.
+  ///
+  /// In en, this message translates to:
+  /// **'Art'**
+  String get catArt;
+
+  /// No description provided for @catWorld.
+  ///
+  /// In en, this message translates to:
+  /// **'World'**
+  String get catWorld;
+
+  /// No description provided for @catSpace.
+  ///
+  /// In en, this message translates to:
+  /// **'Space'**
+  String get catSpace;
+
+  /// No description provided for @catGaming.
+  ///
+  /// In en, this message translates to:
+  /// **'Gaming'**
+  String get catGaming;
+
+  /// No description provided for @catAnimals.
+  ///
+  /// In en, this message translates to:
+  /// **'Animals'**
+  String get catAnimals;
+
+  /// No description provided for @catVolcano.
+  ///
+  /// In en, this message translates to:
+  /// **'Volcanoes & Wonders'**
+  String get catVolcano;
+
+  /// No description provided for @catDinosaur.
+  ///
+  /// In en, this message translates to:
+  /// **'Dinosaurs'**
+  String get catDinosaur;
+
+  /// No description provided for @catArchitecture.
+  ///
+  /// In en, this message translates to:
+  /// **'Architecture'**
+  String get catArchitecture;
+
+  /// No description provided for @catMusic.
+  ///
+  /// In en, this message translates to:
+  /// **'Classical music'**
+  String get catMusic;
+
+  /// No description provided for @catMineral.
+  ///
+  /// In en, this message translates to:
+  /// **'Minerals'**
+  String get catMineral;
+
+  /// No description provided for @catBirds.
+  ///
+  /// In en, this message translates to:
+  /// **'Birds'**
+  String get catBirds;
+
+  /// No description provided for @catCloud.
+  ///
+  /// In en, this message translates to:
+  /// **'Clouds'**
+  String get catCloud;
+
+  /// No description provided for @catInsects.
+  ///
+  /// In en, this message translates to:
+  /// **'Insects'**
+  String get catInsects;
 }
 
 class _AppLocalizationsDelegate

@@ -414,4 +414,175 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get createAccount => 'Crear una cuenta';
+
+  @override
+  String get emailLabel => 'Email';
+
+  @override
+  String get passwordLabel => 'Contraseña';
+
+  @override
+  String get confirmPasswordLabel => 'Confirmar contraseña';
+
+  @override
+  String get firstNameLabel => 'Nombre';
+
+  @override
+  String get requiredField => 'Requerido';
+
+  @override
+  String get nextButton => 'Siguiente';
+
+  @override
+  String get skipButton => 'Saltar';
+
+  @override
+  String get startButton => 'Empezar';
+
+  @override
+  String get signOut => 'Cerrar sesión';
+
+  @override
+  String get noAccountYet => '¿No tienes cuenta?';
+
+  @override
+  String get alreadyHaveAccount => '¿Ya tienes cuenta?';
+
+  @override
+  String get invalidEmail => 'Email inválido';
+
+  @override
+  String get passwordMinLength => 'Al menos 12 caracteres';
+
+  @override
+  String get passwordsDoNotMatch => 'Las contraseñas no coinciden';
+
+  @override
+  String get registerTitle => 'Crea tu cuenta';
+
+  @override
+  String get registerStep1Subtitle => 'Paso 1 de 3 — Tus credenciales';
+
+  @override
+  String get registerStep2Title => '¿Cómo te llamamos?';
+
+  @override
+  String get registerStep2Subtitle => 'Paso 2 de 3 — Tu nombre';
+
+  @override
+  String get registerStep3Title => '¿Qué te interesa?';
+
+  @override
+  String get registerStep3Subtitle => 'Paso 3 de 3 — Elige al menos 3 temas';
+
+  @override
+  String get chooseAtLeast3 => 'Elige al menos 3 temas';
+
+  @override
+  String themesSelectedCount(int count) {
+    return '$count tema(s) seleccionado(s)';
+  }
+
+  @override
+  String get authErrorUserNotFound => 'No se encontró cuenta para este email.';
+
+  @override
+  String get authErrorWrongPassword => 'Contraseña incorrecta.';
+
+  @override
+  String get authErrorUserDisabled => 'Esta cuenta está desactivada.';
+
+  @override
+  String get authErrorTooManyRequests =>
+      'Demasiados intentos. Inténtalo más tarde.';
+
+  @override
+  String get authErrorGeneric => 'Error de conexión. Inténtalo de nuevo.';
+
+  @override
+  String get authErrorEmailInUse => 'Este email ya está en uso.';
+
+  @override
+  String get authErrorWeakPassword => 'La contraseña es demasiado débil.';
+
+  @override
+  String get authErrorAccountCreation => 'Error al crear la cuenta.';
+
+  @override
+  String get onboarding1Title => 'Un nuevo descubrimiento cada día';
+
+  @override
+  String get onboarding1Subtitle =>
+      'Explora decenas de categorías: historia, ciencia, arte, espacio y mucho más.';
+
+  @override
+  String get onboarding2Title => 'Guarda tus favoritos';
+
+  @override
+  String get onboarding2Subtitle =>
+      'Lleva un registro de tus anécdotas favoritas. Encuéntralas en la pestaña Favoritos.';
+
+  @override
+  String get onboarding2Hint => 'Ver la pestaña Favoritos en la parte inferior';
+
+  @override
+  String get onboarding3Title => 'Pásate a Premium';
+
+  @override
+  String get onboarding3Subtitle =>
+      'Favoritos ilimitados, sin publicidad y acceso a contenido exclusivo.';
+
+  @override
+  String get catAnecdote => 'Anécdotas';
+
+  @override
+  String get catCinema => 'Cine';
+
+  @override
+  String get catCelebrities => 'Celebridades';
+
+  @override
+  String get catHistory => 'Historia';
+
+  @override
+  String get catScience => 'Ciencia';
+
+  @override
+  String get catArt => 'Arte';
+
+  @override
+  String get catWorld => 'Mundo';
+
+  @override
+  String get catSpace => 'Espacio';
+
+  @override
+  String get catGaming => 'Gaming';
+
+  @override
+  String get catAnimals => 'Animales';
+
+  @override
+  String get catVolcano => 'Volcanes y Maravillas';
+
+  @override
+  String get catDinosaur => 'Dinosaurios';
+
+  @override
+  String get catArchitecture => 'Arquitectura';
+
+  @override
+  String get catMusic => 'Música clásica';
+
+  @override
+  String get catMineral => 'Minerales';
+
+  @override
+  String get catBirds => 'Aves';
+
+  @override
+  String get catCloud => 'Nubes';
+
+  @override
+  String get catInsects => 'Insectos';
 }
