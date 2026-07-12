@@ -57,16 +57,23 @@ class _MainShellState extends State<MainShell> {
               children: [
                 Navigator(
                   key: _generalKey,
-                  onGenerateRoute: (_) => MaterialPageRoute(
-                    builder: (_) =>
-                        HomePage(onLocaleChange: widget.onLocaleChange),
-                  ),
+                  pages: [
+                    MaterialPage(
+                      key: const ValueKey('home'),
+                      child: HomePage(onLocaleChange: widget.onLocaleChange),
+                    ),
+                  ],
+                  onDidRemovePage: (_) {},
                 ),
                 Navigator(
                   key: _favoritesKey,
-                  onGenerateRoute: (_) => MaterialPageRoute(
-                    builder: (_) => const FavoritesGate(),
-                  ),
+                  pages: const [
+                    MaterialPage(
+                      key: ValueKey('favorites'),
+                      child: FavoritesGate(),
+                    ),
+                  ],
+                  onDidRemovePage: (_) {},
                 ),
               ],
             ),
