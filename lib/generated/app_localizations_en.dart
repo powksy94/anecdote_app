@@ -580,4 +580,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get catInsects => 'Insects';
+
+  @override
+  String get filterAll => 'All';
 }

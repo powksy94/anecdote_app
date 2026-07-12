@@ -585,4 +585,7 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get catInsects => 'Insectos';
+
+  @override
+  String get filterAll => 'Todo';
 }

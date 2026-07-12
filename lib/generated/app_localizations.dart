@@ -1203,6 +1203,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Insects'**
   String get catInsects;
+
+  /// No description provided for @filterAll.
+  ///
+  /// In en, this message translates to:
+  /// **'All'**
+  String get filterAll;
 }
 
 class _AppLocalizationsDelegate

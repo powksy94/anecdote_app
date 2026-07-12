@@ -192,5 +192,6 @@
   "catMineral": "Minéraux",
   "catBirds": "Oiseaux",
   "catCloud": "Nuages",
-  "catInsects": "Insectes"
+  "catInsects": "Insectes",
+  "filterAll": "Tout"
 }
