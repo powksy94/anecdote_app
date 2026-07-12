@@ -13,7 +13,7 @@ abstract class WorldNavigator {
         leftType: ContentType.territoriesHub,
         rightType: ContentType.naturalWondersHub,
         onSelectLeft: () {
-          Navigator.pop(context);
+          Navigator.of(context, rootNavigator: true).pop();
           Navigator.push(
             context,
             PageRouteBuilder(
@@ -35,7 +35,7 @@ abstract class WorldNavigator {
           );
         },
         onSelectRight: () {
-          Navigator.pop(context);
+          Navigator.of(context, rootNavigator: true).pop();
           Navigator.push(
             context,
             PageRouteBuilder(

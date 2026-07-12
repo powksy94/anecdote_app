@@ -13,7 +13,7 @@ abstract class CelebrityNavigator {
         leftType: ContentType.humorHub,
         rightType: ContentType.personalityHub,
         onSelectLeft: () {
-          Navigator.pop(context);
+          Navigator.of(context, rootNavigator: true).pop();
           Navigator.push(
             context,
             PageRouteBuilder(
@@ -32,7 +32,7 @@ abstract class CelebrityNavigator {
           );
         },
         onSelectRight: () {
-          Navigator.pop(context);
+          Navigator.of(context, rootNavigator: true).pop();
           Navigator.push(
             context,
             PageRouteBuilder(

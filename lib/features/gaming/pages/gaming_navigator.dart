@@ -14,7 +14,7 @@ abstract class GamingNavigator {
         leftType: ContentType.gamesHub,
         rightType: ContentType.gamersHub,
         onSelectLeft: () {
-          Navigator.pop(context);
+          Navigator.of(context, rootNavigator: true).pop();
           Navigator.push(
             context,
             PageRouteBuilder(
@@ -26,7 +26,7 @@ abstract class GamingNavigator {
           );
         },
         onSelectRight: () {
-          Navigator.pop(context);
+          Navigator.of(context, rootNavigator: true).pop();
           Navigator.push(
             context,
             PageRouteBuilder(

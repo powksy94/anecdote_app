@@ -14,7 +14,7 @@ abstract class ScienceNavigator {
         leftType: ContentType.scienceLivingHub,
         rightType: ContentType.scienceNonLivingHub,
         onSelectLeft: () {
-          Navigator.pop(context);
+          Navigator.of(context, rootNavigator: true).pop();
           Navigator.push(
             context,
             PageRouteBuilder(
@@ -26,7 +26,7 @@ abstract class ScienceNavigator {
           );
         },
         onSelectRight: () {
-          Navigator.pop(context);
+          Navigator.of(context, rootNavigator: true).pop();
           Navigator.push(
             context,
             PageRouteBuilder(

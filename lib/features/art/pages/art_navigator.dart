@@ -13,7 +13,7 @@ abstract class ArtNavigator {
         leftType: ContentType.artWorksHub,
         rightType: ContentType.artArtistsHub,
         onSelectLeft: () {
-          Navigator.pop(context);
+          Navigator.of(context, rootNavigator: true).pop();
           Navigator.push(
             context,
             PageRouteBuilder(
@@ -33,7 +33,7 @@ abstract class ArtNavigator {
           );
         },
         onSelectRight: () {
-          Navigator.pop(context);
+          Navigator.of(context, rootNavigator: true).pop();
           Navigator.push(
             context,
             PageRouteBuilder(
