@@ -7,6 +7,8 @@ class ContentAppBar extends StatelessWidget implements PreferredSizeWidget {
   final bool isLoading;
   final VoidCallback onBack;
   final VoidCallback onRefresh;
+  final bool isFavorited;
+  final VoidCallback? onFavorite;
 
   const ContentAppBar({
     super.key,
@@ -14,6 +16,8 @@ class ContentAppBar extends StatelessWidget implements PreferredSizeWidget {
     required this.isLoading,
     required this.onBack,
     required this.onRefresh,
+    this.isFavorited = false,
+    this.onFavorite,
   });
 
   @override
@@ -48,6 +52,13 @@ class ContentAppBar extends StatelessWidget implements PreferredSizeWidget {
         onPressed: onBack,
       ),
       actions: [
+        if (onFavorite != null)
+          IconButton(
+            icon: _roundedIcon(isFavorited
+                ? Icons.bookmark_rounded
+                : Icons.bookmark_border_rounded),
+            onPressed: onFavorite,
+          ),
         if (!isLoading)
           IconButton(
             icon: _roundedIcon(Icons.refresh_rounded),

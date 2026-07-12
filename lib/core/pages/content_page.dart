@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import '../config/env.dart';
+import '../../features/auth/pages/login_page.dart';
+import '../../features/favorites/controllers/favorite_toggle_controller.dart';
 import '../../generated/app_localizations.dart';
 import '../models/content_type.dart';
 import '../models/content_data.dart';
@@ -21,11 +23,13 @@ class ContentPage extends StatefulWidget {
 
 class _ContentPageState extends State<ContentPage> {
   late ContentLoader _loader;
+  final _favoriteCtrl = FavoriteToggleController();
   ContentData? contentData;
   bool isLoading = true;
   bool hasError = false;
   String errorMessage = '';
   String _locale = 'en';
+  bool _isFavorited = false;
 
   @override
   void initState() {
@@ -56,13 +60,34 @@ class _ContentPageState extends State<ContentPage> {
     try {
       final result = await _loader.load(
         l10n: l10n, locale: _locale, forceRefresh: forceRefresh);
-      setState(() { contentData = result; isLoading = false; hasError = false; });
+      final favorited = await _favoriteCtrl.isFavorite(
+          widget.contentType, result.preview);
+      if (!mounted) return;
+      setState(() {
+        contentData = result;
+        _isFavorited = favorited;
+        isLoading = false;
+        hasError = false;
+      });
     } catch (e) {
       setState(() {
         hasError = true;
         errorMessage = e.toString().replaceAll('Exception: ', '');
         isLoading = false;
       });
+    }
+  }
+
+  Future<void> _toggleFavorite() async {
+    if (contentData == null) return;
+    final newState = await _favoriteCtrl.toggle(
+        widget.contentType, contentData!.preview);
+    if (!mounted) return;
+    if (newState == null) {
+      Navigator.push(
+          context, MaterialPageRoute(builder: (_) => const LoginPage()));
+    } else {
+      setState(() => _isFavorited = newState);
     }
   }
 
@@ -85,6 +110,8 @@ class _ContentPageState extends State<ContentPage> {
         isLoading: isLoading,
         onBack: () => Navigator.pop(context),
         onRefresh: () => _loadContent(forceRefresh: true),
+        isFavorited: _isFavorited,
+        onFavorite: contentData != null ? _toggleFavorite : null,
       ),
       body: Container(
         decoration: BoxDecoration(
