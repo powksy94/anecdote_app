@@ -203,5 +203,17 @@
   "onboardingOverlayAccountBody": "Accédez à votre profil et paramètres depuis cette icône.",
   "onboardingOverlayDoneTitle": "Tout est prêt !",
   "onboardingOverlayDoneBody": "Explorez des centaines d'anecdotes par catégorie.",
-  "onboardingOverlayGotIt": "C'est parti !"
+  "onboardingOverlayGotIt": "C'est parti !",
+  "premiumTitle": "Daily Facts Premium",
+  "premiumSubtitle": "Débloquez l'expérience complète",
+  "premiumBenefitFavorites": "Favoris illimités, synchronisés sur tous vos appareils",
+  "premiumBenefitAds": "Expérience sans publicité",
+  "premiumBenefitContent": "Accès prioritaire aux nouvelles catégories",
+  "premiumBestValue": "Meilleur prix",
+  "premiumCta": "S'abonner maintenant",
+  "premiumRestore": "Restaurer mes achats",
+  "premiumRestoreSuccess": "Abonnement restauré avec succès !",
+  "premiumRestoreEmpty": "Aucun achat à restaurer.",
+  "premiumActive": "Abonnement actif",
+  "premiumErrorLoading": "Impossible de charger les offres"
 }

@@ -203,5 +203,17 @@
   "onboardingOverlayAccountBody": "Access your profile and settings from this icon.",
   "onboardingOverlayDoneTitle": "All set!",
   "onboardingOverlayDoneBody": "Explore hundreds of facts by category.",
-  "onboardingOverlayGotIt": "Let's go!"
+  "onboardingOverlayGotIt": "Let's go!",
+  "premiumTitle": "Daily Facts Premium",
+  "premiumSubtitle": "Unlock the full experience",
+  "premiumBenefitFavorites": "Unlimited favorites, synced across all your devices",
+  "premiumBenefitAds": "Ad-free experience",
+  "premiumBenefitContent": "Priority access to new categories",
+  "premiumBestValue": "Best value",
+  "premiumCta": "Subscribe now",
+  "premiumRestore": "Restore purchases",
+  "premiumRestoreSuccess": "Subscription restored successfully!",
+  "premiumRestoreEmpty": "No purchases to restore.",
+  "premiumActive": "Active subscription",
+  "premiumErrorLoading": "Unable to load offers"
 }

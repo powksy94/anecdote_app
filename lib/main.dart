@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import './app.dart';
+import 'features/subscription/services/purchase_service.dart';
 
 // Must be a top-level function, outside any class
 @pragma('vm:entry-point')
@@ -33,6 +34,7 @@ void main() async {
     sound: true,
   );
 
+  await PurchaseService.configure();
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
   MobileAds.instance.initialize();
   runApp(const AnecdoteApp());
