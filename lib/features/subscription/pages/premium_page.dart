@@ -120,7 +120,9 @@ class _PremiumPageState extends State<PremiumPage> {
                         ),
                         const SizedBox(height: 28),
                         if (_isPremium)
-                          const PremiumActiveBadge()
+                          PremiumActiveBadge(
+                            onManageTap: PurchaseService.manageSubscriptions,
+                          )
                         else
                           PremiumPlansSection(
                             packages: packages,

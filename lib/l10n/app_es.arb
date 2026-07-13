@@ -215,5 +215,6 @@
   "premiumRestoreSuccess": "¡Suscripción restaurada con éxito!",
   "premiumRestoreEmpty": "No hay compras para restaurar.",
   "premiumActive": "Suscripción activa",
-  "premiumErrorLoading": "No se pueden cargar las ofertas"
+  "premiumErrorLoading": "No se pueden cargar las ofertas",
+  "premiumManage": "Gestionar suscripción"
 }

@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import '../../../generated/app_localizations.dart';
 
 class PremiumActiveBadge extends StatelessWidget {
-  const PremiumActiveBadge({super.key});
+  final VoidCallback onManageTap;
+
+  const PremiumActiveBadge({super.key, required this.onManageTap});
 
   static const _amber = Color(0xFFFFB300);
 
@@ -25,6 +27,19 @@ class PremiumActiveBadge extends StatelessWidget {
           Text(
             loc.premiumActive,
             style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+          ),
+          const SizedBox(height: 16),
+          OutlinedButton.icon(
+            onPressed: onManageTap,
+            icon: const Icon(Icons.open_in_new_rounded, size: 16),
+            label: Text(loc.premiumManage),
+            style: OutlinedButton.styleFrom(
+              foregroundColor: _amber,
+              side: const BorderSide(color: _amber),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10),
+              ),
+            ),
           ),
         ],
       ),

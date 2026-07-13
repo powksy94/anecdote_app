@@ -1269,6 +1269,84 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Let\'s go!'**
   String get onboardingOverlayGotIt;
+
+  /// No description provided for @premiumTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Daily Facts Premium'**
+  String get premiumTitle;
+
+  /// No description provided for @premiumSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Unlock the full experience'**
+  String get premiumSubtitle;
+
+  /// No description provided for @premiumBenefitFavorites.
+  ///
+  /// In en, this message translates to:
+  /// **'Unlimited favorites, synced across all your devices'**
+  String get premiumBenefitFavorites;
+
+  /// No description provided for @premiumBenefitAds.
+  ///
+  /// In en, this message translates to:
+  /// **'Ad-free experience'**
+  String get premiumBenefitAds;
+
+  /// No description provided for @premiumBenefitContent.
+  ///
+  /// In en, this message translates to:
+  /// **'Priority access to new categories'**
+  String get premiumBenefitContent;
+
+  /// No description provided for @premiumBestValue.
+  ///
+  /// In en, this message translates to:
+  /// **'Best value'**
+  String get premiumBestValue;
+
+  /// No description provided for @premiumCta.
+  ///
+  /// In en, this message translates to:
+  /// **'Subscribe now'**
+  String get premiumCta;
+
+  /// No description provided for @premiumRestore.
+  ///
+  /// In en, this message translates to:
+  /// **'Restore purchases'**
+  String get premiumRestore;
+
+  /// No description provided for @premiumRestoreSuccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Subscription restored successfully!'**
+  String get premiumRestoreSuccess;
+
+  /// No description provided for @premiumRestoreEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'No purchases to restore.'**
+  String get premiumRestoreEmpty;
+
+  /// No description provided for @premiumActive.
+  ///
+  /// In en, this message translates to:
+  /// **'Active subscription'**
+  String get premiumActive;
+
+  /// No description provided for @premiumErrorLoading.
+  ///
+  /// In en, this message translates to:
+  /// **'Unable to load offers'**
+  String get premiumErrorLoading;
+
+  /// No description provided for @premiumManage.
+  ///
+  /// In en, this message translates to:
+  /// **'Manage subscription'**
+  String get premiumManage;
 }
 
 class _AppLocalizationsDelegate

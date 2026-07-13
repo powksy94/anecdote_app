@@ -616,4 +616,44 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get onboardingOverlayGotIt => 'Let\'s go!';
+
+  @override
+  String get premiumTitle => 'Daily Facts Premium';
+
+  @override
+  String get premiumSubtitle => 'Unlock the full experience';
+
+  @override
+  String get premiumBenefitFavorites =>
+      'Unlimited favorites, synced across all your devices';
+
+  @override
+  String get premiumBenefitAds => 'Ad-free experience';
+
+  @override
+  String get premiumBenefitContent => 'Priority access to new categories';
+
+  @override
+  String get premiumBestValue => 'Best value';
+
+  @override
+  String get premiumCta => 'Subscribe now';
+
+  @override
+  String get premiumRestore => 'Restore purchases';
+
+  @override
+  String get premiumRestoreSuccess => 'Subscription restored successfully!';
+
+  @override
+  String get premiumRestoreEmpty => 'No purchases to restore.';
+
+  @override
+  String get premiumActive => 'Active subscription';
+
+  @override
+  String get premiumErrorLoading => 'Unable to load offers';
+
+  @override
+  String get premiumManage => 'Manage subscription';
 }

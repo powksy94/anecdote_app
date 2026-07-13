@@ -6,8 +6,16 @@ import '../pages/login_page.dart';
 import '../services/auth_service.dart';
 import 'profile_sheet.dart';
 
-class AccountIcon extends StatelessWidget {
+class AccountIcon extends StatefulWidget {
   const AccountIcon({super.key});
+
+  @override
+  State<AccountIcon> createState() => _AccountIconState();
+}
+
+class _AccountIconState extends State<AccountIcon> {
+  // Cached once so StreamBuilder never sees a new stream object between rebuilds
+  final Stream<bool> _premiumStream = PurchaseService.premiumStream;
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +26,7 @@ class AccountIcon extends StatelessWidget {
       builder: (context, authSnapshot) {
         final user = authSnapshot.data;
         return StreamBuilder<bool>(
-          stream: PurchaseService.premiumStream,
+          stream: _premiumStream,
           initialData: false,
           builder: (context, premiumSnapshot) {
             final isPremium = premiumSnapshot.data ?? false;

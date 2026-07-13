@@ -1,4 +1,6 @@
+import 'dart:async';
 import 'package:purchases_flutter/purchases_flutter.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 const _entitlementId = 'Daily Facts Premium';
 const _androidApiKey = 'test_KXLkEEVAurdDHRhYNbAJFWkfTns';
@@ -18,13 +20,32 @@ class PurchaseService {
   }
 
   static Stream<bool> get premiumStream {
-    try {
-      return Purchases.customerInfoStream.map(
-        (info) => info.entitlements.active.containsKey(_entitlementId),
-      );
-    } catch (_) {
-      return Stream.value(false);
+    late StreamController<bool> controller;
+
+    void listener(CustomerInfo info) {
+      if (!controller.isClosed) {
+        controller.add(info.entitlements.active.containsKey(_entitlementId));
+      }
     }
+
+    controller = StreamController<bool>(
+      onListen: () async {
+        try {
+          final info = await Purchases.getCustomerInfo();
+          if (!controller.isClosed) {
+            controller.add(info.entitlements.active.containsKey(_entitlementId));
+          }
+        } catch (_) {
+          if (!controller.isClosed) controller.add(false);
+        }
+        Purchases.addCustomerInfoUpdateListener(listener);
+      },
+      onCancel: () {
+        Purchases.removeCustomerInfoUpdateListener(listener);
+      },
+    );
+
+    return controller.stream;
   }
 
   static Future<Offerings?> getOfferings() async {
@@ -51,6 +72,13 @@ class PurchaseService {
       return info.entitlements.active.containsKey(_entitlementId);
     } catch (_) {
       return false;
+    }
+  }
+
+  static Future<void> manageSubscriptions() async {
+    final uri = Uri.parse('https://play.google.com/store/account/subscriptions');
+    if (await canLaunchUrl(uri)) {
+      await launchUrl(uri, mode: LaunchMode.externalApplication);
     }
   }
 }

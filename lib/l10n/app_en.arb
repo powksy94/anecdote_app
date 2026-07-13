@@ -215,5 +215,6 @@
   "premiumRestoreSuccess": "Subscription restored successfully!",
   "premiumRestoreEmpty": "No purchases to restore.",
   "premiumActive": "Active subscription",
-  "premiumErrorLoading": "Unable to load offers"
+  "premiumErrorLoading": "Unable to load offers",
+  "premiumManage": "Manage subscription"
 }

@@ -215,5 +215,6 @@
   "premiumRestoreSuccess": "Abonnement restauré avec succès !",
   "premiumRestoreEmpty": "Aucun achat à restaurer.",
   "premiumActive": "Abonnement actif",
-  "premiumErrorLoading": "Impossible de charger les offres"
+  "premiumErrorLoading": "Impossible de charger les offres",
+  "premiumManage": "Gérer l'abonnement"
 }
