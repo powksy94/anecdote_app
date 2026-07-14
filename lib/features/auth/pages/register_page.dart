@@ -72,22 +72,24 @@ class _RegisterPageState extends State<RegisterPage> {
       return;
     }
     setState(() => _loading = true);
+    final navigator = Navigator.of(context);
     final errorCode = await _controller.createAccount(
       email: _emailCtrl.text.trim(),
       password: _passwordCtrl.text,
       displayName: _nameCtrl.text.trim(),
       categories: _selectedCategories,
     );
-    if (!mounted) return;
-    setState(() => _loading = false);
 
     if (errorCode == null) {
-      Navigator.of(context).pop();
-    } else {
-      final msg = AuthErrorMapper.fromRegisterCode(
-          AppLocalizations.of(context)!, errorCode);
-      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(msg)));
+      navigator.pop();
+      return;
     }
+
+    if (!mounted) return;
+    setState(() => _loading = false);
+    final msg = AuthErrorMapper.fromRegisterCode(
+        AppLocalizations.of(context)!, errorCode);
+    ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(msg)));
   }
 
   @override
