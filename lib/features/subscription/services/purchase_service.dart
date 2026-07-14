@@ -3,7 +3,7 @@ import 'package:purchases_flutter/purchases_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 const _entitlementId = 'Daily Facts Premium';
-const _androidApiKey = 'test_KXLkEEVAurdDHRhYNbAJFWkfTns';
+const _androidApiKey = 'goog_CVuYVLkkYWDYGqnsdwnKQPbUStf';
 
 class PurchaseService {
   static Future<void> configure() async {
