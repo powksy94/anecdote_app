@@ -40,4 +40,21 @@ void main() {
     expect(deleted, isTrue);
     expect(tapped, isFalse);
   });
+
+  testWidgets('shows the name and a details preview when details exist',
+      (tester) async {
+    final withDetails = FavoriteFact.create(
+      ContentType.dinosaur,
+      'Tyrannosaurus Rex',
+      details: 'Un des plus grands prédateurs terrestres ayant jamais existé.',
+    );
+
+    await tester.pumpWidget(_wrap(FavoriteCard(fact: withDetails, onDelete: () {})));
+
+    expect(find.text('Tyrannosaurus Rex'), findsOneWidget);
+    expect(
+      find.text('Un des plus grands prédateurs terrestres ayant jamais existé.'),
+      findsOneWidget,
+    );
+  });
 }

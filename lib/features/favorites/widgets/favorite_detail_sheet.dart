@@ -38,10 +38,22 @@ class FavoriteDetailSheet extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    SelectableText(
-                      fact.preview,
-                      style: theme.textTheme.bodyLarge,
-                    ),
+                    if (fact.details.isNotEmpty) ...[
+                      Text(
+                        fact.preview,
+                        style: theme.textTheme.titleLarge
+                            ?.copyWith(fontWeight: FontWeight.bold),
+                      ),
+                      const SizedBox(height: 12),
+                      SelectableText(
+                        fact.details,
+                        style: theme.textTheme.bodyLarge,
+                      ),
+                    ] else
+                      SelectableText(
+                        fact.preview,
+                        style: theme.textTheme.bodyLarge,
+                      ),
                     const SizedBox(height: 20),
                     Text(
                       loc.favoriteSavedOn(savedDate),

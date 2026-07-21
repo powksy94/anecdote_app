@@ -26,4 +26,27 @@ void main() {
     );
     expect(find.text('Anecdote'), findsOneWidget);
   });
+
+  testWidgets('shows both the name and the full details when details exist',
+      (tester) async {
+    final fact = FavoriteFact.create(
+      ContentType.dinosaur,
+      'Tyrannosaurus Rex',
+      details: 'Un des plus grands prédateurs terrestres ayant jamais existé.',
+    );
+
+    await tester.pumpWidget(MaterialApp(
+      locale: const Locale('fr'),
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      supportedLocales: AppLocalizations.supportedLocales,
+      home: Scaffold(body: FavoriteDetailSheet(fact: fact)),
+    ));
+    await tester.pumpAndSettle();
+
+    expect(find.text('Tyrannosaurus Rex'), findsOneWidget);
+    expect(
+      find.text('Un des plus grands prédateurs terrestres ayant jamais existé.'),
+      findsOneWidget,
+    );
+  });
 }

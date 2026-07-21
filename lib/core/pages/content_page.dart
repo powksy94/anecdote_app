@@ -81,7 +81,8 @@ class _ContentPageState extends State<ContentPage> {
   Future<void> _toggleFavorite() async {
     if (contentData == null) return;
     final newState = await _favoriteCtrl.toggle(
-        widget.contentType, contentData!.preview);
+        widget.contentType, contentData!.preview,
+        details: contentData!.hasDetails ? contentData!.details : '');
     if (!mounted) return;
     if (newState == null) {
       Navigator.push(

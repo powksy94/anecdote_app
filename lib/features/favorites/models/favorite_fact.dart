@@ -5,6 +5,7 @@ class FavoriteFact {
   final String id;
   final ContentType contentType;
   final String preview;
+  final String details;
   final DateTime savedAt;
   final String month;
 
@@ -12,6 +13,7 @@ class FavoriteFact {
     required this.id,
     required this.contentType,
     required this.preview,
+    this.details = '',
     required this.savedAt,
     required this.month,
   });
@@ -24,12 +26,14 @@ class FavoriteFact {
     return '${now.year}-${now.month.toString().padLeft(2, '0')}';
   }
 
-  factory FavoriteFact.create(ContentType type, String preview) {
+  factory FavoriteFact.create(ContentType type, String preview,
+      {String details = ''}) {
     final now = DateTime.now();
     return FavoriteFact(
       id: buildId(type, preview),
       contentType: type,
       preview: preview,
+      details: details,
       savedAt: now,
       month: _currentMonth(),
     );
@@ -43,6 +47,7 @@ class FavoriteFact {
       contentType: ContentType.values
           .firstWhere((e) => e.name == d['contentType'] as String),
       preview: d['preview'] as String,
+      details: d['details'] as String? ?? '',
       savedAt: DateTime.parse(d['savedAt'] as String),
       month: d['month'] as String,
     );
@@ -51,6 +56,7 @@ class FavoriteFact {
   Map<String, dynamic> toMap() => {
         'contentType': contentType.name,
         'preview': preview,
+        'details': details,
         'savedAt': savedAt.toIso8601String(),
         'month': month,
       };
