@@ -673,4 +673,8 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get settingsNotificationsSubtitle =>
       'Receive alerts about new content and news';
+
+  @override
+  String get settingsOpenSystemSettings =>
+      'Open phone settings to fully block notifications';
 }

@@ -1,3 +1,4 @@
+import 'package:app_settings/app_settings.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import '../../../generated/app_localizations.dart';
@@ -45,12 +46,28 @@ class _SettingsNotificationTileState extends State<SettingsNotificationTile> {
   @override
   Widget build(BuildContext context) {
     final loc = AppLocalizations.of(context)!;
-    return SwitchListTile(
-      secondary: const Icon(Icons.notifications_rounded),
-      title: Text(loc.settingsNotificationsTitle),
-      subtitle: Text(loc.settingsNotificationsSubtitle),
-      value: _enabled,
-      onChanged: _loaded ? _onChanged : null,
+    return Column(
+      children: [
+        SwitchListTile(
+          secondary: const Icon(Icons.notifications_rounded),
+          title: Text(loc.settingsNotificationsTitle),
+          subtitle: Text(loc.settingsNotificationsSubtitle),
+          value: _enabled,
+          onChanged: _loaded ? _onChanged : null,
+        ),
+        if (_loaded && !_enabled)
+          ListTile(
+            leading: const SizedBox(width: 24),
+            title: Text(
+              loc.settingsOpenSystemSettings,
+              style: Theme.of(context).textTheme.bodySmall,
+            ),
+            trailing: const Icon(Icons.open_in_new_rounded, size: 16),
+            onTap: () => AppSettings.openAppSettings(
+              type: AppSettingsType.notification,
+            ),
+          ),
+      ],
     );
   }
 }

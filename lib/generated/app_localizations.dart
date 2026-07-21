@@ -1377,6 +1377,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Receive alerts about new content and news'**
   String get settingsNotificationsSubtitle;
+
+  /// No description provided for @settingsOpenSystemSettings.
+  ///
+  /// In en, this message translates to:
+  /// **'Open phone settings to fully block notifications'**
+  String get settingsOpenSystemSettings;
 }
 
 class _AppLocalizationsDelegate

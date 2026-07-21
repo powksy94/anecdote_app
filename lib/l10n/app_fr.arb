@@ -221,5 +221,6 @@
   "settingsSoundTitle": "Sons",
   "settingsSoundSubtitle": "Jouer un son lors des évènements de l'app (mises à jour, célébrations)",
   "settingsNotificationsTitle": "Notifications",
-  "settingsNotificationsSubtitle": "Recevoir des alertes sur le nouveau contenu et les actualités"
+  "settingsNotificationsSubtitle": "Recevoir des alertes sur le nouveau contenu et les actualités",
+  "settingsOpenSystemSettings": "Ouvrir les réglages du téléphone pour bloquer complètement les notifications"
 }

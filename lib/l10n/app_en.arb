@@ -221,5 +221,6 @@
   "settingsSoundTitle": "Sounds",
   "settingsSoundSubtitle": "Play a sound during in-app events (updates, celebrations)",
   "settingsNotificationsTitle": "Notifications",
-  "settingsNotificationsSubtitle": "Receive alerts about new content and news"
+  "settingsNotificationsSubtitle": "Receive alerts about new content and news",
+  "settingsOpenSystemSettings": "Open phone settings to fully block notifications"
 }
