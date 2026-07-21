@@ -661,4 +661,21 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get premiumManage => 'Gestionar suscripción';
+
+  @override
+  String get settingsTitle => 'Ajustes';
+
+  @override
+  String get settingsSoundTitle => 'Sonidos';
+
+  @override
+  String get settingsSoundSubtitle =>
+      'Reproducir un sonido durante los eventos de la app (actualizaciones, celebraciones)';
+
+  @override
+  String get settingsNotificationsTitle => 'Notificaciones';
+
+  @override
+  String get settingsNotificationsSubtitle =>
+      'Recibir alertas sobre nuevo contenido y novedades';
 }

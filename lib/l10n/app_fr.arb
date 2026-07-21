@@ -216,5 +216,10 @@
   "premiumRestoreEmpty": "Aucun achat à restaurer.",
   "premiumActive": "Abonnement actif",
   "premiumErrorLoading": "Impossible de charger les offres",
-  "premiumManage": "Gérer l'abonnement"
+  "premiumManage": "Gérer l'abonnement",
+  "settingsTitle": "Réglages",
+  "settingsSoundTitle": "Sons",
+  "settingsSoundSubtitle": "Jouer un son lors des évènements de l'app (mises à jour, célébrations)",
+  "settingsNotificationsTitle": "Notifications",
+  "settingsNotificationsSubtitle": "Recevoir des alertes sur le nouveau contenu et les actualités"
 }

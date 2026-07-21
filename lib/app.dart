@@ -1,6 +1,7 @@
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import './core/navigation/root_gate.dart';
+import './features/settings/services/notification_preference_service.dart';
 import './generated/app_localizations.dart';
 
 final navigatorKey = GlobalKey<NavigatorState>();
@@ -25,9 +26,10 @@ class _AnecdoteAppState extends State<AnecdoteApp> {
   Future<void> _initFCM() async {
     // Foreground: l'OS Android n'affiche pas les notifs automatiquement
     // quand l'app est ouverte → on affiche un SnackBar
-    FirebaseMessaging.onMessage.listen((RemoteMessage message) {
+    FirebaseMessaging.onMessage.listen((RemoteMessage message) async {
       final notification = message.notification;
       if (notification == null) return;
+      if (!await NotificationPreferenceService().isEnabled()) return;
       scaffoldMessengerKey.currentState?.showSnackBar(
         SnackBar(
           content: Column(

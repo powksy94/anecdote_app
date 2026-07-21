@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import './app.dart';
+import 'features/settings/services/notification_preference_service.dart';
 import 'features/subscription/services/purchase_service.dart';
 
 // Must be a top-level function, outside any class
@@ -27,12 +28,14 @@ void main() async {
   // Register background handler before the app starts
   FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
 
-  // Request notification permission (Android 13+, iOS)
-  await FirebaseMessaging.instance.requestPermission(
-    alert: true,
-    badge: true,
-    sound: true,
-  );
+  // Request notification permission (Android 13+, iOS) — sauf si l'utilisateur les a désactivées
+  if (await NotificationPreferenceService().isEnabled()) {
+    await FirebaseMessaging.instance.requestPermission(
+      alert: true,
+      badge: true,
+      sound: true,
+    );
+  }
 
   await PurchaseService.configure();
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);

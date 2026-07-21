@@ -3,6 +3,7 @@ import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../../../generated/app_localizations.dart';
+import '../../settings/services/sound_preference_service.dart';
 import '../services/version_check_service.dart';
 import 'update_popup_celebration_view.dart';
 import 'update_popup_controllers.dart';
@@ -31,6 +32,13 @@ class _UpdatePopupState extends State<UpdatePopup> with TickerProviderStateMixin
   late final UpdatePopupControllers _ctrl;
   bool _isUpdating = false;
   final AudioPlayer _audioPlayer = AudioPlayer();
+  final _soundPreference = SoundPreferenceService();
+
+  Future<void> _playSound(String asset) async {
+    if (await _soundPreference.isEnabled()) {
+      await _audioPlayer.play(AssetSource(asset));
+    }
+  }
 
   @override
   void initState() {
@@ -56,7 +64,7 @@ class _UpdatePopupState extends State<UpdatePopup> with TickerProviderStateMixin
     if (!mounted || _isUpdating) return;
 
     // Son de grésillage + 3 flashs rapides (80 ms aller + 80 ms retour)
-    await _audioPlayer.play(AssetSource('sounds/light-bulb-crackeling.mp3'));
+    await _playSound('sounds/light-bulb-crackeling.mp3');
     for (int i = 0; i < 3; i++) {
       await _ctrl.flicker.forward();
       await _ctrl.flicker.reverse();
@@ -69,7 +77,7 @@ class _UpdatePopupState extends State<UpdatePopup> with TickerProviderStateMixin
     if (!mounted) return;
 
     // Son d'éclatement + hub éteint brutalement + éclats (simultanés)
-    unawaited(_audioPlayer.play(AssetSource('sounds/ampoule-qui-eclate.ogg')));
+    unawaited(_playSound('sounds/ampoule-qui-eclate.ogg'));
     _ctrl.fogIn.forward();
     _ctrl.burst.forward();
     _ctrl.flicker.reverse(); // l'ampoule meurt pendant que le noir tombe
@@ -115,7 +123,7 @@ class _UpdatePopupState extends State<UpdatePopup> with TickerProviderStateMixin
     _ctrl.light.forward();
     await Future.delayed(const Duration(milliseconds: 180));
     if (!mounted) return;
-    unawaited(_audioPlayer.play(AssetSource('sounds/lightning.mp3')));
+    unawaited(_playSound('sounds/lightning.mp3'));
     _ctrl.clear.forward(); // repousse les volutes au moment du burst
     await _ctrl.halo.forward();
 

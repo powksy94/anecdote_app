@@ -216,5 +216,10 @@
   "premiumRestoreEmpty": "No hay compras para restaurar.",
   "premiumActive": "Suscripción activa",
   "premiumErrorLoading": "No se pueden cargar las ofertas",
-  "premiumManage": "Gestionar suscripción"
+  "premiumManage": "Gestionar suscripción",
+  "settingsTitle": "Ajustes",
+  "settingsSoundTitle": "Sonidos",
+  "settingsSoundSubtitle": "Reproducir un sonido durante los eventos de la app (actualizaciones, celebraciones)",
+  "settingsNotificationsTitle": "Notificaciones",
+  "settingsNotificationsSubtitle": "Recibir alertas sobre nuevo contenido y novedades"
 }

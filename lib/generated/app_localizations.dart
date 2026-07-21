@@ -1347,6 +1347,36 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Manage subscription'**
   String get premiumManage;
+
+  /// No description provided for @settingsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Settings'**
+  String get settingsTitle;
+
+  /// No description provided for @settingsSoundTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Sounds'**
+  String get settingsSoundTitle;
+
+  /// No description provided for @settingsSoundSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Play a sound during in-app events (updates, celebrations)'**
+  String get settingsSoundSubtitle;
+
+  /// No description provided for @settingsNotificationsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Notifications'**
+  String get settingsNotificationsTitle;
+
+  /// No description provided for @settingsNotificationsSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Receive alerts about new content and news'**
+  String get settingsNotificationsSubtitle;
 }
 
 class _AppLocalizationsDelegate

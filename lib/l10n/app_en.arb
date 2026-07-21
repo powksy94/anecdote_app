@@ -216,5 +216,10 @@
   "premiumRestoreEmpty": "No purchases to restore.",
   "premiumActive": "Active subscription",
   "premiumErrorLoading": "Unable to load offers",
-  "premiumManage": "Manage subscription"
+  "premiumManage": "Manage subscription",
+  "settingsTitle": "Settings",
+  "settingsSoundTitle": "Sounds",
+  "settingsSoundSubtitle": "Play a sound during in-app events (updates, celebrations)",
+  "settingsNotificationsTitle": "Notifications",
+  "settingsNotificationsSubtitle": "Receive alerts about new content and news"
 }

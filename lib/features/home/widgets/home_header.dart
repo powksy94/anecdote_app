@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../features/auth/widgets/account_icon.dart';
+import '../../../features/settings/widgets/settings_icon_button.dart';
 import '../../../generated/app_localizations.dart';
 
 class HomeHeader extends StatefulWidget {
@@ -124,11 +125,18 @@ class _HomeHeaderState extends State<HomeHeader> with SingleTickerProviderStateM
             ],
           ),
         ),
-        // AccountIcon en dernier → au-dessus de tout
+        // AccountIcon + SettingsIconButton en dernier → au-dessus de tout
         Positioned(
-          top: 36,
-          right: 16,
-          child: const AccountIcon(),
+          top: 28,
+          right: 8,
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: const [
+              SettingsIconButton(),
+              SizedBox(width: 4),
+              AccountIcon(),
+            ],
+          ),
         ),
       ],
     );
