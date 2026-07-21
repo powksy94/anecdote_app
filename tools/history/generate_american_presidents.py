@@ -6,6 +6,10 @@ sys.stdout.reconfigure(encoding="utf-8")
 presidents = [
     # ── PRÉSIDENTS À MANDAT UNIQUE ─────────────────────────────────────────
     {"n":"John Adams","nu":2,"mn":None,"ts":1797,"te":1801,"pa":"Federalist","st":"Massachusetts","vp":"Thomas Jefferson","fa":"First vice president to become president, avoided war with France"},
+    {"n":"John Quincy Adams","nu":6,"mn":None,"ts":1825,"te":1829,"pa":"Democratic-Republican","st":"Massachusetts","vp":"John C. Calhoun","fa":"Son of a president, won a contested election decided by the House, championed infrastructure and science"},
+    {"n":"Martin Van Buren","nu":8,"mn":None,"ts":1837,"te":1841,"pa":"Democratic","st":"New York","vp":"Richard Mentor Johnson","fa":"Presidency defined by the Panic of 1837, opposed the annexation of Texas to avoid war with Mexico"},
+    {"n":"William Henry Harrison","nu":9,"mn":None,"ts":1841,"te":1841,"pa":"Whig","st":"Ohio","vp":"John Tyler","fa":"Shortest presidency in US history — died 31 days after the longest inaugural address ever given"},
+    {"n":"John Tyler","nu":10,"mn":None,"ts":1841,"te":1845,"pa":"Whig (expelled) / Independent","st":"Virginia","vp":"None","fa":"First VP to become president after a death in office, set the succession precedent, annexed Texas"},
     {"n":"James K. Polk","nu":11,"mn":None,"ts":1845,"te":1849,"pa":"Democratic","st":"Tennessee","vp":"George M. Dallas","fa":"Expanded US to Pacific, acquired California and Southwest from Mexico"},
     {"n":"Zachary Taylor","nu":12,"mn":None,"ts":1849,"te":1850,"pa":"Whig","st":"Louisiana","vp":"Millard Fillmore","fa":"War hero of Mexican-American War, died 16 months into term"},
     {"n":"Millard Fillmore","nu":13,"mn":None,"ts":1850,"te":1853,"pa":"Whig","st":"New York","vp":"None","fa":"Signed Compromise of 1850, sent Perry to open Japan"},
