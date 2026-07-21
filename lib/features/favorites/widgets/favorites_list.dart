@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../models/favorite_fact.dart';
 import '../services/favorites_service.dart';
 import 'favorite_card.dart';
+import 'favorite_detail_sheet.dart';
 import 'favorites_empty_state.dart';
 
 class FavoritesList extends StatelessWidget {
@@ -21,9 +22,16 @@ class FavoritesList extends StatelessWidget {
     return ListView.builder(
       itemCount: facts.length,
       padding: const EdgeInsets.only(bottom: 24),
-      itemBuilder: (_, i) => FavoriteCard(
+      itemBuilder: (context, i) => FavoriteCard(
         fact: facts[i],
         onDelete: () => FavoritesService(uid).toggle(facts[i]),
+        onTap: () => showModalBottomSheet(
+          context: context,
+          isScrollControlled: true,
+          useSafeArea: true,
+          backgroundColor: Colors.transparent,
+          builder: (_) => FavoriteDetailSheet(fact: facts[i]),
+        ),
       ),
     );
   }

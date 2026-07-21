@@ -222,5 +222,7 @@
   "settingsSoundSubtitle": "Play a sound during in-app events (updates, celebrations)",
   "settingsNotificationsTitle": "Notifications",
   "settingsNotificationsSubtitle": "Receive alerts about new content and news",
-  "settingsOpenSystemSettings": "Open phone settings to fully block notifications"
+  "settingsOpenSystemSettings": "Open phone settings to fully block notifications",
+  "favoriteSavedOn": "Saved on {date}",
+  "@favoriteSavedOn": { "placeholders": { "date": { "type": "String" } } }
 }

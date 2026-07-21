@@ -1383,6 +1383,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Open phone settings to fully block notifications'**
   String get settingsOpenSystemSettings;
+
+  /// No description provided for @favoriteSavedOn.
+  ///
+  /// In en, this message translates to:
+  /// **'Saved on {date}'**
+  String favoriteSavedOn(String date);
 }
 
 class _AppLocalizationsDelegate
