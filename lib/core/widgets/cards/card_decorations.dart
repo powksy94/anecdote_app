@@ -144,5 +144,17 @@ Widget buildCardDecoration(ContentType type) {
       return _singleIcon(Icons.block_rounded, iconSize: 16);
     case ContentType.gamingLegend:
       return _doubleIcon(Icons.military_tech_rounded, Icons.sports_esports_rounded);
+    case ContentType.musicHub:
+      return _doubleIcon(Icons.library_music_rounded, Icons.queue_music_rounded);
+    case ContentType.musicLegend:
+      return _singleIcon(Icons.mic_rounded, iconSize: 16);
+    case ContentType.album:
+      return _singleIcon(Icons.album_rounded, iconSize: 16);
+    case ContentType.instrument:
+      return _singleIcon(Icons.piano_rounded, iconSize: 16);
+    case ContentType.musicFestival:
+      return _doubleIcon(Icons.festival_rounded, Icons.celebration_rounded);
+    case ContentType.musicAward:
+      return _doubleIcon(Icons.emoji_events_rounded, Icons.music_note_rounded);
   }
 }

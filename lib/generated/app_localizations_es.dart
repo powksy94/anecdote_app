@@ -687,4 +687,22 @@ class AppLocalizationsEs extends AppLocalizations {
   String favoriteSavedOn(String date) {
     return 'Guardado el $date';
   }
+
+  @override
+  String get categoryMusicHub => 'Música';
+
+  @override
+  String get categoryMusicLegend => 'Leyendas de la música';
+
+  @override
+  String get categoryAlbum => 'Álbumes icónicos';
+
+  @override
+  String get categoryInstrument => 'Instrumentos';
+
+  @override
+  String get categoryMusicFestival => 'Festivales de música';
+
+  @override
+  String get categoryMusicAward => 'Premios musicales';
 }

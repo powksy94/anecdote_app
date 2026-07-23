@@ -49,6 +49,11 @@ extension ContentTypeFlags on ContentType {
     ContentType.gamingNomination,
     ContentType.worstGame,
     ContentType.bannedGame,
+    ContentType.musicLegend,
+    ContentType.album,
+    ContentType.instrument,
+    ContentType.musicFestival,
+    ContentType.musicAward,
   };
 
   // Game/person names in preview should NOT be translated
@@ -58,6 +63,10 @@ extension ContentTypeFlags on ContentType {
     ContentType.bannedGame,
     ContentType.gamingNomination,
     ContentType.gamingLegend,
+    ContentType.musicLegend,
+    ContentType.album,
+    ContentType.musicFestival,
+    ContentType.musicAward,
   };
 
   bool get isGeoType => _geoTypes.contains(this);

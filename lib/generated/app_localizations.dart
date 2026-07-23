@@ -1389,6 +1389,42 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Saved on {date}'**
   String favoriteSavedOn(String date);
+
+  /// No description provided for @categoryMusicHub.
+  ///
+  /// In en, this message translates to:
+  /// **'Music'**
+  String get categoryMusicHub;
+
+  /// No description provided for @categoryMusicLegend.
+  ///
+  /// In en, this message translates to:
+  /// **'Music Legends'**
+  String get categoryMusicLegend;
+
+  /// No description provided for @categoryAlbum.
+  ///
+  /// In en, this message translates to:
+  /// **'Iconic Albums'**
+  String get categoryAlbum;
+
+  /// No description provided for @categoryInstrument.
+  ///
+  /// In en, this message translates to:
+  /// **'Instruments'**
+  String get categoryInstrument;
+
+  /// No description provided for @categoryMusicFestival.
+  ///
+  /// In en, this message translates to:
+  /// **'Music Festivals'**
+  String get categoryMusicFestival;
+
+  /// No description provided for @categoryMusicAward.
+  ///
+  /// In en, this message translates to:
+  /// **'Music Awards'**
+  String get categoryMusicAward;
 }
 
 class _AppLocalizationsDelegate

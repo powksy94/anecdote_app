@@ -75,4 +75,10 @@ enum ContentType {
   worstGame,
   bannedGame,
   gamingLegend,
+  musicHub,
+  musicLegend,
+  album,
+  instrument,
+  musicFestival,
+  musicAward,
 }

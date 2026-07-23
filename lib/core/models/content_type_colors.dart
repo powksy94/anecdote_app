@@ -68,6 +68,12 @@ extension ContentTypeColors on ContentType {
       case ContentType.worstGame:           return const Color(0xFFDC2626);
       case ContentType.bannedGame:          return const Color(0xFFB91C1C);
       case ContentType.gamingLegend:        return const Color(0xFF66C0F4);
+      case ContentType.musicHub:            return const Color(0xFF6A0DAD);
+      case ContentType.musicLegend:         return const Color(0xFF232526);
+      case ContentType.album:               return const Color(0xFF232526);
+      case ContentType.instrument:          return const Color(0xFF8E2DE2);
+      case ContentType.musicFestival:       return const Color(0xFFFF512F);
+      case ContentType.musicAward:          return const Color(0xFFB8860B);
     }
   }
 }

@@ -224,5 +224,11 @@
   "settingsNotificationsSubtitle": "Recevoir des alertes sur le nouveau contenu et les actualités",
   "settingsOpenSystemSettings": "Ouvrir les réglages du téléphone pour bloquer complètement les notifications",
   "favoriteSavedOn": "Sauvegardé le {date}",
-  "@favoriteSavedOn": { "placeholders": { "date": { "type": "String" } } }
+  "@favoriteSavedOn": { "placeholders": { "date": { "type": "String" } } },
+  "categoryMusicHub": "Musique",
+  "categoryMusicLegend": "Légendes de la musique",
+  "categoryAlbum": "Albums cultes",
+  "categoryInstrument": "Instruments",
+  "categoryMusicFestival": "Festivals de musique",
+  "categoryMusicAward": "Récompenses musicales"
 }

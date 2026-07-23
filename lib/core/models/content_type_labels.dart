@@ -68,6 +68,12 @@ extension ContentTypeLabels on ContentType {
       case ContentType.worstGame:          return 'Worst Games';
       case ContentType.bannedGame:         return 'Banned Games';
       case ContentType.gamingLegend:       return 'Gaming Legends';
+      case ContentType.musicHub:           return 'Music';
+      case ContentType.musicLegend:        return 'Music Legends';
+      case ContentType.album:              return 'Iconic Albums';
+      case ContentType.instrument:         return 'Instruments';
+      case ContentType.musicFestival:      return 'Music Festivals';
+      case ContentType.musicAward:         return 'Music Awards';
     }
   }
 
@@ -138,6 +144,12 @@ extension ContentTypeLabels on ContentType {
       case ContentType.worstGame:          return loc.categoryWorstGame;
       case ContentType.bannedGame:         return loc.categoryBannedGame;
       case ContentType.gamingLegend:       return loc.categoryGamingLegend;
+      case ContentType.musicHub:           return loc.categoryMusicHub;
+      case ContentType.musicLegend:        return loc.categoryMusicLegend;
+      case ContentType.album:              return loc.categoryAlbum;
+      case ContentType.instrument:         return loc.categoryInstrument;
+      case ContentType.musicFestival:      return loc.categoryMusicFestival;
+      case ContentType.musicAward:         return loc.categoryMusicAward;
     }
   }
 }

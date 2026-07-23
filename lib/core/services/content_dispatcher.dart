@@ -41,6 +41,11 @@ import '../../features/gaming/services/classic_game_service.dart';
 import '../../features/gaming/services/worst_game_service.dart';
 import '../../features/gaming/services/banned_game_service.dart';
 import '../../features/gaming/services/gaming_legend_service.dart';
+import '../../features/music/services/music_legend_service.dart';
+import '../../features/music/services/album_service.dart';
+import '../../features/music/services/instrument_service.dart';
+import '../../features/music/services/music_festival_service.dart';
+import '../../features/music/services/music_award_service.dart';
 
 Future<ContentData> fetchDailyContent(
   ContentType type, {
@@ -98,6 +103,12 @@ Future<ContentData> fetchDailyContent(
     case ContentType.worstGame:          return WorstGameService().getDailyContent();
     case ContentType.bannedGame:         return BannedGameService().getDailyContent();
     case ContentType.gamingLegend:       return GamingLegendService().getDailyContent();
+    // ── Music ──────────────────────────────────────────────────────────────
+    case ContentType.musicLegend:        return MusicLegendService().getDailyContent();
+    case ContentType.album:              return AlbumService().getDailyContent();
+    case ContentType.instrument:         return InstrumentService().getDailyContent();
+    case ContentType.musicFestival:      return MusicFestivalService().getDailyContent();
+    case ContentType.musicAward:         return MusicAwardService().getDailyContent();
     // ── API-ninjas / HTTP ──────────────────────────────────────────────────
     default:                             return apiService.fetchRemoteContent(type);
   }

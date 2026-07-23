@@ -133,6 +133,18 @@ extension ContentTypeGradients on ContentType {
         return [const Color(0xFF3B0000), const Color(0xFFB91C1C)];
       case ContentType.gamingLegend:
         return [const Color(0xFF1B2838), const Color(0xFF66C0F4)];
+      case ContentType.musicHub:
+        return [const Color(0xFF6A0DAD), const Color(0xFFFF1493)];
+      case ContentType.musicLegend:
+        return [const Color(0xFF232526), const Color(0xFFE94057)];
+      case ContentType.album:
+        return [const Color(0xFF232526), const Color(0xFF414345)];
+      case ContentType.instrument:
+        return [const Color(0xFF8E2DE2), const Color(0xFF4A00E0)];
+      case ContentType.musicFestival:
+        return [const Color(0xFFFF512F), const Color(0xFFF09819)];
+      case ContentType.musicAward:
+        return [const Color(0xFFB8860B), const Color(0xFFFFD700)];
     }
   }
 }

@@ -73,6 +73,12 @@ extension ContentTypeApi on ContentType {
       case ContentType.worstGame:
       case ContentType.bannedGame:
       case ContentType.gamingLegend:
+      case ContentType.musicHub:
+      case ContentType.musicLegend:
+      case ContentType.album:
+      case ContentType.instrument:
+      case ContentType.musicFestival:
+      case ContentType.musicAward:
         return '';
     }
   }

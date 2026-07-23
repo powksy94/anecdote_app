@@ -68,6 +68,12 @@ extension ContentTypeIcons on ContentType {
       case ContentType.worstGame:           return Icons.thumb_down_rounded;
       case ContentType.bannedGame:          return Icons.block_rounded;
       case ContentType.gamingLegend:        return Icons.military_tech_rounded;
+      case ContentType.musicHub:            return Icons.library_music_rounded;
+      case ContentType.musicLegend:         return Icons.mic_rounded;
+      case ContentType.album:               return Icons.album_rounded;
+      case ContentType.instrument:          return Icons.piano_rounded;
+      case ContentType.musicFestival:       return Icons.festival_rounded;
+      case ContentType.musicAward:          return Icons.emoji_events_rounded;
     }
   }
 }
