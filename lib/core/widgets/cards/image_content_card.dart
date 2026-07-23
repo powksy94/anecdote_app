@@ -43,6 +43,9 @@ class _ImageContentCardState extends State<ImageContentCard> {
     ContentType.legendaryAthlete,
     ContentType.gamingLegend,
     ContentType.musicLegend,
+    ContentType.greekMythology,
+    ContentType.norseMythology,
+    ContentType.egyptianMythology,
   };
 
   static const _copyrightTypes = {
@@ -77,6 +80,24 @@ class _ImageContentCardState extends State<ImageContentCard> {
       case ContentType.insect:
         // Toujours disponible : l'URL Wikipedia peut échouer silencieusement
         return loc.noImageGeneric;
+      case ContentType.musicLegend:
+        return widget.contentData?.noImageMessage != null ? loc.noImageMusicLegend : null;
+      case ContentType.album:
+        return widget.contentData?.noImageMessage != null ? loc.noImageAlbum : null;
+      case ContentType.instrument:
+        return widget.contentData?.noImageMessage != null ? loc.noImageInstrument : null;
+      case ContentType.musicFestival:
+        return widget.contentData?.noImageMessage != null ? loc.noImageMusicFestival : null;
+      case ContentType.musicAward:
+        return widget.contentData?.noImageMessage != null ? loc.noImageMusicAward : null;
+      case ContentType.greekMythology:
+        return widget.contentData?.noImageMessage != null ? loc.noImageGreekMythology : null;
+      case ContentType.norseMythology:
+        return widget.contentData?.noImageMessage != null ? loc.noImageNorseMythology : null;
+      case ContentType.egyptianMythology:
+        return widget.contentData?.noImageMessage != null ? loc.noImageEgyptianMythology : null;
+      case ContentType.mythologicalCreature:
+        return widget.contentData?.noImageMessage != null ? loc.noImageMythologicalCreature : null;
       default:
         return widget.contentData?.noImageMessage != null ? loc.noImageGeneric : null;
     }
@@ -108,6 +129,7 @@ class _ImageContentCardState extends State<ImageContentCard> {
     ContentType.sea,
     ContentType.album,
     ContentType.instrument,
+    ContentType.mythologicalCreature,
   };
 
   Alignment get _imageAlignment => _personTypes.contains(widget.contentType)

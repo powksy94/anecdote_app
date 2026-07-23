@@ -81,4 +81,9 @@ enum ContentType {
   instrument,
   musicFestival,
   musicAward,
+  mythologyHub,
+  greekMythology,
+  norseMythology,
+  egyptianMythology,
+  mythologicalCreature,
 }

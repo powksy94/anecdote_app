@@ -79,6 +79,11 @@ extension ContentTypeApi on ContentType {
       case ContentType.instrument:
       case ContentType.musicFestival:
       case ContentType.musicAward:
+      case ContentType.mythologyHub:
+      case ContentType.greekMythology:
+      case ContentType.norseMythology:
+      case ContentType.egyptianMythology:
+      case ContentType.mythologicalCreature:
         return '';
     }
   }

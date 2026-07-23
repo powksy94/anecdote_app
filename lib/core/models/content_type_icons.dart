@@ -74,6 +74,11 @@ extension ContentTypeIcons on ContentType {
       case ContentType.instrument:          return Icons.piano_rounded;
       case ContentType.musicFestival:       return Icons.festival_rounded;
       case ContentType.musicAward:          return Icons.emoji_events_rounded;
+      case ContentType.mythologyHub:        return Icons.auto_awesome_rounded;
+      case ContentType.greekMythology:      return Icons.account_balance_rounded;
+      case ContentType.norseMythology:      return Icons.ac_unit_rounded;
+      case ContentType.egyptianMythology:   return Icons.change_history_rounded;
+      case ContentType.mythologicalCreature: return Icons.whatshot_rounded;
     }
   }
 }

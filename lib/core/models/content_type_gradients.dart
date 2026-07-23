@@ -145,6 +145,16 @@ extension ContentTypeGradients on ContentType {
         return [const Color(0xFFFF512F), const Color(0xFFF09819)];
       case ContentType.musicAward:
         return [const Color(0xFFB8860B), const Color(0xFFFFD700)];
+      case ContentType.mythologyHub:
+        return [const Color(0xFF2C3E50), const Color(0xFF4A00E0)];
+      case ContentType.greekMythology:
+        return [const Color(0xFF1E3C72), const Color(0xFF2A5298)];
+      case ContentType.norseMythology:
+        return [const Color(0xFF0F2027), const Color(0xFF2C5364)];
+      case ContentType.egyptianMythology:
+        return [const Color(0xFFC9A227), const Color(0xFF8B5A2B)];
+      case ContentType.mythologicalCreature:
+        return [const Color(0xFF3A1C71), const Color(0xFFD76D77)];
     }
   }
 }

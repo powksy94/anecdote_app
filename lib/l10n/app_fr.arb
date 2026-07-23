@@ -230,5 +230,19 @@
   "categoryAlbum": "Albums cultes",
   "categoryInstrument": "Instruments",
   "categoryMusicFestival": "Festivals de musique",
-  "categoryMusicAward": "Récompenses musicales"
+  "categoryMusicAward": "Récompenses musicales",
+  "categoryMythologyHub": "Mythologie",
+  "categoryGreekMythology": "Mythologie grecque et romaine",
+  "categoryNorseMythology": "Mythologie nordique",
+  "categoryEgyptianMythology": "Mythologie égyptienne",
+  "categoryMythologicalCreature": "Créatures mythologiques",
+  "noImageMusicLegend": "Aucun portrait disponible pour cet artiste",
+  "noImageAlbum": "Aucune pochette disponible pour cet album",
+  "noImageInstrument": "Aucune image disponible pour cet instrument",
+  "noImageMusicFestival": "Aucune image disponible pour ce festival",
+  "noImageMusicAward": "Aucune image disponible pour cette récompense",
+  "noImageGreekMythology": "Aucune image disponible pour cette figure",
+  "noImageNorseMythology": "Aucune image disponible pour cette figure",
+  "noImageEgyptianMythology": "Aucune image disponible pour cette figure",
+  "noImageMythologicalCreature": "Aucune image disponible pour cette créature"
 }

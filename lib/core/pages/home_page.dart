@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import './content_page.dart';
 import '../../features/music/pages/music_hub_page.dart';
+import '../../features/mythology/pages/mythology_hub_page.dart';
 import '../../features/world/pages/world_navigator.dart';
 import '../../features/space/pages/space_page.dart';
 import '../../features/history/pages/history_hub_page.dart';
@@ -38,6 +39,7 @@ class _HomePageState extends State<HomePage> {
     ContentType.space,
     ContentType.gamingHub,
     ContentType.musicHub,
+    ContentType.mythologyHub,
   ];
 
   final AdService _adService = AdService();
@@ -107,7 +109,7 @@ class _HomePageState extends State<HomePage> {
     }
     if (type == ContentType.space ||
         type == ContentType.historyHub || type == ContentType.cinemaHub ||
-        type == ContentType.musicHub) {
+        type == ContentType.musicHub || type == ContentType.mythologyHub) {
       Navigator.push(
         context,
         PageRouteBuilder(
@@ -115,6 +117,7 @@ class _HomePageState extends State<HomePage> {
             if (type == ContentType.space) return SpacePage(adService: _adService);
             if (type == ContentType.historyHub) return HistoryHubPage(adService: _adService);
             if (type == ContentType.musicHub) return MusicHubPage(adService: _adService);
+            if (type == ContentType.mythologyHub) return MythologyHubPage(adService: _adService);
             return CinemaHubPage(adService: _adService);
           },
           transitionsBuilder: (_, animation, __, child) =>

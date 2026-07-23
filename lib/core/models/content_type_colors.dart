@@ -74,6 +74,11 @@ extension ContentTypeColors on ContentType {
       case ContentType.instrument:          return const Color(0xFF8E2DE2);
       case ContentType.musicFestival:       return const Color(0xFFFF512F);
       case ContentType.musicAward:          return const Color(0xFFB8860B);
+      case ContentType.mythologyHub:        return const Color(0xFF2C3E50);
+      case ContentType.greekMythology:      return const Color(0xFF1E3C72);
+      case ContentType.norseMythology:      return const Color(0xFF0F2027);
+      case ContentType.egyptianMythology:   return const Color(0xFFC9A227);
+      case ContentType.mythologicalCreature: return const Color(0xFF3A1C71);
     }
   }
 }

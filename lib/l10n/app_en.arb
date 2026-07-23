@@ -230,5 +230,19 @@
   "categoryAlbum": "Iconic Albums",
   "categoryInstrument": "Instruments",
   "categoryMusicFestival": "Music Festivals",
-  "categoryMusicAward": "Music Awards"
+  "categoryMusicAward": "Music Awards",
+  "categoryMythologyHub": "Mythology",
+  "categoryGreekMythology": "Greek & Roman Mythology",
+  "categoryNorseMythology": "Norse Mythology",
+  "categoryEgyptianMythology": "Egyptian Mythology",
+  "categoryMythologicalCreature": "Mythological Creatures",
+  "noImageMusicLegend": "No portrait available for this artist",
+  "noImageAlbum": "No cover art available for this album",
+  "noImageInstrument": "No image available for this instrument",
+  "noImageMusicFestival": "No image available for this festival",
+  "noImageMusicAward": "No image available for this award",
+  "noImageGreekMythology": "No image available for this figure",
+  "noImageNorseMythology": "No image available for this figure",
+  "noImageEgyptianMythology": "No image available for this figure",
+  "noImageMythologicalCreature": "No image available for this creature"
 }

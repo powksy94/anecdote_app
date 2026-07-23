@@ -67,6 +67,11 @@ generate_if_needed "tools/music/generate_album.py"          "assets/music/albums
 generate_if_needed "tools/music/generate_instrument.py"     "assets/music/instruments.json"
 generate_if_needed "tools/music/generate_music_festival.py" "assets/music/music_festivals.json"
 generate_if_needed "tools/music/generate_music_award.py"    "assets/music/music_awards.json"
+# Mythology
+generate_if_needed "tools/mythology/generate_greek_mythology.py"       "assets/mythology/greek_mythology.json"
+generate_if_needed "tools/mythology/generate_norse_mythology.py"       "assets/mythology/norse_mythology.json"
+generate_if_needed "tools/mythology/generate_egyptian_mythology.py"    "assets/mythology/egyptian_mythology.json"
+generate_if_needed "tools/mythology/generate_mythological_creature.py" "assets/mythology/mythological_creatures.json"
 
 echo ""
 echo "=== Flutter build ==="

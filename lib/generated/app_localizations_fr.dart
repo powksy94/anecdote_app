@@ -710,4 +710,51 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get categoryMusicAward => 'Récompenses musicales';
+
+  @override
+  String get categoryMythologyHub => 'Mythologie';
+
+  @override
+  String get categoryGreekMythology => 'Mythologie grecque et romaine';
+
+  @override
+  String get categoryNorseMythology => 'Mythologie nordique';
+
+  @override
+  String get categoryEgyptianMythology => 'Mythologie égyptienne';
+
+  @override
+  String get categoryMythologicalCreature => 'Créatures mythologiques';
+
+  @override
+  String get noImageMusicLegend => 'Aucun portrait disponible pour cet artiste';
+
+  @override
+  String get noImageAlbum => 'Aucune pochette disponible pour cet album';
+
+  @override
+  String get noImageInstrument => 'Aucune image disponible pour cet instrument';
+
+  @override
+  String get noImageMusicFestival => 'Aucune image disponible pour ce festival';
+
+  @override
+  String get noImageMusicAward =>
+      'Aucune image disponible pour cette récompense';
+
+  @override
+  String get noImageGreekMythology =>
+      'Aucune image disponible pour cette figure';
+
+  @override
+  String get noImageNorseMythology =>
+      'Aucune image disponible pour cette figure';
+
+  @override
+  String get noImageEgyptianMythology =>
+      'Aucune image disponible pour cette figure';
+
+  @override
+  String get noImageMythologicalCreature =>
+      'Aucune image disponible pour cette créature';
 }

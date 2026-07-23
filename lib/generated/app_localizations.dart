@@ -1425,6 +1425,90 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Music Awards'**
   String get categoryMusicAward;
+
+  /// No description provided for @categoryMythologyHub.
+  ///
+  /// In en, this message translates to:
+  /// **'Mythology'**
+  String get categoryMythologyHub;
+
+  /// No description provided for @categoryGreekMythology.
+  ///
+  /// In en, this message translates to:
+  /// **'Greek & Roman Mythology'**
+  String get categoryGreekMythology;
+
+  /// No description provided for @categoryNorseMythology.
+  ///
+  /// In en, this message translates to:
+  /// **'Norse Mythology'**
+  String get categoryNorseMythology;
+
+  /// No description provided for @categoryEgyptianMythology.
+  ///
+  /// In en, this message translates to:
+  /// **'Egyptian Mythology'**
+  String get categoryEgyptianMythology;
+
+  /// No description provided for @categoryMythologicalCreature.
+  ///
+  /// In en, this message translates to:
+  /// **'Mythological Creatures'**
+  String get categoryMythologicalCreature;
+
+  /// No description provided for @noImageMusicLegend.
+  ///
+  /// In en, this message translates to:
+  /// **'No portrait available for this artist'**
+  String get noImageMusicLegend;
+
+  /// No description provided for @noImageAlbum.
+  ///
+  /// In en, this message translates to:
+  /// **'No cover art available for this album'**
+  String get noImageAlbum;
+
+  /// No description provided for @noImageInstrument.
+  ///
+  /// In en, this message translates to:
+  /// **'No image available for this instrument'**
+  String get noImageInstrument;
+
+  /// No description provided for @noImageMusicFestival.
+  ///
+  /// In en, this message translates to:
+  /// **'No image available for this festival'**
+  String get noImageMusicFestival;
+
+  /// No description provided for @noImageMusicAward.
+  ///
+  /// In en, this message translates to:
+  /// **'No image available for this award'**
+  String get noImageMusicAward;
+
+  /// No description provided for @noImageGreekMythology.
+  ///
+  /// In en, this message translates to:
+  /// **'No image available for this figure'**
+  String get noImageGreekMythology;
+
+  /// No description provided for @noImageNorseMythology.
+  ///
+  /// In en, this message translates to:
+  /// **'No image available for this figure'**
+  String get noImageNorseMythology;
+
+  /// No description provided for @noImageEgyptianMythology.
+  ///
+  /// In en, this message translates to:
+  /// **'No image available for this figure'**
+  String get noImageEgyptianMythology;
+
+  /// No description provided for @noImageMythologicalCreature.
+  ///
+  /// In en, this message translates to:
+  /// **'No image available for this creature'**
+  String get noImageMythologicalCreature;
 }
 
 class _AppLocalizationsDelegate

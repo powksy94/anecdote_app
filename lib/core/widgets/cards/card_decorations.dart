@@ -156,5 +156,15 @@ Widget buildCardDecoration(ContentType type) {
       return _doubleIcon(Icons.festival_rounded, Icons.celebration_rounded);
     case ContentType.musicAward:
       return _doubleIcon(Icons.emoji_events_rounded, Icons.music_note_rounded);
+    case ContentType.mythologyHub:
+      return _bubbles(Icons.auto_awesome_rounded);
+    case ContentType.greekMythology:
+      return _singleIcon(Icons.account_balance_rounded, iconSize: 16);
+    case ContentType.norseMythology:
+      return _singleIcon(Icons.ac_unit_rounded, iconSize: 16);
+    case ContentType.egyptianMythology:
+      return _singleIcon(Icons.change_history_rounded, iconSize: 16);
+    case ContentType.mythologicalCreature:
+      return _singleIcon(Icons.whatshot_rounded, iconSize: 16);
   }
 }

@@ -74,6 +74,11 @@ extension ContentTypeLabels on ContentType {
       case ContentType.instrument:         return 'Instruments';
       case ContentType.musicFestival:      return 'Music Festivals';
       case ContentType.musicAward:         return 'Music Awards';
+      case ContentType.mythologyHub:       return 'Mythology';
+      case ContentType.greekMythology:     return 'Greek & Roman Mythology';
+      case ContentType.norseMythology:     return 'Norse Mythology';
+      case ContentType.egyptianMythology:  return 'Egyptian Mythology';
+      case ContentType.mythologicalCreature: return 'Mythological Creatures';
     }
   }
 
@@ -150,6 +155,11 @@ extension ContentTypeLabels on ContentType {
       case ContentType.instrument:         return loc.categoryInstrument;
       case ContentType.musicFestival:      return loc.categoryMusicFestival;
       case ContentType.musicAward:         return loc.categoryMusicAward;
+      case ContentType.mythologyHub:       return loc.categoryMythologyHub;
+      case ContentType.greekMythology:     return loc.categoryGreekMythology;
+      case ContentType.norseMythology:     return loc.categoryNorseMythology;
+      case ContentType.egyptianMythology:  return loc.categoryEgyptianMythology;
+      case ContentType.mythologicalCreature: return loc.categoryMythologicalCreature;
     }
   }
 }

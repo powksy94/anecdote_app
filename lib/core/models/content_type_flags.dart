@@ -54,6 +54,10 @@ extension ContentTypeFlags on ContentType {
     ContentType.instrument,
     ContentType.musicFestival,
     ContentType.musicAward,
+    ContentType.greekMythology,
+    ContentType.norseMythology,
+    ContentType.egyptianMythology,
+    ContentType.mythologicalCreature,
   };
 
   // Game/person names in preview should NOT be translated
@@ -67,6 +71,10 @@ extension ContentTypeFlags on ContentType {
     ContentType.album,
     ContentType.musicFestival,
     ContentType.musicAward,
+    ContentType.greekMythology,
+    ContentType.norseMythology,
+    ContentType.egyptianMythology,
+    ContentType.mythologicalCreature,
   };
 
   bool get isGeoType => _geoTypes.contains(this);

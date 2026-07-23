@@ -46,6 +46,10 @@ import '../../features/music/services/album_service.dart';
 import '../../features/music/services/instrument_service.dart';
 import '../../features/music/services/music_festival_service.dart';
 import '../../features/music/services/music_award_service.dart';
+import '../../features/mythology/services/greek_mythology_service.dart';
+import '../../features/mythology/services/norse_mythology_service.dart';
+import '../../features/mythology/services/egyptian_mythology_service.dart';
+import '../../features/mythology/services/mythological_creature_service.dart';
 
 Future<ContentData> fetchDailyContent(
   ContentType type, {
@@ -109,6 +113,11 @@ Future<ContentData> fetchDailyContent(
     case ContentType.instrument:         return InstrumentService().getDailyContent();
     case ContentType.musicFestival:      return MusicFestivalService().getDailyContent();
     case ContentType.musicAward:         return MusicAwardService().getDailyContent();
+    // ── Mythology ──────────────────────────────────────────────────────────
+    case ContentType.greekMythology:       return GreekMythologyService().getDailyContent();
+    case ContentType.norseMythology:       return NorseMythologyService().getDailyContent();
+    case ContentType.egyptianMythology:    return EgyptianMythologyService().getDailyContent();
+    case ContentType.mythologicalCreature: return MythologicalCreatureService().getDailyContent();
     // ── API-ninjas / HTTP ──────────────────────────────────────────────────
     default:                             return apiService.fetchRemoteContent(type);
   }
