@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import '../../../core/models/content_type.dart';
+import '../../subscription/services/purchase_service.dart';
 import '../models/favorite_fact.dart';
 
 class FavoritesService {
@@ -43,6 +44,8 @@ class FavoritesService {
       (await _col.doc(id).get()).exists;
 
   Future<void> _resetIfMonthChanged() async {
+    if (await PurchaseService.isPremium()) return;
+
     final now = DateTime.now();
     final current =
         '${now.year}-${now.month.toString().padLeft(2, '0')}';

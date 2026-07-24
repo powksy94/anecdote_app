@@ -2,6 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../config/env.dart';
+import '../../features/subscription/services/purchase_service.dart';
 
 class AdService {
   static const String _keyLastAd = 'last_ad_timestamp';
@@ -40,8 +41,9 @@ class AdService {
   }
 
   Future<void> showInterstitialAd({required VoidCallback onComplete}) async {
+    final isPremium = await PurchaseService.isPremium();
     final allowed = await canShowAd();
-    if (!allowed || !_isAdLoaded || _interstitialAd == null) {
+    if (isPremium || !allowed || !_isAdLoaded || _interstitialAd == null) {
       onComplete();
       return;
     }
