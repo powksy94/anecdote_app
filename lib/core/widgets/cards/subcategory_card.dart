@@ -42,15 +42,18 @@ class SubCategoryCard extends StatelessWidget {
             children: [
               Icon(type.icon, color: Colors.white, size: 32),
               const SizedBox(width: 16),
-              Text(
-                type.localizedTitle(loc),
-                style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
+              Expanded(
+                child: Text(
+                  type.localizedTitle(loc),
+                  overflow: TextOverflow.ellipsis,
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
-              const Spacer(),
+              const SizedBox(width: 8),
               const Icon(
                 Icons.arrow_forward_ios_rounded,
                 color: Colors.white,
