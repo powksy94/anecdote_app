@@ -88,6 +88,7 @@ extension ContentTypeLabels on ContentType {
       case ContentType.commonMentalDisorder: return 'Common Mental Health Conditions';
       case ContentType.medication:           return 'Medications';
       case ContentType.mentalMedication:     return 'Psychiatric Medications';
+      case ContentType.speciesReproduction:  return 'Species Reproduction';
     }
   }
 
@@ -178,6 +179,7 @@ extension ContentTypeLabels on ContentType {
       case ContentType.commonMentalDisorder: return loc.categoryCommonMentalDisorder;
       case ContentType.medication:           return loc.categoryMedication;
       case ContentType.mentalMedication:     return loc.categoryMentalMedication;
+      case ContentType.speciesReproduction:  return loc.categorySpeciesReproduction;
     }
   }
 }

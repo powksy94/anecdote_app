@@ -79,6 +79,7 @@ generate_if_needed "tools/health/generate_common_health_fact.py"      "assets/he
 generate_if_needed "tools/health/generate_common_mental_disorder.py"  "assets/health/common_mental_disorders.json"
 generate_if_needed "tools/health/generate_medication.py"              "assets/health/medications.json"
 generate_if_needed "tools/health/generate_mental_medication.py"       "assets/health/mental_medications.json"
+generate_if_needed "tools/science/generate_species_reproduction.py"   "assets/science/species_reproduction.json"
 
 echo ""
 echo "=== Flutter build ==="

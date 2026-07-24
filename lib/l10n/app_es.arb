@@ -260,5 +260,6 @@
   "selfDiagnosisWarningTitle": "Esto no es un diagnóstico",
   "selfDiagnosisWarningMessage": "Este contenido tiene fines educativos únicamente y no sustituye el consejo médico profesional. No lo utilices para autodiagnosticarte. Consulta a un profesional de la salud ante cualquier duda.",
   "selfMedicationWarningTitle": "Esto no es un consejo médico",
-  "selfMedicationWarningMessage": "Este contenido tiene fines educativos únicamente. Nunca inicies ni suspendas un tratamiento sin la orientación de un profesional de la salud."
+  "selfMedicationWarningMessage": "Este contenido tiene fines educativos únicamente. Nunca inicies ni suspendas un tratamiento sin la orientación de un profesional de la salud.",
+  "categorySpeciesReproduction": "Reproducción de las especies"
 }

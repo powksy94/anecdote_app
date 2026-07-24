@@ -93,6 +93,7 @@ extension ContentTypeApi on ContentType {
       case ContentType.commonMentalDisorder:
       case ContentType.medication:
       case ContentType.mentalMedication:
+      case ContentType.speciesReproduction:
         return '';
     }
   }

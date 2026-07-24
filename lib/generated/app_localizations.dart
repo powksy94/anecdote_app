@@ -1605,6 +1605,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'This content is for educational purposes only. Never take or stop a medication without guidance from a healthcare professional.'**
   String get selfMedicationWarningMessage;
+
+  /// No description provided for @categorySpeciesReproduction.
+  ///
+  /// In en, this message translates to:
+  /// **'Species Reproduction'**
+  String get categorySpeciesReproduction;
 }
 
 class _AppLocalizationsDelegate

@@ -260,5 +260,6 @@
   "selfDiagnosisWarningTitle": "Ceci n'est pas un diagnostic",
   "selfDiagnosisWarningMessage": "Ce contenu est fourni à titre éducatif uniquement et ne remplace pas un avis médical. Ne l'utilisez pas pour vous auto-diagnostiquer. Consultez un professionnel de santé pour toute question de santé.",
   "selfMedicationWarningTitle": "Ceci n'est pas un avis médical",
-  "selfMedicationWarningMessage": "Ce contenu est fourni à titre éducatif uniquement. Ne commencez ni n'arrêtez jamais un traitement sans l'avis d'un professionnel de santé."
+  "selfMedicationWarningMessage": "Ce contenu est fourni à titre éducatif uniquement. Ne commencez ni n'arrêtez jamais un traitement sans l'avis d'un professionnel de santé.",
+  "categorySpeciesReproduction": "Reproduction des espèces"
 }

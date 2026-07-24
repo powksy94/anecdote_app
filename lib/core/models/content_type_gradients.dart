@@ -173,6 +173,8 @@ extension ContentTypeGradients on ContentType {
         return [const Color(0xFF11998E), const Color(0xFF38EF7D)];
       case ContentType.mentalMedication:
         return [const Color(0xFF5F2C82), const Color(0xFF49A09D)];
+      case ContentType.speciesReproduction:
+        return [const Color(0xFF11998E), const Color(0xFF2ECC71)];
     }
   }
 }

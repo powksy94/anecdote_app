@@ -20,6 +20,7 @@ class _ScienceLivingPageState extends State<ScienceLivingPage> {
     ContentType.insect,
     ContentType.bird,
     ContentType.humanBone,
+    ContentType.speciesReproduction,
   ];
 
   void _navigate(ContentType type) {

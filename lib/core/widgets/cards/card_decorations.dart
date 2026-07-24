@@ -184,5 +184,7 @@ Widget buildCardDecoration(ContentType type) {
       return _singleIcon(Icons.medication_rounded, iconSize: 16);
     case ContentType.mentalMedication:
       return _singleIcon(Icons.medication_liquid_rounded, iconSize: 16);
+    case ContentType.speciesReproduction:
+      return _singleIcon(Icons.egg_rounded, iconSize: 16);
   }
 }

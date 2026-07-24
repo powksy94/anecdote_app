@@ -88,6 +88,7 @@ extension ContentTypeIcons on ContentType {
       case ContentType.commonMentalDisorder: return Icons.self_improvement_rounded;
       case ContentType.medication:            return Icons.medication_rounded;
       case ContentType.mentalMedication:      return Icons.medication_liquid_rounded;
+      case ContentType.speciesReproduction:   return Icons.egg_rounded;
     }
   }
 }

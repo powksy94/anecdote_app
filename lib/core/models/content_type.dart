@@ -95,4 +95,5 @@ enum ContentType {
   commonMentalDisorder,
   medication,
   mentalMedication,
+  speciesReproduction,
 }

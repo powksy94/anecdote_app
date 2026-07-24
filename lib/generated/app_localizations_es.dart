@@ -806,4 +806,7 @@ class AppLocalizationsEs extends AppLocalizations {
   @override
   String get selfMedicationWarningMessage =>
       'Este contenido tiene fines educativos únicamente. Nunca inicies ni suspendas un tratamiento sin la orientación de un profesional de la salud.';
+
+  @override
+  String get categorySpeciesReproduction => 'Reproducción de las especies';
 }

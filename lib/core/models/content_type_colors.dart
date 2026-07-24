@@ -88,6 +88,7 @@ extension ContentTypeColors on ContentType {
       case ContentType.commonMentalDisorder: return const Color(0xFF7F7FD5);
       case ContentType.medication:           return const Color(0xFF11998E);
       case ContentType.mentalMedication:     return const Color(0xFF5F2C82);
+      case ContentType.speciesReproduction:  return const Color(0xFF11998E);
     }
   }
 }

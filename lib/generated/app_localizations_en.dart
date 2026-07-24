@@ -794,4 +794,7 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get selfMedicationWarningMessage =>
       'This content is for educational purposes only. Never take or stop a medication without guidance from a healthcare professional.';
+
+  @override
+  String get categorySpeciesReproduction => 'Species Reproduction';
 }
