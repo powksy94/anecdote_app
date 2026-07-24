@@ -79,6 +79,15 @@ extension ContentTypeLabels on ContentType {
       case ContentType.norseMythology:     return 'Norse Mythology';
       case ContentType.egyptianMythology:  return 'Egyptian Mythology';
       case ContentType.mythologicalCreature: return 'Mythological Creatures';
+      case ContentType.healthHub:           return 'Health';
+      case ContentType.healthGeneralHub:    return 'General Health';
+      case ContentType.mentalHealthHub:     return 'Mental Health';
+      case ContentType.medicalAnecdote:     return 'Medical Anecdotes';
+      case ContentType.rareDisorder:        return 'Rare Disorders';
+      case ContentType.commonHealthFact:    return 'Health Facts';
+      case ContentType.commonMentalDisorder: return 'Common Mental Health Conditions';
+      case ContentType.medication:           return 'Medications';
+      case ContentType.mentalMedication:     return 'Psychiatric Medications';
     }
   }
 
@@ -160,6 +169,15 @@ extension ContentTypeLabels on ContentType {
       case ContentType.norseMythology:     return loc.categoryNorseMythology;
       case ContentType.egyptianMythology:  return loc.categoryEgyptianMythology;
       case ContentType.mythologicalCreature: return loc.categoryMythologicalCreature;
+      case ContentType.healthHub:           return loc.categoryHealthHub;
+      case ContentType.healthGeneralHub:    return loc.categoryHealthGeneralHub;
+      case ContentType.mentalHealthHub:     return loc.categoryMentalHealthHub;
+      case ContentType.medicalAnecdote:     return loc.categoryMedicalAnecdote;
+      case ContentType.rareDisorder:        return loc.categoryRareDisorder;
+      case ContentType.commonHealthFact:    return loc.categoryCommonHealthFact;
+      case ContentType.commonMentalDisorder: return loc.categoryCommonMentalDisorder;
+      case ContentType.medication:           return loc.categoryMedication;
+      case ContentType.mentalMedication:     return loc.categoryMentalMedication;
     }
   }
 }

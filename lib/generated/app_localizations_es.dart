@@ -754,4 +754,56 @@ class AppLocalizationsEs extends AppLocalizations {
   @override
   String get noImageMythologicalCreature =>
       'No hay imagen disponible para esta criatura';
+
+  @override
+  String get categoryHealthHub => 'Salud';
+
+  @override
+  String get categoryHealthGeneralHub => 'Salud general';
+
+  @override
+  String get categoryMentalHealthHub => 'Salud mental';
+
+  @override
+  String get categoryMedicalAnecdote => 'Anécdotas médicas';
+
+  @override
+  String get categoryRareDisorder => 'Enfermedades raras';
+
+  @override
+  String get categoryCommonHealthFact => 'Datos de salud';
+
+  @override
+  String get categoryCommonMentalDisorder =>
+      'Afecciones de salud mental comunes';
+
+  @override
+  String get categoryMedication => 'Medicamentos';
+
+  @override
+  String get categoryMentalMedication => 'Medicamentos psiquiátricos';
+
+  @override
+  String get healthInfoTitle => 'Antes de continuar';
+
+  @override
+  String get healthInfoMessage =>
+      'Por razones de dignidad y privacidad, los temas de salud en esta aplicación se presentan solo en formato de texto, sin fotos de personas reales ni imágenes médicas.';
+
+  @override
+  String get healthInfoAcknowledge => 'Entendido';
+
+  @override
+  String get selfDiagnosisWarningTitle => 'Esto no es un diagnóstico';
+
+  @override
+  String get selfDiagnosisWarningMessage =>
+      'Este contenido tiene fines educativos únicamente y no sustituye el consejo médico profesional. No lo utilices para autodiagnosticarte. Consulta a un profesional de la salud ante cualquier duda.';
+
+  @override
+  String get selfMedicationWarningTitle => 'Esto no es un consejo médico';
+
+  @override
+  String get selfMedicationWarningMessage =>
+      'Este contenido tiene fines educativos únicamente. Nunca inicies ni suspendas un tratamiento sin la orientación de un profesional de la salud.';
 }

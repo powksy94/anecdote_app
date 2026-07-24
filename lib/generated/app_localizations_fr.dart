@@ -757,4 +757,55 @@ class AppLocalizationsFr extends AppLocalizations {
   @override
   String get noImageMythologicalCreature =>
       'Aucune image disponible pour cette créature';
+
+  @override
+  String get categoryHealthHub => 'Santé';
+
+  @override
+  String get categoryHealthGeneralHub => 'Santé générale';
+
+  @override
+  String get categoryMentalHealthHub => 'Santé mentale';
+
+  @override
+  String get categoryMedicalAnecdote => 'Anecdotes médicales';
+
+  @override
+  String get categoryRareDisorder => 'Maladies rares';
+
+  @override
+  String get categoryCommonHealthFact => 'Faits de santé';
+
+  @override
+  String get categoryCommonMentalDisorder => 'Troubles psychiques courants';
+
+  @override
+  String get categoryMedication => 'Médicaments';
+
+  @override
+  String get categoryMentalMedication => 'Médicaments psychiatriques';
+
+  @override
+  String get healthInfoTitle => 'Avant de continuer';
+
+  @override
+  String get healthInfoMessage =>
+      'Pour des raisons de dignité et de respect de la vie privée, les sujets de santé de cette application sont présentés uniquement sous forme de texte, sans photo de personnes réelles ni image médicale.';
+
+  @override
+  String get healthInfoAcknowledge => 'Compris';
+
+  @override
+  String get selfDiagnosisWarningTitle => 'Ceci n\'est pas un diagnostic';
+
+  @override
+  String get selfDiagnosisWarningMessage =>
+      'Ce contenu est fourni à titre éducatif uniquement et ne remplace pas un avis médical. Ne l\'utilisez pas pour vous auto-diagnostiquer. Consultez un professionnel de santé pour toute question de santé.';
+
+  @override
+  String get selfMedicationWarningTitle => 'Ceci n\'est pas un avis médical';
+
+  @override
+  String get selfMedicationWarningMessage =>
+      'Ce contenu est fourni à titre éducatif uniquement. Ne commencez ni n\'arrêtez jamais un traitement sans l\'avis d\'un professionnel de santé.';
 }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import './content_page.dart';
 import '../../features/music/pages/music_hub_page.dart';
 import '../../features/mythology/pages/mythology_hub_page.dart';
+import '../../features/health/pages/health_navigator.dart';
 import '../../features/world/pages/world_navigator.dart';
 import '../../features/space/pages/space_page.dart';
 import '../../features/history/pages/history_hub_page.dart';
@@ -40,6 +41,7 @@ class _HomePageState extends State<HomePage> {
     ContentType.gamingHub,
     ContentType.musicHub,
     ContentType.mythologyHub,
+    ContentType.healthHub,
   ];
 
   final AdService _adService = AdService();
@@ -104,6 +106,11 @@ class _HomePageState extends State<HomePage> {
     }
     if (type == ContentType.celebrityHub) {
       CelebrityNavigator.show(context, _adService)
+          .then((_) => _cardKeys[type]?.currentState?.onNavigationComplete());
+      return;
+    }
+    if (type == ContentType.healthHub) {
+      HealthNavigator.show(context, _adService)
           .then((_) => _cardKeys[type]?.currentState?.onNavigationComplete());
       return;
     }

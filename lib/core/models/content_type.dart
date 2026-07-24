@@ -86,4 +86,13 @@ enum ContentType {
   norseMythology,
   egyptianMythology,
   mythologicalCreature,
+  healthHub,
+  healthGeneralHub,
+  mentalHealthHub,
+  medicalAnecdote,
+  rareDisorder,
+  commonHealthFact,
+  commonMentalDisorder,
+  medication,
+  mentalMedication,
 }

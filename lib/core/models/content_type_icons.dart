@@ -79,6 +79,15 @@ extension ContentTypeIcons on ContentType {
       case ContentType.norseMythology:      return Icons.ac_unit_rounded;
       case ContentType.egyptianMythology:   return Icons.change_history_rounded;
       case ContentType.mythologicalCreature: return Icons.whatshot_rounded;
+      case ContentType.healthHub:            return Icons.health_and_safety_rounded;
+      case ContentType.healthGeneralHub:     return Icons.local_hospital_rounded;
+      case ContentType.mentalHealthHub:      return Icons.psychology_rounded;
+      case ContentType.medicalAnecdote:      return Icons.medical_information_rounded;
+      case ContentType.rareDisorder:         return Icons.emergency_rounded;
+      case ContentType.commonHealthFact:     return Icons.favorite_rounded;
+      case ContentType.commonMentalDisorder: return Icons.self_improvement_rounded;
+      case ContentType.medication:            return Icons.medication_rounded;
+      case ContentType.mentalMedication:      return Icons.medication_liquid_rounded;
     }
   }
 }

@@ -84,6 +84,15 @@ extension ContentTypeApi on ContentType {
       case ContentType.norseMythology:
       case ContentType.egyptianMythology:
       case ContentType.mythologicalCreature:
+      case ContentType.healthHub:
+      case ContentType.healthGeneralHub:
+      case ContentType.mentalHealthHub:
+      case ContentType.medicalAnecdote:
+      case ContentType.rareDisorder:
+      case ContentType.commonHealthFact:
+      case ContentType.commonMentalDisorder:
+      case ContentType.medication:
+      case ContentType.mentalMedication:
         return '';
     }
   }

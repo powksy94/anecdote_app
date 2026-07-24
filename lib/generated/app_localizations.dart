@@ -1509,6 +1509,102 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'No image available for this creature'**
   String get noImageMythologicalCreature;
+
+  /// No description provided for @categoryHealthHub.
+  ///
+  /// In en, this message translates to:
+  /// **'Health'**
+  String get categoryHealthHub;
+
+  /// No description provided for @categoryHealthGeneralHub.
+  ///
+  /// In en, this message translates to:
+  /// **'General Health'**
+  String get categoryHealthGeneralHub;
+
+  /// No description provided for @categoryMentalHealthHub.
+  ///
+  /// In en, this message translates to:
+  /// **'Mental Health'**
+  String get categoryMentalHealthHub;
+
+  /// No description provided for @categoryMedicalAnecdote.
+  ///
+  /// In en, this message translates to:
+  /// **'Medical Anecdotes'**
+  String get categoryMedicalAnecdote;
+
+  /// No description provided for @categoryRareDisorder.
+  ///
+  /// In en, this message translates to:
+  /// **'Rare Disorders'**
+  String get categoryRareDisorder;
+
+  /// No description provided for @categoryCommonHealthFact.
+  ///
+  /// In en, this message translates to:
+  /// **'Health Facts'**
+  String get categoryCommonHealthFact;
+
+  /// No description provided for @categoryCommonMentalDisorder.
+  ///
+  /// In en, this message translates to:
+  /// **'Common Mental Health Conditions'**
+  String get categoryCommonMentalDisorder;
+
+  /// No description provided for @categoryMedication.
+  ///
+  /// In en, this message translates to:
+  /// **'Medications'**
+  String get categoryMedication;
+
+  /// No description provided for @categoryMentalMedication.
+  ///
+  /// In en, this message translates to:
+  /// **'Psychiatric Medications'**
+  String get categoryMentalMedication;
+
+  /// No description provided for @healthInfoTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Before you continue'**
+  String get healthInfoTitle;
+
+  /// No description provided for @healthInfoMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'For reasons of dignity and privacy, health topics in this app are presented as text only, without images of real people or medical photos.'**
+  String get healthInfoMessage;
+
+  /// No description provided for @healthInfoAcknowledge.
+  ///
+  /// In en, this message translates to:
+  /// **'Understood'**
+  String get healthInfoAcknowledge;
+
+  /// No description provided for @selfDiagnosisWarningTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Not a medical diagnosis'**
+  String get selfDiagnosisWarningTitle;
+
+  /// No description provided for @selfDiagnosisWarningMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'This content is for educational purposes only and does not replace professional medical advice. Please don\'t use it to self-diagnose. Consult a healthcare professional for any health concern.'**
+  String get selfDiagnosisWarningMessage;
+
+  /// No description provided for @selfMedicationWarningTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Not medical advice'**
+  String get selfMedicationWarningTitle;
+
+  /// No description provided for @selfMedicationWarningMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'This content is for educational purposes only. Never take or stop a medication without guidance from a healthcare professional.'**
+  String get selfMedicationWarningMessage;
 }
 
 class _AppLocalizationsDelegate

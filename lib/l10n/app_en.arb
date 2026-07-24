@@ -244,5 +244,21 @@
   "noImageGreekMythology": "No image available for this figure",
   "noImageNorseMythology": "No image available for this figure",
   "noImageEgyptianMythology": "No image available for this figure",
-  "noImageMythologicalCreature": "No image available for this creature"
+  "noImageMythologicalCreature": "No image available for this creature",
+  "categoryHealthHub": "Health",
+  "categoryHealthGeneralHub": "General Health",
+  "categoryMentalHealthHub": "Mental Health",
+  "categoryMedicalAnecdote": "Medical Anecdotes",
+  "categoryRareDisorder": "Rare Disorders",
+  "categoryCommonHealthFact": "Health Facts",
+  "categoryCommonMentalDisorder": "Common Mental Health Conditions",
+  "categoryMedication": "Medications",
+  "categoryMentalMedication": "Psychiatric Medications",
+  "healthInfoTitle": "Before you continue",
+  "healthInfoMessage": "For reasons of dignity and privacy, health topics in this app are presented as text only, without images of real people or medical photos.",
+  "healthInfoAcknowledge": "Understood",
+  "selfDiagnosisWarningTitle": "Not a medical diagnosis",
+  "selfDiagnosisWarningMessage": "This content is for educational purposes only and does not replace professional medical advice. Please don't use it to self-diagnose. Consult a healthcare professional for any health concern.",
+  "selfMedicationWarningTitle": "Not medical advice",
+  "selfMedicationWarningMessage": "This content is for educational purposes only. Never take or stop a medication without guidance from a healthcare professional."
 }

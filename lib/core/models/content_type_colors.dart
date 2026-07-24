@@ -79,6 +79,15 @@ extension ContentTypeColors on ContentType {
       case ContentType.norseMythology:      return const Color(0xFF0F2027);
       case ContentType.egyptianMythology:   return const Color(0xFFC9A227);
       case ContentType.mythologicalCreature: return const Color(0xFF3A1C71);
+      case ContentType.healthHub:            return const Color(0xFF00B09B);
+      case ContentType.healthGeneralHub:     return const Color(0xFFEB3349);
+      case ContentType.mentalHealthHub:      return const Color(0xFF396AFC);
+      case ContentType.medicalAnecdote:      return const Color(0xFF43C6AC);
+      case ContentType.rareDisorder:         return const Color(0xFF654EA3);
+      case ContentType.commonHealthFact:     return const Color(0xFF56CCF2);
+      case ContentType.commonMentalDisorder: return const Color(0xFF7F7FD5);
+      case ContentType.medication:           return const Color(0xFF11998E);
+      case ContentType.mentalMedication:     return const Color(0xFF5F2C82);
     }
   }
 }

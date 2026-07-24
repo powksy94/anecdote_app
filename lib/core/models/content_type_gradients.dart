@@ -155,6 +155,24 @@ extension ContentTypeGradients on ContentType {
         return [const Color(0xFFC9A227), const Color(0xFF8B5A2B)];
       case ContentType.mythologicalCreature:
         return [const Color(0xFF3A1C71), const Color(0xFFD76D77)];
+      case ContentType.healthHub:
+        return [const Color(0xFF00B09B), const Color(0xFF96C93D)];
+      case ContentType.healthGeneralHub:
+        return [const Color(0xFFEB3349), const Color(0xFFF45C43)];
+      case ContentType.mentalHealthHub:
+        return [const Color(0xFF396AFC), const Color(0xFF2948FF)];
+      case ContentType.medicalAnecdote:
+        return [const Color(0xFF43C6AC), const Color(0xFF191654)];
+      case ContentType.rareDisorder:
+        return [const Color(0xFF654EA3), const Color(0xFFEAAFC8)];
+      case ContentType.commonHealthFact:
+        return [const Color(0xFF56CCF2), const Color(0xFF2F80ED)];
+      case ContentType.commonMentalDisorder:
+        return [const Color(0xFF7F7FD5), const Color(0xFF86A8E7)];
+      case ContentType.medication:
+        return [const Color(0xFF11998E), const Color(0xFF38EF7D)];
+      case ContentType.mentalMedication:
+        return [const Color(0xFF5F2C82), const Color(0xFF49A09D)];
     }
   }
 }

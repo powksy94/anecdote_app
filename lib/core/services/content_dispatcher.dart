@@ -50,6 +50,12 @@ import '../../features/mythology/services/greek_mythology_service.dart';
 import '../../features/mythology/services/norse_mythology_service.dart';
 import '../../features/mythology/services/egyptian_mythology_service.dart';
 import '../../features/mythology/services/mythological_creature_service.dart';
+import '../../features/health/services/medical_anecdote_service.dart';
+import '../../features/health/services/rare_disorder_service.dart';
+import '../../features/health/services/common_health_fact_service.dart';
+import '../../features/health/services/common_mental_disorder_service.dart';
+import '../../features/health/services/medication_service.dart';
+import '../../features/health/services/mental_medication_service.dart';
 
 Future<ContentData> fetchDailyContent(
   ContentType type, {
@@ -118,6 +124,13 @@ Future<ContentData> fetchDailyContent(
     case ContentType.norseMythology:       return NorseMythologyService().getDailyContent();
     case ContentType.egyptianMythology:    return EgyptianMythologyService().getDailyContent();
     case ContentType.mythologicalCreature: return MythologicalCreatureService().getDailyContent();
+    // ── Health ─────────────────────────────────────────────────────────────
+    case ContentType.medicalAnecdote:      return MedicalAnecdoteService().getDailyContent();
+    case ContentType.rareDisorder:         return RareDisorderService().getDailyContent();
+    case ContentType.commonHealthFact:     return CommonHealthFactService().getDailyContent();
+    case ContentType.commonMentalDisorder: return CommonMentalDisorderService().getDailyContent();
+    case ContentType.medication:           return MedicationService().getDailyContent();
+    case ContentType.mentalMedication:     return MentalMedicationService().getDailyContent();
     // ── API-ninjas / HTTP ──────────────────────────────────────────────────
     default:                             return apiService.fetchRemoteContent(type);
   }

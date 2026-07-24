@@ -72,6 +72,13 @@ generate_if_needed "tools/mythology/generate_greek_mythology.py"       "assets/m
 generate_if_needed "tools/mythology/generate_norse_mythology.py"       "assets/mythology/norse_mythology.json"
 generate_if_needed "tools/mythology/generate_egyptian_mythology.py"    "assets/mythology/egyptian_mythology.json"
 generate_if_needed "tools/mythology/generate_mythological_creature.py" "assets/mythology/mythological_creatures.json"
+# Health
+generate_if_needed "tools/health/generate_medical_anecdote.py"        "assets/health/medical_anecdotes.json"
+generate_if_needed "tools/health/generate_rare_disorder.py"           "assets/health/rare_disorders.json"
+generate_if_needed "tools/health/generate_common_health_fact.py"      "assets/health/common_health_facts.json"
+generate_if_needed "tools/health/generate_common_mental_disorder.py"  "assets/health/common_mental_disorders.json"
+generate_if_needed "tools/health/generate_medication.py"              "assets/health/medications.json"
+generate_if_needed "tools/health/generate_mental_medication.py"       "assets/health/mental_medications.json"
 
 echo ""
 echo "=== Flutter build ==="

@@ -743,4 +743,55 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get noImageMythologicalCreature =>
       'No image available for this creature';
+
+  @override
+  String get categoryHealthHub => 'Health';
+
+  @override
+  String get categoryHealthGeneralHub => 'General Health';
+
+  @override
+  String get categoryMentalHealthHub => 'Mental Health';
+
+  @override
+  String get categoryMedicalAnecdote => 'Medical Anecdotes';
+
+  @override
+  String get categoryRareDisorder => 'Rare Disorders';
+
+  @override
+  String get categoryCommonHealthFact => 'Health Facts';
+
+  @override
+  String get categoryCommonMentalDisorder => 'Common Mental Health Conditions';
+
+  @override
+  String get categoryMedication => 'Medications';
+
+  @override
+  String get categoryMentalMedication => 'Psychiatric Medications';
+
+  @override
+  String get healthInfoTitle => 'Before you continue';
+
+  @override
+  String get healthInfoMessage =>
+      'For reasons of dignity and privacy, health topics in this app are presented as text only, without images of real people or medical photos.';
+
+  @override
+  String get healthInfoAcknowledge => 'Understood';
+
+  @override
+  String get selfDiagnosisWarningTitle => 'Not a medical diagnosis';
+
+  @override
+  String get selfDiagnosisWarningMessage =>
+      'This content is for educational purposes only and does not replace professional medical advice. Please don\'t use it to self-diagnose. Consult a healthcare professional for any health concern.';
+
+  @override
+  String get selfMedicationWarningTitle => 'Not medical advice';
+
+  @override
+  String get selfMedicationWarningMessage =>
+      'This content is for educational purposes only. Never take or stop a medication without guidance from a healthcare professional.';
 }

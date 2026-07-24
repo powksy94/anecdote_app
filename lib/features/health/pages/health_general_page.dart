@@ -1,0 +1,149 @@
+import 'package:flutter/material.dart';
+import '../../../core/models/content_type.dart';
+import '../../../generated/app_localizations.dart';
+import '../../../core/services/ad_service.dart';
+import '../../../core/widgets/cards/subcategory_card.dart';
+import '../../../core/pages/content_page.dart';
+
+class HealthGeneralPage extends StatefulWidget {
+  final AdService adService;
+  const HealthGeneralPage({super.key, required this.adService});
+
+  @override
+  State<HealthGeneralPage> createState() => _HealthGeneralPageState();
+}
+
+class _HealthGeneralPageState extends State<HealthGeneralPage> {
+  static const _subCategories = [
+    ContentType.medicalAnecdote,
+    ContentType.rareDisorder,
+    ContentType.commonHealthFact,
+    ContentType.medication,
+  ];
+
+  void _navigate(ContentType type) {
+    if (type == ContentType.rareDisorder) {
+      _showWarning(
+        titleOf: (loc) => loc.selfDiagnosisWarningTitle,
+        messageOf: (loc) => loc.selfDiagnosisWarningMessage,
+        type: type,
+      );
+    } else if (type == ContentType.medication) {
+      _showWarning(
+        titleOf: (loc) => loc.selfMedicationWarningTitle,
+        messageOf: (loc) => loc.selfMedicationWarningMessage,
+        type: type,
+      );
+    } else {
+      _doNavigate(type);
+    }
+  }
+
+  void _showWarning({
+    required String Function(AppLocalizations) titleOf,
+    required String Function(AppLocalizations) messageOf,
+    required ContentType type,
+  }) {
+    final loc = AppLocalizations.of(context)!;
+    showDialog(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        title: Text(titleOf(loc)),
+        content: Text(messageOf(loc)),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(ctx),
+            child: Text(loc.goBack),
+          ),
+          ElevatedButton(
+            onPressed: () {
+              Navigator.pop(ctx);
+              _doNavigate(type);
+            },
+            child: Text(loc.continueAnyway),
+          ),
+        ],
+      ),
+    );
+  }
+
+  void _doNavigate(ContentType type) {
+    widget.adService.showInterstitialAd(onComplete: () {
+      if (!mounted) return;
+      Navigator.push(
+        context,
+        PageRouteBuilder(
+          pageBuilder: (_, __, ___) => ContentPage(contentType: type),
+          transitionsBuilder: (_, animation, __, child) =>
+              FadeTransition(opacity: animation, child: child),
+          transitionDuration: const Duration(milliseconds: 250),
+        ),
+      );
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final loc = AppLocalizations.of(context)!;
+    final gradient = ContentType.healthGeneralHub.gradient;
+
+    return Scaffold(
+      extendBodyBehindAppBar: true,
+      appBar: AppBar(
+        title: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Icon(ContentType.healthGeneralHub.icon, size: 24),
+            const SizedBox(width: 8),
+            Flexible(
+              child: Text(
+                ContentType.healthGeneralHub.localizedTitle(loc),
+                overflow: TextOverflow.ellipsis,
+              ),
+            ),
+          ],
+        ),
+        centerTitle: true,
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        foregroundColor: Colors.white,
+        leading: IconButton(
+          icon: Container(
+            padding: const EdgeInsets.all(8),
+            decoration: BoxDecoration(
+              color: Colors.white.withValues(alpha: 0.2),
+              borderRadius: BorderRadius.circular(12),
+            ),
+            child: const Icon(Icons.arrow_back, size: 20),
+          ),
+          onPressed: () => Navigator.pop(context),
+        ),
+      ),
+      body: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [
+              gradient[0],
+              gradient[1].withValues(alpha: 0.8),
+              theme.colorScheme.surface,
+            ],
+            stops: const [0.0, 0.3, 0.6],
+          ),
+        ),
+        child: SafeArea(
+          child: ListView.builder(
+            padding: const EdgeInsets.fromLTRB(20, 24, 20, 24),
+            itemCount: _subCategories.length,
+            itemBuilder: (context, index) => SubCategoryCard(
+              type: _subCategories[index],
+              onNavigate: () => _navigate(_subCategories[index]),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}

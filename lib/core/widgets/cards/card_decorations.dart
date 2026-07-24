@@ -166,5 +166,23 @@ Widget buildCardDecoration(ContentType type) {
       return _singleIcon(Icons.change_history_rounded, iconSize: 16);
     case ContentType.mythologicalCreature:
       return _singleIcon(Icons.whatshot_rounded, iconSize: 16);
+    case ContentType.healthHub:
+      return _doubleIcon(Icons.health_and_safety_rounded, Icons.favorite_rounded);
+    case ContentType.healthGeneralHub:
+      return _doubleIcon(Icons.local_hospital_rounded, Icons.medical_services_rounded);
+    case ContentType.mentalHealthHub:
+      return _bubbles(Icons.psychology_rounded);
+    case ContentType.medicalAnecdote:
+      return _singleIcon(Icons.medical_information_rounded, iconSize: 16);
+    case ContentType.rareDisorder:
+      return _singleIcon(Icons.emergency_rounded, iconSize: 16);
+    case ContentType.commonHealthFact:
+      return _singleIcon(Icons.favorite_rounded, iconSize: 16);
+    case ContentType.commonMentalDisorder:
+      return _singleIcon(Icons.self_improvement_rounded, iconSize: 16);
+    case ContentType.medication:
+      return _singleIcon(Icons.medication_rounded, iconSize: 16);
+    case ContentType.mentalMedication:
+      return _singleIcon(Icons.medication_liquid_rounded, iconSize: 16);
   }
 }
