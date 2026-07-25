@@ -50,6 +50,22 @@ extension ContentTypeAccentColors on ContentType {
       case ContentType.worstGame:
       case ContentType.bannedGame:
         return const Color(0xFFEF4444);
+      case ContentType.musicLegend:
+        return const Color(0xFFFFD700);
+      case ContentType.album:
+        return const Color(0xFFB0BEC5);
+      case ContentType.norseMythology:
+        return const Color(0xFF7FDBFF);
+      case ContentType.greekMythology:
+        return const Color(0xFF64B5F6);
+      case ContentType.mythologicalCreature:
+        return const Color(0xFFFF8FA3);
+      case ContentType.mentalMedication:
+        return const Color(0xFFB39DDB);
+      case ContentType.instrument:
+        return const Color(0xFFCE93D8);
+      case ContentType.rareDisorder:
+        return const Color(0xFFEAAFC8);
       default:
         return gradient[0];
     }
