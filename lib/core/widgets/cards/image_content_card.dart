@@ -43,9 +43,6 @@ class _ImageContentCardState extends State<ImageContentCard> {
     ContentType.legendaryAthlete,
     ContentType.gamingLegend,
     ContentType.musicLegend,
-    ContentType.greekMythology,
-    ContentType.norseMythology,
-    ContentType.egyptianMythology,
   };
 
   static const _copyrightTypes = {
@@ -130,6 +127,9 @@ class _ImageContentCardState extends State<ImageContentCard> {
     ContentType.album,
     ContentType.instrument,
     ContentType.mythologicalCreature,
+    ContentType.greekMythology,
+    ContentType.norseMythology,
+    ContentType.egyptianMythology,
   };
 
   Alignment get _imageAlignment => _personTypes.contains(widget.contentType)
