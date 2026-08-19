@@ -59,6 +59,7 @@ extension ContentTypeIcons on ContentType {
       case ContentType.desert:              return Icons.wb_sunny_rounded;
       case ContentType.river:               return Icons.water_rounded;
       case ContentType.sea:                 return Icons.sailing_rounded;
+      case ContentType.mountain:            return Icons.terrain_rounded;
       case ContentType.gamingHub:           return Icons.sports_esports_rounded;
       case ContentType.gamesHub:            return Icons.videogame_asset_rounded;
       case ContentType.gamersHub:           return Icons.groups_rounded;

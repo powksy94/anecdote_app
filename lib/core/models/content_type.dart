@@ -66,6 +66,7 @@ enum ContentType {
   desert,
   river,
   sea,
+  mountain,
   gamingHub,
   gamesHub,
   gamersHub,

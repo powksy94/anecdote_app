@@ -66,6 +66,8 @@ extension ContentTypeAccentColors on ContentType {
         return const Color(0xFFCE93D8);
       case ContentType.rareDisorder:
         return const Color(0xFFEAAFC8);
+      case ContentType.mountain:
+        return const Color(0xFFB0BEC5);
       default:
         return gradient[0];
     }

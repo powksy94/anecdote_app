@@ -43,6 +43,7 @@ abstract class WorldNavigator {
                 hubType: ContentType.naturalWondersHub,
                 categories: const [
                   ContentType.volcano,
+                  ContentType.mountain,
                   ContentType.desert,
                   ContentType.river,
                   ContentType.sea,

@@ -245,6 +245,9 @@ class AppLocalizationsEs extends AppLocalizations {
   String get categorySea => 'Mares';
 
   @override
+  String get categoryMountain => 'Montañas';
+
+  @override
   String get categoryInsect => 'Insectos';
 
   @override

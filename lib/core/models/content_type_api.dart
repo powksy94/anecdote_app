@@ -64,6 +64,7 @@ extension ContentTypeApi on ContentType {
       case ContentType.desert:
       case ContentType.river:
       case ContentType.sea:
+      case ContentType.mountain:
       case ContentType.gamingHub:
       case ContentType.gamesHub:
       case ContentType.gamersHub:

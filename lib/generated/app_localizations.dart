@@ -568,6 +568,12 @@ abstract class AppLocalizations {
   /// **'Seas'**
   String get categorySea;
 
+  /// No description provided for @categoryMountain.
+  ///
+  /// In en, this message translates to:
+  /// **'Mountains'**
+  String get categoryMountain;
+
   /// No description provided for @categoryInsect.
   ///
   /// In en, this message translates to:

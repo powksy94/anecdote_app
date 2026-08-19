@@ -115,6 +115,8 @@ extension ContentTypeGradients on ContentType {
         return [const Color(0xFF0288D1), const Color(0xFF4FC3F7)];
       case ContentType.sea:
         return [const Color(0xFF006064), const Color(0xFF00ACC1)];
+      case ContentType.mountain:
+        return [const Color(0xFF37474F), const Color(0xFF78909C)];
       case ContentType.gamingHub:
         return [const Color(0xFF0D1117), const Color(0xFF238636)];
       case ContentType.gamesHub:

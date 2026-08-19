@@ -10,6 +10,7 @@ import '../../features/world/services/volcano_service.dart';
 import '../../features/world/services/desert_service.dart';
 import '../../features/world/services/river_service.dart';
 import '../../features/world/services/sea_service.dart';
+import '../../features/world/services/mountain_service.dart';
 import '../../features/space/services/star_service.dart';
 import '../../features/space/services/moon_service.dart';
 import '../../features/space/services/mission_service.dart';
@@ -73,6 +74,7 @@ Future<ContentData> fetchDailyContent(
     case ContentType.desert:           return DesertService().getDailyContent();
     case ContentType.river:            return RiverService().getDailyContent();
     case ContentType.sea:              return SeaService().getDailyContent();
+    case ContentType.mountain:         return MountainService().getDailyContent();
     // ── Space ──────────────────────────────────────────────────────────────
     case ContentType.exoplanet:        return ExoplanetService().getDailyContent();
     case ContentType.star:             return StarService().getDailyContent();

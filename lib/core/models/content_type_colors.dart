@@ -59,6 +59,7 @@ extension ContentTypeColors on ContentType {
       case ContentType.desert:              return const Color(0xFFE65100);
       case ContentType.river:               return const Color(0xFF0288D1);
       case ContentType.sea:                 return const Color(0xFF006064);
+      case ContentType.mountain:            return const Color(0xFF37474F);
       case ContentType.gamingHub:           return const Color(0xFF238636);
       case ContentType.gamesHub:            return const Color(0xFF533483);
       case ContentType.gamersHub:           return const Color(0xFF7B2FBE);

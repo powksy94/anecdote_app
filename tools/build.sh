@@ -25,6 +25,7 @@ generate_if_needed "tools/world/generate_american_states.py" "assets/world/ameri
 generate_if_needed "tools/world/generate_deserts.py"         "assets/world/deserts.json"
 generate_if_needed "tools/world/generate_rivers.py"          "assets/world/rivers.json"
 generate_if_needed "tools/world/generate_seas.py"            "assets/world/seas.json"
+generate_if_needed "tools/world/generate_mountains.py"        "assets/world/mountains.json"
 # History
 generate_if_needed "tools/history/generate_kings_of_france.py"       "assets/history/kings_of_france.json"
 generate_if_needed "tools/history/generate_american_presidents.py"   "assets/history/american_presidents.json"

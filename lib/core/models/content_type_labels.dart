@@ -59,6 +59,7 @@ extension ContentTypeLabels on ContentType {
       case ContentType.desert:             return 'Deserts';
       case ContentType.river:              return 'Rivers';
       case ContentType.sea:                return 'Seas';
+      case ContentType.mountain:           return 'Mountains';
       case ContentType.gamingHub:          return 'Gaming';
       case ContentType.gamesHub:           return 'Games';
       case ContentType.gamersHub:          return 'Gamers';
@@ -150,6 +151,7 @@ extension ContentTypeLabels on ContentType {
       case ContentType.desert:             return loc.categoryDesert;
       case ContentType.river:              return loc.categoryRiver;
       case ContentType.sea:                return loc.categorySea;
+      case ContentType.mountain:           return loc.categoryMountain;
       case ContentType.gamingHub:          return loc.categoryGamingHub;
       case ContentType.gamesHub:           return loc.categoryGamesHub;
       case ContentType.gamersHub:          return loc.categoryGamersHub;

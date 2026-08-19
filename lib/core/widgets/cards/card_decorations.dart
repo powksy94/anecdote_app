@@ -126,6 +126,8 @@ Widget buildCardDecoration(ContentType type) {
       return _doubleIcon(Icons.water_rounded, Icons.landscape_rounded);
     case ContentType.sea:
       return _doubleIcon(Icons.sailing_rounded, Icons.waves_rounded);
+    case ContentType.mountain:
+      return _doubleIcon(Icons.terrain_rounded, Icons.landscape_rounded);
     case ContentType.gamingHub:
       return _doubleIcon(Icons.sports_esports_rounded, Icons.videogame_asset_rounded);
     case ContentType.gamesHub:
