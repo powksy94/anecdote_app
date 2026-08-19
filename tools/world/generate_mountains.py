@@ -112,6 +112,12 @@ WIKI_TITLE_OVERRIDES = {
     "Gerlachovsky stit":   "Gerlachovsky stit",
 }
 
+# Wikipedia's own pageimage/Commons search picked an inappropriate photo
+# (a hiker's face, not the landscape) for these; pin a verified alternative.
+MANUAL_IMAGE_OVERRIDES = {
+    "Mount Katahdin": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Baxter_Peak_from_Hamlin_Peak.jpg/500px-Baxter_Peak_from_Hamlin_Peak.jpg",
+}
+
 def fetch_wiki_image(name, size=500):
     title = WIKI_TITLE_OVERRIDES.get(name, name)
     for attempt in range(3):
@@ -174,7 +180,10 @@ fetch_idx = 0
 mountains = []
 for i, m in enumerate(MOUNTAINS_RAW, 1):
     name = m["n"]
-    if existing_images.get(name):
+    if name in MANUAL_IMAGE_OVERRIDES:
+        im = MANUAL_IMAGE_OVERRIDES[name]
+        print(f"[{i:2}/{len(MOUNTAINS_RAW)}] {name} (manual override)")
+    elif existing_images.get(name):
         im = existing_images[name]
         print(f"[{i:2}/{len(MOUNTAINS_RAW)}] {name} (cached)")
     else:
