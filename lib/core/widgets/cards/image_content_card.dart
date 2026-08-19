@@ -126,6 +126,8 @@ class _ImageContentCardState extends State<ImageContentCard> {
     ContentType.sea,
     ContentType.album,
     ContentType.instrument,
+    ContentType.musicFestival,
+    ContentType.musicAward,
     ContentType.mythologicalCreature,
     ContentType.greekMythology,
     ContentType.norseMythology,
