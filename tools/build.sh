@@ -62,12 +62,15 @@ generate_if_needed "tools/celebrity/generate_legendary_athletes.py"  "assets/cel
 generate_if_needed "tools/cinema/generate_classic_cinema.py" "assets/cinema/quotes_classic.json"
 generate_if_needed "tools/cinema/generate_80s90s_cinema.py"  "assets/cinema/quotes_80s90s.json"
 generate_if_needed "tools/cinema/generate_modern_cinema.py"  "assets/cinema/quotes_modern.json"
+generate_if_needed "tools/cinema/generate_horror_cinema.py"  "assets/cinema/horror_films.json"
+generate_if_needed "tools/cinema/generate_banned_cinema.py"  "assets/cinema/banned_films.json"
 # Music
 generate_if_needed "tools/music/generate_music_legend.py"   "assets/music/music_legends.json"
 generate_if_needed "tools/music/generate_album.py"          "assets/music/albums.json"
 generate_if_needed "tools/music/generate_instrument.py"     "assets/music/instruments.json"
 generate_if_needed "tools/music/generate_music_festival.py" "assets/music/music_festivals.json"
 generate_if_needed "tools/music/generate_music_award.py"    "assets/music/music_awards.json"
+generate_if_needed "tools/music/generate_independent_musician.py" "assets/music/independent_musicians.json"
 # Mythology
 generate_if_needed "tools/mythology/generate_greek_mythology.py"       "assets/mythology/greek_mythology.json"
 generate_if_needed "tools/mythology/generate_norse_mythology.py"       "assets/mythology/norse_mythology.json"

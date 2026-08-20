@@ -1,0 +1,152 @@
+import json, requests, time, os, sys
+sys.stdout.reconfigure(encoding="utf-8")
+
+# n=original/international title (never auto-translated in-app),
+# n_fr/n_es=official French/Spanish release title (only when verified),
+# di=director, y=year, du=duration(min), ban=countries/context of the ban,
+# ty=content-warning categories (like rating pictograms: Violence, Sexual content,
+# Political, Religious, Drugs, Discrimination), rea=factual reason for the ban,
+# im=official poster URL
+
+FILMS_RAW = [
+    {"n":"Battleship Potemkin","n_fr":"Le Cuirasse Potemkine","di":"Sergei Eisenstein","y":1925,"du":75,"ban":"France, United Kingdom, Germany (various periods)","ty":["Political"],"rea":"Its sympathetic portrayal of a 1905 naval mutiny led several governments to ban it for fear it would incite revolutionary unrest among their own populations."},
+    {"n":"Triumph of the Will","n_fr":"Le Triomphe de la volonte","di":"Leni Riefenstahl","y":1935,"du":114,"ban":"Germany, Austria","ty":["Political"],"rea":"Commissioned as Nazi propaganda, its public screening is restricted in Germany and Austria to this day under laws banning the display of Nazi propaganda."},
+    {"n":"The Great Dictator","n_fr":"Le Dictateur","di":"Charlie Chaplin","y":1940,"du":125,"ban":"Germany, Spain, Argentina (at release)","ty":["Political"],"rea":"Its open satire of Adolf Hitler saw it banned across much of fascist-aligned Europe and Latin America at the time of its release."},
+    {"n":"Song of the South","di":"Harve Foster, Wilfred Jackson","y":1946,"du":94,"ban":"Withdrawn from release worldwide by its own studio","ty":["Discrimination"],"rea":"Disney itself pulled the film from circulation and has never released it on home video due to its romanticized depiction of the post-slavery American South."},
+    {"n":"Peeping Tom","di":"Michael Powell","y":1960,"du":101,"ban":"United Kingdom (effectively, via critical and distributor backlash)","ty":["Violence"],"rea":"British critics and distributors reacted with such hostility to its disturbing subject matter that it was pulled from cinemas within days and effectively ended its director's mainstream career."},
+    {"n":"Lolita","di":"Stanley Kubrick","y":1962,"du":153,"ban":"Several countries at release","ty":["Sexual content"],"rea":"Its adaptation of Nabokov's controversial novel led a number of countries to refuse it a theatrical release outright."},
+    {"n":"A Clockwork Orange","n_fr":"Orange mecanique","di":"Stanley Kubrick","y":1971,"du":136,"ban":"United Kingdom (1973-2000, withdrawn by the director himself)","ty":["Violence"],"rea":"After reports linking the film to copycat violence, Kubrick personally asked for it to be withdrawn from UK distribution, a ban that held for nearly three decades until his death."},
+    {"n":"The Evil Dead","n_fr":"Evil Dead","di":"Sam Raimi","y":1981,"du":85,"ban":"United Kingdom (1980s 'video nasties' list)","ty":["Violence"],"rea":"Included among the notorious British 'video nasties', a list of horror films seized and prosecuted under obscenity law during a wave of 1980s moral panic."},
+    {"n":"The Night Porter","n_fr":"Portier de nuit","di":"Liliana Cavani","y":1974,"du":118,"ban":"United States (temporarily), Italy (obscenity trial)","ty":["Violence","Sexual content"],"rea":"Its story of a former concentration camp survivor drawn back to her captor sparked obscenity prosecutions and temporary bans over its disturbing subject matter."},
+    {"n":"The Last Temptation of Christ","n_fr":"La Derniere Tentation du Christ","di":"Martin Scorsese","y":1988,"du":164,"ban":"Several countries including Greece, Argentina, the Philippines and Singapore","ty":["Religious"],"rea":"Its fictionalized, human portrayal of Jesus experiencing temptation and doubt drew protests from religious groups and outright bans in a number of countries."},
+    {"n":"I Spit on Your Grave","di":"Meir Zarchi","y":1978,"du":101,"ban":"United Kingdom (1980s 'video nasties' list), several other countries","ty":["Violence","Sexual content"],"rea":"Classified among the UK's 'video nasties' during the early-1980s moral panic over home video, it remained banned or heavily cut in several countries for years."},
+    {"n":"Natural Born Killers","n_fr":"Tueurs nes","di":"Oliver Stone","y":1994,"du":118,"ban":"Ireland (initially), several other countries","ty":["Violence"],"rea":"Concerns about copycat violence linked to its satirical portrayal of media-glorified killers led to bans and heavy edits in several countries."},
+    {"n":"Crash","n_fr":"Crash","di":"David Cronenberg","y":1996,"du":100,"ban":"Several UK local council areas","ty":["Sexual content"],"rea":"Several British local authorities banned its screening within their jurisdictions over its explicit content, even though it had passed national classification."},
+    {"n":"The Tin Drum","n_fr":"Le Tambour","di":"Volker Schlondorff","y":1979,"du":142,"ban":"Oklahoma, United States (1997 court ruling, later overturned)","ty":["Sexual content"],"rea":"An Oklahoma court briefly ruled the film obscene under child pornography law over one scene, ordering copies seized, before the ruling was overturned on appeal."},
+    {"n":"Battle Royale","n_fr":"Battle Royale","di":"Kinji Fukasaku","y":2000,"du":114,"ban":"United States (delayed distribution), Germany (restricted)","ty":["Violence"],"rea":"Its premise of teenagers forced to fight to the death led major US distributors to shy away from a release for years, while Germany restricted its availability."},
+    {"n":"Irreversible","n_fr":"Irreversible","di":"Gaspar Noe","y":2002,"du":97,"ban":"Several countries refused classification","ty":["Violence","Sexual content"],"rea":"Its unflinching, real-time depiction of violence caused mass walkouts at its Cannes premiere and led several countries to refuse it a certificate for release."},
+    {"n":"A Serbian Film","n_fr":"A Serbian Film","di":"Srdjan Spasojevic","y":2010,"du":104,"ban":"Spain, New Zealand, Brazil, Norway, Malaysia and others (banned or heavily cut)","ty":["Violence","Sexual content"],"rea":"Its extreme content led numerous countries to ban it outright, several festivals to cancel scheduled screenings, and its own director and cast to face formal complaints in Serbia."},
+    {"n":"Martyrs","n_fr":"Martyrs","di":"Pascal Laugier","y":2008,"du":99,"ban":"Ireland (refused a certificate), heavily cut in several other countries","ty":["Violence"],"rea":"A landmark of the 'New French Extremity' movement, its unrelenting content led Ireland to refuse it a certificate outright and prompted heavy cuts elsewhere."},
+    {"n":"Fahrenheit 9/11","di":"Michael Moore","y":2004,"du":122,"ban":"Several Middle Eastern countries","ty":["Political"],"rea":"Its critical portrayal of the Iraq War and the Bush administration led a number of governments to block its release for political reasons."},
+    {"n":"Death of a President","di":"Gabriel Range","y":2006,"du":93,"ban":"Several US theater chains refused to screen it","ty":["Political"],"rea":"Its fictional docudrama depicting the assassination of a sitting US president led major American theater chains to refuse it altogether, despite no legal ban."},
+    {"n":"Persepolis","di":"Vincent Paronnaud, Marjane Satrapi","y":2007,"du":96,"ban":"Lebanon (initially), Iran","ty":["Political","Religious"],"rea":"Its animated memoir of growing up during the Iranian Revolution drew official protest and a brief ban in Lebanon, and remains unreleased in Iran itself."},
+    {"n":"The Wolf of Wall Street","n_fr":"Le Loup de Wall Street","di":"Martin Scorsese","y":2013,"du":180,"ban":"Malaysia, Kenya, Nepal","ty":["Drugs","Sexual content"],"rea":"Its extended scenes of drug use and excess led several countries to ban it outright rather than approve heavily cut versions."},
+    {"n":"Django Unchained","n_fr":"Django Unchained","di":"Quentin Tarantino","y":2012,"du":165,"ban":"China (pulled on opening day)","ty":["Violence"],"rea":"Chinese censors pulled it from cinemas on its opening day, reportedly over graphic violence, before a cut version was cleared for a later release."},
+    {"n":"Brokeback Mountain","n_fr":"Le Secret de Brokeback Mountain","di":"Ang Lee","y":2005,"du":134,"ban":"China, several Middle Eastern countries","ty":["LGBTQ themes"],"rea":"Its story of a relationship between two cowboys was denied release across several countries where depictions of same-sex relationships face official restriction."},
+    {"n":"American History X","di":"Tony Kaye","y":1998,"du":119,"ban":"Malaysia, Ireland (initially)","ty":["Violence"],"rea":"Its graphic depiction of neo-Nazi violence led some countries to ban it outright rather than allow heavily edited cinema releases."},
+    {"n":"The Interview","di":"Evan Goldberg, Seth Rogen","y":2014,"du":112,"ban":"North Korea; withdrawn from wide US release after a major cyberattack","ty":["Political"],"rea":"Its plot about assassinating North Korea's leader triggered a massive hack of its studio and threats that led US theater chains to pull it from wide release entirely."},
+    {"n":"Schindler's List","n_fr":"La Liste de Schindler","di":"Steven Spielberg","y":1993,"du":195,"ban":"Malaysia, Indonesia, several other countries","ty":["Political","Religious"],"rea":"Its Holocaust subject matter and sympathetic Jewish characters led a number of countries to ban its release for political and religious reasons."},
+    {"n":"Zero Dark Thirty","di":"Kathryn Bigelow","y":2012,"du":157,"ban":"Pakistan","ty":["Political"],"rea":"Its dramatization of the hunt for Osama bin Laden, including scenes set in Pakistan, led the country to ban its release entirely."},
+    {"n":"Argo","di":"Ben Affleck","y":2012,"du":120,"ban":"Iran","ty":["Political"],"rea":"Its dramatized account of the 1979-1981 Iran hostage crisis was banned by Iranian authorities, who denounced its portrayal of the events as inaccurate propaganda."},
+    {"n":"Basic Instinct","n_fr":"Basic Instinct","di":"Paul Verhoeven","y":1992,"du":128,"ban":"Malaysia, South Korea (initially)","ty":["Sexual content"],"rea":"Its explicit content led several countries to ban it outright rather than approve a cut version for release."},
+    {"n":"Fifty Shades of Grey","n_fr":"Cinquante nuances de Grey","di":"Sam Taylor-Johnson","y":2015,"du":125,"ban":"Kenya, Malaysia, Vietnam, Cambodia","ty":["Sexual content"],"rea":"Its explicit sexual content led a number of countries to ban its theatrical release entirely."},
+    {"n":"Baise-moi","di":"Virginie Despentes, Coralie Trinh Thi","y":2000,"du":77,"ban":"France (its own country of origin)","ty":["Violence","Sexual content"],"rea":"An unusually rare case of a French film being banned in France itself, briefly pulled from cinemas by court order before being reclassified for adult audiences only."},
+    {"n":"Y Tu Mama Tambien","di":"Alfonso Cuaron","y":2001,"du":106,"ban":"Released unrated after a restrictive rating dispute in the United States","ty":["Sexual content"],"rea":"Rather than accept the restrictive rating US censors initially assigned over its sexual content, distributors released it unrated instead."},
+    {"n":"The Cook, the Thief, His Wife & Her Lover","di":"Peter Greenaway","y":1989,"du":124,"ban":"Released unrated in several countries after censors demanded cuts","ty":["Violence","Sexual content"],"rea":"Its graphic content led censors in several countries to demand cuts that distributors refused, resulting in unrated or heavily restricted releases instead."},
+    {"n":"Grease","n_fr":"Grease","di":"Randal Kleiser","y":1978,"du":110,"ban":"Several conservative Middle Eastern markets at release","ty":["Sexual content"],"rea":"Its themes of teenage rebellion and sexuality kept it out of several conservative markets when it was first released."},
+    {"n":"Noah","n_fr":"Noe","di":"Darren Aronofsky","y":2014,"du":138,"ban":"Several Middle Eastern countries","ty":["Religious"],"rea":"A number of countries banned its release on the grounds that depicting a figure revered as a prophet on screen violates religious doctrine."},
+    {"n":"Ken Park","di":"Larry Clark, Ed Lachman","y":2002,"du":96,"ban":"Australia, United Kingdom (never granted a certificate)","ty":["Sexual content"],"rea":"Its depiction of troubled teenage lives led classification boards in several countries to refuse it a certificate outright, blocking any legal release."},
+]
+
+HEADERS = {"User-Agent": "projet_app_annecdote/1.0 (daily-facts educational app; github.com/uzan)"}
+
+import re
+
+def _words(s):
+    return set(re.findall(r"[a-z0-9]+", s.lower())) - {"the", "a", "an", "of", "in", "on"}
+
+def wiki_pageimage(page_title, size=400):
+    for attempt in range(4):
+        try:
+            r = requests.get(
+                "https://en.wikipedia.org/w/api.php",
+                params={"action":"query","titles":page_title,"prop":"pageimages",
+                        "format":"json","pithumbsize":size,"redirects":1},
+                headers=HEADERS, timeout=12,
+            )
+            if r.status_code == 429:
+                wait = int(r.headers.get("Retry-After", 10))
+                time.sleep(max(wait, 10))
+                continue
+            if not r.text.strip():
+                return None
+            pages = r.json().get("query", {}).get("pages", {})
+            page = next(iter(pages.values()))
+            if "missing" in page:
+                return None
+            return page.get("thumbnail", {}).get("source")
+        except Exception:
+            time.sleep(2)
+    return None
+
+
+# Titles whose bare name resolves to something other than this specific film
+# on Wikipedia (a novel, the general word, another well-known topic) -- for
+# these, go straight to a disambiguated title. No free-text Commons fallback
+# is used: it repeatedly returned unrelated images with no reliable way to
+# validate relevance, so a missing poster is safer than a wrong one.
+TITLE_OVERRIDES = {
+    "Lolita": "Lolita (1962 film)",
+    "Peeping Tom": "Peeping Tom (1960 film)",
+    "A Clockwork Orange": "A Clockwork Orange (film)",
+    "Crash": "Crash (1996 film)",
+    "The Tin Drum": "The Tin Drum (film)",
+    "Irreversible": "Irreversible (film)",
+    "Martyrs": "Martyrs (2008 film)",
+    "Persepolis": "Persepolis (film)",
+    "The Interview": "The Interview (2014 film)",
+    "Argo": "Argo (2012 film)",
+    "Fifty Shades of Grey": "Fifty Shades of Grey (film)",
+    "Baise-moi": "Baise-moi (film)",
+    "Grease": "Grease (film)",
+    "Noah": "Noah (2014 film)",
+    "The Others": "The Others (2001 film)",
+}
+
+def fetch_poster(title, year):
+    variants = [TITLE_OVERRIDES[title]] if title in TITLE_OVERRIDES \
+        else [title, f"{title} (film)", f"{title} ({year} film)"]
+    for variant in variants:
+        im = wiki_pageimage(variant)
+        if im:
+            return im
+        time.sleep(0.6)
+    return None
+
+output_path = os.path.normpath(
+    os.path.join(os.path.dirname(__file__), "../../assets/cinema/banned_films.json")
+)
+os.makedirs(os.path.dirname(output_path), exist_ok=True)
+
+existing_images = {}
+if os.path.exists(output_path):
+    with open(output_path, encoding="utf-8") as f:
+        for entry in json.load(f):
+            if entry.get("im"):
+                existing_images[entry["n"]] = entry["im"]
+    print(f"Loaded {len(existing_images)} existing images from cache.\n")
+
+missing = sum(1 for m in FILMS_RAW if not existing_images.get(m["n"]))
+print(f"{missing} film(s) need a poster.\n")
+fetch_idx = 0
+films = []
+for i, m in enumerate(FILMS_RAW, 1):
+    name = m["n"]
+    if existing_images.get(name):
+        im = existing_images[name]
+        print(f"[{i:2}/{len(FILMS_RAW)}] {name} (cached)")
+    else:
+        fetch_idx += 1
+        print(f"[{i:2}/{len(FILMS_RAW)}] Fetching poster for {name} ({m['y']}) ...")
+        im = fetch_poster(name, m["y"])
+        if im:
+            print(f"  found: {im[:90]}")
+        if fetch_idx < missing:
+            time.sleep(1.2)
+    films.append({**m, "im": im})
+
+with open(output_path, "w", encoding="utf-8") as f:
+    json.dump(films, f, ensure_ascii=False, separators=(",", ":"))
+
+fetched = sum(1 for m in films if m["im"])
+print(f"\nDone -- {len(films)} films, {fetched} with posters -> {output_path}")

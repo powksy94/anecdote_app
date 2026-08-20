@@ -56,6 +56,10 @@ Widget buildCardDecoration(ContentType type) {
       return _singleIcon(Icons.videocam, iconSize: 16);
     case ContentType.modernCinema:
       return _singleIcon(Icons.local_movies);
+    case ContentType.horrorCinema:
+      return _singleIcon(Icons.dark_mode_rounded, iconSize: 16);
+    case ContentType.bannedCinema:
+      return _singleIcon(Icons.block_rounded, iconSize: 16);
     case ContentType.kingOfFrance:
       return _singleIcon(Icons.castle);
     case ContentType.americanPresident:
@@ -158,6 +162,8 @@ Widget buildCardDecoration(ContentType type) {
       return _doubleIcon(Icons.festival_rounded, Icons.celebration_rounded);
     case ContentType.musicAward:
       return _doubleIcon(Icons.emoji_events_rounded, Icons.music_note_rounded);
+    case ContentType.independentMusician:
+      return _singleIcon(Icons.mic_external_on_rounded, iconSize: 16);
     case ContentType.mythologyHub:
       return _bubbles(Icons.auto_awesome_rounded);
     case ContentType.greekMythology:

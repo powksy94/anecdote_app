@@ -20,6 +20,7 @@ class _MusicHubPageState extends State<MusicHubPage> {
     ContentType.instrument,
     ContentType.musicFestival,
     ContentType.musicAward,
+    ContentType.independentMusician,
   ];
 
   void _navigate(ContentType type) {

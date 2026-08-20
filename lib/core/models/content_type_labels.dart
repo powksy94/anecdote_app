@@ -23,6 +23,8 @@ extension ContentTypeLabels on ContentType {
       case ContentType.classicCinema:      return 'Classic Hollywood';
       case ContentType.cinema80s90s:       return '80s & 90s Movies';
       case ContentType.modernCinema:       return 'Modern Cinema';
+      case ContentType.horrorCinema:       return 'Horror Films';
+      case ContentType.bannedCinema:       return 'Banned Films';
       case ContentType.celebrityHub:       return 'Celebrity';
       case ContentType.scienceHub:         return 'Science & Nature';
       case ContentType.dinosaur:           return 'Dinosaurs';
@@ -75,6 +77,7 @@ extension ContentTypeLabels on ContentType {
       case ContentType.instrument:         return 'Instruments';
       case ContentType.musicFestival:      return 'Music Festivals';
       case ContentType.musicAward:         return 'Music Awards';
+      case ContentType.independentMusician: return 'Independent Musicians';
       case ContentType.mythologyHub:       return 'Mythology';
       case ContentType.greekMythology:     return 'Greek & Roman Mythology';
       case ContentType.norseMythology:     return 'Norse Mythology';
@@ -115,6 +118,8 @@ extension ContentTypeLabels on ContentType {
       case ContentType.classicCinema:      return loc.categoryClassicCinema;
       case ContentType.cinema80s90s:       return loc.categoryCinema80s90s;
       case ContentType.modernCinema:       return loc.categoryModernCinema;
+      case ContentType.horrorCinema:       return loc.categoryHorrorCinema;
+      case ContentType.bannedCinema:       return loc.categoryBannedCinema;
       case ContentType.celebrityHub:       return loc.categoryCelebrityHub;
       case ContentType.scienceHub:         return loc.categoryScienceHub;
       case ContentType.dinosaur:           return loc.categoryDinosaur;
@@ -167,6 +172,7 @@ extension ContentTypeLabels on ContentType {
       case ContentType.instrument:         return loc.categoryInstrument;
       case ContentType.musicFestival:      return loc.categoryMusicFestival;
       case ContentType.musicAward:         return loc.categoryMusicAward;
+      case ContentType.independentMusician: return loc.categoryIndependentMusician;
       case ContentType.mythologyHub:       return loc.categoryMythologyHub;
       case ContentType.greekMythology:     return loc.categoryGreekMythology;
       case ContentType.norseMythology:     return loc.categoryNorseMythology;

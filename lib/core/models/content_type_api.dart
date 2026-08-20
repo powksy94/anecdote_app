@@ -28,6 +28,8 @@ extension ContentTypeApi on ContentType {
       case ContentType.classicCinema:
       case ContentType.cinema80s90s:
       case ContentType.modernCinema:
+      case ContentType.horrorCinema:
+      case ContentType.bannedCinema:
       case ContentType.celebrityHub:
       case ContentType.scienceHub:
       case ContentType.dinosaur:
@@ -80,6 +82,7 @@ extension ContentTypeApi on ContentType {
       case ContentType.instrument:
       case ContentType.musicFestival:
       case ContentType.musicAward:
+      case ContentType.independentMusician:
       case ContentType.mythologyHub:
       case ContentType.greekMythology:
       case ContentType.norseMythology:

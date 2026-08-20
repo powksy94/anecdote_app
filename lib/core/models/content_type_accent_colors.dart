@@ -49,7 +49,12 @@ extension ContentTypeAccentColors on ContentType {
         return const Color(0xFFD4A017);
       case ContentType.worstGame:
       case ContentType.bannedGame:
+      case ContentType.bannedCinema:
         return const Color(0xFFEF4444);
+      case ContentType.horrorCinema:
+        return const Color(0xFFFF6B6B);
+      case ContentType.independentMusician:
+        return const Color(0xFF80D8FF);
       case ContentType.musicLegend:
         return const Color(0xFFFFD700);
       case ContentType.album:

@@ -574,6 +574,54 @@ abstract class AppLocalizations {
   /// **'Mountains'**
   String get categoryMountain;
 
+  /// No description provided for @categoryHorrorCinema.
+  ///
+  /// In en, this message translates to:
+  /// **'Horror Films'**
+  String get categoryHorrorCinema;
+
+  /// No description provided for @categoryBannedCinema.
+  ///
+  /// In en, this message translates to:
+  /// **'Banned Films'**
+  String get categoryBannedCinema;
+
+  /// No description provided for @categoryIndependentMusician.
+  ///
+  /// In en, this message translates to:
+  /// **'Independent Musicians'**
+  String get categoryIndependentMusician;
+
+  /// No description provided for @noImageHorrorCinema.
+  ///
+  /// In en, this message translates to:
+  /// **'No poster available for this film'**
+  String get noImageHorrorCinema;
+
+  /// No description provided for @noImageBannedCinema.
+  ///
+  /// In en, this message translates to:
+  /// **'No poster available for this film'**
+  String get noImageBannedCinema;
+
+  /// No description provided for @noImageIndependentMusician.
+  ///
+  /// In en, this message translates to:
+  /// **'No portrait available for this artist'**
+  String get noImageIndependentMusician;
+
+  /// No description provided for @bannedCinemaWarningTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'⚠️ Sensitive Content'**
+  String get bannedCinemaWarningTitle;
+
+  /// No description provided for @bannedCinemaWarningMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'This category contains information about films banned for violence, sexual content, or political censorship. Some descriptions may be disturbing. Do you want to continue?'**
+  String get bannedCinemaWarningMessage;
+
   /// No description provided for @categoryInsect.
   ///
   /// In en, this message translates to:

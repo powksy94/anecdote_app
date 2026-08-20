@@ -19,6 +19,8 @@ import '../../features/history/services/king_service.dart';
 import '../../features/history/services/president_service.dart';
 import '../../features/history/services/battle_service.dart';
 import '../../features/cinema/services/cinema_service.dart';
+import '../../features/cinema/services/horror_cinema_service.dart';
+import '../../features/cinema/services/banned_cinema_service.dart';
 import '../../features/science/services/dinosaur_service.dart';
 import '../../features/science/services/chemical_element_service.dart';
 import '../../features/science/services/insect_service.dart';
@@ -47,6 +49,7 @@ import '../../features/music/services/album_service.dart';
 import '../../features/music/services/instrument_service.dart';
 import '../../features/music/services/music_festival_service.dart';
 import '../../features/music/services/music_award_service.dart';
+import '../../features/music/services/independent_musician_service.dart';
 import '../../features/mythology/services/greek_mythology_service.dart';
 import '../../features/mythology/services/norse_mythology_service.dart';
 import '../../features/mythology/services/egyptian_mythology_service.dart';
@@ -88,6 +91,8 @@ Future<ContentData> fetchDailyContent(
     case ContentType.classicCinema:
     case ContentType.cinema80s90s:
     case ContentType.modernCinema:     return CinemaService(type).getDailyContent();
+    case ContentType.horrorCinema:     return HorrorCinemaService().getDailyContent();
+    case ContentType.bannedCinema:     return BannedCinemaService().getDailyContent();
     // ── Science (living) ───────────────────────────────────────────────────
     case ContentType.dinosaur:         return DinosaurService().getDailyContent();
     case ContentType.insect:           return InsectService().getDailyContent();
@@ -122,6 +127,7 @@ Future<ContentData> fetchDailyContent(
     case ContentType.instrument:         return InstrumentService().getDailyContent();
     case ContentType.musicFestival:      return MusicFestivalService().getDailyContent();
     case ContentType.musicAward:         return MusicAwardService().getDailyContent();
+    case ContentType.independentMusician: return IndependentMusicianService().getDailyContent();
     // ── Mythology ──────────────────────────────────────────────────────────
     case ContentType.greekMythology:       return GreekMythologyService().getDailyContent();
     case ContentType.norseMythology:       return NorseMythologyService().getDailyContent();

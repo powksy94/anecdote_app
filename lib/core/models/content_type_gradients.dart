@@ -43,6 +43,10 @@ extension ContentTypeGradients on ContentType {
         return [const Color(0xFF7B2FBE), const Color(0xFFFF6B35)];
       case ContentType.modernCinema:
         return [const Color(0xFF1a1a2e), const Color(0xFFE94560)];
+      case ContentType.horrorCinema:
+        return [const Color(0xFF0D0D0D), const Color(0xFF8B0000)];
+      case ContentType.bannedCinema:
+        return [const Color(0xFF3B0000), const Color(0xFFB91C1C)];
       case ContentType.celebrityHub:
         return [const Color(0xFF11998e), const Color(0xFF71B280)];
       case ContentType.scienceHub:
@@ -147,6 +151,8 @@ extension ContentTypeGradients on ContentType {
         return [const Color(0xFFFF512F), const Color(0xFFF09819)];
       case ContentType.musicAward:
         return [const Color(0xFFB8860B), const Color(0xFFFFD700)];
+      case ContentType.independentMusician:
+        return [const Color(0xFF16222A), const Color(0xFF3A6073)];
       case ContentType.mythologyHub:
         return [const Color(0xFF2C3E50), const Color(0xFF4A00E0)];
       case ContentType.greekMythology:

@@ -18,9 +18,59 @@ class _CinemaHubPageState extends State<CinemaHubPage> {
     ContentType.classicCinema,
     ContentType.cinema80s90s,
     ContentType.modernCinema,
+    ContentType.horrorCinema,
+    ContentType.bannedCinema,
   ];
 
   void _navigate(ContentType type) {
+    if (type == ContentType.bannedCinema) {
+      _showBannedWarning();
+    } else {
+      _doNavigate(type);
+    }
+  }
+
+  void _showBannedWarning() {
+    final loc = AppLocalizations.of(context)!;
+    showDialog<void>(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        backgroundColor: const Color(0xFF1E1E2E),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+        title: Text(
+          loc.bannedCinemaWarningTitle,
+          style: const TextStyle(color: Colors.white, fontSize: 16),
+        ),
+        content: Text(
+          loc.bannedCinemaWarningMessage,
+          style: const TextStyle(color: Color(0xFFCCCCCC), fontSize: 14, height: 1.5),
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(ctx),
+            child: Text(
+              loc.goBack,
+              style: const TextStyle(color: Colors.grey),
+            ),
+          ),
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              backgroundColor: const Color(0xFFB91C1C),
+              foregroundColor: Colors.white,
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+            ),
+            onPressed: () {
+              Navigator.pop(ctx);
+              _doNavigate(ContentType.bannedCinema);
+            },
+            child: Text(loc.continueAnyway),
+          ),
+        ],
+      ),
+    );
+  }
+
+  void _doNavigate(ContentType type) {
     widget.adService.showInterstitialAd(onComplete: () {
       if (!mounted) return;
       Navigator.push(

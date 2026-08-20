@@ -248,6 +248,34 @@ class AppLocalizationsEs extends AppLocalizations {
   String get categoryMountain => 'Montañas';
 
   @override
+  String get categoryHorrorCinema => 'Películas de terror';
+
+  @override
+  String get categoryBannedCinema => 'Películas prohibidas';
+
+  @override
+  String get categoryIndependentMusician => 'Músicos independientes';
+
+  @override
+  String get noImageHorrorCinema =>
+      'No hay cartel disponible para esta película';
+
+  @override
+  String get noImageBannedCinema =>
+      'No hay cartel disponible para esta película';
+
+  @override
+  String get noImageIndependentMusician =>
+      'No hay retrato disponible para este artista';
+
+  @override
+  String get bannedCinemaWarningTitle => '⚠️ Contenido sensible';
+
+  @override
+  String get bannedCinemaWarningMessage =>
+      'Esta categoría contiene información sobre películas prohibidas por violencia, contenido sexual o censura política. Algunas descripciones pueden ser perturbadoras. ¿Deseas continuar?';
+
+  @override
   String get categoryInsect => 'Insectos';
 
   @override

@@ -43,6 +43,7 @@ class _ImageContentCardState extends State<ImageContentCard> {
     ContentType.legendaryAthlete,
     ContentType.gamingLegend,
     ContentType.musicLegend,
+    ContentType.independentMusician,
   };
 
   static const _copyrightTypes = {
@@ -95,8 +96,26 @@ class _ImageContentCardState extends State<ImageContentCard> {
         return widget.contentData?.noImageMessage != null ? loc.noImageEgyptianMythology : null;
       case ContentType.mythologicalCreature:
         return widget.contentData?.noImageMessage != null ? loc.noImageMythologicalCreature : null;
+      case ContentType.independentMusician:
+        return widget.contentData?.noImageMessage != null ? loc.noImageIndependentMusician : null;
+      case ContentType.horrorCinema:
+        return widget.contentData?.noImageMessage != null ? loc.noImageHorrorCinema : null;
+      case ContentType.bannedCinema:
+        return widget.contentData?.noImageMessage != null ? loc.noImageBannedCinema : null;
       default:
         return widget.contentData?.noImageMessage != null ? loc.noImageGeneric : null;
+    }
+  }
+
+  String _displayPreview(BuildContext context) {
+    final d = widget.contentData;
+    final fallback = d?.preview ?? '';
+    if (d == null || (d.filmTitleFr == null && d.filmTitleEs == null)) return fallback;
+    final locale = Localizations.localeOf(context).languageCode;
+    switch (locale) {
+      case 'fr': return d.filmTitleFr ?? fallback;
+      case 'es': return d.filmTitleEs ?? fallback;
+      default:   return fallback;
     }
   }
 
@@ -133,6 +152,8 @@ class _ImageContentCardState extends State<ImageContentCard> {
     ContentType.greekMythology,
     ContentType.norseMythology,
     ContentType.egyptianMythology,
+    ContentType.horrorCinema,
+    ContentType.bannedCinema,
   };
 
   Alignment get _imageAlignment => _personTypes.contains(widget.contentType)
@@ -197,7 +218,7 @@ class _ImageContentCardState extends State<ImageContentCard> {
                         children: [
                           Flexible(
                             child: Text(
-                              widget.contentData?.preview ?? '',
+                              _displayPreview(context),
                               textAlign: TextAlign.center,
                               style: theme.textTheme.titleLarge?.copyWith(
                                 fontWeight: FontWeight.bold,

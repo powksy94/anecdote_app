@@ -23,6 +23,8 @@ extension ContentTypeIcons on ContentType {
       case ContentType.classicCinema:       return Icons.theaters_rounded;
       case ContentType.cinema80s90s:        return Icons.videocam_rounded;
       case ContentType.modernCinema:        return Icons.local_movies_rounded;
+      case ContentType.horrorCinema:        return Icons.dark_mode_rounded;
+      case ContentType.bannedCinema:        return Icons.block_rounded;
       case ContentType.celebrityHub:        return Icons.stars_rounded;
       case ContentType.scienceHub:          return Icons.science_rounded;
       case ContentType.dinosaur:            return Icons.rowing_rounded;
@@ -75,6 +77,7 @@ extension ContentTypeIcons on ContentType {
       case ContentType.instrument:          return Icons.piano_rounded;
       case ContentType.musicFestival:       return Icons.festival_rounded;
       case ContentType.musicAward:          return Icons.emoji_events_rounded;
+      case ContentType.independentMusician: return Icons.mic_external_on_rounded;
       case ContentType.mythologyHub:        return Icons.auto_awesome_rounded;
       case ContentType.greekMythology:      return Icons.account_balance_rounded;
       case ContentType.norseMythology:      return Icons.ac_unit_rounded;
