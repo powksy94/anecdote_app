@@ -59,8 +59,6 @@ extension ContentTypeFlags on ContentType {
     ContentType.norseMythology,
     ContentType.egyptianMythology,
     ContentType.mythologicalCreature,
-    ContentType.horrorCinema,
-    ContentType.bannedCinema,
   };
 
   // Game/person names in preview should NOT be translated

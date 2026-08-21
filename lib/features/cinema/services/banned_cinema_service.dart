@@ -22,8 +22,6 @@ class BannedCinemaService {
       preview: '🚫 ${f.title} (${f.year})',
       details: buf.toString().trim(),
       hasDetails: true,
-      imageUrl: f.imageUrl,
-      noImageMessage: f.noImageMessage,
       protectedTerms: [f.title],
       filmTitleFr: f.titleFr != null ? '🚫 ${f.titleFr} (${f.year})' : null,
       filmTitleEs: f.titleEs != null ? '🚫 ${f.titleEs} (${f.year})' : null,

@@ -258,12 +258,6 @@ class AppLocalizationsFr extends AppLocalizations {
   String get categoryIndependentMusician => 'Musiciens indépendants';
 
   @override
-  String get noImageHorrorCinema => 'Aucune affiche disponible pour ce film';
-
-  @override
-  String get noImageBannedCinema => 'Aucune affiche disponible pour ce film';
-
-  @override
   String get noImageIndependentMusician =>
       'Aucun portrait disponible pour cet artiste';
 

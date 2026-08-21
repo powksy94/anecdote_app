@@ -592,18 +592,6 @@ abstract class AppLocalizations {
   /// **'Independent Musicians'**
   String get categoryIndependentMusician;
 
-  /// No description provided for @noImageHorrorCinema.
-  ///
-  /// In en, this message translates to:
-  /// **'No poster available for this film'**
-  String get noImageHorrorCinema;
-
-  /// No description provided for @noImageBannedCinema.
-  ///
-  /// In en, this message translates to:
-  /// **'No poster available for this film'**
-  String get noImageBannedCinema;
-
   /// No description provided for @noImageIndependentMusician.
   ///
   /// In en, this message translates to:

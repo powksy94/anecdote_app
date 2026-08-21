@@ -98,10 +98,6 @@ class _ImageContentCardState extends State<ImageContentCard> {
         return widget.contentData?.noImageMessage != null ? loc.noImageMythologicalCreature : null;
       case ContentType.independentMusician:
         return widget.contentData?.noImageMessage != null ? loc.noImageIndependentMusician : null;
-      case ContentType.horrorCinema:
-        return widget.contentData?.noImageMessage != null ? loc.noImageHorrorCinema : null;
-      case ContentType.bannedCinema:
-        return widget.contentData?.noImageMessage != null ? loc.noImageBannedCinema : null;
       default:
         return widget.contentData?.noImageMessage != null ? loc.noImageGeneric : null;
     }
@@ -152,8 +148,6 @@ class _ImageContentCardState extends State<ImageContentCard> {
     ContentType.greekMythology,
     ContentType.norseMythology,
     ContentType.egyptianMythology,
-    ContentType.horrorCinema,
-    ContentType.bannedCinema,
   };
 
   Alignment get _imageAlignment => _personTypes.contains(widget.contentType)

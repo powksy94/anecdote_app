@@ -87,8 +87,6 @@
   "categoryHorrorCinema": "Films d'horreur",
   "categoryBannedCinema": "Films bannis",
   "categoryIndependentMusician": "Musiciens indépendants",
-  "noImageHorrorCinema": "Aucune affiche disponible pour ce film",
-  "noImageBannedCinema": "Aucune affiche disponible pour ce film",
   "noImageIndependentMusician": "Aucun portrait disponible pour cet artiste",
   "bannedCinemaWarningTitle": "⚠️ Contenu sensible",
   "bannedCinemaWarningMessage": "Cette catégorie contient des informations sur des films censurés pour violence, contenu sexuel ou raisons politiques. Certaines descriptions peuvent être choquantes. Voulez-vous continuer ?",

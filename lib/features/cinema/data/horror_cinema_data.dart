@@ -5,14 +5,12 @@ import 'package:flutter/services.dart';
 class HorrorCinemaData {
   final String title, director, country, famousFor;
   final int year, duration;
-  final String? imageUrl, titleFr, titleEs;
-
-  String? get noImageMessage => imageUrl != null ? null : '🎬 No poster available for this film';
+  final String? titleFr, titleEs;
 
   const HorrorCinemaData({
     required this.title, required this.director, required this.country,
     required this.year, required this.duration, required this.famousFor,
-    this.imageUrl, this.titleFr, this.titleEs,
+    this.titleFr, this.titleEs,
   });
 
   factory HorrorCinemaData.fromJson(Map<String, dynamic> j) => HorrorCinemaData(
@@ -22,7 +20,6 @@ class HorrorCinemaData {
     year:      (j['y'] as num?)?.toInt() ?? 0,
     duration:  (j['du'] as num?)?.toInt() ?? 0,
     famousFor: j['fa'] ?? '',
-    imageUrl:  j['im'] as String?,
     titleFr:   j['n_fr'] as String?,
     titleEs:   j['n_es'] as String?,
   );

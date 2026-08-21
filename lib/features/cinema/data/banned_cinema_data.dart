@@ -6,14 +6,12 @@ class BannedCinemaData {
   final String title, director, bannedIn, reason;
   final int year, duration;
   final List<String> contentTypes;
-  final String? imageUrl, titleFr, titleEs;
-
-  String? get noImageMessage => imageUrl != null ? null : '🎬 No poster available for this film';
+  final String? titleFr, titleEs;
 
   const BannedCinemaData({
     required this.title, required this.director, required this.bannedIn,
     required this.year, required this.duration, required this.reason,
-    this.contentTypes = const [], this.imageUrl, this.titleFr, this.titleEs,
+    this.contentTypes = const [], this.titleFr, this.titleEs,
   });
 
   factory BannedCinemaData.fromJson(Map<String, dynamic> j) => BannedCinemaData(
@@ -24,7 +22,6 @@ class BannedCinemaData {
     duration:     (j['du'] as num?)?.toInt() ?? 0,
     reason:       j['rea'] ?? '',
     contentTypes: (j['ty'] as List?)?.cast<String>() ?? const [],
-    imageUrl:     j['im'] as String?,
     titleFr:      j['n_fr'] as String?,
     titleEs:      j['n_es'] as String?,
   );

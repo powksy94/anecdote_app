@@ -1,11 +1,16 @@
-import json, requests, time, os, sys
+import json, os, sys
 sys.stdout.reconfigure(encoding="utf-8")
 
 # n=original/international title (displayed as-is in EN, never auto-translated),
 # n_fr/n_es=official French/Spanish release title (only set when verified;
 # omitted entries fall back to the original title in the app),
-# di=director, co=country, y=year, du=duration(min), fa=famousFor,
-# im=official poster URL (None if not found)
+# di=director, co=country, y=year, du=duration(min), fa=famousFor.
+#
+# No poster image: official movie posters are copyrighted promotional
+# material, essentially never released under a free license, so there is no
+# legally reusable free source for them in a commercial app (Wikipedia's own
+# copies are non-free/fair-use content restricted to Wikipedia itself). These
+# categories are text-only, like the existing Classic/80s90s/Modern Cinema.
 
 FILMS_RAW = [
     {"n":"Nosferatu","di":"F.W. Murnau","co":"Germany","y":1922,"du":94,"fa":"An unauthorized adaptation of Dracula so blatant that a lawsuit from Bram Stoker's estate ordered all copies destroyed; surviving prints preserved what became one of cinema's most influential horror films."},
@@ -69,112 +74,11 @@ FILMS_RAW = [
     {"n":"Backrooms","di":"Kane Parsons","co":"United States","y":2026,"du":110,"fa":"Directed by Kane Parsons at just 20 years old in his feature debut, it expanded his own viral YouTube web series adapting the 'Backrooms' creepypasta into a full studio release from A24."},
 ]
 
-HEADERS = {"User-Agent": "projet_app_annecdote/1.0 (daily-facts educational app; github.com/uzan)"}
-
-import re
-
-def _words(s):
-    return set(re.findall(r"[a-z0-9]+", s.lower())) - {"the", "a", "an", "of", "in", "on"}
-
-def wiki_pageimage(page_title, size=400):
-    for attempt in range(4):
-        try:
-            r = requests.get(
-                "https://en.wikipedia.org/w/api.php",
-                params={"action":"query","titles":page_title,"prop":"pageimages",
-                        "format":"json","pithumbsize":size,"redirects":1},
-                headers=HEADERS, timeout=12,
-            )
-            if r.status_code == 429:
-                wait = int(r.headers.get("Retry-After", 10))
-                time.sleep(max(wait, 10))
-                continue
-            if not r.text.strip():
-                return None
-            pages = r.json().get("query", {}).get("pages", {})
-            page = next(iter(pages.values()))
-            if "missing" in page:
-                return None
-            return page.get("thumbnail", {}).get("source")
-        except Exception:
-            time.sleep(2)
-    return None
-
-
-# Titles whose bare name resolves to something other than this specific film
-# on Wikipedia (a novel, the general subject/holiday, a franchise overview
-# page, or another well-known topic) -- for these, go straight to a
-# disambiguated title instead of risking the wrong page's image. No free-text
-# Commons fallback is used: it repeatedly returned unrelated images (a 1925
-# film's poster matched via "poster" keyword overlap alone) with no reliable
-# way to validate relevance, so a missing poster is safer than a wrong one.
-TITLE_OVERRIDES = {
-    "Dracula": "Dracula (1931 film)",
-    "Frankenstein": "Frankenstein (1931 film)",
-    "The Thing": "The Thing (1982 film)",
-    "Misery": "Misery (film)",
-    "Saw": "Saw (2004 film)",
-    "The Others": "The Others (2001 film)",
-    "Poltergeist": "Poltergeist (1982 film)",
-    "Halloween": "Halloween (1978 film)",
-    "Candyman": "Candyman (1992 film)",
-    "The Witch": "The Witch (2015 film)",
-    "Talk to Me": "Talk to Me (2022 film)",
-    "Obsession": "Obsession (2026 film)",
-    "Backrooms": "Backrooms (film)",
-    "His House": "His House (film)",
-    "Get Out": "Get Out (film)",
-    "Audition": "Audition (1999 film)",
-    "Child's Play": "Child's Play (1988 film)",
-    "Rec": "REC (film)",
-    "Saint Maud": "Saint Maud (film)",
-    "Hereditary": "Hereditary (film)",
-}
-
-def fetch_poster(title, year):
-    variants = [TITLE_OVERRIDES[title]] if title in TITLE_OVERRIDES \
-        else [title, f"{title} (film)", f"{title} ({year} film)"]
-    for variant in variants:
-        im = wiki_pageimage(variant)
-        if im:
-            return im
-        time.sleep(0.6)
-    return None
-
 output_path = os.path.normpath(
     os.path.join(os.path.dirname(__file__), "../../assets/cinema/horror_films.json")
 )
 os.makedirs(os.path.dirname(output_path), exist_ok=True)
-
-existing_images = {}
-if os.path.exists(output_path):
-    with open(output_path, encoding="utf-8") as f:
-        for entry in json.load(f):
-            if entry.get("im"):
-                existing_images[entry["n"]] = entry["im"]
-    print(f"Loaded {len(existing_images)} existing images from cache.\n")
-
-missing = sum(1 for m in FILMS_RAW if not existing_images.get(m["n"]))
-print(f"{missing} film(s) need a poster.\n")
-fetch_idx = 0
-films = []
-for i, m in enumerate(FILMS_RAW, 1):
-    name = m["n"]
-    if existing_images.get(name):
-        im = existing_images[name]
-        print(f"[{i:2}/{len(FILMS_RAW)}] {name} (cached)")
-    else:
-        fetch_idx += 1
-        print(f"[{i:2}/{len(FILMS_RAW)}] Fetching poster for {name} ({m['y']}) ...")
-        im = fetch_poster(name, m["y"])
-        if im:
-            print(f"  found: {im[:90]}")
-        if fetch_idx < missing:
-            time.sleep(1.2)
-    films.append({**m, "im": im})
-
 with open(output_path, "w", encoding="utf-8") as f:
-    json.dump(films, f, ensure_ascii=False, separators=(",", ":"))
+    json.dump(FILMS_RAW, f, ensure_ascii=False, separators=(",", ":"))
 
-fetched = sum(1 for m in films if m["im"])
-print(f"\nDone -- {len(films)} films, {fetched} with posters -> {output_path}")
+print(f"Done -- {len(FILMS_RAW)} films -> {output_path}")

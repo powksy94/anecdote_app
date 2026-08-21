@@ -26,6 +26,18 @@ class ContentCard extends StatefulWidget {
 class _ContentCardState extends State<ContentCard> {
   bool _showDetails = false;
 
+  String _displayPreview(BuildContext context) {
+    final d = widget.contentData;
+    final fallback = d?.preview ?? '';
+    if (d == null || (d.filmTitleFr == null && d.filmTitleEs == null)) return fallback;
+    final locale = Localizations.localeOf(context).languageCode;
+    switch (locale) {
+      case 'fr': return d.filmTitleFr ?? fallback;
+      case 'es': return d.filmTitleEs ?? fallback;
+      default:   return fallback;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
@@ -63,7 +75,7 @@ class _ContentCardState extends State<ContentCard> {
                 ),
                 const SizedBox(height: 24),
                 Text(
-                  widget.contentData?.preview ?? '',
+                  _displayPreview(context),
                   textAlign: TextAlign.center,
                   style: theme.textTheme.titleMedium?.copyWith(
                     fontSize: 20,
