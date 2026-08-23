@@ -3,6 +3,7 @@ import '../../../core/models/content_type.dart';
 import '../../../generated/app_localizations.dart';
 import '../../../core/services/ad_service.dart';
 import '../widgets/cinema_subcategory_card.dart';
+import '../../../core/widgets/cards/subcategory_card.dart';
 import '../../../core/pages/content_page.dart';
 
 class CinemaHubPage extends StatefulWidget {
@@ -140,10 +141,14 @@ class _CinemaHubPageState extends State<CinemaHubPage> {
           child: ListView.builder(
             padding: const EdgeInsets.fromLTRB(20, 24, 20, 24),
             itemCount: _subCategories.length,
-            itemBuilder: (context, index) => CinemaSubCategoryCard(
-              type: _subCategories[index],
-              onNavigate: () => _navigate(_subCategories[index]),
-            ),
+            itemBuilder: (context, index) {
+              final type = _subCategories[index];
+              void onNavigate() => _navigate(type);
+              if (type == ContentType.horrorCinema || type == ContentType.bannedCinema) {
+                return SubCategoryCard(type: type, onNavigate: onNavigate);
+              }
+              return CinemaSubCategoryCard(type: type, onNavigate: onNavigate);
+            },
           ),
         ),
       ),
