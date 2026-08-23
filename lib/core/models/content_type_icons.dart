@@ -72,6 +72,8 @@ extension ContentTypeIcons on ContentType {
       case ContentType.bannedGame:          return Icons.block_rounded;
       case ContentType.gamingLegend:        return Icons.military_tech_rounded;
       case ContentType.musicHub:            return Icons.library_music_rounded;
+      case ContentType.musicArtistsHub:     return Icons.groups_rounded;
+      case ContentType.musicWorksHub:       return Icons.album_rounded;
       case ContentType.musicLegend:         return Icons.mic_rounded;
       case ContentType.album:               return Icons.album_rounded;
       case ContentType.instrument:          return Icons.piano_rounded;

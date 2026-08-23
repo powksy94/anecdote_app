@@ -720,6 +720,12 @@ class AppLocalizationsFr extends AppLocalizations {
   String get categoryMusicHub => 'Musique';
 
   @override
+  String get categoryMusicArtistsHub => 'Musiciens';
+
+  @override
+  String get categoryMusicWorksHub => 'Œuvres et culture';
+
+  @override
   String get categoryMusicLegend => 'Légendes de la musique';
 
   @override

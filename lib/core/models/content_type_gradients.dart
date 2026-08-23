@@ -141,6 +141,10 @@ extension ContentTypeGradients on ContentType {
         return [const Color(0xFF1B2838), const Color(0xFF66C0F4)];
       case ContentType.musicHub:
         return [const Color(0xFF6A0DAD), const Color(0xFFFF1493)];
+      case ContentType.musicArtistsHub:
+        return [const Color(0xFFC2185B), const Color(0xFFE91E63)];
+      case ContentType.musicWorksHub:
+        return [const Color(0xFF6A1B9A), const Color(0xFF9C27B0)];
       case ContentType.musicLegend:
         return [const Color(0xFF232526), const Color(0xFFE94057)];
       case ContentType.album:

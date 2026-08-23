@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import './content_page.dart';
-import '../../features/music/pages/music_hub_page.dart';
+import '../../features/music/pages/music_navigator.dart';
 import '../../features/mythology/pages/mythology_hub_page.dart';
 import '../../features/health/pages/health_navigator.dart';
 import '../../features/world/pages/world_navigator.dart';
@@ -114,16 +114,20 @@ class _HomePageState extends State<HomePage> {
           .then((_) => _cardKeys[type]?.currentState?.onNavigationComplete());
       return;
     }
+    if (type == ContentType.musicHub) {
+      MusicNavigator.show(context, _adService)
+          .then((_) => _cardKeys[type]?.currentState?.onNavigationComplete());
+      return;
+    }
     if (type == ContentType.space ||
         type == ContentType.historyHub || type == ContentType.cinemaHub ||
-        type == ContentType.musicHub || type == ContentType.mythologyHub) {
+        type == ContentType.mythologyHub) {
       Navigator.push(
         context,
         PageRouteBuilder(
           pageBuilder: (_, __, ___) {
             if (type == ContentType.space) return SpacePage(adService: _adService);
             if (type == ContentType.historyHub) return HistoryHubPage(adService: _adService);
-            if (type == ContentType.musicHub) return MusicHubPage(adService: _adService);
             if (type == ContentType.mythologyHub) return MythologyHubPage(adService: _adService);
             return CinemaHubPage(adService: _adService);
           },

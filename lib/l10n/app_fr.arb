@@ -233,6 +233,8 @@
   "favoriteSavedOn": "Sauvegardé le {date}",
   "@favoriteSavedOn": { "placeholders": { "date": { "type": "String" } } },
   "categoryMusicHub": "Musique",
+  "categoryMusicArtistsHub": "Musiciens",
+  "categoryMusicWorksHub": "Œuvres et culture",
   "categoryMusicLegend": "Légendes de la musique",
   "categoryAlbum": "Albums cultes",
   "categoryInstrument": "Instruments",

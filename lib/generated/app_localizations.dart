@@ -1438,6 +1438,18 @@ abstract class AppLocalizations {
   /// **'Music'**
   String get categoryMusicHub;
 
+  /// No description provided for @categoryMusicArtistsHub.
+  ///
+  /// In en, this message translates to:
+  /// **'Musicians'**
+  String get categoryMusicArtistsHub;
+
+  /// No description provided for @categoryMusicWorksHub.
+  ///
+  /// In en, this message translates to:
+  /// **'Works & Culture'**
+  String get categoryMusicWorksHub;
+
   /// No description provided for @categoryMusicLegend.
   ///
   /// In en, this message translates to:

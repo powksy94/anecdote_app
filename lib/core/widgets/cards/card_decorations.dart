@@ -152,6 +152,10 @@ Widget buildCardDecoration(ContentType type) {
       return _doubleIcon(Icons.military_tech_rounded, Icons.sports_esports_rounded);
     case ContentType.musicHub:
       return _doubleIcon(Icons.library_music_rounded, Icons.queue_music_rounded);
+    case ContentType.musicArtistsHub:
+      return _bubbles(Icons.groups_rounded);
+    case ContentType.musicWorksHub:
+      return _bubbles(Icons.album_rounded);
     case ContentType.musicLegend:
       return _singleIcon(Icons.mic_rounded, iconSize: 16);
     case ContentType.album:

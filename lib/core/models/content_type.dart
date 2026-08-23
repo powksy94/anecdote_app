@@ -79,6 +79,8 @@ enum ContentType {
   bannedGame,
   gamingLegend,
   musicHub,
+  musicArtistsHub,
+  musicWorksHub,
   musicLegend,
   album,
   instrument,

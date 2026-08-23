@@ -77,6 +77,8 @@ extension ContentTypeApi on ContentType {
       case ContentType.bannedGame:
       case ContentType.gamingLegend:
       case ContentType.musicHub:
+      case ContentType.musicArtistsHub:
+      case ContentType.musicWorksHub:
       case ContentType.musicLegend:
       case ContentType.album:
       case ContentType.instrument:
