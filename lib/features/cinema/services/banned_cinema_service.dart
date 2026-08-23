@@ -10,12 +10,17 @@ class BannedCinemaService {
 
     final buf = StringBuffer();
     buf.writeln('📅 Year: ${f.year}');
+    buf.writeln();
     buf.writeln('🎥 Director: ${f.director}');
+    buf.writeln();
     buf.writeln('⏱️ Duration: ${f.duration} min');
+    buf.writeln();
     if (f.contentTypes.isNotEmpty) {
       buf.writeln('🏷️ Content: ${f.contentTypes.join(", ")}');
+      buf.writeln();
     }
     buf.writeln('🚫 Banned in: ${f.bannedIn}');
+    buf.writeln();
     buf.writeln('💡 ${f.reason}');
 
     return ContentData(

@@ -10,9 +10,13 @@ class HorrorCinemaService {
 
     final buf = StringBuffer();
     buf.writeln('📅 Year: ${f.year}');
+    buf.writeln();
     buf.writeln('🎥 Director: ${f.director}');
+    buf.writeln();
     buf.writeln('🌍 Country: ${f.country}');
+    buf.writeln();
     buf.writeln('⏱️ Duration: ${f.duration} min');
+    buf.writeln();
     buf.writeln('💡 ${f.famousFor}');
 
     return ContentData(

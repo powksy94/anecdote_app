@@ -109,12 +109,18 @@ class TranslationService {
     String translatedDetails = content.details;
     if (content.hasDetails && content.details.isNotEmpty) {
       final terms = content.protectedTerms;
-      final toTranslate = terms.isNotEmpty
-          ? _maskTerms(content.details, terms)
-          : content.details;
-      final translated = await _translateText(toTranslate, targetLang);
-      translatedDetails =
-          terms.isNotEmpty ? _restoreTerms(translated, terms) : translated;
+      // Translate line by line rather than the whole block at once: the
+      // Translate API does not guarantee preserving the exact newline
+      // structure of multi-line input, so a single call can unpredictably
+      // merge or reflow lines that were meant to stay visually separated.
+      final lines = content.details.split('\n');
+      final translatedLines = await Future.wait(lines.map((line) async {
+        if (line.trim().isEmpty) return line;
+        final toTranslate = terms.isNotEmpty ? _maskTerms(line, terms) : line;
+        final translatedLine = await _translateText(toTranslate, targetLang);
+        return terms.isNotEmpty ? _restoreTerms(translatedLine, terms) : translatedLine;
+      }));
+      translatedDetails = translatedLines.join('\n');
     }
 
     String? translatedWarning = content.warningText;
