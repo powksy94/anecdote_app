@@ -33,4 +33,31 @@ class AuthService {
   }
 
   Future<void> signOut() => _auth.signOut();
+
+  /// Deletes the signed-in user's Firestore data and Firebase Auth account.
+  /// Throws [FirebaseAuthException] with code 'requires-recent-login' if the
+  /// session is too old — call [reauthenticate] then retry in that case.
+  Future<void> deleteAccount() async {
+    final user = _auth.currentUser;
+    if (user == null) return;
+
+    final favorites = await _db
+        .collection('users').doc(user.uid).collection('favorites').get();
+    final batch = _db.batch();
+    for (final doc in favorites.docs) {
+      batch.delete(doc.reference);
+    }
+    batch.delete(_db.collection('users').doc(user.uid));
+    await batch.commit();
+
+    await user.delete();
+  }
+
+  Future<void> reauthenticate(String password) async {
+    final user = _auth.currentUser;
+    if (user == null || user.email == null) return;
+    final credential =
+        EmailAuthProvider.credential(email: user.email!, password: password);
+    await user.reauthenticateWithCredential(credential);
+  }
 }

@@ -462,6 +462,38 @@ class AppLocalizationsEn extends AppLocalizations {
   String get signOut => 'Sign out';
 
   @override
+  String get deleteAccount => 'Delete my account';
+
+  @override
+  String get deleteAccountConfirmTitle => 'Permanently delete your account?';
+
+  @override
+  String get deleteAccountConfirmMessage =>
+      'This cannot be undone. Your profile and all your favorites will be permanently deleted.';
+
+  @override
+  String get deleteAccountConfirmButton => 'Delete';
+
+  @override
+  String get cancelButton => 'Cancel';
+
+  @override
+  String get reauthTitle => 'Confirm your password';
+
+  @override
+  String get reauthMessage =>
+      'For security reasons, please re-enter your password to continue.';
+
+  @override
+  String get confirmButton => 'Confirm';
+
+  @override
+  String get deleteAccountSuccess => 'Your account has been deleted.';
+
+  @override
+  String get deleteAccountError => 'Something went wrong. Please try again.';
+
+  @override
   String get noAccountYet => 'Don\'t have an account?';
 
   @override

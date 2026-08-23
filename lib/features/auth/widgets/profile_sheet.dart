@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import '../../../generated/app_localizations.dart';
 import '../services/auth_service.dart';
+import 'delete_account_tile.dart';
 
 class ProfileSheet extends StatelessWidget {
   final User user;
@@ -97,6 +98,7 @@ class ProfileSheet extends StatelessWidget {
               await AuthService().signOut();
             },
           ),
+          const DeleteAccountTile(),
         ],
       ),
     );

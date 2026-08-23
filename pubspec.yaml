@@ -3,7 +3,7 @@ description: Une application Flutter
 
 publish_to: 'none' # Pour ne pas publier ce projet sur pub.dev
 
-version: 2.1.1+40
+version: 2.2.0+42
 
 environment:
   sdk: '>=3.3.0 <4.0.0'

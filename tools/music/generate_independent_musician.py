@@ -1,4 +1,5 @@
 import json, requests, time, os, sys
+from urllib.parse import quote
 sys.stdout.reconfigure(encoding="utf-8")
 
 # n=artist/band name, gn=genre, fs=famous/signature song, fa=famousFor,
@@ -60,10 +61,23 @@ ARTISTS_RAW = [
 
 HEADERS = {"User-Agent": "projet_app_annecdote/1.0 (daily-facts educational app; github.com/uzan)"}
 
+def rest_summary_image(page_title):
+    try:
+        r = requests.get(
+            "https://en.wikipedia.org/api/rest_v1/page/summary/" + quote(page_title),
+            headers=HEADERS, timeout=12,
+        )
+        if r.status_code != 200:
+            return None
+        data = r.json()
+        if data.get("type") == "disambiguation":
+            return None
+        return data.get("thumbnail", {}).get("source")
+    except Exception:
+        return None
+
 def wiki_pageimage(page_title, size=500):
-    for attempt in range(3):
-        if attempt > 0:
-            time.sleep(3 * attempt)
+    for attempt in range(4):
         try:
             r = requests.get(
                 "https://en.wikipedia.org/w/api.php",
@@ -72,6 +86,8 @@ def wiki_pageimage(page_title, size=500):
                 headers=HEADERS, timeout=12,
             )
             if r.status_code == 429:
+                wait = int(r.headers.get("Retry-After", 10))
+                time.sleep(max(wait, 10))
                 continue
             if not r.text.strip():
                 return None
@@ -79,9 +95,12 @@ def wiki_pageimage(page_title, size=500):
             page = next(iter(pages.values()))
             if "missing" in page:
                 return None
-            return page.get("thumbnail", {}).get("source")
+            im = page.get("thumbnail", {}).get("source")
+            if im:
+                return im
+            return rest_summary_image(page.get("title", page_title))
         except Exception:
-            pass
+            time.sleep(2)
     return None
 
 # Names that resolve to something other than the artist on plain Wikipedia

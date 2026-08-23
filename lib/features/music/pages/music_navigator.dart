@@ -10,18 +10,20 @@ abstract class MusicNavigator {
       context: context,
       builder: (_) => HubSplitDialog(
         hubType: ContentType.musicHub,
-        leftType: ContentType.musicArtistsHub,
-        rightType: ContentType.musicWorksHub,
+        leftType: ContentType.musicWorksHub,
+        rightType: ContentType.musicArtistsHub,
         onSelectLeft: () {
           Navigator.of(context, rootNavigator: true).pop();
           Navigator.push(
             context,
             PageRouteBuilder(
               pageBuilder: (_, __, ___) => SubHubPage(
-                hubType: ContentType.musicArtistsHub,
+                hubType: ContentType.musicWorksHub,
                 categories: const [
-                  ContentType.musicLegend,
-                  ContentType.independentMusician,
+                  ContentType.album,
+                  ContentType.instrument,
+                  ContentType.musicFestival,
+                  ContentType.musicAward,
                 ],
                 adService: adService,
               ),
@@ -37,12 +39,10 @@ abstract class MusicNavigator {
             context,
             PageRouteBuilder(
               pageBuilder: (_, __, ___) => SubHubPage(
-                hubType: ContentType.musicWorksHub,
+                hubType: ContentType.musicArtistsHub,
                 categories: const [
-                  ContentType.album,
-                  ContentType.instrument,
-                  ContentType.musicFestival,
-                  ContentType.musicAward,
+                  ContentType.musicLegend,
+                  ContentType.independentMusician,
                 ],
                 adService: adService,
               ),
