@@ -140,10 +140,20 @@ class TranslationService {
       imageUrl: content.imageUrl,
       noImageMessage: content.noImageMessage,
       flagSvg: content.flagSvg,
+      quoteLang: content.quoteLang,
+      quoteEn: content.quoteEn,
+      quoteFr: content.quoteFr,
+      quoteEs: content.quoteEs,
+      filmTitleFr: content.filmTitleFr,
+      filmTitleEs: content.filmTitleEs,
+      filmTitleEn: content.filmTitleEn,
       mandateNumber: content.mandateNumber,
+      elementSymbol: content.elementSymbol,
+      elementAtomicNumber: content.elementAtomicNumber,
       warningText: translatedWarning,
       warningLevel: content.warningLevel,
       imageNote: translatedImageNote,
+      protectedTerms: content.protectedTerms,
     );
   }
 }
