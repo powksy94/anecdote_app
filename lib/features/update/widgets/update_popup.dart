@@ -123,7 +123,7 @@ class _UpdatePopupState extends State<UpdatePopup> with TickerProviderStateMixin
     _ctrl.light.forward();
     await Future.delayed(const Duration(milliseconds: 180));
     if (!mounted) return;
-    unawaited(_playSound('sounds/lightning.mp3'));
+    unawaited(_playSound('sounds/universfield-magic-spell.mp3'));
     _ctrl.clear.forward(); // repousse les volutes au moment du burst
     await _ctrl.halo.forward();
 
