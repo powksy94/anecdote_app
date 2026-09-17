@@ -4,8 +4,7 @@ import '../../features/auth/pages/welcome_page.dart';
 import 'main_shell.dart';
 
 class RootGate extends StatefulWidget {
-  final void Function(Locale locale)? onLocaleChange;
-  const RootGate({super.key, this.onLocaleChange});
+  const RootGate({super.key});
 
   @override
   State<RootGate> createState() => _RootGateState();
@@ -41,6 +40,6 @@ class _RootGateState extends State<RootGate> {
     if (!_hasSeenWelcome!) {
       return WelcomePage(onProceed: _proceed);
     }
-    return MainShell(onLocaleChange: widget.onLocaleChange);
+    return const MainShell();
   }
 }

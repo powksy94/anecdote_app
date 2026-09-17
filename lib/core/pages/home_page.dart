@@ -20,9 +20,7 @@ import '../../features/update/services/version_check_service.dart';
 import '../../features/update/widgets/update_popup_fog.dart';
 
 class HomePage extends StatefulWidget {
-  final void Function(Locale locale)? onLocaleChange;
-
-  const HomePage({super.key, this.onLocaleChange});
+  const HomePage({super.key});
 
   @override
   State<HomePage> createState() => _HomePageState();

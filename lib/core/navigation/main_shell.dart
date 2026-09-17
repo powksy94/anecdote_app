@@ -6,8 +6,7 @@ import '../../features/onboarding/widgets/onboarding_overlay.dart';
 import '../../generated/app_localizations.dart';
 
 class MainShell extends StatefulWidget {
-  final void Function(Locale locale)? onLocaleChange;
-  const MainShell({super.key, this.onLocaleChange});
+  const MainShell({super.key});
 
   @override
   State<MainShell> createState() => _MainShellState();
@@ -60,7 +59,7 @@ class _MainShellState extends State<MainShell> {
                   pages: [
                     MaterialPage(
                       key: const ValueKey('home'),
-                      child: HomePage(onLocaleChange: widget.onLocaleChange),
+                      child: const HomePage(),
                     ),
                   ],
                   onDidRemovePage: (_) {},

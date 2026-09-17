@@ -39,18 +39,16 @@ class _DeleteAccountTileState extends State<DeleteAccountTile> {
     final confirmed = await showDeleteAccountConfirmDialog(context);
     if (!confirmed || !context.mounted) return;
 
-    setState(() => _isDeleting = true);
-    var errorCode = await _controller.delete();
+    // Le mot de passe est toujours redemandé ici, avant toute suppression :
+    // ça garantit une session fraîche pour toute l'opération et évite de
+    // supprimer les données Firestore puis d'échouer sur la suppression du
+    // compte Auth (requires-recent-login), ce qui laisserait le compte actif
+    // sans ses données.
+    final password = await showReauthPasswordDialog(context);
+    if (password == null || !context.mounted) return;
 
-    if (errorCode == 'requires-recent-login') {
-      if (!context.mounted) return;
-      final password = await showReauthPasswordDialog(context);
-      if (password == null || !context.mounted) {
-        setState(() => _isDeleting = false);
-        return;
-      }
-      errorCode = await _controller.reauthenticateAndDelete(password);
-    }
+    setState(() => _isDeleting = true);
+    final errorCode = await _controller.reauthenticateAndDelete(password);
 
     if (!context.mounted) return;
     if (errorCode == null) {

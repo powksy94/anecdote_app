@@ -15,8 +15,6 @@ class AnecdoteApp extends StatefulWidget {
 }
 
 class _AnecdoteAppState extends State<AnecdoteApp> {
-  Locale? _locale;
-
   @override
   void initState() {
     super.initState();
@@ -70,7 +68,6 @@ class _AnecdoteAppState extends State<AnecdoteApp> {
       debugShowCheckedModeBanner: false,
       navigatorKey: navigatorKey,
       scaffoldMessengerKey: scaffoldMessengerKey,
-      locale: _locale,
       supportedLocales: AppLocalizations.supportedLocales,
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       themeMode: ThemeMode.system,
@@ -84,11 +81,7 @@ class _AnecdoteAppState extends State<AnecdoteApp> {
         useMaterial3: true,
         colorSchemeSeed: Colors.indigo,
       ),
-      home: RootGate(
-        onLocaleChange: (locale) {
-          setState(() => _locale = locale);
-        },
-      ),
+      home: const RootGate(),
     );
   }
 }
