@@ -99,6 +99,7 @@ extension ContentTypeIcons on ContentType {
       case ContentType.sportExploitsHub:       return Icons.emoji_events_rounded;
       case ContentType.sportAthletesHub:       return Icons.directions_run_rounded;
       case ContentType.sportRecord:            return Icons.military_tech_rounded;
+      case ContentType.sportGreatWoman:        return Icons.woman_rounded;
     }
   }
 }

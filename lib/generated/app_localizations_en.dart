@@ -870,4 +870,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get categorySportRecord => 'Sport Records';
+
+  @override
+  String get categorySportGreatWoman => 'Great Sportswomen';
 }

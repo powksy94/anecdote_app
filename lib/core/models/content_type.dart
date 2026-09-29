@@ -106,4 +106,5 @@ enum ContentType {
   sportExploitsHub,
   sportAthletesHub,
   sportRecord,
+  sportGreatWoman,
 }

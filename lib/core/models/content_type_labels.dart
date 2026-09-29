@@ -99,6 +99,7 @@ extension ContentTypeLabels on ContentType {
       case ContentType.sportExploitsHub:     return 'Feats';
       case ContentType.sportAthletesHub:     return 'Athletes';
       case ContentType.sportRecord:          return 'Sport Records';
+      case ContentType.sportGreatWoman:      return 'Great Sportswomen';
     }
   }
 
@@ -200,6 +201,7 @@ extension ContentTypeLabels on ContentType {
       case ContentType.sportExploitsHub:     return loc.categorySportExploitsHub;
       case ContentType.sportAthletesHub:     return loc.categorySportAthletesHub;
       case ContentType.sportRecord:          return loc.categorySportRecord;
+      case ContentType.sportGreatWoman:      return loc.categorySportGreatWoman;
     }
   }
 }

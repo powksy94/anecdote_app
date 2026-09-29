@@ -1749,6 +1749,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Sport Records'**
   String get categorySportRecord;
+
+  /// No description provided for @categorySportGreatWoman.
+  ///
+  /// In en, this message translates to:
+  /// **'Great Sportswomen'**
+  String get categorySportGreatWoman;
 }
 
 class _AppLocalizationsDelegate

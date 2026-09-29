@@ -39,6 +39,7 @@ abstract class SportNavigator {
                 hubType: ContentType.sportAthletesHub,
                 categories: const [
                   ContentType.legendaryAthlete,
+                  ContentType.sportGreatWoman,
                 ],
                 adService: adService,
               ),

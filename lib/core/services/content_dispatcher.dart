@@ -62,6 +62,7 @@ import '../../features/health/services/medication_service.dart';
 import '../../features/health/services/mental_medication_service.dart';
 import '../../features/science/services/species_reproduction_service.dart';
 import '../../features/sport/services/sport_record_service.dart';
+import '../../features/sport/services/sport_great_woman_service.dart';
 
 Future<ContentData> fetchDailyContent(
   ContentType type, {
@@ -144,6 +145,7 @@ Future<ContentData> fetchDailyContent(
     case ContentType.speciesReproduction:  return SpeciesReproductionService().getDailyContent();
     // ── Sport ──────────────────────────────────────────────────────────────
     case ContentType.sportRecord:          return SportRecordService().getDailyContent();
+    case ContentType.sportGreatWoman:      return SportGreatWomanService().getDailyContent();
     // ── API-ninjas / HTTP ──────────────────────────────────────────────────
     default:                             return apiService.fetchRemoteContent(type);
   }

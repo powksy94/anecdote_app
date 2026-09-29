@@ -206,5 +206,7 @@ Widget buildCardDecoration(ContentType type) {
       return _doubleIcon(Icons.directions_run_rounded, Icons.groups_rounded);
     case ContentType.sportRecord:
       return _doubleIcon(Icons.military_tech_rounded, Icons.timer_rounded);
+    case ContentType.sportGreatWoman:
+      return _doubleIcon(Icons.woman_rounded, Icons.emoji_events_rounded);
   }
 }

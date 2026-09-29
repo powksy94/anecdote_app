@@ -84,9 +84,9 @@ Ouvert : couverture géographique/temporelle (occidentale classique uniquement, 
 3. *Origines & règles insolites* — comment un sport est né, anciennes règles bizarres
 
 **Côté "Athlètes" (la personne)**
-1. ✅ *Athlètes légendaires* — récupère `legendaryAthlete`, déjà existant en sous-catégorie Célébrités (59 entrées déjà rédigées, aucune nouvelle rédaction nécessaire). Fait le 2026-09-28 : enrichissement des 59 entrées avec un vrai code pays ISO2 (`cc`) pour afficher le vrai drapeau au lieu d'un 🌍 générique (nouvel utilitaire partagé [flag_emoji.dart](../../lib/core/utils/flag_emoji.dart), réutilisable pour toutes les futures catégories de personnes du chantier). Reste à faire : migration effective du `ContentType` de Célébrités vers Sport (changement de code, une fois le hub Sport codé).
+1. ✅ *Athlètes légendaires* — récupère `legendaryAthlete`, déjà existant en sous-catégorie Célébrités (59 entrées déjà rédigées, aucune nouvelle rédaction nécessaire). Fait le 2026-09-28 : enrichissement des 59 entrées avec un vrai code pays ISO2 (`cc`) pour afficher le vrai drapeau au lieu d'un 🌍 générique (nouvel utilitaire partagé [flag_emoji.dart](../../lib/core/utils/flag_emoji.dart), réutilisable pour toutes les futures catégories de personnes du chantier). Fait le 2026-09-29 : migration effective vers le hub Sport (`SportNavigator`, retiré de `CelebrityNavigator`), + fix contraste `accentColor` (vert foncé illisible → ambre).
 2. *Rivalités historiques* — grands duels (Federer-Nadal, Ali-Frazier...) — format duo, différent de tout ce qui existe déjà dans l'app
-3. *Pionniers & premières* — première femme/premier athlète à franchir une barrière — thème engageant, sous-représenté
+3. ✅ *Grandes sportives* (remplace "Pionniers & premières") — 66 entrées rédigées et vérifiées, voir [sport-great-women-draft.py](sport-great-women-draft.py). Grandes athlètes féminines avec contexte socio-historique de leur époque (obstacles rencontrés, portée au-delà du sport), sur le modèle de `pioneerWoman` existant mais avec un `cc` ISO2 pour le vrai drapeau (au lieu du texte libre `co`) et un champ `sp` (sport) en plus. 26 pays représentés. Reste : script `tools/sport/generate_sport_great_women.py` + code `ContentType`.
 
 Ouvert : quels sports couvrir en priorité (universalité vs sports de niche).
 
