@@ -879,4 +879,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get categorySportLegendaryEvent => 'Legendary Moments';
+
+  @override
+  String get categorySportOriginRule => 'Origins & Odd Rules';
 }

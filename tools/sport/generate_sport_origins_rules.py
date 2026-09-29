@@ -1,0 +1,112 @@
+import json
+from pathlib import Path
+
+# n=title/hook, sp=sport, cc=ISO2 country code (null if no single country applies),
+# yr=year or era, fa=fact
+#
+# Content is written in ENGLISH (source language for the app's translation pipeline, see
+# content_loader.dart). Text-only category, no images: like sportRivalry, this content
+# isn't centered on a single person's portrait.
+
+records = [
+    {"n": "Basketball's peach basket start", "sp": 'Basketball', "cc": 'US', "yr": '1891',
+     "fa": "James Naismith invented the game with two actual peach baskets nailed to a railing, and since the bottoms weren't removed, someone had to climb a ladder to retrieve the ball after every single basket, until a hole was finally cut in 1906. Dribbling wasn't part of the original rules either. Yale students figured out they could bounce the ball to move it in 1897, but it only became an official rule a decade later."},
+
+    {"n": "Volleyball was invented as basketball's gentler cousin", "sp": 'Volleyball', "cc": 'US', "yr": '1895',
+     "fa": 'William Morgan, a YMCA instructor, created the game for middle-aged businessmen who found basketball too physically demanding. He originally called it Mintonette, borrowing ideas from tennis, basketball, and handball; it was renamed Volley Ball almost immediately because the game consisted of volleying the ball back and forth.'},
+
+    {"n": "Rugby's founding legend is almost certainly false", "sp": 'Rugby union', "cc": 'GB', "yr": '1823',
+     "fa": 'The story that William Webb Ellis invented rugby by picking up a football and running with it during a match at Rugby School has no contemporary evidence; it first appeared in writing in 1876, four years after his death, and an official investigation in 1895 found it unlikely. The Rugby World Cup trophy is still named after him.'},
+
+    {"n": "Baseball's inventor never played the game", "sp": 'Baseball', "cc": 'US', "yr": '1839',
+     "fa": 'For decades, Major League Baseball credited Civil War general Abner Doubleday with inventing the sport in 1839, a story invented in 1905 by a commission trying to prove baseball was purely American, not derived from the British game of rounders. Doubleday himself never once claimed to have invented it, and no record exists of him ever playing.'},
+
+    {"n": 'Badminton was named after a house, not a place it was invented', "sp": 'Badminton', "cc": 'IN', "yr": '1873',
+     "fa": "The game's first written rules were drawn up by British officers stationed in Poona, India, based on the centuries-old game of battledore and shuttlecock. It only became known as badminton after British aristocrats popularized a version of it at the Duke of Beaufort's country estate, Badminton House, in England."},
+
+    {"n": 'Why zero is called love in tennis', "sp": 'Tennis', "cc": 'FR', "yr": '1500s',
+     "fa": "The most cited theory is that love comes from the French word l'oeuf, meaning egg, since a zero looks like one; as tennis crossed from France to England, the pronunciation is believed to have shifted into love. The theory is disputed by some historians, who point to no documented use of l'oeuf for zero in period sources."},
+
+    {"n": 'American football almost got banned for killing its players', "sp": 'American football', "cc": 'US', "yr": '1905',
+     "fa": 'In 1905 alone, 19 college football players died and over 130 were seriously injured, largely from mass formations like the flying wedge, where teams locked arms and charged as a single battering ram. President Theodore Roosevelt pushed schools to reform the game or see it banned outright, leading to the legalization of the forward pass and the banning of the flying wedge.'},
+
+    {"n": 'Tug of war used to be an Olympic sport', "sp": 'Tug of war', "cc": None, "yr": '1900-1920',
+     "fa": "Tug of war was a full Olympic medal event at five consecutive Games between 1900 and 1920, with teams of five to eight pullers. It was dropped from the program after 1920 amid recurring controversies, including a disqualification over an opposing team's choice of boots."},
+
+    {"n": 'Boxing fought bare-knuckle until 1867', "sp": 'Boxing', "cc": 'GB', "yr": '1867',
+     "fa": 'Professional boxing was fought entirely bare-knuckle until the Marquess of Queensberry Rules introduced padded gloves, three-minute rounds, and a ten-second count for a fallen fighter. The last bare-knuckle world heavyweight title fight took place as late as 1889.'},
+
+    {"n": 'The Olympics used to award medals for art', "sp": 'Olympic art competitions', "cc": None, "yr": '1912-1948',
+     "fa": 'From 1912 to 1948, the Olympics handed out official medals in architecture, literature, music, painting, and sculpture, for works inspired by sport. The category was scrapped after officials ruled that, unlike the amateur athletes competing elsewhere at the Games, most of the entrants were professional artists.'},
+
+    {"n": "Water polo's violent early days", "sp": 'Water polo', "cc": 'GB', "yr": '1870s',
+     "fa": 'The first rules, drawn up in 1877 by Scottish swimming instructor William Wilson, described a rough, rugby-like game played in rivers and lakes where brute strength mattered more than skill; players were allowed to wrestle opponents and hold them underwater to wrestle the ball away.'},
+
+    {"n": 'Frisbee is named after a pie company', "sp": 'Frisbee (Ultimate)', "cc": 'US', "yr": '1920s',
+     "fa": "Yale students in the 1920s began flinging empty tins from the Frisbie Pie Company across campus, shouting the company's name to warn bystanders. When Wham-O began selling a plastic flying disc in the 1950s, they renamed it Frisbee after learning college students already used the word."},
+
+    {"n": 'Bowling may be over 5000 years old', "sp": 'Bowling', "cc": 'EG', "yr": 'c. 3200 BC',
+     "fa": "In 1930, archaeologists excavating a child's tomb in Egypt found stone balls and vase-shaped stone pins that appeared to belong to a bowling-like game, suggesting the sport may date back over 5000 years, though some historians caution the objects may never have actually been used together."},
+
+    {"n": "Golf's 18 holes exist by accident", "sp": 'Golf', "cc": 'GB', "yr": '1764',
+     "fa": 'The Old Course at St Andrews originally had 22 holes; in 1764, golfers decided to combine four short holes into two, producing a round of 18. It took over a century for other clubs to formally adopt 18 as the standard length of a round.'},
+
+    {"n": 'The hockey puck exists because a ball kept hurting people', "sp": 'Ice hockey', "cc": 'CA', "yr": '1875',
+     "fa": 'At the first organized indoor hockey game in Montreal, organizers swapped the traditional lacrosse ball for a flat wooden disc because the ball kept flying off the ice into the crowd; the flat disc proved safer and easier to control, and the puck was born.'},
+
+    {"n": 'Sumo began as a ritual to entertain the gods', "sp": 'Sumo', "cc": 'JP', "yr": '300 BC-300 AD',
+     "fa": 'Sumo traces back to Shinto ritual dances performed to pray for a good harvest, and an eighth-century manuscript even describes the fate of the Japanese islands being decided by a wrestling match between two deities. The ring where matches take place is still treated as a Shinto shrine today.'},
+
+    {"n": "Croquet's only Olympic outing drew one paying fan", "sp": 'Croquet', "cc": 'FR', "yr": '1900',
+     "fa": 'Croquet appeared at the Olympics exactly once, at Paris 1900, where all ten competitors were French. Reportedly only one paying spectator showed up to watch, an Englishman who had traveled from Nice specifically for the event.'},
+
+    {"n": 'Olympic divers used to compete for distance, not style', "sp": 'Diving', "cc": 'US', "yr": '1904',
+     "fa": 'The plunge for distance had competitors dive in and then stay completely motionless, gliding as far as possible underwater for up to 60 seconds. All five competitors at its only Olympic appearance were American; it was dropped four years later for being, by most accounts, boring to watch.'},
+
+    {"n": 'Synchronized swimming used to have a solo event', "sp": 'Synchronized swimming', "cc": None, "yr": '1984-1992',
+     "fa": 'For three Olympics, athletes competed in synchronized swimming entirely alone in the pool, judged on timing and grace with no partner to synchronize with. The event was dropped after 1992, partly because judges and audiences found it nearly impossible to evaluate a solo routine against the group standard the sport was named for.'},
+
+    {"n": 'Table tennis began with cigar boxes and champagne corks', "sp": 'Table tennis', "cc": 'GB', "yr": '1880s',
+     "fa": 'Wealthy Victorian families invented an indoor version of lawn tennis to play after dinner, using books stacked as a net, cigar box lids as paddles, and a champagne cork as the ball. Purpose-built equipment only appeared once manufacturers caught on in the 1890s.'},
+
+    {"n": 'Cricket bowlers used to be forbidden from raising their arm', "sp": 'Cricket', "cc": 'GB', "yr": '1864',
+     "fa": "For most of cricket's early history, bowlers had to deliver the ball with an underarm motion; when England bowler Edgar Willsher deliberately bowled overarm in 1862, he was called for six consecutive illegal deliveries and the entire England team walked off in protest. The law was rewritten two years later to finally allow it."},
+
+    {"n": 'Ten-pin bowling was invented to dodge a gambling ban', "sp": 'Bowling', "cc": 'US', "yr": '1841',
+     "fa": "Connecticut outlawed nine-pin bowling in 1841 to crack down on the rampant gambling associated with the game. According to popular legend, bowlers responded by simply adding a tenth pin, creating a technically different game the law didn't cover, and ten-pin bowling was born."},
+
+    {"n": 'The Olympics once featured a duel with pistols', "sp": 'Pistol dueling', "cc": 'GR', "yr": '1906',
+     "fa": "At the 1906 Intercalated Games in Athens, competitors fired at each other's stand-ins, plaster mannequins dressed in frock coats with a bullseye painted on the chest, from 20 to 30 meters away. A related demonstration was also staged alongside the 1908 London Games before the sport disappeared for good."},
+
+    {"n": "The marathon's odd distance may come from royal seating", "sp": 'Athletics (marathon)', "cc": 'GB', "yr": '1908',
+     "fa": "The 1908 London Olympics marathon ran from Windsor Castle to the royal box at the stadium, a distance of 26 miles and 385 yards; that oddly specific number became the sport's permanent standard in 1921. One popular story credits the extra yards to a royal request so the young princes could watch the start, though historians have found no archival evidence to confirm it."},
+
+    {"n": 'Football split from rugby over shin-kicking', "sp": 'Football', "cc": 'GB', "yr": '1863',
+     "fa": "When English clubs met in 1863 to write a single set of rules for their sport, they couldn't agree on two things: running with the ball in hand, and hacking, deliberately kicking an opponent's shins to bring them down. The clubs that wanted to keep both broke away, and within a few years football and rugby had become two entirely separate sports."},
+
+    {"n": "The modern pentathlon simulates a 19th-century soldier's ordeal", "sp": 'Modern pentathlon', "cc": 'FR', "yr": '1912',
+     "fa": 'Olympic founder Pierre de Coubertin invented the event himself, combining riding, fencing, shooting, swimming, and running to recreate the fictional journey of a cavalry officer who has to cross enemy lines on an unfamiliar horse, fight off attackers, and swim across a river to deliver a message.'},
+
+    {"n": 'Curling stones came from frozen Scottish ponds', "sp": 'Curling', "cc": 'GB', "yr": '1541',
+     "fa": "The earliest written record of curling dates to 1541 in Paisley, Scotland, describing a challenge between a monk and a local man to slide stones across a frozen pond. Early stones were just flat rocks pulled straight from the ice; handles weren't added until over a century later."},
+
+    {"n": 'Baseball gloves were once considered a sign of weakness', "sp": 'Baseball', "cc": 'US', "yr": '1870s',
+     "fa": 'Early professional players caught the ball barehanded and mocked teammates who wore protection as unmanly; some of the first glove-wearers hid them under their uniforms between innings out of embarrassment. Catchers and first basemen, who took the hardest throws, were the first to adopt gloves regardless of the ridicule.'},
+
+    {"n": 'Wimbledon started as a croquet club', "sp": 'Tennis', "cc": 'GB', "yr": '1875',
+     "fa": "The All England Croquet Club added lawn tennis in 1875 simply to bring in extra income as croquet's popularity faded; two years later, the club organized its first tennis tournament to help pay for a lawn roller. That tournament became Wimbledon, the oldest tennis championship in the world."},
+
+    {"n": 'Olympic swimmers once had to climb over boats mid-race', "sp": 'Swimming', "cc": 'FR', "yr": '1900',
+     "fa": 'The 200m obstacle swimming event at the 1900 Paris Olympics had competitors climb over a pole, scramble over a row of boats, then dive underneath a second row of boats before finishing the race. It never appeared at the Olympics again.'},
+]
+
+
+def main():
+    out = Path("assets/sport/sport_origins_rules.json")
+    out.parent.mkdir(parents=True, exist_ok=True)
+    out.write_text(json.dumps(records, ensure_ascii=False, separators=(',', ':')), encoding="utf-8")
+    print(f"Done: {len(records)} entries written.")
+
+
+if __name__ == "__main__":
+    main()

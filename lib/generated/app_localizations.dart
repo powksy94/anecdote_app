@@ -1767,6 +1767,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Legendary Moments'**
   String get categorySportLegendaryEvent;
+
+  /// No description provided for @categorySportOriginRule.
+  ///
+  /// In en, this message translates to:
+  /// **'Origins & Odd Rules'**
+  String get categorySportOriginRule;
 }
 
 class _AppLocalizationsDelegate

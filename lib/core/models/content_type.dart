@@ -109,4 +109,5 @@ enum ContentType {
   sportGreatWoman,
   sportRivalry,
   sportLegendaryEvent,
+  sportOriginRule,
 }

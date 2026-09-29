@@ -102,6 +102,7 @@ extension ContentTypeIcons on ContentType {
       case ContentType.sportGreatWoman:        return Icons.woman_rounded;
       case ContentType.sportRivalry:           return Icons.compare_arrows_rounded;
       case ContentType.sportLegendaryEvent:    return Icons.auto_awesome_rounded;
+      case ContentType.sportOriginRule:        return Icons.history_edu_rounded;
     }
   }
 }

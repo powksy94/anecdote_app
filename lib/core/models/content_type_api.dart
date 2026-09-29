@@ -107,6 +107,7 @@ extension ContentTypeApi on ContentType {
       case ContentType.sportGreatWoman:
       case ContentType.sportRivalry:
       case ContentType.sportLegendaryEvent:
+      case ContentType.sportOriginRule:
         return '';
     }
   }

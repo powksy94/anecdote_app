@@ -212,5 +212,7 @@ Widget buildCardDecoration(ContentType type) {
       return _doubleIcon(Icons.sports_rounded, Icons.compare_arrows_rounded);
     case ContentType.sportLegendaryEvent:
       return _doubleIcon(Icons.auto_awesome_rounded, Icons.emoji_events_rounded);
+    case ContentType.sportOriginRule:
+      return _doubleIcon(Icons.history_edu_rounded, Icons.sports_rounded);
   }
 }

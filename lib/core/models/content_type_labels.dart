@@ -102,6 +102,7 @@ extension ContentTypeLabels on ContentType {
       case ContentType.sportGreatWoman:      return 'Great Sportswomen';
       case ContentType.sportRivalry:         return 'Historic Rivalries';
       case ContentType.sportLegendaryEvent:  return 'Legendary Moments';
+      case ContentType.sportOriginRule:      return 'Origins & Odd Rules';
     }
   }
 
@@ -206,6 +207,7 @@ extension ContentTypeLabels on ContentType {
       case ContentType.sportGreatWoman:      return loc.categorySportGreatWoman;
       case ContentType.sportRivalry:         return loc.categorySportRivalry;
       case ContentType.sportLegendaryEvent:  return loc.categorySportLegendaryEvent;
+      case ContentType.sportOriginRule:      return loc.categorySportOriginRule;
     }
   }
 }

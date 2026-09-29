@@ -22,6 +22,7 @@ abstract class SportNavigator {
                 categories: const [
                   ContentType.sportRecord,
                   ContentType.sportLegendaryEvent,
+                  ContentType.sportOriginRule,
                 ],
                 adService: adService,
               ),
