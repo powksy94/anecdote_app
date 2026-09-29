@@ -61,6 +61,7 @@ import '../../features/health/services/common_mental_disorder_service.dart';
 import '../../features/health/services/medication_service.dart';
 import '../../features/health/services/mental_medication_service.dart';
 import '../../features/science/services/species_reproduction_service.dart';
+import '../../features/sport/services/sport_record_service.dart';
 
 Future<ContentData> fetchDailyContent(
   ContentType type, {
@@ -141,6 +142,8 @@ Future<ContentData> fetchDailyContent(
     case ContentType.medication:           return MedicationService().getDailyContent();
     case ContentType.mentalMedication:     return MentalMedicationService().getDailyContent();
     case ContentType.speciesReproduction:  return SpeciesReproductionService().getDailyContent();
+    // ── Sport ──────────────────────────────────────────────────────────────
+    case ContentType.sportRecord:          return SportRecordService().getDailyContent();
     // ── API-ninjas / HTTP ──────────────────────────────────────────────────
     default:                             return apiService.fetchRemoteContent(type);
   }

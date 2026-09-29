@@ -858,4 +858,16 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get categorySpeciesReproduction => 'Species Reproduction';
+
+  @override
+  String get categorySportHub => 'Sport';
+
+  @override
+  String get categorySportExploitsHub => 'Feats';
+
+  @override
+  String get categorySportAthletesHub => 'Athletes';
+
+  @override
+  String get categorySportRecord => 'Sport Records';
 }

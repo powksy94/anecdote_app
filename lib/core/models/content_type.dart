@@ -102,4 +102,8 @@ enum ContentType {
   medication,
   mentalMedication,
   speciesReproduction,
+  sportHub,
+  sportExploitsHub,
+  sportAthletesHub,
+  sportRecord,
 }

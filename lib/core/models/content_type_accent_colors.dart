@@ -45,6 +45,14 @@ extension ContentTypeAccentColors on ContentType {
       case ContentType.gamersHub:
       case ContentType.gamingLegend:
         return const Color(0xFF66C0F4);
+      case ContentType.legendaryAthlete:
+        return const Color(0xFFFFC107);
+      case ContentType.sportHub:
+        return const Color(0xFFFF6B6B);
+      case ContentType.sportExploitsHub:
+        return const Color(0xFFFFAB40);
+      case ContentType.sportAthletesHub:
+        return const Color(0xFFFF80AB);
       case ContentType.gamingNomination:
         return const Color(0xFFD4A017);
       case ContentType.worstGame:

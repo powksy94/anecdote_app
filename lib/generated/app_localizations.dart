@@ -1725,6 +1725,30 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Species Reproduction'**
   String get categorySpeciesReproduction;
+
+  /// No description provided for @categorySportHub.
+  ///
+  /// In en, this message translates to:
+  /// **'Sport'**
+  String get categorySportHub;
+
+  /// No description provided for @categorySportExploitsHub.
+  ///
+  /// In en, this message translates to:
+  /// **'Feats'**
+  String get categorySportExploitsHub;
+
+  /// No description provided for @categorySportAthletesHub.
+  ///
+  /// In en, this message translates to:
+  /// **'Athletes'**
+  String get categorySportAthletesHub;
+
+  /// No description provided for @categorySportRecord.
+  ///
+  /// In en, this message translates to:
+  /// **'Sport Records'**
+  String get categorySportRecord;
 }
 
 class _AppLocalizationsDelegate

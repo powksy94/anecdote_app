@@ -871,4 +871,16 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get categorySpeciesReproduction => 'Reproducción de las especies';
+
+  @override
+  String get categorySportHub => 'Deporte';
+
+  @override
+  String get categorySportExploitsHub => 'Hazañas';
+
+  @override
+  String get categorySportAthletesHub => 'Atletas';
+
+  @override
+  String get categorySportRecord => 'Récords deportivos';
 }

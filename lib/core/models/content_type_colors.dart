@@ -95,6 +95,10 @@ extension ContentTypeColors on ContentType {
       case ContentType.medication:           return const Color(0xFF11998E);
       case ContentType.mentalMedication:     return const Color(0xFF5F2C82);
       case ContentType.speciesReproduction:  return const Color(0xFF11998E);
+      case ContentType.sportHub:              return const Color(0xFFD32F2F);
+      case ContentType.sportExploitsHub:      return const Color(0xFFE64A19);
+      case ContentType.sportAthletesHub:      return const Color(0xFFC2185B);
+      case ContentType.sportRecord:           return const Color(0xFFD32F2F);
     }
   }
 }

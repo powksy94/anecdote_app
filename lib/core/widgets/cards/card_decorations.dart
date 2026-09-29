@@ -198,5 +198,13 @@ Widget buildCardDecoration(ContentType type) {
       return _singleIcon(Icons.medication_liquid_rounded, iconSize: 16);
     case ContentType.speciesReproduction:
       return _singleIcon(Icons.egg_rounded, iconSize: 16);
+    case ContentType.sportHub:
+      return _doubleIcon(Icons.sports_rounded, Icons.emoji_events_rounded);
+    case ContentType.sportExploitsHub:
+      return _doubleIcon(Icons.emoji_events_rounded, Icons.bolt_rounded);
+    case ContentType.sportAthletesHub:
+      return _doubleIcon(Icons.directions_run_rounded, Icons.groups_rounded);
+    case ContentType.sportRecord:
+      return _doubleIcon(Icons.military_tech_rounded, Icons.timer_rounded);
   }
 }

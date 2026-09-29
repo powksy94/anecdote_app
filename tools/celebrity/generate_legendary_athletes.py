@@ -4,9 +4,41 @@ from urllib.parse import quote
 
 # n=name, co=country, sp=sport, yr=active years,
 # tr=trophies (None if not applicable), md=medals (None if not applicable),
-# fa=impact, im=imageUrl
+# fa=impact, im=imageUrl, cc=ISO2 country code(s) for flag rendering
+# ("/"-joined for dual nationality, e.g. "CZ/US"), derived from co via COUNTRY_ISO2
 
 HEADERS = {"User-Agent": "DailyFactsApp/1.0 (matthieuuzan@gmail.com)"}
+
+# Mapping "co" (free-text country) -> ISO 3166-1 alpha-2 code(s), used to render
+# the real flag emoji instead of a generic 🌍. "/"-joined for dual nationality.
+COUNTRY_ISO2 = {
+    "United States": "US",
+    "Jamaica": "JM",
+    "Kenya": "KE",
+    "Switzerland": "CH",
+    "Germany": "DE",
+    "Brazil": "BR",
+    "Argentina": "AR",
+    "France": "FR",
+    "Romania": "RO",
+    "Canada": "CA",
+    "Czech Republic / United States": "CZ/US",
+    "Spain": "ES",
+    "Serbia": "RS",
+    "India": "IN",
+    "Portugal": "PT",
+    "Finland": "FI",
+    "Czech Republic (Czechoslovakia)": "CZ",
+    "Netherlands": "NL",
+    "Ethiopia": "ET",
+    "Australia": "AU",
+    "United Kingdom": "GB",
+    "Belgium": "BE",
+    "Italy": "IT",
+    "New Zealand": "NZ",
+    "Germany (East Germany)": "DE",
+    "Russia": "RU",
+}
 
 WIKI_EN = {
     "Muhammad Ali":       "Muhammad Ali",
@@ -424,7 +456,13 @@ def wiki_img(title: str) -> str | None:
 def main():
     total = len(athletes)
     found = 0
+    missing_cc = []
     for i, s in enumerate(athletes):
+        cc = COUNTRY_ISO2.get(s["co"])
+        if cc is None:
+            missing_cc.append(s["co"])
+        s["cc"] = cc
+
         title = WIKI_EN.get(s["n"], s["n"])
         img = wiki_img(title)
         s["im"] = img
@@ -434,6 +472,10 @@ def main():
         sys.stdout.buffer.write(f"  [{i+1:2}/{total}] {status} {s['n']}\n".encode("utf-8"))
         sys.stdout.buffer.flush()
         time.sleep(0.3)
+    if missing_cc:
+        sys.stdout.buffer.write(
+            f"\nWARNING: no ISO2 mapping for: {sorted(set(missing_cc))}\n".encode("utf-8")
+        )
     out = Path("assets/celebrity/legendary_athletes.json")
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(json.dumps(athletes, ensure_ascii=False, separators=(',', ':')), encoding="utf-8")

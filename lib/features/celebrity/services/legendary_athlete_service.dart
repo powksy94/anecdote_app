@@ -1,5 +1,6 @@
 import '../data/legendary_athlete_data.dart';
 import '../../../core/models/content_data.dart';
+import '../../../core/utils/flag_emoji.dart';
 
 class LegendaryAthleteService {
   static List<LegendaryAthleteData>? _cache;
@@ -9,7 +10,7 @@ class LegendaryAthleteService {
     final a = dailyLegendaryAthlete(_cache!);
 
     final buf = StringBuffer();
-    buf.writeln('🌍 Country: ${a.country}');
+    buf.writeln('${flagEmoji(a.countryCode)} Country: ${a.country}');
     buf.writeln('🏅 Sport: ${a.sport}');
     buf.writeln('🗓️ Active: ${a.activeYears}');
     if (a.trophies != null) buf.writeln('🏆 ${a.trophies}');

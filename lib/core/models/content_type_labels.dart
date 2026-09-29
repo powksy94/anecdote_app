@@ -95,6 +95,10 @@ extension ContentTypeLabels on ContentType {
       case ContentType.medication:           return 'Medications';
       case ContentType.mentalMedication:     return 'Psychiatric Medications';
       case ContentType.speciesReproduction:  return 'Species Reproduction';
+      case ContentType.sportHub:             return 'Sport';
+      case ContentType.sportExploitsHub:     return 'Feats';
+      case ContentType.sportAthletesHub:     return 'Athletes';
+      case ContentType.sportRecord:          return 'Sport Records';
     }
   }
 
@@ -192,6 +196,10 @@ extension ContentTypeLabels on ContentType {
       case ContentType.medication:           return loc.categoryMedication;
       case ContentType.mentalMedication:     return loc.categoryMentalMedication;
       case ContentType.speciesReproduction:  return loc.categorySpeciesReproduction;
+      case ContentType.sportHub:             return loc.categorySportHub;
+      case ContentType.sportExploitsHub:     return loc.categorySportExploitsHub;
+      case ContentType.sportAthletesHub:     return loc.categorySportAthletesHub;
+      case ContentType.sportRecord:          return loc.categorySportRecord;
     }
   }
 }

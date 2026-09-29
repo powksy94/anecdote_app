@@ -2,18 +2,20 @@ import 'dart:convert';
 import 'dart:math' as math;
 import 'package:flutter/services.dart';
 
-// n=name, co=country, sp=sport, yr=active years, tr=trophies (nullable), md=medals (nullable), fa=impact, im=imageUrl
+// n=name, co=country, sp=sport, yr=active years, tr=trophies (nullable), md=medals (nullable),
+// fa=impact, cc=ISO2 country code(s) for flag rendering ("/"-joined for dual nationality), im=imageUrl
 
 class LegendaryAthleteData {
   final String name, country, sport, activeYears, impact;
   final String? trophies;
   final String? medals;
+  final String? countryCode;
   final String? imageUrl;
 
   const LegendaryAthleteData({
     required this.name, required this.country, required this.sport,
     required this.activeYears, required this.impact,
-    this.trophies, this.medals, this.imageUrl,
+    this.trophies, this.medals, this.countryCode, this.imageUrl,
   });
 
   factory LegendaryAthleteData.fromJson(Map<String, dynamic> j) => LegendaryAthleteData(
@@ -24,6 +26,7 @@ class LegendaryAthleteData {
     trophies:    j['tr'] as String?,
     medals:      j['md'] as String?,
     impact:      j['fa'] as String,
+    countryCode: j['cc'] as String?,
     imageUrl:    (j['im'] as String?)?.isEmpty == true ? null : j['im'] as String?,
   );
 }

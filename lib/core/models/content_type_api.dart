@@ -100,6 +100,10 @@ extension ContentTypeApi on ContentType {
       case ContentType.medication:
       case ContentType.mentalMedication:
       case ContentType.speciesReproduction:
+      case ContentType.sportHub:
+      case ContentType.sportExploitsHub:
+      case ContentType.sportAthletesHub:
+      case ContentType.sportRecord:
         return '';
     }
   }
