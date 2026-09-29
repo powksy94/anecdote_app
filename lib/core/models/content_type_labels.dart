@@ -10,6 +10,8 @@ extension ContentTypeLabels on ContentType {
       case ContentType.kingOfFrance:       return 'Kings of France';
       case ContentType.americanPresident:  return 'American Presidents';
       case ContentType.historyHub:         return 'History';
+      case ContentType.historyEventsHub:        return 'Events';
+      case ContentType.historyCivilizationsHub: return 'Civilizations';
       case ContentType.animals:            return 'Animals';
       case ContentType.frenchDepartment:   return 'French Department';
       case ContentType.pacificIsland:      return 'Pacific Island';
@@ -115,6 +117,8 @@ extension ContentTypeLabels on ContentType {
       case ContentType.kingOfFrance:       return loc.categoryKingOfFrance;
       case ContentType.americanPresident:  return loc.categoryAmericanPresident;
       case ContentType.historyHub:         return loc.categoryHistoryHub;
+      case ContentType.historyEventsHub:        return loc.categoryHistoryEventsHub;
+      case ContentType.historyCivilizationsHub: return loc.categoryHistoryCivilizationsHub;
       case ContentType.animals:            return loc.categoryAnimals;
       case ContentType.country:            return loc.categoryCountry;
       case ContentType.frenchDepartment:   return loc.categoryFrenchDepartment;

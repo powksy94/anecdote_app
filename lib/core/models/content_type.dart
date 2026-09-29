@@ -17,6 +17,8 @@ enum ContentType {
   kingOfFrance,
   americanPresident,
   historyHub,
+  historyEventsHub,
+  historyCivilizationsHub,
   animals,
   country,
   frenchDepartment,

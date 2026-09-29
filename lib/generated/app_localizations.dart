@@ -334,6 +334,18 @@ abstract class AppLocalizations {
   /// **'History'**
   String get categoryHistoryHub;
 
+  /// No description provided for @categoryHistoryEventsHub.
+  ///
+  /// In en, this message translates to:
+  /// **'Events'**
+  String get categoryHistoryEventsHub;
+
+  /// No description provided for @categoryHistoryCivilizationsHub.
+  ///
+  /// In en, this message translates to:
+  /// **'Civilizations'**
+  String get categoryHistoryCivilizationsHub;
+
   /// No description provided for @categoryDayOfHistory.
   ///
   /// In en, this message translates to:

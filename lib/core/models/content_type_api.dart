@@ -24,6 +24,8 @@ extension ContentTypeApi on ContentType {
       case ContentType.kingOfFrance:
       case ContentType.americanPresident:
       case ContentType.historyHub:
+      case ContentType.historyEventsHub:
+      case ContentType.historyCivilizationsHub:
       case ContentType.cinemaHub:
       case ContentType.classicCinema:
       case ContentType.cinema80s90s:

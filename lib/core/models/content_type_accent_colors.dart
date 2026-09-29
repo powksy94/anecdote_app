@@ -6,6 +6,10 @@ extension ContentTypeAccentColors on ContentType {
       case ContentType.exoplanet:
       case ContentType.space:
         return const Color(0xFF9B6DFF);
+      case ContentType.historyEventsHub:
+        return const Color(0xFFFFCA28);
+      case ContentType.historyCivilizationsHub:
+        return const Color(0xFFFFD54F);
       case ContentType.star:
         return const Color(0xFFffd200);
       case ContentType.solarSystemMoon:

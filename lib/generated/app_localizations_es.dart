@@ -128,6 +128,12 @@ class AppLocalizationsEs extends AppLocalizations {
   String get categoryHistoryHub => 'Historia';
 
   @override
+  String get categoryHistoryEventsHub => 'Eventos';
+
+  @override
+  String get categoryHistoryCivilizationsHub => 'Civilizaciones';
+
+  @override
   String get categoryDayOfHistory => 'Evento del Día';
 
   @override

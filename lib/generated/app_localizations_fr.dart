@@ -129,6 +129,12 @@ class AppLocalizationsFr extends AppLocalizations {
   String get categoryHistoryHub => 'Histoire';
 
   @override
+  String get categoryHistoryEventsHub => 'Événements';
+
+  @override
+  String get categoryHistoryCivilizationsHub => 'Civilisations';
+
+  @override
   String get categoryDayOfHistory => 'Événement du Jour';
 
   @override

@@ -38,6 +38,10 @@ Widget buildCardDecoration(ContentType type) {
       return _singleIcon(Icons.waves);
     case ContentType.historyHub:
       return _singleIcon(Icons.history_edu);
+    case ContentType.historyEventsHub:
+      return _doubleIcon(Icons.local_fire_department_rounded, Icons.shield_rounded);
+    case ContentType.historyCivilizationsHub:
+      return _doubleIcon(Icons.public_rounded, Icons.account_balance_rounded);
     case ContentType.celebrityHub:
       return _bubbles(Icons.stars);
     case ContentType.scienceHub:

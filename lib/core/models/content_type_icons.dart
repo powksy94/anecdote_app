@@ -10,6 +10,8 @@ extension ContentTypeIcons on ContentType {
       case ContentType.kingOfFrance:        return Icons.castle_rounded;
       case ContentType.americanPresident:   return Icons.account_balance_rounded;
       case ContentType.historyHub:          return Icons.history_edu_rounded;
+      case ContentType.historyEventsHub:        return Icons.local_fire_department_rounded;
+      case ContentType.historyCivilizationsHub: return Icons.public_rounded;
       case ContentType.animals:             return Icons.pets_rounded;
       case ContentType.country:             return Icons.public_rounded;
       case ContentType.frenchDepartment:    return Icons.location_city_rounded;

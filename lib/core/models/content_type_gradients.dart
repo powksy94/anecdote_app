@@ -17,6 +17,10 @@ extension ContentTypeGradients on ContentType {
         return [const Color(0xFF002868), const Color(0xFFBF0A30)];
       case ContentType.historyHub:
         return [const Color(0xFFd4a017), const Color(0xFFf2994a)];
+      case ContentType.historyEventsHub:
+        return [const Color(0xFF6A0000), const Color(0xFFD4A017)];
+      case ContentType.historyCivilizationsHub:
+        return [const Color(0xFF311B92), const Color(0xFFFFB300)];
       case ContentType.animals:
         return [const Color(0xFF56ab2f), const Color(0xFFa8e063)];
       case ContentType.country:

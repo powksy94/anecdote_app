@@ -5,7 +5,7 @@ import '../../features/mythology/pages/mythology_hub_page.dart';
 import '../../features/health/pages/health_navigator.dart';
 import '../../features/world/pages/world_navigator.dart';
 import '../../features/space/pages/space_page.dart';
-import '../../features/history/pages/history_hub_page.dart';
+import '../../features/history/pages/history_navigator.dart';
 import '../../features/cinema/pages/cinema_hub_page.dart';
 import '../../features/celebrity/pages/celebrity_navigator.dart';
 import '../../features/science/pages/science_navigator.dart';
@@ -124,15 +124,19 @@ class _HomePageState extends State<HomePage> {
           .then((_) => _cardKeys[type]?.currentState?.onNavigationComplete());
       return;
     }
+    if (type == ContentType.historyHub) {
+      HistoryNavigator.show(context, _adService)
+          .then((_) => _cardKeys[type]?.currentState?.onNavigationComplete());
+      return;
+    }
     if (type == ContentType.space ||
-        type == ContentType.historyHub || type == ContentType.cinemaHub ||
+        type == ContentType.cinemaHub ||
         type == ContentType.mythologyHub) {
       Navigator.push(
         context,
         PageRouteBuilder(
           pageBuilder: (_, __, ___) {
             if (type == ContentType.space) return SpacePage(adService: _adService);
-            if (type == ContentType.historyHub) return HistoryHubPage(adService: _adService);
             if (type == ContentType.mythologyHub) return MythologyHubPage(adService: _adService);
             return CinemaHubPage(adService: _adService);
           },
