@@ -45,6 +45,7 @@ class _ImageContentCardState extends State<ImageContentCard> {
     ContentType.musicLegend,
     ContentType.sportRecord,
     ContentType.sportGreatWoman,
+    ContentType.sportLegendaryEvent,
   };
 
   static const _copyrightTypes = {

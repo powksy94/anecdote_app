@@ -199,6 +199,8 @@ extension ContentTypeGradients on ContentType {
         return [const Color(0xFF4A0E2E), const Color(0xFFAD1457)];
       case ContentType.sportRivalry:
         return [const Color(0xFF1A237E), const Color(0xFFB71C1C)];
+      case ContentType.sportLegendaryEvent:
+        return [const Color(0xFF4A148C), const Color(0xFFFF6F00)];
     }
   }
 }

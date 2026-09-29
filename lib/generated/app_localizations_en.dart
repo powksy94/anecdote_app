@@ -876,4 +876,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get categorySportRivalry => 'Historic Rivalries';
+
+  @override
+  String get categorySportLegendaryEvent => 'Legendary Moments';
 }

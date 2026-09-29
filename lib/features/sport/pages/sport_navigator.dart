@@ -21,6 +21,7 @@ abstract class SportNavigator {
                 hubType: ContentType.sportExploitsHub,
                 categories: const [
                   ContentType.sportRecord,
+                  ContentType.sportLegendaryEvent,
                 ],
                 adService: adService,
               ),

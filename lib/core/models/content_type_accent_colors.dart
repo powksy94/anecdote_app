@@ -53,6 +53,8 @@ extension ContentTypeAccentColors on ContentType {
         return const Color(0xFFFF6FA5);
       case ContentType.sportRivalry:
         return const Color(0xFFFFD740);
+      case ContentType.sportLegendaryEvent:
+        return const Color(0xFFFFCA28);
       case ContentType.sportExploitsHub:
         return const Color(0xFFFFAB40);
       case ContentType.sportAthletesHub:

@@ -1761,6 +1761,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Historic Rivalries'**
   String get categorySportRivalry;
+
+  /// No description provided for @categorySportLegendaryEvent.
+  ///
+  /// In en, this message translates to:
+  /// **'Legendary Moments'**
+  String get categorySportLegendaryEvent;
 }
 
 class _AppLocalizationsDelegate

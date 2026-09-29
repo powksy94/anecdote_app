@@ -64,6 +64,7 @@ import '../../features/science/services/species_reproduction_service.dart';
 import '../../features/sport/services/sport_record_service.dart';
 import '../../features/sport/services/sport_great_woman_service.dart';
 import '../../features/sport/services/sport_rivalry_service.dart';
+import '../../features/sport/services/sport_legendary_event_service.dart';
 
 Future<ContentData> fetchDailyContent(
   ContentType type, {
@@ -148,6 +149,7 @@ Future<ContentData> fetchDailyContent(
     case ContentType.sportRecord:          return SportRecordService().getDailyContent();
     case ContentType.sportGreatWoman:      return SportGreatWomanService().getDailyContent();
     case ContentType.sportRivalry:         return SportRivalryService().getDailyContent();
+    case ContentType.sportLegendaryEvent:  return SportLegendaryEventService().getDailyContent();
     // ── API-ninjas / HTTP ──────────────────────────────────────────────────
     default:                             return apiService.fetchRemoteContent(type);
   }
