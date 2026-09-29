@@ -105,6 +105,7 @@ extension ContentTypeApi on ContentType {
       case ContentType.sportAthletesHub:
       case ContentType.sportRecord:
       case ContentType.sportGreatWoman:
+      case ContentType.sportRivalry:
         return '';
     }
   }

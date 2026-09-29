@@ -208,5 +208,7 @@ Widget buildCardDecoration(ContentType type) {
       return _doubleIcon(Icons.military_tech_rounded, Icons.timer_rounded);
     case ContentType.sportGreatWoman:
       return _doubleIcon(Icons.woman_rounded, Icons.emoji_events_rounded);
+    case ContentType.sportRivalry:
+      return _doubleIcon(Icons.sports_rounded, Icons.compare_arrows_rounded);
   }
 }

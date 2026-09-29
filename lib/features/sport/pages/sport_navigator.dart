@@ -40,6 +40,7 @@ abstract class SportNavigator {
                 categories: const [
                   ContentType.legendaryAthlete,
                   ContentType.sportGreatWoman,
+                  ContentType.sportRivalry,
                 ],
                 adService: adService,
               ),

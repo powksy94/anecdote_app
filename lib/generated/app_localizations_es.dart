@@ -886,4 +886,7 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get categorySportGreatWoman => 'Grandes deportistas';
+
+  @override
+  String get categorySportRivalry => 'Rivalidades históricas';
 }

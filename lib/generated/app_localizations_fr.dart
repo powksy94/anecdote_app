@@ -889,4 +889,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get categorySportGreatWoman => 'Grandes sportives';
+
+  @override
+  String get categorySportRivalry => 'Rivalités historiques';
 }
