@@ -59,4 +59,7 @@ google-services.json
 # Raw data sources (générés par tools/generate_exoplanets.py)
 PS_*.csv
 
+# Internal planning docs (not meant for repo history)
+docs/**/*.md
+
 macos/Flutter/GeneratedPluginRegistrant.swift
