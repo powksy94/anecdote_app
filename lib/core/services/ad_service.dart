@@ -23,6 +23,7 @@ class AdService {
         onAdFailedToLoad: (error) {
           debugPrint('InterstitialAd failed to load: $error');
           _isAdLoaded = false;
+          Future.delayed(const Duration(minutes: 1), loadInterstitialAd);
         },
       ),
     );
