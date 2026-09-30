@@ -135,6 +135,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get categoryHistoryCivilizationsHub => 'Civilizations';
 
   @override
+  String get categoryDiplomaticScandal => 'Diplomatic Scandals';
+
+  @override
   String get categoryDayOfHistory => 'Day of History';
 
   @override

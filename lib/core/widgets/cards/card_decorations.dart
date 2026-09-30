@@ -42,6 +42,8 @@ Widget buildCardDecoration(ContentType type) {
       return _doubleIcon(Icons.local_fire_department_rounded, Icons.shield_rounded);
     case ContentType.historyCivilizationsHub:
       return _doubleIcon(Icons.public_rounded, Icons.account_balance_rounded);
+    case ContentType.diplomaticScandal:
+      return _doubleIcon(Icons.gavel_rounded, Icons.public_rounded);
     case ContentType.celebrityHub:
       return _bubbles(Icons.stars);
     case ContentType.scienceHub:

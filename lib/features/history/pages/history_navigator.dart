@@ -22,6 +22,7 @@ abstract class HistoryNavigator {
                 categories: const [
                   ContentType.history,
                   ContentType.battle,
+                  ContentType.diplomaticScandal,
                 ],
                 adService: adService,
               ),

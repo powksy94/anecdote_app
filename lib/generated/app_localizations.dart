@@ -346,6 +346,12 @@ abstract class AppLocalizations {
   /// **'Civilizations'**
   String get categoryHistoryCivilizationsHub;
 
+  /// No description provided for @categoryDiplomaticScandal.
+  ///
+  /// In en, this message translates to:
+  /// **'Diplomatic Scandals'**
+  String get categoryDiplomaticScandal;
+
   /// No description provided for @categoryDayOfHistory.
   ///
   /// In en, this message translates to:
