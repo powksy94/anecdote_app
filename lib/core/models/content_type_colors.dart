@@ -13,6 +13,7 @@ extension ContentTypeColors on ContentType {
       case ContentType.historyEventsHub:        return const Color(0xFF8D2F00);
       case ContentType.historyCivilizationsHub: return const Color(0xFF4527A0);
       case ContentType.diplomaticScandal:        return const Color(0xFF8B0000);
+      case ContentType.britishMonarch:            return const Color(0xFF7B1E3A);
       case ContentType.animals:             return Colors.green;
       case ContentType.country:             return Colors.blue;
       case ContentType.frenchDepartment:    return Colors.blueGrey;

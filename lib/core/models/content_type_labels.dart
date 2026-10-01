@@ -13,6 +13,7 @@ extension ContentTypeLabels on ContentType {
       case ContentType.historyEventsHub:        return 'Events';
       case ContentType.historyCivilizationsHub: return 'Civilizations';
       case ContentType.diplomaticScandal:        return 'Diplomatic Scandals';
+      case ContentType.britishMonarch:            return 'British Monarchy';
       case ContentType.animals:            return 'Animals';
       case ContentType.frenchDepartment:   return 'French Department';
       case ContentType.pacificIsland:      return 'Pacific Island';
@@ -121,6 +122,7 @@ extension ContentTypeLabels on ContentType {
       case ContentType.historyEventsHub:        return loc.categoryHistoryEventsHub;
       case ContentType.historyCivilizationsHub: return loc.categoryHistoryCivilizationsHub;
       case ContentType.diplomaticScandal:        return loc.categoryDiplomaticScandal;
+      case ContentType.britishMonarch:            return loc.categoryBritishMonarch;
       case ContentType.animals:            return loc.categoryAnimals;
       case ContentType.country:            return loc.categoryCountry;
       case ContentType.frenchDepartment:   return loc.categoryFrenchDepartment;

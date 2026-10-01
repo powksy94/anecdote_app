@@ -23,6 +23,7 @@ extension ContentTypeFlags on ContentType {
     ContentType.americanState,
     ContentType.kingOfFrance,
     ContentType.americanPresident,
+    ContentType.britishMonarch,
     ContentType.solarSystemMoon,
     ContentType.frenchDepartment,
     ContentType.animals,

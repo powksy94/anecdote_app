@@ -20,6 +20,7 @@ enum ContentType {
   historyEventsHub,
   historyCivilizationsHub,
   diplomaticScandal,
+  britishMonarch,
   animals,
   country,
   frenchDepartment,

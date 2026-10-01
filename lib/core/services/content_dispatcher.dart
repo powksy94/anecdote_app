@@ -19,6 +19,7 @@ import '../../features/history/services/king_service.dart';
 import '../../features/history/services/president_service.dart';
 import '../../features/history/services/battle_service.dart';
 import '../../features/history/services/diplomatic_scandal_service.dart';
+import '../../features/history/services/british_monarch_service.dart';
 import '../../features/cinema/services/cinema_service.dart';
 import '../../features/cinema/services/horror_cinema_service.dart';
 import '../../features/cinema/services/banned_cinema_service.dart';
@@ -94,6 +95,7 @@ Future<ContentData> fetchDailyContent(
     case ContentType.americanPresident:  return PresidentService().getDailyContent();
     case ContentType.battle:             return BattleService().getDailyContent();
     case ContentType.diplomaticScandal:  return DiplomaticScandalService().getDailyContent();
+    case ContentType.britishMonarch:     return BritishMonarchService().getDailyContent();
     // ── Cinema ─────────────────────────────────────────────────────────────
     case ContentType.classicCinema:
     case ContentType.cinema80s90s:

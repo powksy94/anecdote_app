@@ -42,6 +42,7 @@ abstract class HistoryNavigator {
                 categories: const [
                   ContentType.kingOfFrance,
                   ContentType.americanPresident,
+                  ContentType.britishMonarch,
                 ],
                 adService: adService,
               ),

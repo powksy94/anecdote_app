@@ -352,6 +352,12 @@ abstract class AppLocalizations {
   /// **'Diplomatic Scandals'**
   String get categoryDiplomaticScandal;
 
+  /// No description provided for @categoryBritishMonarch.
+  ///
+  /// In en, this message translates to:
+  /// **'British Monarchy'**
+  String get categoryBritishMonarch;
+
   /// No description provided for @categoryDayOfHistory.
   ///
   /// In en, this message translates to:

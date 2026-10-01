@@ -38,6 +38,7 @@ class _ImageContentCardState extends State<ImageContentCard> {
     ContentType.nobelPrize,
     ContentType.kingOfFrance,
     ContentType.americanPresident,
+    ContentType.britishMonarch,
     ContentType.lgbtqiaPersonality,
     ContentType.pioneerWoman,
     ContentType.legendaryAthlete,

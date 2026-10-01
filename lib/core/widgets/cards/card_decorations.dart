@@ -44,6 +44,8 @@ Widget buildCardDecoration(ContentType type) {
       return _doubleIcon(Icons.public_rounded, Icons.account_balance_rounded);
     case ContentType.diplomaticScandal:
       return _doubleIcon(Icons.gavel_rounded, Icons.public_rounded);
+    case ContentType.britishMonarch:
+      return _doubleIcon(Icons.workspace_premium_rounded, Icons.castle_rounded);
     case ContentType.celebrityHub:
       return _bubbles(Icons.stars);
     case ContentType.scienceHub:
