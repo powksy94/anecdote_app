@@ -63,6 +63,7 @@ class AdService {
         _interstitialAd = null;
         _isAdLoaded = false;
         onComplete();
+        loadInterstitialAd();
       },
     );
     _interstitialAd!.show();
