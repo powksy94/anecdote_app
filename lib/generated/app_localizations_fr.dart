@@ -141,6 +141,9 @@ class AppLocalizationsFr extends AppLocalizations {
   String get categoryBritishMonarch => 'Monarchie britannique';
 
   @override
+  String get categoryOttomanSultan => 'Empire ottoman';
+
+  @override
   String get categoryDayOfHistory => 'Événement du Jour';
 
   @override

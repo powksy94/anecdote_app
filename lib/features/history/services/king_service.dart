@@ -12,7 +12,7 @@ class KingService {
     buf.writeln('👑 Dynasty: ${k.dynasty}');
     if (k.nickname != null) { buf.writeln('🏷️ Nickname: ${k.nickname}'); }
     final reignEnd = k.reignEnd == 0 ? 'present' : '${k.reignEnd}';
-    buf.writeln('📅 Reign: ${k.reignStart} – $reignEnd');
+    buf.writeln('📅 Reign: ${k.reignStart} to $reignEnd');
     buf.writeln('⚜️ Famous for: ${k.famousFor}');
 
     return ContentData(

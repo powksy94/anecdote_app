@@ -14,6 +14,8 @@ extension ContentTypeAccentColors on ContentType {
         return const Color(0xFFFF8A65);
       case ContentType.britishMonarch:
         return const Color(0xFFFFD700);
+      case ContentType.ottomanSultan:
+        return const Color(0xFFF2C94C);
       case ContentType.star:
         return const Color(0xFFffd200);
       case ContentType.solarSystemMoon:

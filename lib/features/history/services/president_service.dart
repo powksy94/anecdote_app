@@ -11,7 +11,7 @@ class PresidentService {
     final buf = StringBuffer();
     buf.writeln('🔢 Number: ${p.number}${_ordinal(p.number)} President');
     final termEnd = p.termEnd != null ? '${p.termEnd}' : 'present';
-    buf.writeln('📅 Term: ${p.termStart} – $termEnd');
+    buf.writeln('📅 Term: ${p.termStart} to $termEnd');
     buf.writeln('🏛️ Party: ${p.party}');
     buf.writeln('📍 State: ${p.state}');
     buf.writeln('🤝 Vice President: ${p.vicePresident}');

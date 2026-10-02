@@ -10,7 +10,7 @@ class PhotographerService {
 
     final buf = StringBuffer();
     buf.writeln('🌍 Nationality: ${p.nationality}');
-    final lifespan = p.died == '-' ? 'b. ${p.born}' : '${p.born} – ${p.died}';
+    final lifespan = p.died == '-' ? 'b. ${p.born}' : '${p.born} to ${p.died}';
     buf.writeln('🗓️ $lifespan');
     buf.writeln('📷 Style: ${p.style}');
     buf.writeln('🖼️ Famous work: ${p.famousWork}');

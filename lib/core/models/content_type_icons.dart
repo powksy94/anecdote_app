@@ -14,6 +14,7 @@ extension ContentTypeIcons on ContentType {
       case ContentType.historyCivilizationsHub: return Icons.public_rounded;
       case ContentType.diplomaticScandal:        return Icons.gavel_rounded;
       case ContentType.britishMonarch:            return Icons.workspace_premium_rounded;
+      case ContentType.ottomanSultan:              return Icons.mosque_rounded;
       case ContentType.animals:             return Icons.pets_rounded;
       case ContentType.country:             return Icons.public_rounded;
       case ContentType.frenchDepartment:    return Icons.location_city_rounded;

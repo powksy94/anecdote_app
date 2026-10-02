@@ -12,7 +12,7 @@ class BritishMonarchService {
     buf.writeln('👑 House: ${m.dynasty}');
     if (m.nickname != null) { buf.writeln('🏷️ Nickname: ${m.nickname}'); }
     final reignEnd = m.reignEnd?.toString() ?? 'present';
-    buf.writeln('📅 Reign: ${m.reignStart} – $reignEnd');
+    buf.writeln('📅 Reign: ${m.reignStart} to $reignEnd');
     buf.writeln('⚜️ Famous for: ${m.famousFor}');
 
     return ContentData(

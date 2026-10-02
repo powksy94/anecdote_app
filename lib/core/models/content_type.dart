@@ -21,6 +21,7 @@ enum ContentType {
   historyCivilizationsHub,
   diplomaticScandal,
   britishMonarch,
+  ottomanSultan,
   animals,
   country,
   frenchDepartment,

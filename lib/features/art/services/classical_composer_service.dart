@@ -10,7 +10,7 @@ class ClassicalComposerService {
 
     final buf = StringBuffer();
     buf.writeln('🌍 Nationality: ${c.nationality}');
-    final lifespan = c.died == '-' ? 'b. ${c.born}' : '${c.born} – ${c.died}';
+    final lifespan = c.died == '-' ? 'b. ${c.born}' : '${c.born} to ${c.died}';
     buf.writeln('🗓️ $lifespan');
     buf.writeln('🎵 Period: ${c.period}');
     buf.writeln('🎼 Famous works: ${c.famousWorks}');

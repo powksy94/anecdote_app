@@ -43,6 +43,7 @@ abstract class HistoryNavigator {
                   ContentType.kingOfFrance,
                   ContentType.americanPresident,
                   ContentType.britishMonarch,
+                  ContentType.ottomanSultan,
                 ],
                 adService: adService,
               ),

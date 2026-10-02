@@ -10,7 +10,7 @@ class FamousArtistService {
 
     final buf = StringBuffer();
     buf.writeln('🌍 Nationality: ${a.nationality}');
-    final lifespan = a.died == '-' ? 'b. ${a.born}' : '${a.born} – ${a.died}';
+    final lifespan = a.died == '-' ? 'b. ${a.born}' : '${a.born} to ${a.died}';
     buf.writeln('🗓️ $lifespan');
     buf.writeln('🎭 Movement: ${a.movement}');
     buf.writeln('💡 ${a.famousFor}');
