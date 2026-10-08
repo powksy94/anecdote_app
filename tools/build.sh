@@ -29,6 +29,16 @@ generate_if_needed "tools/world/generate_mountains.py"        "assets/world/moun
 # History
 generate_if_needed "tools/history/generate_kings_of_france.py"       "assets/history/kings_of_france.json"
 generate_if_needed "tools/history/generate_american_presidents.py"   "assets/history/american_presidents.json"
+generate_if_needed "tools/history/generate_british_monarchy.py"      "assets/history/british_monarchy.json"
+generate_if_needed "tools/history/generate_ottoman_empire.py"        "assets/history/ottoman_empire.json"
+generate_if_needed "tools/history/generate_chinese_dynasties.py"     "assets/history/chinese_dynasties.json"
+generate_if_needed "tools/history/generate_diplomatic_scandals.py"   "assets/history/diplomatic_scandals.json"
+# Sport
+generate_if_needed "tools/sport/generate_sport_records.py"           "assets/sport/sport_records.json"
+generate_if_needed "tools/sport/generate_sport_great_women.py"       "assets/sport/sport_great_women.json"
+generate_if_needed "tools/sport/generate_sport_rivalries.py"         "assets/sport/sport_rivalries.json"
+generate_if_needed "tools/sport/generate_sport_legendary_events.py"  "assets/sport/sport_legendary_events.json"
+generate_if_needed "tools/sport/generate_sport_origins_rules.py"     "assets/sport/sport_origins_rules.json"
 # Space
 generate_if_needed "tools/space/generate_exoplanets.py" "assets/space/exoplanets.json"
 generate_if_needed "tools/space/generate_stars.py"      "assets/space/stars.json"
