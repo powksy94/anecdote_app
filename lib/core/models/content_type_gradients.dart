@@ -27,6 +27,8 @@ extension ContentTypeGradients on ContentType {
         return [const Color(0xFF7B1E3A), const Color(0xFFD4AF37)];
       case ContentType.ottomanSultan:
         return [const Color(0xFF6B0F1A), const Color(0xFFC9A227)];
+      case ContentType.chineseDynasty:
+        return [const Color(0xFFB7211B), const Color(0xFFF4C430)];
       case ContentType.animals:
         return [const Color(0xFF56ab2f), const Color(0xFFa8e063)];
       case ContentType.country:

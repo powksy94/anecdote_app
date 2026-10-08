@@ -44,6 +44,7 @@ abstract class HistoryNavigator {
                   ContentType.americanPresident,
                   ContentType.britishMonarch,
                   ContentType.ottomanSultan,
+                  ContentType.chineseDynasty,
                 ],
                 adService: adService,
               ),

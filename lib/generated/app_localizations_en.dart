@@ -144,6 +144,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get categoryOttomanSultan => 'Ottoman Empire';
 
   @override
+  String get categoryChineseDynasty => 'Chinese Dynasties';
+
+  @override
   String get categoryDayOfHistory => 'Day of History';
 
   @override

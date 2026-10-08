@@ -48,6 +48,8 @@ Widget buildCardDecoration(ContentType type) {
       return _doubleIcon(Icons.workspace_premium_rounded, Icons.castle_rounded);
     case ContentType.ottomanSultan:
       return _doubleIcon(Icons.mosque_rounded, Icons.workspace_premium_rounded);
+    case ContentType.chineseDynasty:
+      return _doubleIcon(Icons.temple_buddhist_rounded, Icons.auto_awesome_rounded);
     case ContentType.celebrityHub:
       return _bubbles(Icons.stars);
     case ContentType.scienceHub:

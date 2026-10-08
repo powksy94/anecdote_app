@@ -22,6 +22,7 @@ enum ContentType {
   diplomaticScandal,
   britishMonarch,
   ottomanSultan,
+  chineseDynasty,
   animals,
   country,
   frenchDepartment,

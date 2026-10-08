@@ -364,6 +364,12 @@ abstract class AppLocalizations {
   /// **'Ottoman Empire'**
   String get categoryOttomanSultan;
 
+  /// No description provided for @categoryChineseDynasty.
+  ///
+  /// In en, this message translates to:
+  /// **'Chinese Dynasties'**
+  String get categoryChineseDynasty;
+
   /// No description provided for @categoryDayOfHistory.
   ///
   /// In en, this message translates to:

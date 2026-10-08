@@ -29,6 +29,7 @@ extension ContentTypeApi on ContentType {
       case ContentType.diplomaticScandal:
       case ContentType.britishMonarch:
       case ContentType.ottomanSultan:
+      case ContentType.chineseDynasty:
       case ContentType.cinemaHub:
       case ContentType.classicCinema:
       case ContentType.cinema80s90s:

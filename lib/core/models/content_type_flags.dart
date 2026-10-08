@@ -25,6 +25,7 @@ extension ContentTypeFlags on ContentType {
     ContentType.americanPresident,
     ContentType.britishMonarch,
     ContentType.ottomanSultan,
+    ContentType.chineseDynasty,
     ContentType.solarSystemMoon,
     ContentType.frenchDepartment,
     ContentType.animals,
