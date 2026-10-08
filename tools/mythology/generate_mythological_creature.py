@@ -10,6 +10,7 @@ WIKI_EN = {
     "Oni": "Oni",
     "Kappa": "Kappa (folklore)",
     "Djinn": "Jinn",
+    "Baku": "Baku (mythology)",
     "Roc": "Roc (mythology)",
     "Golem": "Golem",
     "Scylla": "Scylla",

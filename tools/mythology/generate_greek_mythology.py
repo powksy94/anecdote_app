@@ -9,6 +9,7 @@ WIKI_EN = {
     "Ares": "Ares",
     "Iris": "Iris (mythology)",
     "Hebe": "Hebe (mythology)",
+    "Uranus": "Uranus (mythology)",
     "Circe": "Circe",
     "Echo": "Echo (mythology)",
     "Atlas": "Atlas (mythology)",

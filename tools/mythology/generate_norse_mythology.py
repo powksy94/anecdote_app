@@ -14,6 +14,14 @@ WIKI_EN = {
     "Eir": "Eir",
 }
 
+# Direct image URL overrides: Wikipedia's own infobox image for "Sol" (the Norse sun
+# goddess) is a runestone depicting Fenrir, not Sol herself (verified 2026-10-08). Reusing
+# the "Mani and Sol" illustration already used for the Mani entry instead, since it
+# explicitly depicts Sol alongside her brother.
+IMAGE_OVERRIDES = {
+    "Sol": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/M%C3%A1ni_and_S%C3%B3l_by_Lorenz_Fr%C3%B8lich.jpg/330px-M%C3%A1ni_and_S%C3%B3l_by_Lorenz_Fr%C3%B8lich.jpg",
+}
+
 # n=name, dom=domain/role, sym=symbol, fa=fact
 figures = [
     {"n":"Odin","dom":"All-father, god of wisdom, war and the dead","sym":"Spear Gungnir, two ravens, eight-legged horse","fa":"Sacrificed one of his eyes at Mimir's well in exchange for wisdom"},
@@ -118,8 +126,11 @@ def main():
     total = len(figures)
     found = 0
     for i, s in enumerate(figures):
-        title = WIKI_EN.get(s["n"], s["n"])
-        img = wiki_img(title)
+        if s["n"] in IMAGE_OVERRIDES:
+            img = IMAGE_OVERRIDES[s["n"]]
+        else:
+            title = WIKI_EN.get(s["n"], s["n"])
+            img = wiki_img(title)
         s["im"] = img
         if img:
             found += 1

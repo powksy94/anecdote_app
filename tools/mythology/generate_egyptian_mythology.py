@@ -10,7 +10,15 @@ WIKI_EN = {
     "Bes": "Bes",
     "Min": "Min (god)",
     "Nut": "Nut (goddess)",
+    "Nun": "Nun (mythology)",
 }
+
+# Names with no reliable dedicated Wikipedia/Commons image (verified 2026-10-08): fetching
+# by name alone previously returned clearly wrong images (a religious nun for "Nun" before
+# the override above, an Australian singer for "Sia", and the unrelated goddess "Bat" for
+# "Bata"). No good replacement image exists for Sia or Bata, so these stay imageless rather
+# than ship a wrong picture, same policy as revert_bad_matches.py.
+NO_IMAGE = {"Sia", "Bata"}
 
 # n=name, dom=domain/role, sym=symbol, fa=fact
 figures = [
@@ -107,8 +115,11 @@ def main():
     total = len(figures)
     found = 0
     for i, s in enumerate(figures):
-        title = WIKI_EN.get(s["n"], s["n"])
-        img = wiki_img(title)
+        if s["n"] in NO_IMAGE:
+            img = None
+        else:
+            title = WIKI_EN.get(s["n"], s["n"])
+            img = wiki_img(title)
         s["im"] = img
         if img:
             found += 1
