@@ -19,6 +19,8 @@ class GreekMythologyService {
       hasDetails: true,
       imageUrl: g.imageUrl,
       noImageMessage: g.noImageMessage,
+      previewFr: g.nameFr,
+      previewEs: g.nameEs,
     );
   }
 }

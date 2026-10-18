@@ -5,10 +5,14 @@ import 'package:flutter/services.dart';
 class GreekMythologyData {
   final String name, domain, symbol, famousFor;
   final String? imageUrl;
+  // Localized forms for names that genuinely change across languages
+  // (e.g. "Theseus" -> "Thésée"/"Teseo"), unlike accent-only variants
+  // (e.g. "Hera" -> "Héra") which are left as-is.
+  final String? nameFr, nameEs;
 
   const GreekMythologyData({
     required this.name, required this.domain, required this.symbol,
-    required this.famousFor, this.imageUrl,
+    required this.famousFor, this.imageUrl, this.nameFr, this.nameEs,
   });
 
   String? get noImageMessage => imageUrl != null ? null : '🏛️ No image available for this figure';
@@ -19,6 +23,8 @@ class GreekMythologyData {
     symbol:     j['sym'] ?? '',
     famousFor:  j['fa']  ?? '',
     imageUrl:   j['im'] as String?,
+    nameFr:     j['nf'] as String?,
+    nameEs:     j['ns'] as String?,
   );
 }
 

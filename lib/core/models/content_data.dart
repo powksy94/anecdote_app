@@ -13,6 +13,11 @@ class ContentData {
   final String? filmTitleFr;
   final String? filmTitleEs;
   final String? filmTitleEn;
+  // Locale-specific preview override for figures whose name genuinely
+  // changes across languages (e.g. "Theseus" -> "Thésée" in French),
+  // as opposed to accent-only variants which are left untranslated.
+  final String? previewFr;
+  final String? previewEs;
   // Numéro de mandat pour les présidents multi-mandats
   final int? mandateNumber;
   final String? imageUrl;
@@ -39,6 +44,8 @@ class ContentData {
     this.filmTitleFr,
     this.filmTitleEs,
     this.filmTitleEn,
+    this.previewFr,
+    this.previewEs,
     this.mandateNumber,
     this.imageUrl,
     this.noImageMessage,

@@ -147,6 +147,8 @@ class TranslationService {
       filmTitleFr: content.filmTitleFr,
       filmTitleEs: content.filmTitleEs,
       filmTitleEn: content.filmTitleEn,
+      previewFr: content.previewFr,
+      previewEs: content.previewEs,
       mandateNumber: content.mandateNumber,
       elementSymbol: content.elementSymbol,
       elementAtomicNumber: content.elementAtomicNumber,

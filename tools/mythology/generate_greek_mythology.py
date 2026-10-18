@@ -17,6 +17,31 @@ WIKI_EN = {
     "Nike": "Nike (mythology)",
 }
 
+# French/Spanish forms for names that genuinely differ across languages
+# (e.g. "Theseus" -> "Thésée"/"Teseo"), as opposed to accent-only variants
+# (e.g. "Hera" -> "Héra") which are intentionally left untouched so the
+# preview text stays untranslated (see ContentType.hasUntranslatablePreview).
+NAME_FR_ES = {
+    "Apollo":     ("Apollon",   "Apolo"),
+    "Hephaestus": ("Héphaïstos", "Hefesto"),
+    "Dionysus":   ("Dionysos",  "Dioniso"),
+    "Cronus":     ("Cronos",    "Cronos"),
+    "Prometheus": ("Prométhée", "Prometeo"),
+    "Asclepius":  ("Asclépios", "Asclepio"),
+    "Heracles":   ("Héraclès",  "Heracles"),
+    "Achilles":   ("Achille",   "Aquiles"),
+    "Odysseus":   ("Ulysse",    "Ulises"),
+    "Perseus":    ("Persée",    "Perseo"),
+    "Theseus":    ("Thésée",    "Teseo"),
+    "Orpheus":    ("Orphée",    "Orfeo"),
+    "Oedipus":    ("Œdipe",     "Edipo"),
+    "Aeneas":     ("Énée",      "Eneas"),
+    "Icarus":     ("Icare",     "Ícaro"),
+    "Daedalus":   ("Dédale",    "Dédalo"),
+    "Ariadne":    ("Ariane",    "Ariadna"),
+    "Europa":     ("Europe",    "Europa"),
+}
+
 # n=name, dom=domain/role, sym=symbol, fa=fact
 figures = [
     {"n":"Zeus","dom":"King of the gods, god of sky and thunder (Roman: Jupiter)","sym":"Thunderbolt, eagle, oak tree","fa":"Overthrew his father Cronus to become ruler of Mount Olympus"},
@@ -122,6 +147,8 @@ def main():
     total = len(figures)
     found = 0
     for i, s in enumerate(figures):
+        if s["n"] in NAME_FR_ES:
+            s["nf"], s["ns"] = NAME_FR_ES[s["n"]]
         title = WIKI_EN.get(s["n"], s["n"])
         img = wiki_img(title)
         s["im"] = img
