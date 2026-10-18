@@ -42,7 +42,10 @@ def fetch_commons_image(query, size=500):
             info = page.get("imageinfo", [])
             if info:
                 url = info[0].get("thumburl") or info[0].get("url")
-                if url and ".svg" not in url.lower():
+                # Commons search can match a non-image file (e.g. a pronunciation
+                # .ogg clip), whose "thumbnail" is just a generic file-type icon
+                # rather than a real photo -- reject those along with svgs.
+                if url and ".svg" not in url.lower() and "file-type-icons" not in url.lower():
                     return url
     except Exception:
         pass
