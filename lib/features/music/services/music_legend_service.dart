@@ -20,6 +20,8 @@ class MusicLegendService {
       noImageMessage: l.noImageMessage,
       warningText: l.warningText,
       warningLevel: l.warningLevel,
+      // Genre names shouldn't be translated (e.g. "Country" becoming "Pays" in French).
+      protectedTerms: [l.genre],
     );
   }
 }

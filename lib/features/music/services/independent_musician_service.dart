@@ -19,6 +19,8 @@ class IndependentMusicianService {
       hasDetails: true,
       imageUrl: a.imageUrl,
       noImageMessage: a.noImageMessage,
+      // Genre names shouldn't be translated (e.g. "Country" becoming "Pays" in French).
+      protectedTerms: [a.genre],
     );
   }
 }
