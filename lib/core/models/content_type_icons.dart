@@ -112,6 +112,8 @@ extension ContentTypeIcons on ContentType {
       case ContentType.techHub:                return Icons.lightbulb_rounded;
       case ContentType.techInventionsHub:      return Icons.precision_manufacturing_rounded;
       case ContentType.greatInvention:         return Icons.emoji_objects_rounded;
+      case ContentType.techInventorsHub:       return Icons.engineering_rounded;
+      case ContentType.womanInventor:          return Icons.woman_rounded;
     }
   }
 }

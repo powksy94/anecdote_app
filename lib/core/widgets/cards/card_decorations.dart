@@ -232,5 +232,9 @@ Widget buildCardDecoration(ContentType type) {
       return _doubleIcon(Icons.precision_manufacturing_rounded, Icons.lightbulb_rounded);
     case ContentType.greatInvention:
       return _doubleIcon(Icons.emoji_objects_rounded, Icons.public_rounded);
+    case ContentType.techInventorsHub:
+      return _doubleIcon(Icons.engineering_rounded, Icons.lightbulb_rounded);
+    case ContentType.womanInventor:
+      return _doubleIcon(Icons.woman_rounded, Icons.lightbulb_rounded);
   }
 }

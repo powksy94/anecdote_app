@@ -1,25 +1,53 @@
 import 'package:flutter/material.dart';
 import '../../../core/models/content_type.dart';
 import '../../../core/services/ad_service.dart';
+import '../../../core/widgets/cards/hub_split_dialog.dart';
 import '../../../core/pages/sub_hub_page.dart';
 
-// Opens the Inventions side directly until the Inventors side has content; this becomes
-// a HubSplitDialog (see SportNavigator) once it does.
 abstract class TechNavigator {
   static Future<void> show(BuildContext context, AdService adService) {
-    return Navigator.push(
-      context,
-      PageRouteBuilder(
-        pageBuilder: (_, __, ___) => SubHubPage(
-          hubType: ContentType.techInventionsHub,
-          categories: const [
-            ContentType.greatInvention,
-          ],
-          adService: adService,
-        ),
-        transitionsBuilder: (_, animation, __, child) =>
-            FadeTransition(opacity: animation, child: child),
-        transitionDuration: const Duration(milliseconds: 250),
+    return showDialog(
+      context: context,
+      builder: (_) => HubSplitDialog(
+        hubType: ContentType.techHub,
+        leftType: ContentType.techInventionsHub,
+        rightType: ContentType.techInventorsHub,
+        onSelectLeft: () {
+          Navigator.of(context, rootNavigator: true).pop();
+          Navigator.push(
+            context,
+            PageRouteBuilder(
+              pageBuilder: (_, __, ___) => SubHubPage(
+                hubType: ContentType.techInventionsHub,
+                categories: const [
+                  ContentType.greatInvention,
+                ],
+                adService: adService,
+              ),
+              transitionsBuilder: (_, animation, __, child) =>
+                  FadeTransition(opacity: animation, child: child),
+              transitionDuration: const Duration(milliseconds: 250),
+            ),
+          );
+        },
+        onSelectRight: () {
+          Navigator.of(context, rootNavigator: true).pop();
+          Navigator.push(
+            context,
+            PageRouteBuilder(
+              pageBuilder: (_, __, ___) => SubHubPage(
+                hubType: ContentType.techInventorsHub,
+                categories: const [
+                  ContentType.womanInventor,
+                ],
+                adService: adService,
+              ),
+              transitionsBuilder: (_, animation, __, child) =>
+                  FadeTransition(opacity: animation, child: child),
+              transitionDuration: const Duration(milliseconds: 250),
+            ),
+          );
+        },
       ),
     );
   }

@@ -112,6 +112,8 @@ extension ContentTypeColors on ContentType {
       case ContentType.techHub:               return const Color(0xFF00897B);
       case ContentType.techInventionsHub:     return const Color(0xFF0288D1);
       case ContentType.greatInvention:        return const Color(0xFF00A896);
+      case ContentType.techInventorsHub:      return const Color(0xFF7B1FA2);
+      case ContentType.womanInventor:         return const Color(0xFFAB47BC);
     }
   }
 }

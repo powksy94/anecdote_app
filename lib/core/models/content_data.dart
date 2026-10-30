@@ -29,6 +29,8 @@ class ContentData {
   final String? warningLevel; // "red" or "orange"
   // Neutral info badge, e.g. explaining why a coin/seal stands in for a portrait
   final String? imageNote;
+  // Shows the localized "dates not documented" note on person cards with no known lifespan
+  final bool lifeDatesUndocumented;
   // Terms that must not be translated (e.g. game titles, player names)
   final List<String> protectedTerms;
 
@@ -54,6 +56,7 @@ class ContentData {
     this.warningText,
     this.warningLevel,
     this.imageNote,
+    this.lifeDatesUndocumented = false,
     this.protectedTerms = const [],
   });
 

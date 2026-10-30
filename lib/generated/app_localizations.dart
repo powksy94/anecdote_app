@@ -1827,6 +1827,24 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Great Inventions'**
   String get categoryGreatInvention;
+
+  /// No description provided for @categoryTechInventorsHub.
+  ///
+  /// In en, this message translates to:
+  /// **'Inventors'**
+  String get categoryTechInventorsHub;
+
+  /// No description provided for @categoryWomanInventor.
+  ///
+  /// In en, this message translates to:
+  /// **'Women Inventors'**
+  String get categoryWomanInventor;
+
+  /// No description provided for @noteLifeDatesUndocumented.
+  ///
+  /// In en, this message translates to:
+  /// **'Birth and death dates are not documented in the sources we checked, so they are not shown.'**
+  String get noteLifeDatesUndocumented;
 }
 
 class _AppLocalizationsDelegate

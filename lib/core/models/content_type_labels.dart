@@ -112,6 +112,8 @@ extension ContentTypeLabels on ContentType {
       case ContentType.techHub:              return 'Inventions & Tech';
       case ContentType.techInventionsHub:    return 'Inventions';
       case ContentType.greatInvention:       return 'Great Inventions';
+      case ContentType.techInventorsHub:     return 'Inventors';
+      case ContentType.womanInventor:        return 'Women Inventors';
     }
   }
 
@@ -226,6 +228,8 @@ extension ContentTypeLabels on ContentType {
       case ContentType.techHub:              return loc.categoryTechHub;
       case ContentType.techInventionsHub:    return loc.categoryTechInventionsHub;
       case ContentType.greatInvention:       return loc.categoryGreatInvention;
+      case ContentType.techInventorsHub:     return loc.categoryTechInventorsHub;
+      case ContentType.womanInventor:        return loc.categoryWomanInventor;
     }
   }
 }

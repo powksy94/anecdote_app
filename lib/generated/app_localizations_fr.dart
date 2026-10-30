@@ -925,4 +925,14 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get categoryGreatInvention => 'Grandes inventions';
+
+  @override
+  String get categoryTechInventorsHub => 'Inventeurs';
+
+  @override
+  String get categoryWomanInventor => 'Femmes inventrices';
+
+  @override
+  String get noteLifeDatesUndocumented =>
+      'Les dates de naissance et de décès ne sont pas documentées dans les sources consultées, elles ne sont donc pas affichées.';
 }

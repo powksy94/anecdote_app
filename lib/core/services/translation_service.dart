@@ -155,6 +155,7 @@ class TranslationService {
       warningText: translatedWarning,
       warningLevel: content.warningLevel,
       imageNote: translatedImageNote,
+      lifeDatesUndocumented: content.lifeDatesUndocumented,
       protectedTerms: content.protectedTerms,
     );
   }

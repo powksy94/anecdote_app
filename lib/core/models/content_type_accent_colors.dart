@@ -79,6 +79,10 @@ extension ContentTypeAccentColors on ContentType {
         return const Color(0xFF81D4FA);
       case ContentType.greatInvention:
         return const Color(0xFF64FFDA);
+      case ContentType.techInventorsHub:
+        return const Color(0xFFCE93D8);
+      case ContentType.womanInventor:
+        return const Color(0xFFE1BEE7);
       case ContentType.gamingNomination:
         return const Color(0xFFD4A017);
       case ContentType.worstGame:

@@ -297,5 +297,8 @@
   "categorySportOriginRule": "Orígenes y reglas insólitas",
   "categoryTechHub": "Inventos y tecnología",
   "categoryTechInventionsHub": "Inventos",
-  "categoryGreatInvention": "Grandes inventos"
+  "categoryGreatInvention": "Grandes inventos",
+  "categoryTechInventorsHub": "Inventores",
+  "categoryWomanInventor": "Mujeres inventoras",
+  "noteLifeDatesUndocumented": "Las fechas de nacimiento y fallecimiento no están documentadas en las fuentes consultadas, por lo que no se muestran."
 }

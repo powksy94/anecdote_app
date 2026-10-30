@@ -48,6 +48,7 @@ class _ImageContentCardState extends State<ImageContentCard> {
     ContentType.sportRecord,
     ContentType.sportGreatWoman,
     ContentType.sportLegendaryEvent,
+    ContentType.womanInventor,
   };
 
   static const _copyrightTypes = {
@@ -241,6 +242,10 @@ class _ImageContentCardState extends State<ImageContentCard> {
                           if (widget.contentData?.imageNote != null) ...[
                             const SizedBox(width: 8),
                             InfoNoteBadge(text: widget.contentData!.imageNote!),
+                          ],
+                          if (widget.contentData?.lifeDatesUndocumented == true) ...[
+                            const SizedBox(width: 8),
+                            InfoNoteBadge(text: loc.noteLifeDatesUndocumented),
                           ],
                         ],
                       ),

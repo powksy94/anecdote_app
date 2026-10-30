@@ -119,4 +119,6 @@ enum ContentType {
   techHub,
   techInventionsHub,
   greatInvention,
+  techInventorsHub,
+  womanInventor,
 }
