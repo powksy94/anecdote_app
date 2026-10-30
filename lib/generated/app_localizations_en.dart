@@ -900,4 +900,13 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get categorySportOriginRule => 'Origins & Odd Rules';
+
+  @override
+  String get categoryTechHub => 'Inventions & Tech';
+
+  @override
+  String get categoryTechInventionsHub => 'Inventions';
+
+  @override
+  String get categoryGreatInvention => 'Great Inventions';
 }

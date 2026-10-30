@@ -158,6 +158,7 @@ class _ImageContentCardState extends State<ImageContentCard> {
     ContentType.norseMythology,
     ContentType.egyptianMythology,
     ContentType.chineseDynasty,
+    ContentType.greatInvention,
   };
 
   Alignment get _imageAlignment => _personTypes.contains(widget.contentType)

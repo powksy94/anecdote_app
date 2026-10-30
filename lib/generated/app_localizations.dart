@@ -1809,6 +1809,24 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Origins & Odd Rules'**
   String get categorySportOriginRule;
+
+  /// No description provided for @categoryTechHub.
+  ///
+  /// In en, this message translates to:
+  /// **'Inventions & Tech'**
+  String get categoryTechHub;
+
+  /// No description provided for @categoryTechInventionsHub.
+  ///
+  /// In en, this message translates to:
+  /// **'Inventions'**
+  String get categoryTechInventionsHub;
+
+  /// No description provided for @categoryGreatInvention.
+  ///
+  /// In en, this message translates to:
+  /// **'Great Inventions'**
+  String get categoryGreatInvention;
 }
 
 class _AppLocalizationsDelegate

@@ -12,6 +12,7 @@ import '../../features/science/pages/science_navigator.dart';
 import '../../features/art/pages/art_navigator.dart';
 import '../../features/gaming/pages/gaming_navigator.dart';
 import '../../features/sport/pages/sport_navigator.dart';
+import '../../features/tech/pages/tech_navigator.dart';
 import '../models/content_type.dart';
 import '../services/ad_service.dart';
 import '../widgets/cards/category_card.dart';
@@ -42,6 +43,7 @@ class _HomePageState extends State<HomePage> {
     ContentType.mythologyHub,
     ContentType.healthHub,
     ContentType.sportHub,
+    ContentType.techHub,
   ];
 
   final AdService _adService = AdService();
@@ -121,6 +123,11 @@ class _HomePageState extends State<HomePage> {
     }
     if (type == ContentType.sportHub) {
       SportNavigator.show(context, _adService)
+          .then((_) => _cardKeys[type]?.currentState?.onNavigationComplete());
+      return;
+    }
+    if (type == ContentType.techHub) {
+      TechNavigator.show(context, _adService)
           .then((_) => _cardKeys[type]?.currentState?.onNavigationComplete());
       return;
     }

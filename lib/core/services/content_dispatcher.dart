@@ -70,6 +70,7 @@ import '../../features/sport/services/sport_great_woman_service.dart';
 import '../../features/sport/services/sport_rivalry_service.dart';
 import '../../features/sport/services/sport_legendary_event_service.dart';
 import '../../features/sport/services/sport_origin_rule_service.dart';
+import '../../features/tech/services/great_invention_service.dart';
 
 Future<ContentData> fetchDailyContent(
   ContentType type, {
@@ -160,6 +161,8 @@ Future<ContentData> fetchDailyContent(
     case ContentType.sportRivalry:         return SportRivalryService().getDailyContent();
     case ContentType.sportLegendaryEvent:  return SportLegendaryEventService().getDailyContent();
     case ContentType.sportOriginRule:      return SportOriginRuleService().getDailyContent();
+    // ── Tech ───────────────────────────────────────────────────────────────
+    case ContentType.greatInvention:       return GreatInventionService().getDailyContent();
     // ── API-ninjas / HTTP ──────────────────────────────────────────────────
     default:                             return apiService.fetchRemoteContent(type);
   }

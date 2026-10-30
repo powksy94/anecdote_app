@@ -294,5 +294,8 @@
   "categorySportGreatWoman": "Grandes deportistas",
   "categorySportRivalry": "Rivalidades históricas",
   "categorySportLegendaryEvent": "Momentos legendarios",
-  "categorySportOriginRule": "Orígenes y reglas insólitas"
+  "categorySportOriginRule": "Orígenes y reglas insólitas",
+  "categoryTechHub": "Inventos y tecnología",
+  "categoryTechInventionsHub": "Inventos",
+  "categoryGreatInvention": "Grandes inventos"
 }

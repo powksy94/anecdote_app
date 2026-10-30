@@ -116,4 +116,7 @@ enum ContentType {
   sportRivalry,
   sportLegendaryEvent,
   sportOriginRule,
+  techHub,
+  techInventionsHub,
+  greatInvention,
 }

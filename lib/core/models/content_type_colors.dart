@@ -109,6 +109,9 @@ extension ContentTypeColors on ContentType {
       case ContentType.sportRivalry:          return const Color(0xFF1A237E);
       case ContentType.sportLegendaryEvent:   return const Color(0xFFFF6F00);
       case ContentType.sportOriginRule:       return const Color(0xFF6D4C41);
+      case ContentType.techHub:               return const Color(0xFF00897B);
+      case ContentType.techInventionsHub:     return const Color(0xFF0288D1);
+      case ContentType.greatInvention:        return const Color(0xFF00A896);
     }
   }
 }

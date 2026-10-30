@@ -226,5 +226,11 @@ Widget buildCardDecoration(ContentType type) {
       return _doubleIcon(Icons.auto_awesome_rounded, Icons.emoji_events_rounded);
     case ContentType.sportOriginRule:
       return _doubleIcon(Icons.history_edu_rounded, Icons.sports_rounded);
+    case ContentType.techHub:
+      return _doubleIcon(Icons.lightbulb_rounded, Icons.memory_rounded);
+    case ContentType.techInventionsHub:
+      return _doubleIcon(Icons.precision_manufacturing_rounded, Icons.lightbulb_rounded);
+    case ContentType.greatInvention:
+      return _doubleIcon(Icons.emoji_objects_rounded, Icons.public_rounded);
   }
 }

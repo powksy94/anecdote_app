@@ -114,6 +114,9 @@ extension ContentTypeApi on ContentType {
       case ContentType.sportRivalry:
       case ContentType.sportLegendaryEvent:
       case ContentType.sportOriginRule:
+      case ContentType.techHub:
+      case ContentType.techInventionsHub:
+      case ContentType.greatInvention:
         return '';
     }
   }

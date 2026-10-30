@@ -109,6 +109,9 @@ extension ContentTypeLabels on ContentType {
       case ContentType.sportRivalry:         return 'Historic Rivalries';
       case ContentType.sportLegendaryEvent:  return 'Legendary Moments';
       case ContentType.sportOriginRule:      return 'Origins & Odd Rules';
+      case ContentType.techHub:              return 'Inventions & Tech';
+      case ContentType.techInventionsHub:    return 'Inventions';
+      case ContentType.greatInvention:       return 'Great Inventions';
     }
   }
 
@@ -220,6 +223,9 @@ extension ContentTypeLabels on ContentType {
       case ContentType.sportRivalry:         return loc.categorySportRivalry;
       case ContentType.sportLegendaryEvent:  return loc.categorySportLegendaryEvent;
       case ContentType.sportOriginRule:      return loc.categorySportOriginRule;
+      case ContentType.techHub:              return loc.categoryTechHub;
+      case ContentType.techInventionsHub:    return loc.categoryTechInventionsHub;
+      case ContentType.greatInvention:       return loc.categoryGreatInvention;
     }
   }
 }

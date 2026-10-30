@@ -916,4 +916,13 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get categorySportOriginRule => 'Origines & règles insolites';
+
+  @override
+  String get categoryTechHub => 'Inventions & Tech';
+
+  @override
+  String get categoryTechInventionsHub => 'Inventions';
+
+  @override
+  String get categoryGreatInvention => 'Grandes inventions';
 }

@@ -109,6 +109,9 @@ extension ContentTypeIcons on ContentType {
       case ContentType.sportRivalry:           return Icons.compare_arrows_rounded;
       case ContentType.sportLegendaryEvent:    return Icons.auto_awesome_rounded;
       case ContentType.sportOriginRule:        return Icons.history_edu_rounded;
+      case ContentType.techHub:                return Icons.lightbulb_rounded;
+      case ContentType.techInventionsHub:      return Icons.precision_manufacturing_rounded;
+      case ContentType.greatInvention:         return Icons.emoji_objects_rounded;
     }
   }
 }
