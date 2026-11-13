@@ -246,6 +246,7 @@
   "settingsNotificationsTitle": "Notifications",
   "settingsNotificationsSubtitle": "Recevoir des alertes sur le nouveau contenu et les actualités",
   "settingsOpenSystemSettings": "Ouvrir les réglages du téléphone pour bloquer complètement les notifications",
+  "settingsTermsOfService": "Conditions d'utilisation",
   "favoriteSavedOn": "Sauvegardé le {date}",
   "@favoriteSavedOn": { "placeholders": { "date": { "type": "String" } } },
   "categoryMusicHub": "Musique",

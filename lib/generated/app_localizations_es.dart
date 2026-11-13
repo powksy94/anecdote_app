@@ -758,6 +758,9 @@ class AppLocalizationsEs extends AppLocalizations {
       'Abrir los ajustes del teléfono para bloquear completamente las notificaciones';
 
   @override
+  String get settingsTermsOfService => 'Términos de servicio';
+
+  @override
   String favoriteSavedOn(String date) {
     return 'Guardado el $date';
   }

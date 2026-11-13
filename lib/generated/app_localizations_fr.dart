@@ -764,6 +764,9 @@ class AppLocalizationsFr extends AppLocalizations {
       'Ouvrir les réglages du téléphone pour bloquer complètement les notifications';
 
   @override
+  String get settingsTermsOfService => 'Conditions d\'utilisation';
+
+  @override
   String favoriteSavedOn(String date) {
     return 'Sauvegardé le $date';
   }

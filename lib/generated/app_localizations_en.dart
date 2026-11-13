@@ -752,6 +752,9 @@ class AppLocalizationsEn extends AppLocalizations {
       'Open phone settings to fully block notifications';
 
   @override
+  String get settingsTermsOfService => 'Terms of Service';
+
+  @override
   String favoriteSavedOn(String date) {
     return 'Saved on $date';
   }

@@ -1522,6 +1522,12 @@ abstract class AppLocalizations {
   /// **'Open phone settings to fully block notifications'**
   String get settingsOpenSystemSettings;
 
+  /// No description provided for @settingsTermsOfService.
+  ///
+  /// In en, this message translates to:
+  /// **'Terms of Service'**
+  String get settingsTermsOfService;
+
   /// No description provided for @favoriteSavedOn.
   ///
   /// In en, this message translates to:
