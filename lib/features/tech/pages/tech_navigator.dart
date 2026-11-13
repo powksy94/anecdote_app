@@ -21,6 +21,7 @@ abstract class TechNavigator {
                 hubType: ContentType.techInventionsHub,
                 categories: const [
                   ContentType.greatInvention,
+                  ContentType.accidentalInvention,
                 ],
                 adService: adService,
               ),

@@ -936,6 +936,9 @@ class AppLocalizationsFr extends AppLocalizations {
   String get categoryWomanInventor => 'Femmes inventrices';
 
   @override
+  String get categoryAccidentalInvention => 'Inventions accidentelles';
+
+  @override
   String get noteLifeDatesUndocumented =>
       'Les dates de naissance et de décès ne sont pas documentées dans les sources consultées, elles ne sont donc pas affichées.';
 }

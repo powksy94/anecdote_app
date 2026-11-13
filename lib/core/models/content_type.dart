@@ -121,4 +121,5 @@ enum ContentType {
   greatInvention,
   techInventorsHub,
   womanInventor,
+  accidentalInvention,
 }

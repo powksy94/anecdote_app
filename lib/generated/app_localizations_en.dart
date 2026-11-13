@@ -920,6 +920,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get categoryWomanInventor => 'Women Inventors';
 
   @override
+  String get categoryAccidentalInvention => 'Accidental Inventions';
+
+  @override
   String get noteLifeDatesUndocumented =>
       'Birth and death dates are not documented in the sources we checked, so they are not shown.';
 }

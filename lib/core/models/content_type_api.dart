@@ -119,6 +119,7 @@ extension ContentTypeApi on ContentType {
       case ContentType.greatInvention:
       case ContentType.techInventorsHub:
       case ContentType.womanInventor:
+      case ContentType.accidentalInvention:
         return '';
     }
   }

@@ -1846,6 +1846,12 @@ abstract class AppLocalizations {
   /// **'Women Inventors'**
   String get categoryWomanInventor;
 
+  /// No description provided for @categoryAccidentalInvention.
+  ///
+  /// In en, this message translates to:
+  /// **'Accidental Inventions'**
+  String get categoryAccidentalInvention;
+
   /// No description provided for @noteLifeDatesUndocumented.
   ///
   /// In en, this message translates to:

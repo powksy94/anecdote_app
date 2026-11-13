@@ -72,6 +72,7 @@ import '../../features/sport/services/sport_legendary_event_service.dart';
 import '../../features/sport/services/sport_origin_rule_service.dart';
 import '../../features/tech/services/great_invention_service.dart';
 import '../../features/tech/services/woman_inventor_service.dart';
+import '../../features/tech/services/accidental_invention_service.dart';
 
 Future<ContentData> fetchDailyContent(
   ContentType type, {
@@ -165,6 +166,7 @@ Future<ContentData> fetchDailyContent(
     // ── Tech ───────────────────────────────────────────────────────────────
     case ContentType.greatInvention:       return GreatInventionService().getDailyContent();
     case ContentType.womanInventor:        return WomanInventorService().getDailyContent();
+    case ContentType.accidentalInvention:  return AccidentalInventionService().getDailyContent();
     // ── API-ninjas / HTTP ──────────────────────────────────────────────────
     default:                             return apiService.fetchRemoteContent(type);
   }
