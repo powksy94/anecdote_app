@@ -1852,6 +1852,12 @@ abstract class AppLocalizations {
   /// **'Accidental Inventions'**
   String get categoryAccidentalInvention;
 
+  /// No description provided for @categoryLegendaryInventor.
+  ///
+  /// In en, this message translates to:
+  /// **'Legendary Inventors'**
+  String get categoryLegendaryInventor;
+
   /// No description provided for @noteLifeDatesUndocumented.
   ///
   /// In en, this message translates to:

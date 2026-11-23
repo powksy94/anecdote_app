@@ -39,6 +39,7 @@ abstract class TechNavigator {
               pageBuilder: (_, __, ___) => SubHubPage(
                 hubType: ContentType.techInventorsHub,
                 categories: const [
+                  ContentType.legendaryInventor,
                   ContentType.womanInventor,
                 ],
                 adService: adService,

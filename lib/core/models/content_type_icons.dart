@@ -115,6 +115,7 @@ extension ContentTypeIcons on ContentType {
       case ContentType.techInventorsHub:       return Icons.engineering_rounded;
       case ContentType.womanInventor:          return Icons.woman_rounded;
       case ContentType.accidentalInvention:    return Icons.auto_fix_high_rounded;
+      case ContentType.legendaryInventor:      return Icons.workspace_premium_rounded;
     }
   }
 }

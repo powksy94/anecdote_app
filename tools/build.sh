@@ -43,6 +43,7 @@ generate_if_needed "tools/sport/generate_sport_origins_rules.py"     "assets/spo
 generate_if_needed "tools/tech/generate_great_inventions.py"        "assets/tech/great_inventions.json"
 generate_if_needed "tools/tech/generate_women_inventors.py"         "assets/tech/women_inventors.json"
 generate_if_needed "tools/tech/generate_accidental_inventions.py"    "assets/tech/accidental_inventions.json"
+generate_if_needed "tools/tech/generate_legendary_inventors.py"      "assets/tech/legendary_inventors.json"
 # Space
 generate_if_needed "tools/space/generate_exoplanets.py" "assets/space/exoplanets.json"
 generate_if_needed "tools/space/generate_stars.py"      "assets/space/stars.json"

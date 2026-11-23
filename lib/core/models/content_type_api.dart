@@ -120,6 +120,7 @@ extension ContentTypeApi on ContentType {
       case ContentType.techInventorsHub:
       case ContentType.womanInventor:
       case ContentType.accidentalInvention:
+      case ContentType.legendaryInventor:
         return '';
     }
   }

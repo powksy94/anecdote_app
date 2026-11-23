@@ -238,5 +238,7 @@ Widget buildCardDecoration(ContentType type) {
       return _doubleIcon(Icons.woman_rounded, Icons.lightbulb_rounded);
     case ContentType.accidentalInvention:
       return _doubleIcon(Icons.auto_fix_high_rounded, Icons.science_rounded);
+    case ContentType.legendaryInventor:
+      return _doubleIcon(Icons.workspace_premium_rounded, Icons.lightbulb_rounded);
   }
 }

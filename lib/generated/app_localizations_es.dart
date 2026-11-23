@@ -936,6 +936,9 @@ class AppLocalizationsEs extends AppLocalizations {
   String get categoryAccidentalInvention => 'Inventos accidentales';
 
   @override
+  String get categoryLegendaryInventor => 'Inventores legendarios';
+
+  @override
   String get noteLifeDatesUndocumented =>
       'Las fechas de nacimiento y fallecimiento no están documentadas en las fuentes consultadas, por lo que no se muestran.';
 }

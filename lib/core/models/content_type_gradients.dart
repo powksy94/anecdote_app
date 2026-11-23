@@ -227,6 +227,8 @@ extension ContentTypeGradients on ContentType {
         return [const Color(0xFF4A148C), const Color(0xFFAB47BC)];
       case ContentType.accidentalInvention:
         return [const Color(0xFF3E1F00), const Color(0xFFF57C00)];
+      case ContentType.legendaryInventor:
+        return [const Color(0xFF1A1040), const Color(0xFF5E35B1)];
     }
   }
 }
