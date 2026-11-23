@@ -61,5 +61,6 @@ PS_*.csv
 
 # Internal planning docs (not meant for repo history)
 docs/**/*.md
+*.pdf
 
 macos/Flutter/GeneratedPluginRegistrant.swift
